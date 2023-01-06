@@ -9,4 +9,3 @@ title = "writeup (hopefully) coming soon..."
 # Overview
 
 placeholder hopefulyl writeup soon
-also tags dont work idk why

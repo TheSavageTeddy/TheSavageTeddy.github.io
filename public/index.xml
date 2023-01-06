@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>uwuTeddy</title>
+    <link>https://TheSavageTeddy.github.io/</link>
+    <description>Recent content on uwuTeddy</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>uwuTeddy</copyright><atom:link href="https://TheSavageTeddy.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title></title>
+      <link>https://TheSavageTeddy.github.io/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://TheSavageTeddy.github.io/about/</guid>
+      <description>About me Hi! Welcome to my blog! I&amp;rsquo;m uwuTeddy (aka TheSavageTeddy), a highschool student and CTF player from Western Australia.
+I play with team PissedEmu, and do all categories but mostly crypto, and learning pwn &amp;amp; rev currently.
+I am not sure what to post as of now, but it&amp;rsquo;ll probably be writeups for interesting challenges I&amp;rsquo;ve come across for CTFs! Enjoy!</description>
+      <content>&lt;h1 id=&#34;about-me&#34;&gt;About me&lt;/h1&gt;
+&lt;p&gt;Hi! Welcome to my blog! I&amp;rsquo;m &lt;a href=&#34;https://ctftime.org/user/114547&#34;&gt;&lt;code&gt;uwuTeddy&lt;/code&gt;&lt;/a&gt; (aka TheSavageTeddy), a highschool student and CTF player from Western Australia.&lt;/p&gt;
+&lt;p&gt;I play with team &lt;a href=&#34;https://ctftime.org/team/160273&#34;&gt;&lt;code&gt;PissedEmu&lt;/code&gt;&lt;/a&gt;, and do all categories but mostly crypto, and learning pwn &amp;amp; rev currently.&lt;/p&gt;
+&lt;p&gt;I am not sure what to post as of now, but it&amp;rsquo;ll probably be writeups for interesting challenges I&amp;rsquo;ve come across for CTFs! Enjoy!&lt;/p&gt;
+</content>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://TheSavageTeddy.github.io/contact/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://TheSavageTeddy.github.io/contact/</guid>
+      <description>Contact Feel free to reach out to me to talk about anything in general!
+Discord: TheSavageTeddy#7458
+I have 200+ friend requests, if I don&amp;rsquo;t respond, please join Perth Socialware and try to send me a message directly Twitter: @theuwuteddy
+Email: theteddyhashed@gmail.com</description>
+      <content>&lt;h1 id=&#34;contact&#34;&gt;Contact&lt;/h1&gt;
+&lt;p&gt;Feel free to reach out to me to talk about anything in general!&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Discord:&lt;/strong&gt; &lt;code&gt;TheSavageTeddy#7458&lt;/code&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;I have 200+ friend requests, if I don&amp;rsquo;t respond, please join &lt;a href=&#34;https://discord.gg/dQ8FMFQSRp&#34;&gt;&lt;code&gt;Perth Socialware&lt;/code&gt;&lt;/a&gt; and try to send me a message directly&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Twitter:&lt;/strong&gt; &lt;a href=&#34;https://twitter.com/theuwuteddy&#34;&gt;&lt;code&gt;@theuwuteddy&lt;/code&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Email:&lt;/strong&gt; &lt;code&gt;theteddyhashed@gmail.com&lt;/code&gt;&lt;/p&gt;
+</content>
+    </item>
+    
+    <item>
+      <title>writeup (hopefully) coming soon...</title>
+      <link>https://TheSavageTeddy.github.io/posts/test/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://TheSavageTeddy.github.io/posts/test/</guid>
+      <description>Overview placeholder hopefulyl writeup soon also tags dont work idk why</description>
+      <content>&lt;h1 id=&#34;overview&#34;&gt;Overview&lt;/h1&gt;
+&lt;p&gt;placeholder hopefulyl writeup soon
+also tags dont work idk why&lt;/p&gt;
+</content>
+    </item>
+    
+  </channel>
+</rss>
