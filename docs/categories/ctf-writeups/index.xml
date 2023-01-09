@@ -8,6 +8,534 @@
     <language>en-us</language>
     <copyright>uwuTeddy</copyright><atom:link href="https://TheSavageTeddy.github.io/categories/ctf-writeups/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Crypto Writeups - IrisCTF 2023</title>
+      <link>https://TheSavageTeddy.github.io/posts/crypto-iris2023/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://TheSavageTeddy.github.io/posts/crypto-iris2023/</guid>
+      <description>Overview I solved 4/6 crypto challenges in IrisCTF 2023, here are the writeups for them.
+Challenges (dynamic scoring):
+babynotrsa by sera - 145 solves babymixup by sera - 98 solves Nonces and Keys by lambda - 53 solves AES-BAD-256 by sera - 18 solves babynotrsa - 145 solves Everyone knows RSA, but everyone also knows that RSA is slow. Why not just use a faster operation than exponentiation?
+We are given a source and output:</description>
+      <content>&lt;h1 id=&#34;overview&#34;&gt;Overview&lt;/h1&gt;
+&lt;p&gt;I solved 4/6 crypto challenges in IrisCTF 2023, here are the writeups for them.&lt;/p&gt;
+&lt;p&gt;Challenges (dynamic scoring):&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#babynotrsa---145-solves&#34;&gt;&lt;code&gt;babynotrsa&lt;/code&gt;&lt;/a&gt; by &lt;code&gt;sera&lt;/code&gt; - 145 solves&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#babymixup---98-solves&#34;&gt;&lt;code&gt;babymixup&lt;/code&gt;&lt;/a&gt; by &lt;code&gt;sera&lt;/code&gt; - 98 solves&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#nonces-and-keys---53-solves&#34;&gt;&lt;code&gt;Nonces and Keys&lt;/code&gt;&lt;/a&gt; by &lt;code&gt;lambda&lt;/code&gt; - 53 solves&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#aes-bad-256---18-solves&#34;&gt;&lt;code&gt;AES-BAD-256&lt;/code&gt;&lt;/a&gt; by &lt;code&gt;sera&lt;/code&gt; - 18 solves&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;babynotrsa---145-solves&#34;&gt;babynotrsa - 145 solves&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Everyone knows &lt;a href=&#34;https://en.wikipedia.org/wiki/RSA_(cryptosystem)&#34;&gt;RSA&lt;/a&gt;, but everyone also knows that RSA is slow. Why not just use a faster operation than exponentiation?&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;We are given a source and output:&lt;/p&gt;
+
+
+
+  &lt;div class=&#34;collapsable-code&#34;&gt;
+    &lt;input id=&#34;1&#34; type=&#34;checkbox&#34;  /&gt;
+    &lt;label for=&#34;1&#34;&gt;
+      &lt;span class=&#34;collapsable-code__language&#34;&gt;py&lt;/span&gt;
+      &lt;span class=&#34;collapsable-code__title&#34;&gt;chal.py&lt;/span&gt;
+      &lt;span class=&#34;collapsable-code__toggle&#34; data-label-expand=&#34;Show&#34; data-label-collapse=&#34;Hide&#34;&gt;&lt;/span&gt;
+    &lt;/label&gt;
+    &lt;pre class=&#34;language-py&#34; &gt;&lt;code&gt;
+from Crypto.Util.number import getStrongPrime
+
+# We get 2 1024-bit primes
+p = getStrongPrime(1024)
+q = getStrongPrime(1024)
+
+# We calculate the modulus
+n = p*q
+
+# We generate our encryption key
+import secrets
+e = secrets.randbelow(n)
+
+# We take our input
+flag = b&amp;#34;irisctf{REDACTED_REDACTED_REDACTED}&amp;#34;
+assert len(flag) == 35
+# and convert it to a number
+flag = int.from_bytes(flag, byteorder=&amp;#39;big&amp;#39;)
+
+# We encrypt our input
+encrypted = (flag * e) % n
+
+print(f&amp;#34;n: {n}&amp;#34;)
+print(f&amp;#34;e: {e}&amp;#34;)
+print(f&amp;#34;flag: {encrypted}&amp;#34;)
+&lt;/code&gt;&lt;/pre&gt;
+  &lt;/div&gt;
+
+
+
+
+
+  &lt;div class=&#34;collapsable-code&#34;&gt;
+    &lt;input id=&#34;2&#34; type=&#34;checkbox&#34; checked /&gt;
+    &lt;label for=&#34;2&#34;&gt;
+      &lt;span class=&#34;collapsable-code__language&#34;&gt;txt&lt;/span&gt;
+      &lt;span class=&#34;collapsable-code__title&#34;&gt;output.txt&lt;/span&gt;
+      &lt;span class=&#34;collapsable-code__toggle&#34; data-label-expand=&#34;Show&#34; data-label-collapse=&#34;Hide&#34;&gt;&lt;/span&gt;
+    &lt;/label&gt;
+    &lt;pre class=&#34;language-txt&#34; &gt;&lt;code&gt;
+n: 21429933885346644587620272790089165813353259223649897308397918491861562279767580488441831451651834802520437234248670652477414296159324726172158330221397420877323921934377321483041598028053870169281419856238830264612049920637819183013812186448416408328958360799645342598727238977986741643705720539702955864527935398839069236768630867447760912744208154645904678859979378604386855741350220991958191408182147658532111413386776058224418484895056146180001830405844881486308594953615999140110712045286000170660686758188247928230655746746482354748673482506070246808187808961599576834080344066055446605664648340486804023919467
+e: 10788856448030235429585145974385410619185237539198378911887172763282204686697141640582780419040340318300048024100764883750608733331571719088729202796193207904701854848679412033514037149161609202467086017862616635522167577463675349103892366486246290794304652162107619408011548841664240624935414339021041162505899467159623692906986841033101688573177710503499081107294555688550493634416552587963816327790111808356639558596438537569271043190414208204773219496030644456745185896540608008662177117212000718802474957268532153146989410300300554162811564064457762004188326986236869603714437275058878379647196886872404148116134
+flag: 3954523654845598592730156937269688140867480061118457307435945875579028695730063528424973907208923014508950419982702682082417623843946231057553311028711409093751376287876799688357176816093484535703797332422565021382453879908968161161537921292725907853309522100738603080298951279637316809695591295752657105226749125868510570125512146397480808774515489938198191435285342823923715673372695893409325086032930406554421670815433958591841773705563688270739343539481283865883427560667086249616210745997056621098406247201301461721906304555526293017773805845093545204570993288514598261070097976786800172141678030841959348372097
+
+&lt;/code&gt;&lt;/pre&gt;
+  &lt;/div&gt;
+
+
+&lt;p&gt;Looking at the source, it looks like standard RSA, but noticed on this line:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-py&#34; data-lang=&#34;py&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# We encrypt our input&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;encrypted &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; (flag &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt; e) &lt;span style=&#34;color:#f92672&#34;&gt;%&lt;/span&gt; n
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;the &amp;ldquo;encryption&amp;rdquo; is not RSA, as it uses multiplication instead of exponentiation. This means we can calculate an &lt;a href=&#34;https://en.wikipedia.org/wiki/Modular_multiplicative_inverse&#34;&gt;inverse element&lt;/a&gt; &lt;code&gt;k&lt;/code&gt; for &lt;code&gt;e&lt;/code&gt; and &lt;code&gt;n&lt;/code&gt; where &lt;code&gt;e * k = 1 (mod n)&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Then we multiply this by &lt;code&gt;encrypted&lt;/code&gt; mod &lt;code&gt;n&lt;/code&gt; to recover the flag.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-py&#34; data-lang=&#34;py&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;from&lt;/span&gt; Crypto.Util.number &lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; long_to_bytes
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;n &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;21429933885346644587620272790089165813353259223649897308397918491861562279767580488441831451651834802520437234248670652477414296159324726172158330221397420877323921934377321483041598028053870169281419856238830264612049920637819183013812186448416408328958360799645342598727238977986741643705720539702955864527935398839069236768630867447760912744208154645904678859979378604386855741350220991958191408182147658532111413386776058224418484895056146180001830405844881486308594953615999140110712045286000170660686758188247928230655746746482354748673482506070246808187808961599576834080344066055446605664648340486804023919467&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;e &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;10788856448030235429585145974385410619185237539198378911887172763282204686697141640582780419040340318300048024100764883750608733331571719088729202796193207904701854848679412033514037149161609202467086017862616635522167577463675349103892366486246290794304652162107619408011548841664240624935414339021041162505899467159623692906986841033101688573177710503499081107294555688550493634416552587963816327790111808356639558596438537569271043190414208204773219496030644456745185896540608008662177117212000718802474957268532153146989410300300554162811564064457762004188326986236869603714437275058878379647196886872404148116134&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;encrypted &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;3954523654845598592730156937269688140867480061118457307435945875579028695730063528424973907208923014508950419982702682082417623843946231057553311028711409093751376287876799688357176816093484535703797332422565021382453879908968161161537921292725907853309522100738603080298951279637316809695591295752657105226749125868510570125512146397480808774515489938198191435285342823923715673372695893409325086032930406554421670815433958591841773705563688270739343539481283865883427560667086249616210745997056621098406247201301461721906304555526293017773805845093545204570993288514598261070097976786800172141678030841959348372097&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;k &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; pow(e,&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;,n)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;flag &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; (encrypted &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt; k) &lt;span style=&#34;color:#f92672&#34;&gt;%&lt;/span&gt; n
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;print(long_to_bytes(flag))
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;code&gt;irisctf{discrete_divide_isn&#39;t_hard}&lt;/code&gt;&lt;/p&gt;
+&lt;h1 id=&#34;babymixup---98-solves&#34;&gt;babymixup - 98 solves&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;I encrypted a public string and the flag with AES. There&amp;rsquo;s no known key recovery attacks against AES, so you can&amp;rsquo;t decrypt the flag.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Given source and output:&lt;/p&gt;
+
+
+
+  &lt;div class=&#34;collapsable-code&#34;&gt;
+    &lt;input id=&#34;3&#34; type=&#34;checkbox&#34;  /&gt;
+    &lt;label for=&#34;3&#34;&gt;
+      &lt;span class=&#34;collapsable-code__language&#34;&gt;py&lt;/span&gt;
+      &lt;span class=&#34;collapsable-code__title&#34;&gt;chal.py&lt;/span&gt;
+      &lt;span class=&#34;collapsable-code__toggle&#34; data-label-expand=&#34;Show&#34; data-label-collapse=&#34;Hide&#34;&gt;&lt;/span&gt;
+    &lt;/label&gt;
+    &lt;pre class=&#34;language-py&#34; &gt;&lt;code&gt;
+from Crypto.Cipher import AES
+import os
+
+key = os.urandom(16)
+
+flag = b&amp;#34;flag{REDACTED}&amp;#34;
+assert len(flag) % 16 == 0
+
+iv = os.urandom(16)
+cipher = AES.new(iv,  AES.MODE_CBC, key)
+print(&amp;#34;IV1 =&amp;#34;, iv.hex())
+print(&amp;#34;CT1 =&amp;#34;, cipher.encrypt(b&amp;#34;Hello, this is a public message. This message contains no flags.&amp;#34;).hex())
+
+iv = os.urandom(16)
+cipher = AES.new(key, AES.MODE_CBC, iv )
+print(&amp;#34;IV2 =&amp;#34;, iv.hex())
+print(&amp;#34;CT2 =&amp;#34;, cipher.encrypt(flag).hex())
+&lt;/code&gt;&lt;/pre&gt;
+  &lt;/div&gt;
+
+
+
+
+
+  &lt;div class=&#34;collapsable-code&#34;&gt;
+    &lt;input id=&#34;4&#34; type=&#34;checkbox&#34; checked /&gt;
+    &lt;label for=&#34;4&#34;&gt;
+      &lt;span class=&#34;collapsable-code__language&#34;&gt;txt&lt;/span&gt;
+      &lt;span class=&#34;collapsable-code__title&#34;&gt;output.txt&lt;/span&gt;
+      &lt;span class=&#34;collapsable-code__toggle&#34; data-label-expand=&#34;Show&#34; data-label-collapse=&#34;Hide&#34;&gt;&lt;/span&gt;
+    &lt;/label&gt;
+    &lt;pre class=&#34;language-txt&#34; &gt;&lt;code&gt;
+IV1 = 4ee04f8303c0146d82e0bbe376f44e10
+CT1 = de49b7bb8e3c5e9ed51905b6de326b39b102c7a6f0e09e92fe398c75d032b41189b11f873c6cd8cdb65a276f2e48761f6372df0a109fd29842a999f4cc4be164
+IV2 = 1fe31329e7c15feadbf0e43a0ee2f163
+CT2 = f6816a603cefb0a0fd8a23a804b921bf489116fcc11d650c6ffb3fc0aae9393409c8f4f24c3d4b72ccea787e84de7dd0
+&lt;/code&gt;&lt;/pre&gt;
+  &lt;/div&gt;
+
+
+&lt;p&gt;As shown, &lt;code&gt;key&lt;/code&gt; and &lt;code&gt;iv&lt;/code&gt; are completely random, but &lt;code&gt;key&lt;/code&gt; is re-used for both encryptions of &lt;code&gt;P1&lt;/code&gt; (&lt;code&gt;b&amp;quot;Hello, this ...&amp;quot;&lt;/code&gt;) and &lt;code&gt;P2&lt;/code&gt; (the flag).&lt;/p&gt;
+&lt;p&gt;We also spot an error with the code:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-py&#34; data-lang=&#34;py&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;cipher &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; AES&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;new(iv,  AES&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;MODE_CBC, key)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;...&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;cipher &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; AES&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;new(key, AES&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;MODE_CBC, iv )
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The &lt;code&gt;key&lt;/code&gt; and &lt;code&gt;iv&lt;/code&gt; are swapped for the first operation! For reference, the function is supposed to be &lt;code&gt;AES.new(key, AES mode, IV)&lt;/code&gt;. Let&amp;rsquo;s see how we can exploit this.&lt;/p&gt;
+&lt;p&gt;With all block cipher puzzles, it helps to use a diagram that illustrates their decryption scheme. In this case it&amp;rsquo;s &lt;code&gt;AES-CBC&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/CBC_decryption.svg/1200px-CBC_decryption.svg.png&#34; alt=&#34;wikipedia diagram of AES-CBC decryption&#34;&gt;&lt;/p&gt;
+&lt;p&gt;We have &lt;code&gt;IV1&lt;/code&gt; and &lt;code&gt;IV2&lt;/code&gt; from the output, but &lt;code&gt;IV1&lt;/code&gt; is actually the key used to encrypt &lt;code&gt;CT1&lt;/code&gt;. We can figure out the actual &lt;code&gt;IV&lt;/code&gt; for &lt;code&gt;CT1&lt;/code&gt; by looking at the diagram - notice that to decrypt, &lt;code&gt;CT1&lt;/code&gt; is decrypted using the &lt;code&gt;key&lt;/code&gt; then XOR&amp;rsquo;ed with the &lt;code&gt;IV&lt;/code&gt;, and since we know &lt;code&gt;P1&lt;/code&gt; (the plaintext), by properties of XOR, figuring out the &lt;code&gt;IV&lt;/code&gt; is just decrypting without an IV then XORing with the plaintext.&lt;/p&gt;
+&lt;p&gt;Recall that &lt;code&gt;real_IV1&lt;/code&gt; is actually the key used to encrypt our flag &lt;code&gt;CT2&lt;/code&gt;, so we now have the key to decrypt the flag.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-py&#34; data-lang=&#34;py&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;from&lt;/span&gt; Crypto.Cipher &lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; AES
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;from&lt;/span&gt; binascii &lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; unhexlify
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;xor&lt;/span&gt;(a,b):
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; bytes([x&lt;span style=&#34;color:#f92672&#34;&gt;^&lt;/span&gt;y &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; x,y &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; zip(a,b)])
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;IV1 &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;4ee04f8303c0146d82e0bbe376f44e10&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;CT1 &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;de49b7bb8e3c5e9ed51905b6de326b39b102c7a6f0e09e92fe398c75d032b41189b11f873c6cd8cdb65a276f2e48761f6372df0a109fd29842a999f4cc4be164&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;IV2 &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;1fe31329e7c15feadbf0e43a0ee2f163&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;CT2 &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;f6816a603cefb0a0fd8a23a804b921bf489116fcc11d650c6ffb3fc0aae9393409c8f4f24c3d4b72ccea787e84de7dd0&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;cipher &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; AES&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;new(unhexlify(IV1), AES&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;MODE_CBC, &lt;span style=&#34;color:#e6db74&#34;&gt;b&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\x00&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;16&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;real_IV1 &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; xor(cipher&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;decrypt(unhexlify(CT1)), &lt;span style=&#34;color:#e6db74&#34;&gt;b&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Hello, this is a public message. This message contains no flags.&amp;#34;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;real_IV1 &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; real_IV1[:&lt;span style=&#34;color:#ae81ff&#34;&gt;16&lt;/span&gt;] &lt;span style=&#34;color:#75715e&#34;&gt;# only first block, IVs are 16 bytes&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;cipher &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; AES&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;new(real_IV1, AES&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;MODE_CBC, unhexlify(IV2))
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;print(cipher&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;decrypt(unhexlify(CT2)))
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;code&gt;irisctf{the_iv_aint_secret_either_way_using_cbc}&lt;/code&gt;&lt;/p&gt;
+&lt;h1 id=&#34;nonces-and-keys---53-solves&#34;&gt;Nonces and Keys - 53 solves&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Because of our revolutionary AES-128-OFB technology we have encrypted your user data so securely that even with the key (k=0x13371337133713371337133713371337) evil hackers can&amp;rsquo;t read out the passwords!!!&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;We are provided with an encrypted sqlite3 file &lt;code&gt;challenge_enc.sqlite3&lt;/code&gt;. Our goal is to decrypt it.&lt;/p&gt;
+&lt;p&gt;Already given in the challenge description, the key is &lt;code&gt;0x13371337133713371337133713371337&lt;/code&gt; and the file is encrypted using &lt;code&gt;AES-128-OFB&lt;/code&gt;. Again, we can pull up a diagram.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/OFB_decryption.svg/1202px-OFB_decryption.svg.png&#34; alt=&#34;wikipedia diagram for AES-OFB decryption&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;AES-OFB&lt;/code&gt; being a stream cipher, encryption and decryption are identical. But the more important thing to notice is that we can recover the stream for cipher using known plaintext! Notice that if we have a block of known plaintext &lt;code&gt;P1&lt;/code&gt; and ciphertext &lt;code&gt;C1&lt;/code&gt;, &lt;code&gt;P1&lt;/code&gt; xor &lt;code&gt;C1&lt;/code&gt; will give us the stream (Key and IV encryption). Furthermore, this stream is used as the &amp;ldquo;IV&amp;rdquo; for the next block, and since we have the key already, we can decrypt every subsequent block.&lt;/p&gt;
+&lt;p&gt;Now all we need is a block of known plaintext. A quick google search brings us to the sqlite3 magic bytes &lt;code&gt;53514c69746520666f726d6174203300&lt;/code&gt;, which is conveniently 16 bytes - a full block!&lt;/p&gt;
+&lt;p&gt;From there we script the decryption of the rest of the blocks, and CTRL+F the flag.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-py&#34; data-lang=&#34;py&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;from&lt;/span&gt; Crypto.Cipher &lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; AES
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;from&lt;/span&gt; binascii &lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; unhexlify
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;with&lt;/span&gt; open(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;challenge_enc.sqlite3&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;rb&amp;#39;&lt;/span&gt;) &lt;span style=&#34;color:#66d9ef&#34;&gt;as&lt;/span&gt; f:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    enc &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; f&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;read()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;xor&lt;/span&gt;(a,b):
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; bytes([x&lt;span style=&#34;color:#f92672&#34;&gt;^&lt;/span&gt;y &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; x,y &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; zip(a,b)])
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;plaintext &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;b&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;key &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; unhexlify(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;13371337133713371337133713371337&amp;#34;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;p1 &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; unhexlify(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;53514c69746520666f726d6174203300&amp;#34;&lt;/span&gt;) &lt;span style=&#34;color:#75715e&#34;&gt;# sqlite3 magic bytes &lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;plaintext &lt;span style=&#34;color:#f92672&#34;&gt;+=&lt;/span&gt; p1
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# loop that keeps using the previous stream as IV and decrypting&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; i &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; range(&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;, len(enc)&lt;span style=&#34;color:#f92672&#34;&gt;//&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;16&lt;/span&gt;):
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    c1 &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; enc[i&lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;16&lt;/span&gt;:i&lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;16&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;16&lt;/span&gt;]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    print(p1, len(p1))
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    e1 &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; xor(c1, p1)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    c2 &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; enc[i&lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;16&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;16&lt;/span&gt;:i&lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;16&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;32&lt;/span&gt;]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    ofb &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; AES&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;new(key, AES&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;MODE_OFB, e1)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    p1 &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; ofb&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;decrypt(c2)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    print(p1)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    plaintext &lt;span style=&#34;color:#f92672&#34;&gt;+=&lt;/span&gt; p1
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;print(plaintext)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;with&lt;/span&gt; open(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;decrypted.sqlite3&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;wb&amp;#39;&lt;/span&gt;) &lt;span style=&#34;color:#66d9ef&#34;&gt;as&lt;/span&gt; f:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    f&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;write(plaintext)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+  &lt;img src=&#34;./img/sqlflag.png&#34;  class=&#34;center&#34;  style=&#34;border-radius: 5px;&#34;  /&gt;
+
+
+&lt;p&gt;&lt;code&gt;irisctf{g0tt4_l0v3_s7re4mciph3rs}&lt;/code&gt;&lt;/p&gt;
+&lt;h1 id=&#34;aes-bad-256---18-solves&#34;&gt;AES-BAD-256 - 18 solves&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;I heard that some common block cipher modes have lots of footguns - using none (ECB) results in the legendary &lt;a href=&#34;https://words.filippo.io/the-ecb-penguin/&#34;&gt;ECB Penguin&lt;/a&gt;, while others are vulnerable to &lt;a href=&#34;https://en.wikipedia.org/wiki/Bit-flipping_attack&#34;&gt;bit flipping&lt;/a&gt; and &lt;a href=&#34;https://en.wikipedia.org/wiki/Padding_oracle_attack&#34;&gt;padding&lt;/a&gt; attacks, so I made my own that would never fall to such a technique.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;I&amp;rsquo;m going to admit - I cheesed this challenge quite hard with bruteforce, but in my defense it was 3am&amp;hellip;&lt;/p&gt;
+
+  &lt;img src=&#34;./img/3amflag.png&#34;  class=&#34;center&#34;  style=&#34;border-radius: 5px; width: 50%;&#34;  /&gt;
+
+
+
+
+
+  &lt;div class=&#34;collapsable-code&#34;&gt;
+    &lt;input id=&#34;5&#34; type=&#34;checkbox&#34; checked /&gt;
+    &lt;label for=&#34;5&#34;&gt;
+      &lt;span class=&#34;collapsable-code__language&#34;&gt;py&lt;/span&gt;
+      &lt;span class=&#34;collapsable-code__title&#34;&gt;chal.py&lt;/span&gt;
+      &lt;span class=&#34;collapsable-code__toggle&#34; data-label-expand=&#34;Show&#34; data-label-collapse=&#34;Hide&#34;&gt;&lt;/span&gt;
+    &lt;/label&gt;
+    &lt;pre class=&#34;language-py&#34; &gt;&lt;code&gt;
+from Crypto.Cipher import AES as AES_BLOCK
+import secrets
+import random
+
+AES_BLOCK_SIZE = 16
+MODE_BLOCK_SIZE = AES_BLOCK_SIZE * 16
+
+KEY = secrets.token_bytes(AES_BLOCK_SIZE)
+AES = AES_BLOCK.new(KEY, AES_BLOCK.MODE_ECB)
+
+import random
+random.seed(KEY)
+
+PERMUTATION = list(range(AES_BLOCK_SIZE))
+random.shuffle(PERMUTATION)
+
+def encrypt(inp):
+    inp = inp.ljust(MODE_BLOCK_SIZE, b&amp;#34;\x00&amp;#34;)
+    
+    assert len(inp) % MODE_BLOCK_SIZE == 0
+
+    data = b&amp;#34;&amp;#34;
+    for block in range(0, len(inp), MODE_BLOCK_SIZE):
+        for i in range(AES_BLOCK_SIZE):
+            data &amp;#43;= bytes(inp[block&amp;#43;j*AES_BLOCK_SIZE&amp;#43;PERMUTATION[i]] for j in range(MODE_BLOCK_SIZE // AES_BLOCK_SIZE))
+    
+    return AES.encrypt(data)
+
+def decrypt(inp):
+    assert len(inp) % MODE_BLOCK_SIZE == 0
+
+    inp = AES.decrypt(inp)
+    data = b&amp;#34;&amp;#34;
+    for block in range(0, len(inp), MODE_BLOCK_SIZE):
+        for j in range(MODE_BLOCK_SIZE // AES_BLOCK_SIZE):
+            for i in range(AES_BLOCK_SIZE):
+                data &amp;#43;= bytes([inp[block &amp;#43; PERMUTATION.index(i) * (MODE_BLOCK_SIZE // AES_BLOCK_SIZE) &amp;#43; j]])
+  
+    return data
+
+import json
+
+def make_echo(inp):
+    data = json.dumps({&amp;#34;type&amp;#34;: &amp;#34;echo&amp;#34;, &amp;#34;msg&amp;#34;: inp}).encode(errors=&amp;#34;ignore&amp;#34;)
+    assert len(data) &amp;lt; 2**32
+    return len(data).to_bytes(length=2, byteorder=&amp;#34;little&amp;#34;) &amp;#43; data
+
+def run_command(inp):
+    inp = decrypt(inp)
+    length = int.from_bytes(inp[:2], byteorder=&amp;#34;little&amp;#34;)
+    if length &amp;#43; 2 &amp;gt;= len(inp):
+        return &amp;#34;Invalid command&amp;#34;
+    
+    # Show me what you got
+    command = inp[2:length&amp;#43;2].decode(&amp;#34;ascii&amp;#34;, errors=&amp;#34;replace&amp;#34;)
+    try:
+        command = json.loads(command, strict=False)
+    except Exception as e:
+        return &amp;#34;Invalid command&amp;#34;
+
+    if &amp;#34;type&amp;#34; not in command:
+        return &amp;#34;No command type&amp;#34;
+
+    match command[&amp;#34;type&amp;#34;]:
+        case &amp;#34;echo&amp;#34;:
+            return command.get(&amp;#34;msg&amp;#34;, &amp;#34;Hello world!&amp;#34;)
+        case &amp;#34;flag&amp;#34;:
+            with open(&amp;#34;/flag&amp;#34;, &amp;#34;r&amp;#34;) as f:
+                return f.read()
+        case other:
+            return f&amp;#34;Unknown command type {command[&amp;#39;type&amp;#39;]}...&amp;#34;
+
+BANNER = &amp;#34;This is an echo service. This interface is protected by AES-BAD-256 technology.&amp;#34;
+
+MENU = &amp;#34;&amp;#34;&amp;#34;
+1. Get an echo command
+2. Run a command
+3. Exit
+&amp;#34;&amp;#34;&amp;#34;
+
+def main():
+    print(BANNER)
+    while True:
+        print(MENU)
+        command = input(&amp;#34;&amp;gt; &amp;#34;)
+        match command:
+            case &amp;#34;1&amp;#34;:
+                print(&amp;#34;Give me some text.\n&amp;#34;)
+                data = input(&amp;#34;&amp;gt; &amp;#34;)
+                print(encrypt(make_echo(data)).hex())
+            case &amp;#34;2&amp;#34;:
+                print(&amp;#34;Give me a command.\n&amp;#34;)
+                data = bytes.fromhex(input(&amp;#34;(hex) &amp;gt; &amp;#34;))
+                print(run_command(data))
+            case other:
+                print(&amp;#34;Bye!&amp;#34;)
+                exit(0)
+                
+
+if __name__ == &amp;#34;__main__&amp;#34;:
+    main()
+&lt;/code&gt;&lt;/pre&gt;
+  &lt;/div&gt;
+
+
+&lt;p&gt;Okay, I didn&amp;rsquo;t go through most the code but the important thing is that this is a modification of AES-ECB with random block orders.&lt;/p&gt;
+&lt;p&gt;Connecting to remote and testing a bit, I tried flipping some bits:&lt;/p&gt;
+
+  &lt;img src=&#34;./img/flipped.png&#34;  class=&#34;center&#34;  style=&#34;border-radius: 5px; width: 50%;&#34;  /&gt;
+
+
+&lt;p&gt;and yep, it does indeed look vulnerable to bit-flipping attacks!&lt;/p&gt;
+&lt;p&gt;The server generates us a command &lt;code&gt;echo&lt;/code&gt; with some data, and our goal is to flip bits to make the command &lt;code&gt;flag&lt;/code&gt;, which gives us the flag.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-py&#34; data-lang=&#34;py&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;match command[&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;type&amp;#34;&lt;/span&gt;]:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    case &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;echo&amp;#34;&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; command&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;get(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;msg&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Hello world!&amp;#34;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    case &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;flag&amp;#34;&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#66d9ef&#34;&gt;with&lt;/span&gt; open(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;/flag&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;r&amp;#34;&lt;/span&gt;) &lt;span style=&#34;color:#66d9ef&#34;&gt;as&lt;/span&gt; f:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; f&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;read()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    case other:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;f&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Unknown command type &lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;{&lt;/span&gt;command[&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;type&amp;#39;&lt;/span&gt;]&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;...&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;What&amp;rsquo;s super useful is that if the command is not valid, it tells us what our command was! Essentially, we get feedback about what bit we flipped something to.&lt;/p&gt;
+&lt;p&gt;Now, remember the modification - block orders are random, therefore we will script to flip bits from every block and observe the feedback to see if we flipped the right bits. Our goal is to figure out which blocks need to be flipped to change the &lt;code&gt;echo&lt;/code&gt; text.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-py&#34; data-lang=&#34;py&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;from&lt;/span&gt; pwn &lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;from&lt;/span&gt; binascii &lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; unhexlify, hexlify
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;runcmd&lt;/span&gt;(thehex):
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    r&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;sendline(&lt;span style=&#34;color:#e6db74&#34;&gt;b&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;2&amp;#34;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    r&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;recv()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    r&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;sendline(hexlify(thehex))
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; r&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;recv()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;getecho&lt;/span&gt;(txt):
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    r&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;sendline(&lt;span style=&#34;color:#e6db74&#34;&gt;b&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;1&amp;#34;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    r&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;recv()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    r&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;sendline(txt)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    a&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;r&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;recvline()&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;strip()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    print(a)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; unhexlify(a)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;flipbit&lt;/span&gt;(str, pos):
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; bytes([[a,a&lt;span style=&#34;color:#f92672&#34;&gt;^&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;0xff&lt;/span&gt;][c&lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt;pos] &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; c, a &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; enumerate(str)])
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;r &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; remote(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;aes.chal.irisc.tf&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;10100&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;r&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;recv()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;r&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;recv()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;validecho &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; getecho(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;hello&amp;#34;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;r&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;recv()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;indexes &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; [&lt;span style=&#34;color:#66d9ef&#34;&gt;None&lt;/span&gt;,&lt;span style=&#34;color:#66d9ef&#34;&gt;None&lt;/span&gt;,&lt;span style=&#34;color:#66d9ef&#34;&gt;None&lt;/span&gt;,&lt;span style=&#34;color:#66d9ef&#34;&gt;None&lt;/span&gt;]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; i &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; range(&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;, len(validecho), &lt;span style=&#34;color:#ae81ff&#34;&gt;16&lt;/span&gt;):
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    dat &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; runcmd(flipbit(validecho, i))
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;b&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Unknown command type&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; dat:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; dat[&lt;span style=&#34;color:#ae81ff&#34;&gt;21&lt;/span&gt;] &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; ord(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;e&amp;#34;&lt;/span&gt;):
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; dat[&lt;span style=&#34;color:#ae81ff&#34;&gt;22&lt;/span&gt;] &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; ord(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;c&amp;#34;&lt;/span&gt;):
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; dat[&lt;span style=&#34;color:#ae81ff&#34;&gt;23&lt;/span&gt;] &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; ord(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;h&amp;#34;&lt;/span&gt;):
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                    &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; dat[&lt;span style=&#34;color:#ae81ff&#34;&gt;24&lt;/span&gt;] &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; ord(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;o&amp;#34;&lt;/span&gt;):
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                        &lt;span style=&#34;color:#66d9ef&#34;&gt;pass&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                    &lt;span style=&#34;color:#66d9ef&#34;&gt;else&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                        indexes[&lt;span style=&#34;color:#ae81ff&#34;&gt;3&lt;/span&gt;] &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; i
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                &lt;span style=&#34;color:#66d9ef&#34;&gt;else&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                    indexes[&lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;] &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; i
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#66d9ef&#34;&gt;else&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                indexes[&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;] &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; i
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#66d9ef&#34;&gt;else&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            indexes[&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;] &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; i
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;print(indexes)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Some horrifying python code, but it does the job. Like I said, 3am and coding don&amp;rsquo;t mix well.&lt;/p&gt;
+&lt;p&gt;Anyways, now that we have the indexes of blocks that when flipped, change a character of &lt;code&gt;echo&lt;/code&gt;, we now can either:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;read the source code properly to figure how to flip them into the text &lt;code&gt;flag&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;OR&amp;hellip; brute force flipping the bit into every byte possible to figure which ones will result in the text &lt;code&gt;flag&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;guess which one I chose&amp;hellip;&lt;/p&gt;
+&lt;p&gt;So we have positions of bits that when flipped, change a character at a position. We can just:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;go through each position, e.g. the position that affects &lt;code&gt;e&lt;/code&gt; from &lt;code&gt;echo&lt;/code&gt;, and change that bit into something.&lt;/li&gt;
+&lt;li&gt;observe the response - does the character &lt;code&gt;e&lt;/code&gt; get flipped into &lt;code&gt;f&lt;/code&gt; from &lt;code&gt;flag&lt;/code&gt;? if not, change the bit into something else.&lt;/li&gt;
+&lt;li&gt;after doing so for all the bits, we should get the flag!&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Here&amp;rsquo;s the horrendous code that does this:&lt;/p&gt;
+
+
+
+  &lt;div class=&#34;collapsable-code&#34;&gt;
+    &lt;input id=&#34;6&#34; type=&#34;checkbox&#34; checked /&gt;
+    &lt;label for=&#34;6&#34;&gt;
+      &lt;span class=&#34;collapsable-code__language&#34;&gt;py&lt;/span&gt;
+      &lt;span class=&#34;collapsable-code__title&#34;&gt;sol.py&lt;/span&gt;
+      &lt;span class=&#34;collapsable-code__toggle&#34; data-label-expand=&#34;Show&#34; data-label-collapse=&#34;Hide&#34;&gt;&lt;/span&gt;
+    &lt;/label&gt;
+    &lt;pre class=&#34;language-py&#34; &gt;&lt;code&gt;
+from pwn import *
+from binascii import unhexlify, hexlify
+
+def runcmd(thehex):
+    r.sendline(b&amp;#34;2&amp;#34;)
+    r.recv()
+    r.sendline(hexlify(thehex))
+    return r.recv()
+
+def getecho(txt):
+    r.sendline(b&amp;#34;1&amp;#34;)
+    r.recv()
+    r.sendline(txt)
+    a=r.recvline().strip()
+    print(a)
+    return unhexlify(a)
+
+def flipbit(str, pos):
+    return bytes([[a,a^0xff][c==pos] for c, a in enumerate(str)])
+
+r = remote(&amp;#39;aes.chal.irisc.tf&amp;#39;, 10100)
+
+r.recv()
+r.recv()
+validecho = getecho(&amp;#34;hello&amp;#34;)
+r.recv()
+indexes = [None,None,None,None]
+for i in range(0, len(validecho), 16):
+    dat = runcmd(flipbit(validecho, i))
+    
+    if b&amp;#34;Unknown command type&amp;#34; in dat:
+        if dat[21] == ord(&amp;#34;e&amp;#34;):
+            if dat[22] == ord(&amp;#34;c&amp;#34;):
+                if dat[23] == ord(&amp;#34;h&amp;#34;):
+                    if dat[24] == ord(&amp;#34;o&amp;#34;):
+                        pass
+                    else:
+                        indexes[3] = i
+                else:
+                    indexes[2] = i
+            else:
+                indexes[1] = i
+        else:
+            indexes[0] = i
+
+finalecho = list(validecho)
+
+for count, flagchar in enumerate(b&amp;#34;flag&amp;#34;):
+    foundit = False
+    for second in range(0, 256):
+        for test in range(0, 256):
+            testecho = list(validecho)
+            testecho[indexes[count]] = test
+            testecho[indexes[count]] ^=second
+            testecho = bytes(testecho)
+            dat = runcmd(testecho)
+            print(dat)
+            print(dat[21&amp;#43;count:22&amp;#43;count], count, flagchar)
+            if dat[21&amp;#43;count:22&amp;#43;count] == bytes([flagchar]) and b&amp;#34;Unknown command type&amp;#34; in dat:
+                print(&amp;#34;FOUND!!!&amp;#34;, test, dat, testecho.hex()) # good dopamine
+                finalecho[indexes[count]] = test
+                foundit = True
+                break
+        if foundit:
+            break
+
+dat = runcmd(bytes(finalecho))
+print(dat)
+&lt;/code&gt;&lt;/pre&gt;
+  &lt;/div&gt;
+
+
+&lt;p&gt;The great thing is there is a &lt;em&gt;slight&lt;/em&gt; chance that the bit it&amp;rsquo;s choosing to flip never matches the character needed, so this was like gambling until 4 of them matched. But that&amp;rsquo;s what you get for brute forcing.&lt;/p&gt;
+
+  &lt;img src=&#34;./img/amazingflag.png&#34;  class=&#34;center&#34;  style=&#34;border-radius: 5px;&#34;  /&gt;
+
+
+&lt;p&gt;As you can see, after brute forcing for the final &lt;code&gt;g&lt;/code&gt; of &lt;code&gt;flag&lt;/code&gt;, the full flipped ciphertext was sent and we got the flag!!!&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;irisctf{bad_at_diffusion_mode}&lt;/code&gt;&lt;/p&gt;
+&lt;h1 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h1&gt;
+&lt;p&gt;I enjoyed these crypto challenges as they weren&amp;rsquo;t math oriented, although they were on the easy side, they were still fun and enjoyable to solve! Kudos to the challenge authors &lt;code&gt;sera&lt;/code&gt; and &lt;code&gt;lambda&lt;/code&gt; for making these!&lt;/p&gt;
+</content>
+    </item>
+    
+    <item>
       <title>ret2libm - IrisCTF 2023</title>
       <link>https://TheSavageTeddy.github.io/posts/ret2libm-iris2023/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
