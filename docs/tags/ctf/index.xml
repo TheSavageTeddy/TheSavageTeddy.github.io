@@ -8,15 +8,14 @@
     <language>en-us</language>
     <copyright>uwuTeddy</copyright><atom:link href="https://TheSavageTeddy.github.io/tags/ctf/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>writeup (hopefully) coming soon...</title>
+      <title>ret2libm - IrisCTF 2023</title>
       <link>https://TheSavageTeddy.github.io/posts/test/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://TheSavageTeddy.github.io/posts/test/</guid>
-      <description>Overview placeholder hopefulyl writeup soon also tags dont work idk why</description>
+      <description>Overview placeholder hopefulyl writeup soon</description>
       <content>&lt;h1 id=&#34;overview&#34;&gt;Overview&lt;/h1&gt;
-&lt;p&gt;placeholder hopefulyl writeup soon
-also tags dont work idk why&lt;/p&gt;
+&lt;p&gt;placeholder hopefulyl writeup soon&lt;/p&gt;
 </content>
     </item>
     
