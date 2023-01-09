@@ -156,7 +156,7 @@ This is the last thing we want to see - our exploit working locally, but not on 
 
 After explaining my issue, the organiser `sera` released a Dockerfile that allowed the remote enviroment to be built on your own computer! This meant we could now debug on an enviroment identical to the remote instance, and potentially find out the issue.
 
-After doing so, my payload unfortunetly still worked without modifications, which was really weird as the enviroment was supposedly identical to the remote instance.
+After doing so, my payload unfortunetly still worked without modifications, which was really weird as the enviroment was supposedly identical to the remote instance. `sera` mentioned it could be that the `libc` was in fact *not* a constant offset of `fabs` function from `libm` on the remote instance, which meant the `libc.address` would be wrong.
 
 {{< image src="./img/whynoworklol.png" alt="" position="center" style="border-radius: 5px;" >}}
 
@@ -175,3 +175,5 @@ Overall this was a pretty fun challenge despite the hours of trying to figure ou
 In the end we ([PissedEmu](https://ctftime.org/team/160273)) placed `11th` on the [leaderboard](https://ctftime.org/event/1774) which I'm happy about!
 
 Additional thanks to the organisers for hosting IrisCTF 2023, I'll be looking forward to next year's event!
+
+Also, please DM me on Discord at `TheSavageTeddy#7458` if there are issues or things I missed in this blog post as it is my first.

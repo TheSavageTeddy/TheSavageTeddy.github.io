@@ -321,7 +321,7 @@ PIE:      PIE enabled
 
 <p>This is the last thing we want to see - our exploit working locally, but not on remote! When this happened I first thought I didn&rsquo;t link the libraries correctly, but after relinking and additional testing that didn&rsquo;t seem to be the case. Having no other idea what it could be, I opened a ticket on the <a href="https://discord.com/invite/TJMssbJV">discord server</a>.</p>
 <p>After explaining my issue, the organiser <code>sera</code> released a Dockerfile that allowed the remote enviroment to be built on your own computer! This meant we could now debug on an enviroment identical to the remote instance, and potentially find out the issue.</p>
-<p>After doing so, my payload unfortunetly still worked without modifications, which was really weird as the enviroment was supposedly identical to the remote instance.</p>
+<p>After doing so, my payload unfortunetly still worked without modifications, which was really weird as the enviroment was supposedly identical to the remote instance. <code>sera</code> mentioned it could be that the <code>libc</code> was in fact <em>not</em> a constant offset of <code>fabs</code> function from <code>libm</code> on the remote instance, which meant the <code>libc.address</code> would be wrong.</p>
 
   <img src="./img/whynoworklol.png"  class="center"  style="border-radius: 5px;"  />
 
@@ -337,6 +337,7 @@ PIE:      PIE enabled
 <p>Overall this was a pretty fun challenge despite the hours of trying to figure out why it wouldn&rsquo;t work on remote, I only started learning <code>pwn</code> recently and was glad theres a CTF with <code>pwn</code> challenges I could solve.</p>
 <p>In the end we (<a href="https://ctftime.org/team/160273">PissedEmu</a>) placed <code>11th</code> on the <a href="https://ctftime.org/event/1774">leaderboard</a> which I&rsquo;m happy about!</p>
 <p>Additional thanks to the organisers for hosting IrisCTF 2023, I&rsquo;ll be looking forward to next year&rsquo;s event!</p>
+<p>Also, please DM me on Discord at <code>TheSavageTeddy#7458</code> if there are issues or things I missed in this blog post as it is my first.</p>
 
       </div></div>
 

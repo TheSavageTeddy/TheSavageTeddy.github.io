@@ -171,7 +171,7 @@ PIE:      PIE enabled
 
 &lt;p&gt;This is the last thing we want to see - our exploit working locally, but not on remote! When this happened I first thought I didn&amp;rsquo;t link the libraries correctly, but after relinking and additional testing that didn&amp;rsquo;t seem to be the case. Having no other idea what it could be, I opened a ticket on the &lt;a href=&#34;https://discord.com/invite/TJMssbJV&#34;&gt;discord server&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;After explaining my issue, the organiser &lt;code&gt;sera&lt;/code&gt; released a Dockerfile that allowed the remote enviroment to be built on your own computer! This meant we could now debug on an enviroment identical to the remote instance, and potentially find out the issue.&lt;/p&gt;
-&lt;p&gt;After doing so, my payload unfortunetly still worked without modifications, which was really weird as the enviroment was supposedly identical to the remote instance.&lt;/p&gt;
+&lt;p&gt;After doing so, my payload unfortunetly still worked without modifications, which was really weird as the enviroment was supposedly identical to the remote instance. &lt;code&gt;sera&lt;/code&gt; mentioned it could be that the &lt;code&gt;libc&lt;/code&gt; was in fact &lt;em&gt;not&lt;/em&gt; a constant offset of &lt;code&gt;fabs&lt;/code&gt; function from &lt;code&gt;libm&lt;/code&gt; on the remote instance, which meant the &lt;code&gt;libc.address&lt;/code&gt; would be wrong.&lt;/p&gt;
 
   &lt;img src=&#34;./img/whynoworklol.png&#34;  class=&#34;center&#34;  style=&#34;border-radius: 5px;&#34;  /&gt;
 
@@ -187,6 +187,7 @@ PIE:      PIE enabled
 &lt;p&gt;Overall this was a pretty fun challenge despite the hours of trying to figure out why it wouldn&amp;rsquo;t work on remote, I only started learning &lt;code&gt;pwn&lt;/code&gt; recently and was glad theres a CTF with &lt;code&gt;pwn&lt;/code&gt; challenges I could solve.&lt;/p&gt;
 &lt;p&gt;In the end we (&lt;a href=&#34;https://ctftime.org/team/160273&#34;&gt;PissedEmu&lt;/a&gt;) placed &lt;code&gt;11th&lt;/code&gt; on the &lt;a href=&#34;https://ctftime.org/event/1774&#34;&gt;leaderboard&lt;/a&gt; which I&amp;rsquo;m happy about!&lt;/p&gt;
 &lt;p&gt;Additional thanks to the organisers for hosting IrisCTF 2023, I&amp;rsquo;ll be looking forward to next year&amp;rsquo;s event!&lt;/p&gt;
+&lt;p&gt;Also, please DM me on Discord at &lt;code&gt;TheSavageTeddy#7458&lt;/code&gt; if there are issues or things I missed in this blog post as it is my first.&lt;/p&gt;
 </content>
     </item>
     
