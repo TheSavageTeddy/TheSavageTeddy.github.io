@@ -169,7 +169,7 @@
 
   <div class="post-content"><div>
         <h1 id="overview">Overview<a href="#overview" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
-<p><code>ret2libm</code> was the 2nd most solved <code>pwn</code> challenge of <a href="https://ctftime.org/event/1774" target="_blank">IrisCTF 2023</a>, written by <code>sera</code>.</p>
+<p><code>ret2libm</code> was the 2nd most solved <code>pwn</code> challenge of <a href="https://ctftime.org/event/1774">IrisCTF 2023</a>, written by <code>sera</code>.</p>
 <p>Description:</p>
 <blockquote>
 <p>I need to make a pwn? Let&rsquo;s go with that standard warmup rop thing&hellip; what was it&hellip; ret2libm?</p>
@@ -272,8 +272,8 @@ PIE:      PIE enabled
   </figure>
 
 
-<p>Now we have the <code>libc</code> address we can do a standard <code>ret2libc</code>. I will not go in-depth on this as it&rsquo;s covered a lot, check out <a href="https://ir0nstone.gitbook.io/notes/types/stack/return-oriented-programming/ret2libc" target="_blank">this amazing resource</a> if you want to fully grasp it.</p>
-<p>Using <code>ROPgadget</code> to find gadgets in <code>libc</code> (I chose <code>libc</code> instead of the binary as we already had its base address, didn&rsquo;t want to do another calculation), we find the required <code>pop rdi; ret</code> gadget as per <a href="https://ir0nstone.gitbook.io/notes/types/stack/return-oriented-programming/exploiting-calling-conventions#64-bit" target="_blank">64 bit calling conventions</a> to pass the <code>/bin/sh</code> string into <code>system()</code>, and another <code>ret</code> gadget for stack alignment.</p>
+<p>Now we have the <code>libc</code> address we can do a standard <code>ret2libc</code>. I will not go in-depth on this as it&rsquo;s covered a lot, check out <a href="https://ir0nstone.gitbook.io/notes/types/stack/return-oriented-programming/ret2libc">this amazing resource</a> if you want to fully grasp it.</p>
+<p>Using <code>ROPgadget</code> to find gadgets in <code>libc</code> (I chose <code>libc</code> instead of the binary as we already had its base address, didn&rsquo;t want to do another calculation), we find the required <code>pop rdi; ret</code> gadget as per <a href="https://ir0nstone.gitbook.io/notes/types/stack/return-oriented-programming/exploiting-calling-conventions#64-bit">64 bit calling conventions</a> to pass the <code>/bin/sh</code> string into <code>system()</code>, and another <code>ret</code> gadget for stack alignment.</p>
 <p>Now we simply return to libc!</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-py" data-lang="py"><span style="display:flex;"><span><span style="color:#f92672">from</span> pwn <span style="color:#f92672">import</span> <span style="color:#f92672">*</span>
 </span></span><span style="display:flex;"><span>
@@ -319,7 +319,7 @@ PIE:      PIE enabled
   <img src="./img/verysad.png"  class="center"  style="border-radius: 5px;"  />
 
 
-<p>This is the last thing we want to see - our exploit working locally, but not on remote! When this happened I first thought I didn&rsquo;t link the libraries correctly, but after relinking and additional testing that didn&rsquo;t seem to be the case. Having no other idea what it could be, I opened a ticket on the <a href="https://discord.com/invite/TJMssbJV" target="_blank">discord server</a>.</p>
+<p>This is the last thing we want to see - our exploit working locally, but not on remote! When this happened I first thought I didn&rsquo;t link the libraries correctly, but after relinking and additional testing that didn&rsquo;t seem to be the case. Having no other idea what it could be, I opened a ticket on the <a href="https://discord.com/invite/TJMssbJV">discord server</a>.</p>
 <p>After explaining my issue, the organiser <code>sera</code> released a Dockerfile that allowed the remote enviroment to be built on your own computer! This meant we could now debug on an enviroment identical to the remote instance, and potentially find out the issue.</p>
 <p>After doing so, my payload unfortunetly still worked without modifications, which was really weird as the enviroment was supposedly identical to the remote instance.</p>
 
@@ -335,7 +335,7 @@ PIE:      PIE enabled
 <p>The intended solution was to use a one-gadget in the libc and a libc address already in <code>rax</code> to (i assume) calculate the offset.</p>
 <h1 id="conclusion">Conclusion<a href="#conclusion" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
 <p>Overall this was a pretty fun challenge despite the hours of trying to figure out why it wouldn&rsquo;t work on remote, I only started learning <code>pwn</code> recently and was glad theres a CTF with <code>pwn</code> challenges I could solve.</p>
-<p>In the end we (<a href="https://ctftime.org/team/160273" target="_blank">PissedEmu</a>) placed <code>11th</code> on the <a href="https://ctftime.org/event/1774" target="_blank">leaderboard</a> which I&rsquo;m happy about!</p>
+<p>In the end we (<a href="https://ctftime.org/team/160273">PissedEmu</a>) placed <code>11th</code> on the <a href="https://ctftime.org/event/1774">leaderboard</a> which I&rsquo;m happy about!</p>
 <p>Additional thanks to the organisers for hosting IrisCTF 2023, I&rsquo;ll be looking forward to next year&rsquo;s event!</p>
 
       </div></div>

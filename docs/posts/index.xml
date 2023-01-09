@@ -19,7 +19,7 @@ I need to make a pwn? Let&amp;rsquo;s go with that standard warmup rop thing&amp
 We are provided with a zip file containing a binary, source code, libc, libm, and Makefile.
 c chal.c #include &amp;lt;math.h&amp;gt; #include &amp;lt;stdio.h&amp;gt; // gcc -fno-stack-protector -lm int main(int argc, char* argv) { setvbuf(stdin, NULL, _IONBF, 0); setvbuf(stdout, NULL, _IONBF, 0); char yours[8]; printf(&amp;#34;Check out my pecs: %p\n&amp;#34;, fabs); printf(&amp;#34;How about yours?</description>
       <content>&lt;h1 id=&#34;overview&#34;&gt;Overview&lt;/h1&gt;
-&lt;p&gt;&lt;code&gt;ret2libm&lt;/code&gt; was the 2nd most solved &lt;code&gt;pwn&lt;/code&gt; challenge of &lt;a href=&#34;https://ctftime.org/event/1774&#34; target=&#34;_blank&#34;&gt;IrisCTF 2023&lt;/a&gt;, written by &lt;code&gt;sera&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;ret2libm&lt;/code&gt; was the 2nd most solved &lt;code&gt;pwn&lt;/code&gt; challenge of &lt;a href=&#34;https://ctftime.org/event/1774&#34;&gt;IrisCTF 2023&lt;/a&gt;, written by &lt;code&gt;sera&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;Description:&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;I need to make a pwn? Let&amp;rsquo;s go with that standard warmup rop thing&amp;hellip; what was it&amp;hellip; ret2libm?&lt;/p&gt;
@@ -122,8 +122,8 @@ PIE:      PIE enabled
   &lt;/figure&gt;
 
 
-&lt;p&gt;Now we have the &lt;code&gt;libc&lt;/code&gt; address we can do a standard &lt;code&gt;ret2libc&lt;/code&gt;. I will not go in-depth on this as it&amp;rsquo;s covered a lot, check out &lt;a href=&#34;https://ir0nstone.gitbook.io/notes/types/stack/return-oriented-programming/ret2libc&#34; target=&#34;_blank&#34;&gt;this amazing resource&lt;/a&gt; if you want to fully grasp it.&lt;/p&gt;
-&lt;p&gt;Using &lt;code&gt;ROPgadget&lt;/code&gt; to find gadgets in &lt;code&gt;libc&lt;/code&gt; (I chose &lt;code&gt;libc&lt;/code&gt; instead of the binary as we already had its base address, didn&amp;rsquo;t want to do another calculation), we find the required &lt;code&gt;pop rdi; ret&lt;/code&gt; gadget as per &lt;a href=&#34;https://ir0nstone.gitbook.io/notes/types/stack/return-oriented-programming/exploiting-calling-conventions#64-bit&#34; target=&#34;_blank&#34;&gt;64 bit calling conventions&lt;/a&gt; to pass the &lt;code&gt;/bin/sh&lt;/code&gt; string into &lt;code&gt;system()&lt;/code&gt;, and another &lt;code&gt;ret&lt;/code&gt; gadget for stack alignment.&lt;/p&gt;
+&lt;p&gt;Now we have the &lt;code&gt;libc&lt;/code&gt; address we can do a standard &lt;code&gt;ret2libc&lt;/code&gt;. I will not go in-depth on this as it&amp;rsquo;s covered a lot, check out &lt;a href=&#34;https://ir0nstone.gitbook.io/notes/types/stack/return-oriented-programming/ret2libc&#34;&gt;this amazing resource&lt;/a&gt; if you want to fully grasp it.&lt;/p&gt;
+&lt;p&gt;Using &lt;code&gt;ROPgadget&lt;/code&gt; to find gadgets in &lt;code&gt;libc&lt;/code&gt; (I chose &lt;code&gt;libc&lt;/code&gt; instead of the binary as we already had its base address, didn&amp;rsquo;t want to do another calculation), we find the required &lt;code&gt;pop rdi; ret&lt;/code&gt; gadget as per &lt;a href=&#34;https://ir0nstone.gitbook.io/notes/types/stack/return-oriented-programming/exploiting-calling-conventions#64-bit&#34;&gt;64 bit calling conventions&lt;/a&gt; to pass the &lt;code&gt;/bin/sh&lt;/code&gt; string into &lt;code&gt;system()&lt;/code&gt;, and another &lt;code&gt;ret&lt;/code&gt; gadget for stack alignment.&lt;/p&gt;
 &lt;p&gt;Now we simply return to libc!&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-py&#34; data-lang=&#34;py&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;from&lt;/span&gt; pwn &lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
@@ -169,7 +169,7 @@ PIE:      PIE enabled
   &lt;img src=&#34;./img/verysad.png&#34;  class=&#34;center&#34;  style=&#34;border-radius: 5px;&#34;  /&gt;
 
 
-&lt;p&gt;This is the last thing we want to see - our exploit working locally, but not on remote! When this happened I first thought I didn&amp;rsquo;t link the libraries correctly, but after relinking and additional testing that didn&amp;rsquo;t seem to be the case. Having no other idea what it could be, I opened a ticket on the &lt;a href=&#34;https://discord.com/invite/TJMssbJV&#34; target=&#34;_blank&#34;&gt;discord server&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;This is the last thing we want to see - our exploit working locally, but not on remote! When this happened I first thought I didn&amp;rsquo;t link the libraries correctly, but after relinking and additional testing that didn&amp;rsquo;t seem to be the case. Having no other idea what it could be, I opened a ticket on the &lt;a href=&#34;https://discord.com/invite/TJMssbJV&#34;&gt;discord server&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;After explaining my issue, the organiser &lt;code&gt;sera&lt;/code&gt; released a Dockerfile that allowed the remote enviroment to be built on your own computer! This meant we could now debug on an enviroment identical to the remote instance, and potentially find out the issue.&lt;/p&gt;
 &lt;p&gt;After doing so, my payload unfortunetly still worked without modifications, which was really weird as the enviroment was supposedly identical to the remote instance.&lt;/p&gt;
 
@@ -185,7 +185,7 @@ PIE:      PIE enabled
 &lt;p&gt;The intended solution was to use a one-gadget in the libc and a libc address already in &lt;code&gt;rax&lt;/code&gt; to (i assume) calculate the offset.&lt;/p&gt;
 &lt;h1 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h1&gt;
 &lt;p&gt;Overall this was a pretty fun challenge despite the hours of trying to figure out why it wouldn&amp;rsquo;t work on remote, I only started learning &lt;code&gt;pwn&lt;/code&gt; recently and was glad theres a CTF with &lt;code&gt;pwn&lt;/code&gt; challenges I could solve.&lt;/p&gt;
-&lt;p&gt;In the end we (&lt;a href=&#34;https://ctftime.org/team/160273&#34; target=&#34;_blank&#34;&gt;PissedEmu&lt;/a&gt;) placed &lt;code&gt;11th&lt;/code&gt; on the &lt;a href=&#34;https://ctftime.org/event/1774&#34; target=&#34;_blank&#34;&gt;leaderboard&lt;/a&gt; which I&amp;rsquo;m happy about!&lt;/p&gt;
+&lt;p&gt;In the end we (&lt;a href=&#34;https://ctftime.org/team/160273&#34;&gt;PissedEmu&lt;/a&gt;) placed &lt;code&gt;11th&lt;/code&gt; on the &lt;a href=&#34;https://ctftime.org/event/1774&#34;&gt;leaderboard&lt;/a&gt; which I&amp;rsquo;m happy about!&lt;/p&gt;
 &lt;p&gt;Additional thanks to the organisers for hosting IrisCTF 2023, I&amp;rsquo;ll be looking forward to next year&amp;rsquo;s event!&lt;/p&gt;
 </content>
     </item>
