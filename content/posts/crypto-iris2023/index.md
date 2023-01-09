@@ -11,10 +11,10 @@ title = "Crypto Writeups - IrisCTF 2023"
 I solved 4/6 crypto challenges in IrisCTF 2023, here are the writeups for them.
 
 Challenges (dynamic scoring):
-- `babynotrsa` 145 solves
-- `babymixup` 98 solves
-- `Nonces and Keys` 53 solves
-- `AES-BAD-256` 18 solves
+- [`babynotrsa`](#babynotrsa---145-solves) 145 solves
+- [`babymixup`](#babymixup---98-solves) 98 solves
+- [`Nonces and Keys`](#nonces-and-keys---53-solves) 53 solves
+- [`AES-BAD-256`](#aes-bad-256---18-solves) 18 solves
 
 # babynotrsa - 145 solves
 
