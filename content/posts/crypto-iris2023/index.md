@@ -331,9 +331,9 @@ Connecting to remote and testing a bit, I tried flipping some bits:
 
 {{< image src="./img/flipped.png" alt="" position="center" style="border-radius: 5px; width: 50%;" >}}
 
-and yep, it does indeed look vulnerable to bit-flipping attacks!
+and yep, it does indeed look vulnerable to bit-flipping attacks! Notice `echo` -> `zcho`
 
-The server generates us a command `echo` with some data, and our goal is to flip bits to make the command `flag`, which gives us the flag.
+The server generates us a ciphertext of command `echo` with some data, and our goal is to flip bits to make the command `flag`, which gives us the flag.
 
 ```py
 match command["type"]:

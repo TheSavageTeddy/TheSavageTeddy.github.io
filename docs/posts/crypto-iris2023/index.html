@@ -519,8 +519,8 @@ if __name__ == &#34;__main__&#34;:
   <img src="./img/flipped.png"  class="center"  style="border-radius: 5px; width: 50%;"  />
 
 
-<p>and yep, it does indeed look vulnerable to bit-flipping attacks!</p>
-<p>The server generates us a command <code>echo</code> with some data, and our goal is to flip bits to make the command <code>flag</code>, which gives us the flag.</p>
+<p>and yep, it does indeed look vulnerable to bit-flipping attacks! Notice <code>echo</code> -&gt; <code>zcho</code></p>
+<p>The server generates us a ciphertext of command <code>echo</code> with some data, and our goal is to flip bits to make the command <code>flag</code>, which gives us the flag.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-py" data-lang="py"><span style="display:flex;"><span>match command[<span style="color:#e6db74">&#34;type&#34;</span>]:
 </span></span><span style="display:flex;"><span>    case <span style="color:#e6db74">&#34;echo&#34;</span>:
 </span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> command<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#34;msg&#34;</span>, <span style="color:#e6db74">&#34;Hello world!&#34;</span>)
