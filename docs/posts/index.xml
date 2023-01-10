@@ -169,7 +169,10 @@ CT2 = f6816a603cefb0a0fd8a23a804b921bf489116fcc11d650c6ffb3fc0aae9393409c8f4f24c
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;cipher &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; AES&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;new(key, AES&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;MODE_CBC, iv )
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The &lt;code&gt;key&lt;/code&gt; and &lt;code&gt;iv&lt;/code&gt; are swapped for the first operation! For reference, the function is supposed to be &lt;code&gt;AES.new(key, AES mode, IV)&lt;/code&gt;. Let&amp;rsquo;s see how we can exploit this.&lt;/p&gt;
 &lt;p&gt;With all block cipher puzzles, it helps to use a diagram that illustrates their decryption scheme. In this case it&amp;rsquo;s &lt;code&gt;AES-CBC&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/CBC_decryption.svg/1200px-CBC_decryption.svg.png&#34; alt=&#34;wikipedia diagram of AES-CBC decryption&#34;&gt;&lt;/p&gt;
+
+  &lt;img src=&#34;https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/CBC_decryption.svg/1200px-CBC_decryption.svg.png&#34;  alt=&#34;wikipedia diagram of AES-CBC decryption&#34;  class=&#34;center&#34;  style=&#34;filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(327deg) brightness(104%) contrast(101%);&#34;  /&gt;
+
+
 &lt;p&gt;We have &lt;code&gt;IV1&lt;/code&gt; and &lt;code&gt;IV2&lt;/code&gt; from the output, but &lt;code&gt;IV1&lt;/code&gt; is actually the key used to encrypt &lt;code&gt;CT1&lt;/code&gt;. We can figure out the actual &lt;code&gt;IV&lt;/code&gt; for &lt;code&gt;CT1&lt;/code&gt; by looking at the diagram - notice that to decrypt, &lt;code&gt;CT1&lt;/code&gt; is decrypted using the &lt;code&gt;key&lt;/code&gt; then XOR&amp;rsquo;ed with the &lt;code&gt;IV&lt;/code&gt;, and since we know &lt;code&gt;P1&lt;/code&gt; (the plaintext), by properties of XOR, figuring out the &lt;code&gt;IV&lt;/code&gt; is just decrypting without an IV then XORing with the plaintext.&lt;/p&gt;
 &lt;p&gt;Recall that &lt;code&gt;real_IV1&lt;/code&gt; is actually the key used to encrypt our flag &lt;code&gt;CT2&lt;/code&gt;, so we now have the key to decrypt the flag.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-py&#34; data-lang=&#34;py&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;from&lt;/span&gt; Crypto.Cipher &lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; AES
@@ -196,7 +199,10 @@ CT2 = f6816a603cefb0a0fd8a23a804b921bf489116fcc11d650c6ffb3fc0aae9393409c8f4f24c
 &lt;/blockquote&gt;
 &lt;p&gt;We are provided with an encrypted sqlite3 file &lt;code&gt;challenge_enc.sqlite3&lt;/code&gt;. Our goal is to decrypt it.&lt;/p&gt;
 &lt;p&gt;Already given in the challenge description, the key is &lt;code&gt;0x13371337133713371337133713371337&lt;/code&gt; and the file is encrypted using &lt;code&gt;AES-128-OFB&lt;/code&gt;. Again, we can pull up a diagram.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/OFB_decryption.svg/1202px-OFB_decryption.svg.png&#34; alt=&#34;wikipedia diagram for AES-OFB decryption&#34;&gt;&lt;/p&gt;
+
+  &lt;img src=&#34;https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/OFB_decryption.svg/1202px-OFB_decryption.svg.png&#34;  alt=&#34;wikipedia diagram for AES-OFB decryption&#34;  class=&#34;center&#34;  style=&#34;filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(327deg) brightness(104%) contrast(101%);&#34;  /&gt;
+
+
 &lt;p&gt;&lt;code&gt;AES-OFB&lt;/code&gt; being a stream cipher, encryption and decryption are identical. But the more important thing to notice is that we can recover the stream for cipher using known plaintext! Notice that if we have a block of known plaintext &lt;code&gt;P1&lt;/code&gt; and ciphertext &lt;code&gt;C1&lt;/code&gt;, &lt;code&gt;P1&lt;/code&gt; xor &lt;code&gt;C1&lt;/code&gt; will give us the stream (Key and IV encryption). Furthermore, this stream is used as the &amp;ldquo;IV&amp;rdquo; for the next block, and since we have the key already, we can decrypt every subsequent block.&lt;/p&gt;
 &lt;p&gt;Now all we need is a block of known plaintext. A quick google search brings us to the sqlite3 magic bytes &lt;code&gt;53514c69746520666f726d6174203300&lt;/code&gt;, which is conveniently 16 bytes - a full block!&lt;/p&gt;
 &lt;p&gt;From there we script the decryption of the rest of the blocks, and CTRL+F the flag.&lt;/p&gt;

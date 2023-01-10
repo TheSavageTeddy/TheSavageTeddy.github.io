@@ -320,7 +320,10 @@ CT2 = f6816a603cefb0a0fd8a23a804b921bf489116fcc11d650c6ffb3fc0aae9393409c8f4f24c
 </span></span><span style="display:flex;"><span>cipher <span style="color:#f92672">=</span> AES<span style="color:#f92672">.</span>new(key, AES<span style="color:#f92672">.</span>MODE_CBC, iv )
 </span></span></code></pre></div><p>The <code>key</code> and <code>iv</code> are swapped for the first operation! For reference, the function is supposed to be <code>AES.new(key, AES mode, IV)</code>. Let&rsquo;s see how we can exploit this.</p>
 <p>With all block cipher puzzles, it helps to use a diagram that illustrates their decryption scheme. In this case it&rsquo;s <code>AES-CBC</code>.</p>
-<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/CBC_decryption.svg/1200px-CBC_decryption.svg.png" alt="wikipedia diagram of AES-CBC decryption"></p>
+
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/CBC_decryption.svg/1200px-CBC_decryption.svg.png"  alt="wikipedia diagram of AES-CBC decryption"  class="center"  style="filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(327deg) brightness(104%) contrast(101%);"  />
+
+
 <p>We have <code>IV1</code> and <code>IV2</code> from the output, but <code>IV1</code> is actually the key used to encrypt <code>CT1</code>. We can figure out the actual <code>IV</code> for <code>CT1</code> by looking at the diagram - notice that to decrypt, <code>CT1</code> is decrypted using the <code>key</code> then XOR&rsquo;ed with the <code>IV</code>, and since we know <code>P1</code> (the plaintext), by properties of XOR, figuring out the <code>IV</code> is just decrypting without an IV then XORing with the plaintext.</p>
 <p>Recall that <code>real_IV1</code> is actually the key used to encrypt our flag <code>CT2</code>, so we now have the key to decrypt the flag.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-py" data-lang="py"><span style="display:flex;"><span><span style="color:#f92672">from</span> Crypto.Cipher <span style="color:#f92672">import</span> AES
@@ -347,7 +350,10 @@ CT2 = f6816a603cefb0a0fd8a23a804b921bf489116fcc11d650c6ffb3fc0aae9393409c8f4f24c
 </blockquote>
 <p>We are provided with an encrypted sqlite3 file <code>challenge_enc.sqlite3</code>. Our goal is to decrypt it.</p>
 <p>Already given in the challenge description, the key is <code>0x13371337133713371337133713371337</code> and the file is encrypted using <code>AES-128-OFB</code>. Again, we can pull up a diagram.</p>
-<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/OFB_decryption.svg/1202px-OFB_decryption.svg.png" alt="wikipedia diagram for AES-OFB decryption"></p>
+
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/OFB_decryption.svg/1202px-OFB_decryption.svg.png"  alt="wikipedia diagram for AES-OFB decryption"  class="center"  style="filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(327deg) brightness(104%) contrast(101%);"  />
+
+
 <p><code>AES-OFB</code> being a stream cipher, encryption and decryption are identical. But the more important thing to notice is that we can recover the stream for cipher using known plaintext! Notice that if we have a block of known plaintext <code>P1</code> and ciphertext <code>C1</code>, <code>P1</code> xor <code>C1</code> will give us the stream (Key and IV encryption). Furthermore, this stream is used as the &ldquo;IV&rdquo; for the next block, and since we have the key already, we can decrypt every subsequent block.</p>
 <p>Now all we need is a block of known plaintext. A quick google search brings us to the sqlite3 magic bytes <code>53514c69746520666f726d6174203300</code>, which is conveniently 16 bytes - a full block!</p>
 <p>From there we script the decryption of the rest of the blocks, and CTRL+F the flag.</p>

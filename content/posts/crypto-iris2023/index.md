@@ -130,7 +130,7 @@ The `key` and `iv` are swapped for the first operation! For reference, the funct
 
 With all block cipher puzzles, it helps to use a diagram that illustrates their decryption scheme. In this case it's `AES-CBC`.
 
-![wikipedia diagram of AES-CBC decryption](https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/CBC_decryption.svg/1200px-CBC_decryption.svg.png)
+{{< image src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/CBC_decryption.svg/1200px-CBC_decryption.svg.png" alt="wikipedia diagram of AES-CBC decryption" position="center" style="filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(327deg) brightness(104%) contrast(101%);" >}}
 
 We have `IV1` and `IV2` from the output, but `IV1` is actually the key used to encrypt `CT1`. We can figure out the actual `IV` for `CT1` by looking at the diagram - notice that to decrypt, `CT1` is decrypted using the `key` then XOR'ed with the `IV`, and since we know `P1` (the plaintext), by properties of XOR, figuring out the `IV` is just decrypting without an IV then XORing with the plaintext.
 
@@ -166,7 +166,7 @@ We are provided with an encrypted sqlite3 file `challenge_enc.sqlite3`. Our goal
 
 Already given in the challenge description, the key is `0x13371337133713371337133713371337` and the file is encrypted using `AES-128-OFB`. Again, we can pull up a diagram.
 
-![wikipedia diagram for AES-OFB decryption](https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/OFB_decryption.svg/1202px-OFB_decryption.svg.png)
+{{< image src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/OFB_decryption.svg/1202px-OFB_decryption.svg.png" alt="wikipedia diagram for AES-OFB decryption" position="center" style="filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(327deg) brightness(104%) contrast(101%);" >}}
 
 `AES-OFB` being a stream cipher, encryption and decryption are identical. But the more important thing to notice is that we can recover the stream for cipher using known plaintext! Notice that if we have a block of known plaintext `P1` and ciphertext `C1`, `P1` xor `C1` will give us the stream (Key and IV encryption). Furthermore, this stream is used as the "IV" for the next block, and since we have the key already, we can decrypt every subsequent block.
 
