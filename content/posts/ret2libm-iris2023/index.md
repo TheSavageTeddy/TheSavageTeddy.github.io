@@ -52,7 +52,7 @@ NX:       NX enabled
 PIE:      PIE enabled
 ```
 
-Using `pwngdb` we find the offset to be `16` bytes until we overwrite the return pointer.
+Using `pwndbg` we find the offset to be `16` bytes until we overwrite the return pointer.
 
 # Exploitation
 
