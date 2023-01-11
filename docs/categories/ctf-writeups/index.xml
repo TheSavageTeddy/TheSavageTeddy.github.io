@@ -615,7 +615,7 @@ chal: chal.c
 Stack:    No canary found
 NX:       NX enabled
 PIE:      PIE enabled
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Using &lt;code&gt;pwngdb&lt;/code&gt; we find the offset to be &lt;code&gt;16&lt;/code&gt; bytes until we overwrite the return pointer.&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Using &lt;code&gt;pwndbg&lt;/code&gt; we find the offset to be &lt;code&gt;16&lt;/code&gt; bytes until we overwrite the return pointer.&lt;/p&gt;
 &lt;h1 id=&#34;exploitation&#34;&gt;Exploitation&lt;/h1&gt;
 &lt;p&gt;The next step is to do a classic &lt;code&gt;ret2libc&lt;/code&gt;. However, there is ASLR that we need to bypass, as the &lt;code&gt;libc&lt;/code&gt; library is loaded into a different address each time. The program just so happens to give us a leak from the &lt;code&gt;libm&lt;/code&gt; library which &lt;em&gt;should&lt;/em&gt; allow us to calculate the &lt;code&gt;libc&lt;/code&gt; base address.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-c&#34; data-lang=&#34;c&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;printf&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Check out my pecs: %p&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\n&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;, fabs);
