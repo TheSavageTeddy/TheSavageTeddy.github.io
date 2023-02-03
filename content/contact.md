@@ -9,3 +9,5 @@ Feel free to reach out to me to talk about anything in general!
 **Twitter:** [`@theuwuteddy`](https://twitter.com/theuwuteddy)
 
 **Email:** `theteddyhashed@gmail.com`
+
+**GitHub** [github.com/TheSavageTeddy](https://github.com/TheSavageTeddy)
