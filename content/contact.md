@@ -10,4 +10,4 @@ Feel free to reach out to me to talk about anything in general!
 
 **Email:** `theteddyhashed@gmail.com`
 
-**GitHub** [github.com/TheSavageTeddy](https://github.com/TheSavageTeddy)
+**GitHub** [`github.com/TheSavageTeddy`](https://github.com/TheSavageTeddy)
