@@ -1,4 +1,5 @@
 +++ 
+weight = 10
 tags = ["ctf", "pwn"] 
 categories = ["CTF Writeups", "pwn"] 
 date = "2023-1-9" 
