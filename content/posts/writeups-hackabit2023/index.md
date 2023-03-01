@@ -1,6 +1,6 @@
 +++
 weight = 100
-tags = ["ctf"]
+tags = ["ctf", "beginner"]
 categories = ["CTF Writeups"]
 date = "2023-3-1"
 description = "Full Writeups for a beginner CTF for students." 
@@ -11,7 +11,25 @@ title = "Full Writeups - Hack A Bit 0x01"
 
 Hack A Bit is a CTF targeting highschool students aged 13-18. This post will include writeups for all challenges (except OSINT) for Round 2, which was the CTF jeopardy round.
 
+Also, please contact me discord `TheSavageTeddy#7458` if there are any mistakes/issues with these writeups, or if you want more info on them. Enjoy!
+
+
 # Challenge Categories
+
+[`Welcome`](#0-welcome) - 4 challenges
+
+[`Cryptography`](#1-cryptography) - 8 challenges
+
+[`Web`](#2-web) - 6 challenges
+
+[`Programming`](#3-programming) - 8 challenges
+
+[`Infrastructure`](#4-infrastructure) - 8 challenges
+
+[`Networking`](#5-networking) - 6 challenges
+
+[`OSINT`](#6-osint) - 8 challenges
+
 
 # 0. Welcome
 ## Wakeup (5)
