@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+    <title>Full Writeups - Hack A Bit 0x01 :: uwuTeddy</title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Full Writeups for a beginner CTF for students." />
+<meta name="keywords" content="" />
+<meta name="robots" content="noodp" />
+<link rel="canonical" href="https://TheSavageTeddy.github.io/posts/writeups-hackabit2023/" />
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  <link rel="stylesheet" href="https://TheSavageTeddy.github.io/styles.css">
+
+
+
+
+
+
+
+  <link rel="shortcut icon" href="https://TheSavageTeddy.github.io/img/theme-colors/green.png">
+  <link rel="apple-touch-icon" href="https://TheSavageTeddy.github.io/img/theme-colors/green.png">
+
+
+
+<meta name="twitter:card" content="summary" />
+
+  
+    <meta name="twitter:site" content="uwuTeddy" />
+  
+    <meta name="twitter:creator" content="" />
+
+
+
+<meta property="og:locale" content="en" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Full Writeups - Hack A Bit 0x01">
+<meta property="og:description" content="Full Writeups for a beginner CTF for students." />
+<meta property="og:url" content="https://TheSavageTeddy.github.io/posts/writeups-hackabit2023/" />
+<meta property="og:site_name" content="uwuTeddy" />
+
+  
+    <meta property="og:image" content="https://TheSavageTeddy.github.io/img/favicon/green.png">
+  
+
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="627">
+
+  <meta property="article:section" content="CTF Writeups" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body class="green">
+
+
+<div class="container center headings--one-size">
+
+  <header class="header">
+  <div class="header__inner">
+    <div class="header__logo">
+      <a href="/">
+  <div class="logo">
+    uwuTeddy / TheSavageTeddy
+  </div>
+</a>
+
+    </div>
+    
+      <ul class="menu menu--mobile">
+  <li class="menu__trigger">Menu&nbsp;▾</li>
+  <li>
+    <ul class="menu__dropdown">
+      
+        
+          <li><a href="/about">About</a></li>
+        
+      
+        
+          <li><a href="/contact">Contact</a></li>
+        
+      
+        
+          <li><a href="/posts">Posts</a></li>
+        
+      
+      
+    </ul>
+  </li>
+</ul>
+
+    
+    
+  </div>
+  
+    <nav class="navigation-menu">
+  <ul class="navigation-menu__inner menu--desktop">
+    
+      
+        
+          <li><a href="/about">About</a></li>
+        
+      
+        
+          <li><a href="/contact">Contact</a></li>
+        
+      
+        
+          <li><a href="/posts">Posts</a></li>
+        
+      
+      
+    
+  </ul>
+</nav>
+
+  
+</header>
+
+
+  <div class="content">
+    
+<article class="post">
+  <h1 class="post-title">
+    <a href="https://TheSavageTeddy.github.io/posts/writeups-hackabit2023/">Full Writeups - Hack A Bit 0x01</a>
+  </h1>
+  <div class="post-meta">
+    
+    
+    
+  </div>
+
+  
+    <span class="post-tags">
+      
+      #<a href="https://TheSavageTeddy.github.io/tags/ctf/">ctf</a>&nbsp;
+      
+    </span>
+  
+  
+
+
+  
+
+  <div class="post-content"><div>
+        <h1 id="overview">Overview<a href="#overview" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
+<p>Hack A Bit is a CTF targeting highschool students aged 13-18. This post will include writeups for all challenges (except OSINT) for Round 2, which was the CTF jeopardy round.</p>
+<h1 id="challenge-categories">Challenge Categories<a href="#challenge-categories" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
+<h1 id="0-welcome">0. Welcome<a href="#0-welcome" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
+<h2 id="wakeup-5">Wakeup (5)<a href="#wakeup-5" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<blockquote>
+<p>Throughout the course you will prove your completion of tasks and understanding by capturing flags. CTF stands for capture the flag. Flags will generally be formatted as flag{x} where the x is the specific content that will change from challenge to challenge. If this isn&rsquo;t the case, the challenge will specifically state that it uses a non-standard flag format.</p>
+</blockquote>
+<blockquote>
+<p>Submit the flag flag{hello_world} to complete this challenge.</p>
+</blockquote>
+<p>Sanity check challenge, flag was in the description.
+<code>flag{hello_world}</code></p>
+<h2 id="weirdo-5">Weirdo (5)<a href="#weirdo-5" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<blockquote>
+<p>This is what a challenge with a non-standard flag will look like. These types of flags are generally used for things like IP addresses or other data that would be a &ldquo;short answer&rdquo; style. The challenge will always be marked with a &ldquo;NON-STANDARD FLAG FORMAT&rdquo; identifier if it is this way.</p>
+</blockquote>
+<blockquote>
+<p>Submit the flag 192.168.1.1/24 to get credit for this challenge.</p>
+</blockquote>
+<p>Same thing, flag is <code>192.168.1.1/24</code>. This just tells us some challenges are not in the normal <code>flag{}</code> format.</p>
+<h1 id="1-cryptography">1. Cryptography<a href="#1-cryptography" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
+<h2 id="homerun-75">Homerun (75)<a href="#homerun-75" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<blockquote>
+<p>Check out 0xFF in the ASCII lookup table&hellip;<br>
+Oh dang, it isn&rsquo;t there. Well I still need to send you that data, not the text but the actual value 0xFF in computer memory.
+Here&rsquo;s an example, decode this, all the data you need is right here: <code>MZWGCZ33I5XXI5DBJVQWWZKTOVZGKWLPOVEGKYLSIFRG65LUKRUGC5CMN5XGOQTBNRWH2===</code></p>
+</blockquote>
+<p>We get a ciphertext <code>MZWGCZ33I5XXI5DBJVQWWZKTOVZGKWLPOVEGKYLSIFRG65LUKRUGC5CMN5XGOQTBNRWH2===</code>. This is clearly base32 as we see it consists of only uppercase letters and numbers, ending with <code>=</code>. Decoding in CyberChef or any other tool gives <code>flag{GottaMakeSureYouHearAboutThatLongBall}</code></p>
+<h2 id="mason-75">Mason (75)<a href="#mason-75" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<blockquote>
+<p>The numbers mason, what do they mean?
+<code>66 6c 61 67 7b 63 6f 6d 70 75 74 65 72 3a 69 5f 6f 6e 6c 79 5f 75 6e 64 65 72 73 74 61 6e 64 5f 62 69 6e 61 72 79 5f 64 75 64 65 7d</code></p>
+</blockquote>
+<p>Ciphertext consists of 0-9 and a-f, hinting that it&rsquo;s hex. Decoding from hex gives <code>flag{computer:i_only_understand_binary_dude}</code></p>
+<h2 id="smiley-100">Smiley (100)<a href="#smiley-100" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<h2 id="matchmaker-100">Matchmaker (100)<a href="#matchmaker-100" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<blockquote>
+<p>There are a variety of symmetric cryptosystems out there, but most of them involve a logic block called a XOR. The key is &ldquo;hab&rdquo;(UTF8). We&rsquo;re giving you the key and the algorithm, how hard can it be?</p>
+</blockquote>
+<blockquote>
+<p><code>Dg0DDxoRBz4PHQIKNxIbBQwHHBMbFQ==</code></p>
+</blockquote>
+<p>We are given base64, and the XOR key &ldquo;hab&rdquo;. Using cipherchef we can decrypt and XOR to get the flag.</p>
+
+  <img src="./img/matchmaker1.png"  class="center"  style="border-radius: 5px; width: 50%;"  />
+
+
+<h1 id="2-web">2. Web<a href="#2-web" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
+<h2 id="detective-75">Detective (75)<a href="#detective-75" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<blockquote>
+<p>Visit the webapp and take a look around, detective: <a href="https://erpvlnzxrh.qualifier.hackabit.com/detective">https://erpvlnzxrh.qualifier.hackabit.com/detective</a></p>
+</blockquote>
+<h1 id="3-programming">3. Programming<a href="#3-programming" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
+<h1 id="4-infrastructure">4. Infrastructure<a href="#4-infrastructure" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
+<h1 id="5-networking">5. Networking<a href="#5-networking" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
+<h1 id="6-osint">6. OSINT<a href="#6-osint" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
+
+      </div></div>
+
+  
+    
+<div class="pagination">
+    <div class="pagination__title">
+        <span class="pagination__title-h">Read other posts</span>
+        <hr />
+    </div>
+    <div class="pagination__buttons">
+        
+        <span class="button previous">
+            <a href="https://TheSavageTeddy.github.io/posts/crypto-iris2023/">
+                <span class="button__icon">←</span>
+                <span class="button__text">Crypto Writeups - IrisCTF 2023</span>
+            </a>
+        </span>
+        
+        
+        <span class="button next">
+            <a href="https://TheSavageTeddy.github.io/posts/ret2libm-iris2023/">
+                <span class="button__text">ret2libm - IrisCTF 2023</span>
+                <span class="button__icon">→</span>
+            </a>
+        </span>
+        
+    </div>
+</div>
+
+  
+
+  
+    
+
+  
+</article>
+
+  </div>
+
+  
+    <footer class="footer">
+  <div class="footer__inner">
+    
+      <div class="copyright copyright--user">
+        <span>uwuTeddy</span>
+    
+      <span>:: <a href="https://github.com/panr/hugo-theme-terminal" target="_blank">Theme</a> made by <a href="https://github.com/panr" target="_blank">panr</a></span>
+      </div>
+  </div>
+</footer>
+
+
+
+
+
+
+<script type="text/javascript" src="/bundle.min.js"></script>
+
+
+
+
+
+  
+</div>
+
+</body>
+</html>

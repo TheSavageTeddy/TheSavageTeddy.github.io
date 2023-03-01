@@ -542,6 +542,74 @@ print(dat)
     </item>
     
     <item>
+      <title>Full Writeups - Hack A Bit 0x01</title>
+      <link>https://TheSavageTeddy.github.io/posts/writeups-hackabit2023/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://TheSavageTeddy.github.io/posts/writeups-hackabit2023/</guid>
+      <description>Overview Hack A Bit is a CTF targeting highschool students aged 13-18. This post will include writeups for all challenges (except OSINT) for Round 2, which was the CTF jeopardy round.
+Challenge Categories 0. Welcome Wakeup (5) Throughout the course you will prove your completion of tasks and understanding by capturing flags. CTF stands for capture the flag. Flags will generally be formatted as flag{x} where the x is the specific content that will change from challenge to challenge.</description>
+      <content>&lt;h1 id=&#34;overview&#34;&gt;Overview&lt;/h1&gt;
+&lt;p&gt;Hack A Bit is a CTF targeting highschool students aged 13-18. This post will include writeups for all challenges (except OSINT) for Round 2, which was the CTF jeopardy round.&lt;/p&gt;
+&lt;h1 id=&#34;challenge-categories&#34;&gt;Challenge Categories&lt;/h1&gt;
+&lt;h1 id=&#34;0-welcome&#34;&gt;0. Welcome&lt;/h1&gt;
+&lt;h2 id=&#34;wakeup-5&#34;&gt;Wakeup (5)&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Throughout the course you will prove your completion of tasks and understanding by capturing flags. CTF stands for capture the flag. Flags will generally be formatted as flag{x} where the x is the specific content that will change from challenge to challenge. If this isn&amp;rsquo;t the case, the challenge will specifically state that it uses a non-standard flag format.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Submit the flag flag{hello_world} to complete this challenge.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Sanity check challenge, flag was in the description.
+&lt;code&gt;flag{hello_world}&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id=&#34;weirdo-5&#34;&gt;Weirdo (5)&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;This is what a challenge with a non-standard flag will look like. These types of flags are generally used for things like IP addresses or other data that would be a &amp;ldquo;short answer&amp;rdquo; style. The challenge will always be marked with a &amp;ldquo;NON-STANDARD FLAG FORMAT&amp;rdquo; identifier if it is this way.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Submit the flag 192.168.1.1/24 to get credit for this challenge.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Same thing, flag is &lt;code&gt;192.168.1.1/24&lt;/code&gt;. This just tells us some challenges are not in the normal &lt;code&gt;flag{}&lt;/code&gt; format.&lt;/p&gt;
+&lt;h1 id=&#34;1-cryptography&#34;&gt;1. Cryptography&lt;/h1&gt;
+&lt;h2 id=&#34;homerun-75&#34;&gt;Homerun (75)&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Check out 0xFF in the ASCII lookup table&amp;hellip;&lt;br&gt;
+Oh dang, it isn&amp;rsquo;t there. Well I still need to send you that data, not the text but the actual value 0xFF in computer memory.
+Here&amp;rsquo;s an example, decode this, all the data you need is right here: &lt;code&gt;MZWGCZ33I5XXI5DBJVQWWZKTOVZGKWLPOVEGKYLSIFRG65LUKRUGC5CMN5XGOQTBNRWH2===&lt;/code&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;We get a ciphertext &lt;code&gt;MZWGCZ33I5XXI5DBJVQWWZKTOVZGKWLPOVEGKYLSIFRG65LUKRUGC5CMN5XGOQTBNRWH2===&lt;/code&gt;. This is clearly base32 as we see it consists of only uppercase letters and numbers, ending with &lt;code&gt;=&lt;/code&gt;. Decoding in CyberChef or any other tool gives &lt;code&gt;flag{GottaMakeSureYouHearAboutThatLongBall}&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id=&#34;mason-75&#34;&gt;Mason (75)&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;The numbers mason, what do they mean?
+&lt;code&gt;66 6c 61 67 7b 63 6f 6d 70 75 74 65 72 3a 69 5f 6f 6e 6c 79 5f 75 6e 64 65 72 73 74 61 6e 64 5f 62 69 6e 61 72 79 5f 64 75 64 65 7d&lt;/code&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Ciphertext consists of 0-9 and a-f, hinting that it&amp;rsquo;s hex. Decoding from hex gives &lt;code&gt;flag{computer:i_only_understand_binary_dude}&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id=&#34;smiley-100&#34;&gt;Smiley (100)&lt;/h2&gt;
+&lt;h2 id=&#34;matchmaker-100&#34;&gt;Matchmaker (100)&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;There are a variety of symmetric cryptosystems out there, but most of them involve a logic block called a XOR. The key is &amp;ldquo;hab&amp;rdquo;(UTF8). We&amp;rsquo;re giving you the key and the algorithm, how hard can it be?&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;code&gt;Dg0DDxoRBz4PHQIKNxIbBQwHHBMbFQ==&lt;/code&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;We are given base64, and the XOR key &amp;ldquo;hab&amp;rdquo;. Using cipherchef we can decrypt and XOR to get the flag.&lt;/p&gt;
+
+  &lt;img src=&#34;./img/matchmaker1.png&#34;  class=&#34;center&#34;  style=&#34;border-radius: 5px; width: 50%;&#34;  /&gt;
+
+
+&lt;h1 id=&#34;2-web&#34;&gt;2. Web&lt;/h1&gt;
+&lt;h2 id=&#34;detective-75&#34;&gt;Detective (75)&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Visit the webapp and take a look around, detective: &lt;a href=&#34;https://erpvlnzxrh.qualifier.hackabit.com/detective&#34;&gt;https://erpvlnzxrh.qualifier.hackabit.com/detective&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&#34;3-programming&#34;&gt;3. Programming&lt;/h1&gt;
+&lt;h1 id=&#34;4-infrastructure&#34;&gt;4. Infrastructure&lt;/h1&gt;
+&lt;h1 id=&#34;5-networking&#34;&gt;5. Networking&lt;/h1&gt;
+&lt;h1 id=&#34;6-osint&#34;&gt;6. OSINT&lt;/h1&gt;
+</content>
+    </item>
+    
+    <item>
       <title>ret2libm - IrisCTF 2023</title>
       <link>https://TheSavageTeddy.github.io/posts/ret2libm-iris2023/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
