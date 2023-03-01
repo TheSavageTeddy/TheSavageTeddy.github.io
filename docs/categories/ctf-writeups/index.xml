@@ -732,18 +732,22 @@ PIE:      PIE enabled
       
       <guid>https://TheSavageTeddy.github.io/posts/writeups-hackabit2023/</guid>
       <description>Overview Hack A Bit is a CTF targeting highschool students aged 13-18. This post will include writeups for all challenges (except OSINT) for Round 2, which was the CTF jeopardy round.
-Challenge Categories Welcome Cryptography Web Programming Infrastructure Networking OSINT
-0. Welcome Wakeup (5) Throughout the course you will prove your completion of tasks and understanding by capturing flags. CTF stands for capture the flag. Flags will generally be formatted as flag{x} where the x is the specific content that will change from challenge to challenge.</description>
+Also, please contact me discord TheSavageTeddy#7458 if there are any mistakes/issues with these writeups, or if you want more info on them. Enjoy!
+Challenge Categories Welcome - 4 challenges
+Cryptography - 8 challenges
+Web - 6 challenges
+Programming - 8 challenges</description>
       <content>&lt;h1 id=&#34;overview&#34;&gt;Overview&lt;/h1&gt;
 &lt;p&gt;Hack A Bit is a CTF targeting highschool students aged 13-18. This post will include writeups for all challenges (except OSINT) for Round 2, which was the CTF jeopardy round.&lt;/p&gt;
+&lt;p&gt;Also, please contact me discord &lt;code&gt;TheSavageTeddy#7458&lt;/code&gt; if there are any mistakes/issues with these writeups, or if you want more info on them. Enjoy!&lt;/p&gt;
 &lt;h1 id=&#34;challenge-categories&#34;&gt;Challenge Categories&lt;/h1&gt;
-&lt;p&gt;&lt;a href=&#34;#0-welcome&#34;&gt;&lt;code&gt;Welcome&lt;/code&gt;&lt;/a&gt;
-&lt;a href=&#34;#1-cryptography&#34;&gt;&lt;code&gt;Cryptography&lt;/code&gt;&lt;/a&gt;
-&lt;a href=&#34;#2-web&#34;&gt;&lt;code&gt;Web&lt;/code&gt;&lt;/a&gt;
-&lt;a href=&#34;#3-programming&#34;&gt;&lt;code&gt;Programming&lt;/code&gt;&lt;/a&gt;
-&lt;a href=&#34;#4-infrastructure&#34;&gt;&lt;code&gt;Infrastructure&lt;/code&gt;&lt;/a&gt;
-&lt;a href=&#34;#5-networking&#34;&gt;&lt;code&gt;Networking&lt;/code&gt;&lt;/a&gt;
-&lt;a href=&#34;#6-osint&#34;&gt;&lt;code&gt;OSINT&lt;/code&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;#0-welcome&#34;&gt;&lt;code&gt;Welcome&lt;/code&gt;&lt;/a&gt; - 4 challenges&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;#1-cryptography&#34;&gt;&lt;code&gt;Cryptography&lt;/code&gt;&lt;/a&gt; - 8 challenges&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;#2-web&#34;&gt;&lt;code&gt;Web&lt;/code&gt;&lt;/a&gt; - 6 challenges&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;#3-programming&#34;&gt;&lt;code&gt;Programming&lt;/code&gt;&lt;/a&gt; - 8 challenges&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;#4-infrastructure&#34;&gt;&lt;code&gt;Infrastructure&lt;/code&gt;&lt;/a&gt; - 8 challenges&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;#5-networking&#34;&gt;&lt;code&gt;Networking&lt;/code&gt;&lt;/a&gt; - 6 challenges&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;#6-osint&#34;&gt;&lt;code&gt;OSINT&lt;/code&gt;&lt;/a&gt; - 8 challenges&lt;/p&gt;
 &lt;h1 id=&#34;0-welcome&#34;&gt;0. Welcome&lt;/h1&gt;
 &lt;h2 id=&#34;wakeup-5&#34;&gt;Wakeup (5)&lt;/h2&gt;
 &lt;blockquote&gt;
