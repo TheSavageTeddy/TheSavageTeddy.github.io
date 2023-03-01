@@ -1,5 +1,5 @@
 +++
-weight = -1
+weight = 100
 tags = ["ctf"]
 categories = ["CTF Writeups"]
 date = "2023-3-1"

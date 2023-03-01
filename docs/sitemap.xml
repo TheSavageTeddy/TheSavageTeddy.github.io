@@ -2,6 +2,12 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://TheSavageTeddy.github.io/posts/crypto-iris2023/</loc>
+  </url><url>
+    <loc>https://TheSavageTeddy.github.io/posts/ret2libm-iris2023/</loc>
+  </url><url>
+    <loc>https://TheSavageTeddy.github.io/posts/writeups-hackabit2023/</loc>
+  </url><url>
     <loc>https://TheSavageTeddy.github.io/about/</loc>
     <priority>0</priority>
   </url><url>
@@ -12,23 +18,17 @@
   </url><url>
     <loc>https://TheSavageTeddy.github.io/tags/crypto/</loc>
   </url><url>
-    <loc>https://TheSavageTeddy.github.io/posts/crypto-iris2023/</loc>
-  </url><url>
     <loc>https://TheSavageTeddy.github.io/categories/cryptography/</loc>
   </url><url>
     <loc>https://TheSavageTeddy.github.io/tags/ctf/</loc>
   </url><url>
     <loc>https://TheSavageTeddy.github.io/categories/ctf-writeups/</loc>
   </url><url>
-    <loc>https://TheSavageTeddy.github.io/posts/writeups-hackabit2023/</loc>
-  </url><url>
     <loc>https://TheSavageTeddy.github.io/posts/</loc>
   </url><url>
     <loc>https://TheSavageTeddy.github.io/tags/pwn/</loc>
   </url><url>
     <loc>https://TheSavageTeddy.github.io/categories/pwn/</loc>
-  </url><url>
-    <loc>https://TheSavageTeddy.github.io/posts/ret2libm-iris2023/</loc>
   </url><url>
     <loc>https://TheSavageTeddy.github.io/tags/</loc>
   </url><url>
