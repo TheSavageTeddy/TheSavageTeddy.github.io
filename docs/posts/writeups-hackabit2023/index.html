@@ -218,7 +218,7 @@
 Oh dang, it isn&rsquo;t there. Well I still need to send you that data, not the text but the actual value 0xFF in computer memory.
 Here&rsquo;s an example, decode this, all the data you need is right here: <code>MZWGCZ33I5XXI5DBJVQWWZKTOVZGKWLPOVEGKYLSIFRG65LUKRUGC5CMN5XGOQTBNRWH2===</code></p>
 </blockquote>
-<p>We get a ciphertext <code>MZWGCZ33I5XXI5DBJVQWWZKTOVZGKWLPOVEGKYLSIFRG65LUKRUGC5CMN5XGOQTBNRWH2===</code>. This is clearly base32 as we see it consists of only uppercase letters and numbers, ending with <code>=</code>. Decoding in CyberChef or any other tool gives <code>flag{GottaMakeSureYouHearAboutThatLongBall}</code></p>
+<p>We get a ciphertext <code>MZWGCZ33I5XXI5DBJVQWWZKTOVZGKWLPOVEGKYLSIFRG65LUKRUGC5CMN5XGOQTBNRWH2===</code>. This is clearly base32 as we see it consists of only uppercase letters and numbers, ending with <code>=</code> (padding). Decoding in CyberChef or any other tool gives <code>flag{GottaMakeSureYouHearAboutThatLongBall}</code></p>
 <h2 id="mason-75">Mason (75)<a href="#mason-75" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
 <blockquote>
 <p>The numbers mason, what do they mean?
@@ -270,7 +270,7 @@ Here&rsquo;s an example, decode this, all the data you need is right here: <code
 <blockquote>
 <p><code>Dg0DDxoRBz4PHQIKNxIbBQwHHBMbFQ==</code></p>
 </blockquote>
-<p>We are given base64, and the XOR key &ldquo;hab&rdquo;. Using CyberChef we can decrypt and XOR to get the flag.</p>
+<p>We are given base64, and the XOR key &ldquo;hab&rdquo;. Using CyberChef we can decrypt and XOR to get the flag. <code>flag{so_much_symmetry}</code></p>
 
   <img src="./img/matchmaker1.png"  class="center"  style="border-radius: 5px; width: 100%;"  />
 
@@ -718,10 +718,221 @@ Here&rsquo;s an example, decode this, all the data you need is right here: <code
 
 
 <p>Accounting for endianness by rearranging the string <code>ohw{galf_staht_atttttola}setyb_a</code> gives <code>flag{whoa_thats_alottttta_bytes}</code>. Didn&rsquo;t need to run the binary to get the flag I guess.</p>
-<h1 id="todo">todo<a href="#todo" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
 <h1 id="4-infrastructure">4. Infrastructure<a href="#4-infrastructure" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
+<h2 id="captain-75">Captain (75)<a href="#captain-75" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<blockquote>
+<p>Cloud infrastructure is migrating to containerized technology in many places, lets get started with containers. Run this docker container with the environment variable <code>FLAG_ENABLER</code> set to <code>give_me_the_flag</code>.</p>
+</blockquote>
+<blockquote>
+<p><a href="https://hub.docker.com/r/nathanielsinger/hackabit0x01-infrastructure-container1">https://hub.docker.com/r/nathanielsinger/hackabit0x01-infrastructure-container1</a></p>
+</blockquote>
+<p>Initially I tried to pull the image and analyse it, but gave up quickly and realised doing it properly was easier. Use <code>-e</code> flag to set enviroment variables.</p>
+<p><code>sudo docker run -e FLAG_ENABLER=give_me_the_flag nathanielsinger/hackabit0x01-infrastructure-container1</code></p>
+<p><code>flag{you_aren't_the_captain_just_yet}</code></p>
+
+  <img src="./img/docker1.png"  class="center"  style="border-radius: 5px; width: 100%;"  />
+
+
+<h2 id="seashell">Seashell<a href="#seashell" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<blockquote>
+<p>SSH runs the internet. Connect to <code>utkwrgubhj.qualifier.hackabit.com</code> on port <code>22</code> with user <code>hackerman</code> and the provided <code>private key</code>.</p>
+</blockquote>
+<p>I did this on MacOS, by importing the key, but here is it again on linux (WSL). Private key file is called <code>id_rsa</code>. Note that for the private key file, the permissions cannot be too open, so you have to use <code>chmod 400 id_rsa</code>.</p>
+<p>Connecting with <code>ssh -i id_rsa hackerman@utkwrgubhj.qualifier.hackabit.com</code> we get the flag <code>flag{shesellsseashellsbytheseaaaaaaashore}</code>.</p>
+
+  <img src="./img/ssh.png"  class="center"  style="border-radius: 5px; width: 100%;"  />
+
+
+<h2 id="loading-100">Loading (100)<a href="#loading-100" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<blockquote>
+<p>What&rsquo;s in this ISO thing?
+<a href="https://hub.docker.com/r/nathanielsinger/hackabit0x01-infrastructure-container1">https://hub.docker.com/r/nathanielsinger/hackabit0x01-infrastructure-container1</a></p>
+</blockquote>
+<p>Ok we are given like no info, let&rsquo;s dump the image with <code>docker save -o dockerimage.tar nathanielsinger/hackabit0x01-infrastructure-container1</code></p>
+<p>Then just untar (<code>tar -xvf FILE.tar</code>) the entire thing, and search through folders. Eventually in <code>adb6d</code>&hellip;. I found the flag in <code>root/flag_image.iso</code> after untarring <code>layer.tar</code> in the folder.</p>
+<p><code>flag{consider_it_loaded_hackerman}</code></p>
+
+  <img src="./img/docker2.png"  class="center"  style="border-radius: 5px; width: 100%;"  />
+
+
+<h2 id="location-100">Location (100)<a href="#location-100" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<blockquote>
+<p>Now with the same image, dive on in and find the iso image. What is the absolute path to the iso image stored within the container? Include the filename in the path for your submission.
+<a href="https://hub.docker.com/r/nathanielsinger/hackabit0x01-infrastructure-container1">https://hub.docker.com/r/nathanielsinger/hackabit0x01-infrastructure-container1</a></p>
+</blockquote>
+<p>To be honest I forgot what the flag to this was, but it&rsquo;s linked to the previous challenge, and we just specify the path to the <code>.iso</code> image. So it would&rsquo;ve been something like <code>root/flag_image.iso</code> or <code>/root/flag_image.iso</code></p>
+<h2 id="connector-125">Connector (125)<a href="#connector-125" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<blockquote>
+<p>Connect to the mysql server at dyxvqmjwaj.qualifier.hackabit.com and read out the flag. Here are some user accounts:
+<code>user1:uyqhxgxcxd</code> <code>user2:ehaigdexhh</code> <code>user3:xfgyuvtapt</code> <code>user4:tnvgijqxei</code> <code>user5:hybplwmndy</code></p>
+</blockquote>
+<p>We are given 5 user credentials. On my Mac, using SQL Workbench, I tried each one and checked the tables until I found a flag in one of them (<code>user4</code>).</p>
+
+  <img src="./img/connect.png"  class="center"  style="border-radius: 5px; width: 100%;"  />
+
+
+
+  <img src="./img/sqlflag.png"  class="center"  style="border-radius: 5px; width: 100%;"  />
+
+
+<p>And we get the flag <code>flag{oh_sql_my_sql}</code></p>
+<h2 id="boat-125">Boat (125)<a href="#boat-125" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<blockquote>
+<p>Sometimes we need to run a machine on a specific address or virtualize a network, get this running on: <code>172.22.1.11.</code></p>
+</blockquote>
+<blockquote>
+<p><a href="https://hub.docker.com/r/nathanielsinger/hackabit0x01-infrastructure-container2">https://hub.docker.com/r/nathanielsinger/hackabit0x01-infrastructure-container2</a></p>
+</blockquote>
+<p>Seems easy enough, just run another docker command. But this time, we get an error when we try to pull the image.</p>
+<pre tabindex="0"><code>Error response from daemon: manifest for nathanielsinger/hackabit0x01-infrastructure-container2:latest not found: manifest unknown: manifest unknown
+</code></pre><p>Searching for the error brings us to <a href="https://stackoverflow.com/questions/41810104/docker-manifest-unknown-manifest-unknown">this</a> stack overflow question, and we see we have to specify the version of the image. So we do so and <code>docker pull nathanielsinger/hackabit0x01-infrastructure-container2:v1.0.0</code> works.</p>
+<p>Using yet another <a href="https://stackoverflow.com/questions/27937185/assign-static-ip-to-docker-container">article</a> we use the command <code>docker network create --subnet=172.22.1.11/16 net1</code> to make a network and <code>docker run --net net1 --ip 172.22.1.11 nathanielsinger/hackabit0x01-infrastructure-container2:v1.0.0</code> to run the container with that network and correct ip.</p>
+<p><code>flag{its_just_an_address_man}</code></p>
+
+  <img src="./img/docker3.png"  class="center"  style="border-radius: 5px; width: 100%;"  />
+
+
+<h2 id="inspector-150">Inspector (150)<a href="#inspector-150" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<blockquote>
+<p>Oh look its Bits, something changed though&hellip; see if you can track it down.</p>
+</blockquote>
+<p>We are provided with a zip file containing source code for what seems to be the Bits bot on the CTF&rsquo;s discord server. After looking around, I realise we are given a git folder which contains <code>.git</code> folder, with things like past commits and versions.</p>
+<p>So the flag must be somewhere in the past commits.</p>
+<p>Searching for <code>flag</code> with <code>grep -r &quot;flag&quot; .</code> we find past commits with <code>flag_stuff</code> in their info.</p>
+
+  <img src="./img/git1.png"  class="center"  style="border-radius: 5px; width: 100%;"  />
+
+
+<p>So we use <code>git checkout &lt;flagcommithash&gt;</code> to switch to that commit, and another grep reveals the flag.</p>
+<p><code>flag{don't_try_harder...look_harder}</code></p>
+
+  <img src="./img/git2.png"  class="center"  style="border-radius: 5px; width: 100%;"  />
+
+
+<h2 id="hammer-150">Hammer (150)<a href="#hammer-150" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<blockquote>
+<p>Check out oslyxpzcgs.qualifier.hackabit.com and see if you can find the vuln. No help on this one, nothing crazy though&hellip; enumerate harder :)
+The flag is stored in an environment variable.</p>
+</blockquote>
+<p>Let&rsquo;s nmap the domain to find more info about the service.</p>
+
+  <img src="./img/nmap.png"  class="center"  style="border-radius: 5px; width: 100%;"  />
+
+
+<p>We find an open port <code>21</code> which is TCP, so let&rsquo;s connect using netcat:</p>
+
+  <img src="./img/vsftp.png"  class="center"  style="border-radius: 5px; width: 100%;"  />
+
+
+<p>We see it is running <code>vsFTPd 2.3.4</code>, and a quick google search reveals that it has a <a href="https://en.wikipedia.org/wiki/Vsftpd">smiley face backdoor</a>.</p>
+<p>Now, it is intended that we use Metasploit to automatically solve this, but I did it manually while booting up a linux computer to run Metasploit.</p>
+<p>First I found the source code for the Metasploit module <a href="https://www.exploit-db.com/exploits/49757">here</a>.</p>
+<p>Essentially, if you include <code>:)</code> in your username, a reverse shell will be sent to you at port 6200. So we do so, and connect at port 6200 for a shell.</p>
+
+  <img src="./img/ftp1.png"  class="center"  style="border-radius: 5px; width: 100%;"  />
+
+
+<p>And we check the enviroment variables for the flag. <code>flag{looks_like_you_found_the_right_nail}</code></p>
+
+  <img src="./img/revshell.png"  class="center"  style="border-radius: 5px; width: 100%;"  />
+
+
 <h1 id="5-networking">5. Networking<a href="#5-networking" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
+<h2 id="phonebook-75">Phonebook (75)<a href="#phonebook-75" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<blockquote>
+<p>Check out the DNS records for <code>qualifier.hackabit.com</code>&hellip; there&rsquo;s soemthing interesting there, all kinds of data&hellip;</p>
+</blockquote>
+<p>Okay let&rsquo;s go to <a href="https://dnschecker.org/all-dns-records-of-domain.php">dnschecker.org</a> and check the DNS records.</p>
+
+  <img src="./img/dns.png"  class="center"  style="border-radius: 5px; width: 100%;"  />
+
+
+<p>Wow! A flag! Who would&rsquo;ve guessed&hellip; <code>flag{my_nameserver_is_slimshady}</code></p>
+<h2 id="avenue-75">Avenue (75)<a href="#avenue-75" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<blockquote>
+<p>What is the kernel(OS) was this network capture recorded on?</p>
+</blockquote>
+<p>We are given a <code>pcap</code> capture file. Let&rsquo;s use wireshark to open it.</p>
+
+  <img src="./img/wireshark.png"  class="center"  style="border-radius: 5px; width: 100%;"  />
+
+
+<p>And within one of the tls streams we find <code>X11; Ubuntu; Linux x86_64</code> to be the OS of the capturing device.</p>
+<h2 id="rivers-100">Rivers (100)<a href="#rivers-100" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<blockquote>
+<p>Follow the river and see whats in the stream.</p>
+</blockquote>
+<p>Okay, so this was also just following the TLS stream, hence the name and description. The flag is in the previous image too, <code>flag{rivers_run_streams_flowwww}</code></p>
+<h2 id="fish-100">Fish (100)<a href="#fish-100" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<blockquote>
+<p>What protocol is responsible for the most packets in this capture?</p>
+</blockquote>
+<p>Sorting by protocol, we find the <code>QUIC</code> protocol to be most of the packets.</p>
+<p>But submitting that doesn&rsquo;t give us the flag. A quick google brings us to its full name, <code>Quick UDP Internet Connections</code>, which I don&rsquo;t think was the flag either? It was something like <code>QUIC IETF</code> or so.</p>
+<h2 id="school-125">School (125)<a href="#school-125" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<blockquote>
+<p>This ones gonna take a few steps:</p>
+</blockquote>
+<blockquote>
+<p>Take the input line by line
+Calculate the network and broadcast addresses of the subnet
+For each network address add up all the forth octets
+Your challenge response (flag) is this total.</p>
+</blockquote>
+<p>Okay, I literally chucked this challenge into chat GPT to solve it for me, and it actually worked first try!</p>
+<p>It gave me this code:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-py" data-lang="py"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_network_address</span>(ip, netmask):
+</span></span><span style="display:flex;"><span>    ip_parts <span style="color:#f92672">=</span> [int(x) <span style="color:#66d9ef">for</span> x <span style="color:#f92672">in</span> ip<span style="color:#f92672">.</span>split(<span style="color:#e6db74">&#39;.&#39;</span>)]
+</span></span><span style="display:flex;"><span>    netmask_parts <span style="color:#f92672">=</span> [int(x) <span style="color:#66d9ef">for</span> x <span style="color:#f92672">in</span> netmask<span style="color:#f92672">.</span>split(<span style="color:#e6db74">&#39;.&#39;</span>)]
+</span></span><span style="display:flex;"><span>    network_address <span style="color:#f92672">=</span> [ip_parts[i] <span style="color:#f92672">&amp;</span> netmask_parts[i] <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">4</span>)]
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#39;.&#39;</span><span style="color:#f92672">.</span>join(str(x) <span style="color:#66d9ef">for</span> x <span style="color:#f92672">in</span> network_address)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_broadcast_address</span>(ip, netmask):
+</span></span><span style="display:flex;"><span>    ip_parts <span style="color:#f92672">=</span> [int(x) <span style="color:#66d9ef">for</span> x <span style="color:#f92672">in</span> ip<span style="color:#f92672">.</span>split(<span style="color:#e6db74">&#39;.&#39;</span>)]
+</span></span><span style="display:flex;"><span>    netmask_parts <span style="color:#f92672">=</span> [<span style="color:#ae81ff">255</span> <span style="color:#f92672">-</span> int(x) <span style="color:#66d9ef">for</span> x <span style="color:#f92672">in</span> netmask<span style="color:#f92672">.</span>split(<span style="color:#e6db74">&#39;.&#39;</span>)]
+</span></span><span style="display:flex;"><span>    broadcast_address <span style="color:#f92672">=</span> [ip_parts[i] <span style="color:#f92672">|</span> netmask_parts[i] <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">4</span>)]
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#39;.&#39;</span><span style="color:#f92672">.</span>join(str(x) <span style="color:#66d9ef">for</span> x <span style="color:#f92672">in</span> broadcast_address)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">main</span>():
+</span></span><span style="display:flex;"><span>    filename <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;school.txt&#39;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">with</span> open(filename) <span style="color:#66d9ef">as</span> f:
+</span></span><span style="display:flex;"><span>        lines <span style="color:#f92672">=</span> f<span style="color:#f92672">.</span>readlines()
+</span></span><span style="display:flex;"><span>        sum_of_fourth_octets <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> line <span style="color:#f92672">in</span> lines:
+</span></span><span style="display:flex;"><span>            ip, mask <span style="color:#f92672">=</span> line<span style="color:#f92672">.</span>strip()<span style="color:#f92672">.</span>split(<span style="color:#e6db74">&#39;/&#39;</span>)
+</span></span><span style="display:flex;"><span>            netmask <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;.&#39;</span><span style="color:#f92672">.</span>join([str((<span style="color:#ae81ff">0xffffffff</span> <span style="color:#f92672">&lt;&lt;</span> (<span style="color:#ae81ff">32</span> <span style="color:#f92672">-</span> int(mask))) <span style="color:#f92672">&gt;&gt;</span> i <span style="color:#f92672">&amp;</span> <span style="color:#ae81ff">0xff</span>) <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> [<span style="color:#ae81ff">24</span>, <span style="color:#ae81ff">16</span>, <span style="color:#ae81ff">8</span>, <span style="color:#ae81ff">0</span>]])
+</span></span><span style="display:flex;"><span>            network_address <span style="color:#f92672">=</span> get_network_address(ip, netmask)
+</span></span><span style="display:flex;"><span>            broadcast_address <span style="color:#f92672">=</span> get_broadcast_address(ip, netmask)
+</span></span><span style="display:flex;"><span>            print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;IP: </span><span style="color:#e6db74">{</span>ip<span style="color:#e6db74">}</span><span style="color:#e6db74">/</span><span style="color:#e6db74">{</span>mask<span style="color:#e6db74">}</span><span style="color:#e6db74">&#39;</span>)
+</span></span><span style="display:flex;"><span>            print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;Network address: </span><span style="color:#e6db74">{</span>network_address<span style="color:#e6db74">}</span><span style="color:#e6db74">&#39;</span>)
+</span></span><span style="display:flex;"><span>            print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;Broadcast address: </span><span style="color:#e6db74">{</span>broadcast_address<span style="color:#e6db74">}</span><span style="color:#e6db74">&#39;</span>)
+</span></span><span style="display:flex;"><span>            sum_of_fourth_octets <span style="color:#f92672">+=</span> int(network_address<span style="color:#f92672">.</span>split(<span style="color:#e6db74">&#39;.&#39;</span>)[<span style="color:#ae81ff">3</span>])
+</span></span><span style="display:flex;"><span>        print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;Sum of fourth octets: </span><span style="color:#e6db74">{</span>sum_of_fourth_octets<span style="color:#e6db74">}</span><span style="color:#e6db74">&#39;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;__main__&#39;</span>:
+</span></span><span style="display:flex;"><span>    main()
+</span></span></code></pre></div><p>Which gave us the answer <code>25604</code>. I am very surprised this worked, and saved me from doing some scripting. So I do apologise for not doing this properly and explaining how to calculate it, hopefully that code is enough :)</p>
+<h2 id="picture-125">Picture (125)<a href="#picture-125" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<blockquote>
+<p>There is a service running on woxuazsgxd.qualifier.hackabit.com:54321</p>
+</blockquote>
+<blockquote>
+<p>Connect to it and try to follow the mail&hellip;</p>
+</blockquote>
+<p>Connecting to it with netcat gives us a message along the lines of the flag was sent to you to a random UDP port 5000-5500</p>
+<p>Definetly one of the harder ones by far. My initial thought was to use Wireshark to capture packages, and filter by protocol UDP or port number, but neither of that worked for some reason. Trying another packet capture method with <code>sudo tcpdump -i ens3 udp -vvv -X</code>, we get the flag <code>flag{the_mailman_is_confused_but_you're_not}</code></p>
+<pre tabindex="0"><code>14:49:48.524413 IP (tos 0x40, ttl 55, id 741, offset 0, flags [DF], proto UDP (17), length 72)
+    201.15.132.34.bc.googleusercontent.com.1235 &gt; vps-7443235f.vps.ovh.ca.5236: [udp sum ok] UDP, length 44
+        0x0000:  4540 0048 02e5 4000 3711 fb0b 2284 0fc9  E@.H..@.7...&#34;...
+        0x0010:  8b63 87c4 04d3 1474 0034 d36f 666c 6167  .c.....t.4.oflag
+        0x0020:  7b74 6865 5f6d 6169 6c6d 616e 5f69 735f  {the_mailman_is_
+        0x0030:  636f 6e66 7573 6564 5f62 7574 5f79 6f75  confused_but_you
+        0x0040:  2772 655f 6e6f 747d                      &#39;re_not}
+</code></pre><p>Still not sure why wireshark didn&rsquo;t work, if anyone has an explanation please let me know!</p>
 <h1 id="6-osint">6. OSINT<a href="#6-osint" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
+<p>Okay, I only solved 2 out of 8 OSINT challenges, so I won&rsquo;t be doing any OSINT writeups. I really couldn&rsquo;t be bothered with OSINT after all the other chals, as I don&rsquo;t really enjoy OSINT particularly.</p>
+<p>So that&rsquo;s it for the writeups! Doubt anyone read almost 1000 lines of Markdown, but thanks for reading!</p>
+<p>- TheSavageTeddy / theuwuteddy</p>
 
       </div></div>
 

@@ -71,7 +71,7 @@ Programming - 8 challenges</description>
 Oh dang, it isn&amp;rsquo;t there. Well I still need to send you that data, not the text but the actual value 0xFF in computer memory.
 Here&amp;rsquo;s an example, decode this, all the data you need is right here: &lt;code&gt;MZWGCZ33I5XXI5DBJVQWWZKTOVZGKWLPOVEGKYLSIFRG65LUKRUGC5CMN5XGOQTBNRWH2===&lt;/code&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;We get a ciphertext &lt;code&gt;MZWGCZ33I5XXI5DBJVQWWZKTOVZGKWLPOVEGKYLSIFRG65LUKRUGC5CMN5XGOQTBNRWH2===&lt;/code&gt;. This is clearly base32 as we see it consists of only uppercase letters and numbers, ending with &lt;code&gt;=&lt;/code&gt;. Decoding in CyberChef or any other tool gives &lt;code&gt;flag{GottaMakeSureYouHearAboutThatLongBall}&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;We get a ciphertext &lt;code&gt;MZWGCZ33I5XXI5DBJVQWWZKTOVZGKWLPOVEGKYLSIFRG65LUKRUGC5CMN5XGOQTBNRWH2===&lt;/code&gt;. This is clearly base32 as we see it consists of only uppercase letters and numbers, ending with &lt;code&gt;=&lt;/code&gt; (padding). Decoding in CyberChef or any other tool gives &lt;code&gt;flag{GottaMakeSureYouHearAboutThatLongBall}&lt;/code&gt;&lt;/p&gt;
 &lt;h2 id=&#34;mason-75&#34;&gt;Mason (75)&lt;/h2&gt;
 &lt;blockquote&gt;
 &lt;p&gt;The numbers mason, what do they mean?
@@ -123,7 +123,7 @@ Here&amp;rsquo;s an example, decode this, all the data you need is right here: &
 &lt;blockquote&gt;
 &lt;p&gt;&lt;code&gt;Dg0DDxoRBz4PHQIKNxIbBQwHHBMbFQ==&lt;/code&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;We are given base64, and the XOR key &amp;ldquo;hab&amp;rdquo;. Using CyberChef we can decrypt and XOR to get the flag.&lt;/p&gt;
+&lt;p&gt;We are given base64, and the XOR key &amp;ldquo;hab&amp;rdquo;. Using CyberChef we can decrypt and XOR to get the flag. &lt;code&gt;flag{so_much_symmetry}&lt;/code&gt;&lt;/p&gt;
 
   &lt;img src=&#34;./img/matchmaker1.png&#34;  class=&#34;center&#34;  style=&#34;border-radius: 5px; width: 100%;&#34;  /&gt;
 
@@ -571,10 +571,221 @@ Here&amp;rsquo;s an example, decode this, all the data you need is right here: &
 
 
 &lt;p&gt;Accounting for endianness by rearranging the string &lt;code&gt;ohw{galf_staht_atttttola}setyb_a&lt;/code&gt; gives &lt;code&gt;flag{whoa_thats_alottttta_bytes}&lt;/code&gt;. Didn&amp;rsquo;t need to run the binary to get the flag I guess.&lt;/p&gt;
-&lt;h1 id=&#34;todo&#34;&gt;todo&lt;/h1&gt;
 &lt;h1 id=&#34;4-infrastructure&#34;&gt;4. Infrastructure&lt;/h1&gt;
+&lt;h2 id=&#34;captain-75&#34;&gt;Captain (75)&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Cloud infrastructure is migrating to containerized technology in many places, lets get started with containers. Run this docker container with the environment variable &lt;code&gt;FLAG_ENABLER&lt;/code&gt; set to &lt;code&gt;give_me_the_flag&lt;/code&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&#34;https://hub.docker.com/r/nathanielsinger/hackabit0x01-infrastructure-container1&#34;&gt;https://hub.docker.com/r/nathanielsinger/hackabit0x01-infrastructure-container1&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Initially I tried to pull the image and analyse it, but gave up quickly and realised doing it properly was easier. Use &lt;code&gt;-e&lt;/code&gt; flag to set enviroment variables.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;sudo docker run -e FLAG_ENABLER=give_me_the_flag nathanielsinger/hackabit0x01-infrastructure-container1&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;flag{you_aren&#39;t_the_captain_just_yet}&lt;/code&gt;&lt;/p&gt;
+
+  &lt;img src=&#34;./img/docker1.png&#34;  class=&#34;center&#34;  style=&#34;border-radius: 5px; width: 100%;&#34;  /&gt;
+
+
+&lt;h2 id=&#34;seashell&#34;&gt;Seashell&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;SSH runs the internet. Connect to &lt;code&gt;utkwrgubhj.qualifier.hackabit.com&lt;/code&gt; on port &lt;code&gt;22&lt;/code&gt; with user &lt;code&gt;hackerman&lt;/code&gt; and the provided &lt;code&gt;private key&lt;/code&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;I did this on MacOS, by importing the key, but here is it again on linux (WSL). Private key file is called &lt;code&gt;id_rsa&lt;/code&gt;. Note that for the private key file, the permissions cannot be too open, so you have to use &lt;code&gt;chmod 400 id_rsa&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Connecting with &lt;code&gt;ssh -i id_rsa hackerman@utkwrgubhj.qualifier.hackabit.com&lt;/code&gt; we get the flag &lt;code&gt;flag{shesellsseashellsbytheseaaaaaaashore}&lt;/code&gt;.&lt;/p&gt;
+
+  &lt;img src=&#34;./img/ssh.png&#34;  class=&#34;center&#34;  style=&#34;border-radius: 5px; width: 100%;&#34;  /&gt;
+
+
+&lt;h2 id=&#34;loading-100&#34;&gt;Loading (100)&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;What&amp;rsquo;s in this ISO thing?
+&lt;a href=&#34;https://hub.docker.com/r/nathanielsinger/hackabit0x01-infrastructure-container1&#34;&gt;https://hub.docker.com/r/nathanielsinger/hackabit0x01-infrastructure-container1&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Ok we are given like no info, let&amp;rsquo;s dump the image with &lt;code&gt;docker save -o dockerimage.tar nathanielsinger/hackabit0x01-infrastructure-container1&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Then just untar (&lt;code&gt;tar -xvf FILE.tar&lt;/code&gt;) the entire thing, and search through folders. Eventually in &lt;code&gt;adb6d&lt;/code&gt;&amp;hellip;. I found the flag in &lt;code&gt;root/flag_image.iso&lt;/code&gt; after untarring &lt;code&gt;layer.tar&lt;/code&gt; in the folder.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;flag{consider_it_loaded_hackerman}&lt;/code&gt;&lt;/p&gt;
+
+  &lt;img src=&#34;./img/docker2.png&#34;  class=&#34;center&#34;  style=&#34;border-radius: 5px; width: 100%;&#34;  /&gt;
+
+
+&lt;h2 id=&#34;location-100&#34;&gt;Location (100)&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Now with the same image, dive on in and find the iso image. What is the absolute path to the iso image stored within the container? Include the filename in the path for your submission.
+&lt;a href=&#34;https://hub.docker.com/r/nathanielsinger/hackabit0x01-infrastructure-container1&#34;&gt;https://hub.docker.com/r/nathanielsinger/hackabit0x01-infrastructure-container1&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;To be honest I forgot what the flag to this was, but it&amp;rsquo;s linked to the previous challenge, and we just specify the path to the &lt;code&gt;.iso&lt;/code&gt; image. So it would&amp;rsquo;ve been something like &lt;code&gt;root/flag_image.iso&lt;/code&gt; or &lt;code&gt;/root/flag_image.iso&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id=&#34;connector-125&#34;&gt;Connector (125)&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Connect to the mysql server at dyxvqmjwaj.qualifier.hackabit.com and read out the flag. Here are some user accounts:
+&lt;code&gt;user1:uyqhxgxcxd&lt;/code&gt; &lt;code&gt;user2:ehaigdexhh&lt;/code&gt; &lt;code&gt;user3:xfgyuvtapt&lt;/code&gt; &lt;code&gt;user4:tnvgijqxei&lt;/code&gt; &lt;code&gt;user5:hybplwmndy&lt;/code&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;We are given 5 user credentials. On my Mac, using SQL Workbench, I tried each one and checked the tables until I found a flag in one of them (&lt;code&gt;user4&lt;/code&gt;).&lt;/p&gt;
+
+  &lt;img src=&#34;./img/connect.png&#34;  class=&#34;center&#34;  style=&#34;border-radius: 5px; width: 100%;&#34;  /&gt;
+
+
+
+  &lt;img src=&#34;./img/sqlflag.png&#34;  class=&#34;center&#34;  style=&#34;border-radius: 5px; width: 100%;&#34;  /&gt;
+
+
+&lt;p&gt;And we get the flag &lt;code&gt;flag{oh_sql_my_sql}&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id=&#34;boat-125&#34;&gt;Boat (125)&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Sometimes we need to run a machine on a specific address or virtualize a network, get this running on: &lt;code&gt;172.22.1.11.&lt;/code&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&#34;https://hub.docker.com/r/nathanielsinger/hackabit0x01-infrastructure-container2&#34;&gt;https://hub.docker.com/r/nathanielsinger/hackabit0x01-infrastructure-container2&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Seems easy enough, just run another docker command. But this time, we get an error when we try to pull the image.&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;Error response from daemon: manifest for nathanielsinger/hackabit0x01-infrastructure-container2:latest not found: manifest unknown: manifest unknown
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Searching for the error brings us to &lt;a href=&#34;https://stackoverflow.com/questions/41810104/docker-manifest-unknown-manifest-unknown&#34;&gt;this&lt;/a&gt; stack overflow question, and we see we have to specify the version of the image. So we do so and &lt;code&gt;docker pull nathanielsinger/hackabit0x01-infrastructure-container2:v1.0.0&lt;/code&gt; works.&lt;/p&gt;
+&lt;p&gt;Using yet another &lt;a href=&#34;https://stackoverflow.com/questions/27937185/assign-static-ip-to-docker-container&#34;&gt;article&lt;/a&gt; we use the command &lt;code&gt;docker network create --subnet=172.22.1.11/16 net1&lt;/code&gt; to make a network and &lt;code&gt;docker run --net net1 --ip 172.22.1.11 nathanielsinger/hackabit0x01-infrastructure-container2:v1.0.0&lt;/code&gt; to run the container with that network and correct ip.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;flag{its_just_an_address_man}&lt;/code&gt;&lt;/p&gt;
+
+  &lt;img src=&#34;./img/docker3.png&#34;  class=&#34;center&#34;  style=&#34;border-radius: 5px; width: 100%;&#34;  /&gt;
+
+
+&lt;h2 id=&#34;inspector-150&#34;&gt;Inspector (150)&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Oh look its Bits, something changed though&amp;hellip; see if you can track it down.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;We are provided with a zip file containing source code for what seems to be the Bits bot on the CTF&amp;rsquo;s discord server. After looking around, I realise we are given a git folder which contains &lt;code&gt;.git&lt;/code&gt; folder, with things like past commits and versions.&lt;/p&gt;
+&lt;p&gt;So the flag must be somewhere in the past commits.&lt;/p&gt;
+&lt;p&gt;Searching for &lt;code&gt;flag&lt;/code&gt; with &lt;code&gt;grep -r &amp;quot;flag&amp;quot; .&lt;/code&gt; we find past commits with &lt;code&gt;flag_stuff&lt;/code&gt; in their info.&lt;/p&gt;
+
+  &lt;img src=&#34;./img/git1.png&#34;  class=&#34;center&#34;  style=&#34;border-radius: 5px; width: 100%;&#34;  /&gt;
+
+
+&lt;p&gt;So we use &lt;code&gt;git checkout &amp;lt;flagcommithash&amp;gt;&lt;/code&gt; to switch to that commit, and another grep reveals the flag.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;flag{don&#39;t_try_harder...look_harder}&lt;/code&gt;&lt;/p&gt;
+
+  &lt;img src=&#34;./img/git2.png&#34;  class=&#34;center&#34;  style=&#34;border-radius: 5px; width: 100%;&#34;  /&gt;
+
+
+&lt;h2 id=&#34;hammer-150&#34;&gt;Hammer (150)&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Check out oslyxpzcgs.qualifier.hackabit.com and see if you can find the vuln. No help on this one, nothing crazy though&amp;hellip; enumerate harder :)
+The flag is stored in an environment variable.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Let&amp;rsquo;s nmap the domain to find more info about the service.&lt;/p&gt;
+
+  &lt;img src=&#34;./img/nmap.png&#34;  class=&#34;center&#34;  style=&#34;border-radius: 5px; width: 100%;&#34;  /&gt;
+
+
+&lt;p&gt;We find an open port &lt;code&gt;21&lt;/code&gt; which is TCP, so let&amp;rsquo;s connect using netcat:&lt;/p&gt;
+
+  &lt;img src=&#34;./img/vsftp.png&#34;  class=&#34;center&#34;  style=&#34;border-radius: 5px; width: 100%;&#34;  /&gt;
+
+
+&lt;p&gt;We see it is running &lt;code&gt;vsFTPd 2.3.4&lt;/code&gt;, and a quick google search reveals that it has a &lt;a href=&#34;https://en.wikipedia.org/wiki/Vsftpd&#34;&gt;smiley face backdoor&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Now, it is intended that we use Metasploit to automatically solve this, but I did it manually while booting up a linux computer to run Metasploit.&lt;/p&gt;
+&lt;p&gt;First I found the source code for the Metasploit module &lt;a href=&#34;https://www.exploit-db.com/exploits/49757&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Essentially, if you include &lt;code&gt;:)&lt;/code&gt; in your username, a reverse shell will be sent to you at port 6200. So we do so, and connect at port 6200 for a shell.&lt;/p&gt;
+
+  &lt;img src=&#34;./img/ftp1.png&#34;  class=&#34;center&#34;  style=&#34;border-radius: 5px; width: 100%;&#34;  /&gt;
+
+
+&lt;p&gt;And we check the enviroment variables for the flag. &lt;code&gt;flag{looks_like_you_found_the_right_nail}&lt;/code&gt;&lt;/p&gt;
+
+  &lt;img src=&#34;./img/revshell.png&#34;  class=&#34;center&#34;  style=&#34;border-radius: 5px; width: 100%;&#34;  /&gt;
+
+
 &lt;h1 id=&#34;5-networking&#34;&gt;5. Networking&lt;/h1&gt;
+&lt;h2 id=&#34;phonebook-75&#34;&gt;Phonebook (75)&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Check out the DNS records for &lt;code&gt;qualifier.hackabit.com&lt;/code&gt;&amp;hellip; there&amp;rsquo;s soemthing interesting there, all kinds of data&amp;hellip;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Okay let&amp;rsquo;s go to &lt;a href=&#34;https://dnschecker.org/all-dns-records-of-domain.php&#34;&gt;dnschecker.org&lt;/a&gt; and check the DNS records.&lt;/p&gt;
+
+  &lt;img src=&#34;./img/dns.png&#34;  class=&#34;center&#34;  style=&#34;border-radius: 5px; width: 100%;&#34;  /&gt;
+
+
+&lt;p&gt;Wow! A flag! Who would&amp;rsquo;ve guessed&amp;hellip; &lt;code&gt;flag{my_nameserver_is_slimshady}&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id=&#34;avenue-75&#34;&gt;Avenue (75)&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;What is the kernel(OS) was this network capture recorded on?&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;We are given a &lt;code&gt;pcap&lt;/code&gt; capture file. Let&amp;rsquo;s use wireshark to open it.&lt;/p&gt;
+
+  &lt;img src=&#34;./img/wireshark.png&#34;  class=&#34;center&#34;  style=&#34;border-radius: 5px; width: 100%;&#34;  /&gt;
+
+
+&lt;p&gt;And within one of the tls streams we find &lt;code&gt;X11; Ubuntu; Linux x86_64&lt;/code&gt; to be the OS of the capturing device.&lt;/p&gt;
+&lt;h2 id=&#34;rivers-100&#34;&gt;Rivers (100)&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Follow the river and see whats in the stream.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Okay, so this was also just following the TLS stream, hence the name and description. The flag is in the previous image too, &lt;code&gt;flag{rivers_run_streams_flowwww}&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id=&#34;fish-100&#34;&gt;Fish (100)&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;What protocol is responsible for the most packets in this capture?&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Sorting by protocol, we find the &lt;code&gt;QUIC&lt;/code&gt; protocol to be most of the packets.&lt;/p&gt;
+&lt;p&gt;But submitting that doesn&amp;rsquo;t give us the flag. A quick google brings us to its full name, &lt;code&gt;Quick UDP Internet Connections&lt;/code&gt;, which I don&amp;rsquo;t think was the flag either? It was something like &lt;code&gt;QUIC IETF&lt;/code&gt; or so.&lt;/p&gt;
+&lt;h2 id=&#34;school-125&#34;&gt;School (125)&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;This ones gonna take a few steps:&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Take the input line by line
+Calculate the network and broadcast addresses of the subnet
+For each network address add up all the forth octets
+Your challenge response (flag) is this total.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Okay, I literally chucked this challenge into chat GPT to solve it for me, and it actually worked first try!&lt;/p&gt;
+&lt;p&gt;It gave me this code:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-py&#34; data-lang=&#34;py&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;get_network_address&lt;/span&gt;(ip, netmask):
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    ip_parts &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; [int(x) &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; x &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; ip&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;split(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;.&amp;#39;&lt;/span&gt;)]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    netmask_parts &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; [int(x) &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; x &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; netmask&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;split(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;.&amp;#39;&lt;/span&gt;)]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    network_address &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; [ip_parts[i] &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&lt;/span&gt; netmask_parts[i] &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; i &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; range(&lt;span style=&#34;color:#ae81ff&#34;&gt;4&lt;/span&gt;)]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;.&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;join(str(x) &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; x &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; network_address)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;get_broadcast_address&lt;/span&gt;(ip, netmask):
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    ip_parts &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; [int(x) &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; x &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; ip&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;split(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;.&amp;#39;&lt;/span&gt;)]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    netmask_parts &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; [&lt;span style=&#34;color:#ae81ff&#34;&gt;255&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt; int(x) &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; x &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; netmask&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;split(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;.&amp;#39;&lt;/span&gt;)]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    broadcast_address &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; [ip_parts[i] &lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt; netmask_parts[i] &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; i &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; range(&lt;span style=&#34;color:#ae81ff&#34;&gt;4&lt;/span&gt;)]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;.&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;join(str(x) &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; x &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; broadcast_address)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;main&lt;/span&gt;():
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    filename &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;school.txt&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;with&lt;/span&gt; open(filename) &lt;span style=&#34;color:#66d9ef&#34;&gt;as&lt;/span&gt; f:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        lines &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; f&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;readlines()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        sum_of_fourth_octets &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; line &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; lines:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            ip, mask &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; line&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;strip()&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;split(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;/&amp;#39;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            netmask &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;.&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;join([str((&lt;span style=&#34;color:#ae81ff&#34;&gt;0xffffffff&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt; (&lt;span style=&#34;color:#ae81ff&#34;&gt;32&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt; int(mask))) &lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&amp;gt;&lt;/span&gt; i &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0xff&lt;/span&gt;) &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; i &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; [&lt;span style=&#34;color:#ae81ff&#34;&gt;24&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;16&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;8&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;]])
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            network_address &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; get_network_address(ip, netmask)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            broadcast_address &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; get_broadcast_address(ip, netmask)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            print(&lt;span style=&#34;color:#e6db74&#34;&gt;f&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;IP: &lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;{&lt;/span&gt;ip&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;{&lt;/span&gt;mask&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            print(&lt;span style=&#34;color:#e6db74&#34;&gt;f&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Network address: &lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;{&lt;/span&gt;network_address&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            print(&lt;span style=&#34;color:#e6db74&#34;&gt;f&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Broadcast address: &lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;{&lt;/span&gt;broadcast_address&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            sum_of_fourth_octets &lt;span style=&#34;color:#f92672&#34;&gt;+=&lt;/span&gt; int(network_address&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;split(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;.&amp;#39;&lt;/span&gt;)[&lt;span style=&#34;color:#ae81ff&#34;&gt;3&lt;/span&gt;])
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        print(&lt;span style=&#34;color:#e6db74&#34;&gt;f&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Sum of fourth octets: &lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;{&lt;/span&gt;sum_of_fourth_octets&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; __name__ &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;__main__&amp;#39;&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    main()
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Which gave us the answer &lt;code&gt;25604&lt;/code&gt;. I am very surprised this worked, and saved me from doing some scripting. So I do apologise for not doing this properly and explaining how to calculate it, hopefully that code is enough :)&lt;/p&gt;
+&lt;h2 id=&#34;picture-125&#34;&gt;Picture (125)&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;There is a service running on woxuazsgxd.qualifier.hackabit.com:54321&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Connect to it and try to follow the mail&amp;hellip;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Connecting to it with netcat gives us a message along the lines of the flag was sent to you to a random UDP port 5000-5500&lt;/p&gt;
+&lt;p&gt;Definetly one of the harder ones by far. My initial thought was to use Wireshark to capture packages, and filter by protocol UDP or port number, but neither of that worked for some reason. Trying another packet capture method with &lt;code&gt;sudo tcpdump -i ens3 udp -vvv -X&lt;/code&gt;, we get the flag &lt;code&gt;flag{the_mailman_is_confused_but_you&#39;re_not}&lt;/code&gt;&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;14:49:48.524413 IP (tos 0x40, ttl 55, id 741, offset 0, flags [DF], proto UDP (17), length 72)
+    201.15.132.34.bc.googleusercontent.com.1235 &amp;gt; vps-7443235f.vps.ovh.ca.5236: [udp sum ok] UDP, length 44
+        0x0000:  4540 0048 02e5 4000 3711 fb0b 2284 0fc9  E@.H..@.7...&amp;#34;...
+        0x0010:  8b63 87c4 04d3 1474 0034 d36f 666c 6167  .c.....t.4.oflag
+        0x0020:  7b74 6865 5f6d 6169 6c6d 616e 5f69 735f  {the_mailman_is_
+        0x0030:  636f 6e66 7573 6564 5f62 7574 5f79 6f75  confused_but_you
+        0x0040:  2772 655f 6e6f 747d                      &amp;#39;re_not}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Still not sure why wireshark didn&amp;rsquo;t work, if anyone has an explanation please let me know!&lt;/p&gt;
 &lt;h1 id=&#34;6-osint&#34;&gt;6. OSINT&lt;/h1&gt;
+&lt;p&gt;Okay, I only solved 2 out of 8 OSINT challenges, so I won&amp;rsquo;t be doing any OSINT writeups. I really couldn&amp;rsquo;t be bothered with OSINT after all the other chals, as I don&amp;rsquo;t really enjoy OSINT particularly.&lt;/p&gt;
+&lt;p&gt;So that&amp;rsquo;s it for the writeups! Doubt anyone read almost 1000 lines of Markdown, but thanks for reading!&lt;/p&gt;
+&lt;p&gt;- TheSavageTeddy / theuwuteddy&lt;/p&gt;
 </content>
     </item>
     
