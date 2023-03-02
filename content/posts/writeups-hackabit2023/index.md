@@ -53,7 +53,7 @@ Going to [https://www.hackabit.com/competition](https://www.hackabit.com/competi
 > Oh dang, it isn't there. Well I still need to send you that data, not the text but the actual value 0xFF in computer memory.
 > Here's an example, decode this, all the data you need is right here: `MZWGCZ33I5XXI5DBJVQWWZKTOVZGKWLPOVEGKYLSIFRG65LUKRUGC5CMN5XGOQTBNRWH2===`
 
-We get a ciphertext `MZWGCZ33I5XXI5DBJVQWWZKTOVZGKWLPOVEGKYLSIFRG65LUKRUGC5CMN5XGOQTBNRWH2===`. This is clearly base32 as we see it consists of only uppercase letters and numbers, ending with `=`. Decoding in CyberChef or any other tool gives `flag{GottaMakeSureYouHearAboutThatLongBall}`
+We get a ciphertext `MZWGCZ33I5XXI5DBJVQWWZKTOVZGKWLPOVEGKYLSIFRG65LUKRUGC5CMN5XGOQTBNRWH2===`. This is clearly base32 as we see it consists of only uppercase letters and numbers, ending with `=` (padding). Decoding in CyberChef or any other tool gives `flag{GottaMakeSureYouHearAboutThatLongBall}`
 
 ## Mason (75)
 
@@ -113,7 +113,7 @@ This gives us the flag `flag{smilemoresmilebigger}`, or something like that.
 
 > `Dg0DDxoRBz4PHQIKNxIbBQwHHBMbFQ==`
 
-We are given base64, and the XOR key "hab". Using CyberChef we can decrypt and XOR to get the flag.
+We are given base64, and the XOR key "hab". Using CyberChef we can decrypt and XOR to get the flag. `flag{so_much_symmetry}`
 
 {{< image src="./img/matchmaker1.png" alt="" position="center" style="border-radius: 5px; width: 100%;" >}}
 
@@ -629,9 +629,245 @@ Since `~~s = s`, we can just bitwise NOT it again and get the flag.
 
 Accounting for endianness by rearranging the string `ohw{galf_staht_atttttola}setyb_a` gives `flag{whoa_thats_alottttta_bytes}`. Didn't need to run the binary to get the flag I guess.
 
-
-# todo
-
 # 4. Infrastructure
+
+## Captain (75)
+
+> Cloud infrastructure is migrating to containerized technology in many places, lets get started with containers. Run this docker container with the environment variable `FLAG_ENABLER` set to `give_me_the_flag`.
+
+> https://hub.docker.com/r/nathanielsinger/hackabit0x01-infrastructure-container1
+
+Initially I tried to pull the image and analyse it, but gave up quickly and realised doing it properly was easier. Use `-e` flag to set enviroment variables.
+
+`sudo docker run -e FLAG_ENABLER=give_me_the_flag nathanielsinger/hackabit0x01-infrastructure-container1`
+
+`flag{you_aren't_the_captain_just_yet}`
+
+{{< image src="./img/docker1.png" alt="" position="center" style="border-radius: 5px; width: 100%;" >}}
+
+## Seashell
+
+> SSH runs the internet. Connect to `utkwrgubhj.qualifier.hackabit.com` on port `22` with user `hackerman` and the provided `private key`.
+
+I did this on MacOS, by importing the key, but here is it again on linux (WSL). Private key file is called `id_rsa`. Note that for the private key file, the permissions cannot be too open, so you have to use `chmod 400 id_rsa`.
+
+Connecting with `ssh -i id_rsa hackerman@utkwrgubhj.qualifier.hackabit.com` we get the flag `flag{shesellsseashellsbytheseaaaaaaashore}`.
+
+{{< image src="./img/ssh.png" alt="" position="center" style="border-radius: 5px; width: 100%;" >}}
+
+## Loading (100)
+
+> What's in this ISO thing?
+> https://hub.docker.com/r/nathanielsinger/hackabit0x01-infrastructure-container1
+
+Ok we are given like no info, let's dump the image with `docker save -o dockerimage.tar nathanielsinger/hackabit0x01-infrastructure-container1`
+
+Then just untar (`tar -xvf FILE.tar`) the entire thing, and search through folders. Eventually in `adb6d`.... I found the flag in `root/flag_image.iso` after untarring `layer.tar` in the folder.
+
+`flag{consider_it_loaded_hackerman}`
+
+{{< image src="./img/docker2.png" alt="" position="center" style="border-radius: 5px; width: 100%;" >}}
+
+## Location (100)
+
+> Now with the same image, dive on in and find the iso image. What is the absolute path to the iso image stored within the container? Include the filename in the path for your submission.
+> https://hub.docker.com/r/nathanielsinger/hackabit0x01-infrastructure-container1
+
+To be honest I forgot what the flag to this was, but it's linked to the previous challenge, and we just specify the path to the `.iso` image. So it would've been something like `root/flag_image.iso` or `/root/flag_image.iso`
+
+## Connector (125)
+
+> Connect to the mysql server at dyxvqmjwaj.qualifier.hackabit.com and read out the flag. Here are some user accounts:
+> `user1:uyqhxgxcxd` `user2:ehaigdexhh` `user3:xfgyuvtapt` `user4:tnvgijqxei` `user5:hybplwmndy`
+
+We are given 5 user credentials. On my Mac, using SQL Workbench, I tried each one and checked the tables until I found a flag in one of them (`user4`).
+
+{{< image src="./img/connect.png" alt="" position="center" style="border-radius: 5px; width: 100%;" >}}
+
+{{< image src="./img/sqlflag.png" alt="" position="center" style="border-radius: 5px; width: 100%;" >}}
+
+And we get the flag `flag{oh_sql_my_sql}`
+
+## Boat (125)
+
+> Sometimes we need to run a machine on a specific address or virtualize a network, get this running on: `172.22.1.11.`
+
+> https://hub.docker.com/r/nathanielsinger/hackabit0x01-infrastructure-container2
+
+Seems easy enough, just run another docker command. But this time, we get an error when we try to pull the image.
+
+```
+Error response from daemon: manifest for nathanielsinger/hackabit0x01-infrastructure-container2:latest not found: manifest unknown: manifest unknown
+```
+
+Searching for the error brings us to [this](https://stackoverflow.com/questions/41810104/docker-manifest-unknown-manifest-unknown) stack overflow question, and we see we have to specify the version of the image. So we do so and `docker pull nathanielsinger/hackabit0x01-infrastructure-container2:v1.0.0` works.
+
+Using yet another [article](https://stackoverflow.com/questions/27937185/assign-static-ip-to-docker-container) we use the command `docker network create --subnet=172.22.1.11/16 net1` to make a network and `docker run --net net1 --ip 172.22.1.11 nathanielsinger/hackabit0x01-infrastructure-container2:v1.0.0` to run the container with that network and correct ip.
+
+`flag{its_just_an_address_man}`
+
+{{< image src="./img/docker3.png" alt="" position="center" style="border-radius: 5px; width: 100%;" >}}
+
+## Inspector (150)
+
+> Oh look its Bits, something changed though... see if you can track it down.
+
+We are provided with a zip file containing source code for what seems to be the Bits bot on the CTF's discord server. After looking around, I realise we are given a git folder which contains `.git` folder, with things like past commits and versions.
+
+So the flag must be somewhere in the past commits.
+
+Searching for `flag` with `grep -r "flag" .` we find past commits with `flag_stuff` in their info.
+
+{{< image src="./img/git1.png" alt="" position="center" style="border-radius: 5px; width: 100%;" >}}
+
+So we use `git checkout <flagcommithash>` to switch to that commit, and another grep reveals the flag.
+
+`flag{don't_try_harder...look_harder}`
+
+{{< image src="./img/git2.png" alt="" position="center" style="border-radius: 5px; width: 100%;" >}}
+
+## Hammer (150)
+
+> Check out oslyxpzcgs.qualifier.hackabit.com and see if you can find the vuln. No help on this one, nothing crazy though... enumerate harder :)
+> The flag is stored in an environment variable.
+
+Let's nmap the domain to find more info about the service.
+
+{{< image src="./img/nmap.png" alt="" position="center" style="border-radius: 5px; width: 100%;" >}}
+
+We find an open port `21` which is TCP, so let's connect using netcat:
+
+{{< image src="./img/vsftp.png" alt="" position="center" style="border-radius: 5px; width: 100%;" >}}
+
+We see it is running `vsFTPd 2.3.4`, and a quick google search reveals that it has a [smiley face backdoor](https://en.wikipedia.org/wiki/Vsftpd).
+
+Now, it is intended that we use Metasploit to automatically solve this, but I did it manually while booting up a linux computer to run Metasploit.
+
+First I found the source code for the Metasploit module [here](https://www.exploit-db.com/exploits/49757).
+
+Essentially, if you include `:)` in your username, a reverse shell will be sent to you at port 6200. So we do so, and connect at port 6200 for a shell.
+
+{{< image src="./img/ftp1.png" alt="" position="center" style="border-radius: 5px; width: 100%;" >}}
+
+And we check the enviroment variables for the flag. `flag{looks_like_you_found_the_right_nail}`
+
+{{< image src="./img/revshell.png" alt="" position="center" style="border-radius: 5px; width: 100%;" >}}
+
+
+
+
 # 5. Networking
+
+## Phonebook (75)
+
+> Check out the DNS records for `qualifier.hackabit.com`... there's soemthing interesting there, all kinds of data...
+
+Okay let's go to [dnschecker.org](https://dnschecker.org/all-dns-records-of-domain.php) and check the DNS records.
+
+{{< image src="./img/dns.png" alt="" position="center" style="border-radius: 5px; width: 100%;" >}}
+
+Wow! A flag! Who would've guessed... `flag{my_nameserver_is_slimshady}`
+
+## Avenue (75)
+
+> What is the kernel(OS) was this network capture recorded on?
+
+We are given a `pcap` capture file. Let's use wireshark to open it.
+
+{{< image src="./img/wireshark.png" alt="" position="center" style="border-radius: 5px; width: 100%;" >}}
+
+And within one of the tls streams we find `X11; Ubuntu; Linux x86_64` to be the OS of the capturing device.
+
+## Rivers (100)
+
+> Follow the river and see whats in the stream.
+
+Okay, so this was also just following the TLS stream, hence the name and description. The flag is in the previous image too, `flag{rivers_run_streams_flowwww}`
+
+## Fish (100)
+
+> What protocol is responsible for the most packets in this capture?
+
+Sorting by protocol, we find the `QUIC` protocol to be most of the packets.
+
+But submitting that doesn't give us the flag. A quick google brings us to its full name, `Quick UDP Internet Connections`, which I don't think was the flag either? It was something like `QUIC IETF` or so.
+
+## School (125)
+
+> This ones gonna take a few steps:
+
+> Take the input line by line
+> Calculate the network and broadcast addresses of the subnet
+> For each network address add up all the forth octets
+> Your challenge response (flag) is this total.
+
+Okay, I literally chucked this challenge into chat GPT to solve it for me, and it actually worked first try!
+
+It gave me this code:
+
+```py
+def get_network_address(ip, netmask):
+    ip_parts = [int(x) for x in ip.split('.')]
+    netmask_parts = [int(x) for x in netmask.split('.')]
+    network_address = [ip_parts[i] & netmask_parts[i] for i in range(4)]
+    return '.'.join(str(x) for x in network_address)
+
+def get_broadcast_address(ip, netmask):
+    ip_parts = [int(x) for x in ip.split('.')]
+    netmask_parts = [255 - int(x) for x in netmask.split('.')]
+    broadcast_address = [ip_parts[i] | netmask_parts[i] for i in range(4)]
+    return '.'.join(str(x) for x in broadcast_address)
+
+def main():
+    filename = 'school.txt'
+    with open(filename) as f:
+        lines = f.readlines()
+        sum_of_fourth_octets = 0
+        for line in lines:
+            ip, mask = line.strip().split('/')
+            netmask = '.'.join([str((0xffffffff << (32 - int(mask))) >> i & 0xff) for i in [24, 16, 8, 0]])
+            network_address = get_network_address(ip, netmask)
+            broadcast_address = get_broadcast_address(ip, netmask)
+            print(f'IP: {ip}/{mask}')
+            print(f'Network address: {network_address}')
+            print(f'Broadcast address: {broadcast_address}')
+            sum_of_fourth_octets += int(network_address.split('.')[3])
+        print(f'Sum of fourth octets: {sum_of_fourth_octets}')
+
+if __name__ == '__main__':
+    main()
+```
+
+Which gave us the answer `25604`. I am very surprised this worked, and saved me from doing some scripting. So I do apologise for not doing this properly and explaining how to calculate it, hopefully that code is enough :)
+
+## Picture (125)
+
+> There is a service running on woxuazsgxd.qualifier.hackabit.com:54321
+
+> Connect to it and try to follow the mail...
+
+Connecting to it with netcat gives us a message along the lines of the flag was sent to you to a random UDP port 5000-5500
+
+Definetly one of the harder ones by far. My initial thought was to use Wireshark to capture packages, and filter by protocol UDP or port number, but neither of that worked for some reason. Trying another packet capture method with `sudo tcpdump -i ens3 udp -vvv -X`, we get the flag `flag{the_mailman_is_confused_but_you're_not}`
+
+```
+14:49:48.524413 IP (tos 0x40, ttl 55, id 741, offset 0, flags [DF], proto UDP (17), length 72)
+    201.15.132.34.bc.googleusercontent.com.1235 > vps-7443235f.vps.ovh.ca.5236: [udp sum ok] UDP, length 44
+        0x0000:  4540 0048 02e5 4000 3711 fb0b 2284 0fc9  E@.H..@.7..."...
+        0x0010:  8b63 87c4 04d3 1474 0034 d36f 666c 6167  .c.....t.4.oflag
+        0x0020:  7b74 6865 5f6d 6169 6c6d 616e 5f69 735f  {the_mailman_is_
+        0x0030:  636f 6e66 7573 6564 5f62 7574 5f79 6f75  confused_but_you
+        0x0040:  2772 655f 6e6f 747d                      're_not}
+```
+
+Still not sure why wireshark didn't work, if anyone has an explanation please let me know!
+
+
+
 # 6. OSINT
+
+Okay, I only solved 2 out of 8 OSINT challenges, so I won't be doing any OSINT writeups. I really couldn't be bothered with OSINT after all the other chals, as I don't really enjoy OSINT particularly.
+
+So that's it for the writeups! Doubt anyone read almost 1000 lines of Markdown, but thanks for reading!
+
+\- TheSavageTeddy / theuwuteddy
