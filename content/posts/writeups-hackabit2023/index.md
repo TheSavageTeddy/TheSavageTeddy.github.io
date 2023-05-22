@@ -3,8 +3,8 @@ weight = 100
 tags = ["ctf", "beginner"]
 categories = ["CTF Writeups"]
 date = "2023-3-1"
-description = "Full Writeups for a beginner CTF for students." 
-title = "Full Writeups - Hack A Bit 0x01"
+description = "Full writeups of all challenges for the qualifier round of a beginner CTF." 
+title = "Full Writeups - Hack A Bit CTF Qualifiers 0x01"
 +++
 
 # Overview

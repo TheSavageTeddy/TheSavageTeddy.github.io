@@ -1,17 +1,17 @@
 +++
-weight = 100
+weight = 99
 tags = ["ctf", "beginner"]
 categories = ["CTF Writeups"]
 date = "2023-3-1"
-description = "Full writeups for the finals of a beginner CTF" 
-title = "Full Writeups - Hack A Bit Finals 0x01"
+description = "Full writeups for all challenges for the finals of a beginner CTF." 
+title = "Full Writeups - Hack A Bit CTF Finals 0x01"
 +++
 
 # Overview
 
 [Hack a Bit](https://www.hackabit.com/) is a competition for highschoolers with the aim to promote cybersecurity. This round was the finals and I managed to place `2nd` overall!
 
-{{< image src="./img/web1.png" alt="" position="center" style="border-radius: 5px; width: 100%;" >}}
+{{< image src="./img/scoreboard.png" alt="" position="center" style="border-radius: 5px; width: 100%;" >}}
 
 Below are writeups for all the challenges in the finals. If I've missed anything or made a mistake like a typo, please let me know on discord `TheSavageTeddy#7458`. Enjoy!
 
@@ -23,11 +23,11 @@ Below are writeups for all the challenges in the finals. If I've missed anything
 
 [`Triage` (Cryptography/Forensics)](#3-triage) - 4 challenges
 
-[`Range & King of The Hill` (Machines/Attack Defense)](#4-range--zz-king-of-the-hill) - 4 challenges
+[`Range & King of The Hill` (Machines/Attack Defense)](#4-range--zz-king-of-the-hill) - 4 challenges + 8 Attack Defense Flags
 
 # 1. dvGPT
 
-This category contained 4 web challenges, all based on the same website, which was a chatbot similar to chatGPT, which was quite interesting and fun!
+This category contained 4 web challenges, all based on the same website, hosting chatbot similar to chatGPT, which was quite interesting and fun!
 
 ## Leaky (75)
 > Author: Nate Singer (Helix)
@@ -260,7 +260,7 @@ There are several ways to get a shell, [ret2libc](https://ir0nstone.gitbook.io/n
 
 When running `pwn checksec` to check security features on the binary, we find that, it doens't have security features at all...
 
-{{< image src="./img/pwn2.png" alt="" position="center" style="border-radius: 5px; width: 100%;" >}}
+{{< image src="./img/pwn3.png" alt="" position="center" style="border-radius: 5px; width: 100%;" >}}
 
 If you're unfamiliar with pwn (binary exploitation) and can't spot the issue immediantly - don't worry. In trivial CTF challenges, most of these would be turned off anyways to avoid brute forcing canaries without a leak etc, but one that is almost never turned off is this one:
 
@@ -291,7 +291,7 @@ payload = flat(
 )
 
 payload = payload.ljust(offset, b"A")
-payload += flat(buffer_leak+6) # Offset by 6 because "UNLOCK" is 6 characters so our shellcode is later.
+payload += flat(buffer_leak+6) # Offset by 6 because "UNLOCK" is 6 characters so our shellcode is further down
 
 p.sendline(payload)
 p.interactive()
@@ -418,7 +418,7 @@ I chose to use Metasploit for this - never used Metasploit before this CTF, but 
 
 {{< image src="./img/box2.png" alt="" position="center" style="border-radius: 5px; width: 100%;" >}}
 
-After ganing RCE, we find `flag.txt` in our home directory.
+After gaining RCE, we find `flag.txt` in our home directory.
 
 Flag: `flag{remember_this_one?_pays_to_be_a_winner}`
 
@@ -478,7 +478,7 @@ We find the flag in `/root/flag.txt`.
 
 {{< image src="./img/box8.png" alt="" position="center" style="border-radius: 5px; width: 100%;" >}}
 
-Since the box is down as I'm writing this, the image is from someone else running `cat /root/flag.txt` which I had in my terminal history, where I captured their traffic with `tcpdump ` ;)
+Since the box is down as I'm writing this, the image is someone else running `cat /root/flag.txt` which I had in my terminal history, where I captured their traffic with `tcpdump` ;)
 
 Flag: `flag{bestow_the_crown}`
 
@@ -529,3 +529,8 @@ A short while after I got locked out of initial access, the backdoor proved to c
 
 But then suddenly, after the box was reset and many players gained access, while waiting for the flag, the box died. The box continued to stay offline for the remainder of the competitions, with noone recieving the 6th, 7th or 8th flag. Not sure what caused the box to crash, maybe someone ran `shutdown`, we all had root permissions after all.
 
+# Conclusion
+
+You made it to the end! Hope you enjoyed the writeups, if there's anything I missed or suggestions please let me know on discord or elsewhere. This was my first time doing anything related to Attack Defense in a CTF so it was quite interesting, and I look forward to next year's competition!
+
+Oh, and, huge thanks to [`Nate Singer (helix)`](https://www.youtube.com/channel/UC1yduXnGCQ6qJW9O7QMVN7w) for organising the competition as well as address all the issues with challenges!
