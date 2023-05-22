@@ -4,7 +4,8 @@ tags = ["ctf", "pwn"]
 categories = ["CTF Writeups", "pwn"] 
 date = "2023-1-9" 
 description = "A relatively easy `pwn` challenge similar to classic ret2libc" 
-title = """{{< image src="https://irissec.xyz/assets/img/logo_ascii.png" alt="" style="border-radius: 5px; height: 13vh; width: auto; display: inline; vertical-align: middle; " >}}ret2libm - IrisCTF 2023"""
+title_img = """{{< image src="https://irissec.xyz/assets/img/logo_ascii.png" alt="" style="border-radius: 5px; height: 13vh; width: auto; display: inline; vertical-align: middle; " >}}"""
+title = """ret2libm - IrisCTF 2023"""
 cover = "libcbasecalc.png"
 +++
 
