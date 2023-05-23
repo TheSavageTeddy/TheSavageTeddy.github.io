@@ -135,7 +135,7 @@ This category contained 4 challenges based on binaries - reverse engineering and
 
 We get a binary file. We can simply strings grep the file to get the flag - not much reverse engineering involved, I guess. Flag: `flag{baby_steps_gift_just_for_you}`
 
-```sh
+```bash
 uwuteddy@DESKTOP-5BVRVO8:~$ strings corruption |grep -i flag
 flag{baby_steps_gift_just_for_you}
 flag_function
@@ -305,7 +305,7 @@ With this script we now gain a shell and are able to execute commands on the rem
 
 And from there, we find all the flags in `start.sh`
 
-```sh
+```bash
 export HAB_CONTROLLER=flag{almost_totally_full_control}
 export HAB_COREDUMP=flag{look_like_ur_a_real_RE}
 export HAB_BITSANDBYTES=flag{big_ret2flag_energy}
@@ -458,7 +458,7 @@ Flag: `flag{evaluate_this_my_dude}`
 
 Okay, now we are given a different machine to attack. Again scanning the machine with `nmap`, we discover a few services.
 
-```sh
+```bash
 Not shown: 65529 closed ports
 PORT      STATE SERVICE    VERSION
 21/tcp    open  ftp        ProFTPD

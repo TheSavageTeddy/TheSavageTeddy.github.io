@@ -296,7 +296,7 @@
 <p>All challenges in this section use the same binary. The target is x86 and ASLR is on but it shouldn&rsquo;t be relevant to any of your exploits.</p>
 </blockquote>
 <p>We get a binary file. We can simply strings grep the file to get the flag - not much reverse engineering involved, I guess. Flag: <code>flag{baby_steps_gift_just_for_you}</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>uwuteddy@DESKTOP-5BVRVO8:~$ strings corruption |grep -i flag
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>uwuteddy@DESKTOP-5BVRVO8:~$ strings corruption |grep -i flag
 </span></span><span style="display:flex;"><span>flag<span style="color:#f92672">{</span>baby_steps_gift_just_for_you<span style="color:#f92672">}</span>
 </span></span><span style="display:flex;"><span>flag_function
 </span></span><span style="display:flex;"><span>controller_flag
@@ -440,7 +440,7 @@
 
 
 <p>And from there, we find all the flags in <code>start.sh</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>export HAB_CONTROLLER<span style="color:#f92672">=</span>flag<span style="color:#f92672">{</span>almost_totally_full_control<span style="color:#f92672">}</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>export HAB_CONTROLLER<span style="color:#f92672">=</span>flag<span style="color:#f92672">{</span>almost_totally_full_control<span style="color:#f92672">}</span>
 </span></span><span style="display:flex;"><span>export HAB_COREDUMP<span style="color:#f92672">=</span>flag<span style="color:#f92672">{</span>look_like_ur_a_real_RE<span style="color:#f92672">}</span>
 </span></span><span style="display:flex;"><span>export HAB_BITSANDBYTES<span style="color:#f92672">=</span>flag<span style="color:#f92672">{</span>big_ret2flag_energy<span style="color:#f92672">}</span>
 </span></span></code></pre></div><p>Unsure if this was an intended solution or not - the intended solution for the first one seems to be to buffer overflow to jump to the first flag function (whose address is provided by the leak), and the solution for the second one seems to be to calculate the address of the second flag function based on the first flag function, or simply get the address of the function from the provided binary (<code>PIE</code> is disabled), buffer overflow to jump there and get the flag. Nevertheless, getting a shell is more satisfying and we get all the flags at once!</p>
@@ -595,7 +595,7 @@ Service Info: OSs: Unix, Linux; CPE: cpe:/o:linux:linux_kernel
 <p>Caviets You are root. This means you can do whatever you want, for the most part. You are welcome to lock people out but only in specific ways. If you accidentially take down any of the existing services or remove Nate&rsquo;s ability to SSH in for monitoring the machine will be reverted to the last known-good snapshot and you will probably lose access. This also goes for changing the flag files. If we determine that the flags has been altered the machine will also be reverted. Lastly, if someone has concurrent access for four flags in a row we may block them from future access to give others the opportunity to attack the machine&ndash;we&rsquo;ll decide this in real time during the weekend depending on how things go.</p>
 </blockquote>
 <p>Okay, now we are given a different machine to attack. Again scanning the machine with <code>nmap</code>, we discover a few services.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>Not shown: <span style="color:#ae81ff">65529</span> closed ports
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>Not shown: <span style="color:#ae81ff">65529</span> closed ports
 </span></span><span style="display:flex;"><span>PORT      STATE SERVICE    VERSION
 </span></span><span style="display:flex;"><span>21/tcp    open  ftp        ProFTPD
 </span></span><span style="display:flex;"><span>22/tcp    open  ssh        OpenSSH 8.4p1 Debian 5+deb11u1 <span style="color:#f92672">(</span>protocol 2.0<span style="color:#f92672">)</span>
@@ -667,9 +667,9 @@ Service Info: OSs: Unix, Linux; CPE: cpe:/o:linux:linux_kernel
     <div class="pagination__buttons">
         
         <span class="button previous">
-            <a href="https://TheSavageTeddy.github.io/posts/ret2libm-iris2023/">
+            <a href="https://TheSavageTeddy.github.io/posts/crypto-iris2023/">
                 <span class="button__icon">←</span>
-                <span class="button__text">ret2libm - IrisCTF 2023</span>
+                <span class="button__text">Crypto Writeups - IrisCTF 2023</span>
             </a>
         </span>
         
