@@ -39,7 +39,7 @@ publishDir = "docs"
   # favicon = "favicon.ico"
 
   # Provide a string as a prefix for the last update date. By default, it looks like this: 2020-xx-xx [Updated: 2020-xx-xx] :: Author
-  # updatedDatePrefix = "Updated"
+  updatedDatePrefix = "Updated"
 
   # set all headings to their default size (depending on browser settings)
   # oneHeadingSize = true # default

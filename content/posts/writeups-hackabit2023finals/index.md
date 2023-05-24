@@ -2,7 +2,7 @@
 weight = 99
 tags = ["ctf", "beginner"]
 categories = ["CTF Writeups"]
-date = "2023-3-1"
+publishDate = 1684598400 # 05/21/2023
 description = """Full writeups for all challenges for the finals of a beginner CTF."""
 title_img = """{{< image src="https://ctftime.org/media/events/1_1_light_with_text_1.png" alt="" style="border-radius: 5px; height: 15vh; width: auto; display: inline; vertical-align: middle; " >}}"""
 title = """Full Writeups - Hack A Bit CTF Finals 0x01"""

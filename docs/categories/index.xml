@@ -6,21 +6,12 @@
     <description>Recent content in Categories on uwuTeddy</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>uwuTeddy</copyright><atom:link href="https://TheSavageTeddy.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>cryptography</title>
-      <link>https://TheSavageTeddy.github.io/categories/cryptography/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://TheSavageTeddy.github.io/categories/cryptography/</guid>
-      <description></description>
-      <content></content>
-    </item>
-    
+    <copyright>uwuTeddy</copyright>
+    <lastBuildDate>Sun, 21 May 2023 00:00:00 +0800</lastBuildDate><atom:link href="https://TheSavageTeddy.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>CTF Writeups</title>
       <link>https://TheSavageTeddy.github.io/categories/ctf-writeups/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 21 May 2023 00:00:00 +0800</pubDate>
       
       <guid>https://TheSavageTeddy.github.io/categories/ctf-writeups/</guid>
       <description></description>
@@ -28,9 +19,19 @@
     </item>
     
     <item>
+      <title>cryptography</title>
+      <link>https://TheSavageTeddy.github.io/categories/cryptography/</link>
+      <pubDate>Mon, 09 Jan 2023 00:00:00 +0800</pubDate>
+      
+      <guid>https://TheSavageTeddy.github.io/categories/cryptography/</guid>
+      <description></description>
+      <content></content>
+    </item>
+    
+    <item>
       <title>pwn</title>
       <link>https://TheSavageTeddy.github.io/categories/pwn/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 09 Jan 2023 00:00:00 +0800</pubDate>
       
       <guid>https://TheSavageTeddy.github.io/categories/pwn/</guid>
       <description></description>

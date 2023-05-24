@@ -6,11 +6,12 @@
     <description>Recent content in crypto on uwuTeddy</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>uwuTeddy</copyright><atom:link href="https://TheSavageTeddy.github.io/tags/crypto/index.xml" rel="self" type="application/rss+xml" />
+    <copyright>uwuTeddy</copyright>
+    <lastBuildDate>Mon, 09 Jan 2023 00:00:00 +0800</lastBuildDate><atom:link href="https://TheSavageTeddy.github.io/tags/crypto/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Crypto Writeups - IrisCTF 2023</title>
       <link>https://TheSavageTeddy.github.io/posts/crypto-iris2023/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 09 Jan 2023 00:00:00 +0800</pubDate>
       
       <guid>https://TheSavageTeddy.github.io/posts/crypto-iris2023/</guid>
       <description>Overview I solved 4/6 crypto challenges in IrisCTF 2023, here are the writeups for them.

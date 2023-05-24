@@ -2,7 +2,7 @@
 weight = 9
 tags = ["ctf", "crypto"] 
 categories = ["CTF Writeups", "cryptography"] 
-date = "2023-1-9" 
+publishDate = 1673193600 # 01/09/2023
 description = "Writeups for multiple `crypto` challenges from IrisCTF 2023" 
 title_img = """{{< image src="https://irissec.xyz/assets/img/logo_ascii.png" alt="" style="border-radius: 5px; height: 13vh; width: auto; display: inline; vertical-align: middle; " >}}"""
 title = """Crypto Writeups - IrisCTF 2023"""

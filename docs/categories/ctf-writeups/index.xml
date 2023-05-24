@@ -6,11 +6,12 @@
     <description>Recent content in CTF Writeups on uwuTeddy</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>uwuTeddy</copyright><atom:link href="https://TheSavageTeddy.github.io/categories/ctf-writeups/index.xml" rel="self" type="application/rss+xml" />
+    <copyright>uwuTeddy</copyright>
+    <lastBuildDate>Sun, 21 May 2023 00:00:00 +0800</lastBuildDate><atom:link href="https://TheSavageTeddy.github.io/categories/ctf-writeups/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>ret2libm - IrisCTF 2023</title>
       <link>https://TheSavageTeddy.github.io/posts/ret2libm-iris2023/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 09 Jan 2023 00:00:00 +0800</pubDate>
       
       <guid>https://TheSavageTeddy.github.io/posts/ret2libm-iris2023/</guid>
       <description>Overview ret2libm was the 2nd most solved pwn challenge of IrisCTF 2023, written by sera.
@@ -194,7 +195,7 @@ PIE:      PIE enabled
     <item>
       <title>Crypto Writeups - IrisCTF 2023</title>
       <link>https://TheSavageTeddy.github.io/posts/crypto-iris2023/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 09 Jan 2023 00:00:00 +0800</pubDate>
       
       <guid>https://TheSavageTeddy.github.io/posts/crypto-iris2023/</guid>
       <description>Overview I solved 4/6 crypto challenges in IrisCTF 2023, here are the writeups for them.
@@ -728,7 +729,7 @@ print(dat)
     <item>
       <title>Full Writeups - Hack A Bit CTF Finals 0x01</title>
       <link>https://TheSavageTeddy.github.io/posts/writeups-hackabit2023finals/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 21 May 2023 00:00:00 +0800</pubDate>
       
       <guid>https://TheSavageTeddy.github.io/posts/writeups-hackabit2023finals/</guid>
       <description>Overview Hack a Bit is a competition for highschoolers with the aim to promote cybersecurity. This round was the finals and I managed to place 2nd overall!
@@ -1217,7 +1218,7 @@ Service Info: OSs: Unix, Linux; CPE: cpe:/o:linux:linux_kernel
     <item>
       <title>Full Writeups - Hack A Bit CTF Qualifiers 0x01</title>
       <link>https://TheSavageTeddy.github.io/posts/writeups-hackabit2023/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 01 Mar 2023 00:00:00 +0800</pubDate>
       
       <guid>https://TheSavageTeddy.github.io/posts/writeups-hackabit2023/</guid>
       <description>Overview Hack A Bit is a CTF targeting highschool students aged 13-18. This post will include writeups for all challenges (except OSINT) for Round 2, which was the CTF jeopardy round.
