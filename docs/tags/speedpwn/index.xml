@@ -9,784 +9,531 @@
     <copyright>uwuTeddy</copyright>
     <lastBuildDate>Tue, 28 Feb 2023 16:00:00 +0800</lastBuildDate><atom:link href="https://TheSavageTeddy.github.io/tags/speedpwn/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>LiveCTF what-a-maze-meant - DEFCON CTF Quals 2023 Writeup</title>
+      <title>what-a-maze-meant - DEFCON Quals 2023 Writeup</title>
       <link>https://TheSavageTeddy.github.io/posts/what-a-maze-meant-defcon-2023-quals/</link>
       <pubDate>Tue, 28 Feb 2023 16:00:00 +0800</pubDate>
       
       <guid>https://TheSavageTeddy.github.io/posts/what-a-maze-meant-defcon-2023-quals/</guid>
-      <description>Overview Hack A Bit is a CTF targeting highschool students aged 13-18. This post will include writeups for all challenges (except OSINT) for Round 2, which was the CTF jeopardy round.
-Also, please contact me discord TheSavageTeddy#7458 if there are any mistakes/issues with these writeups, or if you want more info on them. Enjoy!
-Challenge Categories Welcome - 4 challenges
-Cryptography - 8 challenges
-Web - 6 challenges
-Programming - 8 challenges</description>
-      <content>&lt;h1 id=&#34;overview&#34;&gt;Overview&lt;/h1&gt;
-&lt;p&gt;Hack A Bit is a CTF targeting highschool students aged 13-18. This post will include writeups for all challenges (except OSINT) for Round 2, which was the CTF jeopardy round.&lt;/p&gt;
-&lt;p&gt;Also, please contact me discord &lt;code&gt;TheSavageTeddy#7458&lt;/code&gt; if there are any mistakes/issues with these writeups, or if you want more info on them. Enjoy!&lt;/p&gt;
-&lt;h1 id=&#34;challenge-categories&#34;&gt;Challenge Categories&lt;/h1&gt;
-&lt;p&gt;&lt;a href=&#34;#0-welcome&#34;&gt;&lt;code&gt;Welcome&lt;/code&gt;&lt;/a&gt; - 4 challenges&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;#1-cryptography&#34;&gt;&lt;code&gt;Cryptography&lt;/code&gt;&lt;/a&gt; - 8 challenges&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;#2-web&#34;&gt;&lt;code&gt;Web&lt;/code&gt;&lt;/a&gt; - 6 challenges&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;#3-programming&#34;&gt;&lt;code&gt;Programming&lt;/code&gt;&lt;/a&gt; - 8 challenges&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;#4-infrastructure&#34;&gt;&lt;code&gt;Infrastructure&lt;/code&gt;&lt;/a&gt; - 8 challenges&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;#5-networking&#34;&gt;&lt;code&gt;Networking&lt;/code&gt;&lt;/a&gt; - 6 challenges&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;#6-osint&#34;&gt;&lt;code&gt;OSINT&lt;/code&gt;&lt;/a&gt; - 8 challenges&lt;/p&gt;
-&lt;h1 id=&#34;0-welcome&#34;&gt;0. Welcome&lt;/h1&gt;
-&lt;h2 id=&#34;wakeup-5&#34;&gt;Wakeup (5)&lt;/h2&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Throughout the course you will prove your completion of tasks and understanding by capturing flags. CTF stands for capture the flag. Flags will generally be formatted as flag{x} where the x is the specific content that will change from challenge to challenge. If this isn&amp;rsquo;t the case, the challenge will specifically state that it uses a non-standard flag format.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Submit the flag &lt;code&gt;flag{hello_world}&lt;/code&gt; to complete this challenge.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;Sanity check challenge, flag was in the description.
-&lt;code&gt;flag{hello_world}&lt;/code&gt;&lt;/p&gt;
-&lt;h2 id=&#34;weirdo-5&#34;&gt;Weirdo (5)&lt;/h2&gt;
-&lt;blockquote&gt;
-&lt;p&gt;This is what a challenge with a non-standard flag will look like. These types of flags are generally used for things like IP addresses or other data that would be a &amp;ldquo;short answer&amp;rdquo; style. The challenge will always be marked with a &amp;ldquo;NON-STANDARD FLAG FORMAT&amp;rdquo; identifier if it is this way.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Submit the flag 192.168.1.1/24 to get credit for this challenge.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;Same thing, flag is &lt;code&gt;192.168.1.1/24&lt;/code&gt;. This just tells us some challenges are not in the normal &lt;code&gt;flag{}&lt;/code&gt; format.&lt;/p&gt;
-&lt;h2 id=&#34;support-5&#34;&gt;Support (5)&lt;/h2&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Throughout the competition you may want to ask for help. Where can you do that? How can staff members ensure that all information is moderated and everyone receives the same level of support? The answer is that Hack a Bit uses a support forum in discord.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Navigate to the support form in the competition group and find the thread for this challenge.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;a href=&#34;https://www.discord.gg/hack-a-bit&#34;&gt;www.discord.gg/hack-a-bit&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;Joining the discord and navigating to the challenge support posts we find this &lt;code&gt;flag{helpHelpHELP_desk}&lt;/code&gt;&lt;/p&gt;
-&lt;h2 id=&#34;billboard-5&#34;&gt;Billboard (5)&lt;/h2&gt;
-&lt;blockquote&gt;
-&lt;p&gt;What do you get for winning the competition? Where do you look for details on this round and future rounds of the 0x01 season? Check out the HaB website&amp;rsquo;s competition page for more information, there&amp;rsquo;s something there for you.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;Going to &lt;a href=&#34;https://www.hackabit.com/competition&#34;&gt;https://www.hackabit.com/competition&lt;/a&gt; we find &lt;code&gt;flag{you_might_need_this_for_later}&lt;/code&gt; below the prizes.&lt;/p&gt;
-&lt;h1 id=&#34;1-cryptography&#34;&gt;1. Cryptography&lt;/h1&gt;
-&lt;h2 id=&#34;homerun-75&#34;&gt;Homerun (75)&lt;/h2&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Check out 0xFF in the ASCII lookup table&amp;hellip;&lt;br&gt;
-Oh dang, it isn&amp;rsquo;t there. Well I still need to send you that data, not the text but the actual value 0xFF in computer memory.
-Here&amp;rsquo;s an example, decode this, all the data you need is right here: &lt;code&gt;MZWGCZ33I5XXI5DBJVQWWZKTOVZGKWLPOVEGKYLSIFRG65LUKRUGC5CMN5XGOQTBNRWH2===&lt;/code&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;We get a ciphertext &lt;code&gt;MZWGCZ33I5XXI5DBJVQWWZKTOVZGKWLPOVEGKYLSIFRG65LUKRUGC5CMN5XGOQTBNRWH2===&lt;/code&gt;. This is clearly base32 as we see it consists of only uppercase letters and numbers, ending with &lt;code&gt;=&lt;/code&gt; (padding). Decoding in CyberChef or any other tool gives &lt;code&gt;flag{GottaMakeSureYouHearAboutThatLongBall}&lt;/code&gt;&lt;/p&gt;
-&lt;h2 id=&#34;mason-75&#34;&gt;Mason (75)&lt;/h2&gt;
-&lt;blockquote&gt;
-&lt;p&gt;The numbers mason, what do they mean?
-&lt;code&gt;66 6c 61 67 7b 63 6f 6d 70 75 74 65 72 3a 69 5f 6f 6e 6c 79 5f 75 6e 64 65 72 73 74 61 6e 64 5f 62 69 6e 61 72 79 5f 64 75 64 65 7d&lt;/code&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;Ciphertext consists of 0-9 and a-f, hinting that it&amp;rsquo;s hex. Decoding from hex gives &lt;code&gt;flag{computer:i_only_understand_binary_dude}&lt;/code&gt;&lt;/p&gt;
-&lt;h2 id=&#34;smiley-100&#34;&gt;Smiley (100)&lt;/h2&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Existing encryption is dumb, so I came up with something better. Maybe its a little emotional or whatever, but I feel like you can get through that part&amp;hellip;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Breaking this teaches you some of the primative concepts professionals use to attack novel cryptographic algorithms. It also demonstrates in a primative way why we use established and tested ones for real applications. It also loosely relates to a concept called &amp;ldquo;known plaintext.&amp;rdquo;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;em&gt;In the prompt, there is no punctuation and everything is lowercase alphabetical characters.&lt;/em&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;Given a file containing this:&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;🤣😅😇😉 😁😅😀🥰🤣 😚🥰😜🤗😇🤑🤫😉 😀 🫡😇😉🤣 😜🤐 🤣😅🤫 😶😮‍💨😇😁😜🤑🤫 🤫🤥😜🤤😇 😁😅😀🥰😀😁🤣🤫🥰😉 😀😮‍💨🤑 😉🤫🤕😶🤫😮‍💨😁🤫😉 🤮😇🤣😅 😇🤥😀🥶🤫😉 🤐🥰😜🤥 🤑😇🤐🤐🤫🥰🤫😮‍💨🤣 🤗🤫😮‍💨🤑😜🥰😉 😁🫡🤑🥰 😮‍💨😀🤥🤫 🤑😀🤣🤫 😉😜😶🥰😁🤫 😀😮‍💨🤑 🤯🤫🥳🤮😜🥰🤑😉 🤐🫡😀🥶🥸😉🤥😇🫡🤫😎🤥😜🥰🤫😎😉🤥😇🫡🤫😎🤠😇🥶🥶🤫🥰🧐
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;This challenge was a bit annoying. It was clearly frequency analysis, which is like using the fact that letters &lt;code&gt;e&lt;/code&gt;, &lt;code&gt;a&lt;/code&gt; etc are more common than &lt;code&gt;q&lt;/code&gt; or &lt;code&gt;z&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;First I mapped each emoji to a unique character or number using this (uncleaned) code:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-py&#34; data-lang=&#34;py&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;emoji_text &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;🤣😅😇😉 😁😅😀🥰🤣 😚🥰😜🤗😇🤑🤫😉 😀 🫡😇😉🤣 😜🤐 🤣😅🤫 😶😮‍💨😇😁😜🤑🤫 🤫🤥😜🤤😇 😁😅😀🥰😀😁🤣🤫🥰😉 😀😮‍💨🤑 😉🤫🤕😶🤫😮‍💨😁🤫😉 🤮😇🤣😅 😇🤥😀🥶🤫😉 🤐🥰😜🤥 🤑😇🤐🤐🤫🥰🤫😮‍💨🤣 🤗🤫😮‍💨🤑😜🥰😉 😁🫡🤑🥰 😮‍💨😀🤥🤫 🤑😀🤣🤫 😉😜😶🥰😁🤫 😀😮‍💨🤑 🤯🤫🥳🤮😜🥰🤑😉 🤐🫡😀🥶🥸😉🤥😇🫡🤫😎🤥😜🥰🤫😎😉🤥😇🫡🤫😎🤠😇🥶🥶🤫🥰🧐&amp;#34;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;from&lt;/span&gt; string &lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; ascii_lowercase
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;cs &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; ascii_lowercase &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;1234567890&amp;#34;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;mapping &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; {}
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;nextind &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;txt &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&amp;#34;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; thing &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; emoji_text:
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; thing &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34; &amp;#34;&lt;/span&gt;:txt &lt;span style=&#34;color:#f92672&#34;&gt;+=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34; &amp;#34;&lt;/span&gt;;&lt;span style=&#34;color:#66d9ef&#34;&gt;continue&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; thing &lt;span style=&#34;color:#f92672&#34;&gt;not&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; mapping&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;keys():
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        mapping[thing] &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; cs[nextind]
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        txt &lt;span style=&#34;color:#f92672&#34;&gt;+=&lt;/span&gt; mapping[thing]
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        nextind&lt;span style=&#34;color:#f92672&#34;&gt;+=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;else&lt;/span&gt;:
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        txt &lt;span style=&#34;color:#f92672&#34;&gt;+=&lt;/span&gt; mapping[thing]
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;print(txt)
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;This gave us &lt;code&gt;abcd ebfga hgijckld f mcda in abl opqrceikl lsitc ebfgfealgd fpqrk dluolpqreld vcab csfwld ngis kcnnlglpqra jlpqrkigd emkg pqrfsl kfal diogel fpqrk xlyvigkd nmfwzdscml1sigl1dscml12cwwlg3&lt;/code&gt; to work with, which is much more readable.&lt;/p&gt;
-&lt;p&gt;Then I used &lt;a href=&#34;https://quipqiup.com/&#34;&gt;quipquip&lt;/a&gt;, a cryptogram solver.&lt;/p&gt;
-
-  &lt;img src=&#34;./img/quipquip.png&#34;  class=&#34;center&#34;  style=&#34;border-radius: 5px; width: 100%;&#34;  /&gt;
-
-
-&lt;p&gt;This gives us the flag &lt;code&gt;flag{smilemoresmilebigger}&lt;/code&gt;, or something like that.&lt;/p&gt;
-&lt;h2 id=&#34;matchmaker-100&#34;&gt;Matchmaker (100)&lt;/h2&gt;
-&lt;blockquote&gt;
-&lt;p&gt;There are a variety of symmetric cryptosystems out there, but most of them involve a logic block called a XOR. The key is &amp;ldquo;hab&amp;rdquo;(UTF8). We&amp;rsquo;re giving you the key and the algorithm, how hard can it be?&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;code&gt;Dg0DDxoRBz4PHQIKNxIbBQwHHBMbFQ==&lt;/code&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;We are given base64, and the XOR key &amp;ldquo;hab&amp;rdquo;. Using CyberChef we can decrypt and XOR to get the flag. &lt;code&gt;flag{so_much_symmetry}&lt;/code&gt;&lt;/p&gt;
-
-  &lt;img src=&#34;./img/matchmaker1.png&#34;  class=&#34;center&#34;  style=&#34;border-radius: 5px; width: 100%;&#34;  /&gt;
-
-
-&lt;h1 id=&#34;hancock-125&#34;&gt;Hancock (125)&lt;/h1&gt;
-&lt;blockquote&gt;
-&lt;p&gt;I stole this session token from someone and it looks like all I need to do is change admin to true for all the power&amp;hellip; no idea who signed it though&amp;hellip; can you figure out the secret for me so that we can get some pwnage going?&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;p&gt;The secret for this token is somewhere in the RockYou wordlist &lt;a href=&#34;https://github.com/brannondorsey/naive-hashcat/releases/download/data/rockyou.txt&#34;&gt;https://github.com/brannondorsey/naive-hashcat/releases/download/data/rockyou.txt&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;We are given this string&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxMjM0NTY3ODkwLCJhZG1pbiI6ZmFsc2V9.QR_da_OHe58LBwBRt5S_aTcbMkBhEFqJkFn7zUq7Yyc
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;which is clearly a JWT (Json Web Token).&lt;/p&gt;
-&lt;p&gt;These are commonly issued as a cookie to authenticate a user, such as for a session. We can verify this by going to &lt;a href=&#34;https://jwt.io/&#34;&gt;https://jwt.io/&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;The flag is the secret that was used to sign the JWT.&lt;/p&gt;
-
-  &lt;img src=&#34;./img/jwt.png&#34;  class=&#34;center&#34;  style=&#34;border-radius: 5px; width: 100%;&#34;  /&gt;
-
-
-&lt;p&gt;Looking up a tool to brute force secrets for the JWT, we find &lt;a href=&#34;https://github.com/mazen160/jwt-pwn&#34;&gt;jwt-pwn&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;Using this, we brute force possible secrets with the &lt;a href=&#34;https://github.com/brannondorsey/naive-hashcat/releases/download/data/rockyou.txt&#34;&gt;rockyou.txt wordlist&lt;/a&gt;, and get the flag &lt;code&gt;ghosthunter&lt;/code&gt;&lt;/p&gt;
-
-  &lt;img src=&#34;./img/jwtcrack.png&#34;  class=&#34;center&#34;  style=&#34;border-radius: 5px; width: 100%;&#34;  /&gt;
-
-
-&lt;h2 id=&#34;trending-125&#34;&gt;Trending (125)&lt;/h2&gt;
-&lt;blockquote&gt;
-&lt;p&gt;All the existing hashing algorithms are dumb, why give me a fixed length? If I give you more input you should give me even more output, its only fair! I wrote a new hashing algorithm that improves on the best of the best (MD5)! Check it out and see if you can break it (you probably can&amp;rsquo;t)!&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Here&amp;rsquo;s your hash: &lt;code&gt;b18f21b19e0f86b22d218c86e182214b867b36212576b2617e8c03862d369e&lt;/code&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;We are given a python file with a custom &amp;lsquo;hashing&amp;rsquo; algorithm.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-py&#34; data-lang=&#34;py&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#!/usr/bin/python3&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; sys
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; hashlib
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; random
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; string
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;try&lt;/span&gt;:
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#75715e&#34;&gt;# get a five character string to use for randomness (lol)&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    one_time_pad_or_something &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;join(random&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;choices(string&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;digits, k&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;5&lt;/span&gt;))
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    print(one_time_pad_or_something)
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#75715e&#34;&gt;# itterate over each character in the input&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; index,character &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; enumerate(sys&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;argv[&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;]):
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#75715e&#34;&gt;# get md5 hash of (that character plus minus pad)&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        calculated_character &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; chr(ord(character) &lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt; int(one_time_pad_or_something[index &lt;span style=&#34;color:#f92672&#34;&gt;%&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;5&lt;/span&gt;]))
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        full_md5_hash &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; hashlib&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;md5(calculated_character&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;encode(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;ascii&amp;#39;&lt;/span&gt;))
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#75715e&#34;&gt;# take the first four characters and print them to the screen&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        print(full_md5_hash&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;hexdigest()[&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;:&lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;], end&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&amp;#34;&lt;/span&gt;)
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#75715e&#34;&gt;# new line at end of output&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    print()
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# verify that we got input in position&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;except&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;IndexError&lt;/span&gt;: sys&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;exit(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Usage: python3 hashbrown.py &amp;lt;plaintext&amp;gt;&amp;#34;&lt;/span&gt;)
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The OTP (one-time pad) is made of 5 digits, so there are &lt;code&gt;10^5 = 10000&lt;/code&gt; permutations it can be, which is definitely brute force-able.&lt;/p&gt;
-&lt;p&gt;Now lets look at the code. It loops over each character of our input (the flag), sets &lt;code&gt;calculated_character&lt;/code&gt; to the flag character, minus a number in the OTP. Then it hashes the character, and outputs the first byte of the hash.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-py&#34; data-lang=&#34;py&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;calculated_character &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; chr(ord(character) &lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt; int(one_time_pad_or_something[index &lt;span style=&#34;color:#f92672&#34;&gt;%&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;5&lt;/span&gt;]))
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;full_md5_hash &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; hashlib&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;md5(calculated_character&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;encode(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;ascii&amp;#39;&lt;/span&gt;))
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;print(full_md5_hash&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;hexdigest()[&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;:&lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;], end&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&amp;#34;&lt;/span&gt;)
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;This is repeated for every character in the flag.&lt;/p&gt;
-&lt;p&gt;Our procedure to recover the flag becomes clear - brute force every OTP, and hash every character the flag could be to recover each flag character.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-py&#34; data-lang=&#34;py&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; hashlib
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; binascii
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; string
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; itertools
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;charset &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; string&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;ascii_lowercase &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;{}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;_&amp;#34;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;padcharset &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; string&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;digits
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;ct &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;b18f21b19e0f86b22d218c86e182214b867b36212576b2617e8c03862d369e&amp;#39;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; a &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; itertools&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;product(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;0123456789&amp;#34;&lt;/span&gt;, repeat&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;5&lt;/span&gt;):
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    otp &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;join(a)
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    flag&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;&amp;#39;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; i &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; range(len(ct)&lt;span style=&#34;color:#f92672&#34;&gt;//&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;):
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        portion &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; ct[i&lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;:i&lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;]
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; thing &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; charset:
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            calculated_character &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; chr(ord(thing) &lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt; int(otp[i &lt;span style=&#34;color:#f92672&#34;&gt;%&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;5&lt;/span&gt;]))
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            full_md5_hash &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; hashlib&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;md5(calculated_character&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;encode(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;ascii&amp;#39;&lt;/span&gt;))
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; full_md5_hash&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;hexdigest()[&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;:&lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;]&lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt;portion:
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                flag&lt;span style=&#34;color:#f92672&#34;&gt;+=&lt;/span&gt;thing
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                &lt;span style=&#34;color:#66d9ef&#34;&gt;break&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;flag&amp;#39;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; flag:
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        print(flag, otp)
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;And we get the flag &lt;code&gt;flag{dont_roll_your_own_crypto}&lt;/code&gt;&lt;/p&gt;
-
-  &lt;img src=&#34;./img/hashbrown.png&#34;  class=&#34;center&#34;  style=&#34;border-radius: 5px; width: 100%;&#34;  /&gt;
-
-
-&lt;h2 id=&#34;powerhouse-150&#34;&gt;Powerhouse (150)&lt;/h2&gt;
-&lt;blockquote&gt;
-&lt;p&gt;NON-STANDARD FLAG FORMAT&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Here is an RSA key, sort of; provide p and q as &lt;code&gt;p;q&lt;/code&gt;, like if p was 11 an q was 7, the flag would be &lt;code&gt;11;7&lt;/code&gt;.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;p&gt;N = &lt;code&gt;6176128969&lt;/code&gt; e = &lt;code&gt;1187&lt;/code&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;We get a (very unsecure) RSA public key consisting of &lt;code&gt;N&lt;/code&gt; (public modulus) and &lt;code&gt;e&lt;/code&gt; (public exponent).&lt;/p&gt;
-&lt;p&gt;But we don&amp;rsquo;t need to worry about any of that. In RSA, &lt;code&gt;N = p * q&lt;/code&gt; where &lt;code&gt;p&lt;/code&gt; and &lt;code&gt;q&lt;/code&gt; are 2 primes. Therefore, we just factor &lt;code&gt;N&lt;/code&gt; to get the flag using &lt;a href=&#34;http://factordb.com/&#34;&gt;factordb&lt;/a&gt;, or any other factoring method (N is very small).&lt;/p&gt;
-&lt;p&gt;Flag &lt;code&gt;11329;545161&lt;/code&gt;&lt;/p&gt;
-&lt;h1 id=&#34;banker-150&#34;&gt;Banker (150)&lt;/h1&gt;
-&lt;blockquote&gt;
-&lt;p&gt;NON-STANDARD FLAG FORMAT&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Crack this pin code. It&amp;rsquo;s between 4-8 characters and all numeric.
-&lt;code&gt;320f5cef77246cdce15f9b66e9e4f3ad22f506f9cd28d85e7ccc8839b301e736&lt;/code&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;This challenge doesn&amp;rsquo;t give a lot of info. The ciphertext looks like hex, but we get garbage when we try to decode it. However, notice the hex string is 64 bytes long, which is the size for some hashes.&lt;/p&gt;
-&lt;p&gt;Putting the hex into &lt;a href=&#34;https://crackstation.net/&#34;&gt;crackstation&lt;/a&gt;, to look up the hash, we find it is the &lt;code&gt;sha256&lt;/code&gt; hash of &lt;code&gt;05593620&lt;/code&gt; and we get the flag.&lt;/p&gt;
-&lt;h1 id=&#34;2-web&#34;&gt;2. Web&lt;/h1&gt;
-&lt;h2 id=&#34;detective-75&#34;&gt;Detective (75)&lt;/h2&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Visit the webapp and take a look around, detective: &lt;a href=&#34;https://erpvlnzxrh.qualifier.hackabit.com/detective&#34;&gt;https://erpvlnzxrh.qualifier.hackabit.com/detective&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;Viewing the page source we find &lt;code&gt;flag{animated&lt;/code&gt; in the HTML. Going to sources and looking the javascript file we find &lt;code&gt;_commentary_on_&lt;/code&gt;, and going to css we find &lt;code&gt;css}&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;This gets us the flag &lt;code&gt;flag{animated_commentary_on_css}&lt;/code&gt;&lt;/p&gt;
-&lt;h2 id=&#34;spectator&#34;&gt;Spectator&lt;/h2&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Now how about this one? Maybe just look a little harder&amp;hellip; &lt;a href=&#34;https://erpvlnzxrh.qualifier.hackabit.com/spectator&#34;&gt;https://erpvlnzxrh.qualifier.hackabit.com/spectator&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;Going to sources we find &lt;code&gt;flag{there_are_soooooo&lt;/code&gt; in the javascript file (this is also in local storage).&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-js&#34; data-lang=&#34;js&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;window.&lt;span style=&#34;color:#a6e22e&#34;&gt;onload&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;function&lt;/span&gt;(){  
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    window.&lt;span style=&#34;color:#a6e22e&#34;&gt;localStorage&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;setItem&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;flag_stuff&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;flag{there_are_soooooo&amp;#34;&lt;/span&gt;)    
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Going to cookies we find &lt;code&gt;flag_stuff&lt;/code&gt; set to &lt;code&gt;_many_ways_to&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;Curling the site with extra info (&lt;code&gt;-v&lt;/code&gt;) using &lt;code&gt;curl -v https://erpvlnzxrh.qualifier.hackabit.com/spectator&lt;/code&gt; we get &lt;code&gt;more_flag_stuff: _manage_data}&lt;/code&gt; in the headers, giving us the flag &lt;code&gt;flag{there_are_soooooo_many_ways_to_manage_data}&lt;/code&gt;&lt;/p&gt;
-&lt;h2 id=&#34;nevermind-100&#34;&gt;Nevermind (100)&lt;/h2&gt;
-&lt;blockquote&gt;
-&lt;p&gt;If you take something, you gotta put it back, or something at least: &lt;a href=&#34;https://erpvlnzxrh.qualifier.hackabit.com/nevermind&#34;&gt;https://erpvlnzxrh.qualifier.hackabit.com/nevermind&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;We are presented with a webpage with a image and text saying:&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;Download this beautiful image and get the MD5 hash of it. Then decide its not that beautiful and POST it back to the same page with header &amp;#34;md5_image_hash&amp;#34; set to that value.
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;So we download the image, md5 hash it and get &lt;code&gt;021d99868f8b0943b2cf04e944ddab8f&lt;/code&gt; which we post back to the server with the right header using &lt;code&gt;curl -X POST --header &amp;quot;md5_image_hash: 021d99868f8b0943b2cf04e944ddab8f&amp;quot; https://erpvlnzxrh.qualifier.hackabit.com/nevermind&lt;/code&gt; and get the flag: &lt;code&gt;flag{nevermind_not_that_beautiful}&lt;/code&gt;&lt;/p&gt;
-&lt;h2 id=&#34;delegate-100&#34;&gt;Delegate (100)&lt;/h2&gt;
-&lt;blockquote&gt;
-&lt;p&gt;When we get code execution by compromising a web application, we generally want to exfiltrate some data. The staff did the hard part and gave you code execution, now just exfil that data! &lt;a href=&#34;https://erpvlnzxrh.qualifier.hackabit.com/delegate&#34;&gt;https://erpvlnzxrh.qualifier.hackabit.com/delegate&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;The site includes 2 fields: Epoch and Destination.&lt;/p&gt;
-&lt;p&gt;In Epoch we need to put a time, and in destination we can put a URL. After putting the correct epoch (unix time) and a URL, we get the message &lt;code&gt;yup, nice... sent the flag to: https://&amp;lt;the url we provided&amp;gt;&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;So let&amp;rsquo;s generate a &lt;a href=&#34;https://webhook.site/&#34;&gt;webhook&lt;/a&gt; to see what it does to the URL we provide it.&lt;/p&gt;
-&lt;p&gt;And indeed, it sends us a flag &lt;code&gt;flag{whats_good_mr_mailman}&lt;/code&gt;&lt;/p&gt;
-
-  &lt;img src=&#34;./img/webhook.png&#34;  class=&#34;center&#34;  style=&#34;border-radius: 5px; width: 100%;&#34;  /&gt;
-
-
-&lt;h2 id=&#34;injector-125&#34;&gt;Injector (125)&lt;/h2&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Someone didn&amp;rsquo;t listen closely in programming class&amp;hellip; yeah it was me I guess, I didn&amp;rsquo;t. Here&amp;rsquo;s a super secure login page, if you can bypass it you might even get a flag&amp;hellip;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;a href=&#34;https://fsiybpfkid.qualifier.hackabit.com/injector&#34;&gt;https://fsiybpfkid.qualifier.hackabit.com/injector&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;Injector refers to SQL injection, where unsanitized input can lead to all sorts of security vulnerabilities.&lt;/p&gt;
-&lt;p&gt;Searching up a &lt;a href=&#34;https://pentestlab.blog/2012/12/24/sql-injection-authentication-bypass-cheat-sheet/&#34;&gt;cheatsheet&lt;/a&gt; we try payload and find this one works &lt;code&gt;admin&#39; or &#39;1&#39;=&#39;1&#39;#&lt;/code&gt;, giving us the flag &lt;code&gt;flag{maveric_pull_the_lever!}&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;Note that this is basically blind SQL injection as we have minimal info about the server.&lt;/p&gt;
-
-  &lt;img src=&#34;./img/sql.png&#34;  class=&#34;center&#34;  style=&#34;border-radius: 5px; width: 100%;&#34;  /&gt;
-
-
-&lt;h2 id=&#34;brain-125&#34;&gt;Brain (125)&lt;/h2&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Only admins can get flags&amp;hellip; follow the rules!&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;a href=&#34;https://fsiybpfkid.qualifier.hackabit.com/brain&#34;&gt;https://fsiybpfkid.qualifier.hackabit.com/brain&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;This was straightforward, but annoying. The page tells us how to get the flag.&lt;/p&gt;
-
-  &lt;img src=&#34;./img/brain.png&#34;  class=&#34;center&#34;  style=&#34;border-radius: 5px; width: 100%;&#34;  /&gt;
-
-
-&lt;p&gt;There are 4 checks we need to pass to get the flag.&lt;/p&gt;
-&lt;p&gt;Setting the header is trivial with &lt;a href=&#34;https://portswigger.net/burp&#34;&gt;burpsuite&lt;/a&gt;, we can intercept our GET request and manually set the header.&lt;/p&gt;
-&lt;p&gt;Let&amp;rsquo;s ignore the second one for now. The third one requires us to set a URL parameter, which we can do so by appending &lt;code&gt;?give-me-that-flag=hand-it-over&lt;/code&gt; to the URL.&lt;/p&gt;
-&lt;p&gt;For the final one, we check our cookies to find a session cookie &lt;code&gt;&amp;quot;bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiYWRtaW4iOiJmYWxzZSJ9.lq4IQYyT1PxeSQ89DB7pu9i3rPEdPDAQtiSKJSk9VVo&amp;quot;&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;It&amp;rsquo;s another JWT! We just head to &lt;a href=&#34;https://jwt.io&#34;&gt;jwt.io&lt;/a&gt; and change &lt;code&gt;admin&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt;, and replace the JWT with the forged one &lt;code&gt;&amp;quot;bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiYWRtaW4iOiJ0cnVlIn0.1zlAeGts8dU1rtt-EB0VcbVwhGA_-UkZIzQQY2u96qs&amp;quot;&lt;/code&gt;. This one doesn&amp;rsquo;t require the JWT to be re-signed.&lt;/p&gt;
-
-  &lt;img src=&#34;./img/2outof4.png&#34;  class=&#34;center&#34;  style=&#34;border-radius: 5px; width: 100%;&#34;  /&gt;
-
-
-&lt;p&gt;And this is how you set the header:&lt;/p&gt;
-
-  &lt;img src=&#34;./img/headers.png&#34;  class=&#34;center&#34;  style=&#34;border-radius: 5px; width: 100%;&#34;  /&gt;
+      <description>Table of Contents Overview - a brief summary of the event
+Writeup - writeup of the challenge
+Conclusion - final closing thoughts
+Overview I played DEFCON Quals 2023 with if this doesn&#39;t work we&#39;ll get more for next year, a merger team with around 10 teams combined. Despite our best efforts, we placed 15th, just short of the top 12 that qualified, but given that it was our first year, I think we did pretty well, and I guess we&amp;rsquo;ll need to get more for next year!</description>
+      <content>&lt;h1 id=&#34;table-of-contents&#34;&gt;Table of Contents&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&#34;#overview&#34;&gt;&lt;code&gt;Overview&lt;/code&gt;&lt;/a&gt; - a brief summary of the event&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;#challenge-overview&#34;&gt;&lt;code&gt;Writeup&lt;/code&gt;&lt;/a&gt; - writeup of the challenge&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;#conclusion&#34;&gt;&lt;code&gt;Conclusion&lt;/code&gt;&lt;/a&gt; - final closing thoughts&lt;/p&gt;
+&lt;h1 id=&#34;overview&#34;&gt;Overview&lt;/h1&gt;
+&lt;p&gt;I played DEFCON Quals 2023 with &lt;a href=&#34;https://ctftime.org/team/220769&#34;&gt;&lt;code&gt;if this doesn&#39;t work we&#39;ll get more for next year&lt;/code&gt;&lt;/a&gt;, a merger team with around 10 teams combined. Despite our best efforts, we placed &lt;code&gt;15th&lt;/code&gt;, just short of the top 12 that qualified, but given that it was our first year, I think we did pretty well, and I guess we&amp;rsquo;ll need to get more for next year!&lt;/p&gt;
+&lt;p&gt;In this post is a quick writeup of &lt;code&gt;what-a-maze-meant&lt;/code&gt;, the first speedpwn challenge released in the LiveCTF section, where the quickest solves will earn the most points, so speed is key! It was a relatively easy challenge that together with some teamates, I solved pretty quickly. Enjoy!&lt;/p&gt;
+&lt;h2 id=&#34;challenge-overview&#34;&gt;Challenge overview&lt;/h2&gt;
+&lt;p&gt;We are given a binary, where the goal seems to be to complete the maze, by giving directions such as North, South, East and West. &lt;a href=&#34;https://dogbolt.org/?id=fda734c4-0d96-48dc-9247-1cafa71dc8bd&#34;&gt;Decompiling online&lt;/a&gt; we can dive into the code.&lt;/p&gt;
 
 
 
-  &lt;img src=&#34;./img/notyet.png&#34;  class=&#34;center&#34;  style=&#34;border-radius: 5px; width: 100%;&#34;  /&gt;
+  &lt;div class=&#34;collapsable-code&#34;&gt;
+    &lt;input id=&#34;1&#34; type=&#34;checkbox&#34;  /&gt;
+    &lt;label for=&#34;1&#34;&gt;
+      &lt;span class=&#34;collapsable-code__language&#34;&gt;c&lt;/span&gt;
+      &lt;span class=&#34;collapsable-code__title&#34;&gt;main()&lt;/span&gt;
+      &lt;span class=&#34;collapsable-code__toggle&#34; data-label-expand=&#34;Show&#34; data-label-collapse=&#34;Hide&#34;&gt;&lt;/span&gt;
+    &lt;/label&gt;
+    &lt;pre class=&#34;language-c&#34; &gt;&lt;code&gt;
+int __cdecl main(int argc, const char **argv, const char **envp)
+{
+  unsigned int v3; // eax
+  char v5; // [rsp&amp;#43;Bh] [rbp-3A5h] BYREF
+  int i; // [rsp&amp;#43;Ch] [rbp-3A4h]
+  int j; // [rsp&amp;#43;10h] [rbp-3A0h]
+  unsigned int v8; // [rsp&amp;#43;14h] [rbp-39Ch]
+  unsigned int v9; // [rsp&amp;#43;18h] [rbp-398h]
+  int v10; // [rsp&amp;#43;1Ch] [rbp-394h]
+  char v11[904]; // [rsp&amp;#43;20h] [rbp-390h] BYREF
+  unsigned __int64 v12; // [rsp&amp;#43;3A8h] [rbp-8h]
+  __int64 savedregs; // [rsp&amp;#43;3B0h] [rbp&amp;#43;0h] BYREF
+
+  v12 = __readfsqword(0x28u);
+  setvbuf(stdin, 0LL, 2, 0LL);
+  setvbuf(stdout, 0LL, 2, 0LL);
+  v3 = time(0LL);
+  srand(v3);
+  for ( i = 0; i &amp;lt;= 29; &amp;#43;&amp;#43;i )
+  {
+    for ( j = 0; j &amp;lt;= 29; &amp;#43;&amp;#43;j )
+      *((_BYTE *)&amp;amp;savedregs &amp;#43; 30 * i &amp;#43; j - 912) = 35;
+  }
+  puts(&amp;#34;Reticulating splines... &amp;#34;);
+  generate_maze((__int64)v11, 1, 1, 1);
+  puts(&amp;#34;\n\nWelcome to the maze!&amp;#34;);
+  v8 = 1;
+  v9 = 1;
+  v10 = 1;
+  while ( 1 )
+  {
+    if ( show_maze )
+      display_maze((__int64)v11, v8, v9);
+    printf(&amp;#34;You are in room (%d, %d)\n&amp;#34;, v8, v9);
+    if ( v10 )
+      randomDescription();
+    else
+      v10 = 1;
+    puts(&amp;#34;Which would you like to do?&amp;#34;);
+    if ( validwalk(*((_BYTE *)&amp;amp;savedregs &amp;#43; 30 * (int)(v8 - 1) &amp;#43; (int)v9 - 912)) )
+      printf(&amp;#34;go (n)orth, &amp;#34;);
+    if ( validwalk(*((_BYTE *)&amp;amp;savedregs &amp;#43; 30 * (int)(v8 &amp;#43; 1) &amp;#43; (int)v9 - 912)) )
+      printf(&amp;#34;go (s)outh, &amp;#34;);
+    if ( validwalk(*((_BYTE *)&amp;amp;savedregs &amp;#43; 30 * (int)v8 &amp;#43; (int)(v9 - 1) - 912)) )
+      printf(&amp;#34;go (w)est, &amp;#34;);
+    if ( validwalk(*((_BYTE *)&amp;amp;savedregs &amp;#43; 30 * (int)v8 &amp;#43; (int)(v9 &amp;#43; 1) - 912)) )
+      printf(&amp;#34;go (e)ast, &amp;#34;);
+    printf(&amp;#34;or (q) end the torment&amp;#34;);
+    printf(&amp;#34;: &amp;#34;);
+    __isoc99_scanf(&amp;#34; %c&amp;#34;, &amp;amp;v5);
+    putchar(10);
+    switch ( v5 )
+    {
+      case &amp;#39;a&amp;#39;:
+        puts(&amp;#34;You cast arcane eye and send your summoned magical eye above the maze.&amp;#34;);
+        show_maze = 1;
+        v10 = 0;
+        break;
+      case &amp;#39;e&amp;#39;:
+        if ( validwalk(*((_BYTE *)&amp;amp;savedregs &amp;#43; 30 * (int)v8 &amp;#43; (int)(v9 &amp;#43; 1) - 912)) )
+          &amp;#43;&amp;#43;v9;
+        break;
+      case &amp;#39;n&amp;#39;:
+        if ( validwalk(*((_BYTE *)&amp;amp;savedregs &amp;#43; 30 * (int)(v8 - 1) &amp;#43; (int)v9 - 912)) )
+          --v8;
+        break;
+      case &amp;#39;q&amp;#39;:
+        exit(0);
+      case &amp;#39;s&amp;#39;:
+        if ( validwalk(*((_BYTE *)&amp;amp;savedregs &amp;#43; 30 * (int)(v8 &amp;#43; 1) &amp;#43; (int)v9 - 912)) )
+          &amp;#43;&amp;#43;v8;
+        break;
+      case &amp;#39;w&amp;#39;:
+        if ( validwalk(*((_BYTE *)&amp;amp;savedregs &amp;#43; 30 * (int)v8 &amp;#43; (int)(v9 - 1) - 912)) )
+          --v9;
+        break;
+      default:
+        break;
+    }
+    if ( *((_BYTE *)&amp;amp;savedregs &amp;#43; 30 * (int)v8 &amp;#43; (int)v9 - 912) == 42 )
+    {
+      if ( rand() % 1213 == 1212 )
+      {
+        puts(&amp;#34;You successfully exit the maze!&amp;#34;);
+        winner();
+      }
+      puts(&amp;#34;Just as you are about to exit, a displacer beast captures you. You die.&amp;#34;);
+      exit(0);
+    }
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+  &lt;/div&gt;
 
 
-&lt;p&gt;Now we just need to brute force numbers 1-100 for the 2nd check! I just automated this with a simple script like this:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-py&#34; data-lang=&#34;py&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; requests
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; i &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; range(&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;,&lt;span style=&#34;color:#ae81ff&#34;&gt;101&lt;/span&gt;):
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    url &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;f&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;https://fsiybpfkid.qualifier.hackabit.com/brain?my-int=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;{&lt;/span&gt;i&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    resp &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; requests&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;get(url)
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    print(resp&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;text)
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;pass-icn&amp;#39;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; resp&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;text: &lt;span style=&#34;color:#75715e&#34;&gt;# check if pass icon is in the response&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        print(url)
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#66d9ef&#34;&gt;break&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;And we get 72 as the secret number.&lt;/p&gt;
-&lt;p&gt;Adding it as another parameter with &lt;code&gt;&amp;amp;my-int=72&lt;/code&gt; (&lt;code&gt;&amp;amp;&lt;/code&gt; for multiple URL paramters) in burpsuite we get the flag!&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;flag{insaayne_in_da_membrain}&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Running the provided binary and inputting &lt;code&gt;a&lt;/code&gt;, we can see the maze layout:&lt;/p&gt;
 
-  &lt;img src=&#34;./img/insane.png&#34;  class=&#34;center&#34;  style=&#34;border-radius: 5px; width: 100%;&#34;  /&gt;
+  &lt;img src=&#34;./img/mazelayout.png&#34;  class=&#34;center&#34;  style=&#34;border-radius: 5px;&#34;  /&gt;
 
 
-&lt;h1 id=&#34;3-programming&#34;&gt;3. Programming&lt;/h1&gt;
-&lt;h1 id=&#34;blobs-75&#34;&gt;Blobs (75)&lt;/h1&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Hey there navigator, its time to follow some directions. Take your challenge input (file) and start at the initial position, such as the below x=52, y=-31. Just like you are on a 2d graph, move in the direction the arrows tell you to. In the below example you end up in the same x position for a difference of 0 and down one for a y difference of -1. Take your final position, in this case 52, -32 and multiply the values together&amp;ndash;that is your final position. The answer to the sample prompt is -1664.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;Sample prompt:&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;(52,-31)
-
-↘ ↙ ↘ ↙ ↘ → ← ↖ ← ↗ ↘ ↑ ↑ ↓ ↗ ← → ↙ ↖ ↑
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Simple programming challenge, but I really couldn&amp;rsquo;t be bothered with 8 if/switch case statements so I just used chatGPT, which generated this script and solved it with some modification. Flag &lt;code&gt;-2025780&lt;/code&gt;&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-py&#34; data-lang=&#34;py&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#CHAT GPT DID IT&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Initial position&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;x, y &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;136&lt;/span&gt;,&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;8891&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;directions &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;(omitted because too long)&amp;#34;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Iterate through the directions and update the position&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; direction &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; directions:
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; direction &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;←&amp;#34;&lt;/span&gt;:
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        x &lt;span style=&#34;color:#f92672&#34;&gt;-=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;elif&lt;/span&gt; direction &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;→&amp;#34;&lt;/span&gt;:
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        x &lt;span style=&#34;color:#f92672&#34;&gt;+=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;elif&lt;/span&gt; direction &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;↑&amp;#34;&lt;/span&gt;:
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        y &lt;span style=&#34;color:#f92672&#34;&gt;+=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;elif&lt;/span&gt; direction &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;↓&amp;#34;&lt;/span&gt;:
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        y &lt;span style=&#34;color:#f92672&#34;&gt;-=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;elif&lt;/span&gt; direction &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;↖&amp;#34;&lt;/span&gt;:
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        x &lt;span style=&#34;color:#f92672&#34;&gt;-=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        y &lt;span style=&#34;color:#f92672&#34;&gt;+=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;elif&lt;/span&gt; direction &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;↗&amp;#34;&lt;/span&gt;:
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        x &lt;span style=&#34;color:#f92672&#34;&gt;+=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        y &lt;span style=&#34;color:#f92672&#34;&gt;+=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;elif&lt;/span&gt; direction &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;↙&amp;#34;&lt;/span&gt;:
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        x &lt;span style=&#34;color:#f92672&#34;&gt;-=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        y &lt;span style=&#34;color:#f92672&#34;&gt;-=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;elif&lt;/span&gt; direction &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;↘&amp;#34;&lt;/span&gt;:
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        x &lt;span style=&#34;color:#f92672&#34;&gt;+=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        y &lt;span style=&#34;color:#f92672&#34;&gt;-=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Multiply the final position to get the answer&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;answer &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; x &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt; y
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;print(answer)
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h1 id=&#34;buckets-75&#34;&gt;Buckets (75)&lt;/h1&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Grab the data file and add up all the times danny and elise appear. Multiple those two numbers together, that is your challenge answer.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;This is yet another programming challenge, even easier than the previous. Use &lt;code&gt;.count()&lt;/code&gt; to count how many times each appears. I couldn&amp;rsquo;t be bothered reading the file, but it would&amp;rsquo;ve been &lt;code&gt;data=open(&#39;filename&#39;,&#39;r&#39;).read()&lt;/code&gt;&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-py&#34; data-lang=&#34;py&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;data &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;omitted because too long&amp;#34;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;a &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; data&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;count(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;danny&amp;#39;&lt;/span&gt;)
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;b &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; data&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;count(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;elise&amp;#39;&lt;/span&gt;)
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;print(a&lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;b)
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;pancakes-100&#34;&gt;Pancakes (100)&lt;/h2&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Okay we&amp;rsquo;re doing it again, just giving you the flag&amp;hellip; should be easy enough right? Well now lets talk about compiled code. This is the same code compiled for a bunch of different architectures. First, figure out which binary is compatible with your system, then just run it to get the flag!&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;We are given a zip file with a bunch of binaries! All of them are the same - they are just for different architectures/OS etc. Running any will give the flag. For me, running &lt;code&gt;./binary_18&lt;/code&gt; on WSL gave the flag &lt;code&gt;flag{bob_the_architect}&lt;/code&gt;&lt;/p&gt;
-&lt;h2 id=&#34;linguist-100&#34;&gt;Linguist (100)&lt;/h2&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Grab this file and check it out. You&amp;rsquo;ll notice that it&amp;rsquo;s Python3! Python is an interpreted language, you can read the code but it&amp;rsquo;ll be easier to just interpret it!&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;p&gt;This challenge is juxtaposed to Pancake, which is compiled code. Once you interpret this code with the Python3 interpreter, try to read it and see if you understand what it&amp;rsquo;s doing as a bonus!&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;Given python code:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-py&#34; data-lang=&#34;py&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; random
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; time
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;flag &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;b&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\xf9\xf3\xfe\xf8\xe4\xeb\xf7\xf6\xec\xc0\xf6\xec\xf1\xeb\xc0\xec\xef\xfe\xf1\xf6\xec\xf7\xc0\xfd\xea\xeb\xc0\xf6\xc0\xec\xeb\xf6\xf3\xf3\xc0\xf1\xfa\xfa\xfb\xc0\xfe\xf1\xc0\xf6\xf1\xeb\xfa\xed\xef\xed\xfa\xeb\xfa\xed\xe2&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;ANSI&lt;/span&gt;:
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    COLORS &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; [ &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\033&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;[0;30m&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\033&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;[0;31m&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\033&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;[0;32m&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\033&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;[0;33m&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\033&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;[0;34m&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\033&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;[0;35m&amp;#34;&lt;/span&gt;,
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;               &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\033&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;[0;36m&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\033&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;[0;37m&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\033&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;[1;30m&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\033&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;[1;31m&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\033&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;[1;32m&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\033&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;[1;33m&amp;#34;&lt;/span&gt;,
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;               &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\033&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;[1;34m&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\033&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;[1;35m&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\033&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;[1;36m&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\033&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;[1;37m&amp;#34;&lt;/span&gt; ]
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    STYLES &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; [ &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\033&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;[1m&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\033&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;[2m&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\033&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;[3m&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\033&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;[4m&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\033&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;[5m&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\033&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;[7m&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\033&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;[9m&amp;#34;&lt;/span&gt; ]
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    END &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\033&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;[0m&amp;#34;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; __name__ &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;__main__&amp;#39;&lt;/span&gt;:
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;try&lt;/span&gt;:
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#66d9ef&#34;&gt;while&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;True&lt;/span&gt;:
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            print(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&amp;#34;&lt;/span&gt;,end&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\r&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;)
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; i &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; flag: print(&lt;span style=&#34;color:#e6db74&#34;&gt;f&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;{&lt;/span&gt;random&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;choice(ANSI&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;COLORS)&lt;span style=&#34;color:#e6db74&#34;&gt;}{&lt;/span&gt;chr(i &lt;span style=&#34;color:#f92672&#34;&gt;^&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0x9F&lt;/span&gt;)&lt;span style=&#34;color:#e6db74&#34;&gt;}{&lt;/span&gt;ANSI&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;END&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;, end&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&amp;#34;&lt;/span&gt;)
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            time&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;sleep(&lt;span style=&#34;color:#ae81ff&#34;&gt;0.1&lt;/span&gt;)
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;except&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;KeyboardInterrupt&lt;/span&gt;:
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        print(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&amp;#34;&lt;/span&gt;,end&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\r&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;)
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; i &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; flag: print(&lt;span style=&#34;color:#e6db74&#34;&gt;f&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;{&lt;/span&gt;chr(i &lt;span style=&#34;color:#f92672&#34;&gt;^&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0x9F&lt;/span&gt;)&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;, end&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&amp;#34;&lt;/span&gt;)
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        print(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;  &amp;#34;&lt;/span&gt;)
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;No reversing is needed - just running the file gives the flag &lt;code&gt;flag{this_isnt_spanish_but_i_still_need_an_interpreter}&lt;/code&gt;&lt;/p&gt;
-&lt;h2 id=&#34;wrench-125&#34;&gt;Wrench (125)&lt;/h2&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Think of this challenge like a bolt and go build a wrench.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Here&amp;rsquo;s your blueprint:&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Connect to the server on strfjebijc.qualifier.hackabit.com:54321 and get your challenge input. Add up all the decimal integers and only the decminal integers, no hex numbers or strings count. Send that result back within 3 seconds to get the flag&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;We are given a bunch of text seperated by newlines when we connect using netcat. The challenge says to add up all decimal numbers, and send the result within 3 seconds. We will use &lt;a href=&#34;https://docs.pwntools.com/en/stable/&#34;&gt;pwntools&lt;/a&gt; to automate this, and do it within 3 seconds.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-py&#34; data-lang=&#34;py&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;from&lt;/span&gt; pwn &lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; string
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;r &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; remote(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;strfjebijc.qualifier.hackabit.com&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;54321&lt;/span&gt;)
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;things &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; r&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;recvuntil(&lt;span style=&#34;color:#e6db74&#34;&gt;b&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;total: &amp;#34;&lt;/span&gt;, drop&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;True&lt;/span&gt;)&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;decode()
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;things &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; things&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;split(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\n&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;)
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;total &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; thing &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; things:
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; thing&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;isdigit(): &lt;span style=&#34;color:#75715e&#34;&gt;# check its a decimal number&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        total&lt;span style=&#34;color:#f92672&#34;&gt;+=&lt;/span&gt;int(thing)
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;r&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;sendline(str(total))
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;r&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;interactive()
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;And we get the flag &lt;code&gt;flag{i_feel_the_need_the_need_for_speed}&lt;/code&gt;&lt;/p&gt;
-&lt;h2 id=&#34;bites-125&#34;&gt;Bites (125)&lt;/h2&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Here&amp;rsquo;s a blob of data. Thats it. Just Data. Not any specific data. Just 1&amp;rsquo;s and 0&amp;rsquo;s&amp;hellip;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Process this file. There are series of bytes from 0x02 to 0xFF. Each of these strings of bytes are surrounded by a null byte (0x00). Finally, there are also byte strings of all 0x01. Your mission is to add up all the bytes in the byte strings that are not 0x01 byte strings. The flag is the integer value of all those bytes added up.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;p&gt;The &amp;ldquo;flag&amp;rdquo; is just the total sum, no flag{}.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;We are given a file, and told to add up all the bytes, apart from &lt;code&gt;0x01&lt;/code&gt;. So we will do just that with python. Note that when looping over a bytes object in python, each element is a number 0-255, which is why it is &lt;code&gt; == 1&lt;/code&gt; instead of &lt;code&gt;== b&amp;quot;\x01&amp;quot;&lt;/code&gt;&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-py&#34; data-lang=&#34;py&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;from&lt;/span&gt; Crypto.Util.number &lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; bytes_to_long
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;f &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; open(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;bites.bin&amp;#34;&lt;/span&gt;,&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;rb&amp;#34;&lt;/span&gt;)&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;read()
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;total&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; thing &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; f:
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; thing &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;:
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#66d9ef&#34;&gt;pass&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;else&lt;/span&gt;:
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        total&lt;span style=&#34;color:#f92672&#34;&gt;+=&lt;/span&gt;thing
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;print(total)
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;And we get the flag &lt;code&gt;512490&lt;/code&gt;&lt;/p&gt;
-&lt;h2 id=&#34;speed-150&#34;&gt;Speed (150)&lt;/h2&gt;
-&lt;blockquote&gt;
-&lt;p&gt;You probably shouldn&amp;rsquo;t do this one by hand&amp;hellip; Instead write a sorting algorithm that efficiently organizes this file of numbers smallest to biggest. Your flag is the 52133rd number once sorted, starting from 0. Ie: sorted_numbers[52133].&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;p&gt;On an average computer, an efficient algorithm should be able to solve this in around 10 seconds.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;We are given a large file, and told to sort it, and submit the 51233th item (0-indexed) as the flag. So as always, python is sufficient to solve this, getting the flag &lt;code&gt;1235203980&lt;/code&gt;&lt;/p&gt;
-
-  &lt;img src=&#34;./img/sort.png&#34;  class=&#34;center&#34;  style=&#34;border-radius: 5px; width: 100%;&#34;  /&gt;
+&lt;p&gt;There are already a lot of scripts online to solve mazes, and since we want to solve this as fast as possible for the most points, we use ChatGPT to generate a script for us:&lt;/p&gt;
 
 
-&lt;p&gt;No need to code your own algorithm - every language has builtin sorting algorithms already. Though sorting algorithms &lt;em&gt;are&lt;/em&gt; interesting&amp;hellip;&lt;/p&gt;
-&lt;p&gt;Small note: I should have done &lt;code&gt;map(int, f)&lt;/code&gt; to convert every string in &lt;code&gt;f&lt;/code&gt; to a number, &lt;em&gt;then&lt;/em&gt; sort, but this didn&amp;rsquo;t matter in this case as with integers only, alphabetical is same as numerical.&lt;/p&gt;
-&lt;h2 id=&#34;abundance-150&#34;&gt;Abundance (150)&lt;/h2&gt;
-&lt;p&gt;We are given a binary. Decompiling it online at &lt;a href=&#34;https://dogbolt.org/&#34;&gt;dogbolt&lt;/a&gt; recovers some code:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-c&#34; data-lang=&#34;c&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;__cdecl&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;main&lt;/span&gt;(&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; argc, &lt;span style=&#34;color:#66d9ef&#34;&gt;const&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;char&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;**&lt;/span&gt;argv, &lt;span style=&#34;color:#66d9ef&#34;&gt;const&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;char&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;**&lt;/span&gt;envp)
+
+  &lt;div class=&#34;collapsable-code&#34;&gt;
+    &lt;input id=&#34;2&#34; type=&#34;checkbox&#34;  /&gt;
+    &lt;label for=&#34;2&#34;&gt;
+      &lt;span class=&#34;collapsable-code__language&#34;&gt;python&lt;/span&gt;
+      &lt;span class=&#34;collapsable-code__title&#34;&gt;maze_solver.py&lt;/span&gt;
+      &lt;span class=&#34;collapsable-code__toggle&#34; data-label-expand=&#34;Show&#34; data-label-collapse=&#34;Hide&#34;&gt;&lt;/span&gt;
+    &lt;/label&gt;
+    &lt;pre class=&#34;language-python&#34; &gt;&lt;code&gt;
+class MazeSolver:
+    def __init__(self, maze):
+        self.maze = maze
+        self.rows = len(maze)
+        self.cols = len(maze[0])
+        self.visited = [[False for _ in range(self.cols)] for _ in range(self.rows)]
+        self.directions = {&amp;#39;N&amp;#39;: (-1, 0), &amp;#39;S&amp;#39;: (1, 0), &amp;#39;W&amp;#39;: (0, -1), &amp;#39;E&amp;#39;: (0, 1)}
+        self.path = []
+
+    def solve(self, start_row, start_col):
+        if self._dfs(start_row, start_col):
+            return self._get_solution()
+        else:
+            return []
+
+    def _dfs(self, row, col):
+        if not self._is_valid(row, col):
+            return False
+
+        self.visited[row][col] = True
+        self.path.append((row, col))
+
+        if self.maze[row][col] == &amp;#39;*&amp;#39;:
+            return True
+
+        for direction in self.directions.values():
+            next_row = row &amp;#43; direction[0]
+            next_col = col &amp;#43; direction[1]
+            if self._dfs(next_row, next_col):
+                return True
+
+        self.path.pop()
+        return False
+
+    def _is_valid(self, row, col):
+        if row &amp;lt; 0 or row &amp;gt;= self.rows or col &amp;lt; 0 or col &amp;gt;= self.cols:
+            return False
+        if self.maze[row][col] == &amp;#39;#&amp;#39; or self.visited[row][col]:
+            return False
+        return True
+
+    def _get_solution(self):
+        solution = []
+        for i in range(1, len(self.path)):
+            prev_row, prev_col = self.path[i-1]
+            curr_row, curr_col = self.path[i]
+            if curr_row &amp;lt; prev_row:
+                solution.append(&amp;#39;n&amp;#39;)
+            elif curr_row &amp;gt; prev_row:
+                solution.append(&amp;#39;s&amp;#39;)
+            elif curr_col &amp;lt; prev_col:
+                solution.append(&amp;#39;w&amp;#39;)
+            elif curr_col &amp;gt; prev_col:
+                solution.append(&amp;#39;e&amp;#39;)
+        return solution
+
+
+maze = [
+    &amp;#34;#@#.................#.....#.#&amp;#34;,
+    &amp;#34;#.#.#######.#######.#.###.#.#&amp;#34;,
+    &amp;#34;#.#.#.#.....#.....#...#...#.#&amp;#34;,
+    &amp;#34;#.#.#.#.#######.#.#####.###.#&amp;#34;,
+    &amp;#34;#.#...#.#.......#.#...#.....#&amp;#34;,
+    &amp;#34;#.#####.#.#####.###.#.#####.#&amp;#34;,
+    &amp;#34;#.#...#.#.#.....#...#.......#&amp;#34;,
+    &amp;#34;#.#.#.#.#.#######.###########&amp;#34;,
+    &amp;#34;#...#...#.#.......#.......#.#&amp;#34;,
+    &amp;#34;#########.#.#######.#####.#.#&amp;#34;,
+    &amp;#34;#.#.......#...#...#...#...#.#&amp;#34;,
+    &amp;#34;#.#.#.#######.#.#.###.#.###.#&amp;#34;,
+    &amp;#34;#.#.#.....#...#.#.....#.....#&amp;#34;,
+    &amp;#34;#.#.#####.#.###.###########.#&amp;#34;,
+    &amp;#34;#.#.....#.#.#...#.#.......#.#&amp;#34;,
+    &amp;#34;#.#####.#.#.#.###.#.###.###.#&amp;#34;,
+    &amp;#34;#.......#...#...#...#.#...#.#&amp;#34;,
+    &amp;#34;#.###########.#.#.###.###.#.#&amp;#34;,
+    &amp;#34;#.#.......#...#.#.#.....#...#&amp;#34;,
+    &amp;#34;#.#######.#.###.#.#.###.#####&amp;#34;,
+    &amp;#34;#.......#.....#.#...#...#...#&amp;#34;,
+    &amp;#34;#######.#######.#####.#####.#&amp;#34;,
+    &amp;#34;#.....#.....#...#...#.#.....#&amp;#34;,
+    &amp;#34;#.###.#####.#.###.###.#.###.#&amp;#34;,
+    &amp;#34;#.#.#.....#.#.#.......#.#...#&amp;#34;,
+    &amp;#34;#.#.###.###.#.#.#######.#.###&amp;#34;,
+    &amp;#34;#.....#.......#.........#...#&amp;#34;,
+    &amp;#34;####################*########&amp;#34;
+]
+
+solver = MazeSolver(maze)
+solution = solver.solve(0, 1)
+print(&amp;#34;Instructions to solve the maze:&amp;#34;)
+print(solution)
+
+&lt;/code&gt;&lt;/pre&gt;
+  &lt;/div&gt;
+
+
+&lt;p&gt;The script outputs the instructions required to solve the maze, starting from &lt;code&gt;@&lt;/code&gt; to the goal &lt;code&gt;*&lt;/code&gt;. Writing up a quick script in python we can verify this works:&lt;/p&gt;
+
+
+
+  &lt;div class=&#34;collapsable-code&#34;&gt;
+    &lt;input id=&#34;3&#34; type=&#34;checkbox&#34;  /&gt;
+    &lt;label for=&#34;3&#34;&gt;
+      &lt;span class=&#34;collapsable-code__language&#34;&gt;python&lt;/span&gt;
+      &lt;span class=&#34;collapsable-code__title&#34;&gt;solve.py&lt;/span&gt;
+      &lt;span class=&#34;collapsable-code__toggle&#34; data-label-expand=&#34;Show&#34; data-label-collapse=&#34;Hide&#34;&gt;&lt;/span&gt;
+    &lt;/label&gt;
+    &lt;pre class=&#34;language-python&#34; &gt;&lt;code&gt;
+# MazeSolver() here
+...
+from pwn import *
+import time
+
+elf = context.binary = ELF(&amp;#34;./challenge&amp;#34;)
+p = process()
+
+p.recvuntil(b&amp;#34;Which would you like to do?&amp;#34;)
+p.sendline(b&amp;#34;a&amp;#34;)
+p.recvuntil(b&amp;#34;You cast arcane eye and send your summoned magical eye above the maze.&amp;#34;)
+
+maze = p.recvuntil(b&amp;#34;You&amp;#34;, drop=True).decode().split(&amp;#34;\n&amp;#34;)
+maze = [i for i in maze if &amp;#34;.&amp;#34; in i or &amp;#34;#&amp;#34; in i] # scuffed method to get maze
+maze = maze[1:]
+
+solver = MazeSolver(maze)
+solution = solver.solve(0, 1)
+
+for moves in solution:
+    p.sendline(moves)
+
+p.interactive()
+&lt;/code&gt;&lt;/pre&gt;
+  &lt;/div&gt;
+
+
+
+  &lt;img src=&#34;./img/maze_die.png&#34;  class=&#34;center&#34;  style=&#34;border-radius: 5px;&#34;  /&gt;
+
+
+&lt;p&gt;However, after reaching the goal we seem to just die. Reading the decompiled code further, we see why.&lt;/p&gt;
+&lt;p&gt;The goal is to call the &lt;code&gt;winner()&lt;/code&gt; function, which gives us a shell:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-c&#34; data-lang=&#34;c&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;void&lt;/span&gt; __noreturn &lt;span style=&#34;color:#a6e22e&#34;&gt;winner&lt;/span&gt;()
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;{
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#66d9ef&#34;&gt;size_t&lt;/span&gt; v3; &lt;span style=&#34;color:#75715e&#34;&gt;// rbx
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;  &lt;span style=&#34;color:#66d9ef&#34;&gt;char&lt;/span&gt; s[&lt;span style=&#34;color:#ae81ff&#34;&gt;8&lt;/span&gt;]; &lt;span style=&#34;color:#75715e&#34;&gt;// [rsp+0h] [rbp-C0h] BYREF
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;  &lt;span style=&#34;color:#66d9ef&#34;&gt;__int64&lt;/span&gt; v6; &lt;span style=&#34;color:#75715e&#34;&gt;// [rsp+8h] [rbp-B8h]
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;  &lt;span style=&#34;color:#66d9ef&#34;&gt;__int64&lt;/span&gt; v7; &lt;span style=&#34;color:#75715e&#34;&gt;// [rsp+10h] [rbp-B0h]
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;  &lt;span style=&#34;color:#66d9ef&#34;&gt;__int64&lt;/span&gt; v8; &lt;span style=&#34;color:#75715e&#34;&gt;// [rsp+18h] [rbp-A8h]
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;  &lt;span style=&#34;color:#66d9ef&#34;&gt;char&lt;/span&gt; v9; &lt;span style=&#34;color:#75715e&#34;&gt;// [rsp+20h] [rbp-A0h]
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;  &lt;span style=&#34;color:#66d9ef&#34;&gt;char&lt;/span&gt; s1[&lt;span style=&#34;color:#ae81ff&#34;&gt;8&lt;/span&gt;]; &lt;span style=&#34;color:#75715e&#34;&gt;// [rsp+30h] [rbp-90h] BYREF
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;  &lt;span style=&#34;color:#66d9ef&#34;&gt;__int64&lt;/span&gt; v11; &lt;span style=&#34;color:#75715e&#34;&gt;// [rsp+38h] [rbp-88h]
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;  &lt;span style=&#34;color:#66d9ef&#34;&gt;__int64&lt;/span&gt; v12; &lt;span style=&#34;color:#75715e&#34;&gt;// [rsp+40h] [rbp-80h]
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;  &lt;span style=&#34;color:#66d9ef&#34;&gt;__int64&lt;/span&gt; v13; &lt;span style=&#34;color:#75715e&#34;&gt;// [rsp+48h] [rbp-78h]
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;  &lt;span style=&#34;color:#66d9ef&#34;&gt;__int64&lt;/span&gt; v14; &lt;span style=&#34;color:#75715e&#34;&gt;// [rsp+50h] [rbp-70h]
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;  &lt;span style=&#34;color:#66d9ef&#34;&gt;__int64&lt;/span&gt; v15; &lt;span style=&#34;color:#75715e&#34;&gt;// [rsp+58h] [rbp-68h]
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;  &lt;span style=&#34;color:#66d9ef&#34;&gt;__int64&lt;/span&gt; v16; &lt;span style=&#34;color:#75715e&#34;&gt;// [rsp+60h] [rbp-60h]
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;  &lt;span style=&#34;color:#66d9ef&#34;&gt;__int64&lt;/span&gt; v17; &lt;span style=&#34;color:#75715e&#34;&gt;// [rsp+68h] [rbp-58h]
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;  &lt;span style=&#34;color:#66d9ef&#34;&gt;__int64&lt;/span&gt; v18; &lt;span style=&#34;color:#75715e&#34;&gt;// [rsp+70h] [rbp-50h]
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;  &lt;span style=&#34;color:#66d9ef&#34;&gt;__int64&lt;/span&gt; v19; &lt;span style=&#34;color:#75715e&#34;&gt;// [rsp+78h] [rbp-48h]
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;  &lt;span style=&#34;color:#66d9ef&#34;&gt;__int64&lt;/span&gt; v20; &lt;span style=&#34;color:#75715e&#34;&gt;// [rsp+80h] [rbp-40h]
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;  &lt;span style=&#34;color:#66d9ef&#34;&gt;__int64&lt;/span&gt; v21; &lt;span style=&#34;color:#75715e&#34;&gt;// [rsp+88h] [rbp-38h]
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;  &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; v22; &lt;span style=&#34;color:#75715e&#34;&gt;// [rsp+90h] [rbp-30h]
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;  &lt;span style=&#34;color:#66d9ef&#34;&gt;__int64&lt;/span&gt; v23; &lt;span style=&#34;color:#75715e&#34;&gt;// [rsp+A0h] [rbp-20h]
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;  &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; i; &lt;span style=&#34;color:#75715e&#34;&gt;// [rsp+ACh] [rbp-14h]
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  v23 &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;3735928559LL&lt;/span&gt;;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;(_QWORD &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;)s1 &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0LL&lt;/span&gt;;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  v11 &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0LL&lt;/span&gt;;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  v12 &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0LL&lt;/span&gt;;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  v13 &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0LL&lt;/span&gt;;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  v14 &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0LL&lt;/span&gt;;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  v15 &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0LL&lt;/span&gt;;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  v16 &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0LL&lt;/span&gt;;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  v17 &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0LL&lt;/span&gt;;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  v18 &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0LL&lt;/span&gt;;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  v19 &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0LL&lt;/span&gt;;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  v20 &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0LL&lt;/span&gt;;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  v21 &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0LL&lt;/span&gt;;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  v22 &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;(_QWORD &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;)s &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0x90978884989E9399LL&lt;/span&gt;;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  v6 &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0xA08C8B9E978BA09ELL&lt;/span&gt;;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  v7 &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0x8B8B8B8B8B90939ELL&lt;/span&gt;;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  v8 &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0x828C9A8B869DA09ELL&lt;/span&gt;;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  v9 &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; ( i &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;; ; &lt;span style=&#34;color:#f92672&#34;&gt;++&lt;/span&gt;i )
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  {
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    v3 &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; i;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; ( v3 &lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;strlen&lt;/span&gt;(s) )
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#66d9ef&#34;&gt;break&lt;/span&gt;;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    s[i] &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;~&lt;/span&gt;s[i];
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  }
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#66d9ef&#34;&gt;while&lt;/span&gt; ( &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; )
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  {
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#a6e22e&#34;&gt;printf&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;What is the entry point of this binary (like 0x1070)?: &amp;#34;&lt;/span&gt;);
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#a6e22e&#34;&gt;fgets&lt;/span&gt;(s1, &lt;span style=&#34;color:#ae81ff&#34;&gt;150&lt;/span&gt;, _bss_start);
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    s1[&lt;span style=&#34;color:#a6e22e&#34;&gt;strcspn&lt;/span&gt;(s1, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\n&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;)] &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; ( v23 &lt;span style=&#34;color:#f92672&#34;&gt;!=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;3735928559LL&lt;/span&gt; )
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    {
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#a6e22e&#34;&gt;puts&lt;/span&gt;(s);
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; ( &lt;span style=&#34;color:#f92672&#34;&gt;!&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;strcmp&lt;/span&gt;(s1, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;0x1100&amp;#34;&lt;/span&gt;) )
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#66d9ef&#34;&gt;break&lt;/span&gt;;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#a6e22e&#34;&gt;puts&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;That&amp;#39;s not right?? :(&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\n&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;);
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  }
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#a6e22e&#34;&gt;puts&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Yeah I guess you got it... but whatever man!&amp;#34;&lt;/span&gt;);
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#a6e22e&#34;&gt;puts&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Congratulations! You have solved the maze!&amp;#34;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#a6e22e&#34;&gt;system&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;/bin/sh&amp;#34;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#a6e22e&#34;&gt;exit&lt;/span&gt;(&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;);
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;We see that &lt;code&gt;s&lt;/code&gt; seems to be the flag, and it seems to be made of some hex strings in the variables &lt;code&gt;v6&lt;/code&gt;, &lt;code&gt;v7&lt;/code&gt;, &lt;code&gt;v8&lt;/code&gt;. However, each byte of &lt;code&gt;s&lt;/code&gt; is changed to &lt;code&gt;~s[i]&lt;/code&gt;, which is bitwise negation/NOT operator.&lt;/p&gt;
-&lt;p&gt;Since &lt;code&gt;~~s = s&lt;/code&gt;, we can just bitwise NOT it again and get the flag.&lt;/p&gt;
-
-  &lt;img src=&#34;./img/not.png&#34;  class=&#34;center&#34;  style=&#34;border-radius: 5px; width: 100%;&#34;  /&gt;
-
-
-&lt;p&gt;Accounting for endianness by rearranging the string &lt;code&gt;ohw{galf_staht_atttttola}setyb_a&lt;/code&gt; gives &lt;code&gt;flag{whoa_thats_alottttta_bytes}&lt;/code&gt;. Didn&amp;rsquo;t need to run the binary to get the flag I guess.&lt;/p&gt;
-&lt;h1 id=&#34;4-infrastructure&#34;&gt;4. Infrastructure&lt;/h1&gt;
-&lt;h2 id=&#34;captain-75&#34;&gt;Captain (75)&lt;/h2&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Cloud infrastructure is migrating to containerized technology in many places, lets get started with containers. Run this docker container with the environment variable &lt;code&gt;FLAG_ENABLER&lt;/code&gt; set to &lt;code&gt;give_me_the_flag&lt;/code&gt;.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;a href=&#34;https://hub.docker.com/r/nathanielsinger/hackabit0x01-infrastructure-container1&#34;&gt;https://hub.docker.com/r/nathanielsinger/hackabit0x01-infrastructure-container1&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;Initially I tried to pull the image and analyse it, but gave up quickly and realised doing it properly was easier. Use &lt;code&gt;-e&lt;/code&gt; flag to set enviroment variables.&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;sudo docker run -e FLAG_ENABLER=give_me_the_flag nathanielsinger/hackabit0x01-infrastructure-container1&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;flag{you_aren&#39;t_the_captain_just_yet}&lt;/code&gt;&lt;/p&gt;
-
-  &lt;img src=&#34;./img/docker1.png&#34;  class=&#34;center&#34;  style=&#34;border-radius: 5px; width: 100%;&#34;  /&gt;
-
-
-&lt;h2 id=&#34;seashell&#34;&gt;Seashell&lt;/h2&gt;
-&lt;blockquote&gt;
-&lt;p&gt;SSH runs the internet. Connect to &lt;code&gt;utkwrgubhj.qualifier.hackabit.com&lt;/code&gt; on port &lt;code&gt;22&lt;/code&gt; with user &lt;code&gt;hackerman&lt;/code&gt; and the provided &lt;code&gt;private key&lt;/code&gt;.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;I did this on MacOS, by importing the key, but here is it again on linux (WSL). Private key file is called &lt;code&gt;id_rsa&lt;/code&gt;. Note that for the private key file, the permissions cannot be too open, so you have to use &lt;code&gt;chmod 400 id_rsa&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;Connecting with &lt;code&gt;ssh -i id_rsa hackerman@utkwrgubhj.qualifier.hackabit.com&lt;/code&gt; we get the flag &lt;code&gt;flag{shesellsseashellsbytheseaaaaaaashore}&lt;/code&gt;.&lt;/p&gt;
-
-  &lt;img src=&#34;./img/ssh.png&#34;  class=&#34;center&#34;  style=&#34;border-radius: 5px; width: 100%;&#34;  /&gt;
-
-
-&lt;h2 id=&#34;loading-100&#34;&gt;Loading (100)&lt;/h2&gt;
-&lt;blockquote&gt;
-&lt;p&gt;What&amp;rsquo;s in this ISO thing?
-&lt;a href=&#34;https://hub.docker.com/r/nathanielsinger/hackabit0x01-infrastructure-container1&#34;&gt;https://hub.docker.com/r/nathanielsinger/hackabit0x01-infrastructure-container1&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;Ok we are given like no info, let&amp;rsquo;s dump the image with &lt;code&gt;docker save -o dockerimage.tar nathanielsinger/hackabit0x01-infrastructure-container1&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;Then just untar (&lt;code&gt;tar -xvf FILE.tar&lt;/code&gt;) the entire thing, and search through folders. Eventually in &lt;code&gt;adb6d&lt;/code&gt;&amp;hellip;. I found the flag in &lt;code&gt;root/flag_image.iso&lt;/code&gt; after untarring &lt;code&gt;layer.tar&lt;/code&gt; in the folder.&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;flag{consider_it_loaded_hackerman}&lt;/code&gt;&lt;/p&gt;
-
-  &lt;img src=&#34;./img/docker2.png&#34;  class=&#34;center&#34;  style=&#34;border-radius: 5px; width: 100%;&#34;  /&gt;
-
-
-&lt;h2 id=&#34;location-100&#34;&gt;Location (100)&lt;/h2&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Now with the same image, dive on in and find the iso image. What is the absolute path to the iso image stored within the container? Include the filename in the path for your submission.
-&lt;a href=&#34;https://hub.docker.com/r/nathanielsinger/hackabit0x01-infrastructure-container1&#34;&gt;https://hub.docker.com/r/nathanielsinger/hackabit0x01-infrastructure-container1&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;To be honest I forgot what the flag to this was, but it&amp;rsquo;s linked to the previous challenge, and we just specify the path to the &lt;code&gt;.iso&lt;/code&gt; image. So it would&amp;rsquo;ve been something like &lt;code&gt;root/flag_image.iso&lt;/code&gt; or &lt;code&gt;/root/flag_image.iso&lt;/code&gt;&lt;/p&gt;
-&lt;h2 id=&#34;connector-125&#34;&gt;Connector (125)&lt;/h2&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Connect to the mysql server at dyxvqmjwaj.qualifier.hackabit.com and read out the flag. Here are some user accounts:
-&lt;code&gt;user1:uyqhxgxcxd&lt;/code&gt; &lt;code&gt;user2:ehaigdexhh&lt;/code&gt; &lt;code&gt;user3:xfgyuvtapt&lt;/code&gt; &lt;code&gt;user4:tnvgijqxei&lt;/code&gt; &lt;code&gt;user5:hybplwmndy&lt;/code&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;We are given 5 user credentials. On my Mac, using SQL Workbench, I tried each one and checked the tables until I found a flag in one of them (&lt;code&gt;user4&lt;/code&gt;).&lt;/p&gt;
-
-  &lt;img src=&#34;./img/connect.png&#34;  class=&#34;center&#34;  style=&#34;border-radius: 5px; width: 100%;&#34;  /&gt;
-
-
-
-  &lt;img src=&#34;./img/sqlflag.png&#34;  class=&#34;center&#34;  style=&#34;border-radius: 5px; width: 100%;&#34;  /&gt;
-
-
-&lt;p&gt;And we get the flag &lt;code&gt;flag{oh_sql_my_sql}&lt;/code&gt;&lt;/p&gt;
-&lt;h2 id=&#34;boat-125&#34;&gt;Boat (125)&lt;/h2&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Sometimes we need to run a machine on a specific address or virtualize a network, get this running on: &lt;code&gt;172.22.1.11.&lt;/code&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;a href=&#34;https://hub.docker.com/r/nathanielsinger/hackabit0x01-infrastructure-container2&#34;&gt;https://hub.docker.com/r/nathanielsinger/hackabit0x01-infrastructure-container2&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;Seems easy enough, just run another docker command. But this time, we get an error when we try to pull the image.&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;Error response from daemon: manifest for nathanielsinger/hackabit0x01-infrastructure-container2:latest not found: manifest unknown: manifest unknown
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Searching for the error brings us to &lt;a href=&#34;https://stackoverflow.com/questions/41810104/docker-manifest-unknown-manifest-unknown&#34;&gt;this&lt;/a&gt; stack overflow question, and we see we have to specify the version of the image. So we do so and &lt;code&gt;docker pull nathanielsinger/hackabit0x01-infrastructure-container2:v1.0.0&lt;/code&gt; works.&lt;/p&gt;
-&lt;p&gt;Using yet another &lt;a href=&#34;https://stackoverflow.com/questions/27937185/assign-static-ip-to-docker-container&#34;&gt;article&lt;/a&gt; we use the command &lt;code&gt;docker network create --subnet=172.22.1.11/16 net1&lt;/code&gt; to make a network and &lt;code&gt;docker run --net net1 --ip 172.22.1.11 nathanielsinger/hackabit0x01-infrastructure-container2:v1.0.0&lt;/code&gt; to run the container with that network and correct ip.&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;flag{its_just_an_address_man}&lt;/code&gt;&lt;/p&gt;
-
-  &lt;img src=&#34;./img/docker3.png&#34;  class=&#34;center&#34;  style=&#34;border-radius: 5px; width: 100%;&#34;  /&gt;
-
-
-&lt;h2 id=&#34;inspector-150&#34;&gt;Inspector (150)&lt;/h2&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Oh look its Bits, something changed though&amp;hellip; see if you can track it down.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;We are provided with a zip file containing source code for what seems to be the Bits bot on the CTF&amp;rsquo;s discord server. After looking around, I realise we are given a git folder which contains &lt;code&gt;.git&lt;/code&gt; folder, with things like past commits and versions.&lt;/p&gt;
-&lt;p&gt;So the flag must be somewhere in the past commits.&lt;/p&gt;
-&lt;p&gt;Searching for &lt;code&gt;flag&lt;/code&gt; with &lt;code&gt;grep -r &amp;quot;flag&amp;quot; .&lt;/code&gt; we find past commits with &lt;code&gt;flag_stuff&lt;/code&gt; in their info.&lt;/p&gt;
-
-  &lt;img src=&#34;./img/git1.png&#34;  class=&#34;center&#34;  style=&#34;border-radius: 5px; width: 100%;&#34;  /&gt;
-
-
-&lt;p&gt;So we use &lt;code&gt;git checkout &amp;lt;flagcommithash&amp;gt;&lt;/code&gt; to switch to that commit, and another grep reveals the flag.&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;flag{don&#39;t_try_harder...look_harder}&lt;/code&gt;&lt;/p&gt;
-
-  &lt;img src=&#34;./img/git2.png&#34;  class=&#34;center&#34;  style=&#34;border-radius: 5px; width: 100%;&#34;  /&gt;
-
-
-&lt;h2 id=&#34;hammer-150&#34;&gt;Hammer (150)&lt;/h2&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Check out oslyxpzcgs.qualifier.hackabit.com and see if you can find the vuln. No help on this one, nothing crazy though&amp;hellip; enumerate harder :)
-The flag is stored in an environment variable.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;Let&amp;rsquo;s nmap the domain to find more info about the service.&lt;/p&gt;
-
-  &lt;img src=&#34;./img/nmap.png&#34;  class=&#34;center&#34;  style=&#34;border-radius: 5px; width: 100%;&#34;  /&gt;
-
-
-&lt;p&gt;We find an open port &lt;code&gt;21&lt;/code&gt; which is TCP, so let&amp;rsquo;s connect using netcat:&lt;/p&gt;
-
-  &lt;img src=&#34;./img/vsftp.png&#34;  class=&#34;center&#34;  style=&#34;border-radius: 5px; width: 100%;&#34;  /&gt;
-
-
-&lt;p&gt;We see it is running &lt;code&gt;vsFTPd 2.3.4&lt;/code&gt;, and a quick google search reveals that it has a &lt;a href=&#34;https://en.wikipedia.org/wiki/Vsftpd&#34;&gt;smiley face backdoor&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;Now, it is intended that we use Metasploit to automatically solve this, but I did it manually while booting up a linux computer to run Metasploit.&lt;/p&gt;
-&lt;p&gt;First I found the source code for the Metasploit module &lt;a href=&#34;https://www.exploit-db.com/exploits/49757&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;Essentially, if you include &lt;code&gt;:)&lt;/code&gt; in your username, a reverse shell will be sent to you at port 6200. So we do so, and connect at port 6200 for a shell.&lt;/p&gt;
-
-  &lt;img src=&#34;./img/ftp1.png&#34;  class=&#34;center&#34;  style=&#34;border-radius: 5px; width: 100%;&#34;  /&gt;
-
-
-&lt;p&gt;And we check the enviroment variables for the flag. &lt;code&gt;flag{looks_like_you_found_the_right_nail}&lt;/code&gt;&lt;/p&gt;
-
-  &lt;img src=&#34;./img/revshell.png&#34;  class=&#34;center&#34;  style=&#34;border-radius: 5px; width: 100%;&#34;  /&gt;
-
-
-&lt;h1 id=&#34;5-networking&#34;&gt;5. Networking&lt;/h1&gt;
-&lt;h2 id=&#34;phonebook-75&#34;&gt;Phonebook (75)&lt;/h2&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Check out the DNS records for &lt;code&gt;qualifier.hackabit.com&lt;/code&gt;&amp;hellip; there&amp;rsquo;s soemthing interesting there, all kinds of data&amp;hellip;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;Okay let&amp;rsquo;s go to &lt;a href=&#34;https://dnschecker.org/all-dns-records-of-domain.php&#34;&gt;dnschecker.org&lt;/a&gt; and check the DNS records.&lt;/p&gt;
-
-  &lt;img src=&#34;./img/dns.png&#34;  class=&#34;center&#34;  style=&#34;border-radius: 5px; width: 100%;&#34;  /&gt;
-
-
-&lt;p&gt;Wow! A flag! Who would&amp;rsquo;ve guessed&amp;hellip; &lt;code&gt;flag{my_nameserver_is_slimshady}&lt;/code&gt;&lt;/p&gt;
-&lt;h2 id=&#34;avenue-75&#34;&gt;Avenue (75)&lt;/h2&gt;
-&lt;blockquote&gt;
-&lt;p&gt;What is the kernel(OS) was this network capture recorded on?&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;We are given a &lt;code&gt;pcap&lt;/code&gt; capture file. Let&amp;rsquo;s use wireshark to open it.&lt;/p&gt;
-
-  &lt;img src=&#34;./img/wireshark.png&#34;  class=&#34;center&#34;  style=&#34;border-radius: 5px; width: 100%;&#34;  /&gt;
-
-
-&lt;p&gt;And within one of the tls streams we find &lt;code&gt;X11; Ubuntu; Linux x86_64&lt;/code&gt; to be the OS of the capturing device.&lt;/p&gt;
-&lt;h2 id=&#34;rivers-100&#34;&gt;Rivers (100)&lt;/h2&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Follow the river and see whats in the stream.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;Okay, so this was also just following the TLS stream, hence the name and description. The flag is in the previous image too, &lt;code&gt;flag{rivers_run_streams_flowwww}&lt;/code&gt;&lt;/p&gt;
-&lt;h2 id=&#34;fish-100&#34;&gt;Fish (100)&lt;/h2&gt;
-&lt;blockquote&gt;
-&lt;p&gt;What protocol is responsible for the most packets in this capture?&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;Sorting by protocol, we find the &lt;code&gt;QUIC&lt;/code&gt; protocol to be most of the packets.&lt;/p&gt;
-&lt;p&gt;But submitting that doesn&amp;rsquo;t give us the flag. A quick google brings us to its full name, &lt;code&gt;Quick UDP Internet Connections&lt;/code&gt;, which I don&amp;rsquo;t think was the flag either? It was something like &lt;code&gt;QUIC IETF&lt;/code&gt; or so.&lt;/p&gt;
-&lt;h2 id=&#34;school-125&#34;&gt;School (125)&lt;/h2&gt;
-&lt;blockquote&gt;
-&lt;p&gt;This ones gonna take a few steps:&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Take the input line by line
-Calculate the network and broadcast addresses of the subnet
-For each network address add up all the forth octets
-Your challenge response (flag) is this total.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;Okay, I literally chucked this challenge into chat GPT to solve it for me, and it actually worked first try!&lt;/p&gt;
-&lt;p&gt;It gave me this code:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-py&#34; data-lang=&#34;py&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;get_network_address&lt;/span&gt;(ip, netmask):
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    ip_parts &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; [int(x) &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; x &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; ip&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;split(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;.&amp;#39;&lt;/span&gt;)]
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    netmask_parts &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; [int(x) &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; x &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; netmask&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;split(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;.&amp;#39;&lt;/span&gt;)]
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    network_address &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; [ip_parts[i] &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&lt;/span&gt; netmask_parts[i] &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; i &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; range(&lt;span style=&#34;color:#ae81ff&#34;&gt;4&lt;/span&gt;)]
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;.&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;join(str(x) &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; x &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; network_address)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;However, the catch is that apart from solving the maze, we must also pass a random check, and if we don&amp;rsquo;t, we die. So previously, we were dying because &lt;code&gt;rand() % 1213&lt;/code&gt; was not equal to &lt;code&gt;1212&lt;/code&gt;.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-c&#34; data-lang=&#34;c&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; ( &lt;span style=&#34;color:#a6e22e&#34;&gt;rand&lt;/span&gt;() &lt;span style=&#34;color:#f92672&#34;&gt;%&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1213&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1212&lt;/span&gt; )
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#a6e22e&#34;&gt;puts&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;You successfully exit the maze!&amp;#34;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#a6e22e&#34;&gt;winner&lt;/span&gt;();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#a6e22e&#34;&gt;puts&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Just as you are about to exit, a displacer beast captures you. You die.&amp;#34;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#a6e22e&#34;&gt;exit&lt;/span&gt;(&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Fortunately, the &lt;code&gt;rand()&lt;/code&gt; seed is set to the current time with &lt;code&gt;srand()&lt;/code&gt; at the start of the program.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-c&#34; data-lang=&#34;c&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  v3 &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;time&lt;/span&gt;(&lt;span style=&#34;color:#ae81ff&#34;&gt;0LL&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#a6e22e&#34;&gt;srand&lt;/span&gt;(v3);
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Therefore our method to solve the challenge would be:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Figure out how to solve the maze (Done)&lt;/li&gt;
+&lt;li&gt;Mimic the &lt;code&gt;rand()&lt;/code&gt; function in our script by seeding with the same time&lt;/li&gt;
+&lt;li&gt;Keep track of the number of &lt;code&gt;rand()&lt;/code&gt; calls&lt;/li&gt;
+&lt;li&gt;Find a way to call &lt;code&gt;rand()&lt;/code&gt;, and call it additional times until the next call results in &lt;code&gt;rand() % 1213 == 1212&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Doing a search in the decompiled code, we see functions &lt;code&gt;rand_range()&lt;/code&gt; and &lt;code&gt;randomDescription()&lt;/code&gt; each call &lt;code&gt;rand()&lt;/code&gt; once when ran.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-c&#34; data-lang=&#34;c&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;__int64&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;__fastcall&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;rand_range&lt;/span&gt;(&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; a1, &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; a2)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;{
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  ...
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; (&lt;span style=&#34;color:#66d9ef&#34;&gt;unsigned&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt;)(&lt;span style=&#34;color:#a6e22e&#34;&gt;rand&lt;/span&gt;() &lt;span style=&#34;color:#f92672&#34;&gt;%&lt;/span&gt; (a2 &lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt; a1 &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;) &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; a1);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;get_broadcast_address&lt;/span&gt;(ip, netmask):
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    ip_parts &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; [int(x) &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; x &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; ip&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;split(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;.&amp;#39;&lt;/span&gt;)]
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    netmask_parts &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; [&lt;span style=&#34;color:#ae81ff&#34;&gt;255&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt; int(x) &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; x &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; netmask&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;split(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;.&amp;#39;&lt;/span&gt;)]
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    broadcast_address &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; [ip_parts[i] &lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt; netmask_parts[i] &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; i &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; range(&lt;span style=&#34;color:#ae81ff&#34;&gt;4&lt;/span&gt;)]
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;.&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;join(str(x) &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; x &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; broadcast_address)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;unsigned&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;__int64&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;randomDescription&lt;/span&gt;()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;{
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  ...
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  v2[&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;] &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; (&lt;span style=&#34;color:#66d9ef&#34;&gt;__int64&lt;/span&gt;)&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;cozy&amp;#34;&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  v2[&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;] &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; (&lt;span style=&#34;color:#66d9ef&#34;&gt;__int64&lt;/span&gt;)&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;medium-sized&amp;#34;&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  v2[&lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;] &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; (&lt;span style=&#34;color:#66d9ef&#34;&gt;__int64&lt;/span&gt;)&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;spacious&amp;#34;&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  ...
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  v0 &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;rand&lt;/span&gt;();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#a6e22e&#34;&gt;printf&lt;/span&gt;(
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;As you step into the room, you find yourself standing in a %s space. The walls are adorned with %s and a two large %&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;s dominate the center of the room. You see %d flowers in a vase, and through a window you stop to count %d stars. Th&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;e room appears well designed in the %s style.&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\n&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  ...
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; v5 &lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;__readfsqword&lt;/span&gt;(&lt;span style=&#34;color:#ae81ff&#34;&gt;0x28u&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;code&gt;randomDescription()&lt;/code&gt; is called every time we move, &lt;strong&gt;even if our move/input is invalid&lt;/strong&gt;. This means we can call &lt;code&gt;rand()&lt;/code&gt; once ourselves by inputting something that&amp;rsquo;s not a command.&lt;/p&gt;
+&lt;p&gt;Lets debug with &lt;a href=&#34;https://github.com/pwndbg/pwndbg&#34;&gt;&lt;code&gt;pwndbg&lt;/code&gt;&lt;/a&gt; to figure out how many times &lt;code&gt;rand()&lt;/code&gt; is called when generating the maze.&lt;/p&gt;
+&lt;p&gt;We start the binary and immediately break with &lt;code&gt;starti&lt;/code&gt;, and place a breakpoint after &lt;code&gt;generate_maze()&lt;/code&gt;:&lt;/p&gt;
+
+  &lt;img src=&#34;./img/starti.png&#34;  class=&#34;center&#34;  style=&#34;border-radius: 5px;&#34;  /&gt;
+
+
+&lt;p&gt;&lt;a href=&#34;&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+
+  &lt;img src=&#34;./img/break.png&#34;  class=&#34;center&#34;  style=&#34;border-radius: 5px;&#34;  /&gt;
+
+
+&lt;p&gt;Then, we set a breakpoint at &lt;code&gt;rand()&lt;/code&gt;, and write a simpe python counter to keep track of how many times &lt;code&gt;rand()&lt;/code&gt; was called (which was how many times the breakpoint was triggered)&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-py&#34; data-lang=&#34;py&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;python
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;counter &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;main&lt;/span&gt;():
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    filename &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;school.txt&amp;#39;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;with&lt;/span&gt; open(filename) &lt;span style=&#34;color:#66d9ef&#34;&gt;as&lt;/span&gt; f:
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        lines &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; f&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;readlines()
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        sum_of_fourth_octets &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; line &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; lines:
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            ip, mask &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; line&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;strip()&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;split(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;/&amp;#39;&lt;/span&gt;)
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            netmask &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;.&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;join([str((&lt;span style=&#34;color:#ae81ff&#34;&gt;0xffffffff&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt; (&lt;span style=&#34;color:#ae81ff&#34;&gt;32&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt; int(mask))) &lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&amp;gt;&lt;/span&gt; i &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0xff&lt;/span&gt;) &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; i &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; [&lt;span style=&#34;color:#ae81ff&#34;&gt;24&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;16&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;8&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;]])
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            network_address &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; get_network_address(ip, netmask)
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            broadcast_address &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; get_broadcast_address(ip, netmask)
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            print(&lt;span style=&#34;color:#e6db74&#34;&gt;f&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;IP: &lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;{&lt;/span&gt;ip&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;{&lt;/span&gt;mask&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;&lt;/span&gt;)
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            print(&lt;span style=&#34;color:#e6db74&#34;&gt;f&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Network address: &lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;{&lt;/span&gt;network_address&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;&lt;/span&gt;)
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            print(&lt;span style=&#34;color:#e6db74&#34;&gt;f&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Broadcast address: &lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;{&lt;/span&gt;broadcast_address&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;&lt;/span&gt;)
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            sum_of_fourth_octets &lt;span style=&#34;color:#f92672&#34;&gt;+=&lt;/span&gt; int(network_address&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;split(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;.&amp;#39;&lt;/span&gt;)[&lt;span style=&#34;color:#ae81ff&#34;&gt;3&lt;/span&gt;])
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        print(&lt;span style=&#34;color:#e6db74&#34;&gt;f&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Sum of fourth octets: &lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;{&lt;/span&gt;sum_of_fourth_octets&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;breakpoint_handler&lt;/span&gt;(event):
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;global&lt;/span&gt; counter
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    counter &lt;span style=&#34;color:#f92672&#34;&gt;+=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    print(&lt;span style=&#34;color:#e6db74&#34;&gt;f&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;srand called. total times called: &lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;{&lt;/span&gt;counter&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;)
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; __name__ &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;__main__&amp;#39;&lt;/span&gt;:
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    main()
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Which gave us the answer &lt;code&gt;25604&lt;/code&gt;. I am very surprised this worked, and saved me from doing some scripting. So I do apologise for not doing this properly and explaining how to calculate it, hopefully that code is enough :)&lt;/p&gt;
-&lt;h2 id=&#34;picture-125&#34;&gt;Picture (125)&lt;/h2&gt;
-&lt;blockquote&gt;
-&lt;p&gt;There is a service running on woxuazsgxd.qualifier.hackabit.com:54321&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Connect to it and try to follow the mail&amp;hellip;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;Connecting to it with netcat gives us a message along the lines of the flag was sent to you to a random UDP port 5000-5500&lt;/p&gt;
-&lt;p&gt;Definetly one of the harder ones by far. My initial thought was to use Wireshark to capture packages, and filter by protocol UDP or port number, but neither of that worked for some reason. Trying another packet capture method with &lt;code&gt;sudo tcpdump -i ens3 udp -vvv -X&lt;/code&gt;, we get the flag &lt;code&gt;flag{the_mailman_is_confused_but_you&#39;re_not}&lt;/code&gt;&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;14:49:48.524413 IP (tos 0x40, ttl 55, id 741, offset 0, flags [DF], proto UDP (17), length 72)
-    201.15.132.34.bc.googleusercontent.com.1235 &amp;gt; vps-7443235f.vps.ovh.ca.5236: [udp sum ok] UDP, length 44
-        0x0000:  4540 0048 02e5 4000 3711 fb0b 2284 0fc9  E@.H..@.7...&amp;#34;...
-        0x0010:  8b63 87c4 04d3 1474 0034 d36f 666c 6167  .c.....t.4.oflag
-        0x0020:  7b74 6865 5f6d 6169 6c6d 616e 5f69 735f  {the_mailman_is_
-        0x0030:  636f 6e66 7573 6564 5f62 7574 5f79 6f75  confused_but_you
-        0x0040:  2772 655f 6e6f 747d                      &amp;#39;re_not}
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Still not sure why wireshark didn&amp;rsquo;t work, if anyone has an explanation please let me know!&lt;/p&gt;
-&lt;h1 id=&#34;6-osint&#34;&gt;6. OSINT&lt;/h1&gt;
-&lt;p&gt;Okay, I only solved 2 out of 8 OSINT challenges, so I won&amp;rsquo;t be doing any OSINT writeups. I really couldn&amp;rsquo;t be bothered with OSINT after all the other chals, as I don&amp;rsquo;t really enjoy OSINT particularly.&lt;/p&gt;
-&lt;p&gt;So that&amp;rsquo;s it for the writeups! Doubt anyone read almost 1000 lines of Markdown, but thanks for reading!&lt;/p&gt;
-&lt;p&gt;- TheSavageTeddy / theuwuteddy&lt;/p&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;gdb&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;events&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;stop&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;connect(breakpoint_handler)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;end
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+  &lt;img src=&#34;./img/gdbpythoncool.png&#34;  class=&#34;center&#34;  style=&#34;border-radius: 5px;&#34;  /&gt;
+
+
+&lt;p&gt;And we find &lt;code&gt;generate_maze()&lt;/code&gt; hits the breakpoint &lt;code&gt;590&lt;/code&gt; times (the &lt;code&gt;591&lt;/code&gt; in the bottom of image is when it hits the breakpoint after &lt;code&gt;generate_maze()&lt;/code&gt; in &lt;code&gt;main()&lt;/code&gt;, so doesn&amp;rsquo;t count).&lt;/p&gt;
+&lt;p&gt;Now that we have the amount of times &lt;code&gt;rand()&lt;/code&gt; is called, we can simulate this in python to predict what number the next &lt;code&gt;rand()&lt;/code&gt; call will yield.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-py&#34; data-lang=&#34;py&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;from&lt;/span&gt; ctypes &lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; CDLL
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;libc &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; CDLL(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;./libc.so.6&amp;#34;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;libc&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;srand(int(time&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;time()))
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;callrand&lt;/span&gt;():
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; libc&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;rand() &lt;span style=&#34;color:#f92672&#34;&gt;%&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1213&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# simulate rand() calls in generate_maze()&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; _ &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; range(&lt;span style=&#34;color:#ae81ff&#34;&gt;590&lt;/span&gt;):
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    callrand()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;callrand() &lt;span style=&#34;color:#75715e&#34;&gt;# the initial random message it sends&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;...&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; moves &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; solution:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    callrand() &lt;span style=&#34;color:#75715e&#34;&gt;# simulate rand() call in the random message we get after every input&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    p&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;sendline(moves)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Now, after integrating the random calls into our solve script, we can stop before exiting the maze, keep calling &lt;code&gt;rand()&lt;/code&gt; by submitting an invalid input, until the next &lt;code&gt;callrand()&lt;/code&gt; we simulate yields &lt;code&gt;1212&lt;/code&gt;. When it does, we can finally exit the maze, and &lt;code&gt;winner()&lt;/code&gt; should be called, giving us a shell!&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-py&#34; data-lang=&#34;py&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;lastmove &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; solution[&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; moves &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; solution[:&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;]: &lt;span style=&#34;color:#75715e&#34;&gt;# do all moves except last&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    callrand() &lt;span style=&#34;color:#75715e&#34;&gt;# simulate rand() call in the random message we get after every input&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    p&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;sendline(moves)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;nextrand &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; callrand()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;while&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;not&lt;/span&gt; nextrand &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1212&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    p&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;sendline(&lt;span style=&#34;color:#e6db74&#34;&gt;b&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;x&amp;#34;&lt;/span&gt;) &lt;span style=&#34;color:#75715e&#34;&gt;# send invalid input to call rand()&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    nextrand &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; callrand()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;p&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;sendline(lastmove)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;p&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;interactive()
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Final solve script:&lt;/p&gt;
+
+
+
+  &lt;div class=&#34;collapsable-code&#34;&gt;
+    &lt;input id=&#34;4&#34; type=&#34;checkbox&#34; checked /&gt;
+    &lt;label for=&#34;4&#34;&gt;
+      &lt;span class=&#34;collapsable-code__language&#34;&gt;py&lt;/span&gt;
+      &lt;span class=&#34;collapsable-code__title&#34;&gt;solve.py&lt;/span&gt;
+      &lt;span class=&#34;collapsable-code__toggle&#34; data-label-expand=&#34;Show&#34; data-label-collapse=&#34;Hide&#34;&gt;&lt;/span&gt;
+    &lt;/label&gt;
+    &lt;pre class=&#34;language-py&#34; &gt;&lt;code&gt;
+class MazeSolver:
+    def __init__(self, maze):
+        self.maze = maze
+        self.rows = len(maze)
+        self.cols = len(maze[0])
+        self.visited = [[False for _ in range(self.cols)] for _ in range(self.rows)]
+        self.directions = {&amp;#39;N&amp;#39;: (-1, 0), &amp;#39;S&amp;#39;: (1, 0), &amp;#39;W&amp;#39;: (0, -1), &amp;#39;E&amp;#39;: (0, 1)}
+        self.path = []
+
+    def solve(self, start_row, start_col):
+        if self._dfs(start_row, start_col):
+            return self._get_solution()
+        else:
+            return []
+
+    def _dfs(self, row, col):
+        if not self._is_valid(row, col):
+            return False
+
+        self.visited[row][col] = True
+        self.path.append((row, col))
+
+        if self.maze[row][col] == &amp;#39;*&amp;#39;:
+            return True
+
+        for direction in self.directions.values():
+            next_row = row &amp;#43; direction[0]
+            next_col = col &amp;#43; direction[1]
+            if self._dfs(next_row, next_col):
+                return True
+
+        self.path.pop()
+        return False
+
+    def _is_valid(self, row, col):
+        if row &amp;lt; 0 or row &amp;gt;= self.rows or col &amp;lt; 0 or col &amp;gt;= self.cols:
+            return False
+        if self.maze[row][col] == &amp;#39;#&amp;#39; or self.visited[row][col]:
+            return False
+        return True
+
+    def _get_solution(self):
+        solution = []
+        for i in range(1, len(self.path)):
+            prev_row, prev_col = self.path[i-1]
+            curr_row, curr_col = self.path[i]
+            if curr_row &amp;lt; prev_row:
+                solution.append(&amp;#39;n&amp;#39;)
+            elif curr_row &amp;gt; prev_row:
+                solution.append(&amp;#39;s&amp;#39;)
+            elif curr_col &amp;lt; prev_col:
+                solution.append(&amp;#39;w&amp;#39;)
+            elif curr_col &amp;gt; prev_col:
+                solution.append(&amp;#39;e&amp;#39;)
+        return solution
+
+
+from pwn import *
+from ctypes import CDLL
+import time
+
+libc = CDLL(&amp;#34;./libc.so.6&amp;#34;)
+
+
+def callrand():
+    return libc.rand() % 1213
+
+elf = context.binary = ELF(&amp;#34;./challenge&amp;#34;)
+
+# seed with the current time right before starting the program
+libc.srand(int(time.time())) 
+p = process()
+
+# simulate rand() calls in generate_maze()
+for _ in range(590):
+    callrand()
+
+callrand() # the initial random message it sends
+
+p.recvuntil(b&amp;#34;Which would you like to do?&amp;#34;)
+p.sendline(b&amp;#34;a&amp;#34;)
+p.recvuntil(b&amp;#34;You cast arcane eye and send your summoned magical eye above the maze.&amp;#34;)
+
+maze = p.recvuntil(b&amp;#34;You&amp;#34;, drop=True).decode().split(&amp;#34;\n&amp;#34;)
+maze = [i for i in maze if &amp;#34;.&amp;#34; in i or &amp;#34;#&amp;#34; in i] # scuffed method to get maze
+maze = maze[1:]
+
+solver = MazeSolver(maze)
+solution = solver.solve(0, 1)
+
+lastmove = solution[-1]
+
+for moves in solution[:-1]: # do all moves except last
+    callrand() # simulate rand() call in the random message we get after every input
+    p.sendline(moves)
+
+nextrand = callrand()
+while not nextrand == 1212:
+    p.sendline(b&amp;#34;x&amp;#34;) # send invalid input to call rand()
+    nextrand = callrand()
+
+p.sendline(lastmove)
+
+p.interactive()
+&lt;/code&gt;&lt;/pre&gt;
+  &lt;/div&gt;
+
+
+&lt;p&gt;Running the final script we indeed get a shell, and solve the challenge!&lt;/p&gt;
+
+  &lt;img src=&#34;./img/shell.png&#34;  class=&#34;center&#34;  style=&#34;border-radius: 5px;&#34;  /&gt;
+
+
+&lt;p&gt;To recieve our points, we had to submit a &lt;code&gt;.tar&lt;/code&gt; file with a Dockerfile and the solve script, which should run &lt;code&gt;./submitter&lt;/code&gt; after getting a shell, and print the flag. However, since I didn&amp;rsquo;t use any &lt;code&gt;p.recv()&lt;/code&gt; after sending the moves, the buffer would crash the docker and the submission would fail. Fortunately, one of my teammates &lt;a href=&#34;https://github.com/zafirr31&#34;&gt;Zafirr&lt;/a&gt; submitted with &lt;code&gt;p.sendlineafter()&lt;/code&gt; to overcome the issue and we got the points :)&lt;/p&gt;
+&lt;h1 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h1&gt;
+&lt;p&gt;I would like to thank all my teammates for putting in all their effort playing the CTF, and especially &lt;a href=&#34;https://github.com/zafirr31&#34;&gt;&lt;code&gt;Zafirr&lt;/code&gt;&lt;/a&gt;, &lt;a href=&#34;https://twitter.com/KebabTM&#34;&gt;&lt;code&gt;KebabTM&lt;/code&gt;&lt;/a&gt;, &lt;a href=&#34;https://eth007.me/blog/&#34;&gt;&lt;code&gt;Eth007&lt;/code&gt;&lt;/a&gt;, &lt;a href=&#34;https://twitter.com/ainsetin&#34;&gt;&lt;code&gt;Ainsetin&lt;/code&gt;&lt;/a&gt; and &lt;code&gt;Goldenboy&lt;/code&gt; (sorry if i missed anyone) for helping me figure things out (especially the &lt;code&gt;rand()&lt;/code&gt; calls) while I wrote the solve script to solve this challenge!&lt;/p&gt;
+&lt;p&gt;It was fun playing with a lot of people, and for the second day I met up with some of my teammates to solve more challenges - you can see &lt;a href=&#34;https://twitter.com/toasterpwn&#34;&gt;&lt;code&gt;toasterpwn&lt;/code&gt;&lt;/a&gt;&amp;rsquo;s writeup on them &lt;a href=&#34;https://toasterpwn.github.io/posts/defcon-ctf-2023-qualifiers/&#34;&gt;here&lt;/a&gt;!&lt;/p&gt;
+&lt;p&gt;Unfortunately this CTF was right in the middle of my exams so I couldn&amp;rsquo;t dedicate full time to it, but I hope to play with everyone again and hopefully qualify next year! Thanks for reading!&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;TheSavageTeddy / uwuteddy&lt;/li&gt;
+&lt;/ul&gt;
 </content>
     </item>
     

@@ -7,11 +7,11 @@
   
   
 
-    <title>LiveCTF what-a-maze-meant - DEFCON CTF Quals 2023 Writeup :: uwuTeddy</title>
+    <title>what-a-maze-meant - DEFCON Quals 2023 Writeup :: uwuTeddy</title>
   
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="A writeup for a speedpwn challenge in LiveCTF of DEFCON CTF Quals 2022" />
+<meta name="description" content="A writeup for a speedpwn challenge in LiveCTF of DEFCON CTF Quals 2023" />
 <meta name="keywords" content="" />
 <meta name="robots" content="noodp" />
 <link rel="canonical" href="https://TheSavageTeddy.github.io/posts/what-a-maze-meant-defcon-2023-quals/" />
@@ -50,14 +50,16 @@
 
 <meta property="og:locale" content="en" />
 <meta property="og:type" content="article" />
-<meta property="og:title" content="LiveCTF what-a-maze-meant - DEFCON CTF Quals 2023 Writeup">
-<meta property="og:description" content="A writeup for a speedpwn challenge in LiveCTF of DEFCON CTF Quals 2022" />
+<meta property="og:title" content="what-a-maze-meant - DEFCON Quals 2023 Writeup">
+<meta property="og:description" content="A writeup for a speedpwn challenge in LiveCTF of DEFCON CTF Quals 2023" />
 <meta property="og:url" content="https://TheSavageTeddy.github.io/posts/what-a-maze-meant-defcon-2023-quals/" />
 <meta property="og:site_name" content="uwuTeddy" />
 
   
   
-  <meta property="og:image" content="https://TheSavageTeddy.github.io/webhook.png">
+    
+  
+  <meta property="og:image" content="https://TheSavageTeddy.github.io/posts/what-a-maze-meant-defcon-2023-quals/defcon-quals-scoreboard-2023.png">
 
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="627">
@@ -150,7 +152,7 @@
     
 <article class="post">
   <h1 class="post-title">
-    <a href="https://TheSavageTeddy.github.io/posts/what-a-maze-meant-defcon-2023-quals/"><img src="https://ctftime.org/media/events/1_1_light_with_text_1.png"  class="left"  style="border-radius: 5px; height: 15vh; width: auto; display: inline; vertical-align: middle; "  /> LiveCTF what-a-maze-meant - DEFCON CTF Quals 2023 Writeup</a>
+    <a href="https://TheSavageTeddy.github.io/posts/what-a-maze-meant-defcon-2023-quals/"><img src="https://ctftime.org/media/cache/94/e9/94e9dbfeeac979015ff6fc74b5151fd8.png"  class="left"  style="border-radius: 5px; height: auto; width: 10vh; display: inline; vertical-align: middle; "  /> what-a-maze-meant - DEFCON Quals 2023 Writeup</a>
   </h1>
   <div class="post-meta">
     
@@ -175,7 +177,7 @@
     </span>
   
   
-  <img src="https://TheSavageTeddy.github.io/webhook.png"
+  <img src="/posts/what-a-maze-meant-defcon-2023-quals/defcon-quals-scoreboard-2023.png"
     class="post-cover"
     alt=" "
     title="Cover Image" 
@@ -185,773 +187,522 @@
   
 
   <div class="post-content"><div>
-        <h1 id="overview">Overview<a href="#overview" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
-<p>Hack A Bit is a CTF targeting highschool students aged 13-18. This post will include writeups for all challenges (except OSINT) for Round 2, which was the CTF jeopardy round.</p>
-<p>Also, please contact me discord <code>TheSavageTeddy#7458</code> if there are any mistakes/issues with these writeups, or if you want more info on them. Enjoy!</p>
-<h1 id="challenge-categories">Challenge Categories<a href="#challenge-categories" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
-<p><a href="#0-welcome"><code>Welcome</code></a> - 4 challenges</p>
-<p><a href="#1-cryptography"><code>Cryptography</code></a> - 8 challenges</p>
-<p><a href="#2-web"><code>Web</code></a> - 6 challenges</p>
-<p><a href="#3-programming"><code>Programming</code></a> - 8 challenges</p>
-<p><a href="#4-infrastructure"><code>Infrastructure</code></a> - 8 challenges</p>
-<p><a href="#5-networking"><code>Networking</code></a> - 6 challenges</p>
-<p><a href="#6-osint"><code>OSINT</code></a> - 8 challenges</p>
-<h1 id="0-welcome">0. Welcome<a href="#0-welcome" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
-<h2 id="wakeup-5">Wakeup (5)<a href="#wakeup-5" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
-<blockquote>
-<p>Throughout the course you will prove your completion of tasks and understanding by capturing flags. CTF stands for capture the flag. Flags will generally be formatted as flag{x} where the x is the specific content that will change from challenge to challenge. If this isn&rsquo;t the case, the challenge will specifically state that it uses a non-standard flag format.</p>
-</blockquote>
-<blockquote>
-<p>Submit the flag <code>flag{hello_world}</code> to complete this challenge.</p>
-</blockquote>
-<p>Sanity check challenge, flag was in the description.
-<code>flag{hello_world}</code></p>
-<h2 id="weirdo-5">Weirdo (5)<a href="#weirdo-5" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
-<blockquote>
-<p>This is what a challenge with a non-standard flag will look like. These types of flags are generally used for things like IP addresses or other data that would be a &ldquo;short answer&rdquo; style. The challenge will always be marked with a &ldquo;NON-STANDARD FLAG FORMAT&rdquo; identifier if it is this way.</p>
-</blockquote>
-<blockquote>
-<p>Submit the flag 192.168.1.1/24 to get credit for this challenge.</p>
-</blockquote>
-<p>Same thing, flag is <code>192.168.1.1/24</code>. This just tells us some challenges are not in the normal <code>flag{}</code> format.</p>
-<h2 id="support-5">Support (5)<a href="#support-5" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
-<blockquote>
-<p>Throughout the competition you may want to ask for help. Where can you do that? How can staff members ensure that all information is moderated and everyone receives the same level of support? The answer is that Hack a Bit uses a support forum in discord.</p>
-</blockquote>
-<blockquote>
-<p>Navigate to the support form in the competition group and find the thread for this challenge.</p>
-</blockquote>
-<blockquote>
-<p><a href="https://www.discord.gg/hack-a-bit">www.discord.gg/hack-a-bit</a></p>
-</blockquote>
-<p>Joining the discord and navigating to the challenge support posts we find this <code>flag{helpHelpHELP_desk}</code></p>
-<h2 id="billboard-5">Billboard (5)<a href="#billboard-5" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
-<blockquote>
-<p>What do you get for winning the competition? Where do you look for details on this round and future rounds of the 0x01 season? Check out the HaB website&rsquo;s competition page for more information, there&rsquo;s something there for you.</p>
-</blockquote>
-<p>Going to <a href="https://www.hackabit.com/competition">https://www.hackabit.com/competition</a> we find <code>flag{you_might_need_this_for_later}</code> below the prizes.</p>
-<h1 id="1-cryptography">1. Cryptography<a href="#1-cryptography" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
-<h2 id="homerun-75">Homerun (75)<a href="#homerun-75" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
-<blockquote>
-<p>Check out 0xFF in the ASCII lookup table&hellip;<br>
-Oh dang, it isn&rsquo;t there. Well I still need to send you that data, not the text but the actual value 0xFF in computer memory.
-Here&rsquo;s an example, decode this, all the data you need is right here: <code>MZWGCZ33I5XXI5DBJVQWWZKTOVZGKWLPOVEGKYLSIFRG65LUKRUGC5CMN5XGOQTBNRWH2===</code></p>
-</blockquote>
-<p>We get a ciphertext <code>MZWGCZ33I5XXI5DBJVQWWZKTOVZGKWLPOVEGKYLSIFRG65LUKRUGC5CMN5XGOQTBNRWH2===</code>. This is clearly base32 as we see it consists of only uppercase letters and numbers, ending with <code>=</code> (padding). Decoding in CyberChef or any other tool gives <code>flag{GottaMakeSureYouHearAboutThatLongBall}</code></p>
-<h2 id="mason-75">Mason (75)<a href="#mason-75" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
-<blockquote>
-<p>The numbers mason, what do they mean?
-<code>66 6c 61 67 7b 63 6f 6d 70 75 74 65 72 3a 69 5f 6f 6e 6c 79 5f 75 6e 64 65 72 73 74 61 6e 64 5f 62 69 6e 61 72 79 5f 64 75 64 65 7d</code></p>
-</blockquote>
-<p>Ciphertext consists of 0-9 and a-f, hinting that it&rsquo;s hex. Decoding from hex gives <code>flag{computer:i_only_understand_binary_dude}</code></p>
-<h2 id="smiley-100">Smiley (100)<a href="#smiley-100" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
-<blockquote>
-<p>Existing encryption is dumb, so I came up with something better. Maybe its a little emotional or whatever, but I feel like you can get through that part&hellip;</p>
-</blockquote>
-<blockquote>
-<p>Breaking this teaches you some of the primative concepts professionals use to attack novel cryptographic algorithms. It also demonstrates in a primative way why we use established and tested ones for real applications. It also loosely relates to a concept called &ldquo;known plaintext.&rdquo;</p>
-</blockquote>
-<blockquote>
-<p><em>In the prompt, there is no punctuation and everything is lowercase alphabetical characters.</em></p>
-</blockquote>
-<p>Given a file containing this:</p>
-<pre tabindex="0"><code>🤣😅😇😉 😁😅😀🥰🤣 😚🥰😜🤗😇🤑🤫😉 😀 🫡😇😉🤣 😜🤐 🤣😅🤫 😶😮‍💨😇😁😜🤑🤫 🤫🤥😜🤤😇 😁😅😀🥰😀😁🤣🤫🥰😉 😀😮‍💨🤑 😉🤫🤕😶🤫😮‍💨😁🤫😉 🤮😇🤣😅 😇🤥😀🥶🤫😉 🤐🥰😜🤥 🤑😇🤐🤐🤫🥰🤫😮‍💨🤣 🤗🤫😮‍💨🤑😜🥰😉 😁🫡🤑🥰 😮‍💨😀🤥🤫 🤑😀🤣🤫 😉😜😶🥰😁🤫 😀😮‍💨🤑 🤯🤫🥳🤮😜🥰🤑😉 🤐🫡😀🥶🥸😉🤥😇🫡🤫😎🤥😜🥰🤫😎😉🤥😇🫡🤫😎🤠😇🥶🥶🤫🥰🧐
-</code></pre><p>This challenge was a bit annoying. It was clearly frequency analysis, which is like using the fact that letters <code>e</code>, <code>a</code> etc are more common than <code>q</code> or <code>z</code>.</p>
-<p>First I mapped each emoji to a unique character or number using this (uncleaned) code:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-py" data-lang="py"><span style="display:flex;"><span>emoji_text <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;🤣😅😇😉 😁😅😀🥰🤣 😚🥰😜🤗😇🤑🤫😉 😀 🫡😇😉🤣 😜🤐 🤣😅🤫 😶😮‍💨😇😁😜🤑🤫 🤫🤥😜🤤😇 😁😅😀🥰😀😁🤣🤫🥰😉 😀😮‍💨🤑 😉🤫🤕😶🤫😮‍💨😁🤫😉 🤮😇🤣😅 😇🤥😀🥶🤫😉 🤐🥰😜🤥 🤑😇🤐🤐🤫🥰🤫😮‍💨🤣 🤗🤫😮‍💨🤑😜🥰😉 😁🫡🤑🥰 😮‍💨😀🤥🤫 🤑😀🤣🤫 😉😜😶🥰😁🤫 😀😮‍💨🤑 🤯🤫🥳🤮😜🥰🤑😉 🤐🫡😀🥶🥸😉🤥😇🫡🤫😎🤥😜🥰🤫😎😉🤥😇🫡🤫😎🤠😇🥶🥶🤫🥰🧐&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> string <span style="color:#f92672">import</span> ascii_lowercase
-</span></span><span style="display:flex;"><span>cs <span style="color:#f92672">=</span> ascii_lowercase <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;1234567890&#34;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>mapping <span style="color:#f92672">=</span> {}
-</span></span><span style="display:flex;"><span>nextind <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
-</span></span><span style="display:flex;"><span>txt <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> thing <span style="color:#f92672">in</span> emoji_text:
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> thing <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34; &#34;</span>:txt <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#34; &#34;</span>;<span style="color:#66d9ef">continue</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> thing <span style="color:#f92672">not</span> <span style="color:#f92672">in</span> mapping<span style="color:#f92672">.</span>keys():
-</span></span><span style="display:flex;"><span>        mapping[thing] <span style="color:#f92672">=</span> cs[nextind]
-</span></span><span style="display:flex;"><span>        txt <span style="color:#f92672">+=</span> mapping[thing]
-</span></span><span style="display:flex;"><span>        nextind<span style="color:#f92672">+=</span><span style="color:#ae81ff">1</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span>:
-</span></span><span style="display:flex;"><span>        txt <span style="color:#f92672">+=</span> mapping[thing]
-</span></span><span style="display:flex;"><span>    
-</span></span><span style="display:flex;"><span>print(txt)
-</span></span></code></pre></div><p>This gave us <code>abcd ebfga hgijckld f mcda in abl opqrceikl lsitc ebfgfealgd fpqrk dluolpqreld vcab csfwld ngis kcnnlglpqra jlpqrkigd emkg pqrfsl kfal diogel fpqrk xlyvigkd nmfwzdscml1sigl1dscml12cwwlg3</code> to work with, which is much more readable.</p>
-<p>Then I used <a href="https://quipqiup.com/">quipquip</a>, a cryptogram solver.</p>
-
-  <img src="./img/quipquip.png"  class="center"  style="border-radius: 5px; width: 100%;"  />
-
-
-<p>This gives us the flag <code>flag{smilemoresmilebigger}</code>, or something like that.</p>
-<h2 id="matchmaker-100">Matchmaker (100)<a href="#matchmaker-100" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
-<blockquote>
-<p>There are a variety of symmetric cryptosystems out there, but most of them involve a logic block called a XOR. The key is &ldquo;hab&rdquo;(UTF8). We&rsquo;re giving you the key and the algorithm, how hard can it be?</p>
-</blockquote>
-<blockquote>
-<p><code>Dg0DDxoRBz4PHQIKNxIbBQwHHBMbFQ==</code></p>
-</blockquote>
-<p>We are given base64, and the XOR key &ldquo;hab&rdquo;. Using CyberChef we can decrypt and XOR to get the flag. <code>flag{so_much_symmetry}</code></p>
-
-  <img src="./img/matchmaker1.png"  class="center"  style="border-radius: 5px; width: 100%;"  />
-
-
-<h1 id="hancock-125">Hancock (125)<a href="#hancock-125" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
-<blockquote>
-<p>I stole this session token from someone and it looks like all I need to do is change admin to true for all the power&hellip; no idea who signed it though&hellip; can you figure out the secret for me so that we can get some pwnage going?</p>
-</blockquote>
-<blockquote>
-<p>The secret for this token is somewhere in the RockYou wordlist <a href="https://github.com/brannondorsey/naive-hashcat/releases/download/data/rockyou.txt">https://github.com/brannondorsey/naive-hashcat/releases/download/data/rockyou.txt</a></p>
-</blockquote>
-<p>We are given this string</p>
-<pre tabindex="0"><code>eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxMjM0NTY3ODkwLCJhZG1pbiI6ZmFsc2V9.QR_da_OHe58LBwBRt5S_aTcbMkBhEFqJkFn7zUq7Yyc
-</code></pre><p>which is clearly a JWT (Json Web Token).</p>
-<p>These are commonly issued as a cookie to authenticate a user, such as for a session. We can verify this by going to <a href="https://jwt.io/">https://jwt.io/</a>.</p>
-<p>The flag is the secret that was used to sign the JWT.</p>
-
-  <img src="./img/jwt.png"  class="center"  style="border-radius: 5px; width: 100%;"  />
-
-
-<p>Looking up a tool to brute force secrets for the JWT, we find <a href="https://github.com/mazen160/jwt-pwn">jwt-pwn</a>.</p>
-<p>Using this, we brute force possible secrets with the <a href="https://github.com/brannondorsey/naive-hashcat/releases/download/data/rockyou.txt">rockyou.txt wordlist</a>, and get the flag <code>ghosthunter</code></p>
-
-  <img src="./img/jwtcrack.png"  class="center"  style="border-radius: 5px; width: 100%;"  />
-
-
-<h2 id="trending-125">Trending (125)<a href="#trending-125" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
-<blockquote>
-<p>All the existing hashing algorithms are dumb, why give me a fixed length? If I give you more input you should give me even more output, its only fair! I wrote a new hashing algorithm that improves on the best of the best (MD5)! Check it out and see if you can break it (you probably can&rsquo;t)!</p>
-</blockquote>
-<blockquote>
-<p>Here&rsquo;s your hash: <code>b18f21b19e0f86b22d218c86e182214b867b36212576b2617e8c03862d369e</code></p>
-</blockquote>
-<p>We are given a python file with a custom &lsquo;hashing&rsquo; algorithm.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-py" data-lang="py"><span style="display:flex;"><span><span style="color:#75715e">#!/usr/bin/python3</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> sys
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> hashlib
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> random
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> string
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">try</span>:
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># get a five character string to use for randomness (lol)</span>
-</span></span><span style="display:flex;"><span>    one_time_pad_or_something <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39;</span><span style="color:#f92672">.</span>join(random<span style="color:#f92672">.</span>choices(string<span style="color:#f92672">.</span>digits, k<span style="color:#f92672">=</span><span style="color:#ae81ff">5</span>))
-</span></span><span style="display:flex;"><span>    print(one_time_pad_or_something)
-</span></span><span style="display:flex;"><span>    
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># itterate over each character in the input</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> index,character <span style="color:#f92672">in</span> enumerate(sys<span style="color:#f92672">.</span>argv[<span style="color:#ae81ff">1</span>]):
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># get md5 hash of (that character plus minus pad)</span>
-</span></span><span style="display:flex;"><span>        calculated_character <span style="color:#f92672">=</span> chr(ord(character) <span style="color:#f92672">-</span> int(one_time_pad_or_something[index <span style="color:#f92672">%</span> <span style="color:#ae81ff">5</span>]))
-</span></span><span style="display:flex;"><span>        full_md5_hash <span style="color:#f92672">=</span> hashlib<span style="color:#f92672">.</span>md5(calculated_character<span style="color:#f92672">.</span>encode(<span style="color:#e6db74">&#39;ascii&#39;</span>))
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># take the first four characters and print them to the screen</span>
-</span></span><span style="display:flex;"><span>        print(full_md5_hash<span style="color:#f92672">.</span>hexdigest()[<span style="color:#ae81ff">0</span>:<span style="color:#ae81ff">2</span>], end<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#34;</span>)
-</span></span><span style="display:flex;"><span>    
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># new line at end of output</span>
-</span></span><span style="display:flex;"><span>    print()
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># verify that we got input in position</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">except</span> <span style="color:#a6e22e">IndexError</span>: sys<span style="color:#f92672">.</span>exit(<span style="color:#e6db74">&#34;Usage: python3 hashbrown.py &lt;plaintext&gt;&#34;</span>)
-</span></span></code></pre></div><p>The OTP (one-time pad) is made of 5 digits, so there are <code>10^5 = 10000</code> permutations it can be, which is definitely brute force-able.</p>
-<p>Now lets look at the code. It loops over each character of our input (the flag), sets <code>calculated_character</code> to the flag character, minus a number in the OTP. Then it hashes the character, and outputs the first byte of the hash.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-py" data-lang="py"><span style="display:flex;"><span>calculated_character <span style="color:#f92672">=</span> chr(ord(character) <span style="color:#f92672">-</span> int(one_time_pad_or_something[index <span style="color:#f92672">%</span> <span style="color:#ae81ff">5</span>]))
-</span></span><span style="display:flex;"><span>full_md5_hash <span style="color:#f92672">=</span> hashlib<span style="color:#f92672">.</span>md5(calculated_character<span style="color:#f92672">.</span>encode(<span style="color:#e6db74">&#39;ascii&#39;</span>))
-</span></span><span style="display:flex;"><span>print(full_md5_hash<span style="color:#f92672">.</span>hexdigest()[<span style="color:#ae81ff">0</span>:<span style="color:#ae81ff">2</span>], end<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#34;</span>)
-</span></span></code></pre></div><p>This is repeated for every character in the flag.</p>
-<p>Our procedure to recover the flag becomes clear - brute force every OTP, and hash every character the flag could be to recover each flag character.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-py" data-lang="py"><span style="display:flex;"><span><span style="color:#f92672">import</span> hashlib
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> binascii
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> string
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> itertools
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>charset <span style="color:#f92672">=</span> string<span style="color:#f92672">.</span>ascii_lowercase <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">{}</span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;_&#34;</span>
-</span></span><span style="display:flex;"><span>padcharset <span style="color:#f92672">=</span> string<span style="color:#f92672">.</span>digits
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>ct <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;b18f21b19e0f86b22d218c86e182214b867b36212576b2617e8c03862d369e&#39;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> a <span style="color:#f92672">in</span> itertools<span style="color:#f92672">.</span>product(<span style="color:#e6db74">&#34;0123456789&#34;</span>, repeat<span style="color:#f92672">=</span><span style="color:#ae81ff">5</span>):
-</span></span><span style="display:flex;"><span>    otp <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span><span style="color:#f92672">.</span>join(a)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    flag<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;&#39;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(len(ct)<span style="color:#f92672">//</span><span style="color:#ae81ff">2</span>):
-</span></span><span style="display:flex;"><span>        portion <span style="color:#f92672">=</span> ct[i<span style="color:#f92672">*</span><span style="color:#ae81ff">2</span>:i<span style="color:#f92672">*</span><span style="color:#ae81ff">2</span><span style="color:#f92672">+</span><span style="color:#ae81ff">2</span>]
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> thing <span style="color:#f92672">in</span> charset:
-</span></span><span style="display:flex;"><span>            calculated_character <span style="color:#f92672">=</span> chr(ord(thing) <span style="color:#f92672">-</span> int(otp[i <span style="color:#f92672">%</span> <span style="color:#ae81ff">5</span>]))
-</span></span><span style="display:flex;"><span>            full_md5_hash <span style="color:#f92672">=</span> hashlib<span style="color:#f92672">.</span>md5(calculated_character<span style="color:#f92672">.</span>encode(<span style="color:#e6db74">&#39;ascii&#39;</span>))
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> full_md5_hash<span style="color:#f92672">.</span>hexdigest()[<span style="color:#ae81ff">0</span>:<span style="color:#ae81ff">2</span>]<span style="color:#f92672">==</span>portion:
-</span></span><span style="display:flex;"><span>                flag<span style="color:#f92672">+=</span>thing
-</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">break</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#e6db74">&#39;flag&#39;</span> <span style="color:#f92672">in</span> flag:
-</span></span><span style="display:flex;"><span>        print(flag, otp)
-</span></span></code></pre></div><p>And we get the flag <code>flag{dont_roll_your_own_crypto}</code></p>
-
-  <img src="./img/hashbrown.png"  class="center"  style="border-radius: 5px; width: 100%;"  />
-
-
-<h2 id="powerhouse-150">Powerhouse (150)<a href="#powerhouse-150" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
-<blockquote>
-<p>NON-STANDARD FLAG FORMAT</p>
-</blockquote>
-<blockquote>
-<p>Here is an RSA key, sort of; provide p and q as <code>p;q</code>, like if p was 11 an q was 7, the flag would be <code>11;7</code>.</p>
-</blockquote>
-<blockquote>
-<p>N = <code>6176128969</code> e = <code>1187</code></p>
-</blockquote>
-<p>We get a (very unsecure) RSA public key consisting of <code>N</code> (public modulus) and <code>e</code> (public exponent).</p>
-<p>But we don&rsquo;t need to worry about any of that. In RSA, <code>N = p * q</code> where <code>p</code> and <code>q</code> are 2 primes. Therefore, we just factor <code>N</code> to get the flag using <a href="http://factordb.com/">factordb</a>, or any other factoring method (N is very small).</p>
-<p>Flag <code>11329;545161</code></p>
-<h1 id="banker-150">Banker (150)<a href="#banker-150" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
-<blockquote>
-<p>NON-STANDARD FLAG FORMAT</p>
-</blockquote>
-<blockquote>
-<p>Crack this pin code. It&rsquo;s between 4-8 characters and all numeric.
-<code>320f5cef77246cdce15f9b66e9e4f3ad22f506f9cd28d85e7ccc8839b301e736</code></p>
-</blockquote>
-<p>This challenge doesn&rsquo;t give a lot of info. The ciphertext looks like hex, but we get garbage when we try to decode it. However, notice the hex string is 64 bytes long, which is the size for some hashes.</p>
-<p>Putting the hex into <a href="https://crackstation.net/">crackstation</a>, to look up the hash, we find it is the <code>sha256</code> hash of <code>05593620</code> and we get the flag.</p>
-<h1 id="2-web">2. Web<a href="#2-web" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
-<h2 id="detective-75">Detective (75)<a href="#detective-75" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
-<blockquote>
-<p>Visit the webapp and take a look around, detective: <a href="https://erpvlnzxrh.qualifier.hackabit.com/detective">https://erpvlnzxrh.qualifier.hackabit.com/detective</a></p>
-</blockquote>
-<p>Viewing the page source we find <code>flag{animated</code> in the HTML. Going to sources and looking the javascript file we find <code>_commentary_on_</code>, and going to css we find <code>css}</code>.</p>
-<p>This gets us the flag <code>flag{animated_commentary_on_css}</code></p>
-<h2 id="spectator">Spectator<a href="#spectator" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
-<blockquote>
-<p>Now how about this one? Maybe just look a little harder&hellip; <a href="https://erpvlnzxrh.qualifier.hackabit.com/spectator">https://erpvlnzxrh.qualifier.hackabit.com/spectator</a></p>
-</blockquote>
-<p>Going to sources we find <code>flag{there_are_soooooo</code> in the javascript file (this is also in local storage).</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span>window.<span style="color:#a6e22e">onload</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>(){  
-</span></span><span style="display:flex;"><span>    window.<span style="color:#a6e22e">localStorage</span>.<span style="color:#a6e22e">setItem</span>(<span style="color:#e6db74">&#34;flag_stuff&#34;</span>, <span style="color:#e6db74">&#34;flag{there_are_soooooo&#34;</span>)    
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>Going to cookies we find <code>flag_stuff</code> set to <code>_many_ways_to</code>.</p>
-<p>Curling the site with extra info (<code>-v</code>) using <code>curl -v https://erpvlnzxrh.qualifier.hackabit.com/spectator</code> we get <code>more_flag_stuff: _manage_data}</code> in the headers, giving us the flag <code>flag{there_are_soooooo_many_ways_to_manage_data}</code></p>
-<h2 id="nevermind-100">Nevermind (100)<a href="#nevermind-100" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
-<blockquote>
-<p>If you take something, you gotta put it back, or something at least: <a href="https://erpvlnzxrh.qualifier.hackabit.com/nevermind">https://erpvlnzxrh.qualifier.hackabit.com/nevermind</a></p>
-</blockquote>
-<p>We are presented with a webpage with a image and text saying:</p>
-<pre tabindex="0"><code>Download this beautiful image and get the MD5 hash of it. Then decide its not that beautiful and POST it back to the same page with header &#34;md5_image_hash&#34; set to that value.
-</code></pre><p>So we download the image, md5 hash it and get <code>021d99868f8b0943b2cf04e944ddab8f</code> which we post back to the server with the right header using <code>curl -X POST --header &quot;md5_image_hash: 021d99868f8b0943b2cf04e944ddab8f&quot; https://erpvlnzxrh.qualifier.hackabit.com/nevermind</code> and get the flag: <code>flag{nevermind_not_that_beautiful}</code></p>
-<h2 id="delegate-100">Delegate (100)<a href="#delegate-100" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
-<blockquote>
-<p>When we get code execution by compromising a web application, we generally want to exfiltrate some data. The staff did the hard part and gave you code execution, now just exfil that data! <a href="https://erpvlnzxrh.qualifier.hackabit.com/delegate">https://erpvlnzxrh.qualifier.hackabit.com/delegate</a></p>
-</blockquote>
-<p>The site includes 2 fields: Epoch and Destination.</p>
-<p>In Epoch we need to put a time, and in destination we can put a URL. After putting the correct epoch (unix time) and a URL, we get the message <code>yup, nice... sent the flag to: https://&lt;the url we provided&gt;</code></p>
-<p>So let&rsquo;s generate a <a href="https://webhook.site/">webhook</a> to see what it does to the URL we provide it.</p>
-<p>And indeed, it sends us a flag <code>flag{whats_good_mr_mailman}</code></p>
-
-  <img src="./img/webhook.png"  class="center"  style="border-radius: 5px; width: 100%;"  />
-
-
-<h2 id="injector-125">Injector (125)<a href="#injector-125" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
-<blockquote>
-<p>Someone didn&rsquo;t listen closely in programming class&hellip; yeah it was me I guess, I didn&rsquo;t. Here&rsquo;s a super secure login page, if you can bypass it you might even get a flag&hellip;</p>
-</blockquote>
-<blockquote>
-<p><a href="https://fsiybpfkid.qualifier.hackabit.com/injector">https://fsiybpfkid.qualifier.hackabit.com/injector</a></p>
-</blockquote>
-<p>Injector refers to SQL injection, where unsanitized input can lead to all sorts of security vulnerabilities.</p>
-<p>Searching up a <a href="https://pentestlab.blog/2012/12/24/sql-injection-authentication-bypass-cheat-sheet/">cheatsheet</a> we try payload and find this one works <code>admin' or '1'='1'#</code>, giving us the flag <code>flag{maveric_pull_the_lever!}</code></p>
-<p>Note that this is basically blind SQL injection as we have minimal info about the server.</p>
-
-  <img src="./img/sql.png"  class="center"  style="border-radius: 5px; width: 100%;"  />
-
-
-<h2 id="brain-125">Brain (125)<a href="#brain-125" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
-<blockquote>
-<p>Only admins can get flags&hellip; follow the rules!</p>
-</blockquote>
-<blockquote>
-<p><a href="https://fsiybpfkid.qualifier.hackabit.com/brain">https://fsiybpfkid.qualifier.hackabit.com/brain</a></p>
-</blockquote>
-<p>This was straightforward, but annoying. The page tells us how to get the flag.</p>
-
-  <img src="./img/brain.png"  class="center"  style="border-radius: 5px; width: 100%;"  />
-
-
-<p>There are 4 checks we need to pass to get the flag.</p>
-<p>Setting the header is trivial with <a href="https://portswigger.net/burp">burpsuite</a>, we can intercept our GET request and manually set the header.</p>
-<p>Let&rsquo;s ignore the second one for now. The third one requires us to set a URL parameter, which we can do so by appending <code>?give-me-that-flag=hand-it-over</code> to the URL.</p>
-<p>For the final one, we check our cookies to find a session cookie <code>&quot;bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiYWRtaW4iOiJmYWxzZSJ9.lq4IQYyT1PxeSQ89DB7pu9i3rPEdPDAQtiSKJSk9VVo&quot;</code></p>
-<p>It&rsquo;s another JWT! We just head to <a href="https://jwt.io">jwt.io</a> and change <code>admin</code> to <code>true</code>, and replace the JWT with the forged one <code>&quot;bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiYWRtaW4iOiJ0cnVlIn0.1zlAeGts8dU1rtt-EB0VcbVwhGA_-UkZIzQQY2u96qs&quot;</code>. This one doesn&rsquo;t require the JWT to be re-signed.</p>
-
-  <img src="./img/2outof4.png"  class="center"  style="border-radius: 5px; width: 100%;"  />
-
-
-<p>And this is how you set the header:</p>
-
-  <img src="./img/headers.png"  class="center"  style="border-radius: 5px; width: 100%;"  />
+        <h1 id="table-of-contents">Table of Contents<a href="#table-of-contents" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
+<p><a href="#overview"><code>Overview</code></a> - a brief summary of the event</p>
+<p><a href="#challenge-overview"><code>Writeup</code></a> - writeup of the challenge</p>
+<p><a href="#conclusion"><code>Conclusion</code></a> - final closing thoughts</p>
+<h1 id="overview">Overview<a href="#overview" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
+<p>I played DEFCON Quals 2023 with <a href="https://ctftime.org/team/220769"><code>if this doesn't work we'll get more for next year</code></a>, a merger team with around 10 teams combined. Despite our best efforts, we placed <code>15th</code>, just short of the top 12 that qualified, but given that it was our first year, I think we did pretty well, and I guess we&rsquo;ll need to get more for next year!</p>
+<p>In this post is a quick writeup of <code>what-a-maze-meant</code>, the first speedpwn challenge released in the LiveCTF section, where the quickest solves will earn the most points, so speed is key! It was a relatively easy challenge that together with some teamates, I solved pretty quickly. Enjoy!</p>
+<h2 id="challenge-overview">Challenge overview<a href="#challenge-overview" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<p>We are given a binary, where the goal seems to be to complete the maze, by giving directions such as North, South, East and West. <a href="https://dogbolt.org/?id=fda734c4-0d96-48dc-9247-1cafa71dc8bd">Decompiling online</a> we can dive into the code.</p>
 
 
 
-  <img src="./img/notyet.png"  class="center"  style="border-radius: 5px; width: 100%;"  />
+  <div class="collapsable-code">
+    <input id="1" type="checkbox"  />
+    <label for="1">
+      <span class="collapsable-code__language">c</span>
+      <span class="collapsable-code__title">main()</span>
+      <span class="collapsable-code__toggle" data-label-expand="Show" data-label-collapse="Hide"></span>
+    </label>
+    <pre class="language-c" ><code>
+int __cdecl main(int argc, const char **argv, const char **envp)
+{
+  unsigned int v3; // eax
+  char v5; // [rsp&#43;Bh] [rbp-3A5h] BYREF
+  int i; // [rsp&#43;Ch] [rbp-3A4h]
+  int j; // [rsp&#43;10h] [rbp-3A0h]
+  unsigned int v8; // [rsp&#43;14h] [rbp-39Ch]
+  unsigned int v9; // [rsp&#43;18h] [rbp-398h]
+  int v10; // [rsp&#43;1Ch] [rbp-394h]
+  char v11[904]; // [rsp&#43;20h] [rbp-390h] BYREF
+  unsigned __int64 v12; // [rsp&#43;3A8h] [rbp-8h]
+  __int64 savedregs; // [rsp&#43;3B0h] [rbp&#43;0h] BYREF
+
+  v12 = __readfsqword(0x28u);
+  setvbuf(stdin, 0LL, 2, 0LL);
+  setvbuf(stdout, 0LL, 2, 0LL);
+  v3 = time(0LL);
+  srand(v3);
+  for ( i = 0; i &lt;= 29; &#43;&#43;i )
+  {
+    for ( j = 0; j &lt;= 29; &#43;&#43;j )
+      *((_BYTE *)&amp;savedregs &#43; 30 * i &#43; j - 912) = 35;
+  }
+  puts(&#34;Reticulating splines... &#34;);
+  generate_maze((__int64)v11, 1, 1, 1);
+  puts(&#34;\n\nWelcome to the maze!&#34;);
+  v8 = 1;
+  v9 = 1;
+  v10 = 1;
+  while ( 1 )
+  {
+    if ( show_maze )
+      display_maze((__int64)v11, v8, v9);
+    printf(&#34;You are in room (%d, %d)\n&#34;, v8, v9);
+    if ( v10 )
+      randomDescription();
+    else
+      v10 = 1;
+    puts(&#34;Which would you like to do?&#34;);
+    if ( validwalk(*((_BYTE *)&amp;savedregs &#43; 30 * (int)(v8 - 1) &#43; (int)v9 - 912)) )
+      printf(&#34;go (n)orth, &#34;);
+    if ( validwalk(*((_BYTE *)&amp;savedregs &#43; 30 * (int)(v8 &#43; 1) &#43; (int)v9 - 912)) )
+      printf(&#34;go (s)outh, &#34;);
+    if ( validwalk(*((_BYTE *)&amp;savedregs &#43; 30 * (int)v8 &#43; (int)(v9 - 1) - 912)) )
+      printf(&#34;go (w)est, &#34;);
+    if ( validwalk(*((_BYTE *)&amp;savedregs &#43; 30 * (int)v8 &#43; (int)(v9 &#43; 1) - 912)) )
+      printf(&#34;go (e)ast, &#34;);
+    printf(&#34;or (q) end the torment&#34;);
+    printf(&#34;: &#34;);
+    __isoc99_scanf(&#34; %c&#34;, &amp;v5);
+    putchar(10);
+    switch ( v5 )
+    {
+      case &#39;a&#39;:
+        puts(&#34;You cast arcane eye and send your summoned magical eye above the maze.&#34;);
+        show_maze = 1;
+        v10 = 0;
+        break;
+      case &#39;e&#39;:
+        if ( validwalk(*((_BYTE *)&amp;savedregs &#43; 30 * (int)v8 &#43; (int)(v9 &#43; 1) - 912)) )
+          &#43;&#43;v9;
+        break;
+      case &#39;n&#39;:
+        if ( validwalk(*((_BYTE *)&amp;savedregs &#43; 30 * (int)(v8 - 1) &#43; (int)v9 - 912)) )
+          --v8;
+        break;
+      case &#39;q&#39;:
+        exit(0);
+      case &#39;s&#39;:
+        if ( validwalk(*((_BYTE *)&amp;savedregs &#43; 30 * (int)(v8 &#43; 1) &#43; (int)v9 - 912)) )
+          &#43;&#43;v8;
+        break;
+      case &#39;w&#39;:
+        if ( validwalk(*((_BYTE *)&amp;savedregs &#43; 30 * (int)v8 &#43; (int)(v9 - 1) - 912)) )
+          --v9;
+        break;
+      default:
+        break;
+    }
+    if ( *((_BYTE *)&amp;savedregs &#43; 30 * (int)v8 &#43; (int)v9 - 912) == 42 )
+    {
+      if ( rand() % 1213 == 1212 )
+      {
+        puts(&#34;You successfully exit the maze!&#34;);
+        winner();
+      }
+      puts(&#34;Just as you are about to exit, a displacer beast captures you. You die.&#34;);
+      exit(0);
+    }
+  }
+}
+</code></pre>
+  </div>
 
 
-<p>Now we just need to brute force numbers 1-100 for the 2nd check! I just automated this with a simple script like this:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-py" data-lang="py"><span style="display:flex;"><span><span style="color:#f92672">import</span> requests
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">101</span>):
-</span></span><span style="display:flex;"><span>    url <span style="color:#f92672">=</span> <span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;https://fsiybpfkid.qualifier.hackabit.com/brain?my-int=</span><span style="color:#e6db74">{</span>i<span style="color:#e6db74">}</span><span style="color:#e6db74">&#39;</span>
-</span></span><span style="display:flex;"><span>    resp <span style="color:#f92672">=</span> requests<span style="color:#f92672">.</span>get(url)
-</span></span><span style="display:flex;"><span>    print(resp<span style="color:#f92672">.</span>text)
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#e6db74">&#39;pass-icn&#39;</span> <span style="color:#f92672">in</span> resp<span style="color:#f92672">.</span>text: <span style="color:#75715e"># check if pass icon is in the response</span>
-</span></span><span style="display:flex;"><span>        print(url)
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">break</span>
-</span></span></code></pre></div><p>And we get 72 as the secret number.</p>
-<p>Adding it as another parameter with <code>&amp;my-int=72</code> (<code>&amp;</code> for multiple URL paramters) in burpsuite we get the flag!</p>
-<p><code>flag{insaayne_in_da_membrain}</code></p>
+<p>Running the provided binary and inputting <code>a</code>, we can see the maze layout:</p>
 
-  <img src="./img/insane.png"  class="center"  style="border-radius: 5px; width: 100%;"  />
+  <img src="./img/mazelayout.png"  class="center"  style="border-radius: 5px;"  />
 
 
-<h1 id="3-programming">3. Programming<a href="#3-programming" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
-<h1 id="blobs-75">Blobs (75)<a href="#blobs-75" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
-<blockquote>
-<p>Hey there navigator, its time to follow some directions. Take your challenge input (file) and start at the initial position, such as the below x=52, y=-31. Just like you are on a 2d graph, move in the direction the arrows tell you to. In the below example you end up in the same x position for a difference of 0 and down one for a y difference of -1. Take your final position, in this case 52, -32 and multiply the values together&ndash;that is your final position. The answer to the sample prompt is -1664.</p>
-</blockquote>
-<p>Sample prompt:</p>
-<pre tabindex="0"><code>(52,-31)
-
-↘ ↙ ↘ ↙ ↘ → ← ↖ ← ↗ ↘ ↑ ↑ ↓ ↗ ← → ↙ ↖ ↑
-</code></pre><p>Simple programming challenge, but I really couldn&rsquo;t be bothered with 8 if/switch case statements so I just used chatGPT, which generated this script and solved it with some modification. Flag <code>-2025780</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-py" data-lang="py"><span style="display:flex;"><span><span style="color:#75715e">#CHAT GPT DID IT</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Initial position</span>
-</span></span><span style="display:flex;"><span>x, y <span style="color:#f92672">=</span> <span style="color:#ae81ff">136</span>,<span style="color:#f92672">-</span><span style="color:#ae81ff">8891</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>directions <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;(omitted because too long)&#34;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Iterate through the directions and update the position</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> direction <span style="color:#f92672">in</span> directions:
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> direction <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;←&#34;</span>:
-</span></span><span style="display:flex;"><span>        x <span style="color:#f92672">-=</span> <span style="color:#ae81ff">1</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">elif</span> direction <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;→&#34;</span>:
-</span></span><span style="display:flex;"><span>        x <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">elif</span> direction <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;↑&#34;</span>:
-</span></span><span style="display:flex;"><span>        y <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">elif</span> direction <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;↓&#34;</span>:
-</span></span><span style="display:flex;"><span>        y <span style="color:#f92672">-=</span> <span style="color:#ae81ff">1</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">elif</span> direction <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;↖&#34;</span>:
-</span></span><span style="display:flex;"><span>        x <span style="color:#f92672">-=</span> <span style="color:#ae81ff">1</span>
-</span></span><span style="display:flex;"><span>        y <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">elif</span> direction <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;↗&#34;</span>:
-</span></span><span style="display:flex;"><span>        x <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>
-</span></span><span style="display:flex;"><span>        y <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">elif</span> direction <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;↙&#34;</span>:
-</span></span><span style="display:flex;"><span>        x <span style="color:#f92672">-=</span> <span style="color:#ae81ff">1</span>
-</span></span><span style="display:flex;"><span>        y <span style="color:#f92672">-=</span> <span style="color:#ae81ff">1</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">elif</span> direction <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;↘&#34;</span>:
-</span></span><span style="display:flex;"><span>        x <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>
-</span></span><span style="display:flex;"><span>        y <span style="color:#f92672">-=</span> <span style="color:#ae81ff">1</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Multiply the final position to get the answer</span>
-</span></span><span style="display:flex;"><span>answer <span style="color:#f92672">=</span> x <span style="color:#f92672">*</span> y
-</span></span><span style="display:flex;"><span>print(answer)
-</span></span></code></pre></div><h1 id="buckets-75">Buckets (75)<a href="#buckets-75" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
-<blockquote>
-<p>Grab the data file and add up all the times danny and elise appear. Multiple those two numbers together, that is your challenge answer.</p>
-</blockquote>
-<p>This is yet another programming challenge, even easier than the previous. Use <code>.count()</code> to count how many times each appears. I couldn&rsquo;t be bothered reading the file, but it would&rsquo;ve been <code>data=open('filename','r').read()</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-py" data-lang="py"><span style="display:flex;"><span>data <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;omitted because too long&#34;</span>
-</span></span><span style="display:flex;"><span>a <span style="color:#f92672">=</span> data<span style="color:#f92672">.</span>count(<span style="color:#e6db74">&#39;danny&#39;</span>)
-</span></span><span style="display:flex;"><span>b <span style="color:#f92672">=</span> data<span style="color:#f92672">.</span>count(<span style="color:#e6db74">&#39;elise&#39;</span>)
-</span></span><span style="display:flex;"><span>print(a<span style="color:#f92672">*</span>b)
-</span></span></code></pre></div><h2 id="pancakes-100">Pancakes (100)<a href="#pancakes-100" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
-<blockquote>
-<p>Okay we&rsquo;re doing it again, just giving you the flag&hellip; should be easy enough right? Well now lets talk about compiled code. This is the same code compiled for a bunch of different architectures. First, figure out which binary is compatible with your system, then just run it to get the flag!</p>
-</blockquote>
-<p>We are given a zip file with a bunch of binaries! All of them are the same - they are just for different architectures/OS etc. Running any will give the flag. For me, running <code>./binary_18</code> on WSL gave the flag <code>flag{bob_the_architect}</code></p>
-<h2 id="linguist-100">Linguist (100)<a href="#linguist-100" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
-<blockquote>
-<p>Grab this file and check it out. You&rsquo;ll notice that it&rsquo;s Python3! Python is an interpreted language, you can read the code but it&rsquo;ll be easier to just interpret it!</p>
-</blockquote>
-<blockquote>
-<p>This challenge is juxtaposed to Pancake, which is compiled code. Once you interpret this code with the Python3 interpreter, try to read it and see if you understand what it&rsquo;s doing as a bonus!</p>
-</blockquote>
-<p>Given python code:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-py" data-lang="py"><span style="display:flex;"><span><span style="color:#f92672">import</span> random
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> time
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>flag <span style="color:#f92672">=</span> <span style="color:#e6db74">b</span><span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\xf9\xf3\xfe\xf8\xe4\xeb\xf7\xf6\xec\xc0\xf6\xec\xf1\xeb\xc0\xec\xef\xfe\xf1\xf6\xec\xf7\xc0\xfd\xea\xeb\xc0\xf6\xc0\xec\xeb\xf6\xf3\xf3\xc0\xf1\xfa\xfa\xfb\xc0\xfe\xf1\xc0\xf6\xf1\xeb\xfa\xed\xef\xed\xfa\xeb\xfa\xed\xe2</span><span style="color:#e6db74">&#34;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ANSI</span>:
-</span></span><span style="display:flex;"><span>    COLORS <span style="color:#f92672">=</span> [ <span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\033</span><span style="color:#e6db74">[0;30m&#34;</span>, <span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\033</span><span style="color:#e6db74">[0;31m&#34;</span>, <span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\033</span><span style="color:#e6db74">[0;32m&#34;</span>, <span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\033</span><span style="color:#e6db74">[0;33m&#34;</span>, <span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\033</span><span style="color:#e6db74">[0;34m&#34;</span>, <span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\033</span><span style="color:#e6db74">[0;35m&#34;</span>,
-</span></span><span style="display:flex;"><span>               <span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\033</span><span style="color:#e6db74">[0;36m&#34;</span>, <span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\033</span><span style="color:#e6db74">[0;37m&#34;</span>, <span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\033</span><span style="color:#e6db74">[1;30m&#34;</span>, <span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\033</span><span style="color:#e6db74">[1;31m&#34;</span>, <span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\033</span><span style="color:#e6db74">[1;32m&#34;</span>, <span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\033</span><span style="color:#e6db74">[1;33m&#34;</span>,
-</span></span><span style="display:flex;"><span>               <span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\033</span><span style="color:#e6db74">[1;34m&#34;</span>, <span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\033</span><span style="color:#e6db74">[1;35m&#34;</span>, <span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\033</span><span style="color:#e6db74">[1;36m&#34;</span>, <span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\033</span><span style="color:#e6db74">[1;37m&#34;</span> ]
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    STYLES <span style="color:#f92672">=</span> [ <span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\033</span><span style="color:#e6db74">[1m&#34;</span>, <span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\033</span><span style="color:#e6db74">[2m&#34;</span>, <span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\033</span><span style="color:#e6db74">[3m&#34;</span>, <span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\033</span><span style="color:#e6db74">[4m&#34;</span>, <span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\033</span><span style="color:#e6db74">[5m&#34;</span>, <span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\033</span><span style="color:#e6db74">[7m&#34;</span>, <span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\033</span><span style="color:#e6db74">[9m&#34;</span> ]
-</span></span><span style="display:flex;"><span>    
-</span></span><span style="display:flex;"><span>    END <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\033</span><span style="color:#e6db74">[0m&#34;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;__main__&#39;</span>:
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">try</span>:
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">while</span> <span style="color:#66d9ef">True</span>:
-</span></span><span style="display:flex;"><span>            print(<span style="color:#e6db74">&#34;&#34;</span>,end<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\r</span><span style="color:#e6db74">&#34;</span>)
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> flag: print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">{</span>random<span style="color:#f92672">.</span>choice(ANSI<span style="color:#f92672">.</span>COLORS)<span style="color:#e6db74">}{</span>chr(i <span style="color:#f92672">^</span> <span style="color:#ae81ff">0x9F</span>)<span style="color:#e6db74">}{</span>ANSI<span style="color:#f92672">.</span>END<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>, end<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#34;</span>)
-</span></span><span style="display:flex;"><span>            time<span style="color:#f92672">.</span>sleep(<span style="color:#ae81ff">0.1</span>)
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">except</span> <span style="color:#a6e22e">KeyboardInterrupt</span>:
-</span></span><span style="display:flex;"><span>        print(<span style="color:#e6db74">&#34;&#34;</span>,end<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\r</span><span style="color:#e6db74">&#34;</span>)
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> flag: print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">{</span>chr(i <span style="color:#f92672">^</span> <span style="color:#ae81ff">0x9F</span>)<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>, end<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#34;</span>)
-</span></span><span style="display:flex;"><span>        print(<span style="color:#e6db74">&#34;  &#34;</span>)
-</span></span></code></pre></div><p>No reversing is needed - just running the file gives the flag <code>flag{this_isnt_spanish_but_i_still_need_an_interpreter}</code></p>
-<h2 id="wrench-125">Wrench (125)<a href="#wrench-125" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
-<blockquote>
-<p>Think of this challenge like a bolt and go build a wrench.</p>
-</blockquote>
-<blockquote>
-<p>Here&rsquo;s your blueprint:</p>
-</blockquote>
-<blockquote>
-<p>Connect to the server on strfjebijc.qualifier.hackabit.com:54321 and get your challenge input. Add up all the decimal integers and only the decminal integers, no hex numbers or strings count. Send that result back within 3 seconds to get the flag</p>
-</blockquote>
-<p>We are given a bunch of text seperated by newlines when we connect using netcat. The challenge says to add up all decimal numbers, and send the result within 3 seconds. We will use <a href="https://docs.pwntools.com/en/stable/">pwntools</a> to automate this, and do it within 3 seconds.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-py" data-lang="py"><span style="display:flex;"><span><span style="color:#f92672">from</span> pwn <span style="color:#f92672">import</span> <span style="color:#f92672">*</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> string
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>r <span style="color:#f92672">=</span> remote(<span style="color:#e6db74">&#34;strfjebijc.qualifier.hackabit.com&#34;</span>, <span style="color:#ae81ff">54321</span>)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>things <span style="color:#f92672">=</span> r<span style="color:#f92672">.</span>recvuntil(<span style="color:#e6db74">b</span><span style="color:#e6db74">&#34;total: &#34;</span>, drop<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)<span style="color:#f92672">.</span>decode()
-</span></span><span style="display:flex;"><span>things <span style="color:#f92672">=</span> things<span style="color:#f92672">.</span>split(<span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>)
-</span></span><span style="display:flex;"><span>total <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> thing <span style="color:#f92672">in</span> things:
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> thing<span style="color:#f92672">.</span>isdigit(): <span style="color:#75715e"># check its a decimal number</span>
-</span></span><span style="display:flex;"><span>        total<span style="color:#f92672">+=</span>int(thing)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>r<span style="color:#f92672">.</span>sendline(str(total))
-</span></span><span style="display:flex;"><span>r<span style="color:#f92672">.</span>interactive()
-</span></span></code></pre></div><p>And we get the flag <code>flag{i_feel_the_need_the_need_for_speed}</code></p>
-<h2 id="bites-125">Bites (125)<a href="#bites-125" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
-<blockquote>
-<p>Here&rsquo;s a blob of data. Thats it. Just Data. Not any specific data. Just 1&rsquo;s and 0&rsquo;s&hellip;</p>
-</blockquote>
-<blockquote>
-<p>Process this file. There are series of bytes from 0x02 to 0xFF. Each of these strings of bytes are surrounded by a null byte (0x00). Finally, there are also byte strings of all 0x01. Your mission is to add up all the bytes in the byte strings that are not 0x01 byte strings. The flag is the integer value of all those bytes added up.</p>
-</blockquote>
-<blockquote>
-<p>The &ldquo;flag&rdquo; is just the total sum, no flag{}.</p>
-</blockquote>
-<p>We are given a file, and told to add up all the bytes, apart from <code>0x01</code>. So we will do just that with python. Note that when looping over a bytes object in python, each element is a number 0-255, which is why it is <code> == 1</code> instead of <code>== b&quot;\x01&quot;</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-py" data-lang="py"><span style="display:flex;"><span><span style="color:#f92672">from</span> Crypto.Util.number <span style="color:#f92672">import</span> bytes_to_long
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>f <span style="color:#f92672">=</span> open(<span style="color:#e6db74">&#34;bites.bin&#34;</span>,<span style="color:#e6db74">&#34;rb&#34;</span>)<span style="color:#f92672">.</span>read()
-</span></span><span style="display:flex;"><span>total<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> thing <span style="color:#f92672">in</span> f:
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> thing <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span>:
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">pass</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span>:
-</span></span><span style="display:flex;"><span>        total<span style="color:#f92672">+=</span>thing
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>print(total)
-</span></span></code></pre></div><p>And we get the flag <code>512490</code></p>
-<h2 id="speed-150">Speed (150)<a href="#speed-150" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
-<blockquote>
-<p>You probably shouldn&rsquo;t do this one by hand&hellip; Instead write a sorting algorithm that efficiently organizes this file of numbers smallest to biggest. Your flag is the 52133rd number once sorted, starting from 0. Ie: sorted_numbers[52133].</p>
-</blockquote>
-<blockquote>
-<p>On an average computer, an efficient algorithm should be able to solve this in around 10 seconds.</p>
-</blockquote>
-<p>We are given a large file, and told to sort it, and submit the 51233th item (0-indexed) as the flag. So as always, python is sufficient to solve this, getting the flag <code>1235203980</code></p>
-
-  <img src="./img/sort.png"  class="center"  style="border-radius: 5px; width: 100%;"  />
+<p>There are already a lot of scripts online to solve mazes, and since we want to solve this as fast as possible for the most points, we use ChatGPT to generate a script for us:</p>
 
 
-<p>No need to code your own algorithm - every language has builtin sorting algorithms already. Though sorting algorithms <em>are</em> interesting&hellip;</p>
-<p>Small note: I should have done <code>map(int, f)</code> to convert every string in <code>f</code> to a number, <em>then</em> sort, but this didn&rsquo;t matter in this case as with integers only, alphabetical is same as numerical.</p>
-<h2 id="abundance-150">Abundance (150)<a href="#abundance-150" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
-<p>We are given a binary. Decompiling it online at <a href="https://dogbolt.org/">dogbolt</a> recovers some code:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#66d9ef">__cdecl</span> <span style="color:#a6e22e">main</span>(<span style="color:#66d9ef">int</span> argc, <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">char</span> <span style="color:#f92672">**</span>argv, <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">char</span> <span style="color:#f92672">**</span>envp)
+
+  <div class="collapsable-code">
+    <input id="2" type="checkbox"  />
+    <label for="2">
+      <span class="collapsable-code__language">python</span>
+      <span class="collapsable-code__title">maze_solver.py</span>
+      <span class="collapsable-code__toggle" data-label-expand="Show" data-label-collapse="Hide"></span>
+    </label>
+    <pre class="language-python" ><code>
+class MazeSolver:
+    def __init__(self, maze):
+        self.maze = maze
+        self.rows = len(maze)
+        self.cols = len(maze[0])
+        self.visited = [[False for _ in range(self.cols)] for _ in range(self.rows)]
+        self.directions = {&#39;N&#39;: (-1, 0), &#39;S&#39;: (1, 0), &#39;W&#39;: (0, -1), &#39;E&#39;: (0, 1)}
+        self.path = []
+
+    def solve(self, start_row, start_col):
+        if self._dfs(start_row, start_col):
+            return self._get_solution()
+        else:
+            return []
+
+    def _dfs(self, row, col):
+        if not self._is_valid(row, col):
+            return False
+
+        self.visited[row][col] = True
+        self.path.append((row, col))
+
+        if self.maze[row][col] == &#39;*&#39;:
+            return True
+
+        for direction in self.directions.values():
+            next_row = row &#43; direction[0]
+            next_col = col &#43; direction[1]
+            if self._dfs(next_row, next_col):
+                return True
+
+        self.path.pop()
+        return False
+
+    def _is_valid(self, row, col):
+        if row &lt; 0 or row &gt;= self.rows or col &lt; 0 or col &gt;= self.cols:
+            return False
+        if self.maze[row][col] == &#39;#&#39; or self.visited[row][col]:
+            return False
+        return True
+
+    def _get_solution(self):
+        solution = []
+        for i in range(1, len(self.path)):
+            prev_row, prev_col = self.path[i-1]
+            curr_row, curr_col = self.path[i]
+            if curr_row &lt; prev_row:
+                solution.append(&#39;n&#39;)
+            elif curr_row &gt; prev_row:
+                solution.append(&#39;s&#39;)
+            elif curr_col &lt; prev_col:
+                solution.append(&#39;w&#39;)
+            elif curr_col &gt; prev_col:
+                solution.append(&#39;e&#39;)
+        return solution
+
+
+maze = [
+    &#34;#@#.................#.....#.#&#34;,
+    &#34;#.#.#######.#######.#.###.#.#&#34;,
+    &#34;#.#.#.#.....#.....#...#...#.#&#34;,
+    &#34;#.#.#.#.#######.#.#####.###.#&#34;,
+    &#34;#.#...#.#.......#.#...#.....#&#34;,
+    &#34;#.#####.#.#####.###.#.#####.#&#34;,
+    &#34;#.#...#.#.#.....#...#.......#&#34;,
+    &#34;#.#.#.#.#.#######.###########&#34;,
+    &#34;#...#...#.#.......#.......#.#&#34;,
+    &#34;#########.#.#######.#####.#.#&#34;,
+    &#34;#.#.......#...#...#...#...#.#&#34;,
+    &#34;#.#.#.#######.#.#.###.#.###.#&#34;,
+    &#34;#.#.#.....#...#.#.....#.....#&#34;,
+    &#34;#.#.#####.#.###.###########.#&#34;,
+    &#34;#.#.....#.#.#...#.#.......#.#&#34;,
+    &#34;#.#####.#.#.#.###.#.###.###.#&#34;,
+    &#34;#.......#...#...#...#.#...#.#&#34;,
+    &#34;#.###########.#.#.###.###.#.#&#34;,
+    &#34;#.#.......#...#.#.#.....#...#&#34;,
+    &#34;#.#######.#.###.#.#.###.#####&#34;,
+    &#34;#.......#.....#.#...#...#...#&#34;,
+    &#34;#######.#######.#####.#####.#&#34;,
+    &#34;#.....#.....#...#...#.#.....#&#34;,
+    &#34;#.###.#####.#.###.###.#.###.#&#34;,
+    &#34;#.#.#.....#.#.#.......#.#...#&#34;,
+    &#34;#.#.###.###.#.#.#######.#.###&#34;,
+    &#34;#.....#.......#.........#...#&#34;,
+    &#34;####################*########&#34;
+]
+
+solver = MazeSolver(maze)
+solution = solver.solve(0, 1)
+print(&#34;Instructions to solve the maze:&#34;)
+print(solution)
+
+</code></pre>
+  </div>
+
+
+<p>The script outputs the instructions required to solve the maze, starting from <code>@</code> to the goal <code>*</code>. Writing up a quick script in python we can verify this works:</p>
+
+
+
+  <div class="collapsable-code">
+    <input id="3" type="checkbox"  />
+    <label for="3">
+      <span class="collapsable-code__language">python</span>
+      <span class="collapsable-code__title">solve.py</span>
+      <span class="collapsable-code__toggle" data-label-expand="Show" data-label-collapse="Hide"></span>
+    </label>
+    <pre class="language-python" ><code>
+# MazeSolver() here
+...
+from pwn import *
+import time
+
+elf = context.binary = ELF(&#34;./challenge&#34;)
+p = process()
+
+p.recvuntil(b&#34;Which would you like to do?&#34;)
+p.sendline(b&#34;a&#34;)
+p.recvuntil(b&#34;You cast arcane eye and send your summoned magical eye above the maze.&#34;)
+
+maze = p.recvuntil(b&#34;You&#34;, drop=True).decode().split(&#34;\n&#34;)
+maze = [i for i in maze if &#34;.&#34; in i or &#34;#&#34; in i] # scuffed method to get maze
+maze = maze[1:]
+
+solver = MazeSolver(maze)
+solution = solver.solve(0, 1)
+
+for moves in solution:
+    p.sendline(moves)
+
+p.interactive()
+</code></pre>
+  </div>
+
+
+
+  <img src="./img/maze_die.png"  class="center"  style="border-radius: 5px;"  />
+
+
+<p>However, after reaching the goal we seem to just die. Reading the decompiled code further, we see why.</p>
+<p>The goal is to call the <code>winner()</code> function, which gives us a shell:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">void</span> __noreturn <span style="color:#a6e22e">winner</span>()
 </span></span><span style="display:flex;"><span>{
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">size_t</span> v3; <span style="color:#75715e">// rbx
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">char</span> s[<span style="color:#ae81ff">8</span>]; <span style="color:#75715e">// [rsp+0h] [rbp-C0h] BYREF
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">__int64</span> v6; <span style="color:#75715e">// [rsp+8h] [rbp-B8h]
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">__int64</span> v7; <span style="color:#75715e">// [rsp+10h] [rbp-B0h]
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">__int64</span> v8; <span style="color:#75715e">// [rsp+18h] [rbp-A8h]
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">char</span> v9; <span style="color:#75715e">// [rsp+20h] [rbp-A0h]
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">char</span> s1[<span style="color:#ae81ff">8</span>]; <span style="color:#75715e">// [rsp+30h] [rbp-90h] BYREF
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">__int64</span> v11; <span style="color:#75715e">// [rsp+38h] [rbp-88h]
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">__int64</span> v12; <span style="color:#75715e">// [rsp+40h] [rbp-80h]
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">__int64</span> v13; <span style="color:#75715e">// [rsp+48h] [rbp-78h]
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">__int64</span> v14; <span style="color:#75715e">// [rsp+50h] [rbp-70h]
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">__int64</span> v15; <span style="color:#75715e">// [rsp+58h] [rbp-68h]
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">__int64</span> v16; <span style="color:#75715e">// [rsp+60h] [rbp-60h]
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">__int64</span> v17; <span style="color:#75715e">// [rsp+68h] [rbp-58h]
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">__int64</span> v18; <span style="color:#75715e">// [rsp+70h] [rbp-50h]
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">__int64</span> v19; <span style="color:#75715e">// [rsp+78h] [rbp-48h]
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">__int64</span> v20; <span style="color:#75715e">// [rsp+80h] [rbp-40h]
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">__int64</span> v21; <span style="color:#75715e">// [rsp+88h] [rbp-38h]
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">int</span> v22; <span style="color:#75715e">// [rsp+90h] [rbp-30h]
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">__int64</span> v23; <span style="color:#75715e">// [rsp+A0h] [rbp-20h]
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">int</span> i; <span style="color:#75715e">// [rsp+ACh] [rbp-14h]
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
-</span></span><span style="display:flex;"><span>  v23 <span style="color:#f92672">=</span> <span style="color:#ae81ff">3735928559LL</span>;
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">*</span>(_QWORD <span style="color:#f92672">*</span>)s1 <span style="color:#f92672">=</span> <span style="color:#ae81ff">0LL</span>;
-</span></span><span style="display:flex;"><span>  v11 <span style="color:#f92672">=</span> <span style="color:#ae81ff">0LL</span>;
-</span></span><span style="display:flex;"><span>  v12 <span style="color:#f92672">=</span> <span style="color:#ae81ff">0LL</span>;
-</span></span><span style="display:flex;"><span>  v13 <span style="color:#f92672">=</span> <span style="color:#ae81ff">0LL</span>;
-</span></span><span style="display:flex;"><span>  v14 <span style="color:#f92672">=</span> <span style="color:#ae81ff">0LL</span>;
-</span></span><span style="display:flex;"><span>  v15 <span style="color:#f92672">=</span> <span style="color:#ae81ff">0LL</span>;
-</span></span><span style="display:flex;"><span>  v16 <span style="color:#f92672">=</span> <span style="color:#ae81ff">0LL</span>;
-</span></span><span style="display:flex;"><span>  v17 <span style="color:#f92672">=</span> <span style="color:#ae81ff">0LL</span>;
-</span></span><span style="display:flex;"><span>  v18 <span style="color:#f92672">=</span> <span style="color:#ae81ff">0LL</span>;
-</span></span><span style="display:flex;"><span>  v19 <span style="color:#f92672">=</span> <span style="color:#ae81ff">0LL</span>;
-</span></span><span style="display:flex;"><span>  v20 <span style="color:#f92672">=</span> <span style="color:#ae81ff">0LL</span>;
-</span></span><span style="display:flex;"><span>  v21 <span style="color:#f92672">=</span> <span style="color:#ae81ff">0LL</span>;
-</span></span><span style="display:flex;"><span>  v22 <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">*</span>(_QWORD <span style="color:#f92672">*</span>)s <span style="color:#f92672">=</span> <span style="color:#ae81ff">0x90978884989E9399LL</span>;
-</span></span><span style="display:flex;"><span>  v6 <span style="color:#f92672">=</span> <span style="color:#ae81ff">0xA08C8B9E978BA09ELL</span>;
-</span></span><span style="display:flex;"><span>  v7 <span style="color:#f92672">=</span> <span style="color:#ae81ff">0x8B8B8B8B8B90939ELL</span>;
-</span></span><span style="display:flex;"><span>  v8 <span style="color:#f92672">=</span> <span style="color:#ae81ff">0x828C9A8B869DA09ELL</span>;
-</span></span><span style="display:flex;"><span>  v9 <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">for</span> ( i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; ; <span style="color:#f92672">++</span>i )
-</span></span><span style="display:flex;"><span>  {
-</span></span><span style="display:flex;"><span>    v3 <span style="color:#f92672">=</span> i;
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> ( v3 <span style="color:#f92672">&gt;=</span> <span style="color:#a6e22e">strlen</span>(s) )
-</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">break</span>;
-</span></span><span style="display:flex;"><span>    s[i] <span style="color:#f92672">=</span> <span style="color:#f92672">~</span>s[i];
-</span></span><span style="display:flex;"><span>  }
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">while</span> ( <span style="color:#ae81ff">1</span> )
-</span></span><span style="display:flex;"><span>  {
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;What is the entry point of this binary (like 0x1070)?: &#34;</span>);
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">fgets</span>(s1, <span style="color:#ae81ff">150</span>, _bss_start);
-</span></span><span style="display:flex;"><span>    s1[<span style="color:#a6e22e">strcspn</span>(s1, <span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>)] <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> ( v23 <span style="color:#f92672">!=</span> <span style="color:#ae81ff">3735928559LL</span> )
-</span></span><span style="display:flex;"><span>    {
-</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">puts</span>(s);
-</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> ( <span style="color:#f92672">!</span><span style="color:#a6e22e">strcmp</span>(s1, <span style="color:#e6db74">&#34;0x1100&#34;</span>) )
-</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">break</span>;
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">puts</span>(<span style="color:#e6db74">&#34;That&#39;s not right?? :(</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
-</span></span><span style="display:flex;"><span>  }
-</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">puts</span>(<span style="color:#e6db74">&#34;Yeah I guess you got it... but whatever man!&#34;</span>);
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">puts</span>(<span style="color:#e6db74">&#34;Congratulations! You have solved the maze!&#34;</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">system</span>(<span style="color:#e6db74">&#34;/bin/sh&#34;</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">exit</span>(<span style="color:#ae81ff">0</span>);
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>We see that <code>s</code> seems to be the flag, and it seems to be made of some hex strings in the variables <code>v6</code>, <code>v7</code>, <code>v8</code>. However, each byte of <code>s</code> is changed to <code>~s[i]</code>, which is bitwise negation/NOT operator.</p>
-<p>Since <code>~~s = s</code>, we can just bitwise NOT it again and get the flag.</p>
-
-  <img src="./img/not.png"  class="center"  style="border-radius: 5px; width: 100%;"  />
-
-
-<p>Accounting for endianness by rearranging the string <code>ohw{galf_staht_atttttola}setyb_a</code> gives <code>flag{whoa_thats_alottttta_bytes}</code>. Didn&rsquo;t need to run the binary to get the flag I guess.</p>
-<h1 id="4-infrastructure">4. Infrastructure<a href="#4-infrastructure" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
-<h2 id="captain-75">Captain (75)<a href="#captain-75" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
-<blockquote>
-<p>Cloud infrastructure is migrating to containerized technology in many places, lets get started with containers. Run this docker container with the environment variable <code>FLAG_ENABLER</code> set to <code>give_me_the_flag</code>.</p>
-</blockquote>
-<blockquote>
-<p><a href="https://hub.docker.com/r/nathanielsinger/hackabit0x01-infrastructure-container1">https://hub.docker.com/r/nathanielsinger/hackabit0x01-infrastructure-container1</a></p>
-</blockquote>
-<p>Initially I tried to pull the image and analyse it, but gave up quickly and realised doing it properly was easier. Use <code>-e</code> flag to set enviroment variables.</p>
-<p><code>sudo docker run -e FLAG_ENABLER=give_me_the_flag nathanielsinger/hackabit0x01-infrastructure-container1</code></p>
-<p><code>flag{you_aren't_the_captain_just_yet}</code></p>
-
-  <img src="./img/docker1.png"  class="center"  style="border-radius: 5px; width: 100%;"  />
-
-
-<h2 id="seashell">Seashell<a href="#seashell" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
-<blockquote>
-<p>SSH runs the internet. Connect to <code>utkwrgubhj.qualifier.hackabit.com</code> on port <code>22</code> with user <code>hackerman</code> and the provided <code>private key</code>.</p>
-</blockquote>
-<p>I did this on MacOS, by importing the key, but here is it again on linux (WSL). Private key file is called <code>id_rsa</code>. Note that for the private key file, the permissions cannot be too open, so you have to use <code>chmod 400 id_rsa</code>.</p>
-<p>Connecting with <code>ssh -i id_rsa hackerman@utkwrgubhj.qualifier.hackabit.com</code> we get the flag <code>flag{shesellsseashellsbytheseaaaaaaashore}</code>.</p>
-
-  <img src="./img/ssh.png"  class="center"  style="border-radius: 5px; width: 100%;"  />
-
-
-<h2 id="loading-100">Loading (100)<a href="#loading-100" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
-<blockquote>
-<p>What&rsquo;s in this ISO thing?
-<a href="https://hub.docker.com/r/nathanielsinger/hackabit0x01-infrastructure-container1">https://hub.docker.com/r/nathanielsinger/hackabit0x01-infrastructure-container1</a></p>
-</blockquote>
-<p>Ok we are given like no info, let&rsquo;s dump the image with <code>docker save -o dockerimage.tar nathanielsinger/hackabit0x01-infrastructure-container1</code></p>
-<p>Then just untar (<code>tar -xvf FILE.tar</code>) the entire thing, and search through folders. Eventually in <code>adb6d</code>&hellip;. I found the flag in <code>root/flag_image.iso</code> after untarring <code>layer.tar</code> in the folder.</p>
-<p><code>flag{consider_it_loaded_hackerman}</code></p>
-
-  <img src="./img/docker2.png"  class="center"  style="border-radius: 5px; width: 100%;"  />
-
-
-<h2 id="location-100">Location (100)<a href="#location-100" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
-<blockquote>
-<p>Now with the same image, dive on in and find the iso image. What is the absolute path to the iso image stored within the container? Include the filename in the path for your submission.
-<a href="https://hub.docker.com/r/nathanielsinger/hackabit0x01-infrastructure-container1">https://hub.docker.com/r/nathanielsinger/hackabit0x01-infrastructure-container1</a></p>
-</blockquote>
-<p>To be honest I forgot what the flag to this was, but it&rsquo;s linked to the previous challenge, and we just specify the path to the <code>.iso</code> image. So it would&rsquo;ve been something like <code>root/flag_image.iso</code> or <code>/root/flag_image.iso</code></p>
-<h2 id="connector-125">Connector (125)<a href="#connector-125" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
-<blockquote>
-<p>Connect to the mysql server at dyxvqmjwaj.qualifier.hackabit.com and read out the flag. Here are some user accounts:
-<code>user1:uyqhxgxcxd</code> <code>user2:ehaigdexhh</code> <code>user3:xfgyuvtapt</code> <code>user4:tnvgijqxei</code> <code>user5:hybplwmndy</code></p>
-</blockquote>
-<p>We are given 5 user credentials. On my Mac, using SQL Workbench, I tried each one and checked the tables until I found a flag in one of them (<code>user4</code>).</p>
-
-  <img src="./img/connect.png"  class="center"  style="border-radius: 5px; width: 100%;"  />
-
-
-
-  <img src="./img/sqlflag.png"  class="center"  style="border-radius: 5px; width: 100%;"  />
-
-
-<p>And we get the flag <code>flag{oh_sql_my_sql}</code></p>
-<h2 id="boat-125">Boat (125)<a href="#boat-125" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
-<blockquote>
-<p>Sometimes we need to run a machine on a specific address or virtualize a network, get this running on: <code>172.22.1.11.</code></p>
-</blockquote>
-<blockquote>
-<p><a href="https://hub.docker.com/r/nathanielsinger/hackabit0x01-infrastructure-container2">https://hub.docker.com/r/nathanielsinger/hackabit0x01-infrastructure-container2</a></p>
-</blockquote>
-<p>Seems easy enough, just run another docker command. But this time, we get an error when we try to pull the image.</p>
-<pre tabindex="0"><code>Error response from daemon: manifest for nathanielsinger/hackabit0x01-infrastructure-container2:latest not found: manifest unknown: manifest unknown
-</code></pre><p>Searching for the error brings us to <a href="https://stackoverflow.com/questions/41810104/docker-manifest-unknown-manifest-unknown">this</a> stack overflow question, and we see we have to specify the version of the image. So we do so and <code>docker pull nathanielsinger/hackabit0x01-infrastructure-container2:v1.0.0</code> works.</p>
-<p>Using yet another <a href="https://stackoverflow.com/questions/27937185/assign-static-ip-to-docker-container">article</a> we use the command <code>docker network create --subnet=172.22.1.11/16 net1</code> to make a network and <code>docker run --net net1 --ip 172.22.1.11 nathanielsinger/hackabit0x01-infrastructure-container2:v1.0.0</code> to run the container with that network and correct ip.</p>
-<p><code>flag{its_just_an_address_man}</code></p>
-
-  <img src="./img/docker3.png"  class="center"  style="border-radius: 5px; width: 100%;"  />
-
-
-<h2 id="inspector-150">Inspector (150)<a href="#inspector-150" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
-<blockquote>
-<p>Oh look its Bits, something changed though&hellip; see if you can track it down.</p>
-</blockquote>
-<p>We are provided with a zip file containing source code for what seems to be the Bits bot on the CTF&rsquo;s discord server. After looking around, I realise we are given a git folder which contains <code>.git</code> folder, with things like past commits and versions.</p>
-<p>So the flag must be somewhere in the past commits.</p>
-<p>Searching for <code>flag</code> with <code>grep -r &quot;flag&quot; .</code> we find past commits with <code>flag_stuff</code> in their info.</p>
-
-  <img src="./img/git1.png"  class="center"  style="border-radius: 5px; width: 100%;"  />
-
-
-<p>So we use <code>git checkout &lt;flagcommithash&gt;</code> to switch to that commit, and another grep reveals the flag.</p>
-<p><code>flag{don't_try_harder...look_harder}</code></p>
-
-  <img src="./img/git2.png"  class="center"  style="border-radius: 5px; width: 100%;"  />
-
-
-<h2 id="hammer-150">Hammer (150)<a href="#hammer-150" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
-<blockquote>
-<p>Check out oslyxpzcgs.qualifier.hackabit.com and see if you can find the vuln. No help on this one, nothing crazy though&hellip; enumerate harder :)
-The flag is stored in an environment variable.</p>
-</blockquote>
-<p>Let&rsquo;s nmap the domain to find more info about the service.</p>
-
-  <img src="./img/nmap.png"  class="center"  style="border-radius: 5px; width: 100%;"  />
-
-
-<p>We find an open port <code>21</code> which is TCP, so let&rsquo;s connect using netcat:</p>
-
-  <img src="./img/vsftp.png"  class="center"  style="border-radius: 5px; width: 100%;"  />
-
-
-<p>We see it is running <code>vsFTPd 2.3.4</code>, and a quick google search reveals that it has a <a href="https://en.wikipedia.org/wiki/Vsftpd">smiley face backdoor</a>.</p>
-<p>Now, it is intended that we use Metasploit to automatically solve this, but I did it manually while booting up a linux computer to run Metasploit.</p>
-<p>First I found the source code for the Metasploit module <a href="https://www.exploit-db.com/exploits/49757">here</a>.</p>
-<p>Essentially, if you include <code>:)</code> in your username, a reverse shell will be sent to you at port 6200. So we do so, and connect at port 6200 for a shell.</p>
-
-  <img src="./img/ftp1.png"  class="center"  style="border-radius: 5px; width: 100%;"  />
-
-
-<p>And we check the enviroment variables for the flag. <code>flag{looks_like_you_found_the_right_nail}</code></p>
-
-  <img src="./img/revshell.png"  class="center"  style="border-radius: 5px; width: 100%;"  />
-
-
-<h1 id="5-networking">5. Networking<a href="#5-networking" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
-<h2 id="phonebook-75">Phonebook (75)<a href="#phonebook-75" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
-<blockquote>
-<p>Check out the DNS records for <code>qualifier.hackabit.com</code>&hellip; there&rsquo;s soemthing interesting there, all kinds of data&hellip;</p>
-</blockquote>
-<p>Okay let&rsquo;s go to <a href="https://dnschecker.org/all-dns-records-of-domain.php">dnschecker.org</a> and check the DNS records.</p>
-
-  <img src="./img/dns.png"  class="center"  style="border-radius: 5px; width: 100%;"  />
-
-
-<p>Wow! A flag! Who would&rsquo;ve guessed&hellip; <code>flag{my_nameserver_is_slimshady}</code></p>
-<h2 id="avenue-75">Avenue (75)<a href="#avenue-75" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
-<blockquote>
-<p>What is the kernel(OS) was this network capture recorded on?</p>
-</blockquote>
-<p>We are given a <code>pcap</code> capture file. Let&rsquo;s use wireshark to open it.</p>
-
-  <img src="./img/wireshark.png"  class="center"  style="border-radius: 5px; width: 100%;"  />
-
-
-<p>And within one of the tls streams we find <code>X11; Ubuntu; Linux x86_64</code> to be the OS of the capturing device.</p>
-<h2 id="rivers-100">Rivers (100)<a href="#rivers-100" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
-<blockquote>
-<p>Follow the river and see whats in the stream.</p>
-</blockquote>
-<p>Okay, so this was also just following the TLS stream, hence the name and description. The flag is in the previous image too, <code>flag{rivers_run_streams_flowwww}</code></p>
-<h2 id="fish-100">Fish (100)<a href="#fish-100" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
-<blockquote>
-<p>What protocol is responsible for the most packets in this capture?</p>
-</blockquote>
-<p>Sorting by protocol, we find the <code>QUIC</code> protocol to be most of the packets.</p>
-<p>But submitting that doesn&rsquo;t give us the flag. A quick google brings us to its full name, <code>Quick UDP Internet Connections</code>, which I don&rsquo;t think was the flag either? It was something like <code>QUIC IETF</code> or so.</p>
-<h2 id="school-125">School (125)<a href="#school-125" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
-<blockquote>
-<p>This ones gonna take a few steps:</p>
-</blockquote>
-<blockquote>
-<p>Take the input line by line
-Calculate the network and broadcast addresses of the subnet
-For each network address add up all the forth octets
-Your challenge response (flag) is this total.</p>
-</blockquote>
-<p>Okay, I literally chucked this challenge into chat GPT to solve it for me, and it actually worked first try!</p>
-<p>It gave me this code:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-py" data-lang="py"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_network_address</span>(ip, netmask):
-</span></span><span style="display:flex;"><span>    ip_parts <span style="color:#f92672">=</span> [int(x) <span style="color:#66d9ef">for</span> x <span style="color:#f92672">in</span> ip<span style="color:#f92672">.</span>split(<span style="color:#e6db74">&#39;.&#39;</span>)]
-</span></span><span style="display:flex;"><span>    netmask_parts <span style="color:#f92672">=</span> [int(x) <span style="color:#66d9ef">for</span> x <span style="color:#f92672">in</span> netmask<span style="color:#f92672">.</span>split(<span style="color:#e6db74">&#39;.&#39;</span>)]
-</span></span><span style="display:flex;"><span>    network_address <span style="color:#f92672">=</span> [ip_parts[i] <span style="color:#f92672">&amp;</span> netmask_parts[i] <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">4</span>)]
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#39;.&#39;</span><span style="color:#f92672">.</span>join(str(x) <span style="color:#66d9ef">for</span> x <span style="color:#f92672">in</span> network_address)
+</span></span></code></pre></div><p>However, the catch is that apart from solving the maze, we must also pass a random check, and if we don&rsquo;t, we die. So previously, we were dying because <code>rand() % 1213</code> was not equal to <code>1212</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span>      <span style="color:#66d9ef">if</span> ( <span style="color:#a6e22e">rand</span>() <span style="color:#f92672">%</span> <span style="color:#ae81ff">1213</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">1212</span> )
+</span></span><span style="display:flex;"><span>      {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">puts</span>(<span style="color:#e6db74">&#34;You successfully exit the maze!&#34;</span>);
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">winner</span>();
+</span></span><span style="display:flex;"><span>      }
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">puts</span>(<span style="color:#e6db74">&#34;Just as you are about to exit, a displacer beast captures you. You die.&#34;</span>);
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">exit</span>(<span style="color:#ae81ff">0</span>);
+</span></span></code></pre></div><p>Fortunately, the <code>rand()</code> seed is set to the current time with <code>srand()</code> at the start of the program.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span>  v3 <span style="color:#f92672">=</span> <span style="color:#a6e22e">time</span>(<span style="color:#ae81ff">0LL</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">srand</span>(v3);
+</span></span></code></pre></div><p>Therefore our method to solve the challenge would be:</p>
+<ul>
+<li>Figure out how to solve the maze (Done)</li>
+<li>Mimic the <code>rand()</code> function in our script by seeding with the same time</li>
+<li>Keep track of the number of <code>rand()</code> calls</li>
+<li>Find a way to call <code>rand()</code>, and call it additional times until the next call results in <code>rand() % 1213 == 1212</code></li>
+</ul>
+<p>Doing a search in the decompiled code, we see functions <code>rand_range()</code> and <code>randomDescription()</code> each call <code>rand()</code> once when ran.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">__int64</span> <span style="color:#66d9ef">__fastcall</span> <span style="color:#a6e22e">rand_range</span>(<span style="color:#66d9ef">int</span> a1, <span style="color:#66d9ef">int</span> a2)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  ...
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> (<span style="color:#66d9ef">unsigned</span> <span style="color:#66d9ef">int</span>)(<span style="color:#a6e22e">rand</span>() <span style="color:#f92672">%</span> (a2 <span style="color:#f92672">-</span> a1 <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>) <span style="color:#f92672">+</span> a1);
+</span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_broadcast_address</span>(ip, netmask):
-</span></span><span style="display:flex;"><span>    ip_parts <span style="color:#f92672">=</span> [int(x) <span style="color:#66d9ef">for</span> x <span style="color:#f92672">in</span> ip<span style="color:#f92672">.</span>split(<span style="color:#e6db74">&#39;.&#39;</span>)]
-</span></span><span style="display:flex;"><span>    netmask_parts <span style="color:#f92672">=</span> [<span style="color:#ae81ff">255</span> <span style="color:#f92672">-</span> int(x) <span style="color:#66d9ef">for</span> x <span style="color:#f92672">in</span> netmask<span style="color:#f92672">.</span>split(<span style="color:#e6db74">&#39;.&#39;</span>)]
-</span></span><span style="display:flex;"><span>    broadcast_address <span style="color:#f92672">=</span> [ip_parts[i] <span style="color:#f92672">|</span> netmask_parts[i] <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">4</span>)]
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#39;.&#39;</span><span style="color:#f92672">.</span>join(str(x) <span style="color:#66d9ef">for</span> x <span style="color:#f92672">in</span> broadcast_address)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">unsigned</span> <span style="color:#66d9ef">__int64</span> <span style="color:#a6e22e">randomDescription</span>()
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  ...
+</span></span><span style="display:flex;"><span>  v2[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">=</span> (<span style="color:#66d9ef">__int64</span>)<span style="color:#e6db74">&#34;cozy&#34;</span>;
+</span></span><span style="display:flex;"><span>  v2[<span style="color:#ae81ff">1</span>] <span style="color:#f92672">=</span> (<span style="color:#66d9ef">__int64</span>)<span style="color:#e6db74">&#34;medium-sized&#34;</span>;
+</span></span><span style="display:flex;"><span>  v2[<span style="color:#ae81ff">2</span>] <span style="color:#f92672">=</span> (<span style="color:#66d9ef">__int64</span>)<span style="color:#e6db74">&#34;spacious&#34;</span>;
+</span></span><span style="display:flex;"><span>  ...
+</span></span><span style="display:flex;"><span>  v0 <span style="color:#f92672">=</span> <span style="color:#a6e22e">rand</span>();
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">printf</span>(
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;As you step into the room, you find yourself standing in a %s space. The walls are adorned with %s and a two large %&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;s dominate the center of the room. You see %d flowers in a vase, and through a window you stop to count %d stars. Th&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;e room appears well designed in the %s style.</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>,
+</span></span><span style="display:flex;"><span>  ...
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> v5 <span style="color:#f92672">-</span> <span style="color:#a6e22e">__readfsqword</span>(<span style="color:#ae81ff">0x28u</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><code>randomDescription()</code> is called every time we move, <strong>even if our move/input is invalid</strong>. This means we can call <code>rand()</code> once ourselves by inputting something that&rsquo;s not a command.</p>
+<p>Lets debug with <a href="https://github.com/pwndbg/pwndbg"><code>pwndbg</code></a> to figure out how many times <code>rand()</code> is called when generating the maze.</p>
+<p>We start the binary and immediately break with <code>starti</code>, and place a breakpoint after <code>generate_maze()</code>:</p>
+
+  <img src="./img/starti.png"  class="center"  style="border-radius: 5px;"  />
+
+
+<p><a href=""></a></p>
+
+  <img src="./img/break.png"  class="center"  style="border-radius: 5px;"  />
+
+
+<p>Then, we set a breakpoint at <code>rand()</code>, and write a simpe python counter to keep track of how many times <code>rand()</code> was called (which was how many times the breakpoint was triggered)</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-py" data-lang="py"><span style="display:flex;"><span>python
+</span></span><span style="display:flex;"><span>counter <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">main</span>():
-</span></span><span style="display:flex;"><span>    filename <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;school.txt&#39;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">with</span> open(filename) <span style="color:#66d9ef">as</span> f:
-</span></span><span style="display:flex;"><span>        lines <span style="color:#f92672">=</span> f<span style="color:#f92672">.</span>readlines()
-</span></span><span style="display:flex;"><span>        sum_of_fourth_octets <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> line <span style="color:#f92672">in</span> lines:
-</span></span><span style="display:flex;"><span>            ip, mask <span style="color:#f92672">=</span> line<span style="color:#f92672">.</span>strip()<span style="color:#f92672">.</span>split(<span style="color:#e6db74">&#39;/&#39;</span>)
-</span></span><span style="display:flex;"><span>            netmask <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;.&#39;</span><span style="color:#f92672">.</span>join([str((<span style="color:#ae81ff">0xffffffff</span> <span style="color:#f92672">&lt;&lt;</span> (<span style="color:#ae81ff">32</span> <span style="color:#f92672">-</span> int(mask))) <span style="color:#f92672">&gt;&gt;</span> i <span style="color:#f92672">&amp;</span> <span style="color:#ae81ff">0xff</span>) <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> [<span style="color:#ae81ff">24</span>, <span style="color:#ae81ff">16</span>, <span style="color:#ae81ff">8</span>, <span style="color:#ae81ff">0</span>]])
-</span></span><span style="display:flex;"><span>            network_address <span style="color:#f92672">=</span> get_network_address(ip, netmask)
-</span></span><span style="display:flex;"><span>            broadcast_address <span style="color:#f92672">=</span> get_broadcast_address(ip, netmask)
-</span></span><span style="display:flex;"><span>            print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;IP: </span><span style="color:#e6db74">{</span>ip<span style="color:#e6db74">}</span><span style="color:#e6db74">/</span><span style="color:#e6db74">{</span>mask<span style="color:#e6db74">}</span><span style="color:#e6db74">&#39;</span>)
-</span></span><span style="display:flex;"><span>            print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;Network address: </span><span style="color:#e6db74">{</span>network_address<span style="color:#e6db74">}</span><span style="color:#e6db74">&#39;</span>)
-</span></span><span style="display:flex;"><span>            print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;Broadcast address: </span><span style="color:#e6db74">{</span>broadcast_address<span style="color:#e6db74">}</span><span style="color:#e6db74">&#39;</span>)
-</span></span><span style="display:flex;"><span>            sum_of_fourth_octets <span style="color:#f92672">+=</span> int(network_address<span style="color:#f92672">.</span>split(<span style="color:#e6db74">&#39;.&#39;</span>)[<span style="color:#ae81ff">3</span>])
-</span></span><span style="display:flex;"><span>        print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;Sum of fourth octets: </span><span style="color:#e6db74">{</span>sum_of_fourth_octets<span style="color:#e6db74">}</span><span style="color:#e6db74">&#39;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">breakpoint_handler</span>(event):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">global</span> counter
+</span></span><span style="display:flex;"><span>    counter <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;srand called. total times called: </span><span style="color:#e6db74">{</span>counter<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;__main__&#39;</span>:
-</span></span><span style="display:flex;"><span>    main()
-</span></span></code></pre></div><p>Which gave us the answer <code>25604</code>. I am very surprised this worked, and saved me from doing some scripting. So I do apologise for not doing this properly and explaining how to calculate it, hopefully that code is enough :)</p>
-<h2 id="picture-125">Picture (125)<a href="#picture-125" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
-<blockquote>
-<p>There is a service running on woxuazsgxd.qualifier.hackabit.com:54321</p>
-</blockquote>
-<blockquote>
-<p>Connect to it and try to follow the mail&hellip;</p>
-</blockquote>
-<p>Connecting to it with netcat gives us a message along the lines of the flag was sent to you to a random UDP port 5000-5500</p>
-<p>Definetly one of the harder ones by far. My initial thought was to use Wireshark to capture packages, and filter by protocol UDP or port number, but neither of that worked for some reason. Trying another packet capture method with <code>sudo tcpdump -i ens3 udp -vvv -X</code>, we get the flag <code>flag{the_mailman_is_confused_but_you're_not}</code></p>
-<pre tabindex="0"><code>14:49:48.524413 IP (tos 0x40, ttl 55, id 741, offset 0, flags [DF], proto UDP (17), length 72)
-    201.15.132.34.bc.googleusercontent.com.1235 &gt; vps-7443235f.vps.ovh.ca.5236: [udp sum ok] UDP, length 44
-        0x0000:  4540 0048 02e5 4000 3711 fb0b 2284 0fc9  E@.H..@.7...&#34;...
-        0x0010:  8b63 87c4 04d3 1474 0034 d36f 666c 6167  .c.....t.4.oflag
-        0x0020:  7b74 6865 5f6d 6169 6c6d 616e 5f69 735f  {the_mailman_is_
-        0x0030:  636f 6e66 7573 6564 5f62 7574 5f79 6f75  confused_but_you
-        0x0040:  2772 655f 6e6f 747d                      &#39;re_not}
-</code></pre><p>Still not sure why wireshark didn&rsquo;t work, if anyone has an explanation please let me know!</p>
-<h1 id="6-osint">6. OSINT<a href="#6-osint" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
-<p>Okay, I only solved 2 out of 8 OSINT challenges, so I won&rsquo;t be doing any OSINT writeups. I really couldn&rsquo;t be bothered with OSINT after all the other chals, as I don&rsquo;t really enjoy OSINT particularly.</p>
-<p>So that&rsquo;s it for the writeups! Doubt anyone read almost 1000 lines of Markdown, but thanks for reading!</p>
-<p>- TheSavageTeddy / theuwuteddy</p>
+</span></span><span style="display:flex;"><span>gdb<span style="color:#f92672">.</span>events<span style="color:#f92672">.</span>stop<span style="color:#f92672">.</span>connect(breakpoint_handler)
+</span></span><span style="display:flex;"><span>end
+</span></span></code></pre></div>
+  <img src="./img/gdbpythoncool.png"  class="center"  style="border-radius: 5px;"  />
+
+
+<p>And we find <code>generate_maze()</code> hits the breakpoint <code>590</code> times (the <code>591</code> in the bottom of image is when it hits the breakpoint after <code>generate_maze()</code> in <code>main()</code>, so doesn&rsquo;t count).</p>
+<p>Now that we have the amount of times <code>rand()</code> is called, we can simulate this in python to predict what number the next <code>rand()</code> call will yield.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-py" data-lang="py"><span style="display:flex;"><span><span style="color:#f92672">from</span> ctypes <span style="color:#f92672">import</span> CDLL
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>libc <span style="color:#f92672">=</span> CDLL(<span style="color:#e6db74">&#34;./libc.so.6&#34;</span>)
+</span></span><span style="display:flex;"><span>libc<span style="color:#f92672">.</span>srand(int(time<span style="color:#f92672">.</span>time()))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">callrand</span>():
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> libc<span style="color:#f92672">.</span>rand() <span style="color:#f92672">%</span> <span style="color:#ae81ff">1213</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># simulate rand() calls in generate_maze()</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> _ <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">590</span>):
+</span></span><span style="display:flex;"><span>    callrand()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>callrand() <span style="color:#75715e"># the initial random message it sends</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">...</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> moves <span style="color:#f92672">in</span> solution:
+</span></span><span style="display:flex;"><span>    callrand() <span style="color:#75715e"># simulate rand() call in the random message we get after every input</span>
+</span></span><span style="display:flex;"><span>    p<span style="color:#f92672">.</span>sendline(moves)
+</span></span></code></pre></div><p>Now, after integrating the random calls into our solve script, we can stop before exiting the maze, keep calling <code>rand()</code> by submitting an invalid input, until the next <code>callrand()</code> we simulate yields <code>1212</code>. When it does, we can finally exit the maze, and <code>winner()</code> should be called, giving us a shell!</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-py" data-lang="py"><span style="display:flex;"><span>lastmove <span style="color:#f92672">=</span> solution[<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> moves <span style="color:#f92672">in</span> solution[:<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]: <span style="color:#75715e"># do all moves except last</span>
+</span></span><span style="display:flex;"><span>    callrand() <span style="color:#75715e"># simulate rand() call in the random message we get after every input</span>
+</span></span><span style="display:flex;"><span>    p<span style="color:#f92672">.</span>sendline(moves)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>nextrand <span style="color:#f92672">=</span> callrand()
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">while</span> <span style="color:#f92672">not</span> nextrand <span style="color:#f92672">==</span> <span style="color:#ae81ff">1212</span>:
+</span></span><span style="display:flex;"><span>    p<span style="color:#f92672">.</span>sendline(<span style="color:#e6db74">b</span><span style="color:#e6db74">&#34;x&#34;</span>) <span style="color:#75715e"># send invalid input to call rand()</span>
+</span></span><span style="display:flex;"><span>    nextrand <span style="color:#f92672">=</span> callrand()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>p<span style="color:#f92672">.</span>sendline(lastmove)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>p<span style="color:#f92672">.</span>interactive()
+</span></span></code></pre></div><p>Final solve script:</p>
+
+
+
+  <div class="collapsable-code">
+    <input id="4" type="checkbox" checked />
+    <label for="4">
+      <span class="collapsable-code__language">py</span>
+      <span class="collapsable-code__title">solve.py</span>
+      <span class="collapsable-code__toggle" data-label-expand="Show" data-label-collapse="Hide"></span>
+    </label>
+    <pre class="language-py" ><code>
+class MazeSolver:
+    def __init__(self, maze):
+        self.maze = maze
+        self.rows = len(maze)
+        self.cols = len(maze[0])
+        self.visited = [[False for _ in range(self.cols)] for _ in range(self.rows)]
+        self.directions = {&#39;N&#39;: (-1, 0), &#39;S&#39;: (1, 0), &#39;W&#39;: (0, -1), &#39;E&#39;: (0, 1)}
+        self.path = []
+
+    def solve(self, start_row, start_col):
+        if self._dfs(start_row, start_col):
+            return self._get_solution()
+        else:
+            return []
+
+    def _dfs(self, row, col):
+        if not self._is_valid(row, col):
+            return False
+
+        self.visited[row][col] = True
+        self.path.append((row, col))
+
+        if self.maze[row][col] == &#39;*&#39;:
+            return True
+
+        for direction in self.directions.values():
+            next_row = row &#43; direction[0]
+            next_col = col &#43; direction[1]
+            if self._dfs(next_row, next_col):
+                return True
+
+        self.path.pop()
+        return False
+
+    def _is_valid(self, row, col):
+        if row &lt; 0 or row &gt;= self.rows or col &lt; 0 or col &gt;= self.cols:
+            return False
+        if self.maze[row][col] == &#39;#&#39; or self.visited[row][col]:
+            return False
+        return True
+
+    def _get_solution(self):
+        solution = []
+        for i in range(1, len(self.path)):
+            prev_row, prev_col = self.path[i-1]
+            curr_row, curr_col = self.path[i]
+            if curr_row &lt; prev_row:
+                solution.append(&#39;n&#39;)
+            elif curr_row &gt; prev_row:
+                solution.append(&#39;s&#39;)
+            elif curr_col &lt; prev_col:
+                solution.append(&#39;w&#39;)
+            elif curr_col &gt; prev_col:
+                solution.append(&#39;e&#39;)
+        return solution
+
+
+from pwn import *
+from ctypes import CDLL
+import time
+
+libc = CDLL(&#34;./libc.so.6&#34;)
+
+
+def callrand():
+    return libc.rand() % 1213
+
+elf = context.binary = ELF(&#34;./challenge&#34;)
+
+# seed with the current time right before starting the program
+libc.srand(int(time.time())) 
+p = process()
+
+# simulate rand() calls in generate_maze()
+for _ in range(590):
+    callrand()
+
+callrand() # the initial random message it sends
+
+p.recvuntil(b&#34;Which would you like to do?&#34;)
+p.sendline(b&#34;a&#34;)
+p.recvuntil(b&#34;You cast arcane eye and send your summoned magical eye above the maze.&#34;)
+
+maze = p.recvuntil(b&#34;You&#34;, drop=True).decode().split(&#34;\n&#34;)
+maze = [i for i in maze if &#34;.&#34; in i or &#34;#&#34; in i] # scuffed method to get maze
+maze = maze[1:]
+
+solver = MazeSolver(maze)
+solution = solver.solve(0, 1)
+
+lastmove = solution[-1]
+
+for moves in solution[:-1]: # do all moves except last
+    callrand() # simulate rand() call in the random message we get after every input
+    p.sendline(moves)
+
+nextrand = callrand()
+while not nextrand == 1212:
+    p.sendline(b&#34;x&#34;) # send invalid input to call rand()
+    nextrand = callrand()
+
+p.sendline(lastmove)
+
+p.interactive()
+</code></pre>
+  </div>
+
+
+<p>Running the final script we indeed get a shell, and solve the challenge!</p>
+
+  <img src="./img/shell.png"  class="center"  style="border-radius: 5px;"  />
+
+
+<p>To recieve our points, we had to submit a <code>.tar</code> file with a Dockerfile and the solve script, which should run <code>./submitter</code> after getting a shell, and print the flag. However, since I didn&rsquo;t use any <code>p.recv()</code> after sending the moves, the buffer would crash the docker and the submission would fail. Fortunately, one of my teammates <a href="https://github.com/zafirr31">Zafirr</a> submitted with <code>p.sendlineafter()</code> to overcome the issue and we got the points :)</p>
+<h1 id="conclusion">Conclusion<a href="#conclusion" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
+<p>I would like to thank all my teammates for putting in all their effort playing the CTF, and especially <a href="https://github.com/zafirr31"><code>Zafirr</code></a>, <a href="https://twitter.com/KebabTM"><code>KebabTM</code></a>, <a href="https://eth007.me/blog/"><code>Eth007</code></a>, <a href="https://twitter.com/ainsetin"><code>Ainsetin</code></a> and <code>Goldenboy</code> (sorry if i missed anyone) for helping me figure things out (especially the <code>rand()</code> calls) while I wrote the solve script to solve this challenge!</p>
+<p>It was fun playing with a lot of people, and for the second day I met up with some of my teammates to solve more challenges - you can see <a href="https://twitter.com/toasterpwn"><code>toasterpwn</code></a>&rsquo;s writeup on them <a href="https://toasterpwn.github.io/posts/defcon-ctf-2023-qualifiers/">here</a>!</p>
+<p>Unfortunately this CTF was right in the middle of my exams so I couldn&rsquo;t dedicate full time to it, but I hope to play with everyone again and hopefully qualify next year! Thanks for reading!</p>
+<ul>
+<li>TheSavageTeddy / uwuteddy</li>
+</ul>
 
       </div></div>
 
@@ -964,13 +715,13 @@ Your challenge response (flag) is this total.</p>
     </div>
     <div class="pagination__buttons">
         
-        <span class="button previous">
-            <a href="https://TheSavageTeddy.github.io/posts/writeups-hackabit2023/">
-                <span class="button__icon">←</span>
-                <span class="button__text">Full Writeups - Hack A Bit CTF Qualifiers 0x01</span>
+        
+        <span class="button next">
+            <a href="https://TheSavageTeddy.github.io/posts/ret2libm-iris2023/">
+                <span class="button__text">ret2libm - IrisCTF 2023</span>
+                <span class="button__icon">→</span>
             </a>
         </span>
-        
         
     </div>
 </div>
