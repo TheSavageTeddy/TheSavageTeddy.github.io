@@ -1,10 +1,10 @@
 +++ 
 weight = 8
-tags = ["ctf", "pwn"] 
+tags = ["ctf", "pwn", "writeup"] 
 categories = ["CTF Writeups", "pwn"] 
 publishDate = 1673193600 # 01/09/2023
 description = "A relatively easy `pwn` challenge similar to classic ret2libc" 
-title_img = """{{< image src="https://irissec.xyz/assets/img/logo_ascii.png" alt="" style="border-radius: 5px; height: 13vh; width: auto; display: inline; vertical-align: middle; " >}}"""
+title_img = """{{< image src="https://irissec.xyz/assets/img/logo_ascii.png" alt="" style="border-radius: 5px; height: auto; width: 10vh; display: inline; vertical-align: middle; " >}}"""
 title = """ret2libm - IrisCTF 2023"""
 cover = "libcbasecalc.png"
 +++

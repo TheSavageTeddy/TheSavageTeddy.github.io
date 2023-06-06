@@ -9,6 +9,535 @@
     <copyright>uwuTeddy</copyright>
     <lastBuildDate>Sun, 21 May 2023 00:00:00 +0800</lastBuildDate><atom:link href="https://TheSavageTeddy.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>what-a-maze-meant - DEFCON Quals 2023 Writeup</title>
+      <link>https://TheSavageTeddy.github.io/posts/what-a-maze-meant-defcon-2023-quals/</link>
+      <pubDate>Tue, 28 Feb 2023 16:00:00 +0800</pubDate>
+      
+      <guid>https://TheSavageTeddy.github.io/posts/what-a-maze-meant-defcon-2023-quals/</guid>
+      <description>Table of Contents Overview - a brief summary of the event
+Writeup - writeup of the challenge
+Conclusion - final closing thoughts
+Overview I played DEFCON Quals 2023 with if this doesn&#39;t work we&#39;ll get more for next year, a merger team with around 10 teams combined. Despite our best efforts, we placed 15th, just short of the top 12 that qualified, but given that it was our first year, I think we did pretty well, and I guess we&amp;rsquo;ll need to get more for next year!</description>
+      <content>&lt;h1 id=&#34;table-of-contents&#34;&gt;Table of Contents&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&#34;#overview&#34;&gt;&lt;code&gt;Overview&lt;/code&gt;&lt;/a&gt; - a brief summary of the event&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;#challenge-overview&#34;&gt;&lt;code&gt;Writeup&lt;/code&gt;&lt;/a&gt; - writeup of the challenge&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;#conclusion&#34;&gt;&lt;code&gt;Conclusion&lt;/code&gt;&lt;/a&gt; - final closing thoughts&lt;/p&gt;
+&lt;h1 id=&#34;overview&#34;&gt;Overview&lt;/h1&gt;
+&lt;p&gt;I played DEFCON Quals 2023 with &lt;a href=&#34;https://ctftime.org/team/220769&#34;&gt;&lt;code&gt;if this doesn&#39;t work we&#39;ll get more for next year&lt;/code&gt;&lt;/a&gt;, a merger team with around 10 teams combined. Despite our best efforts, we placed &lt;code&gt;15th&lt;/code&gt;, just short of the top 12 that qualified, but given that it was our first year, I think we did pretty well, and I guess we&amp;rsquo;ll need to get more for next year!&lt;/p&gt;
+&lt;p&gt;In this post is a quick writeup of &lt;code&gt;what-a-maze-meant&lt;/code&gt;, the first speedpwn challenge released in the LiveCTF section, where the quickest solves will earn the most points, so speed is key! It was a relatively easy challenge that together with some teamates, I solved pretty quickly. Enjoy!&lt;/p&gt;
+&lt;h2 id=&#34;challenge-overview&#34;&gt;Challenge overview&lt;/h2&gt;
+&lt;p&gt;We are given a binary, where the goal seems to be to complete the maze, by giving directions such as North, South, East and West. &lt;a href=&#34;https://dogbolt.org/?id=fda734c4-0d96-48dc-9247-1cafa71dc8bd&#34;&gt;Decompiling online&lt;/a&gt; we can dive into the code.&lt;/p&gt;
+
+
+
+  &lt;div class=&#34;collapsable-code&#34;&gt;
+    &lt;input id=&#34;1&#34; type=&#34;checkbox&#34;  /&gt;
+    &lt;label for=&#34;1&#34;&gt;
+      &lt;span class=&#34;collapsable-code__language&#34;&gt;c&lt;/span&gt;
+      &lt;span class=&#34;collapsable-code__title&#34;&gt;main()&lt;/span&gt;
+      &lt;span class=&#34;collapsable-code__toggle&#34; data-label-expand=&#34;Show&#34; data-label-collapse=&#34;Hide&#34;&gt;&lt;/span&gt;
+    &lt;/label&gt;
+    &lt;pre class=&#34;language-c&#34; &gt;&lt;code&gt;
+int __cdecl main(int argc, const char **argv, const char **envp)
+{
+  unsigned int v3; // eax
+  char v5; // [rsp&amp;#43;Bh] [rbp-3A5h] BYREF
+  int i; // [rsp&amp;#43;Ch] [rbp-3A4h]
+  int j; // [rsp&amp;#43;10h] [rbp-3A0h]
+  unsigned int v8; // [rsp&amp;#43;14h] [rbp-39Ch]
+  unsigned int v9; // [rsp&amp;#43;18h] [rbp-398h]
+  int v10; // [rsp&amp;#43;1Ch] [rbp-394h]
+  char v11[904]; // [rsp&amp;#43;20h] [rbp-390h] BYREF
+  unsigned __int64 v12; // [rsp&amp;#43;3A8h] [rbp-8h]
+  __int64 savedregs; // [rsp&amp;#43;3B0h] [rbp&amp;#43;0h] BYREF
+
+  v12 = __readfsqword(0x28u);
+  setvbuf(stdin, 0LL, 2, 0LL);
+  setvbuf(stdout, 0LL, 2, 0LL);
+  v3 = time(0LL);
+  srand(v3);
+  for ( i = 0; i &amp;lt;= 29; &amp;#43;&amp;#43;i )
+  {
+    for ( j = 0; j &amp;lt;= 29; &amp;#43;&amp;#43;j )
+      *((_BYTE *)&amp;amp;savedregs &amp;#43; 30 * i &amp;#43; j - 912) = 35;
+  }
+  puts(&amp;#34;Reticulating splines... &amp;#34;);
+  generate_maze((__int64)v11, 1, 1, 1);
+  puts(&amp;#34;\n\nWelcome to the maze!&amp;#34;);
+  v8 = 1;
+  v9 = 1;
+  v10 = 1;
+  while ( 1 )
+  {
+    if ( show_maze )
+      display_maze((__int64)v11, v8, v9);
+    printf(&amp;#34;You are in room (%d, %d)\n&amp;#34;, v8, v9);
+    if ( v10 )
+      randomDescription();
+    else
+      v10 = 1;
+    puts(&amp;#34;Which would you like to do?&amp;#34;);
+    if ( validwalk(*((_BYTE *)&amp;amp;savedregs &amp;#43; 30 * (int)(v8 - 1) &amp;#43; (int)v9 - 912)) )
+      printf(&amp;#34;go (n)orth, &amp;#34;);
+    if ( validwalk(*((_BYTE *)&amp;amp;savedregs &amp;#43; 30 * (int)(v8 &amp;#43; 1) &amp;#43; (int)v9 - 912)) )
+      printf(&amp;#34;go (s)outh, &amp;#34;);
+    if ( validwalk(*((_BYTE *)&amp;amp;savedregs &amp;#43; 30 * (int)v8 &amp;#43; (int)(v9 - 1) - 912)) )
+      printf(&amp;#34;go (w)est, &amp;#34;);
+    if ( validwalk(*((_BYTE *)&amp;amp;savedregs &amp;#43; 30 * (int)v8 &amp;#43; (int)(v9 &amp;#43; 1) - 912)) )
+      printf(&amp;#34;go (e)ast, &amp;#34;);
+    printf(&amp;#34;or (q) end the torment&amp;#34;);
+    printf(&amp;#34;: &amp;#34;);
+    __isoc99_scanf(&amp;#34; %c&amp;#34;, &amp;amp;v5);
+    putchar(10);
+    switch ( v5 )
+    {
+      case &amp;#39;a&amp;#39;:
+        puts(&amp;#34;You cast arcane eye and send your summoned magical eye above the maze.&amp;#34;);
+        show_maze = 1;
+        v10 = 0;
+        break;
+      case &amp;#39;e&amp;#39;:
+        if ( validwalk(*((_BYTE *)&amp;amp;savedregs &amp;#43; 30 * (int)v8 &amp;#43; (int)(v9 &amp;#43; 1) - 912)) )
+          &amp;#43;&amp;#43;v9;
+        break;
+      case &amp;#39;n&amp;#39;:
+        if ( validwalk(*((_BYTE *)&amp;amp;savedregs &amp;#43; 30 * (int)(v8 - 1) &amp;#43; (int)v9 - 912)) )
+          --v8;
+        break;
+      case &amp;#39;q&amp;#39;:
+        exit(0);
+      case &amp;#39;s&amp;#39;:
+        if ( validwalk(*((_BYTE *)&amp;amp;savedregs &amp;#43; 30 * (int)(v8 &amp;#43; 1) &amp;#43; (int)v9 - 912)) )
+          &amp;#43;&amp;#43;v8;
+        break;
+      case &amp;#39;w&amp;#39;:
+        if ( validwalk(*((_BYTE *)&amp;amp;savedregs &amp;#43; 30 * (int)v8 &amp;#43; (int)(v9 - 1) - 912)) )
+          --v9;
+        break;
+      default:
+        break;
+    }
+    if ( *((_BYTE *)&amp;amp;savedregs &amp;#43; 30 * (int)v8 &amp;#43; (int)v9 - 912) == 42 )
+    {
+      if ( rand() % 1213 == 1212 )
+      {
+        puts(&amp;#34;You successfully exit the maze!&amp;#34;);
+        winner();
+      }
+      puts(&amp;#34;Just as you are about to exit, a displacer beast captures you. You die.&amp;#34;);
+      exit(0);
+    }
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+  &lt;/div&gt;
+
+
+&lt;p&gt;Running the provided binary and inputting &lt;code&gt;a&lt;/code&gt;, we can see the maze layout:&lt;/p&gt;
+
+  &lt;img src=&#34;./img/mazelayout.png&#34;  class=&#34;center&#34;  style=&#34;border-radius: 5px;&#34;  /&gt;
+
+
+&lt;p&gt;There are already a lot of scripts online to solve mazes, and since we want to solve this as fast as possible for the most points, we use ChatGPT to generate a script for us:&lt;/p&gt;
+
+
+
+  &lt;div class=&#34;collapsable-code&#34;&gt;
+    &lt;input id=&#34;2&#34; type=&#34;checkbox&#34;  /&gt;
+    &lt;label for=&#34;2&#34;&gt;
+      &lt;span class=&#34;collapsable-code__language&#34;&gt;python&lt;/span&gt;
+      &lt;span class=&#34;collapsable-code__title&#34;&gt;maze_solver.py&lt;/span&gt;
+      &lt;span class=&#34;collapsable-code__toggle&#34; data-label-expand=&#34;Show&#34; data-label-collapse=&#34;Hide&#34;&gt;&lt;/span&gt;
+    &lt;/label&gt;
+    &lt;pre class=&#34;language-python&#34; &gt;&lt;code&gt;
+class MazeSolver:
+    def __init__(self, maze):
+        self.maze = maze
+        self.rows = len(maze)
+        self.cols = len(maze[0])
+        self.visited = [[False for _ in range(self.cols)] for _ in range(self.rows)]
+        self.directions = {&amp;#39;N&amp;#39;: (-1, 0), &amp;#39;S&amp;#39;: (1, 0), &amp;#39;W&amp;#39;: (0, -1), &amp;#39;E&amp;#39;: (0, 1)}
+        self.path = []
+
+    def solve(self, start_row, start_col):
+        if self._dfs(start_row, start_col):
+            return self._get_solution()
+        else:
+            return []
+
+    def _dfs(self, row, col):
+        if not self._is_valid(row, col):
+            return False
+
+        self.visited[row][col] = True
+        self.path.append((row, col))
+
+        if self.maze[row][col] == &amp;#39;*&amp;#39;:
+            return True
+
+        for direction in self.directions.values():
+            next_row = row &amp;#43; direction[0]
+            next_col = col &amp;#43; direction[1]
+            if self._dfs(next_row, next_col):
+                return True
+
+        self.path.pop()
+        return False
+
+    def _is_valid(self, row, col):
+        if row &amp;lt; 0 or row &amp;gt;= self.rows or col &amp;lt; 0 or col &amp;gt;= self.cols:
+            return False
+        if self.maze[row][col] == &amp;#39;#&amp;#39; or self.visited[row][col]:
+            return False
+        return True
+
+    def _get_solution(self):
+        solution = []
+        for i in range(1, len(self.path)):
+            prev_row, prev_col = self.path[i-1]
+            curr_row, curr_col = self.path[i]
+            if curr_row &amp;lt; prev_row:
+                solution.append(&amp;#39;n&amp;#39;)
+            elif curr_row &amp;gt; prev_row:
+                solution.append(&amp;#39;s&amp;#39;)
+            elif curr_col &amp;lt; prev_col:
+                solution.append(&amp;#39;w&amp;#39;)
+            elif curr_col &amp;gt; prev_col:
+                solution.append(&amp;#39;e&amp;#39;)
+        return solution
+
+
+maze = [
+    &amp;#34;#@#.................#.....#.#&amp;#34;,
+    &amp;#34;#.#.#######.#######.#.###.#.#&amp;#34;,
+    &amp;#34;#.#.#.#.....#.....#...#...#.#&amp;#34;,
+    &amp;#34;#.#.#.#.#######.#.#####.###.#&amp;#34;,
+    &amp;#34;#.#...#.#.......#.#...#.....#&amp;#34;,
+    &amp;#34;#.#####.#.#####.###.#.#####.#&amp;#34;,
+    &amp;#34;#.#...#.#.#.....#...#.......#&amp;#34;,
+    &amp;#34;#.#.#.#.#.#######.###########&amp;#34;,
+    &amp;#34;#...#...#.#.......#.......#.#&amp;#34;,
+    &amp;#34;#########.#.#######.#####.#.#&amp;#34;,
+    &amp;#34;#.#.......#...#...#...#...#.#&amp;#34;,
+    &amp;#34;#.#.#.#######.#.#.###.#.###.#&amp;#34;,
+    &amp;#34;#.#.#.....#...#.#.....#.....#&amp;#34;,
+    &amp;#34;#.#.#####.#.###.###########.#&amp;#34;,
+    &amp;#34;#.#.....#.#.#...#.#.......#.#&amp;#34;,
+    &amp;#34;#.#####.#.#.#.###.#.###.###.#&amp;#34;,
+    &amp;#34;#.......#...#...#...#.#...#.#&amp;#34;,
+    &amp;#34;#.###########.#.#.###.###.#.#&amp;#34;,
+    &amp;#34;#.#.......#...#.#.#.....#...#&amp;#34;,
+    &amp;#34;#.#######.#.###.#.#.###.#####&amp;#34;,
+    &amp;#34;#.......#.....#.#...#...#...#&amp;#34;,
+    &amp;#34;#######.#######.#####.#####.#&amp;#34;,
+    &amp;#34;#.....#.....#...#...#.#.....#&amp;#34;,
+    &amp;#34;#.###.#####.#.###.###.#.###.#&amp;#34;,
+    &amp;#34;#.#.#.....#.#.#.......#.#...#&amp;#34;,
+    &amp;#34;#.#.###.###.#.#.#######.#.###&amp;#34;,
+    &amp;#34;#.....#.......#.........#...#&amp;#34;,
+    &amp;#34;####################*########&amp;#34;
+]
+
+solver = MazeSolver(maze)
+solution = solver.solve(0, 1)
+print(&amp;#34;Instructions to solve the maze:&amp;#34;)
+print(solution)
+
+&lt;/code&gt;&lt;/pre&gt;
+  &lt;/div&gt;
+
+
+&lt;p&gt;The script outputs the instructions required to solve the maze, starting from &lt;code&gt;@&lt;/code&gt; to the goal &lt;code&gt;*&lt;/code&gt;. Writing up a quick script in python we can verify this works:&lt;/p&gt;
+
+
+
+  &lt;div class=&#34;collapsable-code&#34;&gt;
+    &lt;input id=&#34;3&#34; type=&#34;checkbox&#34;  /&gt;
+    &lt;label for=&#34;3&#34;&gt;
+      &lt;span class=&#34;collapsable-code__language&#34;&gt;python&lt;/span&gt;
+      &lt;span class=&#34;collapsable-code__title&#34;&gt;solve.py&lt;/span&gt;
+      &lt;span class=&#34;collapsable-code__toggle&#34; data-label-expand=&#34;Show&#34; data-label-collapse=&#34;Hide&#34;&gt;&lt;/span&gt;
+    &lt;/label&gt;
+    &lt;pre class=&#34;language-python&#34; &gt;&lt;code&gt;
+# MazeSolver() here
+...
+from pwn import *
+import time
+
+elf = context.binary = ELF(&amp;#34;./challenge&amp;#34;)
+p = process()
+
+p.recvuntil(b&amp;#34;Which would you like to do?&amp;#34;)
+p.sendline(b&amp;#34;a&amp;#34;)
+p.recvuntil(b&amp;#34;You cast arcane eye and send your summoned magical eye above the maze.&amp;#34;)
+
+maze = p.recvuntil(b&amp;#34;You&amp;#34;, drop=True).decode().split(&amp;#34;\n&amp;#34;)
+maze = [i for i in maze if &amp;#34;.&amp;#34; in i or &amp;#34;#&amp;#34; in i] # scuffed method to get maze
+maze = maze[1:]
+
+solver = MazeSolver(maze)
+solution = solver.solve(0, 1)
+
+for moves in solution:
+    p.sendline(moves)
+
+p.interactive()
+&lt;/code&gt;&lt;/pre&gt;
+  &lt;/div&gt;
+
+
+
+  &lt;img src=&#34;./img/maze_die.png&#34;  class=&#34;center&#34;  style=&#34;border-radius: 5px;&#34;  /&gt;
+
+
+&lt;p&gt;However, after reaching the goal we seem to just die. Reading the decompiled code further, we see why.&lt;/p&gt;
+&lt;p&gt;The goal is to call the &lt;code&gt;winner()&lt;/code&gt; function, which gives us a shell:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-c&#34; data-lang=&#34;c&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;void&lt;/span&gt; __noreturn &lt;span style=&#34;color:#a6e22e&#34;&gt;winner&lt;/span&gt;()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;{
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#a6e22e&#34;&gt;puts&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Congratulations! You have solved the maze!&amp;#34;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#a6e22e&#34;&gt;system&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;/bin/sh&amp;#34;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#a6e22e&#34;&gt;exit&lt;/span&gt;(&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;However, the catch is that apart from solving the maze, we must also pass a random check, and if we don&amp;rsquo;t, we die. So previously, we were dying because &lt;code&gt;rand() % 1213&lt;/code&gt; was not equal to &lt;code&gt;1212&lt;/code&gt;.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-c&#34; data-lang=&#34;c&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; ( &lt;span style=&#34;color:#a6e22e&#34;&gt;rand&lt;/span&gt;() &lt;span style=&#34;color:#f92672&#34;&gt;%&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1213&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1212&lt;/span&gt; )
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#a6e22e&#34;&gt;puts&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;You successfully exit the maze!&amp;#34;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#a6e22e&#34;&gt;winner&lt;/span&gt;();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#a6e22e&#34;&gt;puts&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Just as you are about to exit, a displacer beast captures you. You die.&amp;#34;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#a6e22e&#34;&gt;exit&lt;/span&gt;(&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Fortunately, the &lt;code&gt;rand()&lt;/code&gt; seed is set to the current time with &lt;code&gt;srand()&lt;/code&gt; at the start of the program.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-c&#34; data-lang=&#34;c&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  v3 &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;time&lt;/span&gt;(&lt;span style=&#34;color:#ae81ff&#34;&gt;0LL&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#a6e22e&#34;&gt;srand&lt;/span&gt;(v3);
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Therefore our method to solve the challenge would be:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Figure out how to solve the maze (Done)&lt;/li&gt;
+&lt;li&gt;Mimic the &lt;code&gt;rand()&lt;/code&gt; function in our script by seeding with the same time&lt;/li&gt;
+&lt;li&gt;Keep track of the number of &lt;code&gt;rand()&lt;/code&gt; calls&lt;/li&gt;
+&lt;li&gt;Find a way to call &lt;code&gt;rand()&lt;/code&gt;, and call it additional times until the next call results in &lt;code&gt;rand() % 1213 == 1212&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Doing a search in the decompiled code, we see functions &lt;code&gt;rand_range()&lt;/code&gt; and &lt;code&gt;randomDescription()&lt;/code&gt; each call &lt;code&gt;rand()&lt;/code&gt; once when ran.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-c&#34; data-lang=&#34;c&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;__int64&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;__fastcall&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;rand_range&lt;/span&gt;(&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; a1, &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; a2)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;{
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  ...
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; (&lt;span style=&#34;color:#66d9ef&#34;&gt;unsigned&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt;)(&lt;span style=&#34;color:#a6e22e&#34;&gt;rand&lt;/span&gt;() &lt;span style=&#34;color:#f92672&#34;&gt;%&lt;/span&gt; (a2 &lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt; a1 &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;) &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; a1);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;unsigned&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;__int64&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;randomDescription&lt;/span&gt;()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;{
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  ...
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  v2[&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;] &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; (&lt;span style=&#34;color:#66d9ef&#34;&gt;__int64&lt;/span&gt;)&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;cozy&amp;#34;&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  v2[&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;] &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; (&lt;span style=&#34;color:#66d9ef&#34;&gt;__int64&lt;/span&gt;)&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;medium-sized&amp;#34;&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  v2[&lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;] &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; (&lt;span style=&#34;color:#66d9ef&#34;&gt;__int64&lt;/span&gt;)&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;spacious&amp;#34;&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  ...
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  v0 &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;rand&lt;/span&gt;();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#a6e22e&#34;&gt;printf&lt;/span&gt;(
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;As you step into the room, you find yourself standing in a %s space. The walls are adorned with %s and a two large %&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;s dominate the center of the room. You see %d flowers in a vase, and through a window you stop to count %d stars. Th&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;e room appears well designed in the %s style.&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\n&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  ...
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; v5 &lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;__readfsqword&lt;/span&gt;(&lt;span style=&#34;color:#ae81ff&#34;&gt;0x28u&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;code&gt;randomDescription()&lt;/code&gt; is called every time we move, &lt;strong&gt;even if our move/input is invalid&lt;/strong&gt;. This means we can call &lt;code&gt;rand()&lt;/code&gt; once ourselves by inputting something that&amp;rsquo;s not a command.&lt;/p&gt;
+&lt;p&gt;Lets debug with &lt;a href=&#34;https://github.com/pwndbg/pwndbg&#34;&gt;&lt;code&gt;pwndbg&lt;/code&gt;&lt;/a&gt; to figure out how many times &lt;code&gt;rand()&lt;/code&gt; is called when generating the maze.&lt;/p&gt;
+&lt;p&gt;We start the binary and immediately break with &lt;code&gt;starti&lt;/code&gt;, and place a breakpoint after &lt;code&gt;generate_maze()&lt;/code&gt;:&lt;/p&gt;
+
+  &lt;img src=&#34;./img/starti.png&#34;  class=&#34;center&#34;  style=&#34;border-radius: 5px;&#34;  /&gt;
+
+
+&lt;p&gt;&lt;a href=&#34;&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+
+  &lt;img src=&#34;./img/break.png&#34;  class=&#34;center&#34;  style=&#34;border-radius: 5px;&#34;  /&gt;
+
+
+&lt;p&gt;Then, we set a breakpoint at &lt;code&gt;rand()&lt;/code&gt;, and write a simpe python counter to keep track of how many times &lt;code&gt;rand()&lt;/code&gt; was called (which was how many times the breakpoint was triggered)&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-py&#34; data-lang=&#34;py&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;python
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;counter &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;breakpoint_handler&lt;/span&gt;(event):
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;global&lt;/span&gt; counter
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    counter &lt;span style=&#34;color:#f92672&#34;&gt;+=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    print(&lt;span style=&#34;color:#e6db74&#34;&gt;f&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;srand called. total times called: &lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;{&lt;/span&gt;counter&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;gdb&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;events&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;stop&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;connect(breakpoint_handler)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;end
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+  &lt;img src=&#34;./img/gdbpythoncool.png&#34;  class=&#34;center&#34;  style=&#34;border-radius: 5px;&#34;  /&gt;
+
+
+&lt;p&gt;And we find &lt;code&gt;generate_maze()&lt;/code&gt; hits the breakpoint &lt;code&gt;590&lt;/code&gt; times (the &lt;code&gt;591&lt;/code&gt; in the bottom of image is when it hits the breakpoint after &lt;code&gt;generate_maze()&lt;/code&gt; in &lt;code&gt;main()&lt;/code&gt;, so doesn&amp;rsquo;t count).&lt;/p&gt;
+&lt;p&gt;Now that we have the amount of times &lt;code&gt;rand()&lt;/code&gt; is called, we can simulate this in python to predict what number the next &lt;code&gt;rand()&lt;/code&gt; call will yield.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-py&#34; data-lang=&#34;py&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;from&lt;/span&gt; ctypes &lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; CDLL
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;libc &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; CDLL(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;./libc.so.6&amp;#34;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;libc&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;srand(int(time&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;time()))
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;callrand&lt;/span&gt;():
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; libc&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;rand() &lt;span style=&#34;color:#f92672&#34;&gt;%&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1213&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# simulate rand() calls in generate_maze()&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; _ &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; range(&lt;span style=&#34;color:#ae81ff&#34;&gt;590&lt;/span&gt;):
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    callrand()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;callrand() &lt;span style=&#34;color:#75715e&#34;&gt;# the initial random message it sends&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;...&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; moves &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; solution:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    callrand() &lt;span style=&#34;color:#75715e&#34;&gt;# simulate rand() call in the random message we get after every input&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    p&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;sendline(moves)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Now, after integrating the random calls into our solve script, we can stop before exiting the maze, keep calling &lt;code&gt;rand()&lt;/code&gt; by submitting an invalid input, until the next &lt;code&gt;callrand()&lt;/code&gt; we simulate yields &lt;code&gt;1212&lt;/code&gt;. When it does, we can finally exit the maze, and &lt;code&gt;winner()&lt;/code&gt; should be called, giving us a shell!&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-py&#34; data-lang=&#34;py&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;lastmove &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; solution[&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; moves &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; solution[:&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;]: &lt;span style=&#34;color:#75715e&#34;&gt;# do all moves except last&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    callrand() &lt;span style=&#34;color:#75715e&#34;&gt;# simulate rand() call in the random message we get after every input&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    p&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;sendline(moves)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;nextrand &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; callrand()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;while&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;not&lt;/span&gt; nextrand &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1212&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    p&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;sendline(&lt;span style=&#34;color:#e6db74&#34;&gt;b&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;x&amp;#34;&lt;/span&gt;) &lt;span style=&#34;color:#75715e&#34;&gt;# send invalid input to call rand()&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    nextrand &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; callrand()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;p&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;sendline(lastmove)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;p&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;interactive()
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Final solve script:&lt;/p&gt;
+
+
+
+  &lt;div class=&#34;collapsable-code&#34;&gt;
+    &lt;input id=&#34;4&#34; type=&#34;checkbox&#34; checked /&gt;
+    &lt;label for=&#34;4&#34;&gt;
+      &lt;span class=&#34;collapsable-code__language&#34;&gt;py&lt;/span&gt;
+      &lt;span class=&#34;collapsable-code__title&#34;&gt;solve.py&lt;/span&gt;
+      &lt;span class=&#34;collapsable-code__toggle&#34; data-label-expand=&#34;Show&#34; data-label-collapse=&#34;Hide&#34;&gt;&lt;/span&gt;
+    &lt;/label&gt;
+    &lt;pre class=&#34;language-py&#34; &gt;&lt;code&gt;
+class MazeSolver:
+    def __init__(self, maze):
+        self.maze = maze
+        self.rows = len(maze)
+        self.cols = len(maze[0])
+        self.visited = [[False for _ in range(self.cols)] for _ in range(self.rows)]
+        self.directions = {&amp;#39;N&amp;#39;: (-1, 0), &amp;#39;S&amp;#39;: (1, 0), &amp;#39;W&amp;#39;: (0, -1), &amp;#39;E&amp;#39;: (0, 1)}
+        self.path = []
+
+    def solve(self, start_row, start_col):
+        if self._dfs(start_row, start_col):
+            return self._get_solution()
+        else:
+            return []
+
+    def _dfs(self, row, col):
+        if not self._is_valid(row, col):
+            return False
+
+        self.visited[row][col] = True
+        self.path.append((row, col))
+
+        if self.maze[row][col] == &amp;#39;*&amp;#39;:
+            return True
+
+        for direction in self.directions.values():
+            next_row = row &amp;#43; direction[0]
+            next_col = col &amp;#43; direction[1]
+            if self._dfs(next_row, next_col):
+                return True
+
+        self.path.pop()
+        return False
+
+    def _is_valid(self, row, col):
+        if row &amp;lt; 0 or row &amp;gt;= self.rows or col &amp;lt; 0 or col &amp;gt;= self.cols:
+            return False
+        if self.maze[row][col] == &amp;#39;#&amp;#39; or self.visited[row][col]:
+            return False
+        return True
+
+    def _get_solution(self):
+        solution = []
+        for i in range(1, len(self.path)):
+            prev_row, prev_col = self.path[i-1]
+            curr_row, curr_col = self.path[i]
+            if curr_row &amp;lt; prev_row:
+                solution.append(&amp;#39;n&amp;#39;)
+            elif curr_row &amp;gt; prev_row:
+                solution.append(&amp;#39;s&amp;#39;)
+            elif curr_col &amp;lt; prev_col:
+                solution.append(&amp;#39;w&amp;#39;)
+            elif curr_col &amp;gt; prev_col:
+                solution.append(&amp;#39;e&amp;#39;)
+        return solution
+
+
+from pwn import *
+from ctypes import CDLL
+import time
+
+libc = CDLL(&amp;#34;./libc.so.6&amp;#34;)
+
+
+def callrand():
+    return libc.rand() % 1213
+
+elf = context.binary = ELF(&amp;#34;./challenge&amp;#34;)
+
+# seed with the current time right before starting the program
+libc.srand(int(time.time())) 
+p = process()
+
+# simulate rand() calls in generate_maze()
+for _ in range(590):
+    callrand()
+
+callrand() # the initial random message it sends
+
+p.recvuntil(b&amp;#34;Which would you like to do?&amp;#34;)
+p.sendline(b&amp;#34;a&amp;#34;)
+p.recvuntil(b&amp;#34;You cast arcane eye and send your summoned magical eye above the maze.&amp;#34;)
+
+maze = p.recvuntil(b&amp;#34;You&amp;#34;, drop=True).decode().split(&amp;#34;\n&amp;#34;)
+maze = [i for i in maze if &amp;#34;.&amp;#34; in i or &amp;#34;#&amp;#34; in i] # scuffed method to get maze
+maze = maze[1:]
+
+solver = MazeSolver(maze)
+solution = solver.solve(0, 1)
+
+lastmove = solution[-1]
+
+for moves in solution[:-1]: # do all moves except last
+    callrand() # simulate rand() call in the random message we get after every input
+    p.sendline(moves)
+
+nextrand = callrand()
+while not nextrand == 1212:
+    p.sendline(b&amp;#34;x&amp;#34;) # send invalid input to call rand()
+    nextrand = callrand()
+
+p.sendline(lastmove)
+
+p.interactive()
+&lt;/code&gt;&lt;/pre&gt;
+  &lt;/div&gt;
+
+
+&lt;p&gt;Running the final script we indeed get a shell, and solve the challenge!&lt;/p&gt;
+
+  &lt;img src=&#34;./img/shell.png&#34;  class=&#34;center&#34;  style=&#34;border-radius: 5px;&#34;  /&gt;
+
+
+&lt;p&gt;To recieve our points, we had to submit a &lt;code&gt;.tar&lt;/code&gt; file with a Dockerfile and the solve script, which should run &lt;code&gt;./submitter&lt;/code&gt; after getting a shell, and print the flag. However, since I didn&amp;rsquo;t use any &lt;code&gt;p.recv()&lt;/code&gt; after sending the moves, the buffer would crash the docker and the submission would fail. Fortunately, one of my teammates &lt;a href=&#34;https://github.com/zafirr31&#34;&gt;Zafirr&lt;/a&gt; submitted with &lt;code&gt;p.sendlineafter()&lt;/code&gt; to overcome the issue and we got the points :)&lt;/p&gt;
+&lt;h1 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h1&gt;
+&lt;p&gt;I would like to thank all my teammates for putting in all their effort playing the CTF, and especially &lt;a href=&#34;https://github.com/zafirr31&#34;&gt;&lt;code&gt;Zafirr&lt;/code&gt;&lt;/a&gt;, &lt;a href=&#34;https://twitter.com/KebabTM&#34;&gt;&lt;code&gt;KebabTM&lt;/code&gt;&lt;/a&gt;, &lt;a href=&#34;https://eth007.me/blog/&#34;&gt;&lt;code&gt;Eth007&lt;/code&gt;&lt;/a&gt;, &lt;a href=&#34;https://twitter.com/ainsetin&#34;&gt;&lt;code&gt;Ainsetin&lt;/code&gt;&lt;/a&gt; and &lt;code&gt;Goldenboy&lt;/code&gt; (sorry if i missed anyone) for helping me figure things out (especially the &lt;code&gt;rand()&lt;/code&gt; calls) while I wrote the solve script to solve this challenge!&lt;/p&gt;
+&lt;p&gt;It was fun playing with a lot of people, and for the second day I met up with some of my teammates to solve more challenges - you can see &lt;a href=&#34;https://twitter.com/toasterpwn&#34;&gt;&lt;code&gt;toasterpwn&lt;/code&gt;&lt;/a&gt;&amp;rsquo;s writeup on them &lt;a href=&#34;https://toasterpwn.github.io/posts/defcon-ctf-2023-qualifiers/&#34;&gt;here&lt;/a&gt;!&lt;/p&gt;
+&lt;p&gt;Unfortunately this CTF was right in the middle of my exams so I couldn&amp;rsquo;t dedicate full time to it, but I hope to play with everyone again and hopefully qualify next year! Thanks for reading!&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;TheSavageTeddy / uwuteddy&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+    </item>
+    
+    <item>
       <title>ret2libm - IrisCTF 2023</title>
       <link>https://TheSavageTeddy.github.io/posts/ret2libm-iris2023/</link>
       <pubDate>Mon, 09 Jan 2023 00:00:00 +0800</pubDate>
@@ -18,7 +547,7 @@
 Description:
 I need to make a pwn? Let&amp;rsquo;s go with that standard warmup rop thing&amp;hellip; what was it&amp;hellip; ret2libm?
 We are provided with a zip file containing a binary, source code, libc, libm, and Makefile.
-c chal.c #include &amp;lt;math.h&amp;gt; #include &amp;lt;stdio.h&amp;gt; // gcc -fno-stack-protector -lm int main(int argc, char* argv) { setvbuf(stdin, NULL, _IONBF, 0); setvbuf(stdout, NULL, _IONBF, 0); char yours[8]; printf(&amp;#34;Check out my pecs: %p\n&amp;#34;, fabs); printf(&amp;#34;How about yours?</description>
+cchal.c#include &amp;lt;math.h&amp;gt;#include &amp;lt;stdio.h&amp;gt;// gcc -fno-stack-protector -lmint main(int argc, char* argv) {setvbuf(stdin, NULL, _IONBF, 0);setvbuf(stdout, NULL, _IONBF, 0);char yours[8];printf(&amp;#34;Check out my pecs: %p\n&amp;#34;, fabs);printf(&amp;#34;How about yours?</description>
       <content>&lt;h1 id=&#34;overview&#34;&gt;Overview&lt;/h1&gt;
 &lt;p&gt;&lt;code&gt;ret2libm&lt;/code&gt; was the 2nd most solved &lt;code&gt;pwn&lt;/code&gt; challenge of &lt;a href=&#34;https://ctftime.org/event/1774&#34;&gt;IrisCTF 2023&lt;/a&gt;, written by &lt;code&gt;sera&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;Description:&lt;/p&gt;
