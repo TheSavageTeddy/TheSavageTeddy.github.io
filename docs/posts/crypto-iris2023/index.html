@@ -18,6 +18,16 @@
 
 
 
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
+
+
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js" integrity="sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4" crossorigin="anonymous"></script>
+
+
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js" integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa" crossorigin="anonymous"
+    onload="renderMathInElement(document.body);"></script>
+
+
 
 
 
@@ -263,8 +273,8 @@ flag: 39545236548455985927301569372696881408674800611184573074359458755790286957
 <p>Looking at the source, it looks like standard RSA, but noticed on this line:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-py" data-lang="py"><span style="display:flex;"><span><span style="color:#75715e"># We encrypt our input</span>
 </span></span><span style="display:flex;"><span>encrypted <span style="color:#f92672">=</span> (flag <span style="color:#f92672">*</span> e) <span style="color:#f92672">%</span> n
-</span></span></code></pre></div><p>the &ldquo;encryption&rdquo; is not RSA, as it uses multiplication instead of exponentiation. This means we can calculate an <a href="https://en.wikipedia.org/wiki/Modular_multiplicative_inverse">inverse element</a> <code>k</code> for <code>e</code> and <code>n</code> where <code>e * k = 1 (mod n)</code>.</p>
-<p>Then we multiply this by <code>encrypted</code> mod <code>n</code> to recover the flag.</p>
+</span></span></code></pre></div><p>the &ldquo;encryption&rdquo; is not RSA, as it uses multiplication instead of exponentiation. This means we can calculate an <a href="https://en.wikipedia.org/wiki/Modular_multiplicative_inverse">inverse element</a> \(k\) for \(e\) and \(n\) where \(e \times k = 1 \pmod{n}\).</p>
+<p>Then we multiply this (\(k\)) by <code>encrypted</code> mod <code>n</code> to recover the flag.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-py" data-lang="py"><span style="display:flex;"><span><span style="color:#f92672">from</span> Crypto.Util.number <span style="color:#f92672">import</span> long_to_bytes
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>n <span style="color:#f92672">=</span> <span style="color:#ae81ff">21429933885346644587620272790089165813353259223649897308397918491861562279767580488441831451651834802520437234248670652477414296159324726172158330221397420877323921934377321483041598028053870169281419856238830264612049920637819183013812186448416408328958360799645342598727238977986741643705720539702955864527935398839069236768630867447760912744208154645904678859979378604386855741350220991958191408182147658532111413386776058224418484895056146180001830405844881486308594953615999140110712045286000170660686758188247928230655746746482354748673482506070246808187808961599576834080344066055446605664648340486804023919467</span>
