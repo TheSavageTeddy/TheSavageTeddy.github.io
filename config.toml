@@ -6,6 +6,9 @@ theme = "terminal"
 paginate = 5
 publishDir = "docs"
 
+# google analytics tracking
+googleAnalytics = "G-J6PB683BSR"
+
 [params]
   # dir name of your main content (default is `content/posts`).
   # the list of set content will show up on your index page (baseurl).
