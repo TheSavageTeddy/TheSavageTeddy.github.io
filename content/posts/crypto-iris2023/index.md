@@ -7,6 +7,7 @@ description = "Writeups for multiple `crypto` challenges from IrisCTF 2023"
 title_img = """{{< image src="https://irissec.xyz/assets/img/logo_ascii.png" alt="" style="border-radius: 5px; height: auto; width: 10vh; display: inline; vertical-align: middle; " >}}"""
 title = """Crypto Writeups - IrisCTF 2023"""
 cover = "3amflag.png"
+katex = "true"
 +++
 
 # Overview
@@ -67,9 +68,9 @@ Looking at the source, it looks like standard RSA, but noticed on this line:
 encrypted = (flag * e) % n
 ```
 
-the "encryption" is not RSA, as it uses multiplication instead of exponentiation. This means we can calculate an [inverse element](https://en.wikipedia.org/wiki/Modular_multiplicative_inverse) `k` for `e` and `n` where `e * k = 1 (mod n)`.
+the "encryption" is not RSA, as it uses multiplication instead of exponentiation. This means we can calculate an [inverse element](https://en.wikipedia.org/wiki/Modular_multiplicative_inverse) \\(k\\) for \\(e\\) and \\(n\\) where \\(e \times k = 1 \pmod{n}\\).
 
-Then we multiply this by `encrypted` mod `n` to recover the flag.
+Then we multiply this (\\(k\\)) by `encrypted` mod `n` to recover the flag.
 
 ```py
 from Crypto.Util.number import long_to_bytes

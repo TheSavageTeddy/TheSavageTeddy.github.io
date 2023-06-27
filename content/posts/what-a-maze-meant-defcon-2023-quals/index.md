@@ -517,4 +517,4 @@ It was fun playing with a lot of people, and for the second day I met up with so
 
 Unfortunately this CTF was right in the middle of my exams so I couldn't dedicate full time to it, but I hope to play with everyone again and hopefully qualify next year! Thanks for reading!
 
-- TheSavageTeddy / uwuteddy
+- teddy / TheSavageTeddy

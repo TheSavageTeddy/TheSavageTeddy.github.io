@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>beginner on uwuTeddy</title>
+    <title>beginner on teddyctf</title>
     <link>https://TheSavageTeddy.github.io/tags/beginner/</link>
-    <description>Recent content in beginner on uwuTeddy</description>
+    <description>Recent content in beginner on teddyctf</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>uwuTeddy</copyright>
+    <copyright>teddyctf</copyright>
     <lastBuildDate>Sun, 21 May 2023 00:00:00 +0800</lastBuildDate><atom:link href="https://TheSavageTeddy.github.io/tags/beginner/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Full Writeups - Hack A Bit CTF Finals 0x01</title>
@@ -1275,7 +1275,9 @@ Your challenge response (flag) is this total.&lt;/p&gt;
 &lt;h1 id=&#34;6-osint&#34;&gt;6. OSINT&lt;/h1&gt;
 &lt;p&gt;Okay, I only solved 2 out of 8 OSINT challenges, so I won&amp;rsquo;t be doing any OSINT writeups. I really couldn&amp;rsquo;t be bothered with OSINT after all the other chals, as I don&amp;rsquo;t really enjoy OSINT particularly.&lt;/p&gt;
 &lt;p&gt;So that&amp;rsquo;s it for the writeups! Doubt anyone read almost 1000 lines of Markdown, but thanks for reading!&lt;/p&gt;
-&lt;p&gt;- TheSavageTeddy / theuwuteddy&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;teddy / TheSavageTeddy&lt;/li&gt;
+&lt;/ul&gt;
 </content>
     </item>
     
