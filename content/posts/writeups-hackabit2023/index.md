@@ -891,4 +891,4 @@ Okay, I only solved 2 out of 8 OSINT challenges, so I won't be doing any OSINT w
 
 So that's it for the writeups! Doubt anyone read almost 1000 lines of Markdown, but thanks for reading!
 
-\- TheSavageTeddy / theuwuteddy
+- teddy / TheSavageTeddy

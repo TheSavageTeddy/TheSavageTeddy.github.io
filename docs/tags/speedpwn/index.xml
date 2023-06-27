@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>speedpwn on uwuTeddy</title>
+    <title>speedpwn on teddyctf</title>
     <link>https://TheSavageTeddy.github.io/tags/speedpwn/</link>
-    <description>Recent content in speedpwn on uwuTeddy</description>
+    <description>Recent content in speedpwn on teddyctf</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>uwuTeddy</copyright>
+    <copyright>teddyctf</copyright>
     <lastBuildDate>Tue, 28 Feb 2023 16:00:00 +0800</lastBuildDate><atom:link href="https://TheSavageTeddy.github.io/tags/speedpwn/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>what-a-maze-meant - DEFCON Quals 2023 Writeup</title>
@@ -532,7 +532,7 @@ p.interactive()
 &lt;p&gt;It was fun playing with a lot of people, and for the second day I met up with some of my teammates to solve more challenges - you can see &lt;a href=&#34;https://twitter.com/toasterpwn&#34;&gt;&lt;code&gt;toasterpwn&lt;/code&gt;&lt;/a&gt;&amp;rsquo;s writeup on them &lt;a href=&#34;https://toasterpwn.github.io/posts/defcon-ctf-2023-qualifiers/&#34;&gt;here&lt;/a&gt;!&lt;/p&gt;
 &lt;p&gt;Unfortunately this CTF was right in the middle of my exams so I couldn&amp;rsquo;t dedicate full time to it, but I hope to play with everyone again and hopefully qualify next year! Thanks for reading!&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;TheSavageTeddy / uwuteddy&lt;/li&gt;
+&lt;li&gt;teddy / TheSavageTeddy&lt;/li&gt;
 &lt;/ul&gt;
 </content>
     </item>

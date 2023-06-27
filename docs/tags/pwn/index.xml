@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>pwn on uwuTeddy</title>
+    <title>pwn on teddyctf</title>
     <link>https://TheSavageTeddy.github.io/tags/pwn/</link>
-    <description>Recent content in pwn on uwuTeddy</description>
+    <description>Recent content in pwn on teddyctf</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>uwuTeddy</copyright>
+    <copyright>teddyctf</copyright>
     <lastBuildDate>Mon, 09 Jan 2023 00:00:00 +0800</lastBuildDate><atom:link href="https://TheSavageTeddy.github.io/tags/pwn/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>ret2libm - IrisCTF 2023</title>
