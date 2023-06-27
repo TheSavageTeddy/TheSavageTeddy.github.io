@@ -2,6 +2,9 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://TheSavageTeddy.github.io/posts/p4ctf-finals-2023/</loc>
+    <lastmod>2023-06-22T21:20:00+08:00</lastmod>
+  </url><url>
     <loc>https://TheSavageTeddy.github.io/posts/what-a-maze-meant-defcon-2023-quals/</loc>
     <lastmod>2023-02-28T16:00:00+08:00</lastmod>
   </url><url>
@@ -17,38 +20,47 @@
     <loc>https://TheSavageTeddy.github.io/posts/writeups-hackabit2023/</loc>
     <lastmod>2023-03-01T00:00:00+08:00</lastmod>
   </url><url>
+    <loc>https://TheSavageTeddy.github.io/categories/</loc>
+    <lastmod>2023-06-22T21:20:00+08:00</lastmod>
+  </url><url>
+    <loc>https://TheSavageTeddy.github.io/tags/crypto/</loc>
+    <lastmod>2023-06-22T21:20:00+08:00</lastmod>
+  </url><url>
+    <loc>https://TheSavageTeddy.github.io/categories/cryptography/</loc>
+    <lastmod>2023-06-22T21:20:00+08:00</lastmod>
+  </url><url>
+    <loc>https://TheSavageTeddy.github.io/tags/ctf/</loc>
+    <lastmod>2023-06-22T21:20:00+08:00</lastmod>
+  </url><url>
+    <loc>https://TheSavageTeddy.github.io/categories/ctf-writeups/</loc>
+    <lastmod>2023-06-22T21:20:00+08:00</lastmod>
+  </url><url>
+    <loc>https://TheSavageTeddy.github.io/tags/finals/</loc>
+    <lastmod>2023-06-22T21:20:00+08:00</lastmod>
+  </url><url>
+    <loc>https://TheSavageTeddy.github.io/tags/onsite/</loc>
+    <lastmod>2023-06-22T21:20:00+08:00</lastmod>
+  </url><url>
+    <loc>https://TheSavageTeddy.github.io/categories/onsite/</loc>
+    <lastmod>2023-06-22T21:20:00+08:00</lastmod>
+  </url><url>
+    <loc>https://TheSavageTeddy.github.io/posts/</loc>
+    <lastmod>2023-06-22T21:20:00+08:00</lastmod>
+  </url><url>
+    <loc>https://TheSavageTeddy.github.io/tags/</loc>
+    <lastmod>2023-06-22T21:20:00+08:00</lastmod>
+  </url><url>
+    <loc>https://TheSavageTeddy.github.io/</loc>
+    <lastmod>2023-06-22T21:20:00+08:00</lastmod>
+  </url><url>
+    <loc>https://TheSavageTeddy.github.io/tags/writeup/</loc>
+    <lastmod>2023-06-22T21:20:00+08:00</lastmod>
+  </url><url>
     <loc>https://TheSavageTeddy.github.io/tags/beginner/</loc>
     <lastmod>2023-05-21T00:00:00+08:00</lastmod>
   </url><url>
-    <loc>https://TheSavageTeddy.github.io/categories/</loc>
-    <lastmod>2023-05-21T00:00:00+08:00</lastmod>
-  </url><url>
-    <loc>https://TheSavageTeddy.github.io/tags/ctf/</loc>
-    <lastmod>2023-05-21T00:00:00+08:00</lastmod>
-  </url><url>
-    <loc>https://TheSavageTeddy.github.io/categories/ctf-writeups/</loc>
-    <lastmod>2023-05-21T00:00:00+08:00</lastmod>
-  </url><url>
-    <loc>https://TheSavageTeddy.github.io/posts/</loc>
-    <lastmod>2023-05-21T00:00:00+08:00</lastmod>
-  </url><url>
-    <loc>https://TheSavageTeddy.github.io/tags/</loc>
-    <lastmod>2023-05-21T00:00:00+08:00</lastmod>
-  </url><url>
-    <loc>https://TheSavageTeddy.github.io/</loc>
-    <lastmod>2023-05-21T00:00:00+08:00</lastmod>
-  </url><url>
-    <loc>https://TheSavageTeddy.github.io/tags/writeup/</loc>
-    <lastmod>2023-03-01T00:00:00+08:00</lastmod>
-  </url><url>
     <loc>https://TheSavageTeddy.github.io/tags/speedpwn/</loc>
     <lastmod>2023-02-28T16:00:00+08:00</lastmod>
-  </url><url>
-    <loc>https://TheSavageTeddy.github.io/tags/crypto/</loc>
-    <lastmod>2023-01-09T00:00:00+08:00</lastmod>
-  </url><url>
-    <loc>https://TheSavageTeddy.github.io/categories/cryptography/</loc>
-    <lastmod>2023-01-09T00:00:00+08:00</lastmod>
   </url><url>
     <loc>https://TheSavageTeddy.github.io/tags/pwn/</loc>
     <lastmod>2023-01-09T00:00:00+08:00</lastmod>

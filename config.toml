@@ -63,17 +63,17 @@ googleAnalytics = 'G-J6PB683BSR'
   # set Twitter handles for Twitter cards
   # see https://developer.twitter.com/en/docs/tweets/optimize-with-cards/guides/getting-started#card-and-content-attribution
   # do not include @
-  creator = "uwuTeddy"
-  site = "theuwuteddy"
+  creator = "TheSavageTeddy"
+  site = "teddyctf"
 
 [languages]
   [languages.en]
     languageName = "English"
-    title = "uwuTeddy"
+    title = "teddyctf"
     subtitle = "CTFs and Cyber!"
     owner = ""
     keywords = ""
-    copyright = "uwuTeddy"
+    copyright = "teddyctf"
     menuMore = "Show more"
     readMore = "Read more"
     readOtherPosts = "Read other posts"
@@ -83,7 +83,7 @@ googleAnalytics = 'G-J6PB683BSR'
     missingBackButtonLabel = "Back to home page"
 
     [languages.en.params.logo]
-      logoText = "uwuTeddy / TheSavageTeddy"
+      logoText = "teddy / TheSavageTeddy"
       logoHomeLink = "/"
 
     [languages.en.menu]
