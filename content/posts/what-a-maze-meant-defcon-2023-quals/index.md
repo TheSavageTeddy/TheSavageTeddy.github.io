@@ -4,7 +4,7 @@ tags = ["ctf", "writeup", "speedpwn"]
 categories = ["CTF Writeups"]
 publishDate = 1677571200 # 30/05/2023
 description = "A writeup for a speedpwn challenge in LiveCTF of DEFCON CTF Quals 2023" 
-title_img = """{{< image src="https://ctftime.org/media/cache/94/e9/94e9dbfeeac979015ff6fc74b5151fd8.png" alt="" style="border-radius: 5px; height: auto; width: 10vh; display: inline; vertical-align: middle; " >}}"""
+title_img = """{{< image src="https://ctftime.org/media/cache/94/e9/94e9dbfeeac979015ff6fc74b5151fd8.png" alt="" style="border-radius: 5px; height: auto; width: 3em; display: inline; vertical-align: middle; " >}}"""
 title = """what-a-maze-meant - DEFCON Quals 2023 Writeup"""
 cover = """defcon-quals-scoreboard-2023.png"""
 cover_alt = ""
@@ -517,4 +517,4 @@ It was fun playing with a lot of people, and for the second day I met up with so
 
 Unfortunately this CTF was right in the middle of my exams so I couldn't dedicate full time to it, but I hope to play with everyone again and hopefully qualify next year! Thanks for reading!
 
-- TheSavageTeddy / uwuteddy
+- teddy / TheSavageTeddy

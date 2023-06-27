@@ -4,7 +4,7 @@ tags = ["ctf", "crypto", "writeup"]
 categories = ["CTF Writeups", "cryptography"] 
 publishDate = 1673193600 # 01/09/2023
 description = "Writeups for multiple `crypto` challenges from IrisCTF 2023" 
-title_img = """{{< image src="https://irissec.xyz/assets/img/logo_ascii.png" alt="" style="border-radius: 5px; height: auto; width: 10vh; display: inline; vertical-align: middle; " >}}"""
+title_img = """{{< image src="https://irissec.xyz/assets/img/logo_ascii.png" alt="" style="border-radius: 5px; height: auto; width: 3em; display: inline; vertical-align: middle; " >}}"""
 title = """Crypto Writeups - IrisCTF 2023"""
 cover = "3amflag.png"
 katex = "true"

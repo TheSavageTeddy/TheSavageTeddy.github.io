@@ -6,7 +6,7 @@ Feel free to reach out to me to talk about anything in general!
 
 - _I am very active but I don't check friend requests, if I don't respond, please join [`Perth Socialware`](https://discord.gg/dQ8FMFQSRp) and try to send me a message directly_
 
-**Twitter:** [`@theuwuteddy`](https://twitter.com/theuwuteddy)
+**Twitter:** [`@teddyctf`](https://twitter.com/teddyctf)
 
 **Email:** `theteddyhashed@gmail.com`
 

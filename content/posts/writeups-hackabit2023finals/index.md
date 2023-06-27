@@ -4,7 +4,7 @@ tags = ["ctf", "beginner"]
 categories = ["CTF Writeups"]
 publishDate = 1684598400 # 05/21/2023
 description = """Full writeups for all challenges for the finals of a beginner CTF."""
-title_img = """{{< image src="https://ctftime.org/media/events/1_1_light_with_text_1.png" alt="" style="border-radius: 5px; height: auto; width: 10vh; display: inline; vertical-align: middle; " >}}"""
+title_img = """{{< image src="https://ctftime.org/media/events/1_1_light_with_text_1.png" alt="" style="border-radius: 5px; height: auto; width: 3em; display: inline; vertical-align: middle; " >}}"""
 title = """Full Writeups - Hack A Bit CTF Finals 0x01"""
 cover = "pwn4.png"
 +++
