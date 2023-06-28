@@ -2,7 +2,7 @@
 weight = 7
 tags = ["ctf", "writeup", "speedpwn"]
 categories = ["CTF Writeups"]
-publishDate = 1677571200 # 30/05/2023
+publishDate = 1685376000 # 30/05/2023
 description = "A writeup for a speedpwn challenge in LiveCTF of DEFCON CTF Quals 2023" 
 title_img = """{{< image src="https://ctftime.org/media/cache/94/e9/94e9dbfeeac979015ff6fc74b5151fd8.png" alt="" style="border-radius: 5px; height: auto; width: 3em; display: inline; vertical-align: middle; " >}}"""
 title = """what-a-maze-meant - DEFCON Quals 2023 Writeup"""
