@@ -1,0 +1,28 @@
+{{- $cover := false -}}
+{{- $cover_alt := "" -}}
+{{- $autoCover := default $.Site.Params.autoCover false }}
+
+{{- $cover_alt = .Params.cover_alt -}}
+
+{{- if index .Params "cover" -}}
+  {{- if .Resources.GetMatch .Params.Cover }}
+    {{- $cover = (.Resources.GetMatch .Params.Cover).RelPermalink -}}
+  {{- else -}}
+    {{- $cover = absURL .Params.Cover -}}
+  {{- end -}}
+{{- else if $.Site.Params.AutoCover -}}
+  {{- if (not .Params.Cover) -}}
+    {{- if .Resources.GetMatch "cover.*" -}}
+      {{- $cover = (.Resources.GetMatch "cover.*").RelPermalink -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+
+{{if $cover -}}
+  <!-- Cover image found -->
+  <img src="{{ $cover }}"
+    class="post-cover"
+    alt="{{ $cover_alt | plainify | default " " }}"
+    title="{{ .Params.CoverCredit |plainify|default "Cover Image" }}" 
+    style="border: 1.5px solid #78E2A0; border-radius: 5px; padding: 0px; display:block; margin: auto; max-height: 40em; max-width: auto; " />
+{{- end }}

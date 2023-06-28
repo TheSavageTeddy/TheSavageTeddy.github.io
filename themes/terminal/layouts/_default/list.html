@@ -1,0 +1,63 @@
+{{ define "main" }}
+  {{ with .Content }}
+    <div class="index-content">
+      {{ . }}
+    </div>
+  {{ end }}
+  <div class="posts">
+    {{ range .Paginator.Pages }}
+      <article class="post on-list">
+
+        <h1 class="post-title" style="display: flex;">
+          <a href="{{ .Permalink }}" style="flex: auto">{{ .Params.title_img | markdownify }} {{ .Title | markdownify }}</a>
+          {{ if .Date }}
+          <time class="post-date" style="font-size: 12pt; font-style: italic; margin-top: auto; text-align: right;">
+            {{ .Date.Format "02/01/2006" }}
+          </time>
+          {{ end }}
+        </h1>
+
+
+        <div class="post-content">
+          {{ if .Params.showFullContent }}
+            {{ .Content }}
+          {{ else if .Description }}
+            {{ .Description | markdownify }}
+          {{ else }}
+            {{ .Summary | markdownify }}
+          {{ end }}
+        </div>
+
+        {{ if .Params.tags }}
+          <span class="post-tags">
+            {{ range .Params.tags }}
+            #<a href="{{ (urlize (printf "tags/%s/" . )) | absLangURL }}">
+              {{- . -}}
+            </a>&nbsp;
+            {{ end }}
+          </span>
+        {{ end }}
+
+        {{ partial "cover.html" . }}
+
+        <div class="post-content">
+          {{ if .Params.showFullContent }}
+            {{ .Content }}
+          {{ else if .Description }}
+            {{ .Description | markdownify }}
+          {{ else }}
+            {{ .Summary | markdownify }}
+          {{ end }}
+        </div>
+
+        {{ if not .Params.showFullContent }}
+          <div>
+            <a class="read-more button" href="{{.RelPermalink}}">{{ $.Site.Params.ReadMore }} →</a>
+          </div>
+        {{ end }}
+      </article>
+    {{ end }}
+
+    {{ partial "pagination.html" . }}
+  </div>
+{{ end }}
