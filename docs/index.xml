@@ -857,7 +857,7 @@ Sad 🐸 You are banned 😢
 
 &lt;p&gt;Overall I thought it was a fun challenge, and despite the funny unintended solution, the intended solution was quite nice as well!&lt;/p&gt;
 &lt;h1 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h1&gt;
-&lt;p&gt;p4CTF Finals was definetely one of the best CTFs I&amp;rsquo;ve been to, not to mention meeting everyone from top teams was really cool! After the event there was an after party, and it was fun talking to the organisers and competitors.p4CTF team&lt;/p&gt;
+&lt;p&gt;p4CTF Finals was definetely one of the best CTFs I&amp;rsquo;ve been to, not to mention meeting everyone from top teams was really cool! After the event there was an after party, and it was fun talking to the organisers and competitors.&lt;/p&gt;
 &lt;p&gt;Again, huge thanks to the &lt;a href=&#34;https://twitter.com/p4_team&#34;&gt;p4CTF team&lt;/a&gt; for hosting the event, and our sponsors who made it possible for us to go! And thanks to my teammates &lt;a href=&#34;https://twitter.com/toasterpwn&#34;&gt;&lt;code&gt;toasterpwn&lt;/code&gt;&lt;/a&gt;, &lt;a href=&#34;https://twitter.com/_bradan&#34;&gt;&lt;code&gt;bradan&lt;/code&gt;&lt;/a&gt;, &lt;a href=&#34;https://twitter.com/torrytwooo&#34;&gt;&lt;code&gt;torry2&lt;/code&gt;&lt;/a&gt; for playing with me!&lt;/p&gt;
 &lt;p&gt;If we qualify next year, I&amp;rsquo;ll definetely be coming to the event again - given that our travel does not take 50 hours again!&lt;/p&gt;
 &lt;p&gt;Thanks for reading!&lt;/p&gt;
@@ -1417,7 +1417,7 @@ p.interactive()
 Description:
 I need to make a pwn? Let&amp;rsquo;s go with that standard warmup rop thing&amp;hellip; what was it&amp;hellip; ret2libm?
 We are provided with a zip file containing a binary, source code, libc, libm, and Makefile.
-c chal.c #include &amp;lt;math.h&amp;gt; #include &amp;lt;stdio.h&amp;gt; // gcc -fno-stack-protector -lm int main(int argc, char* argv) { setvbuf(stdin, NULL, _IONBF, 0); setvbuf(stdout, NULL, _IONBF, 0); char yours[8]; printf(&amp;#34;Check out my pecs: %p\n&amp;#34;, fabs); printf(&amp;#34;How about yours?</description>
+cchal.c#include &amp;lt;math.h&amp;gt;#include &amp;lt;stdio.h&amp;gt;// gcc -fno-stack-protector -lmint main(int argc, char* argv) {setvbuf(stdin, NULL, _IONBF, 0);setvbuf(stdout, NULL, _IONBF, 0);char yours[8];printf(&amp;#34;Check out my pecs: %p\n&amp;#34;, fabs);printf(&amp;#34;How about yours?</description>
       <content>&lt;h1 id=&#34;overview&#34;&gt;Overview&lt;/h1&gt;
 &lt;p&gt;&lt;code&gt;ret2libm&lt;/code&gt; was the 2nd most solved &lt;code&gt;pwn&lt;/code&gt; challenge of &lt;a href=&#34;https://ctftime.org/event/1774&#34;&gt;IrisCTF 2023&lt;/a&gt;, written by &lt;code&gt;sera&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;Description:&lt;/p&gt;

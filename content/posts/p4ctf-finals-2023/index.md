@@ -857,7 +857,7 @@ Overall I thought it was a fun challenge, and despite the funny unintended solut
 
 # Conclusion
 
-p4CTF Finals was definetely one of the best CTFs I've been to, not to mention meeting everyone from top teams was really cool! After the event there was an after party, and it was fun talking to the organisers and competitors.p4CTF team
+p4CTF Finals was definetely one of the best CTFs I've been to, not to mention meeting everyone from top teams was really cool! After the event there was an after party, and it was fun talking to the organisers and competitors.
 
 Again, huge thanks to the [p4CTF team](https://twitter.com/p4_team) for hosting the event, and our sponsors who made it possible for us to go! And thanks to my teammates [`toasterpwn`](https://twitter.com/toasterpwn), [`bradan`](https://twitter.com/_bradan), [`torry2`](https://twitter.com/torrytwooo) for playing with me!
 
