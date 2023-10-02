@@ -5,15 +5,15 @@
     <link>https://TheSavageTeddy.github.io/categories/</link>
     <description>Recent content in Categories on teddyctf</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
+    <language>en</language>
     <copyright>teddyctf</copyright>
-    <lastBuildDate>Thu, 22 Jun 2023 21:20:00 +0800</lastBuildDate><atom:link href="https://TheSavageTeddy.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 01 Oct 2023 00:06:40 +0800</lastBuildDate><atom:link href="https://TheSavageTeddy.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>cryptography</title>
-      <link>https://TheSavageTeddy.github.io/categories/cryptography/</link>
-      <pubDate>Thu, 22 Jun 2023 21:20:00 +0800</pubDate>
+      <title>crypto</title>
+      <link>https://TheSavageTeddy.github.io/categories/crypto/</link>
+      <pubDate>Sun, 01 Oct 2023 00:06:40 +0800</pubDate>
       
-      <guid>https://TheSavageTeddy.github.io/categories/cryptography/</guid>
+      <guid>https://TheSavageTeddy.github.io/categories/crypto/</guid>
       <description></description>
       <content></content>
     </item>
@@ -21,7 +21,7 @@
     <item>
       <title>CTF Writeups</title>
       <link>https://TheSavageTeddy.github.io/categories/ctf-writeups/</link>
-      <pubDate>Thu, 22 Jun 2023 21:20:00 +0800</pubDate>
+      <pubDate>Sun, 01 Oct 2023 00:06:40 +0800</pubDate>
       
       <guid>https://TheSavageTeddy.github.io/categories/ctf-writeups/</guid>
       <description></description>
@@ -31,9 +31,29 @@
     <item>
       <title>onsite</title>
       <link>https://TheSavageTeddy.github.io/categories/onsite/</link>
-      <pubDate>Thu, 22 Jun 2023 21:20:00 +0800</pubDate>
+      <pubDate>Sun, 01 Oct 2023 00:06:40 +0800</pubDate>
       
       <guid>https://TheSavageTeddy.github.io/categories/onsite/</guid>
+      <description></description>
+      <content></content>
+    </item>
+    
+    <item>
+      <title>reversing</title>
+      <link>https://TheSavageTeddy.github.io/categories/reversing/</link>
+      <pubDate>Sun, 01 Oct 2023 00:06:40 +0800</pubDate>
+      
+      <guid>https://TheSavageTeddy.github.io/categories/reversing/</guid>
+      <description></description>
+      <content></content>
+    </item>
+    
+    <item>
+      <title>cryptography</title>
+      <link>https://TheSavageTeddy.github.io/categories/cryptography/</link>
+      <pubDate>Thu, 22 Jun 2023 21:20:00 +0800</pubDate>
+      
+      <guid>https://TheSavageTeddy.github.io/categories/cryptography/</guid>
       <description></description>
       <content></content>
     </item>

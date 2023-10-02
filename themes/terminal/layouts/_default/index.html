@@ -21,7 +21,7 @@
           <a href="{{ .Permalink }}" style="flex: auto">{{ .Params.title_img | markdownify }} {{ .Title | markdownify }}</a>
           {{ if .Date }}
           <time class="post-date" style="font-size: 12pt; font-style: italic; margin-top: auto; text-align: right;">
-            {{ .Date.Format "02/01/2006" }}
+            {{ .Date.Format "Jan 2, 2006" }}
           </time>
           {{ end }}
         </h1>

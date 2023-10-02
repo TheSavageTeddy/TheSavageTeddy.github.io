@@ -11,8 +11,8 @@
         <h1 class="post-title" style="display: flex;">
           <a href="{{ .Permalink }}" style="flex: auto">{{ .Params.title_img | markdownify }} {{ .Title | markdownify }}</a>
           {{ if .Date }}
-          <time class="post-date" style="font-size: 12pt; font-style: italic; margin-top: auto; text-align: right;">
-            {{ .Date.Format "02/01/2006" }}
+          <time class="post-date" style="font-size: 12pt; margin-top: auto; text-align: right;">
+            {{ .Date.Format "Jan 2, 2006" }}
           </time>
           {{ end }}
         </h1>
@@ -39,16 +39,6 @@
         {{ end }}
 
         {{ partial "cover.html" . }}
-
-        <div class="post-content">
-          {{ if .Params.showFullContent }}
-            {{ .Content }}
-          {{ else if .Description }}
-            {{ .Description | markdownify }}
-          {{ else }}
-            {{ .Summary | markdownify }}
-          {{ end }}
-        </div>
 
         {{ if not .Params.showFullContent }}
           <div>
