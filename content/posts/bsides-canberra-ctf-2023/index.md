@@ -103,7 +103,7 @@ __int64 prng_subpart()
 `prng_main()`:
 - `prng_main()` calls `prng_subpart()` only when `shift_r_value` is below zero
 - `shift_r_value` is the amount that the `prng_output` is right shifted
-- The function returns the lowest bit of `prng_output >> shift_r_value`
+- The function returns the lowest bit of `prng_output >> shift_r_value` (using `& 1`)
 - `shift_r_value` is initialized to `-1` at the start, so `prng_output` is called at the start
 ```c
 __int64 prng_main()
@@ -476,7 +476,7 @@ $$S_{n+1} = S_n \times a + b \bmod{m}$$
 
 where the next term is the current term `S_n` times `a` plus `b`, where `a` and `b` are constants. In this case `S_n` was `time_seed`, and the modulus `m` was the 32 bit integar limit. Despite having done LCG challenges in the past, I somehow failed to recognise this!
 
-The function `main_prng` was simply returning the last bit of the PRNG output, and shifting it to return all bits of the output before retrieving a new random number. `prng_subpart` was the actual PRNG, which was an LCG implementation.
+The function `main_prng` was simply returning the MSB (first bit) of the PRNG output, and shifting it to return all bits of the output before retrieving a new random number. `prng_subpart` was the actual PRNG, which was an LCG implementation.
 
 Recovering `time_seed` was trivial now that we recognise it as a LCG - we simply need the whole random number returned by `prng_subpart` which we can get by playing 4 practice rounds (as each round returns 8 bits).
 
