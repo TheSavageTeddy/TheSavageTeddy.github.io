@@ -20,7 +20,7 @@ Along with many great talks, it featured three 'villages' including hardware, lo
 
 [Cybears](https://twitter.com/cybearsCTF) hosted this year's CTF event with unique comic style graphics for the CTF site. They had some great challenges, and the competition hall was packed with 193 teams participating!
 
-Overall, we came 3rd in the CTF, and recieved a massive cardboard cheque of $250 and a medal - congrats to `skateboarding roomba` and `Grassroots Indirection` on 1st and 2nd!
+I played with [`Emu Exploit`](https://twitter.com/EmuExploit) and overall we came 3rd in the CTF, and recieved a massive cardboard cheque of $250 and a medal - congrats to `skateboarding roomba` and `Grassroots Indirection` on 1st and 2nd!
 
 {{< image src="./img/scoreboard.png" alt="" position="center" style="border-radius: 5px;" >}}
 
