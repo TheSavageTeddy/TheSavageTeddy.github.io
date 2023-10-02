@@ -35,7 +35,7 @@ I will mainly focus on `prnginko`, as I want to detail the many roadblocks we fa
 | [prnginko](#prnginko-cryptorev---8-solves)       							| crypto/rev   | 8          |
 | [useless](#useless-rev---9-solves)           					    | rev          | 9          |
 
-If you want to follow allow/see the binary for yourself, download files here
+If you want to follow along or see the binary for yourself, download files here
 - [`prnginko`](./files/prnginko)
 - [`useless`](./files/useless)
 
@@ -51,7 +51,7 @@ We are given a binary [`prnginko`](./files/prnginko) and a service to connect to
 
 We have two options - `g` to play a game and earn points, or `p` to practice. We can play 10 games in total and need to get the maximum score of `16` each time to win.
 
-"prng" in the challenge name suggests that we need to reverse engineer the program to find the PRNG it uses to determine if the ball will go left or right, and crack it to find what future game plays will yield. Then, by being able to predict the future, **we can use the practice games to re-roll the PRNG until we know the next game will yield a max score of 16**, and then use one of our game rounds.
+"prng" in the challenge name suggests that we need to reverse engineer the program to find the PRNG it uses to determine if the ball will go left or right, and crack it to find what future game plays will yield. Then, by being able to predict the future, we can **use the practice games to re-roll the PRNG** until we know the next game will yield a max score of 16, and then use one of our game rounds.
 
 A quick explanation of why we can do this - PRNGs (pseudo random number generator) usually use a *seed* and some other parameters to generate the next "random" number using some math. If the same seed and same parameters is used, then the next random number it generates will be the same. Thus, if we are able to recover the seed and know the parameters, we can predict the values it will generate in the future.
 
