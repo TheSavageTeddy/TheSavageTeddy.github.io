@@ -53,7 +53,7 @@ We have two options - `g` to play a game and earn points, or `p` to practice. We
 
 "prng" in the challenge name suggests that we need to reverse engineer the program to find the PRNG it uses to determine if the ball will go left or right, and crack it to find what future game plays will yield. Then, by being able to predict the future, we can **use the practice games to re-roll the PRNG** until we know the next game will yield a max score of 16, and then use one of our game rounds.
 
-A quick explanation of why we can do this - PRNGs (pseudo random number generator) usually use a *seed* and some other parameters to generate the next "random" number using some math. If the same seed and same parameters is used, then the next random number it generates will be the same. Thus, if we are able to recover the seed and know the parameters, we can predict the values it will generate in the future.
+A quick explanation of why we can do this - PRNGs (pseudo random number generator) usually use a *seed* and some other parameters to generate the next "random" number using some math. If the same seed and same parameters are used, then the next random number it generates will be the same. Thus, if we are able to recover the seed and know the parameters, we can predict the values it will generate in the future.
 
 Hopping into [IDA](https://hex-rays.com/ida-free/), we can see the `160` points required to win, which is getting `16` points ten times - a perfect game.
 
