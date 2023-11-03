@@ -474,7 +474,7 @@ He revealed a much easier solution that didn't need any messing around in z3 - t
 
 $$S_{n+1} = S_n \times a + b \bmod{m}$$
 
-where the next term is the current term `S_n` times `a` plus `b`, where `a` and `b` are constants. In this case `S_n` was `time_seed`, and the modulus `m` was the 32 bit integar limit. Despite having done LCG challenges in the past, I somehow failed to recognise this!
+where the next term is the current term `S_n` times `a` plus `b`, where `a` and `b` are constants. In this case `S_n` was `time_seed`, and the modulus `m` was the 32 bit integer limit. Despite having done LCG challenges in the past, I somehow failed to recognise this!
 
 The function `main_prng` was simply returning the MSB (first bit) of the PRNG output, and shifting it to return all bits of the output before retrieving a new random number. `prng_subpart` was the actual PRNG, which was an LCG implementation.
 

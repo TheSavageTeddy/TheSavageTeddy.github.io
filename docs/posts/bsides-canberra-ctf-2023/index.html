@@ -696,7 +696,7 @@ def set_time_seed(_time_seed):
 <p>After the CTF ended, I talked to <code>Neobeo</code> who played for Skateboarding Roombas in this CTF about the challenge.</p>
 <p>He revealed a much easier solution that didn&rsquo;t need any messing around in z3 - the PRNG was actually an LCG! In case you didn&rsquo;t know, an LCG is in the form</p>
 <p>$$S_{n+1} = S_n \times a + b \bmod{m}$$</p>
-<p>where the next term is the current term <code>S_n</code> times <code>a</code> plus <code>b</code>, where <code>a</code> and <code>b</code> are constants. In this case <code>S_n</code> was <code>time_seed</code>, and the modulus <code>m</code> was the 32 bit integar limit. Despite having done LCG challenges in the past, I somehow failed to recognise this!</p>
+<p>where the next term is the current term <code>S_n</code> times <code>a</code> plus <code>b</code>, where <code>a</code> and <code>b</code> are constants. In this case <code>S_n</code> was <code>time_seed</code>, and the modulus <code>m</code> was the 32 bit integer limit. Despite having done LCG challenges in the past, I somehow failed to recognise this!</p>
 <p>The function <code>main_prng</code> was simply returning the MSB (first bit) of the PRNG output, and shifting it to return all bits of the output before retrieving a new random number. <code>prng_subpart</code> was the actual PRNG, which was an LCG implementation.</p>
 <p>Recovering <code>time_seed</code> was trivial now that we recognise it as a LCG - we simply need the whole random number returned by <code>prng_subpart</code> which we can get by playing 4 practice rounds (as each round returns 8 bits).</p>
 <p>Now we simply solve for <code>time_seed</code>:</p>
