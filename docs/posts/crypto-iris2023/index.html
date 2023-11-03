@@ -180,7 +180,7 @@ if (!doNotTrack) {
   <div class="post-meta">
     
       <time class="post-date">
-        Jan 9, 2023 :: 
+        Jan 9, 2023 :: teddyctf
         
       </time>
     
@@ -569,13 +569,13 @@ if __name__ == &#34;__main__&#34;:
 
 <p>and yep, it does indeed look vulnerable to bit-flipping attacks! Notice <code>echo</code> -&gt; <code>zcho</code></p>
 <p>The server generates us a ciphertext of command <code>echo</code> with some data, and our goal is to flip bits to make the command <code>flag</code>, which gives us the flag.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-py" data-lang="py"><span style="display:flex;"><span><span style="color:#66d9ef">match</span> command[<span style="color:#e6db74">&#34;type&#34;</span>]:
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#34;echo&#34;</span>:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-py" data-lang="py"><span style="display:flex;"><span>match command[<span style="color:#e6db74">&#34;type&#34;</span>]:
+</span></span><span style="display:flex;"><span>    case <span style="color:#e6db74">&#34;echo&#34;</span>:
 </span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> command<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#34;msg&#34;</span>, <span style="color:#e6db74">&#34;Hello world!&#34;</span>)
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#34;flag&#34;</span>:
+</span></span><span style="display:flex;"><span>    case <span style="color:#e6db74">&#34;flag&#34;</span>:
 </span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">with</span> open(<span style="color:#e6db74">&#34;/flag&#34;</span>, <span style="color:#e6db74">&#34;r&#34;</span>) <span style="color:#66d9ef">as</span> f:
 </span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> f<span style="color:#f92672">.</span>read()
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">case</span> other:
+</span></span><span style="display:flex;"><span>    case other:
 </span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Unknown command type </span><span style="color:#e6db74">{</span>command[<span style="color:#e6db74">&#39;type&#39;</span>]<span style="color:#e6db74">}</span><span style="color:#e6db74">...&#34;</span>
 </span></span></code></pre></div><p>What&rsquo;s super useful is that if the command is not valid, it tells us what our command was! Essentially, we get feedback about what bit we flipped something to.</p>
 <p>Now, remember the modification - block orders are random, therefore we will script to flip bits from every block and observe the feedback to see if we flipped the right bits. Our goal is to figure out which blocks need to be flipped to change the <code>echo</code> text.</p>
