@@ -12,7 +12,7 @@ googleAnalytics = 'G-J6PB683BSR'
 [params]
   # dir name of your main content (default is `content/posts`).
   # the list of set content will show up on your index page (baseurl).
-  contentTypeName = "posts"
+  contentTypeName = "featured"
 
   # ["orange", "blue", "red", "green", "pink"]
   themeColor = "green"
