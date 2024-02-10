@@ -10,10 +10,10 @@
     <lastBuildDate>Sun, 01 Oct 2023 00:06:40 +0800</lastBuildDate><atom:link href="https://TheSavageTeddy.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Reversing Writeups - BSides Canberra CTF 2023</title>
-      <link>https://TheSavageTeddy.github.io/posts/bsides-canberra-ctf-2023/</link>
+      <link>https://TheSavageTeddy.github.io/featured/bsides-canberra-ctf-2023/</link>
       <pubDate>Sun, 01 Oct 2023 00:06:40 +0800</pubDate>
       
-      <guid>https://TheSavageTeddy.github.io/posts/bsides-canberra-ctf-2023/</guid>
+      <guid>https://TheSavageTeddy.github.io/featured/bsides-canberra-ctf-2023/</guid>
       <description>Overview During the school holidays, I had the opportunity to attend BSides Canberra 2023, which was a 3 day conference held near the end of September, in the National Convention Center Canberra.
 Along with many great talks, it featured three &amp;lsquo;villages&amp;rsquo; including hardware, lockpicking and wireless. With 3000 people attending, this was the largest hacking conference that I had gone to, and it was a lot of fun!
 Cybears hosted this year&amp;rsquo;s CTF event with unique comic style graphics for the CTF site.</description>
@@ -740,10 +740,10 @@ p.interactive()
     
     <item>
       <title>CTF Writeups - p4CTF Finals 2023 in Poland</title>
-      <link>https://TheSavageTeddy.github.io/posts/p4ctf-finals-2023/</link>
+      <link>https://TheSavageTeddy.github.io/featured/p4ctf-finals-2023/</link>
       <pubDate>Thu, 22 Jun 2023 21:20:00 +0800</pubDate>
       
-      <guid>https://TheSavageTeddy.github.io/posts/p4ctf-finals-2023/</guid>
+      <guid>https://TheSavageTeddy.github.io/featured/p4ctf-finals-2023/</guid>
       <description>Overview p4CTF Finals was an onsite event held in June 2023 in Katowice, Poland. Together with Emu Exploit, I qualified for event in the p4CTF qualifiers and had the opportunity to go to Poland to meet and compete with many top teams in the world, including The Flat Network Society, Dragon Sector, justCatTheFish, hxp, 0rganizers, ALLES and FluxFingers.
 Before we could compete in the event, we had to first get to Poland, which proved to be a pain as our travel time was 50 hours - 30 hours across three flights to Paris, and 20 hours on the bus to Katowice.</description>
       <content>&lt;h1 id=&#34;overview&#34;&gt;Overview&lt;/h1&gt;
@@ -1610,10 +1610,10 @@ Sad 🐸 You are banned 😢
     
     <item>
       <title>what-a-maze-meant - DEFCON Quals 2023 Writeup</title>
-      <link>https://TheSavageTeddy.github.io/posts/what-a-maze-meant-defcon-2023-quals/</link>
+      <link>https://TheSavageTeddy.github.io/featured/what-a-maze-meant-defcon-2023-quals/</link>
       <pubDate>Tue, 30 May 2023 00:00:00 +0800</pubDate>
       
-      <guid>https://TheSavageTeddy.github.io/posts/what-a-maze-meant-defcon-2023-quals/</guid>
+      <guid>https://TheSavageTeddy.github.io/featured/what-a-maze-meant-defcon-2023-quals/</guid>
       <description>Table of Contents Overview - a brief summary of the event
 Writeup - writeup of the challenge
 Conclusion - final closing thoughts
@@ -4135,14 +4135,14 @@ Your challenge response (flag) is this total.&lt;/p&gt;
       
       <guid>https://TheSavageTeddy.github.io/about/</guid>
       <description>About me Hi! Welcome to my blog! I&amp;rsquo;m teddy (aka TheSavageTeddy), a highschool student and CTF player from Western Australia.
-I play with team Emu Exploit (formerly PissedEmu), and do all categories but mostly crypto, and learning pwn &amp;amp; rev currently.
+I play with team Emu Exploit (formerly PissedEmu), and do all categories but mostly crypto, pwn, rev, and currently learning web3.
 This is my blog where I will post some CTF writeups and other interesting cyber related content! Enjoy!
 Check out my Twitter to see what I&amp;rsquo;ve been up to recently (embed might be broken and show no tweets.</description>
       <content>&lt;h1 id=&#34;about-me&#34;&gt;About me&lt;/h1&gt;
 &lt;p&gt;Hi! Welcome to my blog! I&amp;rsquo;m &lt;a href=&#34;https://ctftime.org/user/114547&#34;&gt;&lt;code&gt;teddy&lt;/code&gt;&lt;/a&gt; (aka TheSavageTeddy), a highschool student and CTF player from Western Australia.&lt;/p&gt;
-&lt;p&gt;I play with team &lt;a href=&#34;https://ctftime.org/team/160273&#34;&gt;&lt;code&gt;Emu Exploit&lt;/code&gt;&lt;/a&gt; (formerly PissedEmu), and do all categories but mostly crypto, and learning pwn &amp;amp; rev currently.&lt;/p&gt;
+&lt;p&gt;I play with team &lt;a href=&#34;https://ctftime.org/team/160273&#34;&gt;&lt;code&gt;Emu Exploit&lt;/code&gt;&lt;/a&gt; (formerly PissedEmu), and do all categories but mostly crypto, pwn, rev, and currently learning web3.&lt;/p&gt;
 &lt;p&gt;This is my blog where I will post some CTF writeups and other interesting cyber related content! Enjoy!&lt;/p&gt;
-&lt;p&gt;Check out my &lt;a href=&#34;https://twitter.com/teddyctf&#34;&gt;Twitter&lt;/a&gt; to see what I&amp;rsquo;ve been up to recently (embed might be broken and show no tweets. I do tweet though!)&lt;/p&gt;
+&lt;p&gt;Check out my &lt;a href=&#34;https://twitter.com/teddyctf&#34;&gt;&lt;code&gt;Twitter&lt;/code&gt;&lt;/a&gt; to see what I&amp;rsquo;ve been up to recently (embed might be broken and show no tweets. I do tweet though!)&lt;/p&gt;
 
 
 &lt;a class=&#34;twitter-timeline&#34; href=&#34;https://twitter.com/teddyctf?ref_src=twsrc%5Etfw&#34;&gt;Tweets by teddyctf&lt;/a&gt; &lt;script async src=&#34;https://platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt; 

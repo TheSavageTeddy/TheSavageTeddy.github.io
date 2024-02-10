@@ -2,13 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://TheSavageTeddy.github.io/posts/bsides-canberra-ctf-2023/</loc>
+    <loc>https://TheSavageTeddy.github.io/featured/bsides-canberra-ctf-2023/</loc>
     <lastmod>2023-10-01T00:06:40+08:00</lastmod>
   </url><url>
-    <loc>https://TheSavageTeddy.github.io/posts/p4ctf-finals-2023/</loc>
+    <loc>https://TheSavageTeddy.github.io/featured/p4ctf-finals-2023/</loc>
     <lastmod>2023-06-22T21:20:00+08:00</lastmod>
   </url><url>
-    <loc>https://TheSavageTeddy.github.io/posts/what-a-maze-meant-defcon-2023-quals/</loc>
+    <loc>https://TheSavageTeddy.github.io/featured/what-a-maze-meant-defcon-2023-quals/</loc>
     <lastmod>2023-05-30T00:00:00+08:00</lastmod>
   </url><url>
     <loc>https://TheSavageTeddy.github.io/posts/ret2libm-iris2023/</loc>
@@ -41,13 +41,13 @@
     <loc>https://TheSavageTeddy.github.io/categories/ctf-writeups/</loc>
     <lastmod>2023-10-01T00:06:40+08:00</lastmod>
   </url><url>
+    <loc>https://TheSavageTeddy.github.io/featured/</loc>
+    <lastmod>2023-10-01T00:06:40+08:00</lastmod>
+  </url><url>
     <loc>https://TheSavageTeddy.github.io/tags/onsite/</loc>
     <lastmod>2023-10-01T00:06:40+08:00</lastmod>
   </url><url>
     <loc>https://TheSavageTeddy.github.io/categories/onsite/</loc>
-    <lastmod>2023-10-01T00:06:40+08:00</lastmod>
-  </url><url>
-    <loc>https://TheSavageTeddy.github.io/posts/</loc>
     <lastmod>2023-10-01T00:06:40+08:00</lastmod>
   </url><url>
     <loc>https://TheSavageTeddy.github.io/tags/rev/</loc>
@@ -81,6 +81,9 @@
     <lastmod>2023-05-30T00:00:00+08:00</lastmod>
   </url><url>
     <loc>https://TheSavageTeddy.github.io/tags/beginner/</loc>
+    <lastmod>2023-05-21T00:00:00+08:00</lastmod>
+  </url><url>
+    <loc>https://TheSavageTeddy.github.io/posts/</loc>
     <lastmod>2023-05-21T00:00:00+08:00</lastmod>
   </url><url>
     <loc>https://TheSavageTeddy.github.io/tags/pwn/</loc>

@@ -10,10 +10,10 @@
     <lastBuildDate>Tue, 30 May 2023 00:00:00 +0800</lastBuildDate><atom:link href="https://TheSavageTeddy.github.io/tags/speedpwn/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>what-a-maze-meant - DEFCON Quals 2023 Writeup</title>
-      <link>https://TheSavageTeddy.github.io/posts/what-a-maze-meant-defcon-2023-quals/</link>
+      <link>https://TheSavageTeddy.github.io/featured/what-a-maze-meant-defcon-2023-quals/</link>
       <pubDate>Tue, 30 May 2023 00:00:00 +0800</pubDate>
       
-      <guid>https://TheSavageTeddy.github.io/posts/what-a-maze-meant-defcon-2023-quals/</guid>
+      <guid>https://TheSavageTeddy.github.io/featured/what-a-maze-meant-defcon-2023-quals/</guid>
       <description>Table of Contents Overview - a brief summary of the event
 Writeup - writeup of the challenge
 Conclusion - final closing thoughts

@@ -1,4 +1,13 @@
 {{ define "main" }}
+  <!-- redirect to /featured/`postname` if can't find post -->
+  <script>
+    if (location.href.includes("/posts/")){
+      let post = location.href.split("/posts/")
+      let postName = post[post.length-1]
+      window.location.replace(`/featured/${postName}`)
+    }
+  </script>
+
   <div class="post">
     <h1 class="post-title">404 — {{ $.Site.Params.missingContentMessage | default "Page not found..." }}</h1>
 

@@ -10,10 +10,10 @@
     <lastBuildDate>Sun, 01 Oct 2023 00:06:40 +0800</lastBuildDate><atom:link href="https://TheSavageTeddy.github.io/tags/cryptography/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Reversing Writeups - BSides Canberra CTF 2023</title>
-      <link>https://TheSavageTeddy.github.io/posts/bsides-canberra-ctf-2023/</link>
+      <link>https://TheSavageTeddy.github.io/featured/bsides-canberra-ctf-2023/</link>
       <pubDate>Sun, 01 Oct 2023 00:06:40 +0800</pubDate>
       
-      <guid>https://TheSavageTeddy.github.io/posts/bsides-canberra-ctf-2023/</guid>
+      <guid>https://TheSavageTeddy.github.io/featured/bsides-canberra-ctf-2023/</guid>
       <description>Overview During the school holidays, I had the opportunity to attend BSides Canberra 2023, which was a 3 day conference held near the end of September, in the National Convention Center Canberra.
 Along with many great talks, it featured three &amp;lsquo;villages&amp;rsquo; including hardware, lockpicking and wireless. With 3000 people attending, this was the largest hacking conference that I had gone to, and it was a lot of fun!
 Cybears hosted this year&amp;rsquo;s CTF event with unique comic style graphics for the CTF site.</description>

@@ -10,10 +10,10 @@
     <lastBuildDate>Sun, 01 Oct 2023 00:06:40 +0800</lastBuildDate><atom:link href="https://TheSavageTeddy.github.io/tags/onsite/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Reversing Writeups - BSides Canberra CTF 2023</title>
-      <link>https://TheSavageTeddy.github.io/posts/bsides-canberra-ctf-2023/</link>
+      <link>https://TheSavageTeddy.github.io/featured/bsides-canberra-ctf-2023/</link>
       <pubDate>Sun, 01 Oct 2023 00:06:40 +0800</pubDate>
       
-      <guid>https://TheSavageTeddy.github.io/posts/bsides-canberra-ctf-2023/</guid>
+      <guid>https://TheSavageTeddy.github.io/featured/bsides-canberra-ctf-2023/</guid>
       <description>Overview During the school holidays, I had the opportunity to attend BSides Canberra 2023, which was a 3 day conference held near the end of September, in the National Convention Center Canberra.
 Along with many great talks, it featured three &amp;lsquo;villages&amp;rsquo; including hardware, lockpicking and wireless. With 3000 people attending, this was the largest hacking conference that I had gone to, and it was a lot of fun!
 Cybears hosted this year&amp;rsquo;s CTF event with unique comic style graphics for the CTF site.</description>
@@ -740,10 +740,10 @@ p.interactive()
     
     <item>
       <title>CTF Writeups - p4CTF Finals 2023 in Poland</title>
-      <link>https://TheSavageTeddy.github.io/posts/p4ctf-finals-2023/</link>
+      <link>https://TheSavageTeddy.github.io/featured/p4ctf-finals-2023/</link>
       <pubDate>Thu, 22 Jun 2023 21:20:00 +0800</pubDate>
       
-      <guid>https://TheSavageTeddy.github.io/posts/p4ctf-finals-2023/</guid>
+      <guid>https://TheSavageTeddy.github.io/featured/p4ctf-finals-2023/</guid>
       <description>Overview p4CTF Finals was an onsite event held in June 2023 in Katowice, Poland. Together with Emu Exploit, I qualified for event in the p4CTF qualifiers and had the opportunity to go to Poland to meet and compete with many top teams in the world, including The Flat Network Society, Dragon Sector, justCatTheFish, hxp, 0rganizers, ALLES and FluxFingers.
 Before we could compete in the event, we had to first get to Poland, which proved to be a pain as our travel time was 50 hours - 30 hours across three flights to Paris, and 20 hours on the bus to Katowice.</description>
       <content>&lt;h1 id=&#34;overview&#34;&gt;Overview&lt;/h1&gt;
