@@ -96,7 +96,7 @@ googleAnalytics = 'G-J6PB683BSR'
         name = "Featured Posts"
         url = "/featured"
       [[languages.en.menu.main]]
-        identifier = "otherposts"
+        identifier = "posts"
         name = "Other Posts"
         url = "/posts"
       [[languages.en.menu.main]]
