@@ -8,6 +8,9 @@
     <loc>https://TheSavageTeddy.github.io/featured/p4ctf-finals-2023/</loc>
     <lastmod>2023-06-22T21:20:00+08:00</lastmod>
   </url><url>
+    <loc>https://TheSavageTeddy.github.io/posts/puppet-damnvulnerabledefi/</loc>
+    <lastmod>2024-02-11T09:30:00+08:00</lastmod>
+  </url><url>
     <loc>https://TheSavageTeddy.github.io/featured/what-a-maze-meant-defcon-2023-quals/</loc>
     <lastmod>2023-05-30T00:00:00+08:00</lastmod>
   </url><url>
@@ -23,10 +26,37 @@
     <loc>https://TheSavageTeddy.github.io/posts/writeups-hackabit2023/</loc>
     <lastmod>2023-03-01T00:00:00+08:00</lastmod>
   </url><url>
-    <loc>https://TheSavageTeddy.github.io/tags/bsides/</loc>
-    <lastmod>2023-10-01T00:06:40+08:00</lastmod>
-  </url><url>
     <loc>https://TheSavageTeddy.github.io/categories/</loc>
+    <lastmod>2024-02-11T09:30:00+08:00</lastmod>
+  </url><url>
+    <loc>https://TheSavageTeddy.github.io/tags/damnvulnerabledefi/</loc>
+    <lastmod>2024-02-11T09:30:00+08:00</lastmod>
+  </url><url>
+    <loc>https://TheSavageTeddy.github.io/posts/</loc>
+    <lastmod>2024-02-11T09:30:00+08:00</lastmod>
+  </url><url>
+    <loc>https://TheSavageTeddy.github.io/tags/solidity/</loc>
+    <lastmod>2024-02-11T09:30:00+08:00</lastmod>
+  </url><url>
+    <loc>https://TheSavageTeddy.github.io/tags/</loc>
+    <lastmod>2024-02-11T09:30:00+08:00</lastmod>
+  </url><url>
+    <loc>https://TheSavageTeddy.github.io/</loc>
+    <lastmod>2024-02-11T09:30:00+08:00</lastmod>
+  </url><url>
+    <loc>https://TheSavageTeddy.github.io/tags/web3/</loc>
+    <lastmod>2024-02-11T09:30:00+08:00</lastmod>
+  </url><url>
+    <loc>https://TheSavageTeddy.github.io/categories/web3/</loc>
+    <lastmod>2024-02-11T09:30:00+08:00</lastmod>
+  </url><url>
+    <loc>https://TheSavageTeddy.github.io/tags/writeup/</loc>
+    <lastmod>2024-02-11T09:30:00+08:00</lastmod>
+  </url><url>
+    <loc>https://TheSavageTeddy.github.io/categories/writeups/</loc>
+    <lastmod>2024-02-11T09:30:00+08:00</lastmod>
+  </url><url>
+    <loc>https://TheSavageTeddy.github.io/tags/bsides/</loc>
     <lastmod>2023-10-01T00:06:40+08:00</lastmod>
   </url><url>
     <loc>https://TheSavageTeddy.github.io/categories/crypto/</loc>
@@ -59,15 +89,6 @@
     <loc>https://TheSavageTeddy.github.io/categories/reversing/</loc>
     <lastmod>2023-10-01T00:06:40+08:00</lastmod>
   </url><url>
-    <loc>https://TheSavageTeddy.github.io/tags/</loc>
-    <lastmod>2023-10-01T00:06:40+08:00</lastmod>
-  </url><url>
-    <loc>https://TheSavageTeddy.github.io/</loc>
-    <lastmod>2023-10-01T00:06:40+08:00</lastmod>
-  </url><url>
-    <loc>https://TheSavageTeddy.github.io/tags/writeup/</loc>
-    <lastmod>2023-10-01T00:06:40+08:00</lastmod>
-  </url><url>
     <loc>https://TheSavageTeddy.github.io/tags/crypto/</loc>
     <lastmod>2023-06-22T21:20:00+08:00</lastmod>
   </url><url>
@@ -81,9 +102,6 @@
     <lastmod>2023-05-30T00:00:00+08:00</lastmod>
   </url><url>
     <loc>https://TheSavageTeddy.github.io/tags/beginner/</loc>
-    <lastmod>2023-05-21T00:00:00+08:00</lastmod>
-  </url><url>
-    <loc>https://TheSavageTeddy.github.io/posts/</loc>
     <lastmod>2023-05-21T00:00:00+08:00</lastmod>
   </url><url>
     <loc>https://TheSavageTeddy.github.io/tags/pwn/</loc>

@@ -7,7 +7,27 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>teddyctf</copyright>
-    <lastBuildDate>Sun, 01 Oct 2023 00:06:40 +0800</lastBuildDate><atom:link href="https://TheSavageTeddy.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 11 Feb 2024 09:30:00 +0800</lastBuildDate><atom:link href="https://TheSavageTeddy.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>web3</title>
+      <link>https://TheSavageTeddy.github.io/categories/web3/</link>
+      <pubDate>Sun, 11 Feb 2024 09:30:00 +0800</pubDate>
+      
+      <guid>https://TheSavageTeddy.github.io/categories/web3/</guid>
+      <description></description>
+      <content></content>
+    </item>
+    
+    <item>
+      <title>writeups</title>
+      <link>https://TheSavageTeddy.github.io/categories/writeups/</link>
+      <pubDate>Sun, 11 Feb 2024 09:30:00 +0800</pubDate>
+      
+      <guid>https://TheSavageTeddy.github.io/categories/writeups/</guid>
+      <description></description>
+      <content></content>
+    </item>
+    
     <item>
       <title>crypto</title>
       <link>https://TheSavageTeddy.github.io/categories/crypto/</link>

