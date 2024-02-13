@@ -2,8 +2,8 @@
 weight = 7
 tags = ["web3", "solidity", "writeup", "damnvulnerabledefi"] 
 categories = ["writeups", "web3"] 
-publishDate = 1707615000
-description = "Writeup for Puppet (Level 8) from DamnVulnerableDefi V3, " 
+publishDate = 1707819000
+description = "Writeup for Puppet (Level 8) from DamnVulnerableDefi V3, an oracle manipulation challenge in one transaction." 
 title = """Puppet Writeup - DamnVulnerableDefi V3"""
 +++
 

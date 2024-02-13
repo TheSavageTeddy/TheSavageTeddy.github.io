@@ -7,11 +7,11 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>teddyctf</copyright>
-    <lastBuildDate>Sun, 11 Feb 2024 09:30:00 +0800</lastBuildDate><atom:link href="https://TheSavageTeddy.github.io/tags/web3/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 13 Feb 2024 18:10:00 +0800</lastBuildDate><atom:link href="https://TheSavageTeddy.github.io/tags/web3/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Puppet Writeup - DamnVulnerableDefi V3</title>
       <link>https://TheSavageTeddy.github.io/posts/puppet-damnvulnerabledefi/</link>
-      <pubDate>Sun, 11 Feb 2024 09:30:00 +0800</pubDate>
+      <pubDate>Tue, 13 Feb 2024 18:10:00 +0800</pubDate>
       
       <guid>https://TheSavageTeddy.github.io/posts/puppet-damnvulnerabledefi/</guid>
       <description>This post contains the walkthrough and solutions for Puppet, a challenge from the DamnVulnerableDefi wargame, featuring a price oracle manipulation vulnerability.
