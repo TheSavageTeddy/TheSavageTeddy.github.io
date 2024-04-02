@@ -7,7 +7,37 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>teddyctf</copyright>
-    <lastBuildDate>Tue, 13 Feb 2024 18:10:00 +0800</lastBuildDate><atom:link href="https://TheSavageTeddy.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 01 Apr 2024 06:43:20 +0800</lastBuildDate><atom:link href="https://TheSavageTeddy.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ctf</title>
+      <link>https://TheSavageTeddy.github.io/tags/ctf/</link>
+      <pubDate>Mon, 01 Apr 2024 06:43:20 +0800</pubDate>
+      
+      <guid>https://TheSavageTeddy.github.io/tags/ctf/</guid>
+      <description></description>
+      <content></content>
+    </item>
+    
+    <item>
+      <title>cursed</title>
+      <link>https://TheSavageTeddy.github.io/tags/cursed/</link>
+      <pubDate>Mon, 01 Apr 2024 06:43:20 +0800</pubDate>
+      
+      <guid>https://TheSavageTeddy.github.io/tags/cursed/</guid>
+      <description></description>
+      <content></content>
+    </item>
+    
+    <item>
+      <title>writeup</title>
+      <link>https://TheSavageTeddy.github.io/tags/writeup/</link>
+      <pubDate>Mon, 01 Apr 2024 06:43:20 +0800</pubDate>
+      
+      <guid>https://TheSavageTeddy.github.io/tags/writeup/</guid>
+      <description></description>
+      <content></content>
+    </item>
+    
     <item>
       <title>damnvulnerabledefi</title>
       <link>https://TheSavageTeddy.github.io/tags/damnvulnerabledefi/</link>
@@ -39,16 +69,6 @@
     </item>
     
     <item>
-      <title>writeup</title>
-      <link>https://TheSavageTeddy.github.io/tags/writeup/</link>
-      <pubDate>Tue, 13 Feb 2024 18:10:00 +0800</pubDate>
-      
-      <guid>https://TheSavageTeddy.github.io/tags/writeup/</guid>
-      <description></description>
-      <content></content>
-    </item>
-    
-    <item>
       <title>bsides</title>
       <link>https://TheSavageTeddy.github.io/tags/bsides/</link>
       <pubDate>Sun, 01 Oct 2023 00:06:40 +0800</pubDate>
@@ -64,16 +84,6 @@
       <pubDate>Sun, 01 Oct 2023 00:06:40 +0800</pubDate>
       
       <guid>https://TheSavageTeddy.github.io/tags/cryptography/</guid>
-      <description></description>
-      <content></content>
-    </item>
-    
-    <item>
-      <title>ctf</title>
-      <link>https://TheSavageTeddy.github.io/tags/ctf/</link>
-      <pubDate>Sun, 01 Oct 2023 00:06:40 +0800</pubDate>
-      
-      <guid>https://TheSavageTeddy.github.io/tags/ctf/</guid>
       <description></description>
       <content></content>
     </item>

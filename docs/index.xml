@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>teddyctf</copyright>
-    <lastBuildDate>Tue, 13 Feb 2024 18:10:00 +0800</lastBuildDate><atom:link href="https://TheSavageTeddy.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 01 Apr 2024 06:43:20 +0800</lastBuildDate><atom:link href="https://TheSavageTeddy.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Reversing Writeups - BSides Canberra CTF 2023</title>
       <link>https://TheSavageTeddy.github.io/featured/bsides-canberra-ctf-2023/</link>
@@ -1605,6 +1605,285 @@ Sad 🐸 You are banned 😢
   &lt;img src=&#34;./img/scoreboard.png&#34;  class=&#34;center&#34;  style=&#34;border-radius: 5px;&#34;  /&gt;
 
 
+</content>
+    </item>
+    
+    <item>
+      <title>Bribery, Botting, and other Shenanigans - Cursed CTF 2024</title>
+      <link>https://TheSavageTeddy.github.io/posts/cursedctf-2024/</link>
+      <pubDate>Mon, 01 Apr 2024 06:43:20 +0800</pubDate>
+      
+      <guid>https://TheSavageTeddy.github.io/posts/cursedctf-2024/</guid>
+      <description>Overview Cursed CTF Quals 2024 was a CTF designed to contain cursed things like most of the CTF being OSINT, unsolvable challenges, and other funny challenges.
+I played with the Oceania Merger team joseph fan club and we managed to secure first place without being disqualified!
+In this post, we will go through the funny moments of the event, and how we were able to win using unethical strategies such as bribing organisers, making 10000 accounts for a stuffed cow, and much more.</description>
+      <content>&lt;h1 id=&#34;overview&#34;&gt;Overview&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&#34;https://ctftime.org/event/2239&#34;&gt;Cursed CTF Quals 2024&lt;/a&gt; was a CTF designed to contain cursed things like most of the CTF being OSINT, unsolvable challenges, and other funny challenges.&lt;/p&gt;
+&lt;p&gt;I played with the Oceania Merger team &lt;a href=&#34;https://ctftime.org/team/280849&#34;&gt;&lt;code&gt;joseph fan club&lt;/code&gt;&lt;/a&gt; and we managed to secure first place without being disqualified!&lt;/p&gt;
+&lt;p&gt;In this post, we will go through the funny moments of the event, and how we were able to win using &lt;del&gt;un&lt;/del&gt;ethical strategies such as bribing organisers, making 10000 accounts for a stuffed cow, and much more. Enjoy!&lt;/p&gt;
+
+  &lt;img src=&#34;./img/scoreboard.png&#34;  class=&#34;center&#34;  style=&#34;border-radius: 5px;width: 90%; &#34;  /&gt;
+
+
+&lt;h1 id=&#34;the-iceberg-explained&#34;&gt;The Iceberg Explained&lt;/h1&gt;
+&lt;p&gt;We will use this iceberg, inspired by &lt;a href=&#34;https://x.com/gf_256/status/1206393845497376768?s=20&#34;&gt;cts&lt;/a&gt;, to rank each funny/cursed moment of the CTF.&lt;/p&gt;
+
+  &lt;img src=&#34;./img/iceberg.png&#34;  class=&#34;center&#34;  style=&#34;border-radius: 5px;width: 70%; &#34;  /&gt;
+
+
+&lt;p&gt;Each level of the iceberg is pretty self explanatory. Anything in the orange or below would probably cause some drama and/or banning in a normal CTF.&lt;/p&gt;
+&lt;p&gt;Without further ado, here are all of the funny and cursed moments from Cursed CTF 2024!&lt;/p&gt;
+&lt;h2 id=&#34;login-button-covered&#34;&gt;Login button covered&lt;/h2&gt;
+&lt;p&gt;To even login to the CTF, you had to get around the button which was covered by some animated sparkles.&lt;/p&gt;
+
+  &lt;img src=&#34;./img/covered_button.png&#34;  class=&#34;center&#34;  style=&#34;border-radius: 5px;width: 80%; &#34;  /&gt;
+
+
+&lt;p&gt;It wasn&amp;rsquo;t very hard to get around, just by inspect element deleting or adblocking etc. but there was actually a very small gap on top that you could click.&lt;/p&gt;
+&lt;p&gt;There were also many random things floating around the page like My Little Pony, which was a bit annoying.&lt;/p&gt;
+&lt;p&gt;Not too cursed, but a good start.&lt;/p&gt;
+
+  &lt;img src=&#34;./img/iceberg1.png&#34;  class=&#34;center&#34;  style=&#34;border-radius: 5px;width: 60%; &#34;  /&gt;
+
+
+&lt;h2 id=&#34;challenge-author-participation&#34;&gt;Challenge author participation&lt;/h2&gt;
+&lt;p&gt;I actually authored a crypto challenge for this CTF, named &lt;code&gt;fuck-joseph&lt;/code&gt;, and yet I was allowed to participate.&lt;/p&gt;
+
+  &lt;img src=&#34;./img/allowed_to_qual.png&#34;  class=&#34;center&#34;  style=&#34;border-radius: 5px;width: 80%; &#34;  /&gt;
+
+
+&lt;p&gt;The challenge itself was quite simple - simply crack a 512 bit RSA modulus, and the flag is yours:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-py&#34; data-lang=&#34;py&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;from&lt;/span&gt; Crypto.Util.number &lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;from&lt;/span&gt; flag &lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; flag
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;n &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; getPrime(&lt;span style=&#34;color:#ae81ff&#34;&gt;256&lt;/span&gt;) &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt; getPrime(&lt;span style=&#34;color:#ae81ff&#34;&gt;256&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;e &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0x10001&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;print(n)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;print(pow(bytes_to_long(flag), e, n))
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The intended solution was to &lt;a href=&#34;https://github.com/eniac/faas&#34;&gt;drop $100 on a cluster&lt;/a&gt; to factor &lt;code&gt;n&lt;/code&gt;, but since I made the challenge and had the flag, I just blooded it immediately after the CTF started.&lt;/p&gt;
+
+  &lt;img src=&#34;./img/own_chal_blood.png&#34;  class=&#34;center&#34;  style=&#34;border-radius: 5px;width: 80%; &#34;  /&gt;
+
+
+&lt;p&gt;I should probably elaborate on the challenge name &amp;ldquo;fuck joseph&amp;rdquo;. &lt;a href=&#34;https://twitter.com/josep68_&#34;&gt;joseph&lt;/a&gt; is a CTF player, who my main team (Emu Exploit) jokingly despises due to how good he is. The intended joke was to troll him with an &amp;lsquo;unsolvable&amp;rsquo; / pay to win crypto challenge for him to solve, as crypto is his specialty.&lt;/p&gt;
+&lt;p&gt;This kind of backfired however as we decided to play in our &lt;a href=&#34;https://ctftime.org/team/280849&#34;&gt;Oceania Merger team&lt;/a&gt;, which joseph was in, and now we had to solve the challenge.&lt;/p&gt;
+&lt;p&gt;No hate to joseph btw, we are joseph fan club after all &amp;lt;3&lt;/p&gt;
+
+  &lt;img src=&#34;./img/iceberg2.png&#34;  class=&#34;center&#34;  style=&#34;border-radius: 5px;width: 60%; &#34;  /&gt;
+
+
+&lt;h2 id=&#34;primes-uploaded-to-factordb&#34;&gt;Primes uploaded to factordb&lt;/h2&gt;
+&lt;p&gt;With my &lt;code&gt;fuck-joseph&lt;/code&gt; challenge, I thought I was guaranteed around ~500 free points as not many would bother factoring a 512 bit number. However, it turns out someone uploaded the factors to &lt;a href=&#34;http://factordb.com/&#34;&gt;factordb&lt;/a&gt;, resulting in &amp;gt;30 solves.&lt;/p&gt;
+
+  &lt;img src=&#34;./img/fuck_joseph_solves.png&#34;  class=&#34;center&#34;  style=&#34;border-radius: 5px;width: 60%; &#34;  /&gt;
+
+
+&lt;p&gt;I suspect &lt;a href=&#34;https://twitter.com/0rganizers&#34;&gt;0rganizers&lt;/a&gt; to be the culprit, being the second solve. But I can&amp;rsquo;t really be mad - it&amp;rsquo;s a cursed CTF after all. Props to them for solving it legitimately, too.&lt;/p&gt;
+
+  &lt;img src=&#34;./img/iceberg3.png&#34;  class=&#34;center&#34;  style=&#34;border-radius: 5px;width: 60%; &#34;  /&gt;
+
+
+&lt;h2 id=&#34;registering-10000-accounts-for-a-cow-plushie&#34;&gt;Registering 10000 accounts for a cow plushie&lt;/h2&gt;
+&lt;p&gt;There was a prize of a cute cow plushie for the median team on the scoreboard.&lt;/p&gt;
+
+  &lt;img src=&#34;./img/cow.png&#34;  class=&#34;center&#34;  style=&#34;border-radius: 5px;width: 30%; &#34;  /&gt;
+
+
+&lt;p&gt;Originally, I didn&amp;rsquo;t even know this prize existed, until organiser sky encouraged us to go for it.&lt;/p&gt;
+
+  &lt;img src=&#34;./img/cow_.png&#34;  class=&#34;center&#34;  style=&#34;border-radius: 5px;width: 80%; &#34;  /&gt;
+
+
+&lt;p&gt;The idea behind &amp;lsquo;account stuffing&amp;rsquo; is that if you own more than 50% of the accounts on the scoreboard, and they all sit on the same number of points, one of the accounts is guaranteed to be the median.&lt;/p&gt;
+&lt;p&gt;The previous contender, &lt;a href=&#34;https://b01lers.com/&#34;&gt;b01lers&lt;/a&gt;, had already filled the scoreboard with around 1000 accounts. We figured that we can probably beat them, and devised a plan:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Automatically register and verify as many accounts as possible&lt;/li&gt;
+&lt;li&gt;When the time comes, use script to submit a flag for each account&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Our main trick was that accounts with 0 points didn&amp;rsquo;t show up on the scoreboard, so no one would see our accounts until we started submitting flags for them.&lt;/p&gt;
+&lt;p&gt;Huge thanks to &lt;a href=&#34;https://hexf.me&#34;&gt;HexF&lt;/a&gt; who registered and verified almost 10000 accounts with his &lt;a href=&#34;./files/reg-acct.py&#34;&gt;script&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;He was working on making a mail server specifically for catching verification emails, verifying them and storing the auth tokens for even faster account creation, until we were shut down&amp;hellip;&lt;/p&gt;
+&lt;h3 id=&#34;registrations-disabled&#34;&gt;Registrations disabled&lt;/h3&gt;
+&lt;p&gt;The admins eventually responded to our mass account creation by disabling registration, as it was costing them too much money.&lt;/p&gt;
+
+  &lt;img src=&#34;./img/registration_disabled.png&#34;  class=&#34;center&#34;  style=&#34;border-radius: 5px;width: 80%; &#34;  /&gt;
+
+
+&lt;p&gt;By creating more than 10000 accounts, we cost the organisers over $20. Around 9500 of these accounts were successfully verified, meaning we owned around 85% of all registered accounts, and could flood the scoreboard at any time.&lt;/p&gt;
+&lt;h3 id=&#34;flooding-the-scoreboard&#34;&gt;Flooding the scoreboard&lt;/h3&gt;
+&lt;p&gt;Originally, we wanted to be stealthy and start submitting flags for the accounts right before the CTF ended, but since registrations are now disabled and we owned most the accounts, it didn&amp;rsquo;t really matter.&lt;/p&gt;
+&lt;p&gt;I ran my &lt;a href=&#34;./files/auto-submitter.py&#34;&gt;script&lt;/a&gt; to spam submit a flag for all ~9500 accounts, and watched the scoreboard fill with joseph fan clubs.&lt;/p&gt;
+&lt;p&gt;The script finished after 30 minutes, and the scoreboard was 111 pages long, consisting of 11000 teams.&lt;/p&gt;
+
+  &lt;img src=&#34;./img/joseph_fan_clubs.png&#34;  class=&#34;center&#34;  style=&#34;border-radius: 5px;width: 60%; &#34;  /&gt;
+
+
+&lt;p&gt;The challenge we chose to submit, Geoguessr5, ended up with 9600 solves.&lt;/p&gt;
+
+  &lt;img src=&#34;./img/osint_solves.png&#34;  class=&#34;center&#34;  style=&#34;border-radius: 5px;width: 60%; &#34;  /&gt;
+
+
+&lt;p&gt;Not only did we cost the organisers $20 by registering 10000 accounts, we also cost them some additional shipping fee for living on the other side of the world.&lt;/p&gt;
+
+  &lt;img src=&#34;./img/fuck.png&#34;  class=&#34;center&#34;  style=&#34;border-radius: 5px;width: 60%; &#34;  /&gt;
+
+
+&lt;p&gt;Some truely cursed stuff. I wonder if they will upload the entire scoreboard to CTFTime&amp;hellip;&lt;/p&gt;
+
+  &lt;img src=&#34;./img/iceberg4.png&#34;  class=&#34;center&#34;  style=&#34;border-radius: 5px;width: 60%; &#34;  /&gt;
+
+
+&lt;h2 id=&#34;signups-as-a-service&#34;&gt;Signups as a service&lt;/h2&gt;
+&lt;p&gt;With registrations disabled, some newcomers weren&amp;rsquo;t able to play the CTF. &lt;a href=&#34;https://twitter.com/emilyposting_&#34;&gt;emily&lt;/a&gt; decided it would be funny to distribute some of our 9500 accounts for people to use.&lt;/p&gt;
+&lt;p&gt;As well as pasting some login links in the cursed CTF discord, she setup a website to provide accounts. Being a DUCTF organiser, she came up with the domain name &lt;a href=&#34;https://logintocurse.duc.tf&#34;&gt;logintocurse.duc.tf&lt;/a&gt; which fit perfectly. Visitors would be redirected to a login link for one of our many accounts.&lt;/p&gt;
+
+  &lt;img src=&#34;./img/iceberg5.png&#34;  class=&#34;center&#34;  style=&#34;border-radius: 5px;width: 60%; &#34;  /&gt;
+
+
+&lt;h2 id=&#34;pay-to-win-challenges&#34;&gt;Pay to Win challenges&lt;/h2&gt;
+&lt;p&gt;It wouldn&amp;rsquo;t be a cursed CTF without some pay-to-win challenges. Thanks to &lt;a href=&#34;https://twitter.com/emilyposting_&#34;&gt;emily&lt;/a&gt; for sacrificing $15.36 AUD for this flag.&lt;/p&gt;
+
+  &lt;img src=&#34;./img/discord_nitro.png&#34;  class=&#34;center&#34;  style=&#34;border-radius: 5px;width: 60%; &#34;  /&gt;
+
+
+&lt;p&gt;Another chal, literally called paytowin, increased the flag&amp;rsquo;s price by $1 after each purchase.&lt;/p&gt;
+
+  &lt;img src=&#34;./img/paytowin.png&#34;  class=&#34;center&#34;  style=&#34;border-radius: 5px;width: 60%; &#34;  /&gt;
+
+
+&lt;p&gt;Thanks to &lt;a href=&#34;https://twitter.com/toasterpwn&#34;&gt;toasterpwn&lt;/a&gt; for his sacrifice of $17 AUD ($11 USD).&lt;/p&gt;
+
+  &lt;img src=&#34;./img/usd.png&#34;  class=&#34;center&#34;  style=&#34;border-radius: 5px;width: 60%; &#34;  /&gt;
+
+
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+
+  &lt;img src=&#34;./img/iceberg6.png&#34;  class=&#34;center&#34;  style=&#34;border-radius: 5px;width: 60%; &#34;  /&gt;
+
+
+&lt;h2 id=&#34;trading-flags-with-organisers--bribery&#34;&gt;Trading Flags with organisers / Bribery&lt;/h2&gt;
+&lt;p&gt;Some of the challenges such as finding a kernel 0 day were straight up (almost) unsolvable. Therefore, &lt;a href=&#34;https://twitter.com/toasterpwn&#34;&gt;toasterpwn&lt;/a&gt; took initiative and bribed sky with an EMU shirt for the flag and hints for another challenge.&lt;/p&gt;
+
+  &lt;img src=&#34;./img/toaster_trade.png&#34;  class=&#34;center&#34;  style=&#34;border-radius: 5px;width: 60%; &#34;  /&gt;
+
+
+&lt;p&gt;This first trade set off a cascade of bribery and trading. There was a challenge named &lt;code&gt;free-flag&lt;/code&gt; which (initially) gave a character of the flag every hour. Being impatient, we started to bribe admins for characters until &lt;a href=&#34;https://twitter.com/nullableVoidPtr&#34;&gt;avery&lt;/a&gt; accepted &lt;a href=&#34;https://twitter.com/takaradariku&#34;&gt;takarada&lt;/a&gt;&amp;rsquo;s request for guest access to the private Emu Exploit discord in exchange for the flag.&lt;/p&gt;
+
+  &lt;img src=&#34;./img/ethical.png&#34;  class=&#34;center&#34;  style=&#34;border-radius: 5px;width: 60%; &#34;  /&gt;
+
+
+
+  &lt;img src=&#34;./img/takarada.png&#34;  class=&#34;center&#34;  style=&#34;border-radius: 5px;width: 60%; &#34;  /&gt;
+
+
+
+  &lt;img src=&#34;./img/ethical_.png&#34;  class=&#34;center&#34;  style=&#34;border-radius: 5px;width: 60%; &#34;  /&gt;
+
+
+&lt;p&gt;This wasn&amp;rsquo;t even takarada&amp;rsquo;s challenge, and I had already previously bribed &lt;a href=&#34;https://twitter.com/nootkroot&#34;&gt;kroot&lt;/a&gt;, the challenge author, to give us half the characters in exchange for the same thing. Too bad Emu Exploit&amp;rsquo;s team captain toasterpwn wasn&amp;rsquo;t online when I asked him for permission. He wasn&amp;rsquo;t either when takarada joined, but avery (below: &lt;a href=&#34;./img/cts_from_wish_dot_com.png&#34;&gt;cts from wish.com&lt;/a&gt;) ignored that.&lt;/p&gt;
+
+  &lt;img src=&#34;./img/bruh.png&#34;  class=&#34;center&#34;  style=&#34;border-radius: 5px;width: 80%; &#34;  /&gt;
+
+
+
+  &lt;img src=&#34;./img/outbribed.png&#34;  class=&#34;center&#34;  style=&#34;border-radius: 5px;width: 60%; &#34;  /&gt;
+
+
+&lt;p&gt;Next, I again traded access to the Emu Exploit discord server with sky for the IDA Pro challenge.&lt;/p&gt;
+
+  &lt;img src=&#34;./img/teddy_trade.png&#34;  class=&#34;center&#34;  style=&#34;border-radius: 5px;width: 60%; &#34;  /&gt;
+
+
+&lt;p&gt;The intended non-bribery solution was to &lt;a href=&#34;./img/ida1.png&#34;&gt;buy/give the IDA Pro subscription&lt;/a&gt; which costs couple hundreds to thousands of dollars.&lt;/p&gt;
+
+  &lt;img src=&#34;./img/ida_pro_chal.png&#34;  class=&#34;center&#34;  style=&#34;border-radius: 5px;width: 60%; &#34;  /&gt;
+
+
+&lt;p&gt;Funny that it was &lt;a href=&#34;./img/ida4.png&#34;&gt;announced we actually bought the license&lt;/a&gt;, whereas it was just some &lt;a href=&#34;./img/ida3.png&#34;&gt;trolling&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;The next day, instead of trading Emu related things, avery decided to &lt;a href=&#34;https://twitter.com/nullableVoidPtr/status/1774656004619456826&#34;&gt;initiate another trade&lt;/a&gt; with sky, providing images of a manga book of a specific genre in exchange for a flag and a hint for another challenge.&lt;/p&gt;
+
+  &lt;img src=&#34;./img/avery_trade_2.png&#34;  class=&#34;center&#34;  style=&#34;border-radius: 5px;width: 40%; &#34;  /&gt;
+
+
+
+  &lt;img src=&#34;./img/funny_trade.png&#34;  class=&#34;center&#34;  style=&#34;border-radius: 5px;width: 90%; &#34;  /&gt;
+
+
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+
+  &lt;img src=&#34;./img/interesting_trade.png&#34;  class=&#34;center&#34;  style=&#34;border-radius: 5px;width: 90%; &#34;  /&gt;
+
+
+&lt;p&gt;As we were nearing 69/99 flags submitted, we wanted a few more flags to get there. HexF traded some &lt;a href=&#34;https://downunderctf.com/&#34;&gt;DownUnderCTF&lt;/a&gt; hardware infra schematics (not for challenges) for a few flags / hints, getting us up to the nice number.&lt;/p&gt;
+
+  &lt;img src=&#34;./img/hexf_trade.png&#34;  class=&#34;center&#34;  style=&#34;border-radius: 5px;width: 80%; &#34;  /&gt;
+
+
+
+  &lt;img src=&#34;./img/oops_leaked_a_flag.png&#34;  class=&#34;center&#34;  style=&#34;border-radius: 5px;width: 80%; &#34;  /&gt;
+
+
+
+  &lt;img src=&#34;./img/nice.png&#34;  class=&#34;center&#34;  style=&#34;border-radius: 5px;width: 60%; &#34;  /&gt;
+
+
+&lt;p&gt;&lt;del&gt;Nepotism&lt;/del&gt; Trading all the way.&lt;/p&gt;
+
+  &lt;img src=&#34;./img/iceberg7.png&#34;  class=&#34;center&#34;  style=&#34;border-radius: 5px;width: 60%; &#34;  /&gt;
+
+
+&lt;h2 id=&#34;flags-leaked-on-discord-server&#34;&gt;Flags leaked on Discord server&lt;/h2&gt;
+&lt;p&gt;On the cursed CTF official discord, there was fittingly a channel named &lt;code&gt;#leaked-flags&lt;/code&gt;.&lt;/p&gt;
+
+  &lt;img src=&#34;./img/leaked_flags_channel.png&#34;  class=&#34;center&#34;  style=&#34;border-radius: 5px;width: 80%; &#34;  /&gt;
+
+
+&lt;p&gt;During the competition, it was revealed to us that some of the flags leaked by organisers in this channel were actually real flags.&lt;/p&gt;
+
+  &lt;img src=&#34;./img/lmao.png&#34;  class=&#34;center&#34;  style=&#34;border-radius: 5px;width: 80%; &#34;  /&gt;
+
+
+&lt;p&gt;After realising this I scraped all messages from the channel, and used a script to try every message, unwrapped and wrapped with the flag format &lt;code&gt;cursedctf{}&lt;/code&gt; for every unsolved challenge. However, with a rate limit of around 1 submission every 3 seconds, it was quite slow.&lt;/p&gt;
+&lt;p&gt;Luckily for us, rate limiting was done per account. We had 9500 of them. So I simply modified my script to rotate through different auth tokens for each submission, making it much faster. Sadly, although it submitted around 15000 flags, none of them worked for challenges we haven&amp;rsquo;t already solved.&lt;/p&gt;
+&lt;p&gt;In total I&amp;rsquo;m aware of 2 challenges that had their actual flags leaked in this channel.&lt;/p&gt;
+
+  &lt;img src=&#34;./img/iceberg8.png&#34;  class=&#34;center&#34;  style=&#34;border-radius: 5px;width: 60%; &#34;  /&gt;
+
+
+&lt;h2 id=&#34;scuffed-challenges&#34;&gt;Scuffed challenges&lt;/h2&gt;
+&lt;p&gt;Although most challenges in this CTF are intentionally cursed, I wanted to point out a few funny ones.&lt;/p&gt;
+&lt;p&gt;This crypto challenges required you to sit through 32x 5 second ads, one for each encryption key. I wonder how much the challenge author made off this.&lt;/p&gt;
+
+  &lt;img src=&#34;./img/money.png&#34;  class=&#34;center&#34;  style=&#34;border-radius: 5px;width: 80%; &#34;  /&gt;
+
+
+&lt;p&gt;This one was pretty funny. You had to make an upload a youtuber apology video (don&amp;rsquo;t apologise) for flag sharing to get the flag. Props to my teammate &lt;a href=&#34;https://twitter.com/ss2342&#34;&gt;ss23&lt;/a&gt; for making &lt;a href=&#34;https://www.youtube.com/watch?v=pAchERXGxTU&#34;&gt;this amazing video&lt;/a&gt;.&lt;/p&gt;
+
+  &lt;img src=&#34;./img/apology.png&#34;  class=&#34;center&#34;  style=&#34;border-radius: 5px;width: 80%; &#34;  /&gt;
+
+
+&lt;p&gt;Over a third of the challenges were OSINT - a detriment to most CTF players. Huge thanks to my teammate &lt;a href=&#34;https://steamcommunity.com/id/apow/&#34;&gt;lokifer&lt;/a&gt; for solving most of these!&lt;/p&gt;
+
+  &lt;img src=&#34;./img/osint.png&#34;  class=&#34;center&#34;  style=&#34;border-radius: 5px;width: 60%; &#34;  /&gt;
+
+
+&lt;p&gt;Also note the 19 misc challenges. That&amp;rsquo;s right, half of the CTF weren&amp;rsquo;t even (real) challenges. I mean most of them aren&amp;rsquo;t anyways.&lt;/p&gt;
+
+  &lt;img src=&#34;./img/iceberg9.png&#34;  class=&#34;center&#34;  style=&#34;border-radius: 5px;width: 60%; &#34;  /&gt;
+
+
+&lt;p&gt;There were also assembly golfing challenges for leetcode challenges, where your code had to be shorter than the previous submission, and my team had some pretty cursed solutions for &lt;a href=&#34;./files/palindrome.asm&#34;&gt;palindrome_number&lt;/a&gt;, &lt;a href=&#34;./files/fizzbuzz.asm&#34;&gt;fizzbuzz&lt;/a&gt; and &lt;a href=&#34;./files/fizzbuzz.asm&#34;&gt;two_sum&lt;/a&gt;.&lt;/p&gt;
+&lt;h1 id=&#34;the-final-iceberg&#34;&gt;The Final Iceberg&lt;/h1&gt;
+
+  &lt;img src=&#34;./img/iceberg_final.png&#34;  class=&#34;center&#34;  style=&#34;border-radius: 5px;width: 60%; &#34;  /&gt;
+
+
+&lt;h1 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h1&gt;
+&lt;p&gt;This CTF was really fun due to the cursed nature of it. Huge thanks to my team for the effort they put in (there were actual non-troll hard challenges that they solved), and I&amp;rsquo;ll be looking forward to the (remote) finals!&lt;/p&gt;
+&lt;p&gt;Let me know what other cursed moments you experienced during the CTF, or for any questions/corrections: DM &lt;code&gt;thesavageteddy&lt;/code&gt; on discord, or &lt;a href=&#34;https://twitter.com/teddyctf&#34;&gt;&lt;code&gt;teddyctf&lt;/code&gt;&lt;/a&gt; on Twitter/X.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;teddy / TheSavageTeddy&lt;/li&gt;
+&lt;/ul&gt;
 </content>
     </item>
     

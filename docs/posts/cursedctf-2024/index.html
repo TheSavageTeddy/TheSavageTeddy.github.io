@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  
+  
+  
+  
+
+    <title>Bribery, Botting, and other Shenanigans - Cursed CTF 2024 :: teddyctf</title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="A summary of all the tomfoolery committed during this year&#39;s Cursed CTF." />
+<meta name="keywords" content="" />
+<meta name="robots" content="noodp" />
+<link rel="canonical" href="https://TheSavageTeddy.github.io/posts/cursedctf-2024/" />
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-J6PB683BSR"></script>
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-J6PB683BSR', { 'anonymize_ip': false });
+}
+</script>
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
+
+
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js" integrity="sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4" crossorigin="anonymous"></script>
+
+
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js" integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa" crossorigin="anonymous"
+    onload="renderMathInElement(document.body);"></script>
+
+
+
+
+
+  
+  
+  
+  
+  
+  <link rel="stylesheet" href="https://TheSavageTeddy.github.io/styles.css">
+
+
+
+
+
+
+
+  <link rel="shortcut icon" href="https://TheSavageTeddy.github.io/favicon.ico">
+
+
+
+<meta name="twitter:card" content="summary" />
+
+  
+    <meta name="twitter:site" content="teddyctf" />
+  
+    <meta name="twitter:creator" content="" />
+
+
+
+<meta property="og:locale" content="en" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Bribery, Botting, and other Shenanigans - Cursed CTF 2024">
+<meta property="og:description" content="A summary of all the tomfoolery committed during this year&#39;s Cursed CTF." />
+<meta property="og:url" content="https://TheSavageTeddy.github.io/posts/cursedctf-2024/" />
+<meta property="og:site_name" content="teddyctf" />
+
+  
+  
+    
+  
+  <meta property="og:image" content="https://TheSavageTeddy.github.io/posts/cursedctf-2024/iceberg_final.png">
+
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="627">
+
+  <meta property="article:section" content="CTF Writeups" />
+
+
+  <meta property="article:published_time" content="2024-04-01 06:43:20 &#43;0800 AWST" />
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body class="green">
+
+
+<div class="container center headings--one-size">
+
+  <header class="header">
+  <div class="header__inner" style="height: 34px;">
+    <img src="/images/teddypfp.jpg" style="max-height: 100%; max-width: 100%; display: block;">
+    <div class="header__logo">
+      <a href="/">
+  <div class="logo">
+    teddy / TheSavageTeddy
+  </div>
+</a>
+
+    </div>
+    
+      <ul class="menu menu--mobile">
+  <li class="menu__trigger">Menu&nbsp;▾</li>
+  <li>
+    <ul class="menu__dropdown">
+      
+        
+          <li><a href="/about">About</a></li>
+        
+      
+        
+          <li><a href="/contact">Contact</a></li>
+        
+      
+        
+          <li><a href="/featured">Featured Posts</a></li>
+        
+      
+        
+          <li><a href="/posts">Other Posts</a></li>
+        
+      
+      
+    </ul>
+  </li>
+</ul>
+
+    
+    
+  </div>
+  
+    <nav class="navigation-menu">
+  <ul class="navigation-menu__inner menu--desktop">
+    
+      
+        
+          
+            <li><a href="/about">About</a></li>
+          
+        
+      
+        
+          
+            <li><a href="/contact">Contact</a></li>
+          
+        
+      
+        
+          
+            <li><a href="/featured"><b>Featured Posts</b></a></li>
+          
+        
+      
+        
+          
+            <li><a href="/posts">Other Posts</a></li>
+          
+        
+      
+      
+    
+  </ul>
+</nav>
+
+  
+</header>
+
+
+  <div class="content">
+    
+<article class="post">
+  <h1 class="post-title">
+    <a href="https://TheSavageTeddy.github.io/posts/cursedctf-2024/"><img src="https://ctftime.org/media/cache/d4/3e/d43e49d7e659610363bc654d249b4bd3.png"  class="left"  style="border-radius: 5px; height: auto; width: 3em; display: inline; vertical-align: middle; "  /> Bribery, Botting, and other Shenanigans - Cursed CTF 2024</a>
+  </h1>
+  <div class="post-meta">
+    
+      <time class="post-date">
+        Apr 1, 2024 :: teddyctf
+        
+      </time>
+    
+    
+    
+  </div>
+
+  
+    <span class="post-tags">
+      
+      #<a href="https://TheSavageTeddy.github.io/tags/ctf/">ctf</a>&nbsp;
+      
+      #<a href="https://TheSavageTeddy.github.io/tags/cursed/">cursed</a>&nbsp;
+      
+      #<a href="https://TheSavageTeddy.github.io/tags/writeup/">writeup</a>&nbsp;
+      
+    </span>
+  
+  
+  <img src="/posts/cursedctf-2024/iceberg_final.png"
+    class="post-cover"
+    alt=" "
+    title="Cover Image" 
+    style="border: 1.5px solid #78E2A0; border-radius: 5px; padding: 0px; display:block; margin: auto; max-height: 40em; max-width: auto; " />
+
+
+  
+
+  <div class="post-content"><div>
+        <h1 id="overview">Overview<a href="#overview" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
+<p><a href="https://ctftime.org/event/2239">Cursed CTF Quals 2024</a> was a CTF designed to contain cursed things like most of the CTF being OSINT, unsolvable challenges, and other funny challenges.</p>
+<p>I played with the Oceania Merger team <a href="https://ctftime.org/team/280849"><code>joseph fan club</code></a> and we managed to secure first place without being disqualified!</p>
+<p>In this post, we will go through the funny moments of the event, and how we were able to win using <del>un</del>ethical strategies such as bribing organisers, making 10000 accounts for a stuffed cow, and much more. Enjoy!</p>
+
+  <img src="./img/scoreboard.png"  class="center"  style="border-radius: 5px;width: 90%; "  />
+
+
+<h1 id="the-iceberg-explained">The Iceberg Explained<a href="#the-iceberg-explained" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
+<p>We will use this iceberg, inspired by <a href="https://x.com/gf_256/status/1206393845497376768?s=20">cts</a>, to rank each funny/cursed moment of the CTF.</p>
+
+  <img src="./img/iceberg.png"  class="center"  style="border-radius: 5px;width: 70%; "  />
+
+
+<p>Each level of the iceberg is pretty self explanatory. Anything in the orange or below would probably cause some drama and/or banning in a normal CTF.</p>
+<p>Without further ado, here are all of the funny and cursed moments from Cursed CTF 2024!</p>
+<h2 id="login-button-covered">Login button covered<a href="#login-button-covered" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<p>To even login to the CTF, you had to get around the button which was covered by some animated sparkles.</p>
+
+  <img src="./img/covered_button.png"  class="center"  style="border-radius: 5px;width: 80%; "  />
+
+
+<p>It wasn&rsquo;t very hard to get around, just by inspect element deleting or adblocking etc. but there was actually a very small gap on top that you could click.</p>
+<p>There were also many random things floating around the page like My Little Pony, which was a bit annoying.</p>
+<p>Not too cursed, but a good start.</p>
+
+  <img src="./img/iceberg1.png"  class="center"  style="border-radius: 5px;width: 60%; "  />
+
+
+<h2 id="challenge-author-participation">Challenge author participation<a href="#challenge-author-participation" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<p>I actually authored a crypto challenge for this CTF, named <code>fuck-joseph</code>, and yet I was allowed to participate.</p>
+
+  <img src="./img/allowed_to_qual.png"  class="center"  style="border-radius: 5px;width: 80%; "  />
+
+
+<p>The challenge itself was quite simple - simply crack a 512 bit RSA modulus, and the flag is yours:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-py" data-lang="py"><span style="display:flex;"><span><span style="color:#f92672">from</span> Crypto.Util.number <span style="color:#f92672">import</span> <span style="color:#f92672">*</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> flag <span style="color:#f92672">import</span> flag
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>n <span style="color:#f92672">=</span> getPrime(<span style="color:#ae81ff">256</span>) <span style="color:#f92672">*</span> getPrime(<span style="color:#ae81ff">256</span>)
+</span></span><span style="display:flex;"><span>e <span style="color:#f92672">=</span> <span style="color:#ae81ff">0x10001</span>
+</span></span><span style="display:flex;"><span>print(n)
+</span></span><span style="display:flex;"><span>print(pow(bytes_to_long(flag), e, n))
+</span></span></code></pre></div><p>The intended solution was to <a href="https://github.com/eniac/faas">drop $100 on a cluster</a> to factor <code>n</code>, but since I made the challenge and had the flag, I just blooded it immediately after the CTF started.</p>
+
+  <img src="./img/own_chal_blood.png"  class="center"  style="border-radius: 5px;width: 80%; "  />
+
+
+<p>I should probably elaborate on the challenge name &ldquo;fuck joseph&rdquo;. <a href="https://twitter.com/josep68_">joseph</a> is a CTF player, who my main team (Emu Exploit) jokingly despises due to how good he is. The intended joke was to troll him with an &lsquo;unsolvable&rsquo; / pay to win crypto challenge for him to solve, as crypto is his specialty.</p>
+<p>This kind of backfired however as we decided to play in our <a href="https://ctftime.org/team/280849">Oceania Merger team</a>, which joseph was in, and now we had to solve the challenge.</p>
+<p>No hate to joseph btw, we are joseph fan club after all &lt;3</p>
+
+  <img src="./img/iceberg2.png"  class="center"  style="border-radius: 5px;width: 60%; "  />
+
+
+<h2 id="primes-uploaded-to-factordb">Primes uploaded to factordb<a href="#primes-uploaded-to-factordb" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<p>With my <code>fuck-joseph</code> challenge, I thought I was guaranteed around ~500 free points as not many would bother factoring a 512 bit number. However, it turns out someone uploaded the factors to <a href="http://factordb.com/">factordb</a>, resulting in &gt;30 solves.</p>
+
+  <img src="./img/fuck_joseph_solves.png"  class="center"  style="border-radius: 5px;width: 60%; "  />
+
+
+<p>I suspect <a href="https://twitter.com/0rganizers">0rganizers</a> to be the culprit, being the second solve. But I can&rsquo;t really be mad - it&rsquo;s a cursed CTF after all. Props to them for solving it legitimately, too.</p>
+
+  <img src="./img/iceberg3.png"  class="center"  style="border-radius: 5px;width: 60%; "  />
+
+
+<h2 id="registering-10000-accounts-for-a-cow-plushie">Registering 10000 accounts for a cow plushie<a href="#registering-10000-accounts-for-a-cow-plushie" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<p>There was a prize of a cute cow plushie for the median team on the scoreboard.</p>
+
+  <img src="./img/cow.png"  class="center"  style="border-radius: 5px;width: 30%; "  />
+
+
+<p>Originally, I didn&rsquo;t even know this prize existed, until organiser sky encouraged us to go for it.</p>
+
+  <img src="./img/cow_.png"  class="center"  style="border-radius: 5px;width: 80%; "  />
+
+
+<p>The idea behind &lsquo;account stuffing&rsquo; is that if you own more than 50% of the accounts on the scoreboard, and they all sit on the same number of points, one of the accounts is guaranteed to be the median.</p>
+<p>The previous contender, <a href="https://b01lers.com/">b01lers</a>, had already filled the scoreboard with around 1000 accounts. We figured that we can probably beat them, and devised a plan:</p>
+<ul>
+<li>Automatically register and verify as many accounts as possible</li>
+<li>When the time comes, use script to submit a flag for each account</li>
+</ul>
+<p>Our main trick was that accounts with 0 points didn&rsquo;t show up on the scoreboard, so no one would see our accounts until we started submitting flags for them.</p>
+<p>Huge thanks to <a href="https://hexf.me">HexF</a> who registered and verified almost 10000 accounts with his <a href="./files/reg-acct.py">script</a>.</p>
+<p>He was working on making a mail server specifically for catching verification emails, verifying them and storing the auth tokens for even faster account creation, until we were shut down&hellip;</p>
+<h3 id="registrations-disabled">Registrations disabled<a href="#registrations-disabled" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h3>
+<p>The admins eventually responded to our mass account creation by disabling registration, as it was costing them too much money.</p>
+
+  <img src="./img/registration_disabled.png"  class="center"  style="border-radius: 5px;width: 80%; "  />
+
+
+<p>By creating more than 10000 accounts, we cost the organisers over $20. Around 9500 of these accounts were successfully verified, meaning we owned around 85% of all registered accounts, and could flood the scoreboard at any time.</p>
+<h3 id="flooding-the-scoreboard">Flooding the scoreboard<a href="#flooding-the-scoreboard" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h3>
+<p>Originally, we wanted to be stealthy and start submitting flags for the accounts right before the CTF ended, but since registrations are now disabled and we owned most the accounts, it didn&rsquo;t really matter.</p>
+<p>I ran my <a href="./files/auto-submitter.py">script</a> to spam submit a flag for all ~9500 accounts, and watched the scoreboard fill with joseph fan clubs.</p>
+<p>The script finished after 30 minutes, and the scoreboard was 111 pages long, consisting of 11000 teams.</p>
+
+  <img src="./img/joseph_fan_clubs.png"  class="center"  style="border-radius: 5px;width: 60%; "  />
+
+
+<p>The challenge we chose to submit, Geoguessr5, ended up with 9600 solves.</p>
+
+  <img src="./img/osint_solves.png"  class="center"  style="border-radius: 5px;width: 60%; "  />
+
+
+<p>Not only did we cost the organisers $20 by registering 10000 accounts, we also cost them some additional shipping fee for living on the other side of the world.</p>
+
+  <img src="./img/fuck.png"  class="center"  style="border-radius: 5px;width: 60%; "  />
+
+
+<p>Some truely cursed stuff. I wonder if they will upload the entire scoreboard to CTFTime&hellip;</p>
+
+  <img src="./img/iceberg4.png"  class="center"  style="border-radius: 5px;width: 60%; "  />
+
+
+<h2 id="signups-as-a-service">Signups as a service<a href="#signups-as-a-service" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<p>With registrations disabled, some newcomers weren&rsquo;t able to play the CTF. <a href="https://twitter.com/emilyposting_">emily</a> decided it would be funny to distribute some of our 9500 accounts for people to use.</p>
+<p>As well as pasting some login links in the cursed CTF discord, she setup a website to provide accounts. Being a DUCTF organiser, she came up with the domain name <a href="https://logintocurse.duc.tf">logintocurse.duc.tf</a> which fit perfectly. Visitors would be redirected to a login link for one of our many accounts.</p>
+
+  <img src="./img/iceberg5.png"  class="center"  style="border-radius: 5px;width: 60%; "  />
+
+
+<h2 id="pay-to-win-challenges">Pay to Win challenges<a href="#pay-to-win-challenges" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<p>It wouldn&rsquo;t be a cursed CTF without some pay-to-win challenges. Thanks to <a href="https://twitter.com/emilyposting_">emily</a> for sacrificing $15.36 AUD for this flag.</p>
+
+  <img src="./img/discord_nitro.png"  class="center"  style="border-radius: 5px;width: 60%; "  />
+
+
+<p>Another chal, literally called paytowin, increased the flag&rsquo;s price by $1 after each purchase.</p>
+
+  <img src="./img/paytowin.png"  class="center"  style="border-radius: 5px;width: 60%; "  />
+
+
+<p>Thanks to <a href="https://twitter.com/toasterpwn">toasterpwn</a> for his sacrifice of $17 AUD ($11 USD).</p>
+
+  <img src="./img/usd.png"  class="center"  style="border-radius: 5px;width: 60%; "  />
+
+
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+
+  <img src="./img/iceberg6.png"  class="center"  style="border-radius: 5px;width: 60%; "  />
+
+
+<h2 id="trading-flags-with-organisers--bribery">Trading Flags with organisers / Bribery<a href="#trading-flags-with-organisers--bribery" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<p>Some of the challenges such as finding a kernel 0 day were straight up (almost) unsolvable. Therefore, <a href="https://twitter.com/toasterpwn">toasterpwn</a> took initiative and bribed sky with an EMU shirt for the flag and hints for another challenge.</p>
+
+  <img src="./img/toaster_trade.png"  class="center"  style="border-radius: 5px;width: 60%; "  />
+
+
+<p>This first trade set off a cascade of bribery and trading. There was a challenge named <code>free-flag</code> which (initially) gave a character of the flag every hour. Being impatient, we started to bribe admins for characters until <a href="https://twitter.com/nullableVoidPtr">avery</a> accepted <a href="https://twitter.com/takaradariku">takarada</a>&rsquo;s request for guest access to the private Emu Exploit discord in exchange for the flag.</p>
+
+  <img src="./img/ethical.png"  class="center"  style="border-radius: 5px;width: 60%; "  />
+
+
+
+  <img src="./img/takarada.png"  class="center"  style="border-radius: 5px;width: 60%; "  />
+
+
+
+  <img src="./img/ethical_.png"  class="center"  style="border-radius: 5px;width: 60%; "  />
+
+
+<p>This wasn&rsquo;t even takarada&rsquo;s challenge, and I had already previously bribed <a href="https://twitter.com/nootkroot">kroot</a>, the challenge author, to give us half the characters in exchange for the same thing. Too bad Emu Exploit&rsquo;s team captain toasterpwn wasn&rsquo;t online when I asked him for permission. He wasn&rsquo;t either when takarada joined, but avery (below: <a href="./img/cts_from_wish_dot_com.png">cts from wish.com</a>) ignored that.</p>
+
+  <img src="./img/bruh.png"  class="center"  style="border-radius: 5px;width: 80%; "  />
+
+
+
+  <img src="./img/outbribed.png"  class="center"  style="border-radius: 5px;width: 60%; "  />
+
+
+<p>Next, I again traded access to the Emu Exploit discord server with sky for the IDA Pro challenge.</p>
+
+  <img src="./img/teddy_trade.png"  class="center"  style="border-radius: 5px;width: 60%; "  />
+
+
+<p>The intended non-bribery solution was to <a href="./img/ida1.png">buy/give the IDA Pro subscription</a> which costs couple hundreds to thousands of dollars.</p>
+
+  <img src="./img/ida_pro_chal.png"  class="center"  style="border-radius: 5px;width: 60%; "  />
+
+
+<p>Funny that it was <a href="./img/ida4.png">announced we actually bought the license</a>, whereas it was just some <a href="./img/ida3.png">trolling</a>.</p>
+<p>The next day, instead of trading Emu related things, avery decided to <a href="https://twitter.com/nullableVoidPtr/status/1774656004619456826">initiate another trade</a> with sky, providing images of a manga book of a specific genre in exchange for a flag and a hint for another challenge.</p>
+
+  <img src="./img/avery_trade_2.png"  class="center"  style="border-radius: 5px;width: 40%; "  />
+
+
+
+  <img src="./img/funny_trade.png"  class="center"  style="border-radius: 5px;width: 90%; "  />
+
+
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+
+  <img src="./img/interesting_trade.png"  class="center"  style="border-radius: 5px;width: 90%; "  />
+
+
+<p>As we were nearing 69/99 flags submitted, we wanted a few more flags to get there. HexF traded some <a href="https://downunderctf.com/">DownUnderCTF</a> hardware infra schematics (not for challenges) for a few flags / hints, getting us up to the nice number.</p>
+
+  <img src="./img/hexf_trade.png"  class="center"  style="border-radius: 5px;width: 80%; "  />
+
+
+
+  <img src="./img/oops_leaked_a_flag.png"  class="center"  style="border-radius: 5px;width: 80%; "  />
+
+
+
+  <img src="./img/nice.png"  class="center"  style="border-radius: 5px;width: 60%; "  />
+
+
+<p><del>Nepotism</del> Trading all the way.</p>
+
+  <img src="./img/iceberg7.png"  class="center"  style="border-radius: 5px;width: 60%; "  />
+
+
+<h2 id="flags-leaked-on-discord-server">Flags leaked on Discord server<a href="#flags-leaked-on-discord-server" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<p>On the cursed CTF official discord, there was fittingly a channel named <code>#leaked-flags</code>.</p>
+
+  <img src="./img/leaked_flags_channel.png"  class="center"  style="border-radius: 5px;width: 80%; "  />
+
+
+<p>During the competition, it was revealed to us that some of the flags leaked by organisers in this channel were actually real flags.</p>
+
+  <img src="./img/lmao.png"  class="center"  style="border-radius: 5px;width: 80%; "  />
+
+
+<p>After realising this I scraped all messages from the channel, and used a script to try every message, unwrapped and wrapped with the flag format <code>cursedctf{}</code> for every unsolved challenge. However, with a rate limit of around 1 submission every 3 seconds, it was quite slow.</p>
+<p>Luckily for us, rate limiting was done per account. We had 9500 of them. So I simply modified my script to rotate through different auth tokens for each submission, making it much faster. Sadly, although it submitted around 15000 flags, none of them worked for challenges we haven&rsquo;t already solved.</p>
+<p>In total I&rsquo;m aware of 2 challenges that had their actual flags leaked in this channel.</p>
+
+  <img src="./img/iceberg8.png"  class="center"  style="border-radius: 5px;width: 60%; "  />
+
+
+<h2 id="scuffed-challenges">Scuffed challenges<a href="#scuffed-challenges" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<p>Although most challenges in this CTF are intentionally cursed, I wanted to point out a few funny ones.</p>
+<p>This crypto challenges required you to sit through 32x 5 second ads, one for each encryption key. I wonder how much the challenge author made off this.</p>
+
+  <img src="./img/money.png"  class="center"  style="border-radius: 5px;width: 80%; "  />
+
+
+<p>This one was pretty funny. You had to make an upload a youtuber apology video (don&rsquo;t apologise) for flag sharing to get the flag. Props to my teammate <a href="https://twitter.com/ss2342">ss23</a> for making <a href="https://www.youtube.com/watch?v=pAchERXGxTU">this amazing video</a>.</p>
+
+  <img src="./img/apology.png"  class="center"  style="border-radius: 5px;width: 80%; "  />
+
+
+<p>Over a third of the challenges were OSINT - a detriment to most CTF players. Huge thanks to my teammate <a href="https://steamcommunity.com/id/apow/">lokifer</a> for solving most of these!</p>
+
+  <img src="./img/osint.png"  class="center"  style="border-radius: 5px;width: 60%; "  />
+
+
+<p>Also note the 19 misc challenges. That&rsquo;s right, half of the CTF weren&rsquo;t even (real) challenges. I mean most of them aren&rsquo;t anyways.</p>
+
+  <img src="./img/iceberg9.png"  class="center"  style="border-radius: 5px;width: 60%; "  />
+
+
+<p>There were also assembly golfing challenges for leetcode challenges, where your code had to be shorter than the previous submission, and my team had some pretty cursed solutions for <a href="./files/palindrome.asm">palindrome_number</a>, <a href="./files/fizzbuzz.asm">fizzbuzz</a> and <a href="./files/fizzbuzz.asm">two_sum</a>.</p>
+<h1 id="the-final-iceberg">The Final Iceberg<a href="#the-final-iceberg" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
+
+  <img src="./img/iceberg_final.png"  class="center"  style="border-radius: 5px;width: 60%; "  />
+
+
+<h1 id="conclusion">Conclusion<a href="#conclusion" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
+<p>This CTF was really fun due to the cursed nature of it. Huge thanks to my team for the effort they put in (there were actual non-troll hard challenges that they solved), and I&rsquo;ll be looking forward to the (remote) finals!</p>
+<p>Let me know what other cursed moments you experienced during the CTF, or for any questions/corrections: DM <code>thesavageteddy</code> on discord, or <a href="https://twitter.com/teddyctf"><code>teddyctf</code></a> on Twitter/X.</p>
+<ul>
+<li>teddy / TheSavageTeddy</li>
+</ul>
+
+      </div></div>
+
+  
+
+  
+    
+
+  
+</article>
+
+  </div>
+
+  
+    <footer class="footer">
+  <div class="footer__inner">
+    
+      <div class="copyright copyright--user">
+        <span>teddyctf</span>
+    
+      <span>:: <a href="https://github.com/panr/hugo-theme-terminal" target="_blank">Theme</a> made by <a href="https://github.com/panr" target="_blank">panr</a></span>
+      </div>
+  </div>
+</footer>
+
+
+
+
+
+
+<script type="text/javascript" src="/bundle.min.js"></script>
+
+
+
+
+
+  
+</div>
+
+</body>
+</html>

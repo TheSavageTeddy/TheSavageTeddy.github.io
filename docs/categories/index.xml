@@ -7,7 +7,17 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>teddyctf</copyright>
-    <lastBuildDate>Tue, 13 Feb 2024 18:10:00 +0800</lastBuildDate><atom:link href="https://TheSavageTeddy.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 01 Apr 2024 06:43:20 +0800</lastBuildDate><atom:link href="https://TheSavageTeddy.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>CTF Writeups</title>
+      <link>https://TheSavageTeddy.github.io/categories/ctf-writeups/</link>
+      <pubDate>Mon, 01 Apr 2024 06:43:20 +0800</pubDate>
+      
+      <guid>https://TheSavageTeddy.github.io/categories/ctf-writeups/</guid>
+      <description></description>
+      <content></content>
+    </item>
+    
     <item>
       <title>web3</title>
       <link>https://TheSavageTeddy.github.io/categories/web3/</link>
@@ -34,16 +44,6 @@
       <pubDate>Sun, 01 Oct 2023 00:06:40 +0800</pubDate>
       
       <guid>https://TheSavageTeddy.github.io/categories/crypto/</guid>
-      <description></description>
-      <content></content>
-    </item>
-    
-    <item>
-      <title>CTF Writeups</title>
-      <link>https://TheSavageTeddy.github.io/categories/ctf-writeups/</link>
-      <pubDate>Sun, 01 Oct 2023 00:06:40 +0800</pubDate>
-      
-      <guid>https://TheSavageTeddy.github.io/categories/ctf-writeups/</guid>
       <description></description>
       <content></content>
     </item>

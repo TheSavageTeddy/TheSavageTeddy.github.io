@@ -1,0 +1,110 @@
+BITS 64
+
+start:
+    ; mov ecx, 0x20000000
+    inc ecx
+    shl ecx, 29
+    mov eax, [ecx]
+
+    inc edx
+    shl edx, 28
+    add ecx, edx
+    xor edx, edx
+
+    mov ebx, 173
+    div ebx
+
+    xor ebx, ebx
+
+loop:
+    mov al, [5*ebx+0x10000000+table]
+    inc bl
+    cmp al, dl
+    jne loop
+
+    dec bl
+
+    mov eax, [5*ebx+1+0x10000000+table]
+    mov dl, al
+    and dl, 0b00001111
+    xor dl, 0x30
+    mov [ecx+0], dl
+    shr eax, 4
+    mov dl, al
+    and dl, 0b00001111
+    xor dl, 0x30
+    mov [ecx+1], dl
+    shr eax, 4
+    mov dl, al
+    and dl, 0b00001111
+    xor dl, 0x30
+    mov [ecx+2], dl
+    shr eax, 4
+    mov dl, al
+    and dl, 0b00001111
+    xor dl, 0x30
+    mov [ecx+3], dl
+    shr eax, 4
+
+    mov BYTE [ecx+4], 0x0a
+
+    mov dl, al
+    and dl, 0b00001111
+    xor dl, 0x30
+    mov [ecx+5], dl
+    shr eax, 4
+    mov dl, al
+    and dl, 0b00001111
+    xor dl, 0x30
+    mov [ecx+6], dl
+    shr eax, 4
+    mov dl, al
+    and dl, 0b00001111
+    xor dl, 0x30
+    mov [ecx+7], dl
+    shr eax, 4
+    mov dl, al
+    and dl, 0b00001111
+    xor dl, 0x30
+    mov [ecx+8], dl
+    shr eax, 4
+
+    mov BYTE [ecx+9], 0x0a
+
+    jmp end
+
+table:
+    db 159, 0x80, 0x08, 0x16, 0x53 ; 880, 6135
+    db  16, 0x52, 0x93, 0x53, 0x55 ; 2539, 3555
+    db 105, 0x51, 0x02, 0x35, 0x80 ; 1520, 5308
+    db  10, 0x61, 0x18, 0x82, 0x30 ; 1681, 2803
+    db  58, 0x30, 0x02, 0x61, 0x74 ; 320, 1647
+    db 145, 0x65, 0x45, 0x46, 0x10 ; 5654, 6401
+    db 114, 0x90, 0x80, 0x41, 0x54 ; 908, 1445
+    db 119, 0x80, 0x70, 0x46, 0x63 ; 807, 6436
+    db  34, 0x81, 0x46, 0x13, 0x07 ; 1864, 3170
+    db 158, 0x00, 0x81, 0x00, 0x12 ; 18, 21
+    db 100, 0x20, 0x52, 0x22, 0x66 ; 225, 2266
+    db  19, 0x82, 0x81, 0x76, 0x37 ; 2818, 6773
+    db  23, 0x70, 0x60, 0x94, 0x16 ; 706, 4961
+    db  87, 0x42, 0x65, 0x62, 0x75 ; 2456, 2657
+    db  29, 0x30, 0x01, 0x40, 0x46 ; 310, 464
+    db  64, 0x20, 0x13, 0x40, 0x70 ; 231, 407
+    db  96, 0x54, 0x93, 0x45, 0x04 ; 4539, 5440
+    db 157, 0x80, 0x22, 0x23, 0x81 ; 822, 3218
+    db  45, 0x63, 0x41, 0x24, 0x22 ; 3614, 4222
+    db 118, 0x70, 0x95, 0x22, 0x10 ; 759, 2201
+    db  97, 0x70, 0x56, 0x80, 0x35 ; 765, 853
+    db  56, 0x92, 0x14, 0x33, 0x21 ; 2941, 3312
+    db  32, 0x51, 0x94, 0x46, 0x73 ; 1549, 6437
+    db  74, 0x11, 0x30, 0x35, 0x04 ; 1103, 5340
+    db 143, 0x20, 0x81, 0x90, 0x81 ; 218, 918
+    db  99, 0x51, 0x84, 0x86, 0x91 ; 1548, 6819
+    db  92, 0x60, 0x34, 0x51, 0x52 ; 643, 1525
+    db   4, 0x61, 0x31, 0x72, 0x55 ; 1613, 2755
+    db  40, 0x00, 0x91, 0x41, 0x63 ; 19, 1436
+    db  30, 0x11, 0x32, 0x91, 0x15 ; 1123, 1951
+
+end:
+    xor eax, eax
+    mov al, 10
