@@ -79,7 +79,10 @@ With my `fuck-joseph` challenge, I thought I was guaranteed around ~500 free poi
 
 {{< image src="./img/fuck_joseph_solves.png" alt="" position="center" style="border-radius: 5px;width: 60%; " >}}
 
+{{< image src="./img/iceberg.png" alt="" position="center" style="border-radius: 5px;width: 70%; " >}}
 I suspect [0rganizers](https://twitter.com/0rganizers) to be the culprit, being the second solve. But I can't really be mad - it's a cursed CTF after all. Props to them for solving it legitimately, too.
+
+*Edit: it was [actually a organiser](./img/nahhh.png), but they also solved it legitimately lol*
 
 {{< image src="./img/iceberg3.png" alt="" position="center" style="border-radius: 5px;width: 60%; " >}}
 
