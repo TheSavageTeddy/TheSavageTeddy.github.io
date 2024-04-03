@@ -136,6 +136,8 @@ Not only did we cost the organisers $20 by registering 10000 accounts, we also c
 
 Some truely cursed stuff. I wonder if they will upload the entire scoreboard to CTFTime...
 
+*Edit: [they actually did it](https://ctftime.org/event/2239)*
+
 {{< image src="./img/iceberg4.png" alt="" position="center" style="border-radius: 5px;width: 60%; " >}}
 
 ## Signups as a service
