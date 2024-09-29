@@ -147,8 +147,8 @@ else:
 
 
   &lt;div class=&#34;collapsable-code&#34;&gt;
-    &lt;input id=&#34;639728145&#34; type=&#34;checkbox&#34; checked /&gt;
-    &lt;label for=&#34;639728145&#34;&gt;
+    &lt;input id=&#34;682197534&#34; type=&#34;checkbox&#34; checked /&gt;
+    &lt;label for=&#34;682197534&#34;&gt;
       &lt;span class=&#34;collapsable-code__language&#34;&gt;text&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__title&#34;&gt;out.txt&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__toggle&#34; data-label-expand=&#34;Show&#34; data-label-collapse=&#34;Hide&#34;&gt;&lt;/span&gt;
@@ -221,8 +221,8 @@ print(f&amp;#34;{flag = }&amp;#34;)
 
 
   &lt;div class=&#34;collapsable-code&#34;&gt;
-    &lt;input id=&#34;948736512&#34; type=&#34;checkbox&#34; checked /&gt;
-    &lt;label for=&#34;948736512&#34;&gt;
+    &lt;input id=&#34;198463275&#34; type=&#34;checkbox&#34; checked /&gt;
+    &lt;label for=&#34;198463275&#34;&gt;
       &lt;span class=&#34;collapsable-code__language&#34;&gt;python&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__title&#34;&gt;server.py&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__toggle&#34; data-label-expand=&#34;Show&#34; data-label-collapse=&#34;Hide&#34;&gt;&lt;/span&gt;
@@ -389,8 +389,8 @@ if __name__ == &amp;#34;__main__&amp;#34;:
 
 
   &lt;div class=&#34;collapsable-code&#34;&gt;
-    &lt;input id=&#34;938471652&#34; type=&#34;checkbox&#34; checked /&gt;
-    &lt;label for=&#34;938471652&#34;&gt;
+    &lt;input id=&#34;869173425&#34; type=&#34;checkbox&#34; checked /&gt;
+    &lt;label for=&#34;869173425&#34;&gt;
       &lt;span class=&#34;collapsable-code__language&#34;&gt;python&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__title&#34;&gt;get_pw_chars.py&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__toggle&#34; data-label-expand=&#34;Show&#34; data-label-collapse=&#34;Hide&#34;&gt;&lt;/span&gt;
@@ -438,8 +438,8 @@ print(f&amp;#34;{pw_chars = }&amp;#34;)
 
 
   &lt;div class=&#34;collapsable-code&#34;&gt;
-    &lt;input id=&#34;538912647&#34; type=&#34;checkbox&#34; checked /&gt;
-    &lt;label for=&#34;538912647&#34;&gt;
+    &lt;input id=&#34;375196824&#34; type=&#34;checkbox&#34; checked /&gt;
+    &lt;label for=&#34;375196824&#34;&gt;
       &lt;span class=&#34;collapsable-code__language&#34;&gt;python&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__title&#34;&gt;get_flag.py&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__toggle&#34; data-label-expand=&#34;Show&#34; data-label-collapse=&#34;Hide&#34;&gt;&lt;/span&gt;
@@ -489,8 +489,8 @@ r.interactive()
 
 
   &lt;div class=&#34;collapsable-code&#34;&gt;
-    &lt;input id=&#34;789216453&#34; type=&#34;checkbox&#34; checked /&gt;
-    &lt;label for=&#34;789216453&#34;&gt;
+    &lt;input id=&#34;348591627&#34; type=&#34;checkbox&#34; checked /&gt;
+    &lt;label for=&#34;348591627&#34;&gt;
       &lt;span class=&#34;collapsable-code__language&#34;&gt;python&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__title&#34;&gt;generate_signatures.py&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__toggle&#34; data-label-expand=&#34;Show&#34; data-label-collapse=&#34;Hide&#34;&gt;&lt;/span&gt;
@@ -566,8 +566,8 @@ with open(&amp;#34;out.json&amp;#34;, &amp;#34;w&amp;#34;) as g:
 
 
   &lt;div class=&#34;collapsable-code&#34;&gt;
-    &lt;input id=&#34;941785263&#34; type=&#34;checkbox&#34; checked /&gt;
-    &lt;label for=&#34;941785263&#34;&gt;
+    &lt;input id=&#34;821475639&#34; type=&#34;checkbox&#34; checked /&gt;
+    &lt;label for=&#34;821475639&#34;&gt;
       &lt;span class=&#34;collapsable-code__language&#34;&gt;json&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__title&#34;&gt;out.json&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__toggle&#34; data-label-expand=&#34;Show&#34; data-label-collapse=&#34;Hide&#34;&gt;&lt;/span&gt;
@@ -631,8 +631,8 @@ $$&lt;/p&gt;
 
 
   &lt;div class=&#34;collapsable-code&#34;&gt;
-    &lt;input id=&#34;812753469&#34; type=&#34;checkbox&#34; checked /&gt;
-    &lt;label for=&#34;812753469&#34;&gt;
+    &lt;input id=&#34;725384916&#34; type=&#34;checkbox&#34; checked /&gt;
+    &lt;label for=&#34;725384916&#34;&gt;
       &lt;span class=&#34;collapsable-code__language&#34;&gt;python&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__title&#34;&gt;code.py&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__toggle&#34; data-label-expand=&#34;Show&#34; data-label-collapse=&#34;Hide&#34;&gt;&lt;/span&gt;
@@ -740,8 +740,8 @@ print(f&amp;#34;{flag = }&amp;#34;)
 
 
   &lt;div class=&#34;collapsable-code&#34;&gt;
-    &lt;input id=&#34;543192876&#34; type=&#34;checkbox&#34; checked /&gt;
-    &lt;label for=&#34;543192876&#34;&gt;
+    &lt;input id=&#34;297165834&#34; type=&#34;checkbox&#34; checked /&gt;
+    &lt;label for=&#34;297165834&#34;&gt;
       &lt;span class=&#34;collapsable-code__language&#34;&gt;python&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__title&#34;&gt;client.py&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__toggle&#34; data-label-expand=&#34;Show&#34; data-label-collapse=&#34;Hide&#34;&gt;&lt;/span&gt;
@@ -970,8 +970,8 @@ if __name__ == &amp;#34;__main__&amp;#34;:
 
 
   &lt;div class=&#34;collapsable-code&#34;&gt;
-    &lt;input id=&#34;659187432&#34; type=&#34;checkbox&#34; checked /&gt;
-    &lt;label for=&#34;659187432&#34;&gt;
+    &lt;input id=&#34;629781354&#34; type=&#34;checkbox&#34; checked /&gt;
+    &lt;label for=&#34;629781354&#34;&gt;
       &lt;span class=&#34;collapsable-code__language&#34;&gt;python&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__title&#34;&gt;server.py&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__toggle&#34; data-label-expand=&#34;Show&#34; data-label-collapse=&#34;Hide&#34;&gt;&lt;/span&gt;
@@ -1323,8 +1323,8 @@ if __name__ == &amp;#34;__main__&amp;#34;:
 
 
   &lt;div class=&#34;collapsable-code&#34;&gt;
-    &lt;input id=&#34;178439625&#34; type=&#34;checkbox&#34; checked /&gt;
-    &lt;label for=&#34;178439625&#34;&gt;
+    &lt;input id=&#34;972384156&#34; type=&#34;checkbox&#34; checked /&gt;
+    &lt;label for=&#34;972384156&#34;&gt;
       &lt;span class=&#34;collapsable-code__language&#34;&gt;proto&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__title&#34;&gt;server.proto&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__toggle&#34; data-label-expand=&#34;Show&#34; data-label-collapse=&#34;Hide&#34;&gt;&lt;/span&gt;
@@ -1422,7 +1422,7 @@ message MessageResponse {
 &lt;li&gt;To login, there are two steps.
 &lt;ul&gt;
 &lt;li&gt;Firstly, the server generates a random challenge and public key, and sends it to us.&lt;/li&gt;
-&lt;li&gt;Then we must sign the challenge with our public key and send the signature to the server, which checks if the signature is valid. If so, the server generates calculates a shared secret with its private key and our public key. The server then stores our info (shared secret, role, uid, session id) in a &lt;code&gt;token&lt;/code&gt;, and sends us our session id.&lt;/li&gt;
+&lt;li&gt;Then we must sign the challenge with our public key and send the signature to the server, which checks if the signature is valid. If so, the server calculates the shared secret with its private key and our public key. The server then stores our info (shared secret, role, uid, session id) in a &lt;code&gt;token&lt;/code&gt;, and sends us our session id.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;We can also request a message, providing a session id. The server retrieves the token corresponding to our session, and checks if we have the admin role. If we do, we get the flag.&lt;/li&gt;
@@ -1493,8 +1493,8 @@ message MessageResponse {
 
 
   &lt;div class=&#34;collapsable-code&#34;&gt;
-    &lt;input id=&#34;512367984&#34; type=&#34;checkbox&#34; checked /&gt;
-    &lt;label for=&#34;512367984&#34;&gt;
+    &lt;input id=&#34;735682941&#34; type=&#34;checkbox&#34; checked /&gt;
+    &lt;label for=&#34;735682941&#34;&gt;
       &lt;span class=&#34;collapsable-code__language&#34;&gt;python&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__title&#34;&gt;remote_brute.py&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__toggle&#34; data-label-expand=&#34;Show&#34; data-label-collapse=&#34;Hide&#34;&gt;&lt;/span&gt;
@@ -1751,8 +1751,8 @@ if __name__ == &amp;#34;__main__&amp;#34;:
 
 
   &lt;div class=&#34;collapsable-code&#34;&gt;
-    &lt;input id=&#34;349526718&#34; type=&#34;checkbox&#34; checked /&gt;
-    &lt;label for=&#34;349526718&#34;&gt;
+    &lt;input id=&#34;725439618&#34; type=&#34;checkbox&#34; checked /&gt;
+    &lt;label for=&#34;725439618&#34;&gt;
       &lt;span class=&#34;collapsable-code__language&#34;&gt;python&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__title&#34;&gt;code.py&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__toggle&#34; data-label-expand=&#34;Show&#34; data-label-collapse=&#34;Hide&#34;&gt;&lt;/span&gt;

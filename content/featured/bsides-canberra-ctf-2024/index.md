@@ -1297,7 +1297,7 @@ There's a lot of code to go through, but I'll try to explain the relevant parts:
 - To register, the client provides a public key, which must be on the NIST256p curve, then the public key is stored alongside their user id (`uid`), name and role.
 - To login, there are two steps.
     - Firstly, the server generates a random challenge and public key, and sends it to us. 
-    - Then we must sign the challenge with our public key and send the signature to the server, which checks if the signature is valid. If so, the server generates calculates a shared secret with its private key and our public key. The server then stores our info (shared secret, role, uid, session id) in a `token`, and sends us our session id.
+    - Then we must sign the challenge with our public key and send the signature to the server, which checks if the signature is valid. If so, the server calculates the shared secret with its private key and our public key. The server then stores our info (shared secret, role, uid, session id) in a `token`, and sends us our session id.
 - We can also request a message, providing a session id. The server retrieves the token corresponding to our session, and checks if we have the admin role. If we do, we get the flag.
 
 I don't think there's anything wrong with the procedures described above, but I noticed our info was being stored in the token in a very bad way:
