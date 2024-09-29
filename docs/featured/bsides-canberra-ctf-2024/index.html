@@ -1,0 +1,2306 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  
+
+  
+  
+  
+
+  <title>Crypto Writeups - BSides Canberra CTF 2024 :: teddyctf</title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Writeups for crypto(graphy) challenges from BSides Canberra CTF 2024!" />
+<meta name="keywords" content="" />
+<meta name="robots" content="noodp" />
+<link rel="canonical" href="https://TheSavageTeddy.github.io/featured/bsides-canberra-ctf-2024/" />
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-J6PB683BSR"></script>
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-J6PB683BSR', { 'anonymize_ip': false });
+}
+</script>
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"
+    integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
+
+
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js"
+    integrity="sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4"
+    crossorigin="anonymous"></script>
+
+
+
+
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js"
+    integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa" crossorigin="anonymous"
+    onload="renderMathInElement(document.body, { delimiters: [{left: '$$', right: '$$', display: true}, {left: '\$', right: '\$', display: false}] });">
+    </script>
+
+
+
+
+  
+  
+  
+  
+  
+  <link rel="stylesheet" href="https://TheSavageTeddy.github.io/styles.css">
+
+
+
+
+
+
+
+  <link rel="shortcut icon" href="https://TheSavageTeddy.github.io/favicon.ico">
+
+
+
+<meta name="twitter:card" content="summary" />
+
+  
+    <meta name="twitter:site" content="teddyctf" />
+  
+    <meta name="twitter:creator" content="" />
+
+
+
+<meta property="og:locale" content="en" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Crypto Writeups - BSides Canberra CTF 2024">
+<meta property="og:description" content="Writeups for crypto(graphy) challenges from BSides Canberra CTF 2024!" />
+<meta property="og:url" content="https://TheSavageTeddy.github.io/featured/bsides-canberra-ctf-2024/" />
+<meta property="og:site_name" content="teddyctf" />
+
+  
+  
+    
+  
+  <meta property="og:image" content="https://TheSavageTeddy.github.io/featured/bsides-canberra-ctf-2024/big_cardboard_again.JPG">
+
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="627">
+
+  <meta property="article:section" content="CTF Writeups" />
+
+  <meta property="article:section" content="writeups" />
+
+  <meta property="article:section" content="crypto" />
+
+  <meta property="article:section" content="onsite" />
+
+
+  <meta property="article:published_time" content="2024-09-28 15:53:20 &#43;0800 AWST" />
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body class="green">
+  
+
+  <div class="container center headings--one-size">
+
+    <header class="header">
+  <div class="header__inner" style="height: 34px;">
+    <img src="/images/teddypfp.jpg" style="max-height: 100%; max-width: 100%; display: block;">
+    <div class="header__logo">
+      <a href="/">
+  <div class="logo">
+    teddy / TheSavageTeddy
+  </div>
+</a>
+
+    </div>
+    
+      <ul class="menu menu--mobile">
+  <li class="menu__trigger">Menu&nbsp;▾</li>
+  <li>
+    <ul class="menu__dropdown">
+      
+        
+          <li><a href="/about">About</a></li>
+        
+      
+        
+          <li><a href="/contact">Contact</a></li>
+        
+      
+        
+          <li><a href="/featured">Featured Posts</a></li>
+        
+      
+        
+          <li><a href="/posts">Other Posts</a></li>
+        
+      
+      
+    </ul>
+  </li>
+</ul>
+
+    
+    
+  </div>
+  
+    <nav class="navigation-menu">
+  <ul class="navigation-menu__inner menu--desktop">
+    
+      
+        
+          
+            <li><a href="/about">About</a></li>
+          
+        
+      
+        
+          
+            <li><a href="/contact">Contact</a></li>
+          
+        
+      
+        
+          
+            <li><a href="/featured"><b>Featured Posts</b></a></li>
+          
+        
+      
+        
+          
+            <li><a href="/posts">Other Posts</a></li>
+          
+        
+      
+      
+    
+  </ul>
+</nav>
+
+  
+</header>
+
+
+    <div class="content">
+      
+<article class="post">
+  <h1 class="post-title">
+    <a href="https://TheSavageTeddy.github.io/featured/bsides-canberra-ctf-2024/"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTU3wnWUBGZpKQpVQNHk11hVTzAa-0mrs7sbQ&amp;s"  class="left"  style="border-radius: 5px; height: auto; width: 3em; display: inline; vertical-align: middle; "  /> Crypto Writeups - BSides Canberra CTF 2024</a>
+  </h1>
+  <div class="post-meta">
+    
+      <time class="post-date">
+        Sep 28, 2024 :: teddyctf
+        
+      </time>
+    
+    
+    
+  </div>
+
+  
+    <span class="post-tags">
+      
+      #<a href="https://TheSavageTeddy.github.io/tags/ctf/">ctf</a>&nbsp;
+      
+      #<a href="https://TheSavageTeddy.github.io/tags/crypto/">crypto</a>&nbsp;
+      
+      #<a href="https://TheSavageTeddy.github.io/tags/cryptography/">cryptography</a>&nbsp;
+      
+      #<a href="https://TheSavageTeddy.github.io/tags/writeup/">writeup</a>&nbsp;
+      
+      #<a href="https://TheSavageTeddy.github.io/tags/onsite/">onsite</a>&nbsp;
+      
+      #<a href="https://TheSavageTeddy.github.io/tags/bsides/">bsides</a>&nbsp;
+      
+    </span>
+  
+  
+  <img src="/featured/bsides-canberra-ctf-2024/big_cardboard_again.JPG"
+    class="post-cover"
+    alt=" "
+    title="Cover Image" 
+    style="border: 1.5px solid #78E2A0; border-radius: 5px; padding: 0px; display:block; margin: auto; max-height: 40em; max-width: auto; " />
+
+
+  
+
+  <div class="post-content"><div>
+        <h1 id="overview">Overview<a href="#overview" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
+<p>Last week I went to BSides Canberra 2024 to see the amazing talks, meet people, and of course, play CTF. After 2 days of solving interesting challenges, my team <a href="https://x.com/EmuExploit">Emu Exploit</a> managed to get 2nd place overall!</p>
+
+  <img src="./img/scoreboard.png"  class="center"  style="border-radius: 5px; width: 100%"  />
+
+
+<p>I was basically the only person in the team who was willing to do crypto :&lt; so I decided to write up the crypto challenges I solved. Enjoy!</p>
+<h1 id="challenges-overview">Challenges Overview<a href="#challenges-overview" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
+<table>
+<thead>
+<tr>
+<th><strong>Challenge</strong></th>
+<th><strong>Category</strong></th>
+<th><strong>Solves</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="#discrete-add-a-rithm---43-solves">Discrete Add-a-rithm</a></td>
+<td>crypto</td>
+<td>43</td>
+</tr>
+<tr>
+<td><a href="#psionic---10-solves">Psionic</a></td>
+<td>crypto</td>
+<td>10</td>
+</tr>
+<tr>
+<td><a href="#public-service---8-solves">Public Service</a></td>
+<td>crypto</td>
+<td>8</td>
+</tr>
+<tr>
+<td><a href="#arpeeceethree---3-solves">arpeeceethree</a></td>
+<td>crypto</td>
+<td>3</td>
+</tr>
+</tbody>
+</table>
+<h1 id="discrete-add-a-rithm---43-solves">Discrete Add-a-rithm - 43 solves<a href="#discrete-add-a-rithm---43-solves" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
+<blockquote>
+<p>You enter a room. On the wall is a large tapestry showing two people exchanging gifts. What could it mean?</p>
+</blockquote>
+<p>We are provided with two files, <code>discreteAddarithm.py</code> and <code>out.txt</code></p>
+
+
+
+  <div class="collapsable-code">
+    <input id="1" type="checkbox" checked />
+    <label for="1">
+      <span class="collapsable-code__language">python</span>
+      <span class="collapsable-code__title">discreteAddarithm.py</span>
+      <span class="collapsable-code__toggle" data-label-expand="Show" data-label-collapse="Hide"></span>
+    </label>
+    <pre class="language-python" ><code>
+#!/usr/bin/python3
+
+from Crypto.Util.number import long_to_bytes, bytes_to_long
+from Crypto.Util.number import getPrime, getRandomInteger, getRandomRange
+from Crypto.Protocol.KDF import HKDF
+import Crypto.Hash.SHA512 as sha512
+import Crypto.Cipher.AES as aes
+from Crypto.Util.Padding import pad, unpad
+from binascii import * 
+from cybearssecrets import flag
+
+def generateParameters(bitlen=1024):
+	p = getPrime(bitlen)
+	gen = getRandomRange(2,p-1)
+	return gen, p
+
+def generateKeyPair(p, gen):
+	privateKey = getRandomRange(2,p-1)
+	publicKey = privateKey*gen % p
+	return privateKey, publicKey
+
+def generateSharedSecret(p, recipientPrivateKey, senderPublicKey):
+	sharedSecret = recipientPrivateKey*senderPublicKey % p
+	return sharedSecret
+
+## Init
+gen, p = generateParameters()
+print(&#34;gen = {}&#34;.format(gen))
+print(&#34;p = {}&#34;.format(p))
+
+## A: Alice generates her pub/priv key pair
+aPrivateKey, aPublicKey = generateKeyPair(p, gen)
+
+## B: Bob generates his pub/priv key pair
+bPrivateKey, bPublicKey = generateKeyPair(p, gen)
+
+## A: Alice sends Bob her public key
+print(&#34;aPublicKey = {}&#34;.format(aPublicKey))
+
+## B: Bob sends Alice his public key
+print(&#34;bPublicKey = {}&#34;.format(bPublicKey))
+
+## A: Alice caluculates the shared secret
+aSharedSecret = generateSharedSecret(p, aPrivateKey, bPublicKey)
+
+## B: Bob caluculates the shared secret
+bSharedSecret = generateSharedSecret(p, bPrivateKey, aPublicKey)
+
+## Prove that they match
+assert(aSharedSecret == bSharedSecret)
+
+## A: Alice encrypts a message to Bob
+aSessionKey, aIV = HKDF(long_to_bytes(aSharedSecret), 16, b&#39;cybears2024&#39;, sha512, num_keys=2)
+a = aes.new(aSessionKey, aes.MODE_CBC, iv=aIV)
+aCipher = a.encrypt(pad(flag,16))
+
+print(&#34;aCipher = {}&#34;.format(hexlify(aCipher)))
+
+## B: Bob decrypts the message
+bSessionKey, bIV = HKDF(long_to_bytes(bSharedSecret), 16, b&#39;cybears2024&#39;, sha512, num_keys=2)
+b = aes.new(bSessionKey, aes.MODE_CBC, iv=bIV)
+bPlain = unpad(b.decrypt(aCipher), 16)
+
+if (bPlain == flag):
+	print(&#34;Successful decryption!&#34;) 
+else:
+	print(&#34;Error - something went wrong&#34;)
+</code></pre>
+  </div>
+
+
+
+
+
+  <div class="collapsable-code">
+    <input id="493165827" type="checkbox" checked />
+    <label for="493165827">
+      <span class="collapsable-code__language">text</span>
+      <span class="collapsable-code__title">out.txt</span>
+      <span class="collapsable-code__toggle" data-label-expand="Show" data-label-collapse="Hide"></span>
+    </label>
+    <pre class="language-text" ><code>
+gen = 107665309954437515284050955368964848368303288172119448977068684165707548536106035934408882308704533335892101447750709116199826328820028967921540045634698373851938861013761725712688725891129665455073194344098566187055873775659411023106521425479072045658166413360399757570409372209072730576562842193768242314124
+p = 154305601419430130125267211117098923915333624355567046250094074039674228187186943601303157833374662739969026864299363336407319080223107540886546467388611809417774875857578639486137855088896821184616399750557477866148643263803196632154429856293530179926011705130915364080130059881980341409627009701357523451267
+aPublicKey = 80354936104370249925868492705190743680652231716704224547570074631753287352078443184923555333860525866848256788314156023903492043171511797029693297228294483818872563765707539175061570839714448005871291987391648926205060807957012526950116361633119573934316064444374124669861697695772912934202842834007697535925
+bPublicKey = 42387482047117421466928118692687568439415997629141048723182072767997284324764640343272008345119819287526375581385721174494274510726524360731480638585425669685247170958054446797249761744238847427213615385731375648168698821769635116850680245545304663686514311913787022427877096835277158288159213482962236809739
+aCipher = b&#39;618fa12c3a6a6956a47a91bec13f9e1fe2d1031ba2f40a42b4f4d1d9757d0195ea6215fd694c2b99cf9a00be97b46791&#39;
+Successful decryption!
+</code></pre>
+  </div>
+
+
+<p>It is essentially <a href="https://en.wikipedia.org/wiki/Diffie%E2%80%93Hellman_key_exchange">Diffie Hellman key exchange</a>, but with multiplication instead of exponentiation:</p>
+<ul>
+<li>$p$ is a random 1024-bit prime</li>
+<li>$g$ (<code>gen</code>) is a random integer from $2$ to $p-1$</li>
+<li>Alice generates her private key $a$ and computes her public key $A = a \times g \bmod{p}$</li>
+<li>Bob generates his public key $b$ and computers his public key $B = b \times g \bmod{p}$</li>
+<li>We are given $p$, $g$, $A$ and $B$</li>
+<li>The shared secret $s$ is calculated such that $s = A \times b = a \times g \times b = B \times a \bmod{p}$, and used as an AES key to encrypt the flag.</li>
+</ul>
+<p>Diffie Hellman leverages the discrete logarithm problem to make retrieving the private key from the public key difficult. However, in this challenge, multiplication is used instead of exponentiation to compute the public key, as $A = a \times g \bmod{p}$ instead of $A = a^g \bmod{p}$.</p>
+<p>Therefore, we can simply rearrange for the private key $a = A \times g^{-1} \bmod{p}$, then calculate the shared secret $s = a \times B \bmod{p}$, and decrypt the flag using the shared secret as the AES key.</p>
+
+
+
+  <div class="collapsable-code">
+    <input id="2" type="checkbox"  />
+    <label for="2">
+      <span class="collapsable-code__language">python</span>
+      <span class="collapsable-code__title">code.py</span>
+      <span class="collapsable-code__toggle" data-label-expand="Show" data-label-collapse="Hide"></span>
+    </label>
+    <pre class="language-python" ><code>
+from Crypto.Util.number import long_to_bytes, bytes_to_long
+from Crypto.Protocol.KDF import HKDF
+import Crypto.Hash.SHA512 as sha512
+import Crypto.Cipher.AES as aes
+
+# values
+g = 107665309954437515284050955368964848368303288172119448977068684165707548536106035934408882308704533335892101447750709116199826328820028967921540045634698373851938861013761725712688725891129665455073194344098566187055873775659411023106521425479072045658166413360399757570409372209072730576562842193768242314124
+p = 154305601419430130125267211117098923915333624355567046250094074039674228187186943601303157833374662739969026864299363336407319080223107540886546467388611809417774875857578639486137855088896821184616399750557477866148643263803196632154429856293530179926011705130915364080130059881980341409627009701357523451267
+A = 80354936104370249925868492705190743680652231716704224547570074631753287352078443184923555333860525866848256788314156023903492043171511797029693297228294483818872563765707539175061570839714448005871291987391648926205060807957012526950116361633119573934316064444374124669861697695772912934202842834007697535925
+B = 42387482047117421466928118692687568439415997629141048723182072767997284324764640343272008345119819287526375581385721174494274510726524360731480638585425669685247170958054446797249761744238847427213615385731375648168698821769635116850680245545304663686514311913787022427877096835277158288159213482962236809739
+enc =  bytes.fromhex(&#39;618fa12c3a6a6956a47a91bec13f9e1fe2d1031ba2f40a42b4f4d1d9757d0195ea6215fd694c2b99cf9a00be97b46791&#39;)
+
+# solve
+a = (A * pow(g, -1, p)) % p
+s = (a * B) % p
+
+aSessionKey, aIV = HKDF(long_to_bytes(s), 16, b&#39;cybears2024&#39;, sha512, num_keys=2)
+a = aes.new(aSessionKey, aes.MODE_CBC, iv=aIV)
+flag = a.decrypt(enc)
+print(f&#34;{flag = }&#34;)
+</code></pre>
+  </div>
+
+
+<p>Flag: <code>cybears{C3rt41nly_ADDS_s0m3_pr0bl3ms}</code></p>
+<h1 id="psionic---10-solves">Psionic - 10 solves<a href="#psionic---10-solves" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
+<blockquote>
+<p>The cybears face a door with a large wooden face carved into it. Surprisingly, the face starts moving and speaking! &ldquo;Speak the password to enter&rdquo; booms the door&hellip; the cybears consider their options..</p>
+<p><code>nc psionic.chal.cybears.io 2323</code></p>
+</blockquote>
+<p>This was a really weird challenge. We are given server code and an instance to connect to:</p>
+
+
+
+  <div class="collapsable-code">
+    <input id="597614328" type="checkbox" checked />
+    <label for="597614328">
+      <span class="collapsable-code__language">python</span>
+      <span class="collapsable-code__title">server.py</span>
+      <span class="collapsable-code__toggle" data-label-expand="Show" data-label-collapse="Hide"></span>
+    </label>
+    <pre class="language-python" ><code>
+#!/usr/bin/python3
+
+from hashlib import sha1
+from Crypto.Util.number import bytes_to_long, long_to_bytes, getRandomInteger, getPrime
+import ast
+import sys
+import json
+
+# This cybears.py file is not included in the handout.
+# If you&#39;d like to test locally, create a cybears.py file and put sensible variables in there
+from cybears import secret_password, secret_password_chars, flag
+
+# Server-client authentication protocol, but utilising Private-Set-Intersection
+# Based on https://csrc.nist.gov/CSRC/media//Projects/pec/documents/stppa-02-PSI-rosulek.pdf
+
+# Client ------------- Server
+# 1. {H(p1)^a, H(p2)^a ... } -&gt; 
+# 2.               &lt;- {H(s1)^b, H(s2)^b, ..., H(p1)^a^b, H(p2)^a^b... }
+# 3. {H(s1)^b^a, H(s2)^b^a, ...} 
+# 4. Client checks whether any of the H(s_i)^b^a == H(p_j)^a^b
+# 5. Server does same
+# 6. If all p_i == s_j, allow client to submit H(nonce || password) for flag! 
+
+
+def validate_client(client1): 
+    result = False
+    output = {}
+
+    # parse input 
+    try:
+        c = ast.literal_eval(client1)
+    except Exception as e: 
+        print(&#34;Incorrect format - must be a list of integers&#34;)
+        return result, output    
+
+    # Check that we have a set
+    if type(c) != list: 
+        return result, output
+
+    # Check that all elements in the list are integers
+    if all(list(map(lambda x: type(x) == int, c))) != True: 
+        return result, output
+
+    result = True
+    output = c
+    return result, output 
+
+
+if __name__ == &#34;__main__&#34;:
+
+    # Generate ephemeral server public/private keys
+    generator = 2
+    public_prime = getPrime(1024)
+    server_private = getRandomInteger(1024)
+    server_public = pow( 2, server_private, public_prime)
+    params = { &#34;prime&#34; : public_prime, &#34;generator&#34;: generator, &#34;server_public&#34; : server_public } 
+    
+
+
+    print(&#34;Welcome to the psionic login server!&#34;)
+    print(&#34;params = {}&#34;.format(json.dumps(params)))
+    print(&#34;Please enter your set of passwords and we will confirm there is a match:&#34;)
+
+    # 1. client to send commitment
+    client1 = input() #expect single string of len(password) entries as a list
+    
+    result, output = validate_client(client1)
+    if result == False: 
+        print(&#34;Incorrect format - must be a list of integers&#34;)
+        sys.exit(-1)
+    
+    if len(output) != len(secret_password):
+        print(&#34;Incorrect length - must same length as password&#34;)
+        sys.exit(-1)
+        
+    # 2. server to send commitment
+    server_response1 = list(map(lambda x : pow(x, server_private, public_prime), output))
+    server_response2 = list(map(lambda x : pow(bytes_to_long(sha1(x.encode()).digest()), server_private, public_prime), secret_password_chars))
+    print(&#34;{}&#34;.format(server_response1 &#43; server_response2))
+
+    # 3. client to send verification
+    client2 = input() #expect single string of len(password) entries as a list
+
+    result2, output2 = validate_client(client2)
+    if result2 == False:
+        print(&#34;Incorrect format - must be a list of integers&#34;)
+        sys.exit(-1)
+
+    if len(output2) != len(secret_password):
+        print(&#34;Incorrect length - must same length as password&#34;)
+        print(&#34;DEBUG: {} / {}&#34;.format( len(output), len(secret_password)))
+        sys.exit(-1)
+
+    # 5. Server validation - confirm that { H(p_i)^b^a } == {H(s_i)^a^b}
+    # Client could just replay, but we don&#39;t just accept this as proof of knowing the password! 
+    print(&#34;checking...&#34;)
+    
+    if (set(output2) == set(server_response1)): 
+        print(&#34;Sets are a match! You must know the password!&#34;) 
+        print(&#34;Send it through&#34;) # TODO, hash with a nonce? 
+        
+        client_password = input()
+        if(client_password == secret_password): 
+            print(&#34;Correct! Here is your flag: {}&#34;.format(flag))
+            sys.exit(0)
+        else: 
+            print(&#34;Incorrect password&#34;)
+            sys.exit(-1)
+    else:
+        print(&#34;Set mismatch. You don&#39;t know the password!&#34;)
+        sys.exit(-1)
+</code></pre>
+  </div>
+
+
+<p>It&rsquo;s supposedly some sort of &ldquo;Private Set Intersection&rdquo; (PSI), where we need to provide integers (being characters of the password), and it will tell us how many of those are part of the password, and we provide the full password to get the flag.</p>
+<p>Lets step through the server code:</p>
+<ul>
+<li>First, we&rsquo;re provided with some parameters, a prime $p$, generator $g$ and server public value $v = g^y \bmod{p}$ where $y$ is the server private value (These turn out to be useless, so we can kind of just ignore this).</li>
+<li>Next, it prompts us for a list of integers $X = \{x_0, x_1, &hellip;, x_n\}$, and the list must be the same length as the password</li>
+<li>It then loops through the list of integers $X$ and computes $H_X = x_n^y \bmod{p}$ for each item $x_n$ in our list $X$, where H(x) is the SHA1 hash function.</li>
+<li>It does a similar operation for the password chars, computing $H_Z = H(z_n)^y \bmod{p}$ for each character $z_n$ in the password $Z$.</li>
+<li>It sends us both $H_X$ and $H_Z$, which are &ldquo;hidden&rdquo;, hashed values used to compute the private set intersection.</li>
+<li>We are prompted again to provide another list of integers, and the server will check if this list is equal to $H_X$. This step doesn&rsquo;t really make sense since the server sends us $H_X$, so all we have to do is repeat it back.</li>
+<li>If equal, we will be prompted to enter the password as a string, and if the password is correct, we get the flag.</li>
+</ul>
+<p>The code really confused me as I wasn&rsquo;t sure what the challenge was here. I looked at the <a href="https://csrc.nist.gov/CSRC/media//Projects/pec/documents/stppa-02-PSI-rosulek.pdf">link provided in the code</a> which was an overview on Private Set Intersection, and saw that just hashing elements of the set was bad for PSI.</p>
+
+  <img src="./img/bad_psi.png"  class="center"  style="border-radius: 5px; width: 70%"  />
+
+
+<p>This is because the point of a private set intersection is for two parties, each with their own private set of data, to compute the intersection between the two sets, <strong>without</strong> either party learning about the whole private set of the other.</p>
+<p>One (bad) way to do this is for you to hash all elements of your set, and the other party does the same. Then you can compare hashed elements - as identical elements hash to the same digest, you can perform PSI by computing the intersection between sets containing the hashed elements. But the link mentions this is a bad way to do it, because you can use a dictionary attack, hashing all possible values of elements in the set, and comparing it to the hash digest of the other party, learning about their elements if hash digests match.</p>
+<p>However, the server seems to mitigate this - recall that our &ldquo;hidden&rdquo; set is $H_X = x_n^y \bmod{p}$, and we don&rsquo;t know the server private value $y$, so we cannot compute this ourselves. But almost the same method is used to generate the password, $H_Z = H(z_n)^y \bmod{p}$, and the server sends us both these sets. Therefore, we can send $X = \{H(&ldquo;a&rdquo;), H(&ldquo;b&rdquo;), &hellip;\}$ and the server will compute $H_X = x_n^y \bmod{p}$ which will be $\{H(&ldquo;a&rdquo;)^y, H(&ldquo;b&rdquo;)^y, &hellip;\}$, and we can compute this set to the password set which will be $\{H(z_0)^y, H(z_1)^y, &hellip;, H(z_n)^y\}$ and intersect these two sets. An element in both these sets reveals a character of the password.</p>
+<p>The server imports the secret password and password chars:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-py" data-lang="py"><span style="display:flex;"><span><span style="color:#75715e"># This cybears.py file is not included in the handout.</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># If you&#39;d like to test locally, create a cybears.py file and put sensible variables in there</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> cybears <span style="color:#f92672">import</span> secret_password, secret_password_chars, flag
+</span></span></code></pre></div><p>I assumed <code>cybears.py</code> would look something like this:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-py" data-lang="py"><span style="display:flex;"><span>secret_password <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;1234567890!&#34;</span>
+</span></span><span style="display:flex;"><span>secret_password_chars <span style="color:#f92672">=</span> list(secret_password)
+</span></span><span style="display:flex;"><span>flag <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;cybears</span><span style="color:#e6db74">{testing}</span><span style="color:#e6db74">&#34;</span>
+</span></span></code></pre></div><p>But after my solve script worked local but not on remote, I asked the challenge author if <code>secret_password</code> and <code>secret_password_chars</code> were constnat on the server. As it turns out, while <code>secret_password</code> is constant, <code>secret_password_chars</code> is not - it&rsquo;s scrambled! Which means <code>cybears.py</code> probably looks something like this:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-py" data-lang="py"><span style="display:flex;"><span><span style="color:#f92672">import</span> random
+</span></span><span style="display:flex;"><span>secret_password <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;1234567890!&#34;</span>
+</span></span><span style="display:flex;"><span>secret_password_chars <span style="color:#f92672">=</span> random<span style="color:#f92672">.</span>shuffle(list(secret_password))
+</span></span><span style="display:flex;"><span>flag <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;cybears</span><span style="color:#e6db74">{testing}</span><span style="color:#e6db74">&#34;</span>
+</span></span></code></pre></div><p>Knowing this, I came up with the solution:</p>
+<ul>
+<li>Brute force a little bit to get the password length (server will error if provided integer list not same length as password), which turned out to be 11</li>
+<li>Check what characters were in the password, by sending integers from 0 to 255, 11 at a time, and intersecting the sets returned from the server. Technically, the sets returned by the server were lists, so we can note the indexes of elements that intersected to know which character is in the password.</li>
+<li>Attempt to unscramble the characters to form a password, such as by using an anagram solver.</li>
+<li>Submit password and get the flag.</li>
+</ul>
+<p>I found it really weird that I had to unscramble the password, it didn&rsquo;t seem to make sense that <code>secret_password_chars</code> was scrambled, as otherwise, you could easily correlate the indexes of intersecting elements to know what character is in what position. My best guess for why it was scrambled would be that the challenge author wanted to simulate the unordered nature of sets. If anyone knows why, please let me know!</p>
+<p>After running a script to get all the chars, we get characters <code>['!', '1', 'A', 'g', 'h', 'i', 'l', 'm', 'o', 'r', 't']</code>. Convering some from l33t c0d3 and putting it in an anagram solver, we get <code>Algorithm</code> as a potential word. Then we can start to guess passwords, and the correct one turns out to be <code>Algorithm1!</code>, which gets us the flag.</p>
+<p>Solve scripts:</p>
+
+
+
+  <div class="collapsable-code">
+    <input id="613825794" type="checkbox" checked />
+    <label for="613825794">
+      <span class="collapsable-code__language">python</span>
+      <span class="collapsable-code__title">get_pw_chars.py</span>
+      <span class="collapsable-code__toggle" data-label-expand="Show" data-label-collapse="Hide"></span>
+    </label>
+    <pre class="language-python" ><code>
+from pwn import *
+from Crypto.Util.number import *
+import json
+import string
+from hashlib import sha1
+
+pw_chars = []
+
+step = 11
+for i in range(0, 256, step):
+    r = remote(&#34;psionic.chal.cybears.io&#34;, 2323)
+    # r = remote(&#34;localhost&#34;, 1111)
+
+    r.recvline()
+    r.recvuntil(b&#34;params = &#34;)
+    params = json.loads(r.recvline().strip().decode()) # unused
+    r.recvuntil(b&#34; match:&#34;)
+    
+    arr_raw = [chr(v) for v in range(i, i&#43;step)]
+    arr = [bytes_to_long(sha1(v.encode()).digest()) for v in arr_raw]
+
+    r.sendline(str(arr).encode())
+    r.recvline()
+
+    resp = eval(r.recvline().strip().decode())
+    H_X, H_Y = resp[:11], resp[11:]
+
+    for xi, x in enumerate(H_X):
+        for yi, y in enumerate(H_Y):
+            if x == y:
+                pw_chars.append(arr_raw[xi])
+
+print(f&#34;{pw_chars = }&#34;)
+
+</code></pre>
+  </div>
+
+
+
+
+
+  <div class="collapsable-code">
+    <input id="789651342" type="checkbox" checked />
+    <label for="789651342">
+      <span class="collapsable-code__language">python</span>
+      <span class="collapsable-code__title">get_flag.py</span>
+      <span class="collapsable-code__toggle" data-label-expand="Show" data-label-collapse="Hide"></span>
+    </label>
+    <pre class="language-python" ><code>
+from pwn import *
+from Crypto.Util.number import *
+import json
+import string
+from hashlib import sha1
+
+pw_chars = []
+r = remote(&#34;psionic.chal.cybears.io&#34;, 2323)
+# r = remote(&#34;localhost&#34;, 1111)
+
+r.recvline()
+r.recvuntil(b&#34;params = &#34;)
+params = json.loads(r.recvline().strip().decode()) # unused
+r.recvuntil(b&#34; match:&#34;)
+
+arr_raw = [chr(v) for v in range(0, 11)]
+arr = [bytes_to_long(sha1(v.encode()).digest()) for v in arr_raw]
+
+r.sendline(str(arr).encode())
+r.recvline()
+
+resp = eval(r.recvline().strip().decode())
+H_X, H_Y = resp[:11], resp[11:]
+
+r.sendline(str(H_X).encode())
+
+r.sendline(b&#34;Algorithm1!&#34;)
+r.interactive()
+
+</code></pre>
+  </div>
+
+
+<p>Flag: <code>cybears{n0t_s0_pr1v@t3_int3rs3ct10n}</code></p>
+<p>This was a unique challenge, different to most crypto chals, but I didn&rsquo;t really like having to guess the password from a set of characters - I thought that was a bit guessy and I was lucky to have guessed it.</p>
+<h1 id="public-service---8-solves">Public Service - 8 solves<a href="#public-service---8-solves" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
+<blockquote>
+<p>You find a parchment filled with ancient writings. At the bottom are a number of ornate calligraphic signatures&hellip;</p>
+</blockquote>
+<p>This was a nice challenge. We&rsquo;re given two files, <code>generate_signatures.py</code> and <code>out.json</code>:</p>
+
+
+
+  <div class="collapsable-code">
+    <input id="148672593" type="checkbox" checked />
+    <label for="148672593">
+      <span class="collapsable-code__language">python</span>
+      <span class="collapsable-code__title">generate_signatures.py</span>
+      <span class="collapsable-code__toggle" data-label-expand="Show" data-label-collapse="Hide"></span>
+    </label>
+    <pre class="language-python" ><code>
+import Crypto.Signature.DSS as dss
+import Crypto.PublicKey.ECC as ecc
+import Crypto.Hash.SHA256 as sha256
+import Crypto.PublicKey.RSA as rsa
+import Crypto.Signature.PKCS1_v1_5 as pkcs
+import Crypto.Cipher.PKCS1_OAEP as oaep
+from Crypto.Util.number import inverse, getPrime, isPrime, long_to_bytes, bytes_to_long
+from binascii import hexlify
+import json
+
+from cybearssecrets import FLAG
+
+MESSAGE1 = b&#39;If a new source of energy is not found, no one is going to win this war&#39;
+MESSAGE2 = b&#39;Bah weep gragnah weep nini bong&#39;
+MESSAGE3 = b&#39;Freedom is the right of all sentient beings&#39;
+
+## Generate Elliptic Curve parameters
+ec = ecc.generate(curve = &#34;p256&#34;)
+ec_signer = dss.new(ec, &#39;fips-186-3&#39;)
+
+## Generate Elliptic Curve Signature
+ec_hasher = sha256.new(MESSAGE1)
+ec_sig = ec_signer.sign(ec_hasher)
+
+## Generate RSA parameters
+def generate_special_prime(b):
+    t = bytes_to_long(b)
+    while not(isPrime(t)):
+        t &#43;= 1
+    return t
+
+rsa_p = generate_special_prime(long_to_bytes(ec.pointQ.x)&#43;long_to_bytes(ec.pointQ.y))
+rsa_q = getPrime(512) 
+
+rsa_n = rsa_p*rsa_q
+rsa_e = 65537
+rsa_d = inverse(rsa_e, (rsa_p-1)*(rsa_q-1))
+
+r = rsa.construct((rsa_n,rsa_e,rsa_d))
+
+## Generate RSA Signatures
+rsa_signer = pkcs.new(r)
+
+rsa_hasher1 = sha256.new(MESSAGE2)
+rsa_hasher2 = sha256.new(MESSAGE3)
+
+rsa_sig1 = rsa_signer.sign(rsa_hasher1)
+rsa_sig2 = rsa_signer.sign(rsa_hasher2)
+
+## Encrypt Flag
+encrypter = oaep.new(r)
+cipher = encrypter.encrypt(FLAG)
+
+j = {}
+j[&#39;ec_sig&#39;] = hexlify(ec_sig).decode()
+j[&#39;rsa_sig1&#39;] = hexlify(rsa_sig1).decode()
+j[&#39;rsa_sig2&#39;] = hexlify(rsa_sig2).decode()
+j[&#39;cipher&#39;] = hexlify(cipher).decode()
+
+with open(&#34;out.json&#34;, &#34;w&#34;) as g: 
+    g.write(json.dumps(j))
+
+</code></pre>
+  </div>
+
+
+
+
+
+  <div class="collapsable-code">
+    <input id="719628534" type="checkbox" checked />
+    <label for="719628534">
+      <span class="collapsable-code__language">json</span>
+      <span class="collapsable-code__title">out.json</span>
+      <span class="collapsable-code__toggle" data-label-expand="Show" data-label-collapse="Hide"></span>
+    </label>
+    <pre class="language-json" ><code>
+{&#34;ec_sig&#34;: &#34;8d32a95ab9b4d92f6ff307d9721451707822d2eae3e07c5c605f0d5979a2e2210b5149487c4d1bedafa96628fcc3579b4842abfa156a963d7db0c15d8da32cc9&#34;, &#34;rsa_sig1&#34;: &#34;45e225f7532b25aa283f80b5166de185cff8b46fb3c9de982083b1ed4a7621c14d0ab541e945c31c9984f958d0b23331d6c636ba8c443941afa277dd2b00c9b7884b4bc9a55047b77305cc6061d9aa9e6be99b70f2f469f6c1accba77228ef129af79bb7f196176753ed27f8308a30b298c34bfc3503dce92f77f0ed8b6d16b6&#34;, &#34;rsa_sig2&#34;: &#34;56b9bac062a9a75b2db42b480e439927265a06b0815be14814f19cd27553a8bdd2815c1814a060fa25b9713b10516b57c9e1f399415492f1ac9a8795034ade99744237a6354d32c0e7330b0b0f52d237e7967863869cf9fdc387f90349c9fbffa15aa72c48ece92bbe59760f41606bfff28af9fdde8f275bf07379f798d98d4d&#34;, &#34;cipher&#34;: &#34;65312f30ef4f34edd32c11ce885c51279bdecd16168953733f04380eb1ed183542e745d630133c4c0c5ce7580bbfb90a347c387eb2743ffaeae5cb7a82058e0fb8a85f7aa392433dc12f0b78e9e0b577909353de84913a47895109de2019a3b88b72f03e13b16f7b092e7a428c664ed174b2cb63208b7a55e9d02a2c0f268d4e&#34;}
+</code></pre>
+  </div>
+
+
+<p>There are 3 known, plaintext messages, $m_1$, $m_2$, and $m_3$. A p256 curve is used and a private key on the curve is generated. Then, a ECDSA signature is created from signing the sha256 hash of $m_1$. We are given this signature.</p>
+<p>Next, a prime $p$ is deterministically generated, using the public key on the curve, point $Q$. Then standard RSA follows, generating prime $q$, public key $n=pq$, and private key $d=e^{-1} \bmod(\phi{(n)})$. Signatures of $m_2$ and $m_3$ are created using the RSA private key, and we are given these signatures. The flag is then encrypted with the RSA key, and we are given the encrypted flag.</p>
+<p>The challenge is to recover both the ECC and RSA public keys, and decrypt the flag.</p>
+<h3 id="recovering-ecc-public-key">Recovering ECC Public Key<a href="#recovering-ecc-public-key" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h3>
+<p>I searched online for recovering the public key from an ECDSA signature and found <a href="https://crypto.stackexchange.com/questions/18105/how-does-recovering-the-public-key-from-an-ecdsa-signature-work">this</a>, which you should read for more details, but essentially you can recover the public key given a signature $(r, s)$, by finding the two points $R$ and $\prime{R}$ with the same x coordinate as $r$, and calculating:</p>
+<p>$$
+r^{-1}(sR - zG) \newline
+r^{-1}(s\prime{R} - zG)
+$$</p>
+<p>where $z$ is the message that was signed, and $G$ is the generator on the curve. As shown above this yields two points, one of which is the public key $Q$.</p>
+<p>We can do so using the sage code:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-py" data-lang="py"><span style="display:flex;"><span><span style="color:#75715e"># p-256 curve paramters from https://neuromancer.sk/std/nist/P-256</span>
+</span></span><span style="display:flex;"><span>p <span style="color:#f92672">=</span> <span style="color:#ae81ff">0xffffffff00000001000000000000000000000000ffffffffffffffffffffffff</span> 
+</span></span><span style="display:flex;"><span>K <span style="color:#f92672">=</span> GF(p)
+</span></span><span style="display:flex;"><span>a <span style="color:#f92672">=</span> K(<span style="color:#ae81ff">0xffffffff00000001000000000000000000000000fffffffffffffffffffffffc</span>)
+</span></span><span style="display:flex;"><span>b <span style="color:#f92672">=</span> K(<span style="color:#ae81ff">0x5ac635d8aa3a93e7b3ebbd55769886bc651d06b0cc53b0f63bce3c3e27d2604b</span>)
+</span></span><span style="display:flex;"><span>E <span style="color:#f92672">=</span> EllipticCurve(K, (a, b))
+</span></span><span style="display:flex;"><span>G <span style="color:#f92672">=</span> E(<span style="color:#ae81ff">0x6b17d1f2e12c4247f8bce6e563a440f277037d812deb33a0f4a13945d898c296</span>, <span style="color:#ae81ff">0x4fe342e2fe1a7f9b8ee7eb4a7c0f9e162bce33576b315ececbb6406837bf51f5</span>)
+</span></span><span style="display:flex;"><span>E<span style="color:#f92672">.</span>set_order(<span style="color:#ae81ff">0xffffffff00000000ffffffffffffffffbce6faada7179e84f3b9cac2fc632551</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">0x1</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>r,s <span style="color:#f92672">=</span> bytes_to_long(ec_sig[:<span style="color:#ae81ff">32</span>]), bytes_to_long(ec_sig[<span style="color:#ae81ff">32</span>:])
+</span></span><span style="display:flex;"><span>z <span style="color:#f92672">=</span> bytes_to_long(MSG1_HASH<span style="color:#f92672">.</span>digest())
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>r_inv <span style="color:#f92672">=</span> pow(r, <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, E<span style="color:#f92672">.</span>order())
+</span></span><span style="display:flex;"><span>R, R_ <span style="color:#f92672">=</span> E<span style="color:#f92672">.</span>lift_x(K(r), all<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Q_1 <span style="color:#f92672">=</span> r_inv <span style="color:#f92672">*</span> (s<span style="color:#f92672">*</span>R <span style="color:#f92672">-</span> z<span style="color:#f92672">*</span>G)
+</span></span><span style="display:flex;"><span>Q_2 <span style="color:#f92672">=</span> r_inv <span style="color:#f92672">*</span> (s<span style="color:#f92672">*</span>R_ <span style="color:#f92672">-</span> z<span style="color:#f92672">*</span>G)
+</span></span></code></pre></div><h3 id="recovering-rsa-public-key">Recovering RSA Public Key<a href="#recovering-rsa-public-key" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h3>
+<p>We have two messages $m_2$ and $m_3$ that are signed with RSA, yielding $s_2$ and $s_3$. Searching online again I found <a href="https://crypto.stackexchange.com/questions/26188/rsa-public-key-recovery-from-signatures">this</a> which states you can recover public modulus $n$ by computing $\gcd{(s_2^e - m_2, s_3^e - m_3)} = kn$ where $k$ is small.</p>
+<p>This makes sense as $m_2 = s_2^e \bmod{n}$ thus $m_2 = s_2^e - k_2n$ for some integer $k_2$, therefore we can GCD $m_2 - s_2^e = -k_2n$ and $m_3 - s_3^e = -k_3n$ to obtain a multiple of $n$.</p>
+<p>As $e = 65537$, this takes a while to compute, but after doing so we recover (a multiple of) the public modulus $n$.</p>
+<p>Note that $m_2$ is actually a transformed version of the plaintext message, as it is first hashed then some pkcs1_15 scheme is used to pad the message. This made it really annoying to get the message that was actually signed, so I directly edited the library code to print the message being signed, and ran the challenge script with a test flag.</p>
+
+  <img src="./img/get_real_m.png"  class="center"  style="border-radius: 5px; width: 70%"  />
+
+
+<h3 id="getting-the-flag">Getting the flag<a href="#getting-the-flag" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h3>
+<p>Now that we have both the ECDSA and RSA pubkey, we can recover the flag. As mentioned before, one of the RSA primes are generated deterministically based on the ECDSA pubkey $Q$:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">generate_special_prime</span>(b):
+</span></span><span style="display:flex;"><span>    t <span style="color:#f92672">=</span> bytes_to_long(b)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">while</span> <span style="color:#f92672">not</span>(isPrime(t)):
+</span></span><span style="display:flex;"><span>        t <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> t
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>rsa_p <span style="color:#f92672">=</span> generate_special_prime(long_to_bytes(ec<span style="color:#f92672">.</span>pointQ<span style="color:#f92672">.</span>x)<span style="color:#f92672">+</span>long_to_bytes(ec<span style="color:#f92672">.</span>pointQ<span style="color:#f92672">.</span>y))
+</span></span></code></pre></div><p>So now that we recovered the pubkey, we can simply call this function to recover a prime. Even though we have 2 possible ECDSA pubkeys, we can check which one is correct by generating the 2 possible primes and using GCD with $n$.</p>
+<p>From there, it&rsquo;s just simple RSA to generate the RSA private key and decrypt the flag.</p>
+<p>Solve script:
+
+
+
+  <div class="collapsable-code">
+    <input id="148236975" type="checkbox" checked />
+    <label for="148236975">
+      <span class="collapsable-code__language">python</span>
+      <span class="collapsable-code__title">code.py</span>
+      <span class="collapsable-code__toggle" data-label-expand="Show" data-label-collapse="Hide"></span>
+    </label>
+    <pre class="language-python" ><code>
+import Crypto.Hash.SHA256 as sha256
+import Crypto.PublicKey.RSA as rsa
+import Crypto.Cipher.PKCS1_OAEP as oaep
+from Crypto.Util.number import *
+
+## Generate RSA parameters
+def generate_special_prime(b):
+    t = bytes_to_long(b)
+    while not(isPrime(t)):
+        t &#43;= 1
+    return t
+
+data = {&#34;ec_sig&#34;: &#34;8d32a95ab9b4d92f6ff307d9721451707822d2eae3e07c5c605f0d5979a2e2210b5149487c4d1bedafa96628fcc3579b4842abfa156a963d7db0c15d8da32cc9&#34;, &#34;rsa_sig1&#34;: &#34;45e225f7532b25aa283f80b5166de185cff8b46fb3c9de982083b1ed4a7621c14d0ab541e945c31c9984f958d0b23331d6c636ba8c443941afa277dd2b00c9b7884b4bc9a55047b77305cc6061d9aa9e6be99b70f2f469f6c1accba77228ef129af79bb7f196176753ed27f8308a30b298c34bfc3503dce92f77f0ed8b6d16b6&#34;, &#34;rsa_sig2&#34;: &#34;56b9bac062a9a75b2db42b480e439927265a06b0815be14814f19cd27553a8bdd2815c1814a060fa25b9713b10516b57c9e1f399415492f1ac9a8795034ade99744237a6354d32c0e7330b0b0f52d237e7967863869cf9fdc387f90349c9fbffa15aa72c48ece92bbe59760f41606bfff28af9fdde8f275bf07379f798d98d4d&#34;, &#34;cipher&#34;: &#34;65312f30ef4f34edd32c11ce885c51279bdecd16168953733f04380eb1ed183542e745d630133c4c0c5ce7580bbfb90a347c387eb2743ffaeae5cb7a82058e0fb8a85f7aa392433dc12f0b78e9e0b577909353de84913a47895109de2019a3b88b72f03e13b16f7b092e7a428c664ed174b2cb63208b7a55e9d02a2c0f268d4e&#34;}
+
+MESSAGE1 = b&#39;If a new source of energy is not found, no one is going to win this war&#39;
+MSG1_HASH = sha256.new(MESSAGE1)
+
+ec_sig = bytes.fromhex(data[&#34;ec_sig&#34;])
+s1 = int(data[&#34;rsa_sig1&#34;], 16)
+s2 = int(data[&#34;rsa_sig2&#34;], 16)
+enc_flag = bytes.fromhex(data[&#34;cipher&#34;])
+
+# p-256 curve paramters from https://neuromancer.sk/std/nist/P-256
+p = 0xffffffff00000001000000000000000000000000ffffffffffffffffffffffff 
+K = GF(p)
+a = K(0xffffffff00000001000000000000000000000000fffffffffffffffffffffffc)
+b = K(0x5ac635d8aa3a93e7b3ebbd55769886bc651d06b0cc53b0f63bce3c3e27d2604b)
+E = EllipticCurve(K, (a, b))
+G = E(0x6b17d1f2e12c4247f8bce6e563a440f277037d812deb33a0f4a13945d898c296, 0x4fe342e2fe1a7f9b8ee7eb4a7c0f9e162bce33576b315ececbb6406837bf51f5)
+E.set_order(0xffffffff00000000ffffffffffffffffbce6faada7179e84f3b9cac2fc632551 * 0x1)
+
+# part 1: recover ECC public key
+r,s = bytes_to_long(ec_sig[:32]), bytes_to_long(ec_sig[32:])
+z = bytes_to_long(MSG1_HASH.digest())
+
+r_inv = pow(r, -1, E.order())
+R, R_ = E.lift_x(K(r), all=True)
+
+Q_1 = r_inv * (s*R - z*G)
+Q_2 = r_inv * (s*R_ - z*G)
+
+print(f&#34;Recovered possible ECSDA pubkeys:&#34;)
+print(f&#34;{Q_1 = }&#34;)
+print(f&#34;{Q_2 = }&#34;)
+
+# part 2: recover RSA public key
+
+e = 65537
+# values from editing library src and printing msg before it got signed
+# MESSAGE2 = b&#39;Bah weep gragnah weep nini bong&#39;
+# MESSAGE3 = b&#39;Freedom is the right of all sentient beings&#39;
+m2 = 5486124068793688683255936251187209270074392635932332070112001988456197381759672947165175699536362793613284725337872111744958183862744647903224103718245670299614498700710006264535421091908069935709303403272242499531581061652193706559968553759421347924920266204277973339410586176390872847811111144114590842
+m3 = 5486124068793688683255936251187209270074392635932332070112001988456197381759672947165175699536362793613284725337872111744958183862744647903224103718245670299614498700710006264535421091908069935709303403272242499531581061652193643492425095701346333448554897794580398627955585138706133687412101835882486651
+
+print(f&#34;Recovering RSA pubkey...&#34;)
+
+kn = gcd(s1^e - m2, s2^e - m3)
+
+print(f&#34;Recovered RSA pubkey multiple {kn = }&#34;)
+
+# last part: decrypting flag
+
+rsa_p_1 = generate_special_prime(long_to_bytes(int(Q_1.x()))&#43;long_to_bytes(int(Q_1.y())))
+rsa_p_2 = generate_special_prime(long_to_bytes(int(Q_2.x()))&#43;long_to_bytes(int(Q_2.y())))
+
+p = None
+if gcd(rsa_p_1, kn) != 1:
+    p = rsa_p_1
+elif gcd(rsa_p_2, kn) != 1:
+    p = rsa_p_2
+else:
+    print(&#34;Something went wrong, neither primes are correct&#34;)
+
+# k*n = k*p*q
+kq = kn // p
+# get largest factor of kq which should be q
+q = list(dict(factor(kq)).keys())[-1]
+
+n = p*q
+d = pow(e, -1, (p-1)*(q-1))
+
+r = rsa.construct((int(n),int(e),int(d)))
+decrypter = oaep.new(r)
+flag = decrypter.decrypt(enc_flag)
+print(f&#34;{flag = }&#34;)
+
+</code></pre>
+  </div>
+
+</p>
+<p>Flag: <code>cybears{D0nt_m4k3_pr1v4t3_publ1c_k3yz!}</code></p>
+<h1 id="arpeeceethree---3-solves">arpeeceethree - 3 solves<a href="#arpeeceethree---3-solves" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
+<blockquote>
+<p>You hand over your identity parchment to the temple monk. He scrutinises it closely, looking for any signs of malintent.</p>
+<p><code>python client.py -r arpeeceethree.chal.cybears.io:2323</code></p>
+</blockquote>
+<p>There was a lot of source and dependencies to install for this challenge, but the vulnerability is actually very simple.</p>
+<p>We are provided with 3 files, <code>client.py</code>, <code>server.py</code> and <code>server.proto</code>.</p>
+
+
+
+  <div class="collapsable-code">
+    <input id="796135428" type="checkbox" checked />
+    <label for="796135428">
+      <span class="collapsable-code__language">python</span>
+      <span class="collapsable-code__title">client.py</span>
+      <span class="collapsable-code__toggle" data-label-expand="Show" data-label-collapse="Hide"></span>
+    </label>
+    <pre class="language-python" ><code>
+from pwn import * 
+from google.protobuf.internal.encoder import _VarintEncoder
+from google.protobuf.internal.decoder import _DecodeVarint
+import server_pb2 as spb
+from google.protobuf.internal.decoder import _DecodeError
+import sys 
+import argparse
+
+import Crypto.Cipher.AES as AES
+import Crypto.Hash.SHA512 as SHA512
+from Crypto.Protocol.KDF import HKDF
+from Crypto.Util.number import long_to_bytes, bytes_to_long
+
+from ecdsa import ECDH, NIST256p, VerifyingKey
+
+
+def send_message(s, msg):
+    &#34;&#34;&#34; Send a message, prefixed with its size, to a TPC/IP socket &#34;&#34;&#34;
+    data = msg.SerializeToString()
+    mh = spb.MessageHeader()
+    mh.msglen = len(data)
+    mh.type = msg.type
+    s.send(mh.SerializeToString() &#43; data)
+    return 
+
+def msg_type(msgtype):
+    if msgtype == spb.MSG_LOGIN_REQUEST:
+        return spb.LoginRequest()
+    elif msgtype == spb.MSG_LOGIN_RESPONSE:
+        return spb.LoginResponse()
+    elif msgtype == spb.MSG_LOGIN_CHALLENGE:
+        return spb.LoginChallenge()
+    elif msgtype == spb.MSG_LOGIN_CHALLENGE_RESPONSE:
+        return spb.LoginChallengeResponse()
+    elif msgtype == spb.MSG_REGISTER_REQUEST:
+        return spb.RegisterRequest()
+    elif msgtype == spb.MSG_REGISTER_RESPONSE:
+        return spb.RegisterResponse()
+    elif msgtype == spb.MSG_MESSAGE_REQUEST:
+        return spb.MessageRequest()
+    elif msgtype == spb.MSG_MESSAGE_RESPONSE:
+        return spb.MessageResponse()
+    else:
+        return None
+
+
+def check_fields(msg):
+    result = True
+    for field in msg.DESCRIPTOR.fields_by_name.keys():
+        if msg.DESCRIPTOR.fields_by_name[field].label == msg.DESCRIPTOR.fields_by_name[field].LABEL_REQUIRED:
+            result &amp;= msg.HasField(field)
+    return result
+
+def recv_message(s):
+    &#34;&#34;&#34; Receive a message, prefixed with its size and type, from stdin &#34;&#34;&#34;
+    # Receive the size of the message data
+    # expect [MessageHeader][Message of type]
+    data = b&#39;&#39;
+    header = spb.MessageHeader()
+    while True:
+        data&#43;= s.recv(1)
+        try:
+            header.ParseFromString(data)
+            if check_fields(header):
+                break
+        except _DecodeError as e:
+            pass
+
+    # Receive the message data
+    data = s.recv(header.msglen)
+
+    # Decode the message and validate all required fields are present
+    msg = msg_type(header.type)
+    if msg != None:
+        try:
+            msg.ParseFromString(data)
+            if not check_fields(msg):
+                return None
+            return msg
+        except _DecodeError:
+            return None
+    else:
+        return None
+
+def create_user():
+    client_ecdh = ECDH(curve=NIST256p)
+    client_ecdh.generate_private_key()
+    return client_ecdh
+
+def register(s, ecdh, name=b&#39;bumblebear&#39;, pubkey=b&#39;&#39;):
+    ## REGISTER
+    rr = spb.RegisterRequest()
+    rr.type = spb.MSG_REGISTER_REQUEST
+    rr.name = name
+    if pubkey == b&#39;&#39;:
+        rr.clientPublicKey = ecdh.get_public_key().to_string(encoding=&#39;compressed&#39;)
+    else:
+        rr.clientPublicKey = pubkey
+
+    send_message(s, rr)
+
+    ## REGISTER RESPONSE
+    reg_resp = recv_message(s)
+    if reg_resp != None:
+        log.info(&#34;DEBUG: received {}&#34;.format(reg_resp))
+    if reg_resp.status == spb.FAILURE:
+        log.error(&#34;failed to register&#34;)
+    uid = reg_resp.uid
+    return uid
+
+def login(s, uid):
+    ## LOGIN
+    l = spb.LoginRequest()
+    l.type = spb.MSG_LOGIN_REQUEST
+    l.uid = uid
+    send_message(s, l)
+
+    ## LOGIN RESPONSE
+    login_resp = recv_message(s)
+    if login_resp != None:
+        log.info(&#34;DEBUG: received {}&#34;.format(login_resp))
+    
+    return login_resp.sessionId, login_resp.challenge, login_resp.ephemeralServerPublicKey
+
+
+def login2(s, ecdh, sessionId, challenge):
+    ## SIGN CHALLENGE
+    sig = ecdh.private_key.sign_deterministic(challenge)
+
+    ## GENERATE EPHEMERAL DH SESSION KEY
+    client_ephemeral_ecdh = ECDH(curve=NIST256p)
+    client_ephemeral_ecdh.generate_private_key()
+    client_ephemeral_public_key = client_ephemeral_ecdh.get_public_key()
+
+    send_chal = spb.LoginChallenge()
+    send_chal.type = spb.MSG_LOGIN_CHALLENGE
+    send_chal.sessionId = sessionId
+    send_chal.ephemeralClientPublicKey = client_ephemeral_public_key.to_string(encoding=&#39;compressed&#39;)
+
+    send_chal.challengeResponse = sig
+    send_message(s, send_chal)
+
+    msg_resp = recv_message(s)
+    if msg_resp != None:
+        log.info(&#34;DEBUG: received {}&#34;.format(msg_resp))
+
+    return client_ephemeral_ecdh
+
+def request_msg(s, sessionId, uid, client_ephemeral, server_ephemeral):
+    ## REQUEST MESSAGE
+    log.info(&#34;sending message request&#34;)
+    msg_req = spb.MessageRequest()
+    msg_req.type = spb.MSG_MESSAGE_REQUEST
+    msg_req.sessionId = sessionId
+
+    send_message(s, msg_req)
+
+    log.info(&#34;receiving message&#34;)
+    msg_resp = recv_message(s)
+    if msg_resp != None:
+        log.info(&#34;DEBUG: received {}&#34;.format(msg_resp))
+
+    ## DECRYPT MESSAGE
+    server_ephemeral_public_key = VerifyingKey.from_string(server_ephemeral, NIST256p)
+
+    client_ephemeral.load_received_public_key(server_ephemeral_public_key)
+    shared_secret = client_ephemeral.generate_sharedsecret_bytes()
+
+    token  = shared_secret
+    token &#43;= b&#39;|&#39; &#43; long_to_bytes(spb.USER)
+    token &#43;= b&#39;|&#39; &#43; long_to_bytes(uid)
+    token &#43;= b&#39;|&#39; &#43; sessionId
+    (aes_gcm_key, nonce) = HKDF(token, 16, &#39;&#39;, SHA512, num_keys=2)
+
+    a = AES.new(aes_gcm_key, AES.MODE_GCM, nonce = nonce)
+    message = a.decrypt_and_verify(msg_resp.encMsg, msg_resp.encMsgTag)
+
+    log.info(&#34;message received: {}&#34;.format(message))
+    return message
+
+if __name__ == &#34;__main__&#34;:
+
+    parser = argparse.ArgumentParser()
+    parser.add_argument(&#39;-r&#39;, &#39;--remote&#39;, help=&#34;The address:port of the remote server hosting the challenge&#34;, required=True)
+    args = parser.parse_args()
+
+    if args.remote != None:
+        host = args.remote.split(&#34;:&#34;)[0]
+        port = int(args.remote.split(&#34;:&#34;)[1])
+    else:
+        exit(0)
+
+    s = remote(host, port)
+
+    ## Create new user
+    log.info(&#34;Creating new user&#34;)
+    e = create_user()
+
+    ## Register
+    log.info(&#34;Registering new user&#34;)
+    uid = register(s,e)
+
+    ## Login
+    log.info(&#34;Logging in - part 1&#34;)
+    (sessionId, chal, sepk) = login(s, uid)
+    log.info(&#34;Logging in - part 2&#34;)
+    ceph = login2(s, e, sessionId, chal)
+
+    ## Request message
+    log.info(&#34;Requesting message&#34;)
+    msg = request_msg(s, sessionId, uid, ceph, sepk)
+    log.info(&#34;message received: {}&#34;.format(msg))
+
+
+    s.close()
+</code></pre>
+  </div>
+
+
+
+
+
+  <div class="collapsable-code">
+    <input id="379625814" type="checkbox" checked />
+    <label for="379625814">
+      <span class="collapsable-code__language">python</span>
+      <span class="collapsable-code__title">server.py</span>
+      <span class="collapsable-code__toggle" data-label-expand="Show" data-label-collapse="Hide"></span>
+    </label>
+    <pre class="language-python" ><code>
+#!/usr/bin/python3
+
+# protoc -I=. --python_out=. ./server.proto
+# socat -d TCP-LISTEN:2323,reuseaddr,fork EXEC:&#34;python3 server_stdio_3.py&#34;
+
+from google.protobuf.internal.encoder import _VarintEncoder
+from google.protobuf.internal.decoder import _DecodeVarint
+import server_pb2 as spb
+from google.protobuf.internal.decoder import _DecodeError
+
+import Crypto.Cipher.AES as AES
+import Crypto.Hash.SHA512 as SHA512
+from Crypto.Protocol.KDF import HKDF
+from Crypto.Util.number import long_to_bytes, bytes_to_long
+
+from ecdsa import ECDH, NIST256p, VerifyingKey
+import uuid
+
+import logging
+import os
+import sys
+
+from cybears import flag
+
+#logging.root.setLevel(logging.DEBUG)
+#logging.root.setLevel(logging.INFO)
+logging.root.setLevel(logging.ERROR)
+
+logger = logging.getLogger(&#34;__name__&#34;)
+
+h1 = logging.StreamHandler(sys.stderr)
+h1.setLevel(logging.DEBUG)
+h2 = logging.StreamHandler(sys.stderr)
+h2.setLevel(logging.INFO)
+
+logger.addHandler(h1)
+logger.addHandler(h2)
+
+
+def send_message(msg):
+    &#34;&#34;&#34; Send a message, prefixed with its size, to stdout &#34;&#34;&#34;
+    data = msg.SerializeToString()
+    mh = spb.MessageHeader()
+    mh.msglen = len(data)
+    mh.type = msg.type
+    sys.stdout.buffer.write(mh.SerializeToString() &#43; data)
+    sys.stdout.flush()
+    logging.info(&#34;Sent msg over stdout...&#34;)
+    return 
+
+def msg_type(msgtype):
+    if msgtype == spb.MSG_LOGIN_REQUEST:
+        return spb.LoginRequest()
+    elif msgtype == spb.MSG_LOGIN_RESPONSE:
+        return spb.LoginResponse()
+    elif msgtype == spb.MSG_LOGIN_CHALLENGE:
+        return spb.LoginChallenge()
+    elif msgtype == spb.MSG_LOGIN_CHALLENGE_RESPONSE:
+        return spb.LoginChallengeResponse()
+    elif msgtype == spb.MSG_REGISTER_REQUEST:
+        return spb.RegisterRequest()
+    elif msgtype == spb.MSG_REGISTER_RESPONSE:
+        return spb.RegisterResponse()
+    elif msgtype == spb.MSG_MESSAGE_REQUEST:
+        return spb.MessageRequest()
+    elif msgtype == spb.MSG_MESSAGE_RESPONSE:
+        return spb.MessageResponse()
+    else:
+        return None   
+
+def check_fields(msg):
+    result = True
+    for field in msg.DESCRIPTOR.fields_by_name.keys():
+        if msg.DESCRIPTOR.fields_by_name[field].label == msg.DESCRIPTOR.fields_by_name[field].LABEL_REQUIRED:
+            result &amp;= msg.HasField(field)
+    return result
+
+def recv_message():
+    &#34;&#34;&#34; Receive a message, prefixed with its size and type, from stdin &#34;&#34;&#34;
+    # Receive the size of the message data
+    # expect [MessageHeader][Message of type]
+    data = b&#39;&#39;
+    header = spb.MessageHeader()
+    while True:
+        data&#43;= sys.stdin.buffer.read(1)
+        try: 
+            header.ParseFromString(data)
+            if check_fields(header):
+                break
+        except _DecodeError as e: 
+            pass
+    logging.debug(&#34;header {}&#34;.format(header))
+
+    # Receive the message data
+    data = sys.stdin.buffer.read(header.msglen)
+    logging.debug(&#34;received [{}]&#34;.format(data))
+
+    # Decode the message and validate all required fields are present
+    msg = msg_type(header.type)
+    if msg != None: 
+        try:
+            msg.ParseFromString(data)
+            if not check_fields(msg):
+                return None
+            logging.debug(&#34;msg {}&#34;.format(msg))
+            return msg
+        except _DecodeError:
+            return None
+    else:
+        return None
+
+def handle_register_request(msg):
+    logging.debug(&#34;Got register request&#34;)
+    # validate request
+    # check public key is on correct curve
+    try:
+        v = VerifyingKey.from_string(msg.clientPublicKey, NIST256p)
+    except Exception as e:
+        resp = spb.RegisterResponse()
+        resp.type = spb.MSG_REGISTER_RESPONSE
+        resp.uid = 0xff
+        resp.status = spb.FAILURE
+        send_message(resp) 
+        logging.info(&#34;FAILURE: User failed to registered with invalid pub key: {} and error {}&#34;.format(msg.clientPublicKey,e))
+        return spb.FAILURE
+
+    # parse request
+    uid = register_user(USERS, msg.name, msg.clientPublicKey)
+
+    # send response
+    resp = spb.RegisterResponse()
+    resp.type = spb.MSG_REGISTER_RESPONSE
+    resp.uid = uid
+    resp.status = spb.SUCCESS
+    send_message(resp) 
+    logging.info(&#34;SUCCESS: User registered with uid: {}&#34;.format(uid))
+
+    return spb.SUCCESS
+
+def handle_login_request(SESSION, msg):
+    logging.debug(&#34;Got Login request&#34;)
+    resp = spb.LoginResponse()
+    resp.type = spb.MSG_LOGIN_RESPONSE
+
+    # validate request
+    if msg.uid &gt; len(USERS) or msg.uid == 0: 
+        logging.info(&#34;ERROR: invalid uid&#34;)
+        resp.status = spb.FAILURE
+        resp.sessionId = b&#39;&#39;
+        resp.challenge = b&#39;&#39;
+        resp.ephemeralServerPublicKey = b&#39;&#39;
+        send_message(resp)
+        return spb.FAILURE
+
+    requested_user = USERS[msg.uid - 1]
+
+    # parse request
+    
+    # send response
+    challenge = os.urandom(32) # random 32-byte challenge to sign    
+    server_ephemeral_ecdh = ECDH(curve=NIST256p)
+    server_ephemeral_ecdh.generate_private_key()
+    server_ephemeral_public_key = server_ephemeral_ecdh.get_public_key()
+    
+    sessionId = str(uuid.uuid4()).encode()
+
+    resp.status = spb.SUCCESS
+    resp.sessionId = sessionId
+    resp.challenge = challenge
+    resp.ephemeralServerPublicKey = server_ephemeral_public_key.to_string(encoding=&#39;compressed&#39;)
+
+    SESSIONS[sessionId] = {&#39;completed_challenge&#39;:False, &#39;challenge&#39;:challenge, &#39;ephemeral_ecdh&#39;:server_ephemeral_ecdh, &#39;uid&#39;:msg.uid}
+    logging.debug(&#34;New session created {}&#34;.format(SESSIONS[sessionId]))
+    logging.info(&#34;SUCCESS: User correctly requested login with uid: {}&#34;.format(msg.uid))
+    send_message(resp)
+
+    return spb.SUCCESS
+
+def verify_challenge(chal, chalResponse, public_key):
+
+    try:
+        public_key.verify(chalResponse, data=chal)
+    except ecdsa.BadSignatureError:
+        return False
+
+    return True
+
+def handle_login_challenge_request(SESSION, USERS, msg):
+    logging.debug(&#34;Got Login Challenge request&#34;)
+    resp = spb.LoginChallengeResponse()
+    resp.type = spb.MSG_LOGIN_CHALLENGE_RESPONSE
+        
+    # validate request
+        # sessionId in SESSIONS?
+    if msg.sessionId not in SESSIONS:
+        resp.status = spb.FAILURE
+        resp.sessionId = b&#39;&#39;
+        logging.info(&#34;FAILURE: User send invalid sessionId: {}&#34;.format(msg.sessionId))
+        send_message(resp)
+        return spb.FAILURE
+
+    uid = SESSIONS[msg.sessionId][&#39;uid&#39;]
+    requested_user = USERS[uid - 1]
+    logging.debug(&#34;requested user {}: {}&#34;.format(uid,requested_user))
+    clientPubKey = VerifyingKey.from_string(requested_user[&#39;pubkey&#39;], NIST256p) #already validated 
+    clientRole = requested_user[&#39;role&#39;]
+
+    sessionId = msg.sessionId
+        # verify challenge
+    if not verify_challenge(SESSION[sessionId][&#39;challenge&#39;], msg.challengeResponse, clientPubKey):
+        resp.status = spb.FAILURE
+        resp.sessionId = b&#39;&#39;
+        logging.info(&#34;FAILURE: User failed challenge: {}&#34;.format(msg.challenge))
+        send_message(resp)
+        return spb.FAILURE
+
+        # ensure ephem client key is on curve
+    try:
+        clientEphemPubKey = VerifyingKey.from_string(msg.ephemeralClientPublicKey, NIST256p)
+    except Exception as e:
+        resp.status = spb.FAILURE
+        resp.sessionId = b&#39;&#39;
+        logging.info(&#34;FAILURE: Invalid client ephemeral public key: {}&#34;.format(msg.ephemeralClientPublicKey))
+        send_message(resp)
+        return spb.FAILURE
+
+    # action request
+    server_ephemeral_ecdh = SESSIONS[sessionId][&#39;ephemeral_ecdh&#39;]
+    server_ephemeral_ecdh.load_received_public_key(clientEphemPubKey)
+    shared_secret = server_ephemeral_ecdh.generate_sharedsecret_bytes()
+
+    token  = shared_secret 
+    token &#43;= b&#39;|&#39; &#43; long_to_bytes(clientRole) 
+    token &#43;= b&#39;|&#39; &#43; long_to_bytes(uid) 
+    token &#43;= b&#39;|&#39; &#43; sessionId
+
+    # send response
+    resp.status = spb.SUCCESS
+    resp.sessionId = sessionId
+
+    SESSIONS[sessionId][&#39;completed_challenge&#39;] = True
+    SESSIONS[sessionId].update( {&#39;client_token&#39;:token} )
+    logging.info(&#34;SUCCESS: User correctly completed challenge with uid: {}&#34;.format(uid))
+    send_message(resp)
+
+    return spb.SUCCESS
+
+def handle_message_request(SESSIONS, msg):
+    logging.debug(&#34;Got message request&#34;)
+    resp = spb.MessageResponse()
+    resp.type = spb.MSG_MESSAGE_RESPONSE
+    # validate request
+    if msg.sessionId not in SESSIONS:
+        resp.status = spb.FAILURE
+        resp.encMsg = b&#39;&#39;
+        resp.encMsgTag = b&#39;&#39;
+        logging.info(&#34;ERROR: Invalid sessionId: {}&#34;.format(sessionId)) 
+        send_message(resp)
+        return spb.FAILURE
+
+    # parse request
+    if SESSIONS[msg.sessionId][&#39;completed_challenge&#39;] == False or &#39;client_token&#39; not in SESSIONS[msg.sessionId]:
+        resp.status = spb.FAILURE
+        resp.encMsg = b&#39;&#39;
+        resp.encMsgTag = b&#39;&#39;
+        logging.info(&#34;ERROR: challenge not completed for this session&#34;)
+        send_message(resp)
+        return spb.FAILURE
+
+    token = SESSIONS[msg.sessionId][&#39;client_token&#39;]
+    role = bytes_to_long(token.split(b&#39;|&#39;)[1])
+    
+    (aes_gcm_key, nonce) = HKDF(token, 16, &#39;&#39;, SHA512, num_keys=2) 
+
+    if role == spb.ADMIN:
+        plain = b&#39;Congratulations - here is your flag: &#39; &#43; flag
+    else:
+        plain = b&#39;Welcome USER!&#39;
+
+    a = AES.new(aes_gcm_key, AES.MODE_GCM, nonce = nonce)
+    (cipher, tag) = a.encrypt_and_digest(plain)
+
+    # send response    
+
+    resp.status = spb.SUCCESS
+    resp.encMsg = cipher
+    resp.encMsgTag = tag
+    logging.info(&#34;SUCCESS: message sent&#34;) 
+    send_message(resp)
+
+    return spb.SUCCESS
+
+def register_user(USERS, name, pubkey, role = spb.USER):
+    len_db = len(USERS)
+    uid = len_db &#43; 1
+    USERS.append( {&#34;name&#34;: name, &#34;pubkey&#34;: pubkey, &#34;uid&#34;:uid, &#34;role&#34;: role} )
+    logging.debug(&#34;users = {}&#34;.format(USERS))
+    return uid
+
+if __name__ == &#34;__main__&#34;:
+    
+    logging.debug(&#34;creating sessions database&#34;)
+    # create session database
+    SESSIONS = {}
+
+    logging.debug(&#34;creating admin user&#34;)
+    # create admin user
+    server_ecdh = ECDH(curve=NIST256p)
+    server_ecdh.generate_private_key()
+    server_public_key = server_ecdh.get_public_key()
+    spub = server_public_key.to_string(encoding=&#39;compressed&#39;)
+    
+    logging.debug(&#34;creating user database&#34;)
+    # create user database
+    USERS = []
+    register_user(USERS, b&#34;admin&#34;, spub, role = spb.ADMIN)  
+
+
+    logging.debug(&#34;starting message loop&#34;)
+    while True:
+       m  = recv_message()
+       if m != None:
+           if m.type == spb.MSG_REGISTER_REQUEST:
+               handle_register_request(m)
+               continue
+           elif m.type == spb.MSG_LOGIN_REQUEST:
+               ret = handle_login_request(SESSIONS, m)
+               continue
+           elif m.type == spb.MSG_LOGIN_CHALLENGE:
+               ret = handle_login_challenge_request(SESSIONS, USERS, m)
+               continue
+           elif m.type == spb.MSG_MESSAGE_REQUEST:
+               handle_message_request(SESSIONS, m)
+               continue
+           else:
+               logging.error(&#34;Unknown message type, exitting...&#34;)
+               exit(0)
+
+</code></pre>
+  </div>
+
+
+
+
+
+  <div class="collapsable-code">
+    <input id="852769431" type="checkbox" checked />
+    <label for="852769431">
+      <span class="collapsable-code__language">proto</span>
+      <span class="collapsable-code__title">server.proto</span>
+      <span class="collapsable-code__toggle" data-label-expand="Show" data-label-collapse="Hide"></span>
+    </label>
+    <pre class="language-proto" ><code>
+syntax = &#34;proto2&#34;;
+
+package server;
+
+enum MessageType {
+	MSG_LOGIN_REQUEST=0;
+	MSG_LOGIN_RESPONSE=1;
+	MSG_LOGIN_CHALLENGE=2;
+	MSG_LOGIN_CHALLENGE_RESPONSE=3;
+	MSG_REGISTER_REQUEST=4;
+	MSG_REGISTER_RESPONSE=5;
+	MSG_MESSAGE_REQUEST=6;
+	MSG_MESSAGE_RESPONSE=7;
+}
+
+enum Status {
+		SUCCESS = 0;
+		FAILURE = 1;
+	}
+
+enum Role {
+		USER = 0;
+		ADMIN = 1;
+	}
+
+message MessageHeader {
+	required uint32 msglen = 1;
+	required MessageType type = 2;
+}
+
+message RegisterRequest {
+	required MessageType type = 1;
+	required bytes name = 2;
+	required bytes clientPublicKey = 3;
+}
+
+message RegisterResponse {
+	required MessageType type = 1;
+	required uint32 uid = 2;
+	required Status status = 3;
+}
+
+message LoginRequest {
+	required MessageType type = 1;
+	required uint32 uid = 2;
+}
+
+message LoginResponse {
+	required MessageType type = 1;
+	required bytes sessionId = 2;
+	required bytes challenge = 3;
+	required bytes ephemeralServerPublicKey = 4;
+	required Status status = 5;
+}
+
+message LoginChallenge {
+	required MessageType type = 1;
+	required bytes sessionId = 2;
+	required bytes challengeResponse = 3;
+	required bytes ephemeralClientPublicKey = 4;
+}
+
+message LoginChallengeResponse {
+	required MessageType type = 1;
+	required bytes sessionId = 2;
+	required Status status = 3; 
+}
+	
+message MessageRequest {
+	required MessageType type = 1;
+	required bytes sessionId = 3;
+}
+
+message MessageResponse {
+	required MessageType type = 1;
+	required Status status = 2;
+	required bytes encMsg = 3;
+	required bytes encMsgTag = 4;
+}
+
+</code></pre>
+  </div>
+
+
+<p>We also need to run the command in the server file <code>protoc -I=. --python_out=. ./server.proto</code>, to generate <code>server_pb2.py</code>.</p>
+<p>There&rsquo;s a lot of code to go through, but I&rsquo;ll try to explain the relevant parts:</p>
+<ul>
+<li>The server handles registering new users and logging in.</li>
+<li>To register, the client provides a public key, which must be on the NIST256p curve, then the public key is stored alongside their user id (<code>uid</code>), name and role.</li>
+<li>To login, there are two steps.
+<ul>
+<li>Firstly, the server generates a random challenge and public key, and sends it to us.</li>
+<li>Then we must sign the challenge with our public key and send the signature to the server, which checks if the signature is valid. If so, the server generates calculates a shared secret with its private key and our public key. The server then stores our info (shared secret, role, uid, session id) in a <code>token</code>, and sends us our session id.</li>
+</ul>
+</li>
+<li>We can also request a message, providing a session id. The server retrieves the token corresponding to our session, and checks if we have the admin role. If we do, we get the flag.</li>
+</ul>
+<p>I don&rsquo;t think there&rsquo;s anything wrong with the procedures described above, but I noticed our info was being stored in the token in a very bad way:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-py" data-lang="py"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">handle_login_challenge_request</span>(SESSION, USERS, msg):
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">...</span>
+</span></span><span style="display:flex;"><span>    token  <span style="color:#f92672">=</span> shared_secret 
+</span></span><span style="display:flex;"><span>    token <span style="color:#f92672">+=</span> <span style="color:#e6db74">b</span><span style="color:#e6db74">&#39;|&#39;</span> <span style="color:#f92672">+</span> long_to_bytes(clientRole) 
+</span></span><span style="display:flex;"><span>    token <span style="color:#f92672">+=</span> <span style="color:#e6db74">b</span><span style="color:#e6db74">&#39;|&#39;</span> <span style="color:#f92672">+</span> long_to_bytes(uid) 
+</span></span><span style="display:flex;"><span>    token <span style="color:#f92672">+=</span> <span style="color:#e6db74">b</span><span style="color:#e6db74">&#39;|&#39;</span> <span style="color:#f92672">+</span> sessionId
+</span></span></code></pre></div><p>The server then uses <code>|</code> as a delimeter to seperate our info later on:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-py" data-lang="py"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">handle_message_request</span>(SESSIONS, msg):
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">...</span>
+</span></span><span style="display:flex;"><span>    token <span style="color:#f92672">=</span> SESSIONS[msg<span style="color:#f92672">.</span>sessionId][<span style="color:#e6db74">&#39;client_token&#39;</span>]
+</span></span><span style="display:flex;"><span>    role <span style="color:#f92672">=</span> bytes_to_long(token<span style="color:#f92672">.</span>split(<span style="color:#e6db74">b</span><span style="color:#e6db74">&#39;|&#39;</span>)[<span style="color:#ae81ff">1</span>])
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">...</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> role <span style="color:#f92672">==</span> spb<span style="color:#f92672">.</span>ADMIN:
+</span></span><span style="display:flex;"><span>        plain <span style="color:#f92672">=</span> <span style="color:#e6db74">b</span><span style="color:#e6db74">&#39;Congratulations - here is your flag: &#39;</span> <span style="color:#f92672">+</span> flag
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>        plain <span style="color:#f92672">=</span> <span style="color:#e6db74">b</span><span style="color:#e6db74">&#39;Welcome USER!&#39;</span>
+</span></span></code></pre></div><p><code>bytes_to_long(token.split(b'|')[1])</code> retrieves the role by splitting with <code>|</code> and getting the second element. This means if we can inject a <code>|</code> character into the token somehow, we could trick it into thinking we have the admin role. However, it seems like we can&rsquo;t control any info in the token, which are <code>shared_secret</code>, <code>clientRole</code>, <code>uid</code> and <code>sessionId</code>.</p>
+<p>But it turns out, the admin role <code>spb.ADMIN</code> is actually just the number <code>1</code>, and since <code>shared_secret</code> is essentially random bytes, there is a chance that it could contain the <code>|</code> character.</p>
+<p>This is what <code>token</code> usually looks like:</p>
+<pre tabindex="0"><code>shared_secret   |role| uid| session id
+...\xc3\x87\xf0|\x00|\x02|c8e9fd09-0cb1-4d6c-88d3-53596a98fccb
+</code></pre><p>But what if <code>shared_secret</code> happened to end with <code>|\x01</code>?</p>
+<pre tabindex="0"><code>shared_secret   |role| uid| session id
+...\xc3\x87|\x01|\x00|\x02|c8e9fd09-0cb1-4d6c-88d3-53596a98fccb
+</code></pre><p>Now the second element when splitting by <code>|</code> is <code>\x01</code>, the admin role!</p>
+<p>Since <code>shared_secret</code> is basically random bytes, there is a 1 in $256^2$ which is 1 in 65536 chance that it ends with <code>|\x01</code> in which the server thinks we&rsquo;re admin, giving us the flag. This actually meant if you ran the client script, unmodified, enough times, you would get the flag. So I did pretty much that, with slight optimizations.</p>
+<p>65536 is not a lot, but probably not a good idea connecting to the server that many times. Luckily, we can create users and login multiple times over the same connection, so we didn&rsquo;t have to open many connections.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-py" data-lang="py"><span style="display:flex;"><span><span style="color:#66d9ef">while</span> <span style="color:#66d9ef">True</span>:
+</span></span><span style="display:flex;"><span>    s <span style="color:#f92672">=</span> remote(host, port)
+</span></span><span style="display:flex;"><span>    e <span style="color:#f92672">=</span> create_user()
+</span></span><span style="display:flex;"><span>    uid <span style="color:#f92672">=</span> register(s,e)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> tqdm(range(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1000</span>)):
+</span></span><span style="display:flex;"><span>        (sessionId, chal, sepk) <span style="color:#f92672">=</span> login(s, uid)
+</span></span><span style="display:flex;"><span>        ceph <span style="color:#f92672">=</span> login2(s, e, sessionId, chal)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># calculate shared secret</span>
+</span></span><span style="display:flex;"><span>        server_ephemeral_public_key <span style="color:#f92672">=</span> VerifyingKey<span style="color:#f92672">.</span>from_string(sepk, NIST256p)
+</span></span><span style="display:flex;"><span>        ceph<span style="color:#f92672">.</span>load_received_public_key(server_ephemeral_public_key)
+</span></span><span style="display:flex;"><span>        shared_secret <span style="color:#f92672">=</span> ceph<span style="color:#f92672">.</span>generate_sharedsecret_bytes()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># if shared secret ends with |\x01 , request for the flag</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># (we aren&#39;t explicitly checking for |\x01 because there is a chance</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># it could end with |\x00\x01 etc., which is still valid, slightly increasing</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># our chances)</span>
+</span></span><span style="display:flex;"><span>        token  <span style="color:#f92672">=</span> shared_secret
+</span></span><span style="display:flex;"><span>        token <span style="color:#f92672">+=</span> <span style="color:#e6db74">b</span><span style="color:#e6db74">&#39;|&#39;</span> <span style="color:#f92672">+</span> long_to_bytes(spb<span style="color:#f92672">.</span>USER)
+</span></span><span style="display:flex;"><span>        role <span style="color:#f92672">=</span> bytes_to_long(token<span style="color:#f92672">.</span>split(<span style="color:#e6db74">b</span><span style="color:#e6db74">&#39;|&#39;</span>)[<span style="color:#ae81ff">1</span>])
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> role <span style="color:#f92672">==</span> spb<span style="color:#f92672">.</span>ADMIN:
+</span></span><span style="display:flex;"><span>            msg <span style="color:#f92672">=</span> request_msg(s, sessionId, uid, ceph, sepk)
+</span></span><span style="display:flex;"><span>            print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Got the flag: </span><span style="color:#e6db74">{</span>msg <span style="color:#e6db74">= }</span><span style="color:#e6db74">&#34;</span>)
+</span></span><span style="display:flex;"><span>            exit()
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">continue</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    s<span style="color:#f92672">.</span>close()
+</span></span></code></pre></div><p>After ~30 minutes and running multiple instances, we actually got the flag: <code>cybears{Wh1ch_pr0gr4m_d0_j3d1_us3_t0_op3n_PDF_f1l35?Ad0b3_W4n_K3n0b1!}</code></p>
+
+  <img src="./img/got_the_fricking_flag.png"  class="center"  style="border-radius: 5px; width: 70%"  />
+
+
+<p>Full solve script:
+
+
+
+  <div class="collapsable-code">
+    <input id="349781526" type="checkbox" checked />
+    <label for="349781526">
+      <span class="collapsable-code__language">python</span>
+      <span class="collapsable-code__title">remote_brute.py</span>
+      <span class="collapsable-code__toggle" data-label-expand="Show" data-label-collapse="Hide"></span>
+    </label>
+    <pre class="language-python" ><code>
+&#39;&#39;&#39;
+
+python3 client.py -r arpeeceethree.chal.cybears.io:2323
+
+
+
+&#39;&#39;&#39;
+
+from pwn import * 
+from google.protobuf.internal.encoder import _VarintEncoder
+from google.protobuf.internal.decoder import _DecodeVarint
+import server_pb2 as spb
+from google.protobuf.internal.decoder import _DecodeError
+import sys 
+import argparse
+
+import Crypto.Cipher.AES as AES
+import Crypto.Hash.SHA512 as SHA512
+from Crypto.Protocol.KDF import HKDF
+from Crypto.Util.number import long_to_bytes, bytes_to_long
+
+from ecdsa import ECDH, NIST256p, VerifyingKey
+
+
+
+def send_message(s, msg):
+    &#34;&#34;&#34; Send a message, prefixed with its size, to a TPC/IP socket &#34;&#34;&#34;
+    data = msg.SerializeToString()
+    mh = spb.MessageHeader()
+    mh.msglen = len(data)
+    mh.type = msg.type
+    s.send(mh.SerializeToString() &#43; data)
+    return 
+
+def msg_type(msgtype):
+    if msgtype == spb.MSG_LOGIN_REQUEST:
+        return spb.LoginRequest()
+    elif msgtype == spb.MSG_LOGIN_RESPONSE:
+        return spb.LoginResponse()
+    elif msgtype == spb.MSG_LOGIN_CHALLENGE:
+        return spb.LoginChallenge()
+    elif msgtype == spb.MSG_LOGIN_CHALLENGE_RESPONSE:
+        return spb.LoginChallengeResponse()
+    elif msgtype == spb.MSG_REGISTER_REQUEST:
+        return spb.RegisterRequest()
+    elif msgtype == spb.MSG_REGISTER_RESPONSE:
+        return spb.RegisterResponse()
+    elif msgtype == spb.MSG_MESSAGE_REQUEST:
+        return spb.MessageRequest()
+    elif msgtype == spb.MSG_MESSAGE_RESPONSE:
+        return spb.MessageResponse()
+    else:
+        return None
+
+
+def check_fields(msg):
+    result = True
+    for field in msg.DESCRIPTOR.fields_by_name.keys():
+        if msg.DESCRIPTOR.fields_by_name[field].label == msg.DESCRIPTOR.fields_by_name[field].LABEL_REQUIRED:
+            result &amp;= msg.HasField(field)
+    return result
+
+def recv_message(s):
+    &#34;&#34;&#34; Receive a message, prefixed with its size and type, from stdin &#34;&#34;&#34;
+    # Receive the size of the message data
+    # expect [MessageHeader][Message of type]
+    data = b&#39;&#39;
+    header = spb.MessageHeader()
+    while True:
+        data&#43;= s.recv(1)
+        try:
+            header.ParseFromString(data)
+            if check_fields(header):
+                break
+        except _DecodeError as e:
+            pass
+
+    # Receive the message data
+    data = s.recv(header.msglen)
+
+    # Decode the message and validate all required fields are present
+    msg = msg_type(header.type)
+    if msg != None:
+        try:
+            msg.ParseFromString(data)
+            if not check_fields(msg):
+                return None
+            return msg
+        except _DecodeError:
+            return None
+    else:
+        return None
+
+def create_user():
+    client_ecdh = ECDH(curve=NIST256p)
+    client_ecdh.generate_private_key()
+    return client_ecdh
+
+def register(s, ecdh, name=b&#39;bumblebear&#39;, pubkey=b&#39;&#39;):
+    ## REGISTER
+    rr = spb.RegisterRequest()
+    rr.type = spb.MSG_REGISTER_REQUEST
+    rr.name = name
+    if pubkey == b&#39;&#39;:
+        rr.clientPublicKey = ecdh.get_public_key().to_string(encoding=&#39;compressed&#39;)
+    else:
+        rr.clientPublicKey = pubkey
+
+    send_message(s, rr)
+
+    ## REGISTER RESPONSE
+    reg_resp = recv_message(s)
+    if reg_resp != None:
+        pass
+        # log.info(&#34;DEBUG: received {}&#34;.format(reg_resp))
+    if reg_resp.status == spb.FAILURE:
+        log.error(&#34;failed to register&#34;)
+    uid = reg_resp.uid
+    return uid
+
+def login(s, uid):
+    ## LOGIN
+    l = spb.LoginRequest()
+    l.type = spb.MSG_LOGIN_REQUEST
+    l.uid = uid
+    send_message(s, l)
+
+    ## LOGIN RESPONSE
+    login_resp = recv_message(s)
+    if login_resp != None:
+        pass
+        # log.info(&#34;DEBUG: received {}&#34;.format(login_resp))
+    
+    return login_resp.sessionId, login_resp.challenge, login_resp.ephemeralServerPublicKey
+
+
+def login2(s, ecdh, sessionId, challenge):
+    ## SIGN CHALLENGE
+    sig = ecdh.private_key.sign_deterministic(challenge)
+
+    ## GENERATE EPHEMERAL DH SESSION KEY
+    client_ephemeral_ecdh = ECDH(curve=NIST256p)
+    client_ephemeral_ecdh.generate_private_key()
+    client_ephemeral_public_key = client_ephemeral_ecdh.get_public_key()
+
+    send_chal = spb.LoginChallenge()
+    send_chal.type = spb.MSG_LOGIN_CHALLENGE
+    send_chal.sessionId = sessionId
+    send_chal.ephemeralClientPublicKey = client_ephemeral_public_key.to_string(encoding=&#39;compressed&#39;)
+
+    send_chal.challengeResponse = sig
+    send_message(s, send_chal)
+
+    msg_resp = recv_message(s)
+    if msg_resp != None:
+        pass
+        # log.info(&#34;DEBUG: received {}&#34;.format(msg_resp))
+
+    return client_ephemeral_ecdh
+
+def request_msg(s, sessionId, uid, client_ephemeral, server_ephemeral):
+    ## REQUEST MESSAGE
+    # log.info(&#34;sending message request&#34;)
+    msg_req = spb.MessageRequest()
+    msg_req.type = spb.MSG_MESSAGE_REQUEST
+    msg_req.sessionId = sessionId
+
+    send_message(s, msg_req)
+
+    # log.info(&#34;receiving message&#34;)
+    msg_resp = recv_message(s)
+    if msg_resp != None:
+        pass
+        # log.info(&#34;DEBUG: received {}&#34;.format(msg_resp))
+
+    ## DECRYPT MESSAGE
+    server_ephemeral_public_key = VerifyingKey.from_string(server_ephemeral, NIST256p)
+
+    client_ephemeral.load_received_public_key(server_ephemeral_public_key)
+    shared_secret = client_ephemeral.generate_sharedsecret_bytes()
+
+    token  = shared_secret
+    token &#43;= b&#39;|&#39; &#43; long_to_bytes(spb.USER)
+    token &#43;= b&#39;|&#39; &#43; long_to_bytes(uid)
+    token &#43;= b&#39;|&#39; &#43; sessionId
+    (aes_gcm_key, nonce) = HKDF(token, 16, &#39;&#39;, SHA512, num_keys=2)
+
+    a = AES.new(aes_gcm_key, AES.MODE_GCM, nonce = nonce)
+    message = a.decrypt_and_verify(msg_resp.encMsg, msg_resp.encMsgTag)
+
+    # log.info(&#34;message received: {}&#34;.format(message))
+    return message
+
+from tqdm import tqdm
+
+if __name__ == &#34;__main__&#34;:
+
+    parser = argparse.ArgumentParser()
+    parser.add_argument(&#39;-r&#39;, &#39;--remote&#39;, help=&#34;The address:port of the remote server hosting the challenge&#34;, required=True)
+    args = parser.parse_args()
+
+    if args.remote != None:
+        host = args.remote.split(&#34;:&#34;)[0]
+        port = int(args.remote.split(&#34;:&#34;)[1])
+    else:
+        exit(0)
+
+    logging.root.setLevel(logging.ERROR)
+
+    while True:
+        s = remote(host, port)
+        e = create_user()
+        uid = register(s,e)
+        for i in tqdm(range(0, 1000)):
+            (sessionId, chal, sepk) = login(s, uid)
+            ceph = login2(s, e, sessionId, chal)
+
+            # calculate shared secret
+            server_ephemeral_public_key = VerifyingKey.from_string(sepk, NIST256p)
+            ceph.load_received_public_key(server_ephemeral_public_key)
+            shared_secret = ceph.generate_sharedsecret_bytes()
+
+            # if shared secret ends with |\x01 , request for the flag
+            # (we aren&#39;t explicitly checking for |\x01 because there is a chance
+            # it could end with |\x00\x01 etc., which is still valid, slightly increasing
+            # our chances)
+            token  = shared_secret
+            token &#43;= b&#39;|&#39; &#43; long_to_bytes(spb.USER)
+            role = bytes_to_long(token.split(b&#39;|&#39;)[1])
+            if role == spb.ADMIN:
+                msg = request_msg(s, sessionId, uid, ceph, sepk)
+                print(f&#34;Got the flag: {msg = }&#34;)
+                exit()
+            else:
+                continue
+
+        s.close()
+
+
+</code></pre>
+  </div>
+
+</p>
+<h3 id="a-better-solution">A better solution<a href="#a-better-solution" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h3>
+<p>Even though it worked, I thought that brute forcing on remote was probably unintended, and there should&rsquo;ve been some way to brute force locally, but I couldn&rsquo;t see how. Turns out my reading comprehension failed me again - I thought that the server uses the our public key we provided when registering to calculate the shared secret, but actually we provide it with another, ephemeral public key for the session when logging in.</p>
+<p>Since the server provides us with its ephermeral public key alongside the challenge, we can generate private keys and calculate the shared secret locally. If the shared secret ends with <code>|\x01</code>, we use that public key and send it to the server, which should compute the same shared secret, and give us the flag. This way, we don&rsquo;t need to brute force remote and can get the flag quickly in just one attempt.</p>
+<p>Better solve script:</p>
+
+
+
+  <div class="collapsable-code">
+    <input id="679314825" type="checkbox" checked />
+    <label for="679314825">
+      <span class="collapsable-code__language">python</span>
+      <span class="collapsable-code__title">code.py</span>
+      <span class="collapsable-code__toggle" data-label-expand="Show" data-label-collapse="Hide"></span>
+    </label>
+    <pre class="language-python" ><code>
+&#39;&#39;&#39;
+
+python3 client.py -r arpeeceethree.chal.cybears.io:2323
+
+
+
+&#39;&#39;&#39;
+
+from pwn import * 
+from google.protobuf.internal.encoder import _VarintEncoder
+from google.protobuf.internal.decoder import _DecodeVarint
+import server_pb2 as spb
+from google.protobuf.internal.decoder import _DecodeError
+import sys 
+import argparse
+
+import Crypto.Cipher.AES as AES
+import Crypto.Hash.SHA512 as SHA512
+from Crypto.Protocol.KDF import HKDF
+from Crypto.Util.number import long_to_bytes, bytes_to_long
+
+from ecdsa import ECDH, NIST256p, VerifyingKey
+
+
+
+def send_message(s, msg):
+    &#34;&#34;&#34; Send a message, prefixed with its size, to a TPC/IP socket &#34;&#34;&#34;
+    data = msg.SerializeToString()
+    mh = spb.MessageHeader()
+    mh.msglen = len(data)
+    mh.type = msg.type
+    s.send(mh.SerializeToString() &#43; data)
+    return 
+
+def msg_type(msgtype):
+    if msgtype == spb.MSG_LOGIN_REQUEST:
+        return spb.LoginRequest()
+    elif msgtype == spb.MSG_LOGIN_RESPONSE:
+        return spb.LoginResponse()
+    elif msgtype == spb.MSG_LOGIN_CHALLENGE:
+        return spb.LoginChallenge()
+    elif msgtype == spb.MSG_LOGIN_CHALLENGE_RESPONSE:
+        return spb.LoginChallengeResponse()
+    elif msgtype == spb.MSG_REGISTER_REQUEST:
+        return spb.RegisterRequest()
+    elif msgtype == spb.MSG_REGISTER_RESPONSE:
+        return spb.RegisterResponse()
+    elif msgtype == spb.MSG_MESSAGE_REQUEST:
+        return spb.MessageRequest()
+    elif msgtype == spb.MSG_MESSAGE_RESPONSE:
+        return spb.MessageResponse()
+    else:
+        return None
+
+
+def check_fields(msg):
+    result = True
+    for field in msg.DESCRIPTOR.fields_by_name.keys():
+        if msg.DESCRIPTOR.fields_by_name[field].label == msg.DESCRIPTOR.fields_by_name[field].LABEL_REQUIRED:
+            result &amp;= msg.HasField(field)
+    return result
+
+def recv_message(s):
+    &#34;&#34;&#34; Receive a message, prefixed with its size and type, from stdin &#34;&#34;&#34;
+    # Receive the size of the message data
+    # expect [MessageHeader][Message of type]
+    data = b&#39;&#39;
+    header = spb.MessageHeader()
+    while True:
+        data&#43;= s.recv(1)
+        try:
+            header.ParseFromString(data)
+            if check_fields(header):
+                break
+        except _DecodeError as e:
+            pass
+
+    # Receive the message data
+    data = s.recv(header.msglen)
+
+    # Decode the message and validate all required fields are present
+    msg = msg_type(header.type)
+    if msg != None:
+        try:
+            msg.ParseFromString(data)
+            if not check_fields(msg):
+                return None
+            return msg
+        except _DecodeError:
+            return None
+    else:
+        return None
+
+def create_user():
+    client_ecdh = ECDH(curve=NIST256p)
+    client_ecdh.generate_private_key()
+    return client_ecdh
+
+def register(s, ecdh, name=b&#39;bumblebear&#39;, pubkey=b&#39;&#39;):
+    ## REGISTER
+    rr = spb.RegisterRequest()
+    rr.type = spb.MSG_REGISTER_REQUEST
+    rr.name = name
+    if pubkey == b&#39;&#39;:
+        rr.clientPublicKey = ecdh.get_public_key().to_string(encoding=&#39;compressed&#39;)
+    else:
+        rr.clientPublicKey = pubkey
+
+    send_message(s, rr)
+
+    ## REGISTER RESPONSE
+    reg_resp = recv_message(s)
+    if reg_resp != None:
+        pass
+        # log.info(&#34;DEBUG: received {}&#34;.format(reg_resp))
+    if reg_resp.status == spb.FAILURE:
+        log.error(&#34;failed to register&#34;)
+    uid = reg_resp.uid
+    return uid
+
+def login(s, uid):
+    ## LOGIN
+    l = spb.LoginRequest()
+    l.type = spb.MSG_LOGIN_REQUEST
+    l.uid = uid
+    send_message(s, l)
+
+    ## LOGIN RESPONSE
+    login_resp = recv_message(s)
+    if login_resp != None:
+        pass
+        # log.info(&#34;DEBUG: received {}&#34;.format(login_resp))
+    
+    return login_resp.sessionId, login_resp.challenge, login_resp.ephemeralServerPublicKey
+
+
+def login2(s, ecdh, ephemeral_ecdh, sessionId, challenge):
+    ## SIGN CHALLENGE
+    sig = ecdh.private_key.sign_deterministic(challenge)
+
+    ## GENERATE EPHEMERAL DH SESSION KEY
+    client_ephemeral_ecdh = ephemeral_ecdh
+    client_ephemeral_public_key = client_ephemeral_ecdh.get_public_key()
+
+    send_chal = spb.LoginChallenge()
+    send_chal.type = spb.MSG_LOGIN_CHALLENGE
+    send_chal.sessionId = sessionId
+    send_chal.ephemeralClientPublicKey = client_ephemeral_public_key.to_string(encoding=&#39;compressed&#39;)
+
+    send_chal.challengeResponse = sig
+    send_message(s, send_chal)
+
+    msg_resp = recv_message(s)
+    if msg_resp != None:
+        pass
+        # log.info(&#34;DEBUG: received {}&#34;.format(msg_resp))
+
+    return client_ephemeral_ecdh
+
+def request_msg(s, sessionId, uid, client_ephemeral, server_ephemeral):
+    ## REQUEST MESSAGE
+    # log.info(&#34;sending message request&#34;)
+    msg_req = spb.MessageRequest()
+    msg_req.type = spb.MSG_MESSAGE_REQUEST
+    msg_req.sessionId = sessionId
+
+    send_message(s, msg_req)
+
+    # log.info(&#34;receiving message&#34;)
+    msg_resp = recv_message(s)
+    if msg_resp != None:
+        pass
+        # log.info(&#34;DEBUG: received {}&#34;.format(msg_resp))
+
+    ## DECRYPT MESSAGE
+    server_ephemeral_public_key = VerifyingKey.from_string(server_ephemeral, NIST256p)
+
+    client_ephemeral.load_received_public_key(server_ephemeral_public_key)
+    shared_secret = client_ephemeral.generate_sharedsecret_bytes()
+
+    token  = shared_secret
+    token &#43;= b&#39;|&#39; &#43; long_to_bytes(spb.USER)
+    token &#43;= b&#39;|&#39; &#43; long_to_bytes(uid)
+    token &#43;= b&#39;|&#39; &#43; sessionId
+    (aes_gcm_key, nonce) = HKDF(token, 16, &#39;&#39;, SHA512, num_keys=2)
+
+    a = AES.new(aes_gcm_key, AES.MODE_GCM, nonce = nonce)
+    message = a.decrypt_and_verify(msg_resp.encMsg, msg_resp.encMsgTag)
+
+    # log.info(&#34;message received: {}&#34;.format(message))
+    return message
+
+from tqdm import tqdm
+
+if __name__ == &#34;__main__&#34;:
+
+    parser = argparse.ArgumentParser()
+    parser.add_argument(&#39;-r&#39;, &#39;--remote&#39;, help=&#34;The address:port of the remote server hosting the challenge&#34;, required=True)
+    args = parser.parse_args()
+
+    if args.remote != None:
+        host = args.remote.split(&#34;:&#34;)[0]
+        port = int(args.remote.split(&#34;:&#34;)[1])
+    else:
+        exit(0)
+
+    logging.root.setLevel(logging.ERROR)
+
+    s = remote(host, port)
+
+    # register
+    e = create_user()
+    uid = register(s,e)
+
+    # login step 1
+    (sessionId, chal, sepk) = login(s, uid)
+    server_ephemeral_ecdh_pubkey = VerifyingKey.from_string(sepk, NIST256p)
+
+    # generate private keys until shared secret is what we want
+    while True:
+        client_ephemeral_ecdh = ECDH(curve=NIST256p)
+        client_ephemeral_ecdh.generate_private_key()
+        
+        # calculate shared secret
+        client_ephemeral_ecdh.load_received_public_key(server_ephemeral_ecdh_pubkey)
+        shared_secret = client_ephemeral_ecdh.generate_sharedsecret_bytes()
+        
+        token = shared_secret
+        token &#43;= b&#39;|&#39; &#43; long_to_bytes(spb.USER)
+        role = bytes_to_long(token.split(b&#39;|&#39;)[1])
+        if role == spb.ADMIN:
+            break
+
+    login2(s, e, client_ephemeral_ecdh, sessionId, chal)
+    
+    msg = request_msg(s, sessionId, uid, client_ephemeral_ecdh, sepk)
+    print(f&#34;Got the flag: {msg = }&#34;)
+
+
+
+</code></pre>
+  </div>
+
+
+<h1 id="conclusion">Conclusion<a href="#conclusion" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
+<p>BSides Canberra 2024 was again, a great conference, and <a href="https://x.com/cybearsctf">Cybears</a> hosted another fun CTF! I believe it&rsquo;s truely one of the best conferences out there, and I&rsquo;ll definitely be coming back next year!</p>
+<p>I was able to attend thanks to the <a href="https://www.bsidesau.com.au/assistance.html">Assistance Program</a>, which covered my flights and hotel, so special thanks to Kylie, Silvio and Danielle for making this possible!</p>
+<p>For coming 2nd place, we won $500, and a Dungeons and Dragons lego set! We, alongside the other winning teams, skateboarding dogs and French Roomba, all decided to donate our prize money to the Assistance Program, and we hope this helps other people attend the conference in the future! We&rsquo;re keeping the lego set though :P</p>
+<p>Btw, if you spotted any errors/typos in the blog, or have questions, feel free to DM/ping me on discord <code>thesavageteddy</code>.</p>
+<p>Thanks for reading!</p>
+<ul>
+<li>teddy / TheSavageTeddy</li>
+</ul>
+
+  <img src="./img/conference.jpg"  class="center"  style="border-radius: 5px; width: 100%"  />
+
+
+
+      </div></div>
+
+  
+    
+<div class="pagination">
+    <div class="pagination__title">
+        <span class="pagination__title-h">Read other posts</span>
+        <hr />
+    </div>
+    <div class="pagination__buttons">
+        
+        
+        <span class="button next">
+            <a href="https://TheSavageTeddy.github.io/featured/bsides-canberra-ctf-2023/">
+                <span class="button__text">Reversing Writeups - BSides Canberra CTF 2023</span>
+                <span class="button__icon">→</span>
+            </a>
+        </span>
+        
+    </div>
+</div>
+
+  
+
+  
+    
+
+  
+</article>
+
+    </div>
+
+    
+    <footer class="footer">
+  <div class="footer__inner">
+    
+      <div class="copyright copyright--user">
+        <span>teddyctf</span>
+    
+      <span>:: <a href="https://github.com/panr/hugo-theme-terminal" target="_blank">Theme</a> made by <a href="https://github.com/panr" target="_blank">panr</a></span>
+      </div>
+  </div>
+</footer>
+
+
+
+
+
+
+<script type="text/javascript" src="/bundle.min.js"></script>
+
+
+
+
+
+    
+  </div>
+
+</body>
+
+</html>

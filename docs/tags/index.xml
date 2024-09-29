@@ -7,13 +7,63 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>teddyctf</copyright>
-    <lastBuildDate>Mon, 01 Apr 2024 06:43:20 +0800</lastBuildDate><atom:link href="https://TheSavageTeddy.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 28 Sep 2024 15:53:20 +0800</lastBuildDate><atom:link href="https://TheSavageTeddy.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>bsides</title>
+      <link>https://TheSavageTeddy.github.io/tags/bsides/</link>
+      <pubDate>Sat, 28 Sep 2024 15:53:20 +0800</pubDate>
+      
+      <guid>https://TheSavageTeddy.github.io/tags/bsides/</guid>
+      <description></description>
+      <content></content>
+    </item>
+    
+    <item>
+      <title>crypto</title>
+      <link>https://TheSavageTeddy.github.io/tags/crypto/</link>
+      <pubDate>Sat, 28 Sep 2024 15:53:20 +0800</pubDate>
+      
+      <guid>https://TheSavageTeddy.github.io/tags/crypto/</guid>
+      <description></description>
+      <content></content>
+    </item>
+    
+    <item>
+      <title>cryptography</title>
+      <link>https://TheSavageTeddy.github.io/tags/cryptography/</link>
+      <pubDate>Sat, 28 Sep 2024 15:53:20 +0800</pubDate>
+      
+      <guid>https://TheSavageTeddy.github.io/tags/cryptography/</guid>
+      <description></description>
+      <content></content>
+    </item>
+    
     <item>
       <title>ctf</title>
       <link>https://TheSavageTeddy.github.io/tags/ctf/</link>
-      <pubDate>Mon, 01 Apr 2024 06:43:20 +0800</pubDate>
+      <pubDate>Sat, 28 Sep 2024 15:53:20 +0800</pubDate>
       
       <guid>https://TheSavageTeddy.github.io/tags/ctf/</guid>
+      <description></description>
+      <content></content>
+    </item>
+    
+    <item>
+      <title>onsite</title>
+      <link>https://TheSavageTeddy.github.io/tags/onsite/</link>
+      <pubDate>Sat, 28 Sep 2024 15:53:20 +0800</pubDate>
+      
+      <guid>https://TheSavageTeddy.github.io/tags/onsite/</guid>
+      <description></description>
+      <content></content>
+    </item>
+    
+    <item>
+      <title>writeup</title>
+      <link>https://TheSavageTeddy.github.io/tags/writeup/</link>
+      <pubDate>Sat, 28 Sep 2024 15:53:20 +0800</pubDate>
+      
+      <guid>https://TheSavageTeddy.github.io/tags/writeup/</guid>
       <description></description>
       <content></content>
     </item>
@@ -24,16 +74,6 @@
       <pubDate>Mon, 01 Apr 2024 06:43:20 +0800</pubDate>
       
       <guid>https://TheSavageTeddy.github.io/tags/cursed/</guid>
-      <description></description>
-      <content></content>
-    </item>
-    
-    <item>
-      <title>writeup</title>
-      <link>https://TheSavageTeddy.github.io/tags/writeup/</link>
-      <pubDate>Mon, 01 Apr 2024 06:43:20 +0800</pubDate>
-      
-      <guid>https://TheSavageTeddy.github.io/tags/writeup/</guid>
       <description></description>
       <content></content>
     </item>
@@ -69,36 +109,6 @@
     </item>
     
     <item>
-      <title>bsides</title>
-      <link>https://TheSavageTeddy.github.io/tags/bsides/</link>
-      <pubDate>Sun, 01 Oct 2023 00:06:40 +0800</pubDate>
-      
-      <guid>https://TheSavageTeddy.github.io/tags/bsides/</guid>
-      <description></description>
-      <content></content>
-    </item>
-    
-    <item>
-      <title>cryptography</title>
-      <link>https://TheSavageTeddy.github.io/tags/cryptography/</link>
-      <pubDate>Sun, 01 Oct 2023 00:06:40 +0800</pubDate>
-      
-      <guid>https://TheSavageTeddy.github.io/tags/cryptography/</guid>
-      <description></description>
-      <content></content>
-    </item>
-    
-    <item>
-      <title>onsite</title>
-      <link>https://TheSavageTeddy.github.io/tags/onsite/</link>
-      <pubDate>Sun, 01 Oct 2023 00:06:40 +0800</pubDate>
-      
-      <guid>https://TheSavageTeddy.github.io/tags/onsite/</guid>
-      <description></description>
-      <content></content>
-    </item>
-    
-    <item>
       <title>rev</title>
       <link>https://TheSavageTeddy.github.io/tags/rev/</link>
       <pubDate>Sun, 01 Oct 2023 00:06:40 +0800</pubDate>
@@ -114,16 +124,6 @@
       <pubDate>Sun, 01 Oct 2023 00:06:40 +0800</pubDate>
       
       <guid>https://TheSavageTeddy.github.io/tags/reversing/</guid>
-      <description></description>
-      <content></content>
-    </item>
-    
-    <item>
-      <title>crypto</title>
-      <link>https://TheSavageTeddy.github.io/tags/crypto/</link>
-      <pubDate>Thu, 22 Jun 2023 21:20:00 +0800</pubDate>
-      
-      <guid>https://TheSavageTeddy.github.io/tags/crypto/</guid>
       <description></description>
       <content></content>
     </item>

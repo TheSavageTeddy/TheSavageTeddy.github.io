@@ -2,6 +2,9 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://TheSavageTeddy.github.io/featured/bsides-canberra-ctf-2024/</loc>
+    <lastmod>2024-09-28T15:53:20+08:00</lastmod>
+  </url><url>
     <loc>https://TheSavageTeddy.github.io/featured/bsides-canberra-ctf-2023/</loc>
     <lastmod>2023-10-01T00:06:40+08:00</lastmod>
   </url><url>
@@ -29,28 +32,52 @@
     <loc>https://TheSavageTeddy.github.io/posts/writeups-hackabit2023/</loc>
     <lastmod>2023-03-01T00:00:00+08:00</lastmod>
   </url><url>
+    <loc>https://TheSavageTeddy.github.io/tags/bsides/</loc>
+    <lastmod>2024-09-28T15:53:20+08:00</lastmod>
+  </url><url>
     <loc>https://TheSavageTeddy.github.io/categories/</loc>
-    <lastmod>2024-04-01T06:43:20+08:00</lastmod>
+    <lastmod>2024-09-28T15:53:20+08:00</lastmod>
+  </url><url>
+    <loc>https://TheSavageTeddy.github.io/tags/crypto/</loc>
+    <lastmod>2024-09-28T15:53:20+08:00</lastmod>
+  </url><url>
+    <loc>https://TheSavageTeddy.github.io/categories/crypto/</loc>
+    <lastmod>2024-09-28T15:53:20+08:00</lastmod>
+  </url><url>
+    <loc>https://TheSavageTeddy.github.io/tags/cryptography/</loc>
+    <lastmod>2024-09-28T15:53:20+08:00</lastmod>
   </url><url>
     <loc>https://TheSavageTeddy.github.io/tags/ctf/</loc>
-    <lastmod>2024-04-01T06:43:20+08:00</lastmod>
+    <lastmod>2024-09-28T15:53:20+08:00</lastmod>
   </url><url>
     <loc>https://TheSavageTeddy.github.io/categories/ctf-writeups/</loc>
-    <lastmod>2024-04-01T06:43:20+08:00</lastmod>
+    <lastmod>2024-09-28T15:53:20+08:00</lastmod>
+  </url><url>
+    <loc>https://TheSavageTeddy.github.io/featured/</loc>
+    <lastmod>2024-09-28T15:53:20+08:00</lastmod>
+  </url><url>
+    <loc>https://TheSavageTeddy.github.io/tags/onsite/</loc>
+    <lastmod>2024-09-28T15:53:20+08:00</lastmod>
+  </url><url>
+    <loc>https://TheSavageTeddy.github.io/categories/onsite/</loc>
+    <lastmod>2024-09-28T15:53:20+08:00</lastmod>
+  </url><url>
+    <loc>https://TheSavageTeddy.github.io/tags/</loc>
+    <lastmod>2024-09-28T15:53:20+08:00</lastmod>
+  </url><url>
+    <loc>https://TheSavageTeddy.github.io/</loc>
+    <lastmod>2024-09-28T15:53:20+08:00</lastmod>
+  </url><url>
+    <loc>https://TheSavageTeddy.github.io/tags/writeup/</loc>
+    <lastmod>2024-09-28T15:53:20+08:00</lastmod>
+  </url><url>
+    <loc>https://TheSavageTeddy.github.io/categories/writeups/</loc>
+    <lastmod>2024-09-28T15:53:20+08:00</lastmod>
   </url><url>
     <loc>https://TheSavageTeddy.github.io/tags/cursed/</loc>
     <lastmod>2024-04-01T06:43:20+08:00</lastmod>
   </url><url>
     <loc>https://TheSavageTeddy.github.io/posts/</loc>
-    <lastmod>2024-04-01T06:43:20+08:00</lastmod>
-  </url><url>
-    <loc>https://TheSavageTeddy.github.io/tags/</loc>
-    <lastmod>2024-04-01T06:43:20+08:00</lastmod>
-  </url><url>
-    <loc>https://TheSavageTeddy.github.io/</loc>
-    <lastmod>2024-04-01T06:43:20+08:00</lastmod>
-  </url><url>
-    <loc>https://TheSavageTeddy.github.io/tags/writeup/</loc>
     <lastmod>2024-04-01T06:43:20+08:00</lastmod>
   </url><url>
     <loc>https://TheSavageTeddy.github.io/tags/damnvulnerabledefi/</loc>
@@ -65,27 +92,6 @@
     <loc>https://TheSavageTeddy.github.io/categories/web3/</loc>
     <lastmod>2024-02-13T18:10:00+08:00</lastmod>
   </url><url>
-    <loc>https://TheSavageTeddy.github.io/categories/writeups/</loc>
-    <lastmod>2024-02-13T18:10:00+08:00</lastmod>
-  </url><url>
-    <loc>https://TheSavageTeddy.github.io/tags/bsides/</loc>
-    <lastmod>2023-10-01T00:06:40+08:00</lastmod>
-  </url><url>
-    <loc>https://TheSavageTeddy.github.io/categories/crypto/</loc>
-    <lastmod>2023-10-01T00:06:40+08:00</lastmod>
-  </url><url>
-    <loc>https://TheSavageTeddy.github.io/tags/cryptography/</loc>
-    <lastmod>2023-10-01T00:06:40+08:00</lastmod>
-  </url><url>
-    <loc>https://TheSavageTeddy.github.io/featured/</loc>
-    <lastmod>2023-10-01T00:06:40+08:00</lastmod>
-  </url><url>
-    <loc>https://TheSavageTeddy.github.io/tags/onsite/</loc>
-    <lastmod>2023-10-01T00:06:40+08:00</lastmod>
-  </url><url>
-    <loc>https://TheSavageTeddy.github.io/categories/onsite/</loc>
-    <lastmod>2023-10-01T00:06:40+08:00</lastmod>
-  </url><url>
     <loc>https://TheSavageTeddy.github.io/tags/rev/</loc>
     <lastmod>2023-10-01T00:06:40+08:00</lastmod>
   </url><url>
@@ -94,9 +100,6 @@
   </url><url>
     <loc>https://TheSavageTeddy.github.io/categories/reversing/</loc>
     <lastmod>2023-10-01T00:06:40+08:00</lastmod>
-  </url><url>
-    <loc>https://TheSavageTeddy.github.io/tags/crypto/</loc>
-    <lastmod>2023-06-22T21:20:00+08:00</lastmod>
   </url><url>
     <loc>https://TheSavageTeddy.github.io/categories/cryptography/</loc>
     <lastmod>2023-06-22T21:20:00+08:00</lastmod>
