@@ -147,8 +147,8 @@ else:
 
 
   &lt;div class=&#34;collapsable-code&#34;&gt;
-    &lt;input id=&#34;682197534&#34; type=&#34;checkbox&#34; checked /&gt;
-    &lt;label for=&#34;682197534&#34;&gt;
+    &lt;input id=&#34;649857132&#34; type=&#34;checkbox&#34; checked /&gt;
+    &lt;label for=&#34;649857132&#34;&gt;
       &lt;span class=&#34;collapsable-code__language&#34;&gt;text&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__title&#34;&gt;out.txt&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__toggle&#34; data-label-expand=&#34;Show&#34; data-label-collapse=&#34;Hide&#34;&gt;&lt;/span&gt;
@@ -221,8 +221,8 @@ print(f&amp;#34;{flag = }&amp;#34;)
 
 
   &lt;div class=&#34;collapsable-code&#34;&gt;
-    &lt;input id=&#34;198463275&#34; type=&#34;checkbox&#34; checked /&gt;
-    &lt;label for=&#34;198463275&#34;&gt;
+    &lt;input id=&#34;964158732&#34; type=&#34;checkbox&#34; checked /&gt;
+    &lt;label for=&#34;964158732&#34;&gt;
       &lt;span class=&#34;collapsable-code__language&#34;&gt;python&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__title&#34;&gt;server.py&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__toggle&#34; data-label-expand=&#34;Show&#34; data-label-collapse=&#34;Hide&#34;&gt;&lt;/span&gt;
@@ -389,8 +389,8 @@ if __name__ == &amp;#34;__main__&amp;#34;:
 
 
   &lt;div class=&#34;collapsable-code&#34;&gt;
-    &lt;input id=&#34;869173425&#34; type=&#34;checkbox&#34; checked /&gt;
-    &lt;label for=&#34;869173425&#34;&gt;
+    &lt;input id=&#34;492783165&#34; type=&#34;checkbox&#34; checked /&gt;
+    &lt;label for=&#34;492783165&#34;&gt;
       &lt;span class=&#34;collapsable-code__language&#34;&gt;python&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__title&#34;&gt;get_pw_chars.py&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__toggle&#34; data-label-expand=&#34;Show&#34; data-label-collapse=&#34;Hide&#34;&gt;&lt;/span&gt;
@@ -438,8 +438,8 @@ print(f&amp;#34;{pw_chars = }&amp;#34;)
 
 
   &lt;div class=&#34;collapsable-code&#34;&gt;
-    &lt;input id=&#34;375196824&#34; type=&#34;checkbox&#34; checked /&gt;
-    &lt;label for=&#34;375196824&#34;&gt;
+    &lt;input id=&#34;215643897&#34; type=&#34;checkbox&#34; checked /&gt;
+    &lt;label for=&#34;215643897&#34;&gt;
       &lt;span class=&#34;collapsable-code__language&#34;&gt;python&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__title&#34;&gt;get_flag.py&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__toggle&#34; data-label-expand=&#34;Show&#34; data-label-collapse=&#34;Hide&#34;&gt;&lt;/span&gt;
@@ -489,8 +489,8 @@ r.interactive()
 
 
   &lt;div class=&#34;collapsable-code&#34;&gt;
-    &lt;input id=&#34;348591627&#34; type=&#34;checkbox&#34; checked /&gt;
-    &lt;label for=&#34;348591627&#34;&gt;
+    &lt;input id=&#34;145263897&#34; type=&#34;checkbox&#34; checked /&gt;
+    &lt;label for=&#34;145263897&#34;&gt;
       &lt;span class=&#34;collapsable-code__language&#34;&gt;python&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__title&#34;&gt;generate_signatures.py&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__toggle&#34; data-label-expand=&#34;Show&#34; data-label-collapse=&#34;Hide&#34;&gt;&lt;/span&gt;
@@ -566,8 +566,8 @@ with open(&amp;#34;out.json&amp;#34;, &amp;#34;w&amp;#34;) as g:
 
 
   &lt;div class=&#34;collapsable-code&#34;&gt;
-    &lt;input id=&#34;821475639&#34; type=&#34;checkbox&#34; checked /&gt;
-    &lt;label for=&#34;821475639&#34;&gt;
+    &lt;input id=&#34;473859621&#34; type=&#34;checkbox&#34; checked /&gt;
+    &lt;label for=&#34;473859621&#34;&gt;
       &lt;span class=&#34;collapsable-code__language&#34;&gt;json&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__title&#34;&gt;out.json&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__toggle&#34; data-label-expand=&#34;Show&#34; data-label-collapse=&#34;Hide&#34;&gt;&lt;/span&gt;
@@ -631,8 +631,8 @@ $$&lt;/p&gt;
 
 
   &lt;div class=&#34;collapsable-code&#34;&gt;
-    &lt;input id=&#34;725384916&#34; type=&#34;checkbox&#34; checked /&gt;
-    &lt;label for=&#34;725384916&#34;&gt;
+    &lt;input id=&#34;592147863&#34; type=&#34;checkbox&#34; checked /&gt;
+    &lt;label for=&#34;592147863&#34;&gt;
       &lt;span class=&#34;collapsable-code__language&#34;&gt;python&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__title&#34;&gt;code.py&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__toggle&#34; data-label-expand=&#34;Show&#34; data-label-collapse=&#34;Hide&#34;&gt;&lt;/span&gt;
@@ -740,8 +740,8 @@ print(f&amp;#34;{flag = }&amp;#34;)
 
 
   &lt;div class=&#34;collapsable-code&#34;&gt;
-    &lt;input id=&#34;297165834&#34; type=&#34;checkbox&#34; checked /&gt;
-    &lt;label for=&#34;297165834&#34;&gt;
+    &lt;input id=&#34;762183594&#34; type=&#34;checkbox&#34; checked /&gt;
+    &lt;label for=&#34;762183594&#34;&gt;
       &lt;span class=&#34;collapsable-code__language&#34;&gt;python&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__title&#34;&gt;client.py&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__toggle&#34; data-label-expand=&#34;Show&#34; data-label-collapse=&#34;Hide&#34;&gt;&lt;/span&gt;
@@ -970,8 +970,8 @@ if __name__ == &amp;#34;__main__&amp;#34;:
 
 
   &lt;div class=&#34;collapsable-code&#34;&gt;
-    &lt;input id=&#34;629781354&#34; type=&#34;checkbox&#34; checked /&gt;
-    &lt;label for=&#34;629781354&#34;&gt;
+    &lt;input id=&#34;842953716&#34; type=&#34;checkbox&#34; checked /&gt;
+    &lt;label for=&#34;842953716&#34;&gt;
       &lt;span class=&#34;collapsable-code__language&#34;&gt;python&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__title&#34;&gt;server.py&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__toggle&#34; data-label-expand=&#34;Show&#34; data-label-collapse=&#34;Hide&#34;&gt;&lt;/span&gt;
@@ -1323,8 +1323,8 @@ if __name__ == &amp;#34;__main__&amp;#34;:
 
 
   &lt;div class=&#34;collapsable-code&#34;&gt;
-    &lt;input id=&#34;972384156&#34; type=&#34;checkbox&#34; checked /&gt;
-    &lt;label for=&#34;972384156&#34;&gt;
+    &lt;input id=&#34;946325781&#34; type=&#34;checkbox&#34; checked /&gt;
+    &lt;label for=&#34;946325781&#34;&gt;
       &lt;span class=&#34;collapsable-code__language&#34;&gt;proto&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__title&#34;&gt;server.proto&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__toggle&#34; data-label-expand=&#34;Show&#34; data-label-collapse=&#34;Hide&#34;&gt;&lt;/span&gt;
@@ -1493,8 +1493,8 @@ message MessageResponse {
 
 
   &lt;div class=&#34;collapsable-code&#34;&gt;
-    &lt;input id=&#34;735682941&#34; type=&#34;checkbox&#34; checked /&gt;
-    &lt;label for=&#34;735682941&#34;&gt;
+    &lt;input id=&#34;234596718&#34; type=&#34;checkbox&#34; checked /&gt;
+    &lt;label for=&#34;234596718&#34;&gt;
       &lt;span class=&#34;collapsable-code__language&#34;&gt;python&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__title&#34;&gt;remote_brute.py&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__toggle&#34; data-label-expand=&#34;Show&#34; data-label-collapse=&#34;Hide&#34;&gt;&lt;/span&gt;
@@ -1751,8 +1751,8 @@ if __name__ == &amp;#34;__main__&amp;#34;:
 
 
   &lt;div class=&#34;collapsable-code&#34;&gt;
-    &lt;input id=&#34;725439618&#34; type=&#34;checkbox&#34; checked /&gt;
-    &lt;label for=&#34;725439618&#34;&gt;
+    &lt;input id=&#34;698245137&#34; type=&#34;checkbox&#34; checked /&gt;
+    &lt;label for=&#34;698245137&#34;&gt;
       &lt;span class=&#34;collapsable-code__language&#34;&gt;python&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__title&#34;&gt;code.py&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__toggle&#34; data-label-expand=&#34;Show&#34; data-label-collapse=&#34;Hide&#34;&gt;&lt;/span&gt;
@@ -5040,7 +5040,7 @@ p.interactive()
 Description:
 I need to make a pwn? Let&amp;rsquo;s go with that standard warmup rop thing&amp;hellip; what was it&amp;hellip; ret2libm?
 We are provided with a zip file containing a binary, source code, libc, libm, and Makefile.
-c chal.c #include &amp;lt;math.h&amp;gt; #include &amp;lt;stdio.h&amp;gt; // gcc -fno-stack-protector -lm int main(int argc, char* argv) { setvbuf(stdin, NULL, _IONBF, 0); setvbuf(stdout, NULL, _IONBF, 0); char yours[8]; printf(&amp;#34;Check out my pecs: %p\n&amp;#34;, fabs); printf(&amp;#34;How about yours?</description>
+cchal.c#include &amp;lt;math.h&amp;gt;#include &amp;lt;stdio.h&amp;gt;// gcc -fno-stack-protector -lmint main(int argc, char* argv) {setvbuf(stdin, NULL, _IONBF, 0);setvbuf(stdout, NULL, _IONBF, 0);char yours[8];printf(&amp;#34;Check out my pecs: %p\n&amp;#34;, fabs);printf(&amp;#34;How about yours?</description>
       <content>&lt;h1 id=&#34;overview&#34;&gt;Overview&lt;/h1&gt;
 &lt;p&gt;&lt;code&gt;ret2libm&lt;/code&gt; was the 2nd most solved &lt;code&gt;pwn&lt;/code&gt; challenge of &lt;a href=&#34;https://ctftime.org/event/1774&#34;&gt;IrisCTF 2023&lt;/a&gt;, written by &lt;code&gt;sera&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;Description:&lt;/p&gt;
