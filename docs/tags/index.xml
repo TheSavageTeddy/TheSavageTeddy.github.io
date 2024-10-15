@@ -7,7 +7,37 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>teddyctf</copyright>
-    <lastBuildDate>Sat, 28 Sep 2024 15:53:20 +0800</lastBuildDate><atom:link href="https://TheSavageTeddy.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 15 Oct 2024 19:00:00 +0800</lastBuildDate><atom:link href="https://TheSavageTeddy.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ctf</title>
+      <link>https://TheSavageTeddy.github.io/tags/ctf/</link>
+      <pubDate>Tue, 15 Oct 2024 19:00:00 +0800</pubDate>
+      
+      <guid>https://TheSavageTeddy.github.io/tags/ctf/</guid>
+      <description></description>
+      <content></content>
+    </item>
+    
+    <item>
+      <title>misc</title>
+      <link>https://TheSavageTeddy.github.io/tags/misc/</link>
+      <pubDate>Tue, 15 Oct 2024 19:00:00 +0800</pubDate>
+      
+      <guid>https://TheSavageTeddy.github.io/tags/misc/</guid>
+      <description></description>
+      <content></content>
+    </item>
+    
+    <item>
+      <title>writeup</title>
+      <link>https://TheSavageTeddy.github.io/tags/writeup/</link>
+      <pubDate>Tue, 15 Oct 2024 19:00:00 +0800</pubDate>
+      
+      <guid>https://TheSavageTeddy.github.io/tags/writeup/</guid>
+      <description></description>
+      <content></content>
+    </item>
+    
     <item>
       <title>bsides</title>
       <link>https://TheSavageTeddy.github.io/tags/bsides/</link>
@@ -39,31 +69,11 @@
     </item>
     
     <item>
-      <title>ctf</title>
-      <link>https://TheSavageTeddy.github.io/tags/ctf/</link>
-      <pubDate>Sat, 28 Sep 2024 15:53:20 +0800</pubDate>
-      
-      <guid>https://TheSavageTeddy.github.io/tags/ctf/</guid>
-      <description></description>
-      <content></content>
-    </item>
-    
-    <item>
       <title>onsite</title>
       <link>https://TheSavageTeddy.github.io/tags/onsite/</link>
       <pubDate>Sat, 28 Sep 2024 15:53:20 +0800</pubDate>
       
       <guid>https://TheSavageTeddy.github.io/tags/onsite/</guid>
-      <description></description>
-      <content></content>
-    </item>
-    
-    <item>
-      <title>writeup</title>
-      <link>https://TheSavageTeddy.github.io/tags/writeup/</link>
-      <pubDate>Sat, 28 Sep 2024 15:53:20 +0800</pubDate>
-      
-      <guid>https://TheSavageTeddy.github.io/tags/writeup/</guid>
       <description></description>
       <content></content>
     </item>

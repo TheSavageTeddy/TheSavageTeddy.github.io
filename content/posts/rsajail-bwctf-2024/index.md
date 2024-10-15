@@ -1,13 +1,13 @@
 +++ 
-weight = 2
-draft = "true" # TODO set this to false wen publish
+weight = 7
+draft = "false"
 tags = ["ctf", "misc", "writeup"] 
 categories = ["CTF Writeups", "writeups"] 
-publishDate = 1727510000
+publishDate = 1728990000
 description = "Writeups for all RSAjail challenges: Pyjail + RSA = 3 million lines of Python code" 
 title_img = """{{< image src="https://ctftime.org/media/cache/48/72/4872c3c168bd1cdeb5dc564bb3a0416f.png" alt="" style="border-radius: 5px; height: auto; width: 3em; display: inline; vertical-align: middle; " >}}"""
-title = """RSAjail writeups - Blue Water CTF 2024"""
-cover = ""
+title = """RSAjail Writeups - Blue Water CTF 2024"""
+cover = "bw-misc.png"
 katex = "true"
 +++
 
@@ -131,7 +131,7 @@ It seems simple enough. We find `q` by dividing `N` by `p`, calculate `d = pow(e
 
 But the trick is, **each line of our input must be 3 characters or less**.
 
-```
+```py
 # Your turn!
 pr, m = keygen()
 while code := input(">>> "):
@@ -543,7 +543,7 @@ If we want certain values to persist, we can simply assign the key to its previo
 
 From now on, I will condense all expressions into a single line, without newlines, for readibily. But keep in mind that every character will be on its own line, thus operators and values 2 chars or longer can't be used.
 
-### Integer division
+### Integer division - calculating `q = N // p`
 
 Okay, so `//` is banned, so we can't divide two integers. Which is tragic, as some parts of our solution from RSAjail-2 requires integer division. Including the simplest one, `q = N // p`.
 
@@ -582,7 +582,7 @@ def divide(dividend, divisor):
     return quotient
 ```
 
-It's kinda confusing how it divides, but it does work. The main things to note is that the times we iterate depends on the size of the divisor, which in the case of `q = N // p`, `p` has bitlength 1024 so we will loop that many times. It also doesn't matter if we loop too many times, which is good.
+It's kinda confusing how it divides, but it does work. The main things to note is that the times we iterate depends on the size of the divisor, which in the case of `q = N // p`, `p` has bitlength 1024 so we will loop that many times. It also doesn't matter if we loop too many times, which is good, so I settled with 1028 times just in case.
 
 Notice the `multiples` list is just $\text{divisor} * 2^i$ (`current_multiple`) and powers of 2, $2^i$ (`current_quotient`), for $i$ being from 0 to the bitlength of the divisor.
 
@@ -600,10 +600,220 @@ And we do have a way to append elements onto lists, using `[a] + [b] = [a, b]`:
 >>>
 ```
 
-You may be wondering why we can't compute the multiples of the divisor during the second loop, eliminating the need for a list. This is because in the second loop, we loop backwards through the multiples, going from e.g. $\text{divisor} * 2^{1024}$, $\text{divisor} * 2^{1023}$ ... $\text{divisor} * 2^0$. And to go from $\text{divisor} * 2^{1024}$ to $\text{divisor} * 2^{1023}$, we need integer division, dividing by 2 (`// 2`) - the thing we are literally trying to implement. So it makes more sense to start from $\text{divisor}$, and keep doubling it, 1024 times.
+You may be wondering why we can't compute the multiples of the divisor during the second loop, eliminating the need for a list. This is because in the second loop, we loop backwards through the multiples, going from e.g. $\text{divisor} * 2^{1027}$, $\text{divisor} * 2^{1026}$ ... $\text{divisor} * 2^0$. And to go from $\text{divisor} * 2^{1027}$ to $\text{divisor} * 2^{1026}$, we need integer division, dividing by 2 (`// 2`) - the thing we are literally trying to implement. So it makes more sense to start from $\text{divisor}$, and keep doubling it, 1028 times.
+
+Our first step is to generate the list of divisor multiples, $\text{divisor} * 2^i$:
+
+```py
+{8:[],7:p}
+{8:_[8]+[_[7]],7:_[7]*2}
+{8:_[8]+[_[7]],7:_[7]*2}
+{8:_[8]+[_[7]],7:_[7]*2}
+... (repeated 1028 times)
+```
+
+Then, we do the second loop.
+
+```py
+{"multiples":_[8],"current_multiple":_[7],"current_quotient":1,"dividend":N,"quotient":0}
+# iteration 0
+{
+    "multiples": _["multiples"],
+    "dividend": _["dividend"],
+    "quotient": _["quotient"],
+    2: 2**1027,
+}
+{
+    "multiples": _["multiples"],
+    "dividend": _["dividend"],
+    "quotient": _["quotient"],
+    "multiple": _["multiples"][1027],
+    2: _[2],
+}
+{
+    "multiples": _["multiples"],
+    "dividend": [_["dividend"] - _["multiple"], _["dividend"]][
+        _["dividend"] < _["multiple"]
+    ],
+    "quotient": [_["quotient"] + _[2], _["quotient"]][_["dividend"] < _["multiple"]],
+    "multiple": _["multiple"],
+    2: _[2],
+}
+# iteration 1
+{
+    "multiples": _["multiples"],
+    "dividend": _["dividend"],
+    "quotient": _["quotient"],
+    2: 2**1026, # note how this changed
+}
+{
+    "multiples": _["multiples"],
+    "dividend": _["dividend"],
+    "quotient": _["quotient"],
+    "multiple": _["multiples"][1026], # note how this changed
+    2: _[2],
+}
+{
+    "multiples": _["multiples"],
+    "dividend": [_["dividend"] - _["multiple"], _["dividend"]][
+        _["dividend"] < _["multiple"]
+    ],
+    "quotient": [_["quotient"] + _[2], _["quotient"]][_["dividend"] < _["multiple"]],
+    "multiple": _["multiple"],
+    2: _[2],
+}
+... (repeated 1027 times with modifications)
+```
+
+There are many things to note here:
+- The dictionary keys are now strings. This is purely for readibility - in the final code, they will be replaced with unique numbers as keys, since obviously we can't have strings as a quote is already 1 character, so keys must be integers.
+- There are numbers which are longer than 1 digit, which can't happen. However, in the final code, this is replaced with expressions that evaluate to that number. For example, `2**1027` has `**` as the operator, which is 2 characters so can't actually be used. However, we can simply express it as `2*2*2... (repeated 1027 times total)`. Similarly with `1027`, we can write `1027 = 8*8*8*2+3`, and `1026 = 8*8*8*2+3 - 1` etc.
+- We are again using the list indexing trick for the conditionals, but we are checking for `dividend < multiple` instead of `dividend >= multiple` like in the original code. This is because `>=` is 2 characters long, so we must use the one character operator `<` instead, and swap the list elements.
+
+Yes, there are a lot of redundant parts that could be easily golfed, but I didn't really care about the size at that time.
+
+To repeat those 3 lines 1028 times, I used a script to format it:
+
+{{< image src="./img/fmt-script-1.png" alt="" position="center" style="border-radius: 5px; width: 100%" >}}
+
+And thats how you turn one line of code, `q=N//p`, into [almost 800k lines](f1_fmtted_.txt).
+
+That's not the end either - there's still other places that use integer division, such as modular inverse.
+
+### Integer division - in modular inverse algorithm
+
+Recall our modular inverse algorithm was based off this:
+
+```py
+def modular_inverse(a, m):
+    # Extended Euclidean Algorithm
+    m0, x0, x1 = m, 0, 1
+
+    while a > 1:
+        # q is the quotient
+        q = a // m
+
+        # Update m and a
+        m, a = a % m, m
+
+        # Update x0 and x1
+        x0, x1 = x1 - q * x0, x0
+
+    # Make x1 positive
+    if x1 < 0:
+        x1 += m0
+
+    return x1
+```
+
+`q = a // m`. Yeah that's right, we're doing this all again. Multiple times.
+
+But I'll spare you the pain of all the debugging and formatting I had to do. The main things were that we hardcoded the modular inverse loop to run ~10 times, so we had to repeat ALL that manual division code above, 10 times. But I thought, since the numbers are smaller, they should have smaller bit lengths so we don't need that many lines. Upon some testing, the first division turned out to require 2048 loops, and the rest were all <20 loops, so it wasn't all that bad.
+
+It was a pain to debug, though. With so much code and so much room for error, I had to debug so many times. And with how large the code is, even with helper scripts, it took almost 2 minutes to run each time. It took an incredible amount of time to finally get it working.
+
+Also, another difference between the previous `q = N//p` division is that we also had to keep track of `m0`, `x0`, `x1`, and `a` values, but this isn't hard since you can just do something like this:
+
+```py
+...
+{"a":_["a"],"m":_["m"],"m0":_["m0"],"x0":_["x0"],"x1":_["x1"],"multiples":_["multiples"],"dividend":[_["dividend"]-_["multiple"],_["dividend"]][_["dividend"]<_["multiple"]],"quotient":[_["quotient"]+_[2],_["quotient"]][_["dividend"]<_["multiple"]],2:_[2], "multiple":_["multiple"]}{"a":_["a"],"m":_["m"],"m0":_["m0"],"x0":_["x0"],"x1":_["x1"],"multiples":_["multiples"],"dividend":_["dividend"],"quotient":_["quotient"],2:1}
+{"a":_["a"],"m":_["m"],"m0":_["m0"],"x0":_["x0"],"x1":_["x1"],"multiples":_["multiples"],"dividend":_["dividend"],"quotient":_["quotient"],2:_[2], "multiple":_["multiples"][4*4+4-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1-1]}
+{"a":_["a"],"m":_["m"],"m0":_["m0"],"x0":_["x0"],"x1":_["x1"],"multiples":_["multiples"],"dividend":[_["dividend"]-_["multiple"],_["dividend"]][_["dividend"]<_["multiple"]],"quotient":[_["quotient"]+_[2],_["quotient"]][_["dividend"]<_["multiple"]],2:_[2], "multiple":_["multiple"]}
+{"a":_["a"],"m":_["m"],"m0":_["m0"],"x0":_["x0"],"x1":_["x1"],"q":_["quotient"]}
+{"a":_["m"],"m":_["a"]%_["m"],"m0":_["m0"],"x0":_["x0"],"x1":_["x1"],"q":_["q"]}
+{"a":_["a"],"m":_["m"],"m0":_["m0"],"x0":_["x1"]-_["x0"]*_["q"],"x1":_["x0"],"q":_["q"]}
+{"a":_["a"],"m":_["m"],"m0":_["m0"],"x0":_["x0"],"x1":_["x1"]}
+{"a":_["a"],"m":_["m"],"m0":_["m0"],"x0":_["x0"],"x1":_["x1"],"multiples":[],"current_multiple":_["m"]}
+{"a":_["a"],"m":_["m"],"m0":_["m0"],"x0":_["x0"],"x1":_["x1"],"multiples":_["multiples"]+[_["current_multiple"]],"current_multiple":_["current_multiple"]*2}
+{"a":_["a"],"m":_["m"],"m0":_["m0"],"x0":_["x0"],"x1":_["x1"],"multiples":_["multiples"]+[_["current_multiple"]],"current_multiple":_["current_multiple"]*2}
+{"a":_["a"],"m":_["m"],"m0":_["m0"],"x0":_["x0"],"x1":_["x1"],"multiples":_["multiples"]+[_["current_multiple"]],"current_multiple":_["current_multiple"]*2}
+...
+```
+
+which just preserves the value by assigning it to itself, such as `{"a":_["a"], ...}`.
+
+It just made the code considerably longer, but it's nothing new.
+
+With that tedious section out the way, we move onto yet another instance where we need to use integer division... or not?
+
+### Integer division in modular exponentiation... or not?
+
+Now that we have `d` from the previous step, our last step is to implement modular exponentiation once again, to calculate `m = pow(c, d, n)`.
+
+```py
+def exp(c, d, n):
+    r = 1
+    for _ in range(2048):
+        if d % 2 == 1:
+            r = (r * c) % n
+        c = (c * c) % n
+        d = d // 2
+    return r
+```
+
+There is integer division as `d = d // 2`, but notice that only the LSB of `d` is being checked. The function just loops through all bits of `d`, modifying `r` depending on if it's equal to 1 or not, and dividing by 2 is just another of bitshifting right by 1.
+
+We can't use bitshifts, but we can use powers of 2. This means we can actually rewrite the code to this:
+
+```py
+def exp(c, d, n):
+    r = 1
+    e = 1
+    for i in range(2048):
+        if d & e > 0:
+            r = (r * c) % n
+        c = (c * c) % n
+        e *= 2
+
+    return r
+```
+
+where we use `e` as a power of 2, and use `&` to see if the bit at that index is set.
+
+This is great, as it means we don't need integer division, and it's pretty simple to implement!
+
+```py
+{"d":_["d"],"e":1,"r":1,"c":c}
+{"d":_["d"],"e":_["e"]*2,"r":[_["r"],_["r"]*_["c"]%N][_["d"]&_["e"]>0],"c":_["c"]*_["c"]%N}
+{"d":_["d"],"e":_["e"]*2,"r":[_["r"],_["r"]*_["c"]%N][_["d"]&_["e"]>0],"c":_["c"]*_["c"]%N}
+... (repeated 2048 times total)
+{X(_["r"])}
+```
+
+And at the end, we put `{X(_["r"])}` to output the decrypted ciphertext (stored as `r`). Remember that all of this code is to be entered one character per line, so `X(_["r"])` had to be surrounded in the curly braces `{}`, otherwise it wouldn't work - this messed me up before :<
+
+### Final solve
+
+Finally, with all the steps done, we can now start gambling for the flag! Remember how theres like a ~20% chance of getting the flag each time, and how the code takes 2 minutes to run each time.
+
+But first, how do we actually send the solution code, which after optimisations (such as replacing `2*2` with `4`, etc.), replacing dictionary key names, and having 1 character per line, turned out to be almost 4 million lines long.
+
+{{< image src="./img/bruh.png" alt="" position="center" style="border-radius: 5px; width: 100%" >}}
 
 
+At first I tried using [pwntools](https://docs.pwntools.com/en/stable/), but it kept freezing/EOF erroring for some reason, even when I split up chunks of it or tried sending it one line at a time. Maybe it's just a skill issue.
 
+Next, I tried connecting manually, and pasting it directly into the terminal. For Windows Terminal, this caused it to crash, but somehow it worked on [WSL](https://en.wikipedia.org/wiki/Windows_Subsystem_for_Linux). It took 5 minutes to load, not to mention there is a PoW to solve each time. So I opened multiple terminals, and prayed.
 
+Eventually, we got the flag.
 
+{{< image src="./img/les-goooo.png" alt="" position="center" style="border-radius: 5px; width: 100%" >}}
 
+`bwctf{Did_you_have_fun_with_only_one_variable?_Good_thing_*tuple*_exists_UwU}`
+
+You can view the final formatted code [here](./final_fmtted.txt), but I suggest reading the [unformatted version](./f4_final.txt). Actually, both of them are practically unreadible, but there you go I guess.
+
+# Conclusion
+
+This was a really nice set of challenges, combining both RSA (crypto?) and Pyjail.
+
+Thanks again to the challenge author [soon haari](https://x.com/ah_p_uh), CTF organisers at Blue Water for hosting the event, and congrats to my team for getting top 10!
+
+Never in my life would I have thought I would need to manually implement integer division, and I hope I never have to do it again.
+
+{{< image src="./img/i-love-integer-division-fr.png" alt="" position="center" style="border-radius: 5px; width: 100%" >}}
+
+As always, any typos/corrections/comments/whatever, feel free to DM me on discord `thesavageteddy`.
+
+Thanks for reading!
+- teddy / TheSavageTeddy

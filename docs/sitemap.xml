@@ -14,6 +14,9 @@
     <loc>https://TheSavageTeddy.github.io/posts/cursedctf-2024/</loc>
     <lastmod>2024-04-01T06:43:20+08:00</lastmod>
   </url><url>
+    <loc>https://TheSavageTeddy.github.io/posts/rsajail-bwctf-2024/</loc>
+    <lastmod>2024-10-15T19:00:00+08:00</lastmod>
+  </url><url>
     <loc>https://TheSavageTeddy.github.io/posts/puppet-damnvulnerabledefi/</loc>
     <lastmod>2024-02-13T18:10:00+08:00</lastmod>
   </url><url>
@@ -32,10 +35,34 @@
     <loc>https://TheSavageTeddy.github.io/posts/writeups-hackabit2023/</loc>
     <lastmod>2023-03-01T00:00:00+08:00</lastmod>
   </url><url>
-    <loc>https://TheSavageTeddy.github.io/tags/bsides/</loc>
-    <lastmod>2024-09-28T15:53:20+08:00</lastmod>
-  </url><url>
     <loc>https://TheSavageTeddy.github.io/categories/</loc>
+    <lastmod>2024-10-15T19:00:00+08:00</lastmod>
+  </url><url>
+    <loc>https://TheSavageTeddy.github.io/tags/ctf/</loc>
+    <lastmod>2024-10-15T19:00:00+08:00</lastmod>
+  </url><url>
+    <loc>https://TheSavageTeddy.github.io/categories/ctf-writeups/</loc>
+    <lastmod>2024-10-15T19:00:00+08:00</lastmod>
+  </url><url>
+    <loc>https://TheSavageTeddy.github.io/tags/misc/</loc>
+    <lastmod>2024-10-15T19:00:00+08:00</lastmod>
+  </url><url>
+    <loc>https://TheSavageTeddy.github.io/posts/</loc>
+    <lastmod>2024-10-15T19:00:00+08:00</lastmod>
+  </url><url>
+    <loc>https://TheSavageTeddy.github.io/tags/</loc>
+    <lastmod>2024-10-15T19:00:00+08:00</lastmod>
+  </url><url>
+    <loc>https://TheSavageTeddy.github.io/</loc>
+    <lastmod>2024-10-15T19:00:00+08:00</lastmod>
+  </url><url>
+    <loc>https://TheSavageTeddy.github.io/tags/writeup/</loc>
+    <lastmod>2024-10-15T19:00:00+08:00</lastmod>
+  </url><url>
+    <loc>https://TheSavageTeddy.github.io/categories/writeups/</loc>
+    <lastmod>2024-10-15T19:00:00+08:00</lastmod>
+  </url><url>
+    <loc>https://TheSavageTeddy.github.io/tags/bsides/</loc>
     <lastmod>2024-09-28T15:53:20+08:00</lastmod>
   </url><url>
     <loc>https://TheSavageTeddy.github.io/tags/crypto/</loc>
@@ -47,12 +74,6 @@
     <loc>https://TheSavageTeddy.github.io/tags/cryptography/</loc>
     <lastmod>2024-09-28T15:53:20+08:00</lastmod>
   </url><url>
-    <loc>https://TheSavageTeddy.github.io/tags/ctf/</loc>
-    <lastmod>2024-09-28T15:53:20+08:00</lastmod>
-  </url><url>
-    <loc>https://TheSavageTeddy.github.io/categories/ctf-writeups/</loc>
-    <lastmod>2024-09-28T15:53:20+08:00</lastmod>
-  </url><url>
     <loc>https://TheSavageTeddy.github.io/featured/</loc>
     <lastmod>2024-09-28T15:53:20+08:00</lastmod>
   </url><url>
@@ -62,22 +83,7 @@
     <loc>https://TheSavageTeddy.github.io/categories/onsite/</loc>
     <lastmod>2024-09-28T15:53:20+08:00</lastmod>
   </url><url>
-    <loc>https://TheSavageTeddy.github.io/tags/</loc>
-    <lastmod>2024-09-28T15:53:20+08:00</lastmod>
-  </url><url>
-    <loc>https://TheSavageTeddy.github.io/</loc>
-    <lastmod>2024-09-28T15:53:20+08:00</lastmod>
-  </url><url>
-    <loc>https://TheSavageTeddy.github.io/tags/writeup/</loc>
-    <lastmod>2024-09-28T15:53:20+08:00</lastmod>
-  </url><url>
-    <loc>https://TheSavageTeddy.github.io/categories/writeups/</loc>
-    <lastmod>2024-09-28T15:53:20+08:00</lastmod>
-  </url><url>
     <loc>https://TheSavageTeddy.github.io/tags/cursed/</loc>
-    <lastmod>2024-04-01T06:43:20+08:00</lastmod>
-  </url><url>
-    <loc>https://TheSavageTeddy.github.io/posts/</loc>
     <lastmod>2024-04-01T06:43:20+08:00</lastmod>
   </url><url>
     <loc>https://TheSavageTeddy.github.io/tags/damnvulnerabledefi/</loc>
