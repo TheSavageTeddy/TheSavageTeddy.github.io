@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
   
 
   
@@ -15,20 +15,23 @@
 <meta name="description" content="Full writeups of all challenges for the qualifier round of a beginner CTF." />
 <meta name="keywords" content="" />
 <meta name="robots" content="noodp" />
-<link rel="canonical" href="https://TheSavageTeddy.github.io/posts/writeups-hackabit2023/" />
+<link rel="canonical" href="http://localhost:1313/posts/writeups-hackabit2023/" />
 
 
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-J6PB683BSR"></script>
-<script>
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.dataLayer = window.dataLayer || [];
-	function gtag(){dataLayer.push(arguments);}
-	gtag('js', new Date());
-	gtag('config', 'G-J6PB683BSR', { 'anonymize_ip': false });
-}
-</script>
-
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-J6PB683BSR"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-J6PB683BSR');
+        }
+      </script>
 
 
 
@@ -40,7 +43,7 @@ if (!doNotTrack) {
   
   
   
-  <link rel="stylesheet" href="https://TheSavageTeddy.github.io/styles.css">
+  <link rel="stylesheet" href="http://localhost:1313/styles.css">
 
 
 
@@ -48,7 +51,7 @@ if (!doNotTrack) {
 
 
 
-  <link rel="shortcut icon" href="https://TheSavageTeddy.github.io/favicon.ico">
+  <link rel="shortcut icon" href="http://localhost:1313/favicon.ico">
 
 
 
@@ -65,14 +68,14 @@ if (!doNotTrack) {
 <meta property="og:type" content="article" />
 <meta property="og:title" content="Full Writeups - Hack A Bit CTF Qualifiers 0x01">
 <meta property="og:description" content="Full writeups of all challenges for the qualifier round of a beginner CTF." />
-<meta property="og:url" content="https://TheSavageTeddy.github.io/posts/writeups-hackabit2023/" />
+<meta property="og:url" content="http://localhost:1313/posts/writeups-hackabit2023/" />
 <meta property="og:site_name" content="teddyctf" />
 
   
   
     
   
-  <meta property="og:image" content="https://TheSavageTeddy.github.io/posts/writeups-hackabit2023/webhook.png">
+  <meta property="og:image" content="http://localhost:1313/posts/writeups-hackabit2023/webhook.png">
 
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="627">
@@ -80,7 +83,7 @@ if (!doNotTrack) {
   <meta property="article:section" content="CTF Writeups" />
 
 
-  <meta property="article:published_time" content="2023-03-01 00:00:00 &#43;0800 AWST" />
+  <meta property="article:published_time" content="2023-03-01 03:00:00 &#43;1100 AEDT" />
 
 
 
@@ -183,7 +186,11 @@ if (!doNotTrack) {
       
 <article class="post">
   <h1 class="post-title">
-    <a href="https://TheSavageTeddy.github.io/posts/writeups-hackabit2023/"><img src="https://ctftime.org/media/events/1_1_light_with_text_1.png"  class="left"  style="border-radius: 5px; height: auto; width: 3em; display: inline; vertical-align: middle; "  /> Full Writeups - Hack A Bit CTF Qualifiers 0x01</a>
+    <a href="http://localhost:1313/posts/writeups-hackabit2023/">
+  <img src="https://ctftime.org/media/events/1_1_light_with_text_1.png"  class="left"  style="border-radius: 5px; height: auto; width: 3em; display: inline; vertical-align: middle; "  />
+
+
+ Full Writeups - Hack A Bit CTF Qualifiers 0x01</a>
   </h1>
   <div class="post-meta">
     
@@ -199,11 +206,11 @@ if (!doNotTrack) {
   
     <span class="post-tags">
       
-      #<a href="https://TheSavageTeddy.github.io/tags/ctf/">ctf</a>&nbsp;
+      #<a href="http://localhost:1313/tags/ctf/">ctf</a>&nbsp;
       
-      #<a href="https://TheSavageTeddy.github.io/tags/beginner/">beginner</a>&nbsp;
+      #<a href="http://localhost:1313/tags/beginner/">beginner</a>&nbsp;
       
-      #<a href="https://TheSavageTeddy.github.io/tags/writeup/">writeup</a>&nbsp;
+      #<a href="http://localhost:1313/tags/writeup/">writeup</a>&nbsp;
       
     </span>
   
@@ -222,71 +229,58 @@ if (!doNotTrack) {
 <p>Hack A Bit is a CTF targeting highschool students aged 13-18. This post will include writeups for all challenges (except OSINT) for Round 2, which was the CTF jeopardy round.</p>
 <p>Also, please contact me discord <code>TheSavageTeddy#7458</code> if there are any mistakes/issues with these writeups, or if you want more info on them. Enjoy!</p>
 <h1 id="challenge-categories">Challenge Categories<a href="#challenge-categories" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
-<p><a href="#0-welcome"><code>Welcome</code></a> - 4 challenges</p>
-<p><a href="#1-cryptography"><code>Cryptography</code></a> - 8 challenges</p>
-<p><a href="#2-web"><code>Web</code></a> - 6 challenges</p>
-<p><a href="#3-programming"><code>Programming</code></a> - 8 challenges</p>
-<p><a href="#4-infrastructure"><code>Infrastructure</code></a> - 8 challenges</p>
-<p><a href="#5-networking"><code>Networking</code></a> - 6 challenges</p>
-<p><a href="#6-osint"><code>OSINT</code></a> - 8 challenges</p>
+<p><a href="/posts/writeups-hackabit2023/#0-welcome"><code>Welcome</code></a> - 4 challenges</p>
+<p><a href="/posts/writeups-hackabit2023/#1-cryptography"><code>Cryptography</code></a> - 8 challenges</p>
+<p><a href="/posts/writeups-hackabit2023/#2-web"><code>Web</code></a> - 6 challenges</p>
+<p><a href="/posts/writeups-hackabit2023/#3-programming"><code>Programming</code></a> - 8 challenges</p>
+<p><a href="/posts/writeups-hackabit2023/#4-infrastructure"><code>Infrastructure</code></a> - 8 challenges</p>
+<p><a href="/posts/writeups-hackabit2023/#5-networking"><code>Networking</code></a> - 6 challenges</p>
+<p><a href="/posts/writeups-hackabit2023/#6-osint"><code>OSINT</code></a> - 8 challenges</p>
 <h1 id="0-welcome">0. Welcome<a href="#0-welcome" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
 <h2 id="wakeup-5">Wakeup (5)<a href="#wakeup-5" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
 <blockquote>
-<p>Throughout the course you will prove your completion of tasks and understanding by capturing flags. CTF stands for capture the flag. Flags will generally be formatted as flag{x} where the x is the specific content that will change from challenge to challenge. If this isn&rsquo;t the case, the challenge will specifically state that it uses a non-standard flag format.</p>
-</blockquote>
+<p>Throughout the course you will prove your completion of tasks and understanding by capturing flags. CTF stands for capture the flag. Flags will generally be formatted as flag{x} where the x is the specific content that will change from challenge to challenge. If this isn&rsquo;t the case, the challenge will specifically state that it uses a non-standard flag format.</p></blockquote>
 <blockquote>
-<p>Submit the flag <code>flag{hello_world}</code> to complete this challenge.</p>
-</blockquote>
+<p>Submit the flag <code>flag{hello_world}</code> to complete this challenge.</p></blockquote>
 <p>Sanity check challenge, flag was in the description.
 <code>flag{hello_world}</code></p>
 <h2 id="weirdo-5">Weirdo (5)<a href="#weirdo-5" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
 <blockquote>
-<p>This is what a challenge with a non-standard flag will look like. These types of flags are generally used for things like IP addresses or other data that would be a &ldquo;short answer&rdquo; style. The challenge will always be marked with a &ldquo;NON-STANDARD FLAG FORMAT&rdquo; identifier if it is this way.</p>
-</blockquote>
+<p>This is what a challenge with a non-standard flag will look like. These types of flags are generally used for things like IP addresses or other data that would be a &ldquo;short answer&rdquo; style. The challenge will always be marked with a &ldquo;NON-STANDARD FLAG FORMAT&rdquo; identifier if it is this way.</p></blockquote>
 <blockquote>
-<p>Submit the flag 192.168.1.1/24 to get credit for this challenge.</p>
-</blockquote>
+<p>Submit the flag 192.168.1.1/24 to get credit for this challenge.</p></blockquote>
 <p>Same thing, flag is <code>192.168.1.1/24</code>. This just tells us some challenges are not in the normal <code>flag{}</code> format.</p>
 <h2 id="support-5">Support (5)<a href="#support-5" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
 <blockquote>
-<p>Throughout the competition you may want to ask for help. Where can you do that? How can staff members ensure that all information is moderated and everyone receives the same level of support? The answer is that Hack a Bit uses a support forum in discord.</p>
-</blockquote>
+<p>Throughout the competition you may want to ask for help. Where can you do that? How can staff members ensure that all information is moderated and everyone receives the same level of support? The answer is that Hack a Bit uses a support forum in discord.</p></blockquote>
 <blockquote>
-<p>Navigate to the support form in the competition group and find the thread for this challenge.</p>
-</blockquote>
+<p>Navigate to the support form in the competition group and find the thread for this challenge.</p></blockquote>
 <blockquote>
-<p><a href="https://www.discord.gg/hack-a-bit">www.discord.gg/hack-a-bit</a></p>
-</blockquote>
+<p><a href="https://www.discord.gg/hack-a-bit">www.discord.gg/hack-a-bit</a></p></blockquote>
 <p>Joining the discord and navigating to the challenge support posts we find this <code>flag{helpHelpHELP_desk}</code></p>
 <h2 id="billboard-5">Billboard (5)<a href="#billboard-5" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
 <blockquote>
-<p>What do you get for winning the competition? Where do you look for details on this round and future rounds of the 0x01 season? Check out the HaB website&rsquo;s competition page for more information, there&rsquo;s something there for you.</p>
-</blockquote>
+<p>What do you get for winning the competition? Where do you look for details on this round and future rounds of the 0x01 season? Check out the HaB website&rsquo;s competition page for more information, there&rsquo;s something there for you.</p></blockquote>
 <p>Going to <a href="https://www.hackabit.com/competition">https://www.hackabit.com/competition</a> we find <code>flag{you_might_need_this_for_later}</code> below the prizes.</p>
 <h1 id="1-cryptography">1. Cryptography<a href="#1-cryptography" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
 <h2 id="homerun-75">Homerun (75)<a href="#homerun-75" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
 <blockquote>
 <p>Check out 0xFF in the ASCII lookup table&hellip;<br>
 Oh dang, it isn&rsquo;t there. Well I still need to send you that data, not the text but the actual value 0xFF in computer memory.
-Here&rsquo;s an example, decode this, all the data you need is right here: <code>MZWGCZ33I5XXI5DBJVQWWZKTOVZGKWLPOVEGKYLSIFRG65LUKRUGC5CMN5XGOQTBNRWH2===</code></p>
-</blockquote>
+Here&rsquo;s an example, decode this, all the data you need is right here: <code>MZWGCZ33I5XXI5DBJVQWWZKTOVZGKWLPOVEGKYLSIFRG65LUKRUGC5CMN5XGOQTBNRWH2===</code></p></blockquote>
 <p>We get a ciphertext <code>MZWGCZ33I5XXI5DBJVQWWZKTOVZGKWLPOVEGKYLSIFRG65LUKRUGC5CMN5XGOQTBNRWH2===</code>. This is clearly base32 as we see it consists of only uppercase letters and numbers, ending with <code>=</code> (padding). Decoding in CyberChef or any other tool gives <code>flag{GottaMakeSureYouHearAboutThatLongBall}</code></p>
 <h2 id="mason-75">Mason (75)<a href="#mason-75" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
 <blockquote>
 <p>The numbers mason, what do they mean?
-<code>66 6c 61 67 7b 63 6f 6d 70 75 74 65 72 3a 69 5f 6f 6e 6c 79 5f 75 6e 64 65 72 73 74 61 6e 64 5f 62 69 6e 61 72 79 5f 64 75 64 65 7d</code></p>
-</blockquote>
+<code>66 6c 61 67 7b 63 6f 6d 70 75 74 65 72 3a 69 5f 6f 6e 6c 79 5f 75 6e 64 65 72 73 74 61 6e 64 5f 62 69 6e 61 72 79 5f 64 75 64 65 7d</code></p></blockquote>
 <p>Ciphertext consists of 0-9 and a-f, hinting that it&rsquo;s hex. Decoding from hex gives <code>flag{computer:i_only_understand_binary_dude}</code></p>
 <h2 id="smiley-100">Smiley (100)<a href="#smiley-100" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
 <blockquote>
-<p>Existing encryption is dumb, so I came up with something better. Maybe its a little emotional or whatever, but I feel like you can get through that part&hellip;</p>
-</blockquote>
+<p>Existing encryption is dumb, so I came up with something better. Maybe its a little emotional or whatever, but I feel like you can get through that part&hellip;</p></blockquote>
 <blockquote>
-<p>Breaking this teaches you some of the primative concepts professionals use to attack novel cryptographic algorithms. It also demonstrates in a primative way why we use established and tested ones for real applications. It also loosely relates to a concept called &ldquo;known plaintext.&rdquo;</p>
-</blockquote>
+<p>Breaking this teaches you some of the primative concepts professionals use to attack novel cryptographic algorithms. It also demonstrates in a primative way why we use established and tested ones for real applications. It also loosely relates to a concept called &ldquo;known plaintext.&rdquo;</p></blockquote>
 <blockquote>
-<p><em>In the prompt, there is no punctuation and everything is lowercase alphabetical characters.</em></p>
-</blockquote>
+<p><em>In the prompt, there is no punctuation and everything is lowercase alphabetical characters.</em></p></blockquote>
 <p>Given a file containing this:</p>
 <pre tabindex="0"><code>🤣😅😇😉 😁😅😀🥰🤣 😚🥰😜🤗😇🤑🤫😉 😀 🫡😇😉🤣 😜🤐 🤣😅🤫 😶😮‍💨😇😁😜🤑🤫 🤫🤥😜🤤😇 😁😅😀🥰😀😁🤣🤫🥰😉 😀😮‍💨🤑 😉🤫🤕😶🤫😮‍💨😁🤫😉 🤮😇🤣😅 😇🤥😀🥶🤫😉 🤐🥰😜🤥 🤑😇🤐🤐🤫🥰🤫😮‍💨🤣 🤗🤫😮‍💨🤑😜🥰😉 😁🫡🤑🥰 😮‍💨😀🤥🤫 🤑😀🤣🤫 😉😜😶🥰😁🤫 😀😮‍💨🤑 🤯🤫🥳🤮😜🥰🤑😉 🤐🫡😀🥶🥸😉🤥😇🫡🤫😎🤥😜🥰🤫😎😉🤥😇🫡🤫😎🤠😇🥶🥶🤫🥰🧐
 </code></pre><p>This challenge was a bit annoying. It was clearly frequency analysis, which is like using the fact that letters <code>e</code>, <code>a</code> etc are more common than <code>q</code> or <code>z</code>.</p>
@@ -317,11 +311,9 @@ Here&rsquo;s an example, decode this, all the data you need is right here: <code
 <p>This gives us the flag <code>flag{smilemoresmilebigger}</code>, or something like that.</p>
 <h2 id="matchmaker-100">Matchmaker (100)<a href="#matchmaker-100" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
 <blockquote>
-<p>There are a variety of symmetric cryptosystems out there, but most of them involve a logic block called a XOR. The key is &ldquo;hab&rdquo;(UTF8). We&rsquo;re giving you the key and the algorithm, how hard can it be?</p>
-</blockquote>
+<p>There are a variety of symmetric cryptosystems out there, but most of them involve a logic block called a XOR. The key is &ldquo;hab&rdquo;(UTF8). We&rsquo;re giving you the key and the algorithm, how hard can it be?</p></blockquote>
 <blockquote>
-<p><code>Dg0DDxoRBz4PHQIKNxIbBQwHHBMbFQ==</code></p>
-</blockquote>
+<p><code>Dg0DDxoRBz4PHQIKNxIbBQwHHBMbFQ==</code></p></blockquote>
 <p>We are given base64, and the XOR key &ldquo;hab&rdquo;. Using CyberChef we can decrypt and XOR to get the flag. <code>flag{so_much_symmetry}</code></p>
 
   <img src="./img/matchmaker1.png"  class="center"  style="border-radius: 5px; width: 100%;"  />
@@ -329,11 +321,9 @@ Here&rsquo;s an example, decode this, all the data you need is right here: <code
 
 <h1 id="hancock-125">Hancock (125)<a href="#hancock-125" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
 <blockquote>
-<p>I stole this session token from someone and it looks like all I need to do is change admin to true for all the power&hellip; no idea who signed it though&hellip; can you figure out the secret for me so that we can get some pwnage going?</p>
-</blockquote>
+<p>I stole this session token from someone and it looks like all I need to do is change admin to true for all the power&hellip; no idea who signed it though&hellip; can you figure out the secret for me so that we can get some pwnage going?</p></blockquote>
 <blockquote>
-<p>The secret for this token is somewhere in the RockYou wordlist <a href="https://github.com/brannondorsey/naive-hashcat/releases/download/data/rockyou.txt">https://github.com/brannondorsey/naive-hashcat/releases/download/data/rockyou.txt</a></p>
-</blockquote>
+<p>The secret for this token is somewhere in the RockYou wordlist <a href="https://github.com/brannondorsey/naive-hashcat/releases/download/data/rockyou.txt">https://github.com/brannondorsey/naive-hashcat/releases/download/data/rockyou.txt</a></p></blockquote>
 <p>We are given this string</p>
 <pre tabindex="0"><code>eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxMjM0NTY3ODkwLCJhZG1pbiI6ZmFsc2V9.QR_da_OHe58LBwBRt5S_aTcbMkBhEFqJkFn7zUq7Yyc
 </code></pre><p>which is clearly a JWT (Json Web Token).</p>
@@ -351,11 +341,9 @@ Here&rsquo;s an example, decode this, all the data you need is right here: <code
 
 <h2 id="trending-125">Trending (125)<a href="#trending-125" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
 <blockquote>
-<p>All the existing hashing algorithms are dumb, why give me a fixed length? If I give you more input you should give me even more output, its only fair! I wrote a new hashing algorithm that improves on the best of the best (MD5)! Check it out and see if you can break it (you probably can&rsquo;t)!</p>
-</blockquote>
+<p>All the existing hashing algorithms are dumb, why give me a fixed length? If I give you more input you should give me even more output, its only fair! I wrote a new hashing algorithm that improves on the best of the best (MD5)! Check it out and see if you can break it (you probably can&rsquo;t)!</p></blockquote>
 <blockquote>
-<p>Here&rsquo;s your hash: <code>b18f21b19e0f86b22d218c86e182214b867b36212576b2617e8c03862d369e</code></p>
-</blockquote>
+<p>Here&rsquo;s your hash: <code>b18f21b19e0f86b22d218c86e182214b867b36212576b2617e8c03862d369e</code></p></blockquote>
 <p>We are given a python file with a custom &lsquo;hashing&rsquo; algorithm.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-py" data-lang="py"><span style="display:flex;"><span><span style="color:#75715e">#!/usr/bin/python3</span>
 </span></span><span style="display:flex;"><span>
@@ -423,38 +411,31 @@ Here&rsquo;s an example, decode this, all the data you need is right here: <code
 
 <h2 id="powerhouse-150">Powerhouse (150)<a href="#powerhouse-150" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
 <blockquote>
-<p>NON-STANDARD FLAG FORMAT</p>
-</blockquote>
+<p>NON-STANDARD FLAG FORMAT</p></blockquote>
 <blockquote>
-<p>Here is an RSA key, sort of; provide p and q as <code>p;q</code>, like if p was 11 an q was 7, the flag would be <code>11;7</code>.</p>
-</blockquote>
+<p>Here is an RSA key, sort of; provide p and q as <code>p;q</code>, like if p was 11 an q was 7, the flag would be <code>11;7</code>.</p></blockquote>
 <blockquote>
-<p>N = <code>6176128969</code> e = <code>1187</code></p>
-</blockquote>
+<p>N = <code>6176128969</code> e = <code>1187</code></p></blockquote>
 <p>We get a (very unsecure) RSA public key consisting of <code>N</code> (public modulus) and <code>e</code> (public exponent).</p>
 <p>But we don&rsquo;t need to worry about any of that. In RSA, <code>N = p * q</code> where <code>p</code> and <code>q</code> are 2 primes. Therefore, we just factor <code>N</code> to get the flag using <a href="http://factordb.com/">factordb</a>, or any other factoring method (N is very small).</p>
 <p>Flag <code>11329;545161</code></p>
 <h1 id="banker-150">Banker (150)<a href="#banker-150" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
 <blockquote>
-<p>NON-STANDARD FLAG FORMAT</p>
-</blockquote>
+<p>NON-STANDARD FLAG FORMAT</p></blockquote>
 <blockquote>
 <p>Crack this pin code. It&rsquo;s between 4-8 characters and all numeric.
-<code>320f5cef77246cdce15f9b66e9e4f3ad22f506f9cd28d85e7ccc8839b301e736</code></p>
-</blockquote>
+<code>320f5cef77246cdce15f9b66e9e4f3ad22f506f9cd28d85e7ccc8839b301e736</code></p></blockquote>
 <p>This challenge doesn&rsquo;t give a lot of info. The ciphertext looks like hex, but we get garbage when we try to decode it. However, notice the hex string is 64 bytes long, which is the size for some hashes.</p>
 <p>Putting the hex into <a href="https://crackstation.net/">crackstation</a>, to look up the hash, we find it is the <code>sha256</code> hash of <code>05593620</code> and we get the flag.</p>
 <h1 id="2-web">2. Web<a href="#2-web" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
 <h2 id="detective-75">Detective (75)<a href="#detective-75" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
 <blockquote>
-<p>Visit the webapp and take a look around, detective: <a href="https://erpvlnzxrh.qualifier.hackabit.com/detective">https://erpvlnzxrh.qualifier.hackabit.com/detective</a></p>
-</blockquote>
+<p>Visit the webapp and take a look around, detective: <a href="https://erpvlnzxrh.qualifier.hackabit.com/detective">https://erpvlnzxrh.qualifier.hackabit.com/detective</a></p></blockquote>
 <p>Viewing the page source we find <code>flag{animated</code> in the HTML. Going to sources and looking the javascript file we find <code>_commentary_on_</code>, and going to css we find <code>css}</code>.</p>
 <p>This gets us the flag <code>flag{animated_commentary_on_css}</code></p>
 <h2 id="spectator">Spectator<a href="#spectator" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
 <blockquote>
-<p>Now how about this one? Maybe just look a little harder&hellip; <a href="https://erpvlnzxrh.qualifier.hackabit.com/spectator">https://erpvlnzxrh.qualifier.hackabit.com/spectator</a></p>
-</blockquote>
+<p>Now how about this one? Maybe just look a little harder&hellip; <a href="https://erpvlnzxrh.qualifier.hackabit.com/spectator">https://erpvlnzxrh.qualifier.hackabit.com/spectator</a></p></blockquote>
 <p>Going to sources we find <code>flag{there_are_soooooo</code> in the javascript file (this is also in local storage).</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span>window.<span style="color:#a6e22e">onload</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>(){  
 </span></span><span style="display:flex;"><span>    window.<span style="color:#a6e22e">localStorage</span>.<span style="color:#a6e22e">setItem</span>(<span style="color:#e6db74">&#34;flag_stuff&#34;</span>, <span style="color:#e6db74">&#34;flag{there_are_soooooo&#34;</span>)    
@@ -463,15 +444,13 @@ Here&rsquo;s an example, decode this, all the data you need is right here: <code
 <p>Curling the site with extra info (<code>-v</code>) using <code>curl -v https://erpvlnzxrh.qualifier.hackabit.com/spectator</code> we get <code>more_flag_stuff: _manage_data}</code> in the headers, giving us the flag <code>flag{there_are_soooooo_many_ways_to_manage_data}</code></p>
 <h2 id="nevermind-100">Nevermind (100)<a href="#nevermind-100" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
 <blockquote>
-<p>If you take something, you gotta put it back, or something at least: <a href="https://erpvlnzxrh.qualifier.hackabit.com/nevermind">https://erpvlnzxrh.qualifier.hackabit.com/nevermind</a></p>
-</blockquote>
+<p>If you take something, you gotta put it back, or something at least: <a href="https://erpvlnzxrh.qualifier.hackabit.com/nevermind">https://erpvlnzxrh.qualifier.hackabit.com/nevermind</a></p></blockquote>
 <p>We are presented with a webpage with a image and text saying:</p>
 <pre tabindex="0"><code>Download this beautiful image and get the MD5 hash of it. Then decide its not that beautiful and POST it back to the same page with header &#34;md5_image_hash&#34; set to that value.
 </code></pre><p>So we download the image, md5 hash it and get <code>021d99868f8b0943b2cf04e944ddab8f</code> which we post back to the server with the right header using <code>curl -X POST --header &quot;md5_image_hash: 021d99868f8b0943b2cf04e944ddab8f&quot; https://erpvlnzxrh.qualifier.hackabit.com/nevermind</code> and get the flag: <code>flag{nevermind_not_that_beautiful}</code></p>
 <h2 id="delegate-100">Delegate (100)<a href="#delegate-100" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
 <blockquote>
-<p>When we get code execution by compromising a web application, we generally want to exfiltrate some data. The staff did the hard part and gave you code execution, now just exfil that data! <a href="https://erpvlnzxrh.qualifier.hackabit.com/delegate">https://erpvlnzxrh.qualifier.hackabit.com/delegate</a></p>
-</blockquote>
+<p>When we get code execution by compromising a web application, we generally want to exfiltrate some data. The staff did the hard part and gave you code execution, now just exfil that data! <a href="https://erpvlnzxrh.qualifier.hackabit.com/delegate">https://erpvlnzxrh.qualifier.hackabit.com/delegate</a></p></blockquote>
 <p>The site includes 2 fields: Epoch and Destination.</p>
 <p>In Epoch we need to put a time, and in destination we can put a URL. After putting the correct epoch (unix time) and a URL, we get the message <code>yup, nice... sent the flag to: https://&lt;the url we provided&gt;</code></p>
 <p>So let&rsquo;s generate a <a href="https://webhook.site/">webhook</a> to see what it does to the URL we provide it.</p>
@@ -482,11 +461,9 @@ Here&rsquo;s an example, decode this, all the data you need is right here: <code
 
 <h2 id="injector-125">Injector (125)<a href="#injector-125" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
 <blockquote>
-<p>Someone didn&rsquo;t listen closely in programming class&hellip; yeah it was me I guess, I didn&rsquo;t. Here&rsquo;s a super secure login page, if you can bypass it you might even get a flag&hellip;</p>
-</blockquote>
+<p>Someone didn&rsquo;t listen closely in programming class&hellip; yeah it was me I guess, I didn&rsquo;t. Here&rsquo;s a super secure login page, if you can bypass it you might even get a flag&hellip;</p></blockquote>
 <blockquote>
-<p><a href="https://fsiybpfkid.qualifier.hackabit.com/injector">https://fsiybpfkid.qualifier.hackabit.com/injector</a></p>
-</blockquote>
+<p><a href="https://fsiybpfkid.qualifier.hackabit.com/injector">https://fsiybpfkid.qualifier.hackabit.com/injector</a></p></blockquote>
 <p>Injector refers to SQL injection, where unsanitized input can lead to all sorts of security vulnerabilities.</p>
 <p>Searching up a <a href="https://pentestlab.blog/2012/12/24/sql-injection-authentication-bypass-cheat-sheet/">cheatsheet</a> we try payload and find this one works <code>admin' or '1'='1'#</code>, giving us the flag <code>flag{maveric_pull_the_lever!}</code></p>
 <p>Note that this is basically blind SQL injection as we have minimal info about the server.</p>
@@ -496,11 +473,9 @@ Here&rsquo;s an example, decode this, all the data you need is right here: <code
 
 <h2 id="brain-125">Brain (125)<a href="#brain-125" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
 <blockquote>
-<p>Only admins can get flags&hellip; follow the rules!</p>
-</blockquote>
+<p>Only admins can get flags&hellip; follow the rules!</p></blockquote>
 <blockquote>
-<p><a href="https://fsiybpfkid.qualifier.hackabit.com/brain">https://fsiybpfkid.qualifier.hackabit.com/brain</a></p>
-</blockquote>
+<p><a href="https://fsiybpfkid.qualifier.hackabit.com/brain">https://fsiybpfkid.qualifier.hackabit.com/brain</a></p></blockquote>
 <p>This was straightforward, but annoying. The page tells us how to get the flag.</p>
 
   <img src="./img/brain.png"  class="center"  style="border-radius: 5px; width: 100%;"  />
@@ -544,8 +519,7 @@ Here&rsquo;s an example, decode this, all the data you need is right here: <code
 <h1 id="3-programming">3. Programming<a href="#3-programming" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
 <h1 id="blobs-75">Blobs (75)<a href="#blobs-75" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
 <blockquote>
-<p>Hey there navigator, its time to follow some directions. Take your challenge input (file) and start at the initial position, such as the below x=52, y=-31. Just like you are on a 2d graph, move in the direction the arrows tell you to. In the below example you end up in the same x position for a difference of 0 and down one for a y difference of -1. Take your final position, in this case 52, -32 and multiply the values together&ndash;that is your final position. The answer to the sample prompt is -1664.</p>
-</blockquote>
+<p>Hey there navigator, its time to follow some directions. Take your challenge input (file) and start at the initial position, such as the below x=52, y=-31. Just like you are on a 2d graph, move in the direction the arrows tell you to. In the below example you end up in the same x position for a difference of 0 and down one for a y difference of -1. Take your final position, in this case 52, -32 and multiply the values together&ndash;that is your final position. The answer to the sample prompt is -1664.</p></blockquote>
 <p>Sample prompt:</p>
 <pre tabindex="0"><code>(52,-31)
 
@@ -586,8 +560,7 @@ Here&rsquo;s an example, decode this, all the data you need is right here: <code
 </span></span><span style="display:flex;"><span>print(answer)
 </span></span></code></pre></div><h1 id="buckets-75">Buckets (75)<a href="#buckets-75" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
 <blockquote>
-<p>Grab the data file and add up all the times danny and elise appear. Multiple those two numbers together, that is your challenge answer.</p>
-</blockquote>
+<p>Grab the data file and add up all the times danny and elise appear. Multiple those two numbers together, that is your challenge answer.</p></blockquote>
 <p>This is yet another programming challenge, even easier than the previous. Use <code>.count()</code> to count how many times each appears. I couldn&rsquo;t be bothered reading the file, but it would&rsquo;ve been <code>data=open('filename','r').read()</code></p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-py" data-lang="py"><span style="display:flex;"><span>data <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;omitted because too long&#34;</span>
 </span></span><span style="display:flex;"><span>a <span style="color:#f92672">=</span> data<span style="color:#f92672">.</span>count(<span style="color:#e6db74">&#39;danny&#39;</span>)
@@ -595,16 +568,13 @@ Here&rsquo;s an example, decode this, all the data you need is right here: <code
 </span></span><span style="display:flex;"><span>print(a<span style="color:#f92672">*</span>b)
 </span></span></code></pre></div><h2 id="pancakes-100">Pancakes (100)<a href="#pancakes-100" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
 <blockquote>
-<p>Okay we&rsquo;re doing it again, just giving you the flag&hellip; should be easy enough right? Well now lets talk about compiled code. This is the same code compiled for a bunch of different architectures. First, figure out which binary is compatible with your system, then just run it to get the flag!</p>
-</blockquote>
+<p>Okay we&rsquo;re doing it again, just giving you the flag&hellip; should be easy enough right? Well now lets talk about compiled code. This is the same code compiled for a bunch of different architectures. First, figure out which binary is compatible with your system, then just run it to get the flag!</p></blockquote>
 <p>We are given a zip file with a bunch of binaries! All of them are the same - they are just for different architectures/OS etc. Running any will give the flag. For me, running <code>./binary_18</code> on WSL gave the flag <code>flag{bob_the_architect}</code></p>
 <h2 id="linguist-100">Linguist (100)<a href="#linguist-100" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
 <blockquote>
-<p>Grab this file and check it out. You&rsquo;ll notice that it&rsquo;s Python3! Python is an interpreted language, you can read the code but it&rsquo;ll be easier to just interpret it!</p>
-</blockquote>
+<p>Grab this file and check it out. You&rsquo;ll notice that it&rsquo;s Python3! Python is an interpreted language, you can read the code but it&rsquo;ll be easier to just interpret it!</p></blockquote>
 <blockquote>
-<p>This challenge is juxtaposed to Pancake, which is compiled code. Once you interpret this code with the Python3 interpreter, try to read it and see if you understand what it&rsquo;s doing as a bonus!</p>
-</blockquote>
+<p>This challenge is juxtaposed to Pancake, which is compiled code. Once you interpret this code with the Python3 interpreter, try to read it and see if you understand what it&rsquo;s doing as a bonus!</p></blockquote>
 <p>Given python code:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-py" data-lang="py"><span style="display:flex;"><span><span style="color:#f92672">import</span> random
 </span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> time
@@ -633,14 +603,11 @@ Here&rsquo;s an example, decode this, all the data you need is right here: <code
 </span></span></code></pre></div><p>No reversing is needed - just running the file gives the flag <code>flag{this_isnt_spanish_but_i_still_need_an_interpreter}</code></p>
 <h2 id="wrench-125">Wrench (125)<a href="#wrench-125" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
 <blockquote>
-<p>Think of this challenge like a bolt and go build a wrench.</p>
-</blockquote>
+<p>Think of this challenge like a bolt and go build a wrench.</p></blockquote>
 <blockquote>
-<p>Here&rsquo;s your blueprint:</p>
-</blockquote>
+<p>Here&rsquo;s your blueprint:</p></blockquote>
 <blockquote>
-<p>Connect to the server on strfjebijc.qualifier.hackabit.com:54321 and get your challenge input. Add up all the decimal integers and only the decminal integers, no hex numbers or strings count. Send that result back within 3 seconds to get the flag</p>
-</blockquote>
+<p>Connect to the server on strfjebijc.qualifier.hackabit.com:54321 and get your challenge input. Add up all the decimal integers and only the decminal integers, no hex numbers or strings count. Send that result back within 3 seconds to get the flag</p></blockquote>
 <p>We are given a bunch of text seperated by newlines when we connect using netcat. The challenge says to add up all decimal numbers, and send the result within 3 seconds. We will use <a href="https://docs.pwntools.com/en/stable/">pwntools</a> to automate this, and do it within 3 seconds.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-py" data-lang="py"><span style="display:flex;"><span><span style="color:#f92672">from</span> pwn <span style="color:#f92672">import</span> <span style="color:#f92672">*</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> string
@@ -659,14 +626,11 @@ Here&rsquo;s an example, decode this, all the data you need is right here: <code
 </span></span></code></pre></div><p>And we get the flag <code>flag{i_feel_the_need_the_need_for_speed}</code></p>
 <h2 id="bites-125">Bites (125)<a href="#bites-125" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
 <blockquote>
-<p>Here&rsquo;s a blob of data. Thats it. Just Data. Not any specific data. Just 1&rsquo;s and 0&rsquo;s&hellip;</p>
-</blockquote>
+<p>Here&rsquo;s a blob of data. Thats it. Just Data. Not any specific data. Just 1&rsquo;s and 0&rsquo;s&hellip;</p></blockquote>
 <blockquote>
-<p>Process this file. There are series of bytes from 0x02 to 0xFF. Each of these strings of bytes are surrounded by a null byte (0x00). Finally, there are also byte strings of all 0x01. Your mission is to add up all the bytes in the byte strings that are not 0x01 byte strings. The flag is the integer value of all those bytes added up.</p>
-</blockquote>
+<p>Process this file. There are series of bytes from 0x02 to 0xFF. Each of these strings of bytes are surrounded by a null byte (0x00). Finally, there are also byte strings of all 0x01. Your mission is to add up all the bytes in the byte strings that are not 0x01 byte strings. The flag is the integer value of all those bytes added up.</p></blockquote>
 <blockquote>
-<p>The &ldquo;flag&rdquo; is just the total sum, no flag{}.</p>
-</blockquote>
+<p>The &ldquo;flag&rdquo; is just the total sum, no flag{}.</p></blockquote>
 <p>We are given a file, and told to add up all the bytes, apart from <code>0x01</code>. So we will do just that with python. Note that when looping over a bytes object in python, each element is a number 0-255, which is why it is <code> == 1</code> instead of <code>== b&quot;\x01&quot;</code></p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-py" data-lang="py"><span style="display:flex;"><span><span style="color:#f92672">from</span> Crypto.Util.number <span style="color:#f92672">import</span> bytes_to_long
 </span></span><span style="display:flex;"><span>
@@ -682,11 +646,9 @@ Here&rsquo;s an example, decode this, all the data you need is right here: <code
 </span></span></code></pre></div><p>And we get the flag <code>512490</code></p>
 <h2 id="speed-150">Speed (150)<a href="#speed-150" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
 <blockquote>
-<p>You probably shouldn&rsquo;t do this one by hand&hellip; Instead write a sorting algorithm that efficiently organizes this file of numbers smallest to biggest. Your flag is the 52133rd number once sorted, starting from 0. Ie: sorted_numbers[52133].</p>
-</blockquote>
+<p>You probably shouldn&rsquo;t do this one by hand&hellip; Instead write a sorting algorithm that efficiently organizes this file of numbers smallest to biggest. Your flag is the 52133rd number once sorted, starting from 0. Ie: sorted_numbers[52133].</p></blockquote>
 <blockquote>
-<p>On an average computer, an efficient algorithm should be able to solve this in around 10 seconds.</p>
-</blockquote>
+<p>On an average computer, an efficient algorithm should be able to solve this in around 10 seconds.</p></blockquote>
 <p>We are given a large file, and told to sort it, and submit the 51233th item (0-indexed) as the flag. So as always, python is sufficient to solve this, getting the flag <code>1235203980</code></p>
 
   <img src="./img/sort.png"  class="center"  style="border-radius: 5px; width: 100%;"  />
@@ -773,11 +735,9 @@ Here&rsquo;s an example, decode this, all the data you need is right here: <code
 <h1 id="4-infrastructure">4. Infrastructure<a href="#4-infrastructure" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
 <h2 id="captain-75">Captain (75)<a href="#captain-75" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
 <blockquote>
-<p>Cloud infrastructure is migrating to containerized technology in many places, lets get started with containers. Run this docker container with the environment variable <code>FLAG_ENABLER</code> set to <code>give_me_the_flag</code>.</p>
-</blockquote>
+<p>Cloud infrastructure is migrating to containerized technology in many places, lets get started with containers. Run this docker container with the environment variable <code>FLAG_ENABLER</code> set to <code>give_me_the_flag</code>.</p></blockquote>
 <blockquote>
-<p><a href="https://hub.docker.com/r/nathanielsinger/hackabit0x01-infrastructure-container1">https://hub.docker.com/r/nathanielsinger/hackabit0x01-infrastructure-container1</a></p>
-</blockquote>
+<p><a href="https://hub.docker.com/r/nathanielsinger/hackabit0x01-infrastructure-container1">https://hub.docker.com/r/nathanielsinger/hackabit0x01-infrastructure-container1</a></p></blockquote>
 <p>Initially I tried to pull the image and analyse it, but gave up quickly and realised doing it properly was easier. Use <code>-e</code> flag to set enviroment variables.</p>
 <p><code>sudo docker run -e FLAG_ENABLER=give_me_the_flag nathanielsinger/hackabit0x01-infrastructure-container1</code></p>
 <p><code>flag{you_aren't_the_captain_just_yet}</code></p>
@@ -787,8 +747,7 @@ Here&rsquo;s an example, decode this, all the data you need is right here: <code
 
 <h2 id="seashell">Seashell<a href="#seashell" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
 <blockquote>
-<p>SSH runs the internet. Connect to <code>utkwrgubhj.qualifier.hackabit.com</code> on port <code>22</code> with user <code>hackerman</code> and the provided <code>private key</code>.</p>
-</blockquote>
+<p>SSH runs the internet. Connect to <code>utkwrgubhj.qualifier.hackabit.com</code> on port <code>22</code> with user <code>hackerman</code> and the provided <code>private key</code>.</p></blockquote>
 <p>I did this on MacOS, by importing the key, but here is it again on linux (WSL). Private key file is called <code>id_rsa</code>. Note that for the private key file, the permissions cannot be too open, so you have to use <code>chmod 400 id_rsa</code>.</p>
 <p>Connecting with <code>ssh -i id_rsa hackerman@utkwrgubhj.qualifier.hackabit.com</code> we get the flag <code>flag{shesellsseashellsbytheseaaaaaaashore}</code>.</p>
 
@@ -798,8 +757,7 @@ Here&rsquo;s an example, decode this, all the data you need is right here: <code
 <h2 id="loading-100">Loading (100)<a href="#loading-100" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
 <blockquote>
 <p>What&rsquo;s in this ISO thing?
-<a href="https://hub.docker.com/r/nathanielsinger/hackabit0x01-infrastructure-container1">https://hub.docker.com/r/nathanielsinger/hackabit0x01-infrastructure-container1</a></p>
-</blockquote>
+<a href="https://hub.docker.com/r/nathanielsinger/hackabit0x01-infrastructure-container1">https://hub.docker.com/r/nathanielsinger/hackabit0x01-infrastructure-container1</a></p></blockquote>
 <p>Ok we are given like no info, let&rsquo;s dump the image with <code>docker save -o dockerimage.tar nathanielsinger/hackabit0x01-infrastructure-container1</code></p>
 <p>Then just untar (<code>tar -xvf FILE.tar</code>) the entire thing, and search through folders. Eventually in <code>adb6d</code>&hellip;. I found the flag in <code>root/flag_image.iso</code> after untarring <code>layer.tar</code> in the folder.</p>
 <p><code>flag{consider_it_loaded_hackerman}</code></p>
@@ -810,14 +768,12 @@ Here&rsquo;s an example, decode this, all the data you need is right here: <code
 <h2 id="location-100">Location (100)<a href="#location-100" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
 <blockquote>
 <p>Now with the same image, dive on in and find the iso image. What is the absolute path to the iso image stored within the container? Include the filename in the path for your submission.
-<a href="https://hub.docker.com/r/nathanielsinger/hackabit0x01-infrastructure-container1">https://hub.docker.com/r/nathanielsinger/hackabit0x01-infrastructure-container1</a></p>
-</blockquote>
+<a href="https://hub.docker.com/r/nathanielsinger/hackabit0x01-infrastructure-container1">https://hub.docker.com/r/nathanielsinger/hackabit0x01-infrastructure-container1</a></p></blockquote>
 <p>To be honest I forgot what the flag to this was, but it&rsquo;s linked to the previous challenge, and we just specify the path to the <code>.iso</code> image. So it would&rsquo;ve been something like <code>root/flag_image.iso</code> or <code>/root/flag_image.iso</code></p>
 <h2 id="connector-125">Connector (125)<a href="#connector-125" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
 <blockquote>
 <p>Connect to the mysql server at dyxvqmjwaj.qualifier.hackabit.com and read out the flag. Here are some user accounts:
-<code>user1:uyqhxgxcxd</code> <code>user2:ehaigdexhh</code> <code>user3:xfgyuvtapt</code> <code>user4:tnvgijqxei</code> <code>user5:hybplwmndy</code></p>
-</blockquote>
+<code>user1:uyqhxgxcxd</code> <code>user2:ehaigdexhh</code> <code>user3:xfgyuvtapt</code> <code>user4:tnvgijqxei</code> <code>user5:hybplwmndy</code></p></blockquote>
 <p>We are given 5 user credentials. On my Mac, using SQL Workbench, I tried each one and checked the tables until I found a flag in one of them (<code>user4</code>).</p>
 
   <img src="./img/connect.png"  class="center"  style="border-radius: 5px; width: 100%;"  />
@@ -830,11 +786,9 @@ Here&rsquo;s an example, decode this, all the data you need is right here: <code
 <p>And we get the flag <code>flag{oh_sql_my_sql}</code></p>
 <h2 id="boat-125">Boat (125)<a href="#boat-125" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
 <blockquote>
-<p>Sometimes we need to run a machine on a specific address or virtualize a network, get this running on: <code>172.22.1.11.</code></p>
-</blockquote>
+<p>Sometimes we need to run a machine on a specific address or virtualize a network, get this running on: <code>172.22.1.11.</code></p></blockquote>
 <blockquote>
-<p><a href="https://hub.docker.com/r/nathanielsinger/hackabit0x01-infrastructure-container2">https://hub.docker.com/r/nathanielsinger/hackabit0x01-infrastructure-container2</a></p>
-</blockquote>
+<p><a href="https://hub.docker.com/r/nathanielsinger/hackabit0x01-infrastructure-container2">https://hub.docker.com/r/nathanielsinger/hackabit0x01-infrastructure-container2</a></p></blockquote>
 <p>Seems easy enough, just run another docker command. But this time, we get an error when we try to pull the image.</p>
 <pre tabindex="0"><code>Error response from daemon: manifest for nathanielsinger/hackabit0x01-infrastructure-container2:latest not found: manifest unknown: manifest unknown
 </code></pre><p>Searching for the error brings us to <a href="https://stackoverflow.com/questions/41810104/docker-manifest-unknown-manifest-unknown">this</a> stack overflow question, and we see we have to specify the version of the image. So we do so and <code>docker pull nathanielsinger/hackabit0x01-infrastructure-container2:v1.0.0</code> works.</p>
@@ -846,8 +800,7 @@ Here&rsquo;s an example, decode this, all the data you need is right here: <code
 
 <h2 id="inspector-150">Inspector (150)<a href="#inspector-150" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
 <blockquote>
-<p>Oh look its Bits, something changed though&hellip; see if you can track it down.</p>
-</blockquote>
+<p>Oh look its Bits, something changed though&hellip; see if you can track it down.</p></blockquote>
 <p>We are provided with a zip file containing source code for what seems to be the Bits bot on the CTF&rsquo;s discord server. After looking around, I realise we are given a git folder which contains <code>.git</code> folder, with things like past commits and versions.</p>
 <p>So the flag must be somewhere in the past commits.</p>
 <p>Searching for <code>flag</code> with <code>grep -r &quot;flag&quot; .</code> we find past commits with <code>flag_stuff</code> in their info.</p>
@@ -864,8 +817,7 @@ Here&rsquo;s an example, decode this, all the data you need is right here: <code
 <h2 id="hammer-150">Hammer (150)<a href="#hammer-150" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
 <blockquote>
 <p>Check out oslyxpzcgs.qualifier.hackabit.com and see if you can find the vuln. No help on this one, nothing crazy though&hellip; enumerate harder :)
-The flag is stored in an environment variable.</p>
-</blockquote>
+The flag is stored in an environment variable.</p></blockquote>
 <p>Let&rsquo;s nmap the domain to find more info about the service.</p>
 
   <img src="./img/nmap.png"  class="center"  style="border-radius: 5px; width: 100%;"  />
@@ -892,8 +844,7 @@ The flag is stored in an environment variable.</p>
 <h1 id="5-networking">5. Networking<a href="#5-networking" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
 <h2 id="phonebook-75">Phonebook (75)<a href="#phonebook-75" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
 <blockquote>
-<p>Check out the DNS records for <code>qualifier.hackabit.com</code>&hellip; there&rsquo;s soemthing interesting there, all kinds of data&hellip;</p>
-</blockquote>
+<p>Check out the DNS records for <code>qualifier.hackabit.com</code>&hellip; there&rsquo;s soemthing interesting there, all kinds of data&hellip;</p></blockquote>
 <p>Okay let&rsquo;s go to <a href="https://dnschecker.org/all-dns-records-of-domain.php">dnschecker.org</a> and check the DNS records.</p>
 
   <img src="./img/dns.png"  class="center"  style="border-radius: 5px; width: 100%;"  />
@@ -902,8 +853,7 @@ The flag is stored in an environment variable.</p>
 <p>Wow! A flag! Who would&rsquo;ve guessed&hellip; <code>flag{my_nameserver_is_slimshady}</code></p>
 <h2 id="avenue-75">Avenue (75)<a href="#avenue-75" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
 <blockquote>
-<p>What is the kernel(OS) was this network capture recorded on?</p>
-</blockquote>
+<p>What is the kernel(OS) was this network capture recorded on?</p></blockquote>
 <p>We are given a <code>pcap</code> capture file. Let&rsquo;s use wireshark to open it.</p>
 
   <img src="./img/wireshark.png"  class="center"  style="border-radius: 5px; width: 100%;"  />
@@ -912,25 +862,21 @@ The flag is stored in an environment variable.</p>
 <p>And within one of the tls streams we find <code>X11; Ubuntu; Linux x86_64</code> to be the OS of the capturing device.</p>
 <h2 id="rivers-100">Rivers (100)<a href="#rivers-100" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
 <blockquote>
-<p>Follow the river and see whats in the stream.</p>
-</blockquote>
+<p>Follow the river and see whats in the stream.</p></blockquote>
 <p>Okay, so this was also just following the TLS stream, hence the name and description. The flag is in the previous image too, <code>flag{rivers_run_streams_flowwww}</code></p>
 <h2 id="fish-100">Fish (100)<a href="#fish-100" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
 <blockquote>
-<p>What protocol is responsible for the most packets in this capture?</p>
-</blockquote>
+<p>What protocol is responsible for the most packets in this capture?</p></blockquote>
 <p>Sorting by protocol, we find the <code>QUIC</code> protocol to be most of the packets.</p>
 <p>But submitting that doesn&rsquo;t give us the flag. A quick google brings us to its full name, <code>Quick UDP Internet Connections</code>, which I don&rsquo;t think was the flag either? It was something like <code>QUIC IETF</code> or so.</p>
 <h2 id="school-125">School (125)<a href="#school-125" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
 <blockquote>
-<p>This ones gonna take a few steps:</p>
-</blockquote>
+<p>This ones gonna take a few steps:</p></blockquote>
 <blockquote>
 <p>Take the input line by line
 Calculate the network and broadcast addresses of the subnet
 For each network address add up all the forth octets
-Your challenge response (flag) is this total.</p>
-</blockquote>
+Your challenge response (flag) is this total.</p></blockquote>
 <p>Okay, I literally chucked this challenge into chat GPT to solve it for me, and it actually worked first try!</p>
 <p>It gave me this code:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-py" data-lang="py"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_network_address</span>(ip, netmask):
@@ -966,11 +912,9 @@ Your challenge response (flag) is this total.</p>
 </span></span></code></pre></div><p>Which gave us the answer <code>25604</code>. I am very surprised this worked, and saved me from doing some scripting. So I do apologise for not doing this properly and explaining how to calculate it, hopefully that code is enough :)</p>
 <h2 id="picture-125">Picture (125)<a href="#picture-125" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
 <blockquote>
-<p>There is a service running on woxuazsgxd.qualifier.hackabit.com:54321</p>
-</blockquote>
+<p>There is a service running on woxuazsgxd.qualifier.hackabit.com:54321</p></blockquote>
 <blockquote>
-<p>Connect to it and try to follow the mail&hellip;</p>
-</blockquote>
+<p>Connect to it and try to follow the mail&hellip;</p></blockquote>
 <p>Connecting to it with netcat gives us a message along the lines of the flag was sent to you to a random UDP port 5000-5500</p>
 <p>Definetly one of the harder ones by far. My initial thought was to use Wireshark to capture packages, and filter by protocol UDP or port number, but neither of that worked for some reason. Trying another packet capture method with <code>sudo tcpdump -i ens3 udp -vvv -X</code>, we get the flag <code>flag{the_mailman_is_confused_but_you're_not}</code></p>
 <pre tabindex="0"><code>14:49:48.524413 IP (tos 0x40, ttl 55, id 741, offset 0, flags [DF], proto UDP (17), length 72)

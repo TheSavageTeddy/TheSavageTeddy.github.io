@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
   
 
   
@@ -15,20 +15,23 @@
 <meta name="description" content="Writeups for p4CTF Finals 2023, onsite in Poland!" />
 <meta name="keywords" content="" />
 <meta name="robots" content="noodp" />
-<link rel="canonical" href="https://TheSavageTeddy.github.io/featured/p4ctf-finals-2023/" />
+<link rel="canonical" href="http://localhost:1313/featured/p4ctf-finals-2023/" />
 
 
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-J6PB683BSR"></script>
-<script>
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.dataLayer = window.dataLayer || [];
-	function gtag(){dataLayer.push(arguments);}
-	gtag('js', new Date());
-	gtag('config', 'G-J6PB683BSR', { 'anonymize_ip': false });
-}
-</script>
-
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-J6PB683BSR"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-J6PB683BSR');
+        }
+      </script>
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"
     integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
@@ -54,7 +57,7 @@ if (!doNotTrack) {
   
   
   
-  <link rel="stylesheet" href="https://TheSavageTeddy.github.io/styles.css">
+  <link rel="stylesheet" href="http://localhost:1313/styles.css">
 
 
 
@@ -62,7 +65,7 @@ if (!doNotTrack) {
 
 
 
-  <link rel="shortcut icon" href="https://TheSavageTeddy.github.io/favicon.ico">
+  <link rel="shortcut icon" href="http://localhost:1313/favicon.ico">
 
 
 
@@ -79,14 +82,14 @@ if (!doNotTrack) {
 <meta property="og:type" content="article" />
 <meta property="og:title" content="CTF Writeups - p4CTF Finals 2023 in Poland">
 <meta property="og:description" content="Writeups for p4CTF Finals 2023, onsite in Poland!" />
-<meta property="og:url" content="https://TheSavageTeddy.github.io/featured/p4ctf-finals-2023/" />
+<meta property="og:url" content="http://localhost:1313/featured/p4ctf-finals-2023/" />
 <meta property="og:site_name" content="teddyctf" />
 
   
   
     
   
-  <meta property="og:image" content="https://TheSavageTeddy.github.io/featured/p4ctf-finals-2023/onsite1.jpg">
+  <meta property="og:image" content="http://localhost:1313/featured/p4ctf-finals-2023/onsite1.jpg">
 
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="627">
@@ -98,7 +101,7 @@ if (!doNotTrack) {
   <meta property="article:section" content="onsite" />
 
 
-  <meta property="article:published_time" content="2023-06-22 21:20:00 &#43;0800 AWST" />
+  <meta property="article:published_time" content="2023-06-22 23:20:00 &#43;1000 AEST" />
 
 
 
@@ -201,7 +204,11 @@ if (!doNotTrack) {
       
 <article class="post">
   <h1 class="post-title">
-    <a href="https://TheSavageTeddy.github.io/featured/p4ctf-finals-2023/"><img src="https://ctftime.org/media/cache/16/f3/16f33d434bd79b6eaf19ab47b9ec20d3.png"  class="left"  style="border-radius: 5px; height: auto; width: 3em; display: inline; vertical-align: middle; "  /> CTF Writeups - p4CTF Finals 2023 in Poland</a>
+    <a href="http://localhost:1313/featured/p4ctf-finals-2023/">
+  <img src="https://ctftime.org/media/cache/16/f3/16f33d434bd79b6eaf19ab47b9ec20d3.png"  class="left"  style="border-radius: 5px; height: auto; width: 3em; display: inline; vertical-align: middle; "  />
+
+
+ CTF Writeups - p4CTF Finals 2023 in Poland</a>
   </h1>
   <div class="post-meta">
     
@@ -217,15 +224,15 @@ if (!doNotTrack) {
   
     <span class="post-tags">
       
-      #<a href="https://TheSavageTeddy.github.io/tags/ctf/">ctf</a>&nbsp;
+      #<a href="http://localhost:1313/tags/ctf/">ctf</a>&nbsp;
       
-      #<a href="https://TheSavageTeddy.github.io/tags/crypto/">crypto</a>&nbsp;
+      #<a href="http://localhost:1313/tags/crypto/">crypto</a>&nbsp;
       
-      #<a href="https://TheSavageTeddy.github.io/tags/writeup/">writeup</a>&nbsp;
+      #<a href="http://localhost:1313/tags/writeup/">writeup</a>&nbsp;
       
-      #<a href="https://TheSavageTeddy.github.io/tags/onsite/">onsite</a>&nbsp;
+      #<a href="http://localhost:1313/tags/onsite/">onsite</a>&nbsp;
       
-      #<a href="https://TheSavageTeddy.github.io/tags/finals/">finals</a>&nbsp;
+      #<a href="http://localhost:1313/tags/finals/">finals</a>&nbsp;
       
     </span>
   
@@ -253,36 +260,35 @@ if (!doNotTrack) {
 <h1 id="challenge-overview">Challenge Overview<a href="#challenge-overview" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
 <p>There were a total of 18 challenges - I mostly solved crypto, and got a funny unintended solution on a misc. Below are writeups of some of these challenges:</p>
 <table>
-<thead>
-<tr>
-<th><strong>Challenge</strong></th>
-<th><strong>Category</strong></th>
-<th><strong>Solves</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a href="#pallas-crypto---12-solves">Pallas</a></td>
-<td>crypto</td>
-<td>12</td>
-</tr>
-<tr>
-<td><a href="#aes_observed-crypto---6-solves">aes_observed</a></td>
-<td>crypto</td>
-<td>6</td>
-</tr>
-<tr>
-<td><a href="#pepega-packets-misc---5-solves">Pepega Packets</a></td>
-<td>misc</td>
-<td>5</td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th><strong>Challenge</strong></th>
+          <th><strong>Category</strong></th>
+          <th><strong>Solves</strong></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><a href="/featured/p4ctf-finals-2023/#pallas-crypto---12-solves">Pallas</a></td>
+          <td>crypto</td>
+          <td>12</td>
+      </tr>
+      <tr>
+          <td><a href="/featured/p4ctf-finals-2023/#aes_observed-crypto---6-solves">aes_observed</a></td>
+          <td>crypto</td>
+          <td>6</td>
+      </tr>
+      <tr>
+          <td><a href="/featured/p4ctf-finals-2023/#pepega-packets-misc---5-solves">Pepega Packets</a></td>
+          <td>misc</td>
+          <td>5</td>
+      </tr>
+  </tbody>
 </table>
 <p>Enjoy!</p>
 <h1 id="pallas-crypto---12-solves">Pallas (crypto) - 12 solves<a href="#pallas-crypto---12-solves" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
 <blockquote>
-<p>Tell me my secret</p>
-</blockquote>
+<p>Tell me my secret</p></blockquote>
 <p>We are given python source <code>task.py</code> and the output <code>output.txt</code>.</p>
 
 
@@ -476,8 +482,7 @@ print(flag.decode())
 He actions are limited but he can run some encryptions for us and percsely measure voltage just after sbox.<br>
 Can we do something with this information that would help us to recover some other plaintexts?<br>
 HINT: the Key is a flag.<br>
-<code>nc aes-observed.zajebistyc.tf 9999</code></p>
-</blockquote>
+<code>nc aes-observed.zajebistyc.tf 9999</code></p></blockquote>
 <p>We are only given a server to connect to, which responds with 50 plaintext to voltage pairs.</p>
 <pre tabindex="0"><code>Plaintext                                                        Voltage
 78a41912ae910166f57e6f1a46df63ee3a434860e116f5343d111181e657cc5c 2.512
@@ -605,8 +610,7 @@ print(found_key)
 <blockquote>
 <p>Can you be faster enough?<br>
 <code>http://10.0.XXX.2:80</code><br>
-NOTE: Every team have separate ip address, please look on your paper from sanity check :)</p>
-</blockquote>
+NOTE: Every team have separate ip address, please look on your paper from sanity check :)</p></blockquote>
 <p>This is probably the hardest I&rsquo;ve ever cheese&rsquo;d a challenge - and it was first blood as well&hellip;</p>
 <p>We are given the server&rsquo;s code:</p>
 
@@ -971,8 +975,7 @@ func main() {
 </span></span></code></pre></div><p>The <code>go</code> before <code>workerFirewall()</code> essentially means that the function runs asynchronosly, allowing <code>workerHttp()</code> to be ran alongside <code>workerFirewall()</code>, which bans our IP address.</p>
 <p>Clearly, we are trying to race the functions in order to send a request where <code>workerFirewall()</code> takes longer than 5 seconds to respond and ban our IP, so we are able to fetch the flag before we are banned. This is also hinted by in the challenge description.</p>
 <blockquote>
-<p>Can you be faster enough?</p>
-</blockquote>
+<p>Can you be faster enough?</p></blockquote>
 <p>The naive approach is to simply flood the server with requests on one computer, and use another computer with a seperate IP to request the flag, hoping that the server will lag enough that their IP takes &gt;5 seconds to be banned.</p>
 <p>I coded up a horrendous partially GPT generated python script, with threads to continuesly ping the server to see if this was even viable.</p>
 
@@ -1112,7 +1115,7 @@ Sad 🐸 You are banned 😢
     <div class="pagination__buttons">
         
         <span class="button previous">
-            <a href="https://TheSavageTeddy.github.io/featured/bsides-canberra-ctf-2023/">
+            <a href="http://localhost:1313/featured/bsides-canberra-ctf-2023/">
                 <span class="button__icon">←</span>
                 <span class="button__text">Reversing Writeups - BSides Canberra CTF 2023</span>
             </a>
@@ -1120,7 +1123,7 @@ Sad 🐸 You are banned 😢
         
         
         <span class="button next">
-            <a href="https://TheSavageTeddy.github.io/featured/what-a-maze-meant-defcon-2023-quals/">
+            <a href="http://localhost:1313/featured/what-a-maze-meant-defcon-2023-quals/">
                 <span class="button__text">what-a-maze-meant - DEFCON Quals 2023 Writeup</span>
                 <span class="button__icon">→</span>
             </a>

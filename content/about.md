@@ -1,6 +1,6 @@
 # About me
 
-Hi! Welcome to my blog! I'm Rainier Wu, also known as [`teddy`](https://ctftime.org/user/114547) or `TheSavageTeddy`, a highschool student and CTF player from Western Australia.
+Hi! Welcome to my blog! I'm Rainier Wu, also known as [`teddy`](https://ctftime.org/user/114547) or `TheSavageTeddy`, a ~~highschool~~ first year uni student and CTF player from Australia.
 
 I play with team [`Emu Exploit`](https://ctftime.org/team/160273) (formerly PissedEmu), and do all categories but mostly crypto, pwn, rev, and currently learning web3.
 

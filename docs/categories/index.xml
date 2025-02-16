@@ -2,88 +2,88 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on teddyctf</title>
-    <link>https://TheSavageTeddy.github.io/categories/</link>
+    <link>http://localhost:1313/categories/</link>
     <description>Recent content in Categories on teddyctf</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
+    <language>en</language>
     <copyright>teddyctf</copyright>
-    <lastBuildDate>Tue, 15 Oct 2024 19:00:00 +0800</lastBuildDate><atom:link href="https://TheSavageTeddy.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 15 Oct 2024 22:00:00 +1100</lastBuildDate><atom:link href="http://localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>CTF Writeups</title>
-      <link>https://TheSavageTeddy.github.io/categories/ctf-writeups/</link>
-      <pubDate>Tue, 15 Oct 2024 19:00:00 +0800</pubDate>
+      <link>http://localhost:1313/categories/ctf-writeups/</link>
+      <pubDate>Tue, 15 Oct 2024 22:00:00 +1100</pubDate>
       
-      <guid>https://TheSavageTeddy.github.io/categories/ctf-writeups/</guid>
+      <guid>http://localhost:1313/categories/ctf-writeups/</guid>
       <description></description>
       <content></content>
     </item>
     
     <item>
-      <title>writeups</title>
-      <link>https://TheSavageTeddy.github.io/categories/writeups/</link>
-      <pubDate>Tue, 15 Oct 2024 19:00:00 +0800</pubDate>
+      <title>Writeups</title>
+      <link>http://localhost:1313/categories/writeups/</link>
+      <pubDate>Tue, 15 Oct 2024 22:00:00 +1100</pubDate>
       
-      <guid>https://TheSavageTeddy.github.io/categories/writeups/</guid>
+      <guid>http://localhost:1313/categories/writeups/</guid>
       <description></description>
       <content></content>
     </item>
     
     <item>
-      <title>crypto</title>
-      <link>https://TheSavageTeddy.github.io/categories/crypto/</link>
-      <pubDate>Sat, 28 Sep 2024 15:53:20 +0800</pubDate>
+      <title>Crypto</title>
+      <link>http://localhost:1313/categories/crypto/</link>
+      <pubDate>Sat, 28 Sep 2024 17:53:20 +1000</pubDate>
       
-      <guid>https://TheSavageTeddy.github.io/categories/crypto/</guid>
+      <guid>http://localhost:1313/categories/crypto/</guid>
       <description></description>
       <content></content>
     </item>
     
     <item>
-      <title>onsite</title>
-      <link>https://TheSavageTeddy.github.io/categories/onsite/</link>
-      <pubDate>Sat, 28 Sep 2024 15:53:20 +0800</pubDate>
+      <title>Onsite</title>
+      <link>http://localhost:1313/categories/onsite/</link>
+      <pubDate>Sat, 28 Sep 2024 17:53:20 +1000</pubDate>
       
-      <guid>https://TheSavageTeddy.github.io/categories/onsite/</guid>
+      <guid>http://localhost:1313/categories/onsite/</guid>
       <description></description>
       <content></content>
     </item>
     
     <item>
-      <title>web3</title>
-      <link>https://TheSavageTeddy.github.io/categories/web3/</link>
-      <pubDate>Tue, 13 Feb 2024 18:10:00 +0800</pubDate>
+      <title>Web3</title>
+      <link>http://localhost:1313/categories/web3/</link>
+      <pubDate>Tue, 13 Feb 2024 21:10:00 +1100</pubDate>
       
-      <guid>https://TheSavageTeddy.github.io/categories/web3/</guid>
+      <guid>http://localhost:1313/categories/web3/</guid>
       <description></description>
       <content></content>
     </item>
     
     <item>
-      <title>reversing</title>
-      <link>https://TheSavageTeddy.github.io/categories/reversing/</link>
-      <pubDate>Sun, 01 Oct 2023 00:06:40 +0800</pubDate>
+      <title>Reversing</title>
+      <link>http://localhost:1313/categories/reversing/</link>
+      <pubDate>Sun, 01 Oct 2023 03:06:40 +1100</pubDate>
       
-      <guid>https://TheSavageTeddy.github.io/categories/reversing/</guid>
+      <guid>http://localhost:1313/categories/reversing/</guid>
       <description></description>
       <content></content>
     </item>
     
     <item>
-      <title>cryptography</title>
-      <link>https://TheSavageTeddy.github.io/categories/cryptography/</link>
-      <pubDate>Thu, 22 Jun 2023 21:20:00 +0800</pubDate>
+      <title>Cryptography</title>
+      <link>http://localhost:1313/categories/cryptography/</link>
+      <pubDate>Thu, 22 Jun 2023 23:20:00 +1000</pubDate>
       
-      <guid>https://TheSavageTeddy.github.io/categories/cryptography/</guid>
+      <guid>http://localhost:1313/categories/cryptography/</guid>
       <description></description>
       <content></content>
     </item>
     
     <item>
-      <title>pwn</title>
-      <link>https://TheSavageTeddy.github.io/categories/pwn/</link>
-      <pubDate>Mon, 09 Jan 2023 00:00:00 +0800</pubDate>
+      <title>Pwn</title>
+      <link>http://localhost:1313/categories/pwn/</link>
+      <pubDate>Mon, 09 Jan 2023 03:00:00 +1100</pubDate>
       
-      <guid>https://TheSavageTeddy.github.io/categories/pwn/</guid>
+      <guid>http://localhost:1313/categories/pwn/</guid>
       <description></description>
       <content></content>
     </item>

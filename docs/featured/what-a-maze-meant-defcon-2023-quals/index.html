@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
   
 
   
@@ -15,20 +15,23 @@
 <meta name="description" content="A writeup for a speedpwn challenge in LiveCTF of DEFCON CTF Quals 2023" />
 <meta name="keywords" content="" />
 <meta name="robots" content="noodp" />
-<link rel="canonical" href="https://TheSavageTeddy.github.io/featured/what-a-maze-meant-defcon-2023-quals/" />
+<link rel="canonical" href="http://localhost:1313/featured/what-a-maze-meant-defcon-2023-quals/" />
 
 
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-J6PB683BSR"></script>
-<script>
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.dataLayer = window.dataLayer || [];
-	function gtag(){dataLayer.push(arguments);}
-	gtag('js', new Date());
-	gtag('config', 'G-J6PB683BSR', { 'anonymize_ip': false });
-}
-</script>
-
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-J6PB683BSR"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-J6PB683BSR');
+        }
+      </script>
 
 
 
@@ -40,7 +43,7 @@ if (!doNotTrack) {
   
   
   
-  <link rel="stylesheet" href="https://TheSavageTeddy.github.io/styles.css">
+  <link rel="stylesheet" href="http://localhost:1313/styles.css">
 
 
 
@@ -48,7 +51,7 @@ if (!doNotTrack) {
 
 
 
-  <link rel="shortcut icon" href="https://TheSavageTeddy.github.io/favicon.ico">
+  <link rel="shortcut icon" href="http://localhost:1313/favicon.ico">
 
 
 
@@ -65,14 +68,14 @@ if (!doNotTrack) {
 <meta property="og:type" content="article" />
 <meta property="og:title" content="what-a-maze-meant - DEFCON Quals 2023 Writeup">
 <meta property="og:description" content="A writeup for a speedpwn challenge in LiveCTF of DEFCON CTF Quals 2023" />
-<meta property="og:url" content="https://TheSavageTeddy.github.io/featured/what-a-maze-meant-defcon-2023-quals/" />
+<meta property="og:url" content="http://localhost:1313/featured/what-a-maze-meant-defcon-2023-quals/" />
 <meta property="og:site_name" content="teddyctf" />
 
   
   
     
   
-  <meta property="og:image" content="https://TheSavageTeddy.github.io/featured/what-a-maze-meant-defcon-2023-quals/defcon-quals-scoreboard-2023.png">
+  <meta property="og:image" content="http://localhost:1313/featured/what-a-maze-meant-defcon-2023-quals/defcon-quals-scoreboard-2023.png">
 
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="627">
@@ -80,7 +83,7 @@ if (!doNotTrack) {
   <meta property="article:section" content="CTF Writeups" />
 
 
-  <meta property="article:published_time" content="2023-05-30 00:00:00 &#43;0800 AWST" />
+  <meta property="article:published_time" content="2023-05-30 02:00:00 &#43;1000 AEST" />
 
 
 
@@ -183,7 +186,11 @@ if (!doNotTrack) {
       
 <article class="post">
   <h1 class="post-title">
-    <a href="https://TheSavageTeddy.github.io/featured/what-a-maze-meant-defcon-2023-quals/"><img src="https://ctftime.org/media/cache/94/e9/94e9dbfeeac979015ff6fc74b5151fd8.png"  class="left"  style="border-radius: 5px; height: auto; width: 3em; display: inline; vertical-align: middle; "  /> what-a-maze-meant - DEFCON Quals 2023 Writeup</a>
+    <a href="http://localhost:1313/featured/what-a-maze-meant-defcon-2023-quals/">
+  <img src="https://ctftime.org/media/cache/94/e9/94e9dbfeeac979015ff6fc74b5151fd8.png"  class="left"  style="border-radius: 5px; height: auto; width: 3em; display: inline; vertical-align: middle; "  />
+
+
+ what-a-maze-meant - DEFCON Quals 2023 Writeup</a>
   </h1>
   <div class="post-meta">
     
@@ -199,11 +206,11 @@ if (!doNotTrack) {
   
     <span class="post-tags">
       
-      #<a href="https://TheSavageTeddy.github.io/tags/ctf/">ctf</a>&nbsp;
+      #<a href="http://localhost:1313/tags/ctf/">ctf</a>&nbsp;
       
-      #<a href="https://TheSavageTeddy.github.io/tags/writeup/">writeup</a>&nbsp;
+      #<a href="http://localhost:1313/tags/writeup/">writeup</a>&nbsp;
       
-      #<a href="https://TheSavageTeddy.github.io/tags/speedpwn/">speedpwn</a>&nbsp;
+      #<a href="http://localhost:1313/tags/speedpwn/">speedpwn</a>&nbsp;
       
     </span>
   
@@ -219,9 +226,9 @@ if (!doNotTrack) {
 
   <div class="post-content"><div>
         <h1 id="table-of-contents">Table of Contents<a href="#table-of-contents" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
-<p><a href="#overview"><code>Overview</code></a> - a brief summary of the event</p>
-<p><a href="#challenge-overview"><code>Writeup</code></a> - writeup of the challenge</p>
-<p><a href="#conclusion"><code>Conclusion</code></a> - final closing thoughts</p>
+<p><a href="/featured/what-a-maze-meant-defcon-2023-quals/#overview"><code>Overview</code></a> - a brief summary of the event</p>
+<p><a href="/featured/what-a-maze-meant-defcon-2023-quals/#challenge-overview"><code>Writeup</code></a> - writeup of the challenge</p>
+<p><a href="/featured/what-a-maze-meant-defcon-2023-quals/#conclusion"><code>Conclusion</code></a> - final closing thoughts</p>
 <h1 id="overview">Overview<a href="#overview" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
 <p>I played DEFCON Quals 2023 with <a href="https://ctftime.org/team/220769"><code>if this doesn't work we'll get more for next year</code></a>, a merger team with around 10 teams combined. Despite our best efforts, we placed <code>15th</code>, just short of the top 12 that qualified, but given that it was our first year, I think we did pretty well, and I guess we&rsquo;ll need to get more for next year!</p>
 <p>In this post is a quick writeup of <code>what-a-maze-meant</code>, the first speedpwn challenge released in the LiveCTF section, where the quickest solves will earn the most points, so speed is key! It was a relatively easy challenge that together with some teamates, I solved pretty quickly. Enjoy!</p>
@@ -747,7 +754,7 @@ p.interactive()
     <div class="pagination__buttons">
         
         <span class="button previous">
-            <a href="https://TheSavageTeddy.github.io/featured/p4ctf-finals-2023/">
+            <a href="http://localhost:1313/featured/p4ctf-finals-2023/">
                 <span class="button__icon">←</span>
                 <span class="button__text">CTF Writeups - p4CTF Finals 2023 in Poland</span>
             </a>

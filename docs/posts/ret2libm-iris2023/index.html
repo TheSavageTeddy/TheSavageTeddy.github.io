@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
   
 
   
@@ -15,20 +15,23 @@
 <meta name="description" content="A relatively easy `pwn` challenge similar to classic ret2libc" />
 <meta name="keywords" content="" />
 <meta name="robots" content="noodp" />
-<link rel="canonical" href="https://TheSavageTeddy.github.io/posts/ret2libm-iris2023/" />
+<link rel="canonical" href="http://localhost:1313/posts/ret2libm-iris2023/" />
 
 
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-J6PB683BSR"></script>
-<script>
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.dataLayer = window.dataLayer || [];
-	function gtag(){dataLayer.push(arguments);}
-	gtag('js', new Date());
-	gtag('config', 'G-J6PB683BSR', { 'anonymize_ip': false });
-}
-</script>
-
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-J6PB683BSR"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-J6PB683BSR');
+        }
+      </script>
 
 
 
@@ -40,7 +43,7 @@ if (!doNotTrack) {
   
   
   
-  <link rel="stylesheet" href="https://TheSavageTeddy.github.io/styles.css">
+  <link rel="stylesheet" href="http://localhost:1313/styles.css">
 
 
 
@@ -48,7 +51,7 @@ if (!doNotTrack) {
 
 
 
-  <link rel="shortcut icon" href="https://TheSavageTeddy.github.io/favicon.ico">
+  <link rel="shortcut icon" href="http://localhost:1313/favicon.ico">
 
 
 
@@ -65,14 +68,14 @@ if (!doNotTrack) {
 <meta property="og:type" content="article" />
 <meta property="og:title" content="ret2libm - IrisCTF 2023">
 <meta property="og:description" content="A relatively easy `pwn` challenge similar to classic ret2libc" />
-<meta property="og:url" content="https://TheSavageTeddy.github.io/posts/ret2libm-iris2023/" />
+<meta property="og:url" content="http://localhost:1313/posts/ret2libm-iris2023/" />
 <meta property="og:site_name" content="teddyctf" />
 
   
   
     
   
-  <meta property="og:image" content="https://TheSavageTeddy.github.io/posts/ret2libm-iris2023/libcbasecalc.png">
+  <meta property="og:image" content="http://localhost:1313/posts/ret2libm-iris2023/libcbasecalc.png">
 
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="627">
@@ -82,7 +85,7 @@ if (!doNotTrack) {
   <meta property="article:section" content="pwn" />
 
 
-  <meta property="article:published_time" content="2023-01-09 00:00:00 &#43;0800 AWST" />
+  <meta property="article:published_time" content="2023-01-09 03:00:00 &#43;1100 AEDT" />
 
 
 
@@ -185,7 +188,11 @@ if (!doNotTrack) {
       
 <article class="post">
   <h1 class="post-title">
-    <a href="https://TheSavageTeddy.github.io/posts/ret2libm-iris2023/"><img src="https://irissec.xyz/assets/img/logo_ascii.png"  class="left"  style="border-radius: 5px; height: auto; width: 3em; display: inline; vertical-align: middle; "  /> ret2libm - IrisCTF 2023</a>
+    <a href="http://localhost:1313/posts/ret2libm-iris2023/">
+  <img src="https://irissec.xyz/assets/img/logo_ascii.png"  class="left"  style="border-radius: 5px; height: auto; width: 3em; display: inline; vertical-align: middle; "  />
+
+
+ ret2libm - IrisCTF 2023</a>
   </h1>
   <div class="post-meta">
     
@@ -201,11 +208,11 @@ if (!doNotTrack) {
   
     <span class="post-tags">
       
-      #<a href="https://TheSavageTeddy.github.io/tags/ctf/">ctf</a>&nbsp;
+      #<a href="http://localhost:1313/tags/ctf/">ctf</a>&nbsp;
       
-      #<a href="https://TheSavageTeddy.github.io/tags/pwn/">pwn</a>&nbsp;
+      #<a href="http://localhost:1313/tags/pwn/">pwn</a>&nbsp;
       
-      #<a href="https://TheSavageTeddy.github.io/tags/writeup/">writeup</a>&nbsp;
+      #<a href="http://localhost:1313/tags/writeup/">writeup</a>&nbsp;
       
     </span>
   
@@ -224,8 +231,7 @@ if (!doNotTrack) {
 <p><code>ret2libm</code> was the 2nd most solved <code>pwn</code> challenge of <a href="https://ctftime.org/event/1774">IrisCTF 2023</a>, written by <code>sera</code>.</p>
 <p>Description:</p>
 <blockquote>
-<p>I need to make a pwn? Let&rsquo;s go with that standard warmup rop thing&hellip; what was it&hellip; ret2libm?</p>
-</blockquote>
+<p>I need to make a pwn? Let&rsquo;s go with that standard warmup rop thing&hellip; what was it&hellip; ret2libm?</p></blockquote>
 <p>We are provided with a zip file containing a binary, source code, <code>libc</code>, <code>libm</code>, and Makefile.</p>
 
 

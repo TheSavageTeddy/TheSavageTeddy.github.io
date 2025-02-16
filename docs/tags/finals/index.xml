@@ -1,21 +1,22 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>finals on teddyctf</title>
-    <link>https://TheSavageTeddy.github.io/tags/finals/</link>
-    <description>Recent content in finals on teddyctf</description>
+    <title>Finals on teddyctf</title>
+    <link>http://localhost:1313/tags/finals/</link>
+    <description>Recent content in Finals on teddyctf</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
+    <language>en</language>
     <copyright>teddyctf</copyright>
-    <lastBuildDate>Thu, 22 Jun 2023 21:20:00 +0800</lastBuildDate><atom:link href="https://TheSavageTeddy.github.io/tags/finals/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 22 Jun 2023 23:20:00 +1000</lastBuildDate><atom:link href="http://localhost:1313/tags/finals/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>CTF Writeups - p4CTF Finals 2023 in Poland</title>
-      <link>https://TheSavageTeddy.github.io/featured/p4ctf-finals-2023/</link>
-      <pubDate>Thu, 22 Jun 2023 21:20:00 +0800</pubDate>
+      <link>http://localhost:1313/featured/p4ctf-finals-2023/</link>
+      <pubDate>Thu, 22 Jun 2023 23:20:00 +1000</pubDate>
       
-      <guid>https://TheSavageTeddy.github.io/featured/p4ctf-finals-2023/</guid>
-      <description>Overview p4CTF Finals was an onsite event held in June 2023 in Katowice, Poland. Together with Emu Exploit, I qualified for event in the p4CTF qualifiers and had the opportunity to go to Poland to meet and compete with many top teams in the world, including The Flat Network Society, Dragon Sector, justCatTheFish, hxp, 0rganizers, ALLES and FluxFingers.
-Before we could compete in the event, we had to first get to Poland, which proved to be a pain as our travel time was 50 hours - 30 hours across three flights to Paris, and 20 hours on the bus to Katowice.</description>
+      <guid>http://localhost:1313/featured/p4ctf-finals-2023/</guid>
+      <description>&lt;h1 id=&#34;overview&#34;&gt;Overview&lt;/h1&gt;
+&lt;p&gt;p4CTF Finals was an onsite event held in June 2023 in Katowice, Poland. Together with Emu Exploit, I qualified for event in the p4CTF qualifiers and had the opportunity to go to Poland to meet and compete with many top teams in the world, including &lt;a href=&#34;https://twitter.com/FlatNetworkOrg&#34;&gt;&lt;code&gt;The Flat Network Society&lt;/code&gt;&lt;/a&gt;, &lt;a href=&#34;https://twitter.com/DragonSectorCTF&#34;&gt;&lt;code&gt;Dragon Sector&lt;/code&gt;&lt;/a&gt;, &lt;a href=&#34;https://twitter.com/justCatTheFish&#34;&gt;&lt;code&gt;justCatTheFish&lt;/code&gt;&lt;/a&gt;, &lt;a href=&#34;https://twitter.com/hxpctf&#34;&gt;&lt;code&gt;hxp&lt;/code&gt;&lt;/a&gt;, &lt;a href=&#34;https://twitter.com/0rganizers&#34;&gt;&lt;code&gt;0rganizers&lt;/code&gt;&lt;/a&gt;, &lt;a href=&#34;https://twitter.com/allesctf&#34;&gt;&lt;code&gt;ALLES&lt;/code&gt;&lt;/a&gt; and &lt;a href=&#34;https://twitter.com/fluxfingers&#34;&gt;&lt;code&gt;FluxFingers&lt;/code&gt;&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Before we could compete in the event, we had to first get to Poland, which proved to be a pain as our travel time was 50 hours - 30 hours across three flights to Paris, and 20 hours on the bus to Katowice. However, it was definetely worth the time, as we got to also see some tourist attractions in Paris!&lt;/p&gt;</description>
       <content>&lt;h1 id=&#34;overview&#34;&gt;Overview&lt;/h1&gt;
 &lt;p&gt;p4CTF Finals was an onsite event held in June 2023 in Katowice, Poland. Together with Emu Exploit, I qualified for event in the p4CTF qualifiers and had the opportunity to go to Poland to meet and compete with many top teams in the world, including &lt;a href=&#34;https://twitter.com/FlatNetworkOrg&#34;&gt;&lt;code&gt;The Flat Network Society&lt;/code&gt;&lt;/a&gt;, &lt;a href=&#34;https://twitter.com/DragonSectorCTF&#34;&gt;&lt;code&gt;Dragon Sector&lt;/code&gt;&lt;/a&gt;, &lt;a href=&#34;https://twitter.com/justCatTheFish&#34;&gt;&lt;code&gt;justCatTheFish&lt;/code&gt;&lt;/a&gt;, &lt;a href=&#34;https://twitter.com/hxpctf&#34;&gt;&lt;code&gt;hxp&lt;/code&gt;&lt;/a&gt;, &lt;a href=&#34;https://twitter.com/0rganizers&#34;&gt;&lt;code&gt;0rganizers&lt;/code&gt;&lt;/a&gt;, &lt;a href=&#34;https://twitter.com/allesctf&#34;&gt;&lt;code&gt;ALLES&lt;/code&gt;&lt;/a&gt; and &lt;a href=&#34;https://twitter.com/fluxfingers&#34;&gt;&lt;code&gt;FluxFingers&lt;/code&gt;&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Before we could compete in the event, we had to first get to Poland, which proved to be a pain as our travel time was 50 hours - 30 hours across three flights to Paris, and 20 hours on the bus to Katowice. However, it was definetely worth the time, as we got to also see some tourist attractions in Paris!&lt;/p&gt;
@@ -29,36 +30,35 @@ Before we could compete in the event, we had to first get to Poland, which prove
 &lt;h1 id=&#34;challenge-overview&#34;&gt;Challenge Overview&lt;/h1&gt;
 &lt;p&gt;There were a total of 18 challenges - I mostly solved crypto, and got a funny unintended solution on a misc. Below are writeups of some of these challenges:&lt;/p&gt;
 &lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;&lt;strong&gt;Challenge&lt;/strong&gt;&lt;/th&gt;
-&lt;th&gt;&lt;strong&gt;Category&lt;/strong&gt;&lt;/th&gt;
-&lt;th&gt;&lt;strong&gt;Solves&lt;/strong&gt;&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;a href=&#34;#pallas-crypto---12-solves&#34;&gt;Pallas&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;crypto&lt;/td&gt;
-&lt;td&gt;12&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;a href=&#34;#aes_observed-crypto---6-solves&#34;&gt;aes_observed&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;crypto&lt;/td&gt;
-&lt;td&gt;6&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;a href=&#34;#pepega-packets-misc---5-solves&#34;&gt;Pepega Packets&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;misc&lt;/td&gt;
-&lt;td&gt;5&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;&lt;strong&gt;Challenge&lt;/strong&gt;&lt;/th&gt;
+          &lt;th&gt;&lt;strong&gt;Category&lt;/strong&gt;&lt;/th&gt;
+          &lt;th&gt;&lt;strong&gt;Solves&lt;/strong&gt;&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;a href=&#34;http://localhost:1313/featured/p4ctf-finals-2023/#pallas-crypto---12-solves&#34;&gt;Pallas&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;crypto&lt;/td&gt;
+          &lt;td&gt;12&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;a href=&#34;http://localhost:1313/featured/p4ctf-finals-2023/#aes_observed-crypto---6-solves&#34;&gt;aes_observed&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;crypto&lt;/td&gt;
+          &lt;td&gt;6&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;a href=&#34;http://localhost:1313/featured/p4ctf-finals-2023/#pepega-packets-misc---5-solves&#34;&gt;Pepega Packets&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;misc&lt;/td&gt;
+          &lt;td&gt;5&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;p&gt;Enjoy!&lt;/p&gt;
 &lt;h1 id=&#34;pallas-crypto---12-solves&#34;&gt;Pallas (crypto) - 12 solves&lt;/h1&gt;
 &lt;blockquote&gt;
-&lt;p&gt;Tell me my secret&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;Tell me my secret&lt;/p&gt;&lt;/blockquote&gt;
 &lt;p&gt;We are given python source &lt;code&gt;task.py&lt;/code&gt; and the output &lt;code&gt;output.txt&lt;/code&gt;.&lt;/p&gt;
 
 
@@ -252,8 +252,7 @@ print(flag.decode())
 He actions are limited but he can run some encryptions for us and percsely measure voltage just after sbox.&lt;br&gt;
 Can we do something with this information that would help us to recover some other plaintexts?&lt;br&gt;
 HINT: the Key is a flag.&lt;br&gt;
-&lt;code&gt;nc aes-observed.zajebistyc.tf 9999&lt;/code&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;code&gt;nc aes-observed.zajebistyc.tf 9999&lt;/code&gt;&lt;/p&gt;&lt;/blockquote&gt;
 &lt;p&gt;We are only given a server to connect to, which responds with 50 plaintext to voltage pairs.&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;Plaintext                                                        Voltage
 78a41912ae910166f57e6f1a46df63ee3a434860e116f5343d111181e657cc5c 2.512
@@ -381,8 +380,7 @@ print(found_key)
 &lt;blockquote&gt;
 &lt;p&gt;Can you be faster enough?&lt;br&gt;
 &lt;code&gt;http://10.0.XXX.2:80&lt;/code&gt;&lt;br&gt;
-NOTE: Every team have separate ip address, please look on your paper from sanity check :)&lt;/p&gt;
-&lt;/blockquote&gt;
+NOTE: Every team have separate ip address, please look on your paper from sanity check :)&lt;/p&gt;&lt;/blockquote&gt;
 &lt;p&gt;This is probably the hardest I&amp;rsquo;ve ever cheese&amp;rsquo;d a challenge - and it was first blood as well&amp;hellip;&lt;/p&gt;
 &lt;p&gt;We are given the server&amp;rsquo;s code:&lt;/p&gt;
 
@@ -747,8 +745,7 @@ func main() {
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The &lt;code&gt;go&lt;/code&gt; before &lt;code&gt;workerFirewall()&lt;/code&gt; essentially means that the function runs asynchronosly, allowing &lt;code&gt;workerHttp()&lt;/code&gt; to be ran alongside &lt;code&gt;workerFirewall()&lt;/code&gt;, which bans our IP address.&lt;/p&gt;
 &lt;p&gt;Clearly, we are trying to race the functions in order to send a request where &lt;code&gt;workerFirewall()&lt;/code&gt; takes longer than 5 seconds to respond and ban our IP, so we are able to fetch the flag before we are banned. This is also hinted by in the challenge description.&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;Can you be faster enough?&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;Can you be faster enough?&lt;/p&gt;&lt;/blockquote&gt;
 &lt;p&gt;The naive approach is to simply flood the server with requests on one computer, and use another computer with a seperate IP to request the flag, hoping that the server will lag enough that their IP takes &amp;gt;5 seconds to be banned.&lt;/p&gt;
 &lt;p&gt;I coded up a horrendous partially GPT generated python script, with threads to continuesly ping the server to see if this was even viable.&lt;/p&gt;
 

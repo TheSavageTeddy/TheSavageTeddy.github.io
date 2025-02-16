@@ -1,22 +1,61 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>crypto on teddyctf</title>
-    <link>https://TheSavageTeddy.github.io/tags/crypto/</link>
-    <description>Recent content in crypto on teddyctf</description>
+    <title>Crypto on teddyctf</title>
+    <link>http://localhost:1313/tags/crypto/</link>
+    <description>Recent content in Crypto on teddyctf</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
+    <language>en</language>
     <copyright>teddyctf</copyright>
-    <lastBuildDate>Sat, 28 Sep 2024 15:53:20 +0800</lastBuildDate><atom:link href="https://TheSavageTeddy.github.io/tags/crypto/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 28 Sep 2024 17:53:20 +1000</lastBuildDate><atom:link href="http://localhost:1313/tags/crypto/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Crypto Writeups - BSides Canberra CTF 2024</title>
-      <link>https://TheSavageTeddy.github.io/featured/bsides-canberra-ctf-2024/</link>
-      <pubDate>Sat, 28 Sep 2024 15:53:20 +0800</pubDate>
+      <link>http://localhost:1313/featured/bsides-canberra-ctf-2024/</link>
+      <pubDate>Sat, 28 Sep 2024 17:53:20 +1000</pubDate>
       
-      <guid>https://TheSavageTeddy.github.io/featured/bsides-canberra-ctf-2024/</guid>
-      <description>Overview Last week I went to BSides Canberra 2024 to see the amazing talks, meet people, and of course, play CTF. After 2 days of solving interesting challenges, my team Emu Exploit managed to get 2nd place overall!
-I was basically the only person in the team who was willing to do crypto :&amp;lt; so I decided to write up the crypto challenges I solved. Enjoy!
-Challenges Overview Challenge Category Solves Discrete Add-a-rithm crypto 43 Psionic crypto 10 Public Service crypto 8 arpeeceethree crypto 3 Discrete Add-a-rithm - 43 solves You enter a room.</description>
+      <guid>http://localhost:1313/featured/bsides-canberra-ctf-2024/</guid>
+      <description>&lt;h1 id=&#34;overview&#34;&gt;Overview&lt;/h1&gt;
+&lt;p&gt;Last week I went to BSides Canberra 2024 to see the amazing talks, meet people, and of course, play CTF. After 2 days of solving interesting challenges, my team &lt;a href=&#34;https://x.com/EmuExploit&#34;&gt;Emu Exploit&lt;/a&gt; managed to get 2nd place overall!&lt;/p&gt;
+
+  &lt;img src=&#34;./img/scoreboard.png&#34;  class=&#34;center&#34;  style=&#34;border-radius: 5px; width: 100%&#34;  /&gt;
+
+
+&lt;p&gt;I was basically the only person in the team who was willing to do crypto :&amp;lt; so I decided to write up the crypto challenges I solved. Enjoy!&lt;/p&gt;
+&lt;h1 id=&#34;challenges-overview&#34;&gt;Challenges Overview&lt;/h1&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;&lt;strong&gt;Challenge&lt;/strong&gt;&lt;/th&gt;
+          &lt;th&gt;&lt;strong&gt;Category&lt;/strong&gt;&lt;/th&gt;
+          &lt;th&gt;&lt;strong&gt;Solves&lt;/strong&gt;&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;a href=&#34;http://localhost:1313/featured/bsides-canberra-ctf-2024/#discrete-add-a-rithm---43-solves&#34;&gt;Discrete Add-a-rithm&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;crypto&lt;/td&gt;
+          &lt;td&gt;43&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;a href=&#34;http://localhost:1313/featured/bsides-canberra-ctf-2024/#psionic---10-solves&#34;&gt;Psionic&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;crypto&lt;/td&gt;
+          &lt;td&gt;10&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;a href=&#34;http://localhost:1313/featured/bsides-canberra-ctf-2024/#public-service---8-solves&#34;&gt;Public Service&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;crypto&lt;/td&gt;
+          &lt;td&gt;8&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;a href=&#34;http://localhost:1313/featured/bsides-canberra-ctf-2024/#arpeeceethree---3-solves&#34;&gt;arpeeceethree&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;crypto&lt;/td&gt;
+          &lt;td&gt;3&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h1 id=&#34;discrete-add-a-rithm---43-solves&#34;&gt;Discrete Add-a-rithm - 43 solves&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;You enter a room. On the wall is a large tapestry showing two people exchanging gifts. What could it mean?&lt;/p&gt;</description>
       <content>&lt;h1 id=&#34;overview&#34;&gt;Overview&lt;/h1&gt;
 &lt;p&gt;Last week I went to BSides Canberra 2024 to see the amazing talks, meet people, and of course, play CTF. After 2 days of solving interesting challenges, my team &lt;a href=&#34;https://x.com/EmuExploit&#34;&gt;Emu Exploit&lt;/a&gt; managed to get 2nd place overall!&lt;/p&gt;
 
@@ -26,40 +65,39 @@ Challenges Overview Challenge Category Solves Discrete Add-a-rithm crypto 43 Psi
 &lt;p&gt;I was basically the only person in the team who was willing to do crypto :&amp;lt; so I decided to write up the crypto challenges I solved. Enjoy!&lt;/p&gt;
 &lt;h1 id=&#34;challenges-overview&#34;&gt;Challenges Overview&lt;/h1&gt;
 &lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;&lt;strong&gt;Challenge&lt;/strong&gt;&lt;/th&gt;
-&lt;th&gt;&lt;strong&gt;Category&lt;/strong&gt;&lt;/th&gt;
-&lt;th&gt;&lt;strong&gt;Solves&lt;/strong&gt;&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;a href=&#34;#discrete-add-a-rithm---43-solves&#34;&gt;Discrete Add-a-rithm&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;crypto&lt;/td&gt;
-&lt;td&gt;43&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;a href=&#34;#psionic---10-solves&#34;&gt;Psionic&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;crypto&lt;/td&gt;
-&lt;td&gt;10&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;a href=&#34;#public-service---8-solves&#34;&gt;Public Service&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;crypto&lt;/td&gt;
-&lt;td&gt;8&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;a href=&#34;#arpeeceethree---3-solves&#34;&gt;arpeeceethree&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;crypto&lt;/td&gt;
-&lt;td&gt;3&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;&lt;strong&gt;Challenge&lt;/strong&gt;&lt;/th&gt;
+          &lt;th&gt;&lt;strong&gt;Category&lt;/strong&gt;&lt;/th&gt;
+          &lt;th&gt;&lt;strong&gt;Solves&lt;/strong&gt;&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;a href=&#34;http://localhost:1313/featured/bsides-canberra-ctf-2024/#discrete-add-a-rithm---43-solves&#34;&gt;Discrete Add-a-rithm&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;crypto&lt;/td&gt;
+          &lt;td&gt;43&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;a href=&#34;http://localhost:1313/featured/bsides-canberra-ctf-2024/#psionic---10-solves&#34;&gt;Psionic&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;crypto&lt;/td&gt;
+          &lt;td&gt;10&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;a href=&#34;http://localhost:1313/featured/bsides-canberra-ctf-2024/#public-service---8-solves&#34;&gt;Public Service&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;crypto&lt;/td&gt;
+          &lt;td&gt;8&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;a href=&#34;http://localhost:1313/featured/bsides-canberra-ctf-2024/#arpeeceethree---3-solves&#34;&gt;arpeeceethree&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;crypto&lt;/td&gt;
+          &lt;td&gt;3&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;h1 id=&#34;discrete-add-a-rithm---43-solves&#34;&gt;Discrete Add-a-rithm - 43 solves&lt;/h1&gt;
 &lt;blockquote&gt;
-&lt;p&gt;You enter a room. On the wall is a large tapestry showing two people exchanging gifts. What could it mean?&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;You enter a room. On the wall is a large tapestry showing two people exchanging gifts. What could it mean?&lt;/p&gt;&lt;/blockquote&gt;
 &lt;p&gt;We are provided with two files, &lt;code&gt;discreteAddarithm.py&lt;/code&gt; and &lt;code&gt;out.txt&lt;/code&gt;&lt;/p&gt;
 
 
@@ -147,8 +185,8 @@ else:
 
 
   &lt;div class=&#34;collapsable-code&#34;&gt;
-    &lt;input id=&#34;584361792&#34; type=&#34;checkbox&#34; checked /&gt;
-    &lt;label for=&#34;584361792&#34;&gt;
+    &lt;input id=&#34;781695342&#34; type=&#34;checkbox&#34; checked /&gt;
+    &lt;label for=&#34;781695342&#34;&gt;
       &lt;span class=&#34;collapsable-code__language&#34;&gt;text&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__title&#34;&gt;out.txt&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__toggle&#34; data-label-expand=&#34;Show&#34; data-label-collapse=&#34;Hide&#34;&gt;&lt;/span&gt;
@@ -214,15 +252,14 @@ print(f&amp;#34;{flag = }&amp;#34;)
 &lt;h1 id=&#34;psionic---10-solves&#34;&gt;Psionic - 10 solves&lt;/h1&gt;
 &lt;blockquote&gt;
 &lt;p&gt;The cybears face a door with a large wooden face carved into it. Surprisingly, the face starts moving and speaking! &amp;ldquo;Speak the password to enter&amp;rdquo; booms the door&amp;hellip; the cybears consider their options..&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;nc psionic.chal.cybears.io 2323&lt;/code&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;&lt;code&gt;nc psionic.chal.cybears.io 2323&lt;/code&gt;&lt;/p&gt;&lt;/blockquote&gt;
 &lt;p&gt;This was a really weird challenge. We are given server code and an instance to connect to:&lt;/p&gt;
 
 
 
   &lt;div class=&#34;collapsable-code&#34;&gt;
-    &lt;input id=&#34;654913728&#34; type=&#34;checkbox&#34; checked /&gt;
-    &lt;label for=&#34;654913728&#34;&gt;
+    &lt;input id=&#34;832719645&#34; type=&#34;checkbox&#34; checked /&gt;
+    &lt;label for=&#34;832719645&#34;&gt;
       &lt;span class=&#34;collapsable-code__language&#34;&gt;python&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__title&#34;&gt;server.py&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__toggle&#34; data-label-expand=&#34;Show&#34; data-label-collapse=&#34;Hide&#34;&gt;&lt;/span&gt;
@@ -389,8 +426,8 @@ if __name__ == &amp;#34;__main__&amp;#34;:
 
 
   &lt;div class=&#34;collapsable-code&#34;&gt;
-    &lt;input id=&#34;238675149&#34; type=&#34;checkbox&#34; checked /&gt;
-    &lt;label for=&#34;238675149&#34;&gt;
+    &lt;input id=&#34;598712436&#34; type=&#34;checkbox&#34; checked /&gt;
+    &lt;label for=&#34;598712436&#34;&gt;
       &lt;span class=&#34;collapsable-code__language&#34;&gt;python&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__title&#34;&gt;get_pw_chars.py&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__toggle&#34; data-label-expand=&#34;Show&#34; data-label-collapse=&#34;Hide&#34;&gt;&lt;/span&gt;
@@ -438,8 +475,8 @@ print(f&amp;#34;{pw_chars = }&amp;#34;)
 
 
   &lt;div class=&#34;collapsable-code&#34;&gt;
-    &lt;input id=&#34;248365971&#34; type=&#34;checkbox&#34; checked /&gt;
-    &lt;label for=&#34;248365971&#34;&gt;
+    &lt;input id=&#34;685714923&#34; type=&#34;checkbox&#34; checked /&gt;
+    &lt;label for=&#34;685714923&#34;&gt;
       &lt;span class=&#34;collapsable-code__language&#34;&gt;python&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__title&#34;&gt;get_flag.py&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__toggle&#34; data-label-expand=&#34;Show&#34; data-label-collapse=&#34;Hide&#34;&gt;&lt;/span&gt;
@@ -482,15 +519,14 @@ r.interactive()
 &lt;p&gt;This was a unique challenge, different to most crypto chals, but I didn&amp;rsquo;t really like having to guess the password from a set of characters - I thought that was a bit guessy and I was lucky to have guessed it.&lt;/p&gt;
 &lt;h1 id=&#34;public-service---8-solves&#34;&gt;Public Service - 8 solves&lt;/h1&gt;
 &lt;blockquote&gt;
-&lt;p&gt;You find a parchment filled with ancient writings. At the bottom are a number of ornate calligraphic signatures&amp;hellip;&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;You find a parchment filled with ancient writings. At the bottom are a number of ornate calligraphic signatures&amp;hellip;&lt;/p&gt;&lt;/blockquote&gt;
 &lt;p&gt;This was a nice challenge. We&amp;rsquo;re given two files, &lt;code&gt;generate_signatures.py&lt;/code&gt; and &lt;code&gt;out.json&lt;/code&gt;:&lt;/p&gt;
 
 
 
   &lt;div class=&#34;collapsable-code&#34;&gt;
-    &lt;input id=&#34;368415297&#34; type=&#34;checkbox&#34; checked /&gt;
-    &lt;label for=&#34;368415297&#34;&gt;
+    &lt;input id=&#34;963741582&#34; type=&#34;checkbox&#34; checked /&gt;
+    &lt;label for=&#34;963741582&#34;&gt;
       &lt;span class=&#34;collapsable-code__language&#34;&gt;python&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__title&#34;&gt;generate_signatures.py&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__toggle&#34; data-label-expand=&#34;Show&#34; data-label-collapse=&#34;Hide&#34;&gt;&lt;/span&gt;
@@ -566,8 +602,8 @@ with open(&amp;#34;out.json&amp;#34;, &amp;#34;w&amp;#34;) as g:
 
 
   &lt;div class=&#34;collapsable-code&#34;&gt;
-    &lt;input id=&#34;852497631&#34; type=&#34;checkbox&#34; checked /&gt;
-    &lt;label for=&#34;852497631&#34;&gt;
+    &lt;input id=&#34;492685137&#34; type=&#34;checkbox&#34; checked /&gt;
+    &lt;label for=&#34;492685137&#34;&gt;
       &lt;span class=&#34;collapsable-code__language&#34;&gt;json&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__title&#34;&gt;out.json&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__toggle&#34; data-label-expand=&#34;Show&#34; data-label-collapse=&#34;Hide&#34;&gt;&lt;/span&gt;
@@ -631,8 +667,8 @@ $$&lt;/p&gt;
 
 
   &lt;div class=&#34;collapsable-code&#34;&gt;
-    &lt;input id=&#34;568293417&#34; type=&#34;checkbox&#34; checked /&gt;
-    &lt;label for=&#34;568293417&#34;&gt;
+    &lt;input id=&#34;741683529&#34; type=&#34;checkbox&#34; checked /&gt;
+    &lt;label for=&#34;741683529&#34;&gt;
       &lt;span class=&#34;collapsable-code__language&#34;&gt;python&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__title&#34;&gt;code.py&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__toggle&#34; data-label-expand=&#34;Show&#34; data-label-collapse=&#34;Hide&#34;&gt;&lt;/span&gt;
@@ -732,16 +768,15 @@ print(f&amp;#34;{flag = }&amp;#34;)
 &lt;h1 id=&#34;arpeeceethree---3-solves&#34;&gt;arpeeceethree - 3 solves&lt;/h1&gt;
 &lt;blockquote&gt;
 &lt;p&gt;You hand over your identity parchment to the temple monk. He scrutinises it closely, looking for any signs of malintent.&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;python client.py -r arpeeceethree.chal.cybears.io:2323&lt;/code&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;&lt;code&gt;python client.py -r arpeeceethree.chal.cybears.io:2323&lt;/code&gt;&lt;/p&gt;&lt;/blockquote&gt;
 &lt;p&gt;There was a lot of source and dependencies to install for this challenge, but the vulnerability is actually very simple.&lt;/p&gt;
 &lt;p&gt;We are provided with 3 files, &lt;code&gt;client.py&lt;/code&gt;, &lt;code&gt;server.py&lt;/code&gt; and &lt;code&gt;server.proto&lt;/code&gt;.&lt;/p&gt;
 
 
 
   &lt;div class=&#34;collapsable-code&#34;&gt;
-    &lt;input id=&#34;724518936&#34; type=&#34;checkbox&#34; checked /&gt;
-    &lt;label for=&#34;724518936&#34;&gt;
+    &lt;input id=&#34;217654839&#34; type=&#34;checkbox&#34; checked /&gt;
+    &lt;label for=&#34;217654839&#34;&gt;
       &lt;span class=&#34;collapsable-code__language&#34;&gt;python&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__title&#34;&gt;client.py&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__toggle&#34; data-label-expand=&#34;Show&#34; data-label-collapse=&#34;Hide&#34;&gt;&lt;/span&gt;
@@ -970,8 +1005,8 @@ if __name__ == &amp;#34;__main__&amp;#34;:
 
 
   &lt;div class=&#34;collapsable-code&#34;&gt;
-    &lt;input id=&#34;352498176&#34; type=&#34;checkbox&#34; checked /&gt;
-    &lt;label for=&#34;352498176&#34;&gt;
+    &lt;input id=&#34;492376851&#34; type=&#34;checkbox&#34; checked /&gt;
+    &lt;label for=&#34;492376851&#34;&gt;
       &lt;span class=&#34;collapsable-code__language&#34;&gt;python&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__title&#34;&gt;server.py&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__toggle&#34; data-label-expand=&#34;Show&#34; data-label-collapse=&#34;Hide&#34;&gt;&lt;/span&gt;
@@ -1323,8 +1358,8 @@ if __name__ == &amp;#34;__main__&amp;#34;:
 
 
   &lt;div class=&#34;collapsable-code&#34;&gt;
-    &lt;input id=&#34;824659137&#34; type=&#34;checkbox&#34; checked /&gt;
-    &lt;label for=&#34;824659137&#34;&gt;
+    &lt;input id=&#34;325614798&#34; type=&#34;checkbox&#34; checked /&gt;
+    &lt;label for=&#34;325614798&#34;&gt;
       &lt;span class=&#34;collapsable-code__language&#34;&gt;proto&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__title&#34;&gt;server.proto&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__toggle&#34; data-label-expand=&#34;Show&#34; data-label-collapse=&#34;Hide&#34;&gt;&lt;/span&gt;
@@ -1493,8 +1528,8 @@ message MessageResponse {
 
 
   &lt;div class=&#34;collapsable-code&#34;&gt;
-    &lt;input id=&#34;248367951&#34; type=&#34;checkbox&#34; checked /&gt;
-    &lt;label for=&#34;248367951&#34;&gt;
+    &lt;input id=&#34;914372586&#34; type=&#34;checkbox&#34; checked /&gt;
+    &lt;label for=&#34;914372586&#34;&gt;
       &lt;span class=&#34;collapsable-code__language&#34;&gt;python&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__title&#34;&gt;remote_brute.py&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__toggle&#34; data-label-expand=&#34;Show&#34; data-label-collapse=&#34;Hide&#34;&gt;&lt;/span&gt;
@@ -1751,8 +1786,8 @@ if __name__ == &amp;#34;__main__&amp;#34;:
 
 
   &lt;div class=&#34;collapsable-code&#34;&gt;
-    &lt;input id=&#34;346129758&#34; type=&#34;checkbox&#34; checked /&gt;
-    &lt;label for=&#34;346129758&#34;&gt;
+    &lt;input id=&#34;296753418&#34; type=&#34;checkbox&#34; checked /&gt;
+    &lt;label for=&#34;296753418&#34;&gt;
       &lt;span class=&#34;collapsable-code__language&#34;&gt;python&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__title&#34;&gt;code.py&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__toggle&#34; data-label-expand=&#34;Show&#34; data-label-collapse=&#34;Hide&#34;&gt;&lt;/span&gt;
@@ -2020,12 +2055,13 @@ if __name__ == &amp;#34;__main__&amp;#34;:
     
     <item>
       <title>CTF Writeups - p4CTF Finals 2023 in Poland</title>
-      <link>https://TheSavageTeddy.github.io/featured/p4ctf-finals-2023/</link>
-      <pubDate>Thu, 22 Jun 2023 21:20:00 +0800</pubDate>
+      <link>http://localhost:1313/featured/p4ctf-finals-2023/</link>
+      <pubDate>Thu, 22 Jun 2023 23:20:00 +1000</pubDate>
       
-      <guid>https://TheSavageTeddy.github.io/featured/p4ctf-finals-2023/</guid>
-      <description>Overview p4CTF Finals was an onsite event held in June 2023 in Katowice, Poland. Together with Emu Exploit, I qualified for event in the p4CTF qualifiers and had the opportunity to go to Poland to meet and compete with many top teams in the world, including The Flat Network Society, Dragon Sector, justCatTheFish, hxp, 0rganizers, ALLES and FluxFingers.
-Before we could compete in the event, we had to first get to Poland, which proved to be a pain as our travel time was 50 hours - 30 hours across three flights to Paris, and 20 hours on the bus to Katowice.</description>
+      <guid>http://localhost:1313/featured/p4ctf-finals-2023/</guid>
+      <description>&lt;h1 id=&#34;overview&#34;&gt;Overview&lt;/h1&gt;
+&lt;p&gt;p4CTF Finals was an onsite event held in June 2023 in Katowice, Poland. Together with Emu Exploit, I qualified for event in the p4CTF qualifiers and had the opportunity to go to Poland to meet and compete with many top teams in the world, including &lt;a href=&#34;https://twitter.com/FlatNetworkOrg&#34;&gt;&lt;code&gt;The Flat Network Society&lt;/code&gt;&lt;/a&gt;, &lt;a href=&#34;https://twitter.com/DragonSectorCTF&#34;&gt;&lt;code&gt;Dragon Sector&lt;/code&gt;&lt;/a&gt;, &lt;a href=&#34;https://twitter.com/justCatTheFish&#34;&gt;&lt;code&gt;justCatTheFish&lt;/code&gt;&lt;/a&gt;, &lt;a href=&#34;https://twitter.com/hxpctf&#34;&gt;&lt;code&gt;hxp&lt;/code&gt;&lt;/a&gt;, &lt;a href=&#34;https://twitter.com/0rganizers&#34;&gt;&lt;code&gt;0rganizers&lt;/code&gt;&lt;/a&gt;, &lt;a href=&#34;https://twitter.com/allesctf&#34;&gt;&lt;code&gt;ALLES&lt;/code&gt;&lt;/a&gt; and &lt;a href=&#34;https://twitter.com/fluxfingers&#34;&gt;&lt;code&gt;FluxFingers&lt;/code&gt;&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Before we could compete in the event, we had to first get to Poland, which proved to be a pain as our travel time was 50 hours - 30 hours across three flights to Paris, and 20 hours on the bus to Katowice. However, it was definetely worth the time, as we got to also see some tourist attractions in Paris!&lt;/p&gt;</description>
       <content>&lt;h1 id=&#34;overview&#34;&gt;Overview&lt;/h1&gt;
 &lt;p&gt;p4CTF Finals was an onsite event held in June 2023 in Katowice, Poland. Together with Emu Exploit, I qualified for event in the p4CTF qualifiers and had the opportunity to go to Poland to meet and compete with many top teams in the world, including &lt;a href=&#34;https://twitter.com/FlatNetworkOrg&#34;&gt;&lt;code&gt;The Flat Network Society&lt;/code&gt;&lt;/a&gt;, &lt;a href=&#34;https://twitter.com/DragonSectorCTF&#34;&gt;&lt;code&gt;Dragon Sector&lt;/code&gt;&lt;/a&gt;, &lt;a href=&#34;https://twitter.com/justCatTheFish&#34;&gt;&lt;code&gt;justCatTheFish&lt;/code&gt;&lt;/a&gt;, &lt;a href=&#34;https://twitter.com/hxpctf&#34;&gt;&lt;code&gt;hxp&lt;/code&gt;&lt;/a&gt;, &lt;a href=&#34;https://twitter.com/0rganizers&#34;&gt;&lt;code&gt;0rganizers&lt;/code&gt;&lt;/a&gt;, &lt;a href=&#34;https://twitter.com/allesctf&#34;&gt;&lt;code&gt;ALLES&lt;/code&gt;&lt;/a&gt; and &lt;a href=&#34;https://twitter.com/fluxfingers&#34;&gt;&lt;code&gt;FluxFingers&lt;/code&gt;&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Before we could compete in the event, we had to first get to Poland, which proved to be a pain as our travel time was 50 hours - 30 hours across three flights to Paris, and 20 hours on the bus to Katowice. However, it was definetely worth the time, as we got to also see some tourist attractions in Paris!&lt;/p&gt;
@@ -2039,36 +2075,35 @@ Before we could compete in the event, we had to first get to Poland, which prove
 &lt;h1 id=&#34;challenge-overview&#34;&gt;Challenge Overview&lt;/h1&gt;
 &lt;p&gt;There were a total of 18 challenges - I mostly solved crypto, and got a funny unintended solution on a misc. Below are writeups of some of these challenges:&lt;/p&gt;
 &lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;&lt;strong&gt;Challenge&lt;/strong&gt;&lt;/th&gt;
-&lt;th&gt;&lt;strong&gt;Category&lt;/strong&gt;&lt;/th&gt;
-&lt;th&gt;&lt;strong&gt;Solves&lt;/strong&gt;&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;a href=&#34;#pallas-crypto---12-solves&#34;&gt;Pallas&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;crypto&lt;/td&gt;
-&lt;td&gt;12&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;a href=&#34;#aes_observed-crypto---6-solves&#34;&gt;aes_observed&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;crypto&lt;/td&gt;
-&lt;td&gt;6&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;a href=&#34;#pepega-packets-misc---5-solves&#34;&gt;Pepega Packets&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;misc&lt;/td&gt;
-&lt;td&gt;5&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;&lt;strong&gt;Challenge&lt;/strong&gt;&lt;/th&gt;
+          &lt;th&gt;&lt;strong&gt;Category&lt;/strong&gt;&lt;/th&gt;
+          &lt;th&gt;&lt;strong&gt;Solves&lt;/strong&gt;&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;a href=&#34;http://localhost:1313/featured/p4ctf-finals-2023/#pallas-crypto---12-solves&#34;&gt;Pallas&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;crypto&lt;/td&gt;
+          &lt;td&gt;12&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;a href=&#34;http://localhost:1313/featured/p4ctf-finals-2023/#aes_observed-crypto---6-solves&#34;&gt;aes_observed&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;crypto&lt;/td&gt;
+          &lt;td&gt;6&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;a href=&#34;http://localhost:1313/featured/p4ctf-finals-2023/#pepega-packets-misc---5-solves&#34;&gt;Pepega Packets&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;misc&lt;/td&gt;
+          &lt;td&gt;5&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;p&gt;Enjoy!&lt;/p&gt;
 &lt;h1 id=&#34;pallas-crypto---12-solves&#34;&gt;Pallas (crypto) - 12 solves&lt;/h1&gt;
 &lt;blockquote&gt;
-&lt;p&gt;Tell me my secret&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;Tell me my secret&lt;/p&gt;&lt;/blockquote&gt;
 &lt;p&gt;We are given python source &lt;code&gt;task.py&lt;/code&gt; and the output &lt;code&gt;output.txt&lt;/code&gt;.&lt;/p&gt;
 
 
@@ -2262,8 +2297,7 @@ print(flag.decode())
 He actions are limited but he can run some encryptions for us and percsely measure voltage just after sbox.&lt;br&gt;
 Can we do something with this information that would help us to recover some other plaintexts?&lt;br&gt;
 HINT: the Key is a flag.&lt;br&gt;
-&lt;code&gt;nc aes-observed.zajebistyc.tf 9999&lt;/code&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;code&gt;nc aes-observed.zajebistyc.tf 9999&lt;/code&gt;&lt;/p&gt;&lt;/blockquote&gt;
 &lt;p&gt;We are only given a server to connect to, which responds with 50 plaintext to voltage pairs.&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;Plaintext                                                        Voltage
 78a41912ae910166f57e6f1a46df63ee3a434860e116f5343d111181e657cc5c 2.512
@@ -2391,8 +2425,7 @@ print(found_key)
 &lt;blockquote&gt;
 &lt;p&gt;Can you be faster enough?&lt;br&gt;
 &lt;code&gt;http://10.0.XXX.2:80&lt;/code&gt;&lt;br&gt;
-NOTE: Every team have separate ip address, please look on your paper from sanity check :)&lt;/p&gt;
-&lt;/blockquote&gt;
+NOTE: Every team have separate ip address, please look on your paper from sanity check :)&lt;/p&gt;&lt;/blockquote&gt;
 &lt;p&gt;This is probably the hardest I&amp;rsquo;ve ever cheese&amp;rsquo;d a challenge - and it was first blood as well&amp;hellip;&lt;/p&gt;
 &lt;p&gt;We are given the server&amp;rsquo;s code:&lt;/p&gt;
 
@@ -2757,8 +2790,7 @@ func main() {
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The &lt;code&gt;go&lt;/code&gt; before &lt;code&gt;workerFirewall()&lt;/code&gt; essentially means that the function runs asynchronosly, allowing &lt;code&gt;workerHttp()&lt;/code&gt; to be ran alongside &lt;code&gt;workerFirewall()&lt;/code&gt;, which bans our IP address.&lt;/p&gt;
 &lt;p&gt;Clearly, we are trying to race the functions in order to send a request where &lt;code&gt;workerFirewall()&lt;/code&gt; takes longer than 5 seconds to respond and ban our IP, so we are able to fetch the flag before we are banned. This is also hinted by in the challenge description.&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;Can you be faster enough?&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;Can you be faster enough?&lt;/p&gt;&lt;/blockquote&gt;
 &lt;p&gt;The naive approach is to simply flood the server with requests on one computer, and use another computer with a seperate IP to request the flag, hoping that the server will lag enough that their IP takes &amp;gt;5 seconds to be banned.&lt;/p&gt;
 &lt;p&gt;I coded up a horrendous partially GPT generated python script, with threads to continuesly ping the server to see if this was even viable.&lt;/p&gt;
 
@@ -2890,27 +2922,35 @@ Sad 🐸 You are banned 😢
     
     <item>
       <title>Crypto Writeups - IrisCTF 2023</title>
-      <link>https://TheSavageTeddy.github.io/posts/crypto-iris2023/</link>
-      <pubDate>Mon, 09 Jan 2023 00:00:00 +0800</pubDate>
+      <link>http://localhost:1313/posts/crypto-iris2023/</link>
+      <pubDate>Mon, 09 Jan 2023 03:00:00 +1100</pubDate>
       
-      <guid>https://TheSavageTeddy.github.io/posts/crypto-iris2023/</guid>
-      <description>Overview I solved 4/6 crypto challenges in IrisCTF 2023, here are the writeups for them.
-Challenges (dynamic scoring):
-babynotrsa by sera - 145 solves babymixup by sera - 98 solves Nonces and Keys by lambda - 53 solves AES-BAD-256 by sera - 18 solves babynotrsa - 145 solves Everyone knows RSA, but everyone also knows that RSA is slow. Why not just use a faster operation than exponentiation?
-We are given a source and output:</description>
+      <guid>http://localhost:1313/posts/crypto-iris2023/</guid>
+      <description>&lt;h1 id=&#34;overview&#34;&gt;Overview&lt;/h1&gt;
+&lt;p&gt;I solved 4/6 crypto challenges in IrisCTF 2023, here are the writeups for them.&lt;/p&gt;
+&lt;p&gt;Challenges (dynamic scoring):&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://localhost:1313/posts/crypto-iris2023/#babynotrsa---145-solves&#34;&gt;&lt;code&gt;babynotrsa&lt;/code&gt;&lt;/a&gt; by &lt;code&gt;sera&lt;/code&gt; - 145 solves&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://localhost:1313/posts/crypto-iris2023/#babymixup---98-solves&#34;&gt;&lt;code&gt;babymixup&lt;/code&gt;&lt;/a&gt; by &lt;code&gt;sera&lt;/code&gt; - 98 solves&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://localhost:1313/posts/crypto-iris2023/#nonces-and-keys---53-solves&#34;&gt;&lt;code&gt;Nonces and Keys&lt;/code&gt;&lt;/a&gt; by &lt;code&gt;lambda&lt;/code&gt; - 53 solves&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://localhost:1313/posts/crypto-iris2023/#aes-bad-256---18-solves&#34;&gt;&lt;code&gt;AES-BAD-256&lt;/code&gt;&lt;/a&gt; by &lt;code&gt;sera&lt;/code&gt; - 18 solves&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;babynotrsa---145-solves&#34;&gt;babynotrsa - 145 solves&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Everyone knows &lt;a href=&#34;https://en.wikipedia.org/wiki/RSA_%28cryptosystem%29&#34;&gt;RSA&lt;/a&gt;, but everyone also knows that RSA is slow. Why not just use a faster operation than exponentiation?&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;We are given a source and output:&lt;/p&gt;</description>
       <content>&lt;h1 id=&#34;overview&#34;&gt;Overview&lt;/h1&gt;
 &lt;p&gt;I solved 4/6 crypto challenges in IrisCTF 2023, here are the writeups for them.&lt;/p&gt;
 &lt;p&gt;Challenges (dynamic scoring):&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#babynotrsa---145-solves&#34;&gt;&lt;code&gt;babynotrsa&lt;/code&gt;&lt;/a&gt; by &lt;code&gt;sera&lt;/code&gt; - 145 solves&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#babymixup---98-solves&#34;&gt;&lt;code&gt;babymixup&lt;/code&gt;&lt;/a&gt; by &lt;code&gt;sera&lt;/code&gt; - 98 solves&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#nonces-and-keys---53-solves&#34;&gt;&lt;code&gt;Nonces and Keys&lt;/code&gt;&lt;/a&gt; by &lt;code&gt;lambda&lt;/code&gt; - 53 solves&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#aes-bad-256---18-solves&#34;&gt;&lt;code&gt;AES-BAD-256&lt;/code&gt;&lt;/a&gt; by &lt;code&gt;sera&lt;/code&gt; - 18 solves&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://localhost:1313/posts/crypto-iris2023/#babynotrsa---145-solves&#34;&gt;&lt;code&gt;babynotrsa&lt;/code&gt;&lt;/a&gt; by &lt;code&gt;sera&lt;/code&gt; - 145 solves&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://localhost:1313/posts/crypto-iris2023/#babymixup---98-solves&#34;&gt;&lt;code&gt;babymixup&lt;/code&gt;&lt;/a&gt; by &lt;code&gt;sera&lt;/code&gt; - 98 solves&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://localhost:1313/posts/crypto-iris2023/#nonces-and-keys---53-solves&#34;&gt;&lt;code&gt;Nonces and Keys&lt;/code&gt;&lt;/a&gt; by &lt;code&gt;lambda&lt;/code&gt; - 53 solves&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://localhost:1313/posts/crypto-iris2023/#aes-bad-256---18-solves&#34;&gt;&lt;code&gt;AES-BAD-256&lt;/code&gt;&lt;/a&gt; by &lt;code&gt;sera&lt;/code&gt; - 18 solves&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h1 id=&#34;babynotrsa---145-solves&#34;&gt;babynotrsa - 145 solves&lt;/h1&gt;
 &lt;blockquote&gt;
-&lt;p&gt;Everyone knows &lt;a href=&#34;https://en.wikipedia.org/wiki/RSA_(cryptosystem)&#34;&gt;RSA&lt;/a&gt;, but everyone also knows that RSA is slow. Why not just use a faster operation than exponentiation?&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;Everyone knows &lt;a href=&#34;https://en.wikipedia.org/wiki/RSA_%28cryptosystem%29&#34;&gt;RSA&lt;/a&gt;, but everyone also knows that RSA is slow. Why not just use a faster operation than exponentiation?&lt;/p&gt;&lt;/blockquote&gt;
 &lt;p&gt;We are given a source and output:&lt;/p&gt;
 
 
@@ -2989,8 +3029,7 @@ flag: 39545236548455985927301569372696881408674800611184573074359458755790286957
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;code&gt;irisctf{discrete_divide_isn&#39;t_hard}&lt;/code&gt;&lt;/p&gt;
 &lt;h1 id=&#34;babymixup---98-solves&#34;&gt;babymixup - 98 solves&lt;/h1&gt;
 &lt;blockquote&gt;
-&lt;p&gt;I encrypted a public string and the flag with AES. There&amp;rsquo;s no known key recovery attacks against AES, so you can&amp;rsquo;t decrypt the flag.&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;I encrypted a public string and the flag with AES. There&amp;rsquo;s no known key recovery attacks against AES, so you can&amp;rsquo;t decrypt the flag.&lt;/p&gt;&lt;/blockquote&gt;
 &lt;p&gt;Given source and output:&lt;/p&gt;
 
 
@@ -3076,8 +3115,7 @@ CT2 = f6816a603cefb0a0fd8a23a804b921bf489116fcc11d650c6ffb3fc0aae9393409c8f4f24c
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;code&gt;irisctf{the_iv_aint_secret_either_way_using_cbc}&lt;/code&gt;&lt;/p&gt;
 &lt;h1 id=&#34;nonces-and-keys---53-solves&#34;&gt;Nonces and Keys - 53 solves&lt;/h1&gt;
 &lt;blockquote&gt;
-&lt;p&gt;Because of our revolutionary AES-128-OFB technology we have encrypted your user data so securely that even with the key (k=0x13371337133713371337133713371337) evil hackers can&amp;rsquo;t read out the passwords!!!&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;Because of our revolutionary AES-128-OFB technology we have encrypted your user data so securely that even with the key (k=0x13371337133713371337133713371337) evil hackers can&amp;rsquo;t read out the passwords!!!&lt;/p&gt;&lt;/blockquote&gt;
 &lt;p&gt;We are provided with an encrypted sqlite3 file &lt;code&gt;challenge_enc.sqlite3&lt;/code&gt;. Our goal is to decrypt it.&lt;/p&gt;
 &lt;p&gt;Already given in the challenge description, the key is &lt;code&gt;0x13371337133713371337133713371337&lt;/code&gt; and the file is encrypted using &lt;code&gt;AES-128-OFB&lt;/code&gt;. Again, we can pull up a diagram.&lt;/p&gt;
 
@@ -3126,8 +3164,7 @@ CT2 = f6816a603cefb0a0fd8a23a804b921bf489116fcc11d650c6ffb3fc0aae9393409c8f4f24c
 &lt;p&gt;&lt;code&gt;irisctf{g0tt4_l0v3_s7re4mciph3rs}&lt;/code&gt;&lt;/p&gt;
 &lt;h1 id=&#34;aes-bad-256---18-solves&#34;&gt;AES-BAD-256 - 18 solves&lt;/h1&gt;
 &lt;blockquote&gt;
-&lt;p&gt;I heard that some common block cipher modes have lots of footguns - using none (ECB) results in the legendary &lt;a href=&#34;https://words.filippo.io/the-ecb-penguin/&#34;&gt;ECB Penguin&lt;/a&gt;, while others are vulnerable to &lt;a href=&#34;https://en.wikipedia.org/wiki/Bit-flipping_attack&#34;&gt;bit flipping&lt;/a&gt; and &lt;a href=&#34;https://en.wikipedia.org/wiki/Padding_oracle_attack&#34;&gt;padding&lt;/a&gt; attacks, so I made my own that would never fall to such a technique.&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;I heard that some common block cipher modes have lots of footguns - using none (ECB) results in the legendary &lt;a href=&#34;https://words.filippo.io/the-ecb-penguin/&#34;&gt;ECB Penguin&lt;/a&gt;, while others are vulnerable to &lt;a href=&#34;https://en.wikipedia.org/wiki/Bit-flipping_attack&#34;&gt;bit flipping&lt;/a&gt; and &lt;a href=&#34;https://en.wikipedia.org/wiki/Padding_oracle_attack&#34;&gt;padding&lt;/a&gt; attacks, so I made my own that would never fall to such a technique.&lt;/p&gt;&lt;/blockquote&gt;
 &lt;p&gt;I&amp;rsquo;m going to admit - I cheesed this challenge quite hard with bruteforce, but in my defense it was 3am&amp;hellip;&lt;/p&gt;
 
   &lt;img src=&#34;./img/3amflag.png&#34;  class=&#34;center&#34;  style=&#34;border-radius: 5px; width: 50%;&#34;  /&gt;
@@ -3257,13 +3294,13 @@ if __name__ == &amp;#34;__main__&amp;#34;:
 
 &lt;p&gt;and yep, it does indeed look vulnerable to bit-flipping attacks! Notice &lt;code&gt;echo&lt;/code&gt; -&amp;gt; &lt;code&gt;zcho&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;The server generates us a ciphertext of command &lt;code&gt;echo&lt;/code&gt; with some data, and our goal is to flip bits to make the command &lt;code&gt;flag&lt;/code&gt;, which gives us the flag.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-py&#34; data-lang=&#34;py&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;match command[&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;type&amp;#34;&lt;/span&gt;]:
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    case &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;echo&amp;#34;&lt;/span&gt;:
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-py&#34; data-lang=&#34;py&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;match&lt;/span&gt; command[&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;type&amp;#34;&lt;/span&gt;]:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;case&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;echo&amp;#34;&lt;/span&gt;:
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; command&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;get(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;msg&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Hello world!&amp;#34;&lt;/span&gt;)
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    case &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;flag&amp;#34;&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;case&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;flag&amp;#34;&lt;/span&gt;:
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#66d9ef&#34;&gt;with&lt;/span&gt; open(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;/flag&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;r&amp;#34;&lt;/span&gt;) &lt;span style=&#34;color:#66d9ef&#34;&gt;as&lt;/span&gt; f:
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; f&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;read()
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    case other:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;case&lt;/span&gt; other:
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;f&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Unknown command type &lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;{&lt;/span&gt;command[&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;type&amp;#39;&lt;/span&gt;]&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;...&amp;#34;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;What&amp;rsquo;s super useful is that if the command is not valid, it tells us what our command was! Essentially, we get feedback about what bit we flipped something to.&lt;/p&gt;
 &lt;p&gt;Now, remember the modification - block orders are random, therefore we will script to flip bits from every block and observe the feedback to see if we flipped the right bits. Our goal is to figure out which blocks need to be flipped to change the &lt;code&gt;echo&lt;/code&gt; text.&lt;/p&gt;

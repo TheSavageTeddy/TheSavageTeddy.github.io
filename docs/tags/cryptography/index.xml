@@ -1,22 +1,61 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>cryptography on teddyctf</title>
-    <link>https://TheSavageTeddy.github.io/tags/cryptography/</link>
-    <description>Recent content in cryptography on teddyctf</description>
+    <title>Cryptography on teddyctf</title>
+    <link>http://localhost:1313/tags/cryptography/</link>
+    <description>Recent content in Cryptography on teddyctf</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
+    <language>en</language>
     <copyright>teddyctf</copyright>
-    <lastBuildDate>Sat, 28 Sep 2024 15:53:20 +0800</lastBuildDate><atom:link href="https://TheSavageTeddy.github.io/tags/cryptography/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 28 Sep 2024 17:53:20 +1000</lastBuildDate><atom:link href="http://localhost:1313/tags/cryptography/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Crypto Writeups - BSides Canberra CTF 2024</title>
-      <link>https://TheSavageTeddy.github.io/featured/bsides-canberra-ctf-2024/</link>
-      <pubDate>Sat, 28 Sep 2024 15:53:20 +0800</pubDate>
+      <link>http://localhost:1313/featured/bsides-canberra-ctf-2024/</link>
+      <pubDate>Sat, 28 Sep 2024 17:53:20 +1000</pubDate>
       
-      <guid>https://TheSavageTeddy.github.io/featured/bsides-canberra-ctf-2024/</guid>
-      <description>Overview Last week I went to BSides Canberra 2024 to see the amazing talks, meet people, and of course, play CTF. After 2 days of solving interesting challenges, my team Emu Exploit managed to get 2nd place overall!
-I was basically the only person in the team who was willing to do crypto :&amp;lt; so I decided to write up the crypto challenges I solved. Enjoy!
-Challenges Overview Challenge Category Solves Discrete Add-a-rithm crypto 43 Psionic crypto 10 Public Service crypto 8 arpeeceethree crypto 3 Discrete Add-a-rithm - 43 solves You enter a room.</description>
+      <guid>http://localhost:1313/featured/bsides-canberra-ctf-2024/</guid>
+      <description>&lt;h1 id=&#34;overview&#34;&gt;Overview&lt;/h1&gt;
+&lt;p&gt;Last week I went to BSides Canberra 2024 to see the amazing talks, meet people, and of course, play CTF. After 2 days of solving interesting challenges, my team &lt;a href=&#34;https://x.com/EmuExploit&#34;&gt;Emu Exploit&lt;/a&gt; managed to get 2nd place overall!&lt;/p&gt;
+
+  &lt;img src=&#34;./img/scoreboard.png&#34;  class=&#34;center&#34;  style=&#34;border-radius: 5px; width: 100%&#34;  /&gt;
+
+
+&lt;p&gt;I was basically the only person in the team who was willing to do crypto :&amp;lt; so I decided to write up the crypto challenges I solved. Enjoy!&lt;/p&gt;
+&lt;h1 id=&#34;challenges-overview&#34;&gt;Challenges Overview&lt;/h1&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;&lt;strong&gt;Challenge&lt;/strong&gt;&lt;/th&gt;
+          &lt;th&gt;&lt;strong&gt;Category&lt;/strong&gt;&lt;/th&gt;
+          &lt;th&gt;&lt;strong&gt;Solves&lt;/strong&gt;&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;a href=&#34;http://localhost:1313/featured/bsides-canberra-ctf-2024/#discrete-add-a-rithm---43-solves&#34;&gt;Discrete Add-a-rithm&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;crypto&lt;/td&gt;
+          &lt;td&gt;43&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;a href=&#34;http://localhost:1313/featured/bsides-canberra-ctf-2024/#psionic---10-solves&#34;&gt;Psionic&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;crypto&lt;/td&gt;
+          &lt;td&gt;10&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;a href=&#34;http://localhost:1313/featured/bsides-canberra-ctf-2024/#public-service---8-solves&#34;&gt;Public Service&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;crypto&lt;/td&gt;
+          &lt;td&gt;8&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;a href=&#34;http://localhost:1313/featured/bsides-canberra-ctf-2024/#arpeeceethree---3-solves&#34;&gt;arpeeceethree&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;crypto&lt;/td&gt;
+          &lt;td&gt;3&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h1 id=&#34;discrete-add-a-rithm---43-solves&#34;&gt;Discrete Add-a-rithm - 43 solves&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;You enter a room. On the wall is a large tapestry showing two people exchanging gifts. What could it mean?&lt;/p&gt;</description>
       <content>&lt;h1 id=&#34;overview&#34;&gt;Overview&lt;/h1&gt;
 &lt;p&gt;Last week I went to BSides Canberra 2024 to see the amazing talks, meet people, and of course, play CTF. After 2 days of solving interesting challenges, my team &lt;a href=&#34;https://x.com/EmuExploit&#34;&gt;Emu Exploit&lt;/a&gt; managed to get 2nd place overall!&lt;/p&gt;
 
@@ -26,40 +65,39 @@ Challenges Overview Challenge Category Solves Discrete Add-a-rithm crypto 43 Psi
 &lt;p&gt;I was basically the only person in the team who was willing to do crypto :&amp;lt; so I decided to write up the crypto challenges I solved. Enjoy!&lt;/p&gt;
 &lt;h1 id=&#34;challenges-overview&#34;&gt;Challenges Overview&lt;/h1&gt;
 &lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;&lt;strong&gt;Challenge&lt;/strong&gt;&lt;/th&gt;
-&lt;th&gt;&lt;strong&gt;Category&lt;/strong&gt;&lt;/th&gt;
-&lt;th&gt;&lt;strong&gt;Solves&lt;/strong&gt;&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;a href=&#34;#discrete-add-a-rithm---43-solves&#34;&gt;Discrete Add-a-rithm&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;crypto&lt;/td&gt;
-&lt;td&gt;43&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;a href=&#34;#psionic---10-solves&#34;&gt;Psionic&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;crypto&lt;/td&gt;
-&lt;td&gt;10&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;a href=&#34;#public-service---8-solves&#34;&gt;Public Service&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;crypto&lt;/td&gt;
-&lt;td&gt;8&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;a href=&#34;#arpeeceethree---3-solves&#34;&gt;arpeeceethree&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;crypto&lt;/td&gt;
-&lt;td&gt;3&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;&lt;strong&gt;Challenge&lt;/strong&gt;&lt;/th&gt;
+          &lt;th&gt;&lt;strong&gt;Category&lt;/strong&gt;&lt;/th&gt;
+          &lt;th&gt;&lt;strong&gt;Solves&lt;/strong&gt;&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;a href=&#34;http://localhost:1313/featured/bsides-canberra-ctf-2024/#discrete-add-a-rithm---43-solves&#34;&gt;Discrete Add-a-rithm&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;crypto&lt;/td&gt;
+          &lt;td&gt;43&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;a href=&#34;http://localhost:1313/featured/bsides-canberra-ctf-2024/#psionic---10-solves&#34;&gt;Psionic&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;crypto&lt;/td&gt;
+          &lt;td&gt;10&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;a href=&#34;http://localhost:1313/featured/bsides-canberra-ctf-2024/#public-service---8-solves&#34;&gt;Public Service&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;crypto&lt;/td&gt;
+          &lt;td&gt;8&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;a href=&#34;http://localhost:1313/featured/bsides-canberra-ctf-2024/#arpeeceethree---3-solves&#34;&gt;arpeeceethree&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;crypto&lt;/td&gt;
+          &lt;td&gt;3&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;h1 id=&#34;discrete-add-a-rithm---43-solves&#34;&gt;Discrete Add-a-rithm - 43 solves&lt;/h1&gt;
 &lt;blockquote&gt;
-&lt;p&gt;You enter a room. On the wall is a large tapestry showing two people exchanging gifts. What could it mean?&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;You enter a room. On the wall is a large tapestry showing two people exchanging gifts. What could it mean?&lt;/p&gt;&lt;/blockquote&gt;
 &lt;p&gt;We are provided with two files, &lt;code&gt;discreteAddarithm.py&lt;/code&gt; and &lt;code&gt;out.txt&lt;/code&gt;&lt;/p&gt;
 
 
@@ -147,8 +185,8 @@ else:
 
 
   &lt;div class=&#34;collapsable-code&#34;&gt;
-    &lt;input id=&#34;584361792&#34; type=&#34;checkbox&#34; checked /&gt;
-    &lt;label for=&#34;584361792&#34;&gt;
+    &lt;input id=&#34;781695342&#34; type=&#34;checkbox&#34; checked /&gt;
+    &lt;label for=&#34;781695342&#34;&gt;
       &lt;span class=&#34;collapsable-code__language&#34;&gt;text&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__title&#34;&gt;out.txt&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__toggle&#34; data-label-expand=&#34;Show&#34; data-label-collapse=&#34;Hide&#34;&gt;&lt;/span&gt;
@@ -214,15 +252,14 @@ print(f&amp;#34;{flag = }&amp;#34;)
 &lt;h1 id=&#34;psionic---10-solves&#34;&gt;Psionic - 10 solves&lt;/h1&gt;
 &lt;blockquote&gt;
 &lt;p&gt;The cybears face a door with a large wooden face carved into it. Surprisingly, the face starts moving and speaking! &amp;ldquo;Speak the password to enter&amp;rdquo; booms the door&amp;hellip; the cybears consider their options..&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;nc psionic.chal.cybears.io 2323&lt;/code&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;&lt;code&gt;nc psionic.chal.cybears.io 2323&lt;/code&gt;&lt;/p&gt;&lt;/blockquote&gt;
 &lt;p&gt;This was a really weird challenge. We are given server code and an instance to connect to:&lt;/p&gt;
 
 
 
   &lt;div class=&#34;collapsable-code&#34;&gt;
-    &lt;input id=&#34;654913728&#34; type=&#34;checkbox&#34; checked /&gt;
-    &lt;label for=&#34;654913728&#34;&gt;
+    &lt;input id=&#34;832719645&#34; type=&#34;checkbox&#34; checked /&gt;
+    &lt;label for=&#34;832719645&#34;&gt;
       &lt;span class=&#34;collapsable-code__language&#34;&gt;python&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__title&#34;&gt;server.py&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__toggle&#34; data-label-expand=&#34;Show&#34; data-label-collapse=&#34;Hide&#34;&gt;&lt;/span&gt;
@@ -389,8 +426,8 @@ if __name__ == &amp;#34;__main__&amp;#34;:
 
 
   &lt;div class=&#34;collapsable-code&#34;&gt;
-    &lt;input id=&#34;238675149&#34; type=&#34;checkbox&#34; checked /&gt;
-    &lt;label for=&#34;238675149&#34;&gt;
+    &lt;input id=&#34;598712436&#34; type=&#34;checkbox&#34; checked /&gt;
+    &lt;label for=&#34;598712436&#34;&gt;
       &lt;span class=&#34;collapsable-code__language&#34;&gt;python&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__title&#34;&gt;get_pw_chars.py&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__toggle&#34; data-label-expand=&#34;Show&#34; data-label-collapse=&#34;Hide&#34;&gt;&lt;/span&gt;
@@ -438,8 +475,8 @@ print(f&amp;#34;{pw_chars = }&amp;#34;)
 
 
   &lt;div class=&#34;collapsable-code&#34;&gt;
-    &lt;input id=&#34;248365971&#34; type=&#34;checkbox&#34; checked /&gt;
-    &lt;label for=&#34;248365971&#34;&gt;
+    &lt;input id=&#34;685714923&#34; type=&#34;checkbox&#34; checked /&gt;
+    &lt;label for=&#34;685714923&#34;&gt;
       &lt;span class=&#34;collapsable-code__language&#34;&gt;python&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__title&#34;&gt;get_flag.py&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__toggle&#34; data-label-expand=&#34;Show&#34; data-label-collapse=&#34;Hide&#34;&gt;&lt;/span&gt;
@@ -482,15 +519,14 @@ r.interactive()
 &lt;p&gt;This was a unique challenge, different to most crypto chals, but I didn&amp;rsquo;t really like having to guess the password from a set of characters - I thought that was a bit guessy and I was lucky to have guessed it.&lt;/p&gt;
 &lt;h1 id=&#34;public-service---8-solves&#34;&gt;Public Service - 8 solves&lt;/h1&gt;
 &lt;blockquote&gt;
-&lt;p&gt;You find a parchment filled with ancient writings. At the bottom are a number of ornate calligraphic signatures&amp;hellip;&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;You find a parchment filled with ancient writings. At the bottom are a number of ornate calligraphic signatures&amp;hellip;&lt;/p&gt;&lt;/blockquote&gt;
 &lt;p&gt;This was a nice challenge. We&amp;rsquo;re given two files, &lt;code&gt;generate_signatures.py&lt;/code&gt; and &lt;code&gt;out.json&lt;/code&gt;:&lt;/p&gt;
 
 
 
   &lt;div class=&#34;collapsable-code&#34;&gt;
-    &lt;input id=&#34;368415297&#34; type=&#34;checkbox&#34; checked /&gt;
-    &lt;label for=&#34;368415297&#34;&gt;
+    &lt;input id=&#34;963741582&#34; type=&#34;checkbox&#34; checked /&gt;
+    &lt;label for=&#34;963741582&#34;&gt;
       &lt;span class=&#34;collapsable-code__language&#34;&gt;python&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__title&#34;&gt;generate_signatures.py&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__toggle&#34; data-label-expand=&#34;Show&#34; data-label-collapse=&#34;Hide&#34;&gt;&lt;/span&gt;
@@ -566,8 +602,8 @@ with open(&amp;#34;out.json&amp;#34;, &amp;#34;w&amp;#34;) as g:
 
 
   &lt;div class=&#34;collapsable-code&#34;&gt;
-    &lt;input id=&#34;852497631&#34; type=&#34;checkbox&#34; checked /&gt;
-    &lt;label for=&#34;852497631&#34;&gt;
+    &lt;input id=&#34;492685137&#34; type=&#34;checkbox&#34; checked /&gt;
+    &lt;label for=&#34;492685137&#34;&gt;
       &lt;span class=&#34;collapsable-code__language&#34;&gt;json&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__title&#34;&gt;out.json&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__toggle&#34; data-label-expand=&#34;Show&#34; data-label-collapse=&#34;Hide&#34;&gt;&lt;/span&gt;
@@ -631,8 +667,8 @@ $$&lt;/p&gt;
 
 
   &lt;div class=&#34;collapsable-code&#34;&gt;
-    &lt;input id=&#34;568293417&#34; type=&#34;checkbox&#34; checked /&gt;
-    &lt;label for=&#34;568293417&#34;&gt;
+    &lt;input id=&#34;741683529&#34; type=&#34;checkbox&#34; checked /&gt;
+    &lt;label for=&#34;741683529&#34;&gt;
       &lt;span class=&#34;collapsable-code__language&#34;&gt;python&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__title&#34;&gt;code.py&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__toggle&#34; data-label-expand=&#34;Show&#34; data-label-collapse=&#34;Hide&#34;&gt;&lt;/span&gt;
@@ -732,16 +768,15 @@ print(f&amp;#34;{flag = }&amp;#34;)
 &lt;h1 id=&#34;arpeeceethree---3-solves&#34;&gt;arpeeceethree - 3 solves&lt;/h1&gt;
 &lt;blockquote&gt;
 &lt;p&gt;You hand over your identity parchment to the temple monk. He scrutinises it closely, looking for any signs of malintent.&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;python client.py -r arpeeceethree.chal.cybears.io:2323&lt;/code&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;&lt;code&gt;python client.py -r arpeeceethree.chal.cybears.io:2323&lt;/code&gt;&lt;/p&gt;&lt;/blockquote&gt;
 &lt;p&gt;There was a lot of source and dependencies to install for this challenge, but the vulnerability is actually very simple.&lt;/p&gt;
 &lt;p&gt;We are provided with 3 files, &lt;code&gt;client.py&lt;/code&gt;, &lt;code&gt;server.py&lt;/code&gt; and &lt;code&gt;server.proto&lt;/code&gt;.&lt;/p&gt;
 
 
 
   &lt;div class=&#34;collapsable-code&#34;&gt;
-    &lt;input id=&#34;724518936&#34; type=&#34;checkbox&#34; checked /&gt;
-    &lt;label for=&#34;724518936&#34;&gt;
+    &lt;input id=&#34;217654839&#34; type=&#34;checkbox&#34; checked /&gt;
+    &lt;label for=&#34;217654839&#34;&gt;
       &lt;span class=&#34;collapsable-code__language&#34;&gt;python&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__title&#34;&gt;client.py&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__toggle&#34; data-label-expand=&#34;Show&#34; data-label-collapse=&#34;Hide&#34;&gt;&lt;/span&gt;
@@ -970,8 +1005,8 @@ if __name__ == &amp;#34;__main__&amp;#34;:
 
 
   &lt;div class=&#34;collapsable-code&#34;&gt;
-    &lt;input id=&#34;352498176&#34; type=&#34;checkbox&#34; checked /&gt;
-    &lt;label for=&#34;352498176&#34;&gt;
+    &lt;input id=&#34;492376851&#34; type=&#34;checkbox&#34; checked /&gt;
+    &lt;label for=&#34;492376851&#34;&gt;
       &lt;span class=&#34;collapsable-code__language&#34;&gt;python&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__title&#34;&gt;server.py&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__toggle&#34; data-label-expand=&#34;Show&#34; data-label-collapse=&#34;Hide&#34;&gt;&lt;/span&gt;
@@ -1323,8 +1358,8 @@ if __name__ == &amp;#34;__main__&amp;#34;:
 
 
   &lt;div class=&#34;collapsable-code&#34;&gt;
-    &lt;input id=&#34;824659137&#34; type=&#34;checkbox&#34; checked /&gt;
-    &lt;label for=&#34;824659137&#34;&gt;
+    &lt;input id=&#34;325614798&#34; type=&#34;checkbox&#34; checked /&gt;
+    &lt;label for=&#34;325614798&#34;&gt;
       &lt;span class=&#34;collapsable-code__language&#34;&gt;proto&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__title&#34;&gt;server.proto&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__toggle&#34; data-label-expand=&#34;Show&#34; data-label-collapse=&#34;Hide&#34;&gt;&lt;/span&gt;
@@ -1493,8 +1528,8 @@ message MessageResponse {
 
 
   &lt;div class=&#34;collapsable-code&#34;&gt;
-    &lt;input id=&#34;248367951&#34; type=&#34;checkbox&#34; checked /&gt;
-    &lt;label for=&#34;248367951&#34;&gt;
+    &lt;input id=&#34;914372586&#34; type=&#34;checkbox&#34; checked /&gt;
+    &lt;label for=&#34;914372586&#34;&gt;
       &lt;span class=&#34;collapsable-code__language&#34;&gt;python&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__title&#34;&gt;remote_brute.py&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__toggle&#34; data-label-expand=&#34;Show&#34; data-label-collapse=&#34;Hide&#34;&gt;&lt;/span&gt;
@@ -1751,8 +1786,8 @@ if __name__ == &amp;#34;__main__&amp;#34;:
 
 
   &lt;div class=&#34;collapsable-code&#34;&gt;
-    &lt;input id=&#34;346129758&#34; type=&#34;checkbox&#34; checked /&gt;
-    &lt;label for=&#34;346129758&#34;&gt;
+    &lt;input id=&#34;296753418&#34; type=&#34;checkbox&#34; checked /&gt;
+    &lt;label for=&#34;296753418&#34;&gt;
       &lt;span class=&#34;collapsable-code__language&#34;&gt;python&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__title&#34;&gt;code.py&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__toggle&#34; data-label-expand=&#34;Show&#34; data-label-collapse=&#34;Hide&#34;&gt;&lt;/span&gt;
@@ -2020,13 +2055,18 @@ if __name__ == &amp;#34;__main__&amp;#34;:
     
     <item>
       <title>Reversing Writeups - BSides Canberra CTF 2023</title>
-      <link>https://TheSavageTeddy.github.io/featured/bsides-canberra-ctf-2023/</link>
-      <pubDate>Sun, 01 Oct 2023 00:06:40 +0800</pubDate>
+      <link>http://localhost:1313/featured/bsides-canberra-ctf-2023/</link>
+      <pubDate>Sun, 01 Oct 2023 03:06:40 +1100</pubDate>
       
-      <guid>https://TheSavageTeddy.github.io/featured/bsides-canberra-ctf-2023/</guid>
-      <description>Overview During the school holidays, I had the opportunity to attend BSides Canberra 2023, which was a 3 day conference held near the end of September, in the National Convention Center Canberra.
-Along with many great talks, it featured three &amp;lsquo;villages&amp;rsquo; including hardware, lockpicking and wireless. With 3000 people attending, this was the largest hacking conference that I had gone to, and it was a lot of fun!
-Cybears hosted this year&amp;rsquo;s CTF event with unique comic style graphics for the CTF site.</description>
+      <guid>http://localhost:1313/featured/bsides-canberra-ctf-2023/</guid>
+      <description>&lt;h1 id=&#34;overview&#34;&gt;Overview&lt;/h1&gt;
+&lt;p&gt;During the school holidays, I had the opportunity to attend BSides Canberra 2023, which was a 3 day conference held near the end of September, in the National Convention Center Canberra.&lt;/p&gt;
+&lt;p&gt;Along with many great talks, it featured three &amp;lsquo;villages&amp;rsquo; including hardware, lockpicking and wireless. With 3000 people attending, this was the largest hacking conference that I had gone to, and it was a lot of fun!&lt;/p&gt;
+
+  &lt;img src=&#34;./img/ctfing.jpg&#34;  class=&#34;center&#34;  style=&#34;border-radius: 5px; width: 100%&#34;  /&gt;
+
+
+&lt;p&gt;&lt;a href=&#34;https://twitter.com/cybearsCTF&#34;&gt;Cybears&lt;/a&gt; hosted this year&amp;rsquo;s CTF event with unique comic style graphics for the CTF site. They had some great challenges, and the competition hall was packed with 193 teams participating!&lt;/p&gt;</description>
       <content>&lt;h1 id=&#34;overview&#34;&gt;Overview&lt;/h1&gt;
 &lt;p&gt;During the school holidays, I had the opportunity to attend BSides Canberra 2023, which was a 3 day conference held near the end of September, in the National Convention Center Canberra.&lt;/p&gt;
 &lt;p&gt;Along with many great talks, it featured three &amp;lsquo;villages&amp;rsquo; including hardware, lockpicking and wireless. With 3000 people attending, this was the largest hacking conference that I had gone to, and it was a lot of fun!&lt;/p&gt;
@@ -2044,37 +2084,36 @@ Cybears hosted this year&amp;rsquo;s CTF event with unique comic style graphics 
 &lt;h1 id=&#34;challenge-overview&#34;&gt;Challenge Overview&lt;/h1&gt;
 &lt;p&gt;I will mainly focus on &lt;code&gt;prnginko&lt;/code&gt;, as I want to detail the many roadblocks we faced along the way, instead of going straight to the solution.&lt;/p&gt;
 &lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;&lt;strong&gt;Challenge&lt;/strong&gt;&lt;/th&gt;
-&lt;th&gt;&lt;strong&gt;Category&lt;/strong&gt;&lt;/th&gt;
-&lt;th&gt;&lt;strong&gt;Solves&lt;/strong&gt;&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;a href=&#34;#prnginko-cryptorev---8-solves&#34;&gt;prnginko&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;crypto/rev&lt;/td&gt;
-&lt;td&gt;8&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;a href=&#34;#useless-rev---9-solves&#34;&gt;useless&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;rev&lt;/td&gt;
-&lt;td&gt;9&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;&lt;strong&gt;Challenge&lt;/strong&gt;&lt;/th&gt;
+          &lt;th&gt;&lt;strong&gt;Category&lt;/strong&gt;&lt;/th&gt;
+          &lt;th&gt;&lt;strong&gt;Solves&lt;/strong&gt;&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;a href=&#34;http://localhost:1313/featured/bsides-canberra-ctf-2023/#prnginko-cryptorev---8-solves&#34;&gt;prnginko&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;crypto/rev&lt;/td&gt;
+          &lt;td&gt;8&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;a href=&#34;http://localhost:1313/featured/bsides-canberra-ctf-2023/#useless-rev---9-solves&#34;&gt;useless&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;rev&lt;/td&gt;
+          &lt;td&gt;9&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;p&gt;If you want to follow along or see the binary for yourself, download files here&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;./files/prnginko&#34;&gt;&lt;code&gt;prnginko&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;./files/useless&#34;&gt;&lt;code&gt;useless&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://localhost:1313/featured/bsides-canberra-ctf-2023/files/prnginko&#34;&gt;&lt;code&gt;prnginko&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://localhost:1313/featured/bsides-canberra-ctf-2023/files/useless&#34;&gt;&lt;code&gt;useless&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h1 id=&#34;prnginko-cryptorev---8-solves&#34;&gt;prnginko (crypto/rev) - 8 solves&lt;/h1&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Multi-bet with SportsBear!&lt;/p&gt;
-&lt;p&gt;nc prnginko.chal.cybears.io 2323&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;We are given a binary &lt;a href=&#34;./files/prnginko&#34;&gt;&lt;code&gt;prnginko&lt;/code&gt;&lt;/a&gt; and a service to connect to. Upon running the binary, we are presented with the game and a message suggesting the goal to be getting a &amp;ldquo;perfect game&amp;rdquo;. The game includes a board consisting of pins and a ball which randomly bounces either left or right when it hits a pin, similar to the Plinko game.&lt;/p&gt;
+&lt;p&gt;nc prnginko.chal.cybears.io 2323&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;We are given a binary &lt;a href=&#34;http://localhost:1313/featured/bsides-canberra-ctf-2023/files/prnginko&#34;&gt;&lt;code&gt;prnginko&lt;/code&gt;&lt;/a&gt; and a service to connect to. Upon running the binary, we are presented with the game and a message suggesting the goal to be getting a &amp;ldquo;perfect game&amp;rdquo;. The game includes a board consisting of pins and a ball which randomly bounces either left or right when it hits a pin, similar to the Plinko game.&lt;/p&gt;
 
   &lt;img src=&#34;./img/game_ex.png&#34;  class=&#34;center&#34;  style=&#34;border-radius: 5px; width: 70%&#34;  /&gt;
 
@@ -2660,9 +2699,8 @@ p.interactive()
 
 &lt;h1 id=&#34;useless-rev---9-solves&#34;&gt;useless (rev) - 9 solves&lt;/h1&gt;
 &lt;blockquote&gt;
-&lt;p&gt;There&amp;rsquo;s a weird file recovered from a forensic analysis of the MAYHEM mainframe&amp;hellip; but it doesn&amp;rsquo;t seem to do anything?&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;We are provided with a binary file &lt;a href=&#34;./files/useless&#34;&gt;&lt;code&gt;useless&lt;/code&gt;&lt;/a&gt; which when ran, as the name suggests, seemingly does nothing.&lt;/p&gt;
+&lt;p&gt;There&amp;rsquo;s a weird file recovered from a forensic analysis of the MAYHEM mainframe&amp;hellip; but it doesn&amp;rsquo;t seem to do anything?&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;We are provided with a binary file &lt;a href=&#34;http://localhost:1313/featured/bsides-canberra-ctf-2023/files/useless&#34;&gt;&lt;code&gt;useless&lt;/code&gt;&lt;/a&gt; which when ran, as the name suggests, seemingly does nothing.&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;┌──(teddykali㉿teddykali)-[~/…/on premise/Bsides Canberra 2023/rev/useless]
 └─$ ./useless    
                                                                                                                                                 
@@ -2719,7 +2757,7 @@ p.interactive()
   &lt;img src=&#34;./img/gdb_3.png&#34;  class=&#34;center&#34;  style=&#34;border-radius: 5px; width: 100%&#34;  /&gt;
 
 
-&lt;p&gt;Adjusting some base64 offsets (sometimes there can be consecutive base64 characters, in which case &lt;code&gt;rax&lt;/code&gt; doesn&amp;rsquo;t change, resulting in some characters being missed - thanks to &lt;a href=&#34;https://twitter.com/JJJollyjim&#34;&gt;Jamie&lt;/a&gt; for correcting me on this!) and decoding from base64 in &lt;a href=&#34;https://gchq.github.io/CyberChef/#recipe=From_Base64(&#39;A-Za-z0-9%2B/%3D&#39;,true,false)&amp;amp;input=NGdkR2hsSUhKbFlXeHRJRzltSUdOdlpHVWdZVzVrSUd0bGVYTXNJR0VnWTJoYkd4bGJtZGxJR1pzWVdjZ2RXNW1kWEpzY3l3S1FTQmpjbmx3ZEdsaklHbHVkbWwwWVhScGIyNGdkRzhnZEdWemRDQjBhR1VnYzJoY25CbGMzUWdiV2x1WkhNZ2IyWWdkR2hsSUhkdmNteGtMZ3BCSUVOVVJpZHpJR1Z0WW14bGJTd2dhVzRnZEdobElHUnBaMmwwWVd3Z1pHOXRZV2x1SUdsMElHWnNhV1Z6TEFwQklIQjFlbnBzWlNCbWIzSWdkR2hsSUdOMWNtbHZkWE1zSUdFZ2NISnBlbVVnWm05eUlIUm9aU0IzYVhObExnb0tTWFJ6SUdOdmJHOXljeUJoY21WdUozUWdZM0pwYlhOdmJpd2dibTl5SUhOMGNtbHdaWE1nYjJZZ2NtVmtJR0Z1WkNCM2FHbDBaU3dLUW5WMElHRWdjR2w0Wld4aGRHVmtJSFJoY0dWemRISjVMQ0JoSUcxaGRISnBlQ0J2WmlCaWVYUmxjeUJwYmlCemFXZG9kQzRLU1c0Z1ltbHVZWEo1SUdKeWFXeHNhV0Z1WTJVc0lHbDBJR0psWTJ0dmJuTWdkMmwwYUNCaElHZHNiM2NzQ2tFZ2FHRmphMlZ5SjNNZ2NYVmxjM1FzSUhkb1pYSmxJR2hwWkdSbGJpQnJibTkzYkdWa1oyVWdiV0Y1SUdac2IzY3VDZ3BKYmlCMGFHVWdZbWx1WVhKNUlHSnlaV1Y2WlN3Z2FYUWdabXgxZEhSbGNuTWdiR2xyWlNCaElHUnBaMmwwWVd3Z1pISmxZVzBzQ2tFZ2RISmxZWE4xY21VZ2JXRndJRzltSUdKcGRITWdZVzVrSUdKNWRHVnpMQ0JwYmlCMGFHVWdZM2xpWlhJZ2MzUnlaV0Z0TGdwRllXTm9JR05vWVd4c1pXNW5aU0JtYkdGbkxDQmhJR05wY0dobGNtVmtJSFJoYkdVZ2RHOGdZbVVnZFc1MGIyeGtMQXBHYjNJZ2RHaHZjMlVnZDJodklHUmhjbVVnZEc4Z2RtVnVkSFZ5WlN3Z1ptOXlJSFJvWlNCaWNtRjJaU0JoYm1RZ2RHaGxJR0p2YkdRdUNncFVhR1VnWm14aFp5QnBjeUJqZVdKbFlYSnplMVUxTTJ3ek5UVmZZblYwWHpWME1XeHNYMmN3ZEY5MGFETmZabXhBWjMwdUNncFhhWFJvYVc0Z2FYUnpJR1Z1YVdkdFlTd2dkR2hsY21VZ2JHbGN5QmhJR2hwWkdSbGJpQnJaWGtzQ2tFZ2NtbGtaR3hsSUhSdklHSmxJSE52YkhabFpDd2dZU0JrYjI5eUlIUnZJSE5sZENCdGFXNWtjeUJtY21WbExncEdjbTl0SUhOMFpXZGhibTluY21Gd2FHbGpJSE5sWTNKbGRITWdkRzhnWTNKNWNIUnBZeUJqYkhWbGN5QmpiMjVqWldGc1pXUXNDbFJvWlNCRFZFWWdZMmhiR3hsYm1kbElHWnNZV2NzSUdFZ2NIVjZlbXhsSjNNZ1ptRjBaU0J5WlhabFlXeGxaQzRLQ2tFZ2JXRjZaU0J2WmlCaGJHZHZjbWwwYUcxekxDQmhJR3hoWW5seWFXNTBhQ0J2WmlCamIyUmxMQXBKYmlCMGFHbHpJR1JwWjJsMFlXd2dkMmxzWkdWeWJtVnpjeXdnWW5KaGRtVWdhSFZ1ZEdWeWN5QmxjbTlrWlM0S1ZHaGxhWElnYldsdVpITW5JSFJsY25KaGFXNHNJSGRwZEdnYkc5bmFXTW5jeUIwYjNKamFDQnBiaUJvWVc1a0xBcFVhR1Y1SUdwdmRYSnVaWGtnZEdoeWIzVm5hQ0IwYUdVZ1lubDBaWE1zSUhSb1pYa2diV0Z3SUhSb1pTQmthV2RwZEdGc0lHeGhibVF1Q2dwWGFYUm9JR1ZoWTJnWW5sMFpTQmtaV05wY0dobGNtVmtMQ0IzYVhSb0lHVmhZMmdZbmwwWlNCMWJuWmxhV3hsWkN3S1ZHaGxJR05vWVd4c1pXNW5aU0JtYkdGbklHUnlZWGR6SUc1bFlYSmxjaXdnYVhSeklHMTVjM1JsY25rZ2RXNXpaV0ZzWldRdUNrRnVaQ0IzYUdWdUlIUm9aU0JtYVc1aGJDQmpiMlJsSUdaaGJHeHpJR2x1ZEc4Z2FYUnpJSEJzWVdObExBcEJJSFpwY25SMVlXd2dkbWxqZEc5eWVTd2dZU0IwY21sMWJYQm9ZVzUwSUdWdFluSmhZMlV1Q2dwVGJ5d2djMkZzZFhSbElIUm9aU0JqYUdGc2JHVnVaMlVnWm14aFp5QnBiaUIwYUdVZ2NtVmhiRzBnYjJZZ1lubDBaWE1nWVc1a0lHdGxlWE1zQ2xkb1pYSmxJR2hZMnRsY25NZ1lXNWtJR052WkdWaWNtVmhhMlZ5Y3lCelpXVnJJSFJvWlNCaGJuTjNaWEp6SUdsMElHWnlaV1Z6TGdwSmJpQjBhR1VnZDI5eWJHUWdiMllnUTFSR0xDQjNhR1Z5WlNCdGFXNWtjeUJoY21VZ2MyVjBJSFJ2SUhOaGFXd3NDbFJvWlNCamFHRnNiR1Z1WjJVZ1pteGhaeUJ6ZEdGdVpITWdkR0ZzYkN3Z1lTQmthV2RwZEdGc0lHaHZiSGtnWjNKaGFXd3U8&#34;&gt;CyberChef&lt;/a&gt;, we get the flag!&lt;/p&gt;
+&lt;p&gt;Adjusting some base64 offsets (sometimes there can be consecutive base64 characters, in which case &lt;code&gt;rax&lt;/code&gt; doesn&amp;rsquo;t change, resulting in some characters being missed - thanks to &lt;a href=&#34;https://twitter.com/JJJollyjim&#34;&gt;Jamie&lt;/a&gt; for correcting me on this!) and decoding from base64 in &lt;a href=&#34;https://gchq.github.io/CyberChef/#recipe=From_Base64%28%27A-Za-z0-9%2B/%3D%27,true,false%29&amp;amp;input=NGdkR2hsSUhKbFlXeHRJRzltSUdOdlpHVWdZVzVrSUd0bGVYTXNJR0VnWTJoYkd4bGJtZGxJR1pzWVdjZ2RXNW1kWEpzY3l3S1FTQmpjbmx3ZEdsaklHbHVkbWwwWVhScGIyNGdkRzhnZEdWemRDQjBhR1VnYzJoY25CbGMzUWdiV2x1WkhNZ2IyWWdkR2hsSUhkdmNteGtMZ3BCSUVOVVJpZHpJR1Z0WW14bGJTd2dhVzRnZEdobElHUnBaMmwwWVd3Z1pHOXRZV2x1SUdsMElHWnNhV1Z6TEFwQklIQjFlbnBzWlNCbWIzSWdkR2hsSUdOMWNtbHZkWE1zSUdFZ2NISnBlbVVnWm05eUlIUm9aU0IzYVhObExnb0tTWFJ6SUdOdmJHOXljeUJoY21WdUozUWdZM0pwYlhOdmJpd2dibTl5SUhOMGNtbHdaWE1nYjJZZ2NtVmtJR0Z1WkNCM2FHbDBaU3dLUW5WMElHRWdjR2w0Wld4aGRHVmtJSFJoY0dWemRISjVMQ0JoSUcxaGRISnBlQ0J2WmlCaWVYUmxjeUJwYmlCemFXZG9kQzRLU1c0Z1ltbHVZWEo1SUdKeWFXeHNhV0Z1WTJVc0lHbDBJR0psWTJ0dmJuTWdkMmwwYUNCaElHZHNiM2NzQ2tFZ2FHRmphMlZ5SjNNZ2NYVmxjM1FzSUhkb1pYSmxJR2hwWkdSbGJpQnJibTkzYkdWa1oyVWdiV0Y1SUdac2IzY3VDZ3BKYmlCMGFHVWdZbWx1WVhKNUlHSnlaV1Y2WlN3Z2FYUWdabXgxZEhSbGNuTWdiR2xyWlNCaElHUnBaMmwwWVd3Z1pISmxZVzBzQ2tFZ2RISmxZWE4xY21VZ2JXRndJRzltSUdKcGRITWdZVzVrSUdKNWRHVnpMQ0JwYmlCMGFHVWdZM2xpWlhJZ2MzUnlaV0Z0TGdwRllXTm9JR05vWVd4c1pXNW5aU0JtYkdGbkxDQmhJR05wY0dobGNtVmtJSFJoYkdVZ2RHOGdZbVVnZFc1MGIyeGtMQXBHYjNJZ2RHaHZjMlVnZDJodklHUmhjbVVnZEc4Z2RtVnVkSFZ5WlN3Z1ptOXlJSFJvWlNCaWNtRjJaU0JoYm1RZ2RHaGxJR0p2YkdRdUNncFVhR1VnWm14aFp5QnBjeUJqZVdKbFlYSnplMVUxTTJ3ek5UVmZZblYwWHpWME1XeHNYMmN3ZEY5MGFETmZabXhBWjMwdUNncFhhWFJvYVc0Z2FYUnpJR1Z1YVdkdFlTd2dkR2hsY21VZ2JHbGN5QmhJR2hwWkdSbGJpQnJaWGtzQ2tFZ2NtbGtaR3hsSUhSdklHSmxJSE52YkhabFpDd2dZU0JrYjI5eUlIUnZJSE5sZENCdGFXNWtjeUJtY21WbExncEdjbTl0SUhOMFpXZGhibTluY21Gd2FHbGpJSE5sWTNKbGRITWdkRzhnWTNKNWNIUnBZeUJqYkhWbGN5QmpiMjVqWldGc1pXUXNDbFJvWlNCRFZFWWdZMmhiR3hsYm1kbElHWnNZV2NzSUdFZ2NIVjZlbXhsSjNNZ1ptRjBaU0J5WlhabFlXeGxaQzRLQ2tFZ2JXRjZaU0J2WmlCaGJHZHZjbWwwYUcxekxDQmhJR3hoWW5seWFXNTBhQ0J2WmlCamIyUmxMQXBKYmlCMGFHbHpJR1JwWjJsMFlXd2dkMmxzWkdWeWJtVnpjeXdnWW5KaGRtVWdhSFZ1ZEdWeWN5QmxjbTlrWlM0S1ZHaGxhWElnYldsdVpITW5JSFJsY25KaGFXNHNJSGRwZEdnYkc5bmFXTW5jeUIwYjNKamFDQnBiaUJvWVc1a0xBcFVhR1Y1SUdwdmRYSnVaWGtnZEdoeWIzVm5hQ0IwYUdVZ1lubDBaWE1zSUhSb1pYa2diV0Z3SUhSb1pTQmthV2RwZEdGc0lHeGhibVF1Q2dwWGFYUm9JR1ZoWTJnWW5sMFpTQmtaV05wY0dobGNtVmtMQ0IzYVhSb0lHVmhZMmdZbmwwWlNCMWJuWmxhV3hsWkN3S1ZHaGxJR05vWVd4c1pXNW5aU0JtYkdGbklHUnlZWGR6SUc1bFlYSmxjaXdnYVhSeklHMTVjM1JsY25rZ2RXNXpaV0ZzWldRdUNrRnVaQ0IzYUdWdUlIUm9aU0JtYVc1aGJDQmpiMlJsSUdaaGJHeHpJR2x1ZEc4Z2FYUnpJSEJzWVdObExBcEJJSFpwY25SMVlXd2dkbWxqZEc5eWVTd2dZU0IwY21sMWJYQm9ZVzUwSUdWdFluSmhZMlV1Q2dwVGJ5d2djMkZzZFhSbElIUm9aU0JqYUdGc2JHVnVaMlVnWm14aFp5QnBiaUIwYUdVZ2NtVmhiRzBnYjJZZ1lubDBaWE1nWVc1a0lHdGxlWE1zQ2xkb1pYSmxJR2hZMnRsY25NZ1lXNWtJR052WkdWaWNtVmhhMlZ5Y3lCelpXVnJJSFJvWlNCaGJuTjNaWEp6SUdsMElHWnlaV1Z6TGdwSmJpQjBhR1VnZDI5eWJHUWdiMllnUTFSR0xDQjNhR1Z5WlNCdGFXNWtjeUJoY21VZ2MyVjBJSFJ2SUhOaGFXd3NDbFJvWlNCamFHRnNiR1Z1WjJVZ1pteGhaeUJ6ZEdGdVpITWdkR0ZzYkN3Z1lTQmthV2RwZEdGc0lHaHZiSGtnWjNKaGFXd3U8&#34;&gt;CyberChef&lt;/a&gt;, we get the flag!&lt;/p&gt;
 
   &lt;img src=&#34;./img/cyberchef.png&#34;  class=&#34;center&#34;  style=&#34;border-radius: 5px; width: 100%&#34;  /&gt;
 

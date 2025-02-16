@@ -2,21 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on teddyctf</title>
-    <link>https://TheSavageTeddy.github.io/posts/</link>
+    <link>http://localhost:1313/posts/</link>
     <description>Recent content in Posts on teddyctf</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
+    <language>en</language>
     <copyright>teddyctf</copyright>
-    <lastBuildDate>Tue, 15 Oct 2024 19:00:00 +0800</lastBuildDate><atom:link href="https://TheSavageTeddy.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 15 Oct 2024 22:00:00 +1100</lastBuildDate><atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Bribery, Botting, and other Shenanigans - Cursed CTF 2024</title>
-      <link>https://TheSavageTeddy.github.io/posts/cursedctf-2024/</link>
-      <pubDate>Mon, 01 Apr 2024 06:43:20 +0800</pubDate>
+      <link>http://localhost:1313/posts/cursedctf-2024/</link>
+      <pubDate>Mon, 01 Apr 2024 09:43:20 +1100</pubDate>
       
-      <guid>https://TheSavageTeddy.github.io/posts/cursedctf-2024/</guid>
-      <description>Overview Cursed CTF Quals 2024 was a CTF designed to contain cursed things like most of the CTF being OSINT, unsolvable challenges, and other funny challenges.
-I played with the Oceania Merger team joseph fan club and we managed to secure first place without being disqualified!
-In this post, we will go through the funny moments of the event, and how we were able to win using unethical strategies such as bribing organisers, making 10000 accounts for a stuffed cow, and much more.</description>
+      <guid>http://localhost:1313/posts/cursedctf-2024/</guid>
+      <description>&lt;h1 id=&#34;overview&#34;&gt;Overview&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&#34;https://ctftime.org/event/2239&#34;&gt;Cursed CTF Quals 2024&lt;/a&gt; was a CTF designed to contain cursed things like most of the CTF being OSINT, unsolvable challenges, and other funny challenges.&lt;/p&gt;
+&lt;p&gt;I played with the Oceania Merger team &lt;a href=&#34;https://ctftime.org/team/280849&#34;&gt;&lt;code&gt;joseph fan club&lt;/code&gt;&lt;/a&gt; and we managed to secure first place without being disqualified!&lt;/p&gt;
+&lt;p&gt;In this post, we will go through the funny moments of the event, and how we were able to win using &lt;del&gt;un&lt;/del&gt;ethical strategies such as bribing organisers, making 10000 accounts for a stuffed cow, and much more. Enjoy!&lt;/p&gt;</description>
       <content>&lt;h1 id=&#34;overview&#34;&gt;Overview&lt;/h1&gt;
 &lt;p&gt;&lt;a href=&#34;https://ctftime.org/event/2239&#34;&gt;Cursed CTF Quals 2024&lt;/a&gt; was a CTF designed to contain cursed things like most of the CTF being OSINT, unsolvable challenges, and other funny challenges.&lt;/p&gt;
 &lt;p&gt;I played with the Oceania Merger team &lt;a href=&#34;https://ctftime.org/team/280849&#34;&gt;&lt;code&gt;joseph fan club&lt;/code&gt;&lt;/a&gt; and we managed to secure first place without being disqualified!&lt;/p&gt;
@@ -79,7 +80,7 @@ In this post, we will go through the funny moments of the event, and how we were
 
 
 &lt;p&gt;I suspect &lt;a href=&#34;https://twitter.com/0rganizers&#34;&gt;0rganizers&lt;/a&gt; to be the culprit, being the second solve. But I can&amp;rsquo;t really be mad - it&amp;rsquo;s a cursed CTF after all. Props to them for solving it legitimately, too.&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;Edit: it was &lt;a href=&#34;./img/nahhh.png&#34;&gt;actually a organiser&lt;/a&gt;, but they also solved it legitimately lol&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Edit: it was &lt;a href=&#34;http://localhost:1313/posts/cursedctf-2024/img/nahhh.png&#34;&gt;actually a organiser&lt;/a&gt;, but they also solved it legitimately lol&lt;/em&gt;&lt;/p&gt;
 
   &lt;img src=&#34;./img/iceberg3.png&#34;  class=&#34;center&#34;  style=&#34;border-radius: 5px;width: 60%; &#34;  /&gt;
 
@@ -102,7 +103,7 @@ In this post, we will go through the funny moments of the event, and how we were
 &lt;li&gt;When the time comes, use script to submit a flag for each account&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Our main trick was that accounts with 0 points didn&amp;rsquo;t show up on the scoreboard, so no one would see our accounts until we started submitting flags for them.&lt;/p&gt;
-&lt;p&gt;Huge thanks to &lt;a href=&#34;https://hexf.me&#34;&gt;HexF&lt;/a&gt; who registered and verified almost 10000 accounts with his &lt;a href=&#34;./files/reg-acct.py&#34;&gt;script&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Huge thanks to &lt;a href=&#34;https://hexf.me&#34;&gt;HexF&lt;/a&gt; who registered and verified almost 10000 accounts with his &lt;a href=&#34;http://localhost:1313/posts/cursedctf-2024/files/reg-acct.py&#34;&gt;script&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;He was working on making a mail server specifically for catching verification emails, verifying them and storing the auth tokens for even faster account creation, until we were shut down&amp;hellip;&lt;/p&gt;
 &lt;h3 id=&#34;registrations-disabled&#34;&gt;Registrations disabled&lt;/h3&gt;
 &lt;p&gt;The admins eventually responded to our mass account creation by disabling registration, as it was costing them too much money.&lt;/p&gt;
@@ -113,7 +114,7 @@ In this post, we will go through the funny moments of the event, and how we were
 &lt;p&gt;By creating more than 10000 accounts, we cost the organisers over $20. Around 9500 of these accounts were successfully verified, meaning we owned around 85% of all registered accounts, and could flood the scoreboard at any time.&lt;/p&gt;
 &lt;h3 id=&#34;flooding-the-scoreboard&#34;&gt;Flooding the scoreboard&lt;/h3&gt;
 &lt;p&gt;Originally, we wanted to be stealthy and start submitting flags for the accounts right before the CTF ended, but since registrations are now disabled and we owned most the accounts, it didn&amp;rsquo;t really matter.&lt;/p&gt;
-&lt;p&gt;I ran my &lt;a href=&#34;./files/auto-submitter.py&#34;&gt;script&lt;/a&gt; to spam submit a flag for all ~9500 accounts, and watched the scoreboard fill with joseph fan clubs.&lt;/p&gt;
+&lt;p&gt;I ran my &lt;a href=&#34;http://localhost:1313/posts/cursedctf-2024/files/auto-submitter.py&#34;&gt;script&lt;/a&gt; to spam submit a flag for all ~9500 accounts, and watched the scoreboard fill with joseph fan clubs.&lt;/p&gt;
 &lt;p&gt;The script finished after 30 minutes, and the scoreboard was 111 pages long, consisting of 11000 teams.&lt;/p&gt;
 
   &lt;img src=&#34;./img/joseph_fan_clubs.png&#34;  class=&#34;center&#34;  style=&#34;border-radius: 5px;width: 60%; &#34;  /&gt;
@@ -182,7 +183,7 @@ In this post, we will go through the funny moments of the event, and how we were
   &lt;img src=&#34;./img/ethical_.png&#34;  class=&#34;center&#34;  style=&#34;border-radius: 5px;width: 60%; &#34;  /&gt;
 
 
-&lt;p&gt;This wasn&amp;rsquo;t even takarada&amp;rsquo;s challenge, and I had already previously bribed &lt;a href=&#34;https://twitter.com/nootkroot&#34;&gt;kroot&lt;/a&gt;, the challenge author, to give us half the characters in exchange for the same thing. Too bad Emu Exploit&amp;rsquo;s team captain toasterpwn wasn&amp;rsquo;t online when I asked him for permission. He wasn&amp;rsquo;t either when takarada joined, but avery (below: &lt;a href=&#34;./img/cts_from_wish_dot_com.png&#34;&gt;cts from wish.com&lt;/a&gt;) ignored that.&lt;/p&gt;
+&lt;p&gt;This wasn&amp;rsquo;t even takarada&amp;rsquo;s challenge, and I had already previously bribed &lt;a href=&#34;https://twitter.com/nootkroot&#34;&gt;kroot&lt;/a&gt;, the challenge author, to give us half the characters in exchange for the same thing. Too bad Emu Exploit&amp;rsquo;s team captain toasterpwn wasn&amp;rsquo;t online when I asked him for permission. He wasn&amp;rsquo;t either when takarada joined, but avery (below: &lt;a href=&#34;http://localhost:1313/posts/cursedctf-2024/img/cts_from_wish_dot_com.png&#34;&gt;cts from wish.com&lt;/a&gt;) ignored that.&lt;/p&gt;
 
   &lt;img src=&#34;./img/bruh.png&#34;  class=&#34;center&#34;  style=&#34;border-radius: 5px;width: 80%; &#34;  /&gt;
 
@@ -196,12 +197,12 @@ In this post, we will go through the funny moments of the event, and how we were
   &lt;img src=&#34;./img/teddy_trade.png&#34;  class=&#34;center&#34;  style=&#34;border-radius: 5px;width: 60%; &#34;  /&gt;
 
 
-&lt;p&gt;The intended non-bribery solution was to &lt;a href=&#34;./img/ida1.png&#34;&gt;buy/give the IDA Pro subscription&lt;/a&gt; which costs couple hundreds to thousands of dollars.&lt;/p&gt;
+&lt;p&gt;The intended non-bribery solution was to &lt;a href=&#34;http://localhost:1313/posts/cursedctf-2024/img/ida1.png&#34;&gt;buy/give the IDA Pro subscription&lt;/a&gt; which costs couple hundreds to thousands of dollars.&lt;/p&gt;
 
   &lt;img src=&#34;./img/ida_pro_chal.png&#34;  class=&#34;center&#34;  style=&#34;border-radius: 5px;width: 60%; &#34;  /&gt;
 
 
-&lt;p&gt;Funny that it was &lt;a href=&#34;./img/ida4.png&#34;&gt;announced we actually bought the license&lt;/a&gt;, whereas it was just some &lt;a href=&#34;./img/ida3.png&#34;&gt;trolling&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Funny that it was &lt;a href=&#34;http://localhost:1313/posts/cursedctf-2024/img/ida4.png&#34;&gt;announced we actually bought the license&lt;/a&gt;, whereas it was just some &lt;a href=&#34;http://localhost:1313/posts/cursedctf-2024/img/ida3.png&#34;&gt;trolling&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;The next day, instead of trading Emu related things, avery decided to &lt;a href=&#34;https://twitter.com/nullableVoidPtr/status/1774656004619456826&#34;&gt;initiate another trade&lt;/a&gt; with sky, providing images of a manga book of a specific genre in exchange for a flag and a hint for another challenge.&lt;/p&gt;
 
   &lt;img src=&#34;./img/avery_trade_2.png&#34;  class=&#34;center&#34;  style=&#34;border-radius: 5px;width: 40%; &#34;  /&gt;
@@ -274,7 +275,7 @@ In this post, we will go through the funny moments of the event, and how we were
   &lt;img src=&#34;./img/iceberg9.png&#34;  class=&#34;center&#34;  style=&#34;border-radius: 5px;width: 60%; &#34;  /&gt;
 
 
-&lt;p&gt;There were also assembly golfing challenges for leetcode challenges, where your code had to be shorter than the previous submission, and my team had some pretty cursed solutions for &lt;a href=&#34;./files/palindrome.asm&#34;&gt;palindrome_number&lt;/a&gt;, &lt;a href=&#34;./files/fizzbuzz.asm&#34;&gt;fizzbuzz&lt;/a&gt; and &lt;a href=&#34;./files/fizzbuzz.asm&#34;&gt;two_sum&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;There were also assembly golfing challenges for leetcode challenges, where your code had to be shorter than the previous submission, and my team had some pretty cursed solutions for &lt;a href=&#34;http://localhost:1313/posts/cursedctf-2024/files/palindrome.asm&#34;&gt;palindrome_number&lt;/a&gt;, &lt;a href=&#34;http://localhost:1313/posts/cursedctf-2024/files/fizzbuzz.asm&#34;&gt;fizzbuzz&lt;/a&gt; and &lt;a href=&#34;http://localhost:1313/posts/cursedctf-2024/files/fizzbuzz.asm&#34;&gt;two_sum&lt;/a&gt;.&lt;/p&gt;
 &lt;h1 id=&#34;the-final-iceberg&#34;&gt;The Final Iceberg&lt;/h1&gt;
 
   &lt;img src=&#34;./img/iceberg_final.png&#34;  class=&#34;center&#34;  style=&#34;border-radius: 5px;width: 60%; &#34;  /&gt;
@@ -291,13 +292,18 @@ In this post, we will go through the funny moments of the event, and how we were
     
     <item>
       <title>RSAjail Writeups - Blue Water CTF 2024</title>
-      <link>https://TheSavageTeddy.github.io/posts/rsajail-bwctf-2024/</link>
-      <pubDate>Tue, 15 Oct 2024 19:00:00 +0800</pubDate>
+      <link>http://localhost:1313/posts/rsajail-bwctf-2024/</link>
+      <pubDate>Tue, 15 Oct 2024 22:00:00 +1100</pubDate>
       
-      <guid>https://TheSavageTeddy.github.io/posts/rsajail-bwctf-2024/</guid>
-      <description>Overview Last weekend I played Blue Water CTF with my team Emu Exploit. We just mananged to get top 10!
-I wasn&amp;rsquo;t planning on playing CTFs at all, but the series of misc challenges, RSAjail, caught my attention, so I proceeded to spend the entirely of Sunday solving them.
-In this post, I will go through each of the challenges, RSAjail-3, RSAjail-2, and RSAjail-1, all made by soon haari. I recommend reading in order, since some techniques from the previous parts may be used in later parts.</description>
+      <guid>http://localhost:1313/posts/rsajail-bwctf-2024/</guid>
+      <description>&lt;h1 id=&#34;overview&#34;&gt;Overview&lt;/h1&gt;
+&lt;p&gt;Last weekend I played &lt;a href=&#34;https://ctftime.org/event/2479&#34;&gt;Blue Water CTF&lt;/a&gt; with my team &lt;a href=&#34;https://ctftime.org/team/160273&#34;&gt;Emu Exploit&lt;/a&gt;. We just mananged to get top 10!&lt;/p&gt;
+
+  &lt;img src=&#34;./img/bw-scoreboard.png&#34;  class=&#34;center&#34;  style=&#34;border-radius: 5px; width: 100%&#34;  /&gt;
+
+
+&lt;p&gt;I wasn&amp;rsquo;t planning on playing CTFs at all, but the series of misc challenges, RSAjail, caught my attention, so I proceeded to spend the entirely of Sunday solving them.&lt;/p&gt;
+&lt;p&gt;In this post, I will go through each of the challenges, RSAjail-3, RSAjail-2, and RSAjail-1, all made by &lt;a href=&#34;https://x.com/ah_p_uh&#34;&gt;soon haari&lt;/a&gt;. I recommend reading in order, since some techniques from the previous parts may be used in later parts.&lt;/p&gt;</description>
       <content>&lt;h1 id=&#34;overview&#34;&gt;Overview&lt;/h1&gt;
 &lt;p&gt;Last weekend I played &lt;a href=&#34;https://ctftime.org/event/2479&#34;&gt;Blue Water CTF&lt;/a&gt; with my team &lt;a href=&#34;https://ctftime.org/team/160273&#34;&gt;Emu Exploit&lt;/a&gt;. We just mananged to get top 10!&lt;/p&gt;
 
@@ -314,15 +320,14 @@ In this post, I will go through each of the challenges, RSAjail-3, RSAjail-2, an
 &lt;h1 id=&#34;rsajail-3---63-solves&#34;&gt;RSAjail-3 - 63 solves&lt;/h1&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Let&amp;rsquo;s learn about RSA!&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;nc rsajail3.chal.perfect.blue 1337&lt;/code&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;&lt;code&gt;nc rsajail3.chal.perfect.blue 1337&lt;/code&gt;&lt;/p&gt;&lt;/blockquote&gt;
 &lt;p&gt;We are given the Python source file that runs on the server:&lt;/p&gt;
 
 
 
   &lt;div class=&#34;collapsable-code&#34;&gt;
-    &lt;input id=&#34;167283495&#34; type=&#34;checkbox&#34;  /&gt;
-    &lt;label for=&#34;167283495&#34;&gt;
+    &lt;input id=&#34;178256439&#34; type=&#34;checkbox&#34;  /&gt;
+    &lt;label for=&#34;178256439&#34;&gt;
       &lt;span class=&#34;collapsable-code__language&#34;&gt;python&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__title&#34;&gt;rsajail-3.py&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__toggle&#34; data-label-expand=&#34;Show&#34; data-label-collapse=&#34;Hide&#34;&gt;&lt;/span&gt;
@@ -500,8 +505,8 @@ verify(pr, m, flag)
 
 
   &lt;div class=&#34;collapsable-code&#34;&gt;
-    &lt;input id=&#34;637194285&#34; type=&#34;checkbox&#34; checked /&gt;
-    &lt;label for=&#34;637194285&#34;&gt;
+    &lt;input id=&#34;984731625&#34; type=&#34;checkbox&#34; checked /&gt;
+    &lt;label for=&#34;984731625&#34;&gt;
       &lt;span class=&#34;collapsable-code__language&#34;&gt;text&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__title&#34;&gt;rsajail-3-sol.txt&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__toggle&#34; data-label-expand=&#34;Show&#34; data-label-collapse=&#34;Hide&#34;&gt;&lt;/span&gt;
@@ -555,8 +560,7 @@ m
 &lt;h1 id=&#34;rsajail-2---20-solves&#34;&gt;RSAjail-2 - 20 solves&lt;/h1&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Let&amp;rsquo;s learn about RSA again!&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;nc rsajail2.chal.perfect.blue 1337&lt;/code&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;&lt;code&gt;nc rsajail2.chal.perfect.blue 1337&lt;/code&gt;&lt;/p&gt;&lt;/blockquote&gt;
 &lt;p&gt;The source code is almost the exact same as RSAjail-3, except this time we are restricted to max 2 characters.&lt;/p&gt;
 
   &lt;img src=&#34;./img/diff.png&#34;  class=&#34;center&#34;  style=&#34;border-radius: 5px; width: 100%&#34;  /&gt;
@@ -690,7 +694,7 @@ SyntaxError: invalid syntax. Perhaps you forgot a comma?
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;[m&lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt;r]
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;final-solve&#34;&gt;Final solve&lt;/h3&gt;
 &lt;p&gt;Now that we have modular inverse and modular exponentiation algorithms implemented, we can simply combine them to get the flag. Keep in mind we need to run this a few times on remote, since we hardcoded loop amount for modular inverse.&lt;/p&gt;
-&lt;p&gt;The &lt;a href=&#34;./rsajail-2-sol.txt&#34;&gt;final code&lt;/a&gt; turned out to be ~70000 lines long, with ~200k characters. Believe it or not, this is nothing compared to RSAjail-1&amp;hellip;&lt;/p&gt;
+&lt;p&gt;The &lt;a href=&#34;http://localhost:1313/posts/rsajail-bwctf-2024/rsajail-2-sol.txt&#34;&gt;final code&lt;/a&gt; turned out to be ~70000 lines long, with ~200k characters. Believe it or not, this is nothing compared to RSAjail-1&amp;hellip;&lt;/p&gt;
 &lt;p&gt;I decided to manually copy and paste it into the terminal. It lagged for a bit, but eventually processed and pasted the characters.&lt;/p&gt;
 
   &lt;img src=&#34;./img/flag-2.png&#34;  class=&#34;center&#34;  style=&#34;border-radius: 5px; width: 100%&#34;  /&gt;
@@ -857,7 +861,7 @@ SyntaxError: invalid syntax. Perhaps you forgot a comma?
   &lt;img src=&#34;./img/fmt-script-1.png&#34;  class=&#34;center&#34;  style=&#34;border-radius: 5px; width: 100%&#34;  /&gt;
 
 
-&lt;p&gt;And thats how you turn one line of code, &lt;code&gt;q=N//p&lt;/code&gt;, into &lt;a href=&#34;f1_fmtted_.txt&#34;&gt;almost 800k lines&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;And thats how you turn one line of code, &lt;code&gt;q=N//p&lt;/code&gt;, into &lt;a href=&#34;http://localhost:1313/posts/rsajail-bwctf-2024/f1_fmtted_.txt&#34;&gt;almost 800k lines&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;That&amp;rsquo;s not the end either - there&amp;rsquo;s still other places that use integer division, such as modular inverse.&lt;/p&gt;
 &lt;h3 id=&#34;integer-division---in-modular-inverse-algorithm&#34;&gt;Integer division - in modular inverse algorithm&lt;/h3&gt;
 &lt;p&gt;Recall our modular inverse algorithm was based off this:&lt;/p&gt;
@@ -945,7 +949,7 @@ SyntaxError: invalid syntax. Perhaps you forgot a comma?
 
 
 &lt;p&gt;&lt;code&gt;bwctf{Did_you_have_fun_with_only_one_variable?_Good_thing_*tuple*_exists_UwU}&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;You can view the final formatted code &lt;a href=&#34;./final_fmtted.txt&#34;&gt;here&lt;/a&gt;, but I suggest reading the &lt;a href=&#34;./f4_final.txt&#34;&gt;unformatted version&lt;/a&gt;. Actually, both of them are practically unreadible, but there you go I guess.&lt;/p&gt;
+&lt;p&gt;You can view the final formatted code &lt;a href=&#34;http://localhost:1313/posts/rsajail-bwctf-2024/final_fmtted.txt&#34;&gt;here&lt;/a&gt;, but I suggest reading the &lt;a href=&#34;http://localhost:1313/posts/rsajail-bwctf-2024/f4_final.txt&#34;&gt;unformatted version&lt;/a&gt;. Actually, both of them are practically unreadible, but there you go I guess.&lt;/p&gt;
 &lt;h1 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h1&gt;
 &lt;p&gt;This was a really nice set of challenges, combining both RSA (crypto?) and Pyjail.&lt;/p&gt;
 &lt;p&gt;Thanks again to the challenge author &lt;a href=&#34;https://x.com/ah_p_uh&#34;&gt;soon haari&lt;/a&gt;, CTF organisers at Blue Water for hosting the event, and congrats to my team for getting top 10!&lt;/p&gt;
@@ -964,13 +968,14 @@ SyntaxError: invalid syntax. Perhaps you forgot a comma?
     
     <item>
       <title>Puppet Writeup - DamnVulnerableDefi V3</title>
-      <link>https://TheSavageTeddy.github.io/posts/puppet-damnvulnerabledefi/</link>
-      <pubDate>Tue, 13 Feb 2024 18:10:00 +0800</pubDate>
+      <link>http://localhost:1313/posts/puppet-damnvulnerabledefi/</link>
+      <pubDate>Tue, 13 Feb 2024 21:10:00 +1100</pubDate>
       
-      <guid>https://TheSavageTeddy.github.io/posts/puppet-damnvulnerabledefi/</guid>
-      <description>This post contains the walkthrough and solutions for Puppet, a challenge from the DamnVulnerableDefi wargame, featuring a price oracle manipulation vulnerability.
-But wait, why another writeup? You may be wondering why I’m making a writeup for this challenge, when there are already tons of other writeups online. Well, many of the writeups online don&amp;rsquo;t actually solve the challenge properly.
-There was a new solve condition added in V3 of DamnVulnerableDefi, which required you, the attacker (player) to only make 1 transaction total.</description>
+      <guid>http://localhost:1313/posts/puppet-damnvulnerabledefi/</guid>
+      <description>&lt;p&gt;This post contains the walkthrough and solutions for &lt;a href=&#34;https://www.damnvulnerabledefi.xyz/challenges/puppet/&#34;&gt;Puppet&lt;/a&gt;, a challenge from the &lt;a href=&#34;https://www.damnvulnerabledefi.xyz&#34;&gt;DamnVulnerableDefi&lt;/a&gt; wargame, featuring a price oracle manipulation vulnerability.&lt;/p&gt;
+&lt;h4 id=&#34;but-wait-why-another-writeup&#34;&gt;But wait, why another writeup?&lt;/h4&gt;
+&lt;p&gt;You may be wondering why I’m making a writeup for this challenge, when there are already tons of other writeups online. Well, many of the writeups online &lt;strong&gt;don&amp;rsquo;t actually solve the challenge properly&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;There was a new solve condition added in V3 of DamnVulnerableDefi, which required you, the attacker (&lt;code&gt;player&lt;/code&gt;) to only make 1 transaction total.&lt;/p&gt;</description>
       <content>&lt;p&gt;This post contains the walkthrough and solutions for &lt;a href=&#34;https://www.damnvulnerabledefi.xyz/challenges/puppet/&#34;&gt;Puppet&lt;/a&gt;, a challenge from the &lt;a href=&#34;https://www.damnvulnerabledefi.xyz&#34;&gt;DamnVulnerableDefi&lt;/a&gt; wargame, featuring a price oracle manipulation vulnerability.&lt;/p&gt;
 &lt;h4 id=&#34;but-wait-why-another-writeup&#34;&gt;But wait, why another writeup?&lt;/h4&gt;
 &lt;p&gt;You may be wondering why I’m making a writeup for this challenge, when there are already tons of other writeups online. Well, many of the writeups online &lt;strong&gt;don&amp;rsquo;t actually solve the challenge properly&lt;/strong&gt;.&lt;/p&gt;
@@ -987,8 +992,7 @@ There was a new solve condition added in V3 of DamnVulnerableDefi, which require
 There’s a DVT market opened in an old &lt;a href=&#34;https://docs.uniswap.org/contracts/v1/overview&#34;&gt;Uniswap v1 exchange&lt;/a&gt;, currently with 10 ETH and 10 DVT in liquidity.
 &lt;br&gt;
 &lt;br&gt;
-Pass the challenge by taking all tokens from the lending pool. You start with 25 ETH and 1000 DVTs in balance.&lt;/p&gt;
-&lt;/blockquote&gt;
+Pass the challenge by taking all tokens from the lending pool. You start with 25 ETH and 1000 DVTs in balance.&lt;/p&gt;&lt;/blockquote&gt;
 &lt;p&gt;We are given source code of the lending pool, the DVT, and the test file:&lt;/p&gt;
 
 
@@ -1458,7 +1462,7 @@ contract PuppetAttack {
   &lt;/div&gt;
 
 &lt;/p&gt;
-&lt;p&gt;Relevant Hardhat solve script (full code &lt;a href=&#34;puppet.challenge.js&#34;&gt;here&lt;/a&gt;):&lt;/p&gt;
+&lt;p&gt;Relevant Hardhat solve script (full code &lt;a href=&#34;http://localhost:1313/posts/puppet-damnvulnerabledefi/puppet.challenge.js&#34;&gt;here&lt;/a&gt;):&lt;/p&gt;
 
 
 
@@ -1566,21 +1570,72 @@ it(&amp;#39;Execution&amp;#39;, async function () {
     
     <item>
       <title>ret2libm - IrisCTF 2023</title>
-      <link>https://TheSavageTeddy.github.io/posts/ret2libm-iris2023/</link>
-      <pubDate>Mon, 09 Jan 2023 00:00:00 +0800</pubDate>
+      <link>http://localhost:1313/posts/ret2libm-iris2023/</link>
+      <pubDate>Mon, 09 Jan 2023 03:00:00 +1100</pubDate>
       
-      <guid>https://TheSavageTeddy.github.io/posts/ret2libm-iris2023/</guid>
-      <description>Overview ret2libm was the 2nd most solved pwn challenge of IrisCTF 2023, written by sera.
-Description:
-I need to make a pwn? Let&amp;rsquo;s go with that standard warmup rop thing&amp;hellip; what was it&amp;hellip; ret2libm?
-We are provided with a zip file containing a binary, source code, libc, libm, and Makefile.
-cchal.c#include &amp;lt;math.h&amp;gt;#include &amp;lt;stdio.h&amp;gt;// gcc -fno-stack-protector -lmint main(int argc, char* argv) {setvbuf(stdin, NULL, _IONBF, 0);setvbuf(stdout, NULL, _IONBF, 0);char yours[8];printf(&amp;#34;Check out my pecs: %p\n&amp;#34;, fabs);printf(&amp;#34;How about yours?</description>
+      <guid>http://localhost:1313/posts/ret2libm-iris2023/</guid>
+      <description>&lt;h1 id=&#34;overview&#34;&gt;Overview&lt;/h1&gt;
+&lt;p&gt;&lt;code&gt;ret2libm&lt;/code&gt; was the 2nd most solved &lt;code&gt;pwn&lt;/code&gt; challenge of &lt;a href=&#34;https://ctftime.org/event/1774&#34;&gt;IrisCTF 2023&lt;/a&gt;, written by &lt;code&gt;sera&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Description:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;I need to make a pwn? Let&amp;rsquo;s go with that standard warmup rop thing&amp;hellip; what was it&amp;hellip; ret2libm?&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;We are provided with a zip file containing a binary, source code, &lt;code&gt;libc&lt;/code&gt;, &lt;code&gt;libm&lt;/code&gt;, and Makefile.&lt;/p&gt;
+
+
+
+  &lt;div class=&#34;collapsable-code&#34;&gt;
+    &lt;input id=&#34;1&#34; type=&#34;checkbox&#34;  /&gt;
+    &lt;label for=&#34;1&#34;&gt;
+      &lt;span class=&#34;collapsable-code__language&#34;&gt;c&lt;/span&gt;
+      &lt;span class=&#34;collapsable-code__title&#34;&gt;chal.c&lt;/span&gt;
+      &lt;span class=&#34;collapsable-code__toggle&#34; data-label-expand=&#34;Show&#34; data-label-collapse=&#34;Hide&#34;&gt;&lt;/span&gt;
+    &lt;/label&gt;
+    &lt;pre class=&#34;language-c&#34; &gt;&lt;code&gt;
+#include &amp;lt;math.h&amp;gt;
+#include &amp;lt;stdio.h&amp;gt;
+
+// gcc -fno-stack-protector -lm
+
+int main(int argc, char* argv) {
+    setvbuf(stdin, NULL, _IONBF, 0);
+    setvbuf(stdout, NULL, _IONBF, 0);
+
+    char yours[8];
+
+    printf(&amp;#34;Check out my pecs: %p\n&amp;#34;, fabs);
+    printf(&amp;#34;How about yours? &amp;#34;);
+    gets(yours);
+    printf(&amp;#34;Let&amp;#39;s see how they stack up.&amp;#34;);
+
+    return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;
+  &lt;/div&gt;
+
+
+
+
+
+  &lt;div class=&#34;collapsable-code&#34;&gt;
+    &lt;input id=&#34;2&#34; type=&#34;checkbox&#34; checked /&gt;
+    &lt;label for=&#34;2&#34;&gt;
+      &lt;span class=&#34;collapsable-code__language&#34;&gt;makefile&lt;/span&gt;
+      &lt;span class=&#34;collapsable-code__title&#34;&gt;Makefile&lt;/span&gt;
+      &lt;span class=&#34;collapsable-code__toggle&#34; data-label-expand=&#34;Show&#34; data-label-collapse=&#34;Hide&#34;&gt;&lt;/span&gt;
+    &lt;/label&gt;
+    &lt;pre class=&#34;language-makefile&#34; &gt;&lt;code&gt;
+chal: chal.c
+    gcc -fno-stack-protector chal.c -o chal -lm
+&lt;/code&gt;&lt;/pre&gt;
+  &lt;/div&gt;
+
+
+&lt;p&gt;The &lt;code&gt;gets()&lt;/code&gt; function is clearly a classic buffer overflow vulnerability as it reads in any amount of bytes regardless of what the buffer &lt;code&gt;yours[8]&lt;/code&gt; can actually hold. Therefore we can overwrite the return pointer &lt;code&gt;rip&lt;/code&gt; and control what code it executes next.&lt;/p&gt;</description>
       <content>&lt;h1 id=&#34;overview&#34;&gt;Overview&lt;/h1&gt;
 &lt;p&gt;&lt;code&gt;ret2libm&lt;/code&gt; was the 2nd most solved &lt;code&gt;pwn&lt;/code&gt; challenge of &lt;a href=&#34;https://ctftime.org/event/1774&#34;&gt;IrisCTF 2023&lt;/a&gt;, written by &lt;code&gt;sera&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;Description:&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;I need to make a pwn? Let&amp;rsquo;s go with that standard warmup rop thing&amp;hellip; what was it&amp;hellip; ret2libm?&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;I need to make a pwn? Let&amp;rsquo;s go with that standard warmup rop thing&amp;hellip; what was it&amp;hellip; ret2libm?&lt;/p&gt;&lt;/blockquote&gt;
 &lt;p&gt;We are provided with a zip file containing a binary, source code, &lt;code&gt;libc&lt;/code&gt;, &lt;code&gt;libm&lt;/code&gt;, and Makefile.&lt;/p&gt;
 
 
@@ -1750,27 +1805,35 @@ PIE:      PIE enabled
     
     <item>
       <title>Crypto Writeups - IrisCTF 2023</title>
-      <link>https://TheSavageTeddy.github.io/posts/crypto-iris2023/</link>
-      <pubDate>Mon, 09 Jan 2023 00:00:00 +0800</pubDate>
+      <link>http://localhost:1313/posts/crypto-iris2023/</link>
+      <pubDate>Mon, 09 Jan 2023 03:00:00 +1100</pubDate>
       
-      <guid>https://TheSavageTeddy.github.io/posts/crypto-iris2023/</guid>
-      <description>Overview I solved 4/6 crypto challenges in IrisCTF 2023, here are the writeups for them.
-Challenges (dynamic scoring):
-babynotrsa by sera - 145 solves babymixup by sera - 98 solves Nonces and Keys by lambda - 53 solves AES-BAD-256 by sera - 18 solves babynotrsa - 145 solves Everyone knows RSA, but everyone also knows that RSA is slow. Why not just use a faster operation than exponentiation?
-We are given a source and output:</description>
+      <guid>http://localhost:1313/posts/crypto-iris2023/</guid>
+      <description>&lt;h1 id=&#34;overview&#34;&gt;Overview&lt;/h1&gt;
+&lt;p&gt;I solved 4/6 crypto challenges in IrisCTF 2023, here are the writeups for them.&lt;/p&gt;
+&lt;p&gt;Challenges (dynamic scoring):&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://localhost:1313/posts/crypto-iris2023/#babynotrsa---145-solves&#34;&gt;&lt;code&gt;babynotrsa&lt;/code&gt;&lt;/a&gt; by &lt;code&gt;sera&lt;/code&gt; - 145 solves&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://localhost:1313/posts/crypto-iris2023/#babymixup---98-solves&#34;&gt;&lt;code&gt;babymixup&lt;/code&gt;&lt;/a&gt; by &lt;code&gt;sera&lt;/code&gt; - 98 solves&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://localhost:1313/posts/crypto-iris2023/#nonces-and-keys---53-solves&#34;&gt;&lt;code&gt;Nonces and Keys&lt;/code&gt;&lt;/a&gt; by &lt;code&gt;lambda&lt;/code&gt; - 53 solves&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://localhost:1313/posts/crypto-iris2023/#aes-bad-256---18-solves&#34;&gt;&lt;code&gt;AES-BAD-256&lt;/code&gt;&lt;/a&gt; by &lt;code&gt;sera&lt;/code&gt; - 18 solves&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;babynotrsa---145-solves&#34;&gt;babynotrsa - 145 solves&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Everyone knows &lt;a href=&#34;https://en.wikipedia.org/wiki/RSA_%28cryptosystem%29&#34;&gt;RSA&lt;/a&gt;, but everyone also knows that RSA is slow. Why not just use a faster operation than exponentiation?&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;We are given a source and output:&lt;/p&gt;</description>
       <content>&lt;h1 id=&#34;overview&#34;&gt;Overview&lt;/h1&gt;
 &lt;p&gt;I solved 4/6 crypto challenges in IrisCTF 2023, here are the writeups for them.&lt;/p&gt;
 &lt;p&gt;Challenges (dynamic scoring):&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#babynotrsa---145-solves&#34;&gt;&lt;code&gt;babynotrsa&lt;/code&gt;&lt;/a&gt; by &lt;code&gt;sera&lt;/code&gt; - 145 solves&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#babymixup---98-solves&#34;&gt;&lt;code&gt;babymixup&lt;/code&gt;&lt;/a&gt; by &lt;code&gt;sera&lt;/code&gt; - 98 solves&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#nonces-and-keys---53-solves&#34;&gt;&lt;code&gt;Nonces and Keys&lt;/code&gt;&lt;/a&gt; by &lt;code&gt;lambda&lt;/code&gt; - 53 solves&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#aes-bad-256---18-solves&#34;&gt;&lt;code&gt;AES-BAD-256&lt;/code&gt;&lt;/a&gt; by &lt;code&gt;sera&lt;/code&gt; - 18 solves&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://localhost:1313/posts/crypto-iris2023/#babynotrsa---145-solves&#34;&gt;&lt;code&gt;babynotrsa&lt;/code&gt;&lt;/a&gt; by &lt;code&gt;sera&lt;/code&gt; - 145 solves&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://localhost:1313/posts/crypto-iris2023/#babymixup---98-solves&#34;&gt;&lt;code&gt;babymixup&lt;/code&gt;&lt;/a&gt; by &lt;code&gt;sera&lt;/code&gt; - 98 solves&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://localhost:1313/posts/crypto-iris2023/#nonces-and-keys---53-solves&#34;&gt;&lt;code&gt;Nonces and Keys&lt;/code&gt;&lt;/a&gt; by &lt;code&gt;lambda&lt;/code&gt; - 53 solves&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://localhost:1313/posts/crypto-iris2023/#aes-bad-256---18-solves&#34;&gt;&lt;code&gt;AES-BAD-256&lt;/code&gt;&lt;/a&gt; by &lt;code&gt;sera&lt;/code&gt; - 18 solves&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h1 id=&#34;babynotrsa---145-solves&#34;&gt;babynotrsa - 145 solves&lt;/h1&gt;
 &lt;blockquote&gt;
-&lt;p&gt;Everyone knows &lt;a href=&#34;https://en.wikipedia.org/wiki/RSA_(cryptosystem)&#34;&gt;RSA&lt;/a&gt;, but everyone also knows that RSA is slow. Why not just use a faster operation than exponentiation?&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;Everyone knows &lt;a href=&#34;https://en.wikipedia.org/wiki/RSA_%28cryptosystem%29&#34;&gt;RSA&lt;/a&gt;, but everyone also knows that RSA is slow. Why not just use a faster operation than exponentiation?&lt;/p&gt;&lt;/blockquote&gt;
 &lt;p&gt;We are given a source and output:&lt;/p&gt;
 
 
@@ -1849,8 +1912,7 @@ flag: 39545236548455985927301569372696881408674800611184573074359458755790286957
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;code&gt;irisctf{discrete_divide_isn&#39;t_hard}&lt;/code&gt;&lt;/p&gt;
 &lt;h1 id=&#34;babymixup---98-solves&#34;&gt;babymixup - 98 solves&lt;/h1&gt;
 &lt;blockquote&gt;
-&lt;p&gt;I encrypted a public string and the flag with AES. There&amp;rsquo;s no known key recovery attacks against AES, so you can&amp;rsquo;t decrypt the flag.&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;I encrypted a public string and the flag with AES. There&amp;rsquo;s no known key recovery attacks against AES, so you can&amp;rsquo;t decrypt the flag.&lt;/p&gt;&lt;/blockquote&gt;
 &lt;p&gt;Given source and output:&lt;/p&gt;
 
 
@@ -1936,8 +1998,7 @@ CT2 = f6816a603cefb0a0fd8a23a804b921bf489116fcc11d650c6ffb3fc0aae9393409c8f4f24c
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;code&gt;irisctf{the_iv_aint_secret_either_way_using_cbc}&lt;/code&gt;&lt;/p&gt;
 &lt;h1 id=&#34;nonces-and-keys---53-solves&#34;&gt;Nonces and Keys - 53 solves&lt;/h1&gt;
 &lt;blockquote&gt;
-&lt;p&gt;Because of our revolutionary AES-128-OFB technology we have encrypted your user data so securely that even with the key (k=0x13371337133713371337133713371337) evil hackers can&amp;rsquo;t read out the passwords!!!&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;Because of our revolutionary AES-128-OFB technology we have encrypted your user data so securely that even with the key (k=0x13371337133713371337133713371337) evil hackers can&amp;rsquo;t read out the passwords!!!&lt;/p&gt;&lt;/blockquote&gt;
 &lt;p&gt;We are provided with an encrypted sqlite3 file &lt;code&gt;challenge_enc.sqlite3&lt;/code&gt;. Our goal is to decrypt it.&lt;/p&gt;
 &lt;p&gt;Already given in the challenge description, the key is &lt;code&gt;0x13371337133713371337133713371337&lt;/code&gt; and the file is encrypted using &lt;code&gt;AES-128-OFB&lt;/code&gt;. Again, we can pull up a diagram.&lt;/p&gt;
 
@@ -1986,8 +2047,7 @@ CT2 = f6816a603cefb0a0fd8a23a804b921bf489116fcc11d650c6ffb3fc0aae9393409c8f4f24c
 &lt;p&gt;&lt;code&gt;irisctf{g0tt4_l0v3_s7re4mciph3rs}&lt;/code&gt;&lt;/p&gt;
 &lt;h1 id=&#34;aes-bad-256---18-solves&#34;&gt;AES-BAD-256 - 18 solves&lt;/h1&gt;
 &lt;blockquote&gt;
-&lt;p&gt;I heard that some common block cipher modes have lots of footguns - using none (ECB) results in the legendary &lt;a href=&#34;https://words.filippo.io/the-ecb-penguin/&#34;&gt;ECB Penguin&lt;/a&gt;, while others are vulnerable to &lt;a href=&#34;https://en.wikipedia.org/wiki/Bit-flipping_attack&#34;&gt;bit flipping&lt;/a&gt; and &lt;a href=&#34;https://en.wikipedia.org/wiki/Padding_oracle_attack&#34;&gt;padding&lt;/a&gt; attacks, so I made my own that would never fall to such a technique.&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;I heard that some common block cipher modes have lots of footguns - using none (ECB) results in the legendary &lt;a href=&#34;https://words.filippo.io/the-ecb-penguin/&#34;&gt;ECB Penguin&lt;/a&gt;, while others are vulnerable to &lt;a href=&#34;https://en.wikipedia.org/wiki/Bit-flipping_attack&#34;&gt;bit flipping&lt;/a&gt; and &lt;a href=&#34;https://en.wikipedia.org/wiki/Padding_oracle_attack&#34;&gt;padding&lt;/a&gt; attacks, so I made my own that would never fall to such a technique.&lt;/p&gt;&lt;/blockquote&gt;
 &lt;p&gt;I&amp;rsquo;m going to admit - I cheesed this challenge quite hard with bruteforce, but in my defense it was 3am&amp;hellip;&lt;/p&gt;
 
   &lt;img src=&#34;./img/3amflag.png&#34;  class=&#34;center&#34;  style=&#34;border-radius: 5px; width: 50%;&#34;  /&gt;
@@ -2117,13 +2177,13 @@ if __name__ == &amp;#34;__main__&amp;#34;:
 
 &lt;p&gt;and yep, it does indeed look vulnerable to bit-flipping attacks! Notice &lt;code&gt;echo&lt;/code&gt; -&amp;gt; &lt;code&gt;zcho&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;The server generates us a ciphertext of command &lt;code&gt;echo&lt;/code&gt; with some data, and our goal is to flip bits to make the command &lt;code&gt;flag&lt;/code&gt;, which gives us the flag.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-py&#34; data-lang=&#34;py&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;match command[&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;type&amp;#34;&lt;/span&gt;]:
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    case &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;echo&amp;#34;&lt;/span&gt;:
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-py&#34; data-lang=&#34;py&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;match&lt;/span&gt; command[&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;type&amp;#34;&lt;/span&gt;]:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;case&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;echo&amp;#34;&lt;/span&gt;:
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; command&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;get(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;msg&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Hello world!&amp;#34;&lt;/span&gt;)
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    case &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;flag&amp;#34;&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;case&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;flag&amp;#34;&lt;/span&gt;:
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#66d9ef&#34;&gt;with&lt;/span&gt; open(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;/flag&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;r&amp;#34;&lt;/span&gt;) &lt;span style=&#34;color:#66d9ef&#34;&gt;as&lt;/span&gt; f:
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; f&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;read()
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    case other:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;case&lt;/span&gt; other:
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;f&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Unknown command type &lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;{&lt;/span&gt;command[&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;type&amp;#39;&lt;/span&gt;]&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;...&amp;#34;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;What&amp;rsquo;s super useful is that if the command is not valid, it tells us what our command was! Essentially, we get feedback about what bit we flipped something to.&lt;/p&gt;
 &lt;p&gt;Now, remember the modification - block orders are random, therefore we will script to flip bits from every block and observe the feedback to see if we flipped the right bits. Our goal is to figure out which blocks need to be flipped to change the &lt;code&gt;echo&lt;/code&gt; text.&lt;/p&gt;
@@ -2284,14 +2344,20 @@ print(dat)
     
     <item>
       <title>Full Writeups - Hack A Bit CTF Finals 0x01</title>
-      <link>https://TheSavageTeddy.github.io/posts/writeups-hackabit2023finals/</link>
-      <pubDate>Sun, 21 May 2023 00:00:00 +0800</pubDate>
+      <link>http://localhost:1313/posts/writeups-hackabit2023finals/</link>
+      <pubDate>Sun, 21 May 2023 02:00:00 +1000</pubDate>
       
-      <guid>https://TheSavageTeddy.github.io/posts/writeups-hackabit2023finals/</guid>
-      <description>Overview Hack a Bit is a competition for highschoolers with the aim to promote cybersecurity. This round was the finals and I managed to place 2nd overall!
-Below are writeups for all the challenges in the finals. If I&amp;rsquo;ve missed anything or made a mistake like a typo, please let me know on discord TheSavageTeddy#7458. Enjoy!
-Challenge Categories dvGPT (Web Exploitation) - 4 challenges
-Corruption (Rev/Binary Exploitation) - 4 challenges</description>
+      <guid>http://localhost:1313/posts/writeups-hackabit2023finals/</guid>
+      <description>&lt;h1 id=&#34;overview&#34;&gt;Overview&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.hackabit.com/&#34;&gt;Hack a Bit&lt;/a&gt; is a competition for highschoolers with the aim to promote cybersecurity. This round was the finals and I managed to place &lt;code&gt;2nd&lt;/code&gt; overall!&lt;/p&gt;
+
+  &lt;img src=&#34;./img/scoreboard.png&#34;  class=&#34;center&#34;  style=&#34;border-radius: 5px; width: 100%;&#34;  /&gt;
+
+
+&lt;p&gt;Below are writeups for all the challenges in the finals. If I&amp;rsquo;ve missed anything or made a mistake like a typo, please let me know on discord &lt;code&gt;TheSavageTeddy#7458&lt;/code&gt;. Enjoy!&lt;/p&gt;
+&lt;h1 id=&#34;challenge-categories&#34;&gt;Challenge Categories&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&#34;http://localhost:1313/posts/writeups-hackabit2023finals/#1-dvgpt&#34;&gt;&lt;code&gt;dvGPT&lt;/code&gt; (Web Exploitation)&lt;/a&gt; - 4 challenges&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://localhost:1313/posts/writeups-hackabit2023finals/#2-corruption&#34;&gt;&lt;code&gt;Corruption&lt;/code&gt; (Rev/Binary Exploitation)&lt;/a&gt; - 4 challenges&lt;/p&gt;</description>
       <content>&lt;h1 id=&#34;overview&#34;&gt;Overview&lt;/h1&gt;
 &lt;p&gt;&lt;a href=&#34;https://www.hackabit.com/&#34;&gt;Hack a Bit&lt;/a&gt; is a competition for highschoolers with the aim to promote cybersecurity. This round was the finals and I managed to place &lt;code&gt;2nd&lt;/code&gt; overall!&lt;/p&gt;
 
@@ -2300,19 +2366,17 @@ Corruption (Rev/Binary Exploitation) - 4 challenges</description>
 
 &lt;p&gt;Below are writeups for all the challenges in the finals. If I&amp;rsquo;ve missed anything or made a mistake like a typo, please let me know on discord &lt;code&gt;TheSavageTeddy#7458&lt;/code&gt;. Enjoy!&lt;/p&gt;
 &lt;h1 id=&#34;challenge-categories&#34;&gt;Challenge Categories&lt;/h1&gt;
-&lt;p&gt;&lt;a href=&#34;#1-dvgpt&#34;&gt;&lt;code&gt;dvGPT&lt;/code&gt; (Web Exploitation)&lt;/a&gt; - 4 challenges&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;#2-corruption&#34;&gt;&lt;code&gt;Corruption&lt;/code&gt; (Rev/Binary Exploitation)&lt;/a&gt; - 4 challenges&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;#3-triage&#34;&gt;&lt;code&gt;Triage&lt;/code&gt; (Cryptography/Forensics)&lt;/a&gt; - 4 challenges&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;#4-range--zz-king-of-the-hill&#34;&gt;&lt;code&gt;Range &amp;amp; King of The Hill&lt;/code&gt; (Machines/Attack Defense)&lt;/a&gt; - 4 challenges + 8 Attack Defense Flags&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://localhost:1313/posts/writeups-hackabit2023finals/#1-dvgpt&#34;&gt;&lt;code&gt;dvGPT&lt;/code&gt; (Web Exploitation)&lt;/a&gt; - 4 challenges&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://localhost:1313/posts/writeups-hackabit2023finals/#2-corruption&#34;&gt;&lt;code&gt;Corruption&lt;/code&gt; (Rev/Binary Exploitation)&lt;/a&gt; - 4 challenges&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://localhost:1313/posts/writeups-hackabit2023finals/#3-triage&#34;&gt;&lt;code&gt;Triage&lt;/code&gt; (Cryptography/Forensics)&lt;/a&gt; - 4 challenges&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://localhost:1313/posts/writeups-hackabit2023finals/#4-range--zz-king-of-the-hill&#34;&gt;&lt;code&gt;Range &amp;amp; King of The Hill&lt;/code&gt; (Machines/Attack Defense)&lt;/a&gt; - 4 challenges + 8 Attack Defense Flags&lt;/p&gt;
 &lt;h1 id=&#34;1-dvgpt&#34;&gt;1. dvGPT&lt;/h1&gt;
 &lt;p&gt;This category contained 4 web challenges, all based on the same website, hosting chatbot similar to chatGPT, which was quite interesting and fun!&lt;/p&gt;
 &lt;h2 id=&#34;leaky-75&#34;&gt;Leaky (75)&lt;/h2&gt;
 &lt;blockquote&gt;
-&lt;p&gt;Author: Nate Singer (Helix)&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;Author: Nate Singer (Helix)&lt;/p&gt;&lt;/blockquote&gt;
 &lt;blockquote&gt;
-&lt;p&gt;People leave dumb comments about vulnerabilities all over client-side code&amp;hellip; most modern web applications don&amp;rsquo;t display all the possible code at once though, for a variety of reasons.&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;People leave dumb comments about vulnerabilities all over client-side code&amp;hellip; most modern web applications don&amp;rsquo;t display all the possible code at once though, for a variety of reasons.&lt;/p&gt;&lt;/blockquote&gt;
 &lt;p&gt;We are given a link to a website, which hosts an AI similar to chatGPT. The description hints at &amp;lsquo;client-side code&amp;rsquo; so we inspect element, and find the flag in a javascript file in 2 parts.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-js&#34; data-lang=&#34;js&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                &lt;span style=&#34;color:#66d9ef&#34;&gt;class&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;intro-window&amp;#34;&lt;/span&gt;,
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                &lt;span style=&#34;color:#a6e22e&#34;&gt;id&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;flag{the_DOM_is_like_&amp;#34;&lt;/span&gt;
@@ -2329,11 +2393,9 @@ Corruption (Rev/Binary Exploitation) - 4 challenges</description>
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Flag: &lt;code&gt;flag{the_DOM_is_like_crazy_virtual_maaaan}&lt;/code&gt;&lt;/p&gt;
 &lt;h2 id=&#34;extractor-100&#34;&gt;Extractor (100)&lt;/h2&gt;
 &lt;blockquote&gt;
-&lt;p&gt;Author: Nate Singer (Helix)&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;Author: Nate Singer (Helix)&lt;/p&gt;&lt;/blockquote&gt;
 &lt;blockquote&gt;
-&lt;p&gt;We gave dvGPT a flag and for some reason trust it to keep it safe. These AIs are super duper secure my dude.&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;We gave dvGPT a flag and for some reason trust it to keep it safe. These AIs are super duper secure my dude.&lt;/p&gt;&lt;/blockquote&gt;
 &lt;p&gt;Sounds like prompt engineering. We simply ask for the flag, in words I guess.&lt;/p&gt;
 
   &lt;img src=&#34;./img/web1.png&#34;  class=&#34;center&#34;  style=&#34;border-radius: 5px; width: 100%;&#34;  /&gt;
@@ -2342,14 +2404,11 @@ Corruption (Rev/Binary Exploitation) - 4 challenges</description>
 &lt;p&gt;Flag: `flag{hey_you&amp;rsquo;re_not_robert}&lt;/p&gt;
 &lt;h2 id=&#34;badml-125&#34;&gt;BadML (125)&lt;/h2&gt;
 &lt;blockquote&gt;
-&lt;p&gt;Author: Nate Singer (Helix)&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;Author: Nate Singer (Helix)&lt;/p&gt;&lt;/blockquote&gt;
 &lt;blockquote&gt;
-&lt;p&gt;Where does all this data come from? Have you found all the app endpoints?&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;Where does all this data come from? Have you found all the app endpoints?&lt;/p&gt;&lt;/blockquote&gt;
 &lt;blockquote&gt;
-&lt;p&gt;The flag is located at ./flag.txt&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;The flag is located at ./flag.txt&lt;/p&gt;&lt;/blockquote&gt;
 &lt;p&gt;Lets look around the website. Using burpsuite, we can find what resources the website requests and loads, and upon some digging we find it sends a get request to &lt;code&gt;/footer?message=default&lt;/code&gt; to get the footer message.&lt;/p&gt;
 
   &lt;img src=&#34;./img/web2.png&#34;  class=&#34;center&#34;  style=&#34;border-radius: 5px; width: 100%;&#34;  /&gt;
@@ -2363,20 +2422,15 @@ Corruption (Rev/Binary Exploitation) - 4 challenges</description>
 &lt;p&gt;And we get the flag: &lt;code&gt;flag{LFI_LetsgoFindIt}&lt;/code&gt;. Note that you don&amp;rsquo;t need to use burpsuite repeater - visiting &lt;code&gt;/footer?message=flag.txt&lt;/code&gt; works too.&lt;/p&gt;
 &lt;h2 id=&#34;badai-150&#34;&gt;BadAI (150)&lt;/h2&gt;
 &lt;blockquote&gt;
-&lt;p&gt;Author: Nate Singer (Helix)&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;Author: Nate Singer (Helix)&lt;/p&gt;&lt;/blockquote&gt;
 &lt;blockquote&gt;
-&lt;p&gt;So we have this guy named Bill that works here&amp;ndash;he handles the support tickets for dvGPT. If you have any problems let us know and Bill will check it out. Bill does nothing but stare at the ticket feed, so you can expect him to check your request within a couple seconds.&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;So we have this guy named Bill that works here&amp;ndash;he handles the support tickets for dvGPT. If you have any problems let us know and Bill will check it out. Bill does nothing but stare at the ticket feed, so you can expect him to check your request within a couple seconds.&lt;/p&gt;&lt;/blockquote&gt;
 &lt;blockquote&gt;
-&lt;p&gt;Bill can only view pages from dvGPT though, so don&amp;rsquo;t bother sending him anything else.&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;Bill can only view pages from dvGPT though, so don&amp;rsquo;t bother sending him anything else.&lt;/p&gt;&lt;/blockquote&gt;
 &lt;blockquote&gt;
-&lt;p&gt;The flag is stored in a cookie in Bill&amp;rsquo;s browser.&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;The flag is stored in a cookie in Bill&amp;rsquo;s browser.&lt;/p&gt;&lt;/blockquote&gt;
 &lt;blockquote&gt;
-&lt;p&gt;&amp;ndash; If you think you&amp;rsquo;re close feel free to DM me (Nate) and I will help you depending on what you&amp;rsquo;re asking and how close you are. There are some browser nuances you might not be aware of and if you are 99% of the way there we&amp;rsquo;ll probably give it to you.&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;&amp;ndash; If you think you&amp;rsquo;re close feel free to DM me (Nate) and I will help you depending on what you&amp;rsquo;re asking and how close you are. There are some browser nuances you might not be aware of and if you are 99% of the way there we&amp;rsquo;ll probably give it to you.&lt;/p&gt;&lt;/blockquote&gt;
 &lt;p&gt;Every part of the description hints to this being an &lt;a href=&#34;https://portswigger.net/web-security/cross-site-scripting&#34;&gt;XSS&lt;/a&gt; challenge - almost every time when the goal is to steal a bot&amp;rsquo;s cookie, it is done through XSS.&lt;/p&gt;
 
   &lt;img src=&#34;./img/web4.png&#34;  class=&#34;center&#34;  style=&#34;border-radius: 5px; width: 100%;&#34;  /&gt;
@@ -2401,14 +2455,11 @@ Corruption (Rev/Binary Exploitation) - 4 challenges</description>
 &lt;p&gt;This category contained 4 challenges based on binaries - reverse engineering and binary exploitation were needed to solve all 4! Also, all the challenges used the same binary&amp;hellip;&lt;/p&gt;
 &lt;h2 id=&#34;santa-75&#34;&gt;Santa (75)&lt;/h2&gt;
 &lt;blockquote&gt;
-&lt;p&gt;You all asked for it so here it is, an intro to binary exploitation!&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;You all asked for it so here it is, an intro to binary exploitation!&lt;/p&gt;&lt;/blockquote&gt;
 &lt;blockquote&gt;
-&lt;p&gt;Let&amp;rsquo;s get started nice and simple, baby steps to reverse engineering (RE).&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;Let&amp;rsquo;s get started nice and simple, baby steps to reverse engineering (RE).&lt;/p&gt;&lt;/blockquote&gt;
 &lt;blockquote&gt;
-&lt;p&gt;All challenges in this section use the same binary. The target is x86 and ASLR is on but it shouldn&amp;rsquo;t be relevant to any of your exploits.&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;All challenges in this section use the same binary. The target is x86 and ASLR is on but it shouldn&amp;rsquo;t be relevant to any of your exploits.&lt;/p&gt;&lt;/blockquote&gt;
 &lt;p&gt;We get a binary file. We can simply strings grep the file to get the flag - not much reverse engineering involved, I guess. Flag: &lt;code&gt;flag{baby_steps_gift_just_for_you}&lt;/code&gt;&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;uwuteddy@DESKTOP-5BVRVO8:~$ strings corruption |grep -i flag
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;flag&lt;span style=&#34;color:#f92672&#34;&gt;{&lt;/span&gt;baby_steps_gift_just_for_you&lt;span style=&#34;color:#f92672&#34;&gt;}&lt;/span&gt;
@@ -2416,8 +2467,7 @@ Corruption (Rev/Binary Exploitation) - 4 challenges</description>
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;controller_flag
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h1 id=&#34;coredump-100&#34;&gt;Coredump (100)&lt;/h1&gt;
 &lt;blockquote&gt;
-&lt;p&gt;Now that we have at least inspected the binary, lets go a bit deeper. You can&amp;rsquo;t just overflow the buffer with a bunch of A&amp;rsquo;s&amp;ndash;reverse engineer the software and figure out your payload format. Smash the stack to get the flag, no control necessary yet. Once you have a working exploit, fire it against the remote target to get the real flag.&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;Now that we have at least inspected the binary, lets go a bit deeper. You can&amp;rsquo;t just overflow the buffer with a bunch of A&amp;rsquo;s&amp;ndash;reverse engineer the software and figure out your payload format. Smash the stack to get the flag, no control necessary yet. Once you have a working exploit, fire it against the remote target to get the real flag.&lt;/p&gt;&lt;/blockquote&gt;
 &lt;p&gt;From the description: smash the stack, no control necessary &lt;em&gt;yet&lt;/em&gt;. Upon running the binary locally, and smashing the stack by sending a bunch of characters, nothing really happens. Decompiling the binary &lt;a href=&#34;https://dogbolt.org/?id=a1a87852-0a8c-451d-a408-efcc14a3d4a9&#34;&gt;online&lt;/a&gt; we see what is going on - it seems like these flags are loaded from environment variables, which are of course, not set locally.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-c&#34; data-lang=&#34;c&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;flag_function&lt;/span&gt;()
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;{
@@ -2487,12 +2537,10 @@ Corruption (Rev/Binary Exploitation) - 4 challenges</description>
 &lt;h2 id=&#34;bitsandbytes-125--controller-150&#34;&gt;bitsANDbytes (125) &amp;amp; Controller (150)&lt;/h2&gt;
 &lt;p&gt;bitsANDbytes:&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;Now that you have the ability to smash the stack, it&amp;rsquo;s time to get control of the instruction pointer. Use your reverse engineering to figure out proper addresses, we&amp;rsquo;ve given you the code required to pull the flag.&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;Now that you have the ability to smash the stack, it&amp;rsquo;s time to get control of the instruction pointer. Use your reverse engineering to figure out proper addresses, we&amp;rsquo;ve given you the code required to pull the flag.&lt;/p&gt;&lt;/blockquote&gt;
 &lt;p&gt;Controller:&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;Nice, last step, you have a leak but not for the right function, how can we tackle this problem?&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;Nice, last step, you have a leak but not for the right function, how can we tackle this problem?&lt;/p&gt;&lt;/blockquote&gt;
 &lt;p&gt;Okay, let me address something - remember how these challenges all used the same binary? Well, as discussed previously, the flags were stored in environment variables! That means, if we were to get a shell on the remote, we could simply read the environment variables and get all the flags!!!&lt;/p&gt;
 &lt;p&gt;But first of all, let&amp;rsquo;s address the vulnerability. From before, we have a buffer overflow (BOF) vulnerability, but the max bytes we can overwrite is only 10, which usually isn&amp;rsquo;t enough to completely overwrite the return pointer &lt;code&gt;rip&lt;/code&gt; to redirect code execution.&lt;/p&gt;
 &lt;p&gt;The second vulnerability lies here:&lt;/p&gt;
@@ -2562,14 +2610,11 @@ Corruption (Rev/Binary Exploitation) - 4 challenges</description>
 &lt;p&gt;We are given a set of 4 cryptography/forensics challenges - there are 2 wireshark challenges that are linked (use same file).&lt;/p&gt;
 &lt;h2 id=&#34;sluth-75&#34;&gt;Sluth (75)&lt;/h2&gt;
 &lt;blockquote&gt;
-&lt;p&gt;Author: Nate Singer (Helix)&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;Author: Nate Singer (Helix)&lt;/p&gt;&lt;/blockquote&gt;
 &lt;blockquote&gt;
-&lt;p&gt;Everything in life is iterative&amp;hellip;&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;Everything in life is iterative&amp;hellip;&lt;/p&gt;&lt;/blockquote&gt;
 &lt;blockquote&gt;
-&lt;p&gt;NON-STANDARD FLAG FORMAT&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;NON-STANDARD FLAG FORMAT&lt;/p&gt;&lt;/blockquote&gt;
 &lt;p&gt;We are given a (very large) file containing dots, dashes and slashes, hinting to morse code. Using cyberchef, we can decode from morse code, only to be met with more morse code! Decoding 5 times however, gives us the flag.&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;Note: If you encountered problems doing this challenge, it might be due to the newline at the end of the text file which may cause some decoding issues.&lt;/em&gt;&lt;/p&gt;
 
@@ -2579,14 +2624,11 @@ Corruption (Rev/Binary Exploitation) - 4 challenges</description>
 &lt;p&gt;Flag: &lt;code&gt;FIVE_TIMES_0.O&lt;/code&gt;&lt;/p&gt;
 &lt;h2 id=&#34;inspector-100&#34;&gt;Inspector (100)&lt;/h2&gt;
 &lt;blockquote&gt;
-&lt;p&gt;Author: Nate Singer (Helix)&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;Author: Nate Singer (Helix)&lt;/p&gt;&lt;/blockquote&gt;
 &lt;blockquote&gt;
-&lt;p&gt;It&amp;rsquo;s just a simple stream challenge, how hard can it be?&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;It&amp;rsquo;s just a simple stream challenge, how hard can it be?&lt;/p&gt;&lt;/blockquote&gt;
 &lt;blockquote&gt;
-&lt;p&gt;Both challenges for this section use the same pcapng file.&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;Both challenges for this section use the same pcapng file.&lt;/p&gt;&lt;/blockquote&gt;
 &lt;p&gt;We are given a packet capture pcapng file. Following the TCP stream, we eventually find the flag at stream 48.&lt;/p&gt;
 
   &lt;img src=&#34;./img/cry2.png&#34;  class=&#34;center&#34;  style=&#34;border-radius: 5px; width: 100%;&#34;  /&gt;
@@ -2595,8 +2637,7 @@ Corruption (Rev/Binary Exploitation) - 4 challenges</description>
 &lt;p&gt;Flag: &lt;code&gt;flag{tcp_streams_reveal_more}&lt;/code&gt;&lt;/p&gt;
 &lt;h2 id=&#34;coverup-125&#34;&gt;Coverup (125)&lt;/h2&gt;
 &lt;blockquote&gt;
-&lt;p&gt;There is a challenge hidden in coverup.jpg, extract the flag and profit.&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;There is a challenge hidden in coverup.jpg, extract the flag and profit.&lt;/p&gt;&lt;/blockquote&gt;
 &lt;p&gt;We are given &lt;code&gt;challenge.jpg&lt;/code&gt;. As an image file, we do some basic analysis on it - &lt;code&gt;binwalk&lt;/code&gt;, &lt;code&gt;exiftool&lt;/code&gt;, &lt;code&gt;strings&lt;/code&gt;, and &lt;code&gt;stegsolve&lt;/code&gt;. None of these really return any results, so we use &lt;code&gt;steghide&lt;/code&gt;, an image stegonography tool that can hide and extract data with passwords, which turns out to be the solution. (&lt;code&gt;stegseek&lt;/code&gt;, the program I used in the image is simply &lt;code&gt;steghide&lt;/code&gt; but can brute force passwords from a wordlist, very fast. There was no password however.)&lt;/p&gt;
 
   &lt;img src=&#34;./img/cry3.png&#34;  class=&#34;center&#34;  style=&#34;border-radius: 5px; width: 100%;&#34;  /&gt;
@@ -2605,14 +2646,11 @@ Corruption (Rev/Binary Exploitation) - 4 challenges</description>
 &lt;p&gt;Flag: &lt;code&gt;flag{the_truth_is_burried_deep}&lt;/code&gt;&lt;/p&gt;
 &lt;h2 id=&#34;extraction-150&#34;&gt;Extraction (150)&lt;/h2&gt;
 &lt;blockquote&gt;
-&lt;p&gt;Author: Nate Singer (Helix)&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;Author: Nate Singer (Helix)&lt;/p&gt;&lt;/blockquote&gt;
 &lt;blockquote&gt;
-&lt;p&gt;Check out the pcap file, something weird is going on in here&amp;hellip;&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;Check out the pcap file, something weird is going on in here&amp;hellip;&lt;/p&gt;&lt;/blockquote&gt;
 &lt;blockquote&gt;
-&lt;p&gt;Both challenges for this section use the same pcapng file.&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;Both challenges for this section use the same pcapng file.&lt;/p&gt;&lt;/blockquote&gt;
 &lt;p&gt;Back to the wireshark pcapng challenge - as we continue to explore the file, we find some interesting data at around TCP stream ~110-140&lt;/p&gt;
 
   &lt;img src=&#34;./img/cry4.png&#34;  class=&#34;center&#34;  style=&#34;border-radius: 5px; width: 100%;&#34;  /&gt;
@@ -2633,14 +2671,11 @@ Corruption (Rev/Binary Exploitation) - 4 challenges</description>
 &lt;p&gt;These challenges involved attacking a machine, similar to &lt;a href=&#34;https://www.hackthebox.com/&#34;&gt;HackTheBox&lt;/a&gt;! There is also attack defense components of it, being linked to King of the Hill.&lt;/p&gt;
 &lt;h2 id=&#34;connection-75&#34;&gt;Connection (75)&lt;/h2&gt;
 &lt;blockquote&gt;
-&lt;p&gt;Author: Nate Singer (Helix)&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;Author: Nate Singer (Helix)&lt;/p&gt;&lt;/blockquote&gt;
 &lt;blockquote&gt;
-&lt;p&gt;This section is a series of challenges in a semi-isolated cyber range. Your goal is to compromise the boxes and get the flags. Your first challenge is more of a sanity-check/confirmation. We wanted to use private keys for this but logistics of distributing them was challenge so its just password login for now. Check your email, at exactly 5pm PST Friday you received a credential and IP address for this jumpbox. You can also use the connection info listed below.&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;This section is a series of challenges in a semi-isolated cyber range. Your goal is to compromise the boxes and get the flags. Your first challenge is more of a sanity-check/confirmation. We wanted to use private keys for this but logistics of distributing them was challenge so its just password login for now. Check your email, at exactly 5pm PST Friday you received a credential and IP address for this jumpbox. You can also use the connection info listed below.&lt;/p&gt;&lt;/blockquote&gt;
 &lt;blockquote&gt;
-&lt;p&gt;You will use this jumpbox to attack other machines in the network. We&amp;rsquo;ve installed nmap, metasploit and netcat for your convience. If you want other tooling installed later please reach out to staff and will consider those requests as you ask. Remember that you can use techniques like proxychains over SSH to emulate much of this functionality.&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;You will use this jumpbox to attack other machines in the network. We&amp;rsquo;ve installed nmap, metasploit and netcat for your convience. If you want other tooling installed later please reach out to staff and will consider those requests as you ask. Remember that you can use techniques like proxychains over SSH to emulate much of this functionality.&lt;/p&gt;&lt;/blockquote&gt;
 &lt;p&gt;From the email we recieved, we &lt;code&gt;ssh&lt;/code&gt; to the machine. Looking around, we find the flag at &lt;code&gt;/opt/flag.txt&lt;/code&gt;.&lt;/p&gt;
 
   &lt;img src=&#34;./img/box1.png&#34;  class=&#34;center&#34;  style=&#34;border-radius: 5px; width: 100%;&#34;  /&gt;
@@ -2649,14 +2684,11 @@ Corruption (Rev/Binary Exploitation) - 4 challenges</description>
 &lt;p&gt;Flag: &lt;code&gt;flag{welcome_to_the_range}&lt;/code&gt;&lt;/p&gt;
 &lt;h2 id=&#34;rightface-100&#34;&gt;RightFace (100)&lt;/h2&gt;
 &lt;blockquote&gt;
-&lt;p&gt;Author: Nate Singer (Helix)&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;Author: Nate Singer (Helix)&lt;/p&gt;&lt;/blockquote&gt;
 &lt;blockquote&gt;
-&lt;p&gt;If you did the more advanced challenges during the qualifier this should already be familiar. Your goal here is to compromise the 10.128.0.5 machine and get access as the breakme user.&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;If you did the more advanced challenges during the qualifier this should already be familiar. Your goal here is to compromise the 10.128.0.5 machine and get access as the breakme user.&lt;/p&gt;&lt;/blockquote&gt;
 &lt;blockquote&gt;
-&lt;p&gt;Remember that there may be non-vulnerable services on the machine. Recon is the #1 priority. Keep this shell open once you have it, you&amp;rsquo;ll need it for Left Face.&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;Remember that there may be non-vulnerable services on the machine. Recon is the #1 priority. Keep this shell open once you have it, you&amp;rsquo;ll need it for Left Face.&lt;/p&gt;&lt;/blockquote&gt;
 &lt;p&gt;We are told to compromise the &lt;code&gt;10.128.0.5&lt;/code&gt; machine, and gain access as &lt;code&gt;breakme&lt;/code&gt;.&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;Not shown: 998 closed ports
 PORT   STATE SERVICE VERSION
@@ -2673,11 +2705,9 @@ Service Info: OSs: Unix, Linux; CPE: cpe:/o:linux:linux_kernel
 &lt;p&gt;Flag: &lt;code&gt;flag{remember_this_one?_pays_to_be_a_winner}&lt;/code&gt;&lt;/p&gt;
 &lt;h2 id=&#34;leftface-125&#34;&gt;LeftFace (125)&lt;/h2&gt;
 &lt;blockquote&gt;
-&lt;p&gt;Author: Nate Singer (Helix)&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;Author: Nate Singer (Helix)&lt;/p&gt;&lt;/blockquote&gt;
 &lt;blockquote&gt;
-&lt;p&gt;With access to 10.128.0.5 your goal is to escelate priveleges to the breakme-harder user. Ultimately your goal is simply to read out the flag in /home/breakme-harder/.&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;With access to 10.128.0.5 your goal is to escelate priveleges to the breakme-harder user. Ultimately your goal is simply to read out the flag in /home/breakme-harder/.&lt;/p&gt;&lt;/blockquote&gt;
 &lt;p&gt;This is a continuation of the previous challenge, &lt;code&gt;RightFace&lt;/code&gt;. We are told to escalate privleges as the &lt;code&gt;breakme-harder&lt;/code&gt; user to get the flag.&lt;/p&gt;
 &lt;p&gt;Upon further exploration of the machine, we find the &lt;code&gt;breakme-harder&lt;/code&gt; user and &lt;code&gt;flag.txt&lt;/code&gt; inside its directly. However, we do not have sufficient permissions to read it.&lt;/p&gt;
 
@@ -2697,17 +2727,13 @@ Service Info: OSs: Unix, Linux; CPE: cpe:/o:linux:linux_kernel
 &lt;p&gt;Flag: &lt;code&gt;flag{evaluate_this_my_dude}&lt;/code&gt;&lt;/p&gt;
 &lt;h2 id=&#34;aboutface-150&#34;&gt;AboutFace (150)&lt;/h2&gt;
 &lt;blockquote&gt;
-&lt;p&gt;Author: Nate Singer (Helix)&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;Author: Nate Singer (Helix)&lt;/p&gt;&lt;/blockquote&gt;
 &lt;blockquote&gt;
-&lt;p&gt;Different box this time, your target is now 10.128.0.4&amp;ndash;straight to root. Remember that there may be non-vulnerable services on the machine. Recon is the #1 focus.&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;Different box this time, your target is now 10.128.0.4&amp;ndash;straight to root. Remember that there may be non-vulnerable services on the machine. Recon is the #1 focus.&lt;/p&gt;&lt;/blockquote&gt;
 &lt;blockquote&gt;
-&lt;p&gt;Once you have access to the box stay at the top of the hill and listen for flags on localhost:5000/tcp. You will get alive notices once every 60 seconds while you are connected so you can be sure that you&amp;rsquo;ll receive flags at the specific release times. To see the release times check out the other section.&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;Once you have access to the box stay at the top of the hill and listen for flags on localhost:5000/tcp. You will get alive notices once every 60 seconds while you are connected so you can be sure that you&amp;rsquo;ll receive flags at the specific release times. To see the release times check out the other section.&lt;/p&gt;&lt;/blockquote&gt;
 &lt;blockquote&gt;
-&lt;p&gt;Caviets You are root. This means you can do whatever you want, for the most part. You are welcome to lock people out but only in specific ways. If you accidentially take down any of the existing services or remove Nate&amp;rsquo;s ability to SSH in for monitoring the machine will be reverted to the last known-good snapshot and you will probably lose access. This also goes for changing the flag files. If we determine that the flags has been altered the machine will also be reverted. Lastly, if someone has concurrent access for four flags in a row we may block them from future access to give others the opportunity to attack the machine&amp;ndash;we&amp;rsquo;ll decide this in real time during the weekend depending on how things go.&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;Caviets You are root. This means you can do whatever you want, for the most part. You are welcome to lock people out but only in specific ways. If you accidentially take down any of the existing services or remove Nate&amp;rsquo;s ability to SSH in for monitoring the machine will be reverted to the last known-good snapshot and you will probably lose access. This also goes for changing the flag files. If we determine that the flags has been altered the machine will also be reverted. Lastly, if someone has concurrent access for four flags in a row we may block them from future access to give others the opportunity to attack the machine&amp;ndash;we&amp;rsquo;ll decide this in real time during the weekend depending on how things go.&lt;/p&gt;&lt;/blockquote&gt;
 &lt;p&gt;Okay, now we are given a different machine to attack. Again scanning the machine with &lt;code&gt;nmap&lt;/code&gt;, we discover a few services.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Not shown: &lt;span style=&#34;color:#ae81ff&#34;&gt;65529&lt;/span&gt; closed ports
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;PORT      STATE SERVICE    VERSION
@@ -2733,14 +2759,11 @@ Service Info: OSs: Unix, Linux; CPE: cpe:/o:linux:linux_kernel
 &lt;p&gt;Flag: &lt;code&gt;flag{bestow_the_crown}&lt;/code&gt;&lt;/p&gt;
 &lt;h2 id=&#34;king-of-the-hill-30&#34;&gt;King of The Hill (30)&lt;/h2&gt;
 &lt;blockquote&gt;
-&lt;p&gt;Once you have access to the fourth machine in the range you need to listen on port tcp/5000, you can do this with nc, for example. The flag will be sent at a specific time. Retain control of the box to get all the flags. We will spam the flag a few times around that point in time so that you are sure to receive it if you have things setup properly.&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;Once you have access to the fourth machine in the range you need to listen on port tcp/5000, you can do this with nc, for example. The flag will be sent at a specific time. Retain control of the box to get all the flags. We will spam the flag a few times around that point in time so that you are sure to receive it if you have things setup properly.&lt;/p&gt;&lt;/blockquote&gt;
 &lt;blockquote&gt;
-&lt;p&gt;We also may reset the machine if we determine that you have locked folks out in a way that gives you an unfair advantage. The vulnerable service on the box must stay present. We also may reset the machine any time two consecutive flags are retrieved by the same competitor.&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;We also may reset the machine if we determine that you have locked folks out in a way that gives you an unfair advantage. The vulnerable service on the box must stay present. We also may reset the machine any time two consecutive flags are retrieved by the same competitor.&lt;/p&gt;&lt;/blockquote&gt;
 &lt;blockquote&gt;
-&lt;p&gt;Additionally, we will send alive notices once every 60 seconds. If you have a valid listener you will receive these alive notices, BUT if you aren&amp;rsquo;t careful your server may die when the connection closes!!&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;Additionally, we will send alive notices once every 60 seconds. If you have a valid listener you will receive these alive notices, BUT if you aren&amp;rsquo;t careful your server may die when the connection closes!!&lt;/p&gt;&lt;/blockquote&gt;
 &lt;p&gt;This is a continuation of &lt;code&gt;AboutFace&lt;/code&gt;, assuming we already have a shell on that machine. I will document some interesting events of roughly what happened below.&lt;/p&gt;
 &lt;p&gt;There were 8 points in time where the flag would be sent on the machine to port &lt;code&gt;5000&lt;/code&gt;. Anyone listening to the port would recieve the flag.&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;    ├── 1. 7pm PST, Friday (30)
@@ -2773,85 +2796,74 @@ Service Info: OSs: Unix, Linux; CPE: cpe:/o:linux:linux_kernel
     
     <item>
       <title>Full Writeups - Hack A Bit CTF Qualifiers 0x01</title>
-      <link>https://TheSavageTeddy.github.io/posts/writeups-hackabit2023/</link>
-      <pubDate>Wed, 01 Mar 2023 00:00:00 +0800</pubDate>
+      <link>http://localhost:1313/posts/writeups-hackabit2023/</link>
+      <pubDate>Wed, 01 Mar 2023 03:00:00 +1100</pubDate>
       
-      <guid>https://TheSavageTeddy.github.io/posts/writeups-hackabit2023/</guid>
-      <description>Overview Hack A Bit is a CTF targeting highschool students aged 13-18. This post will include writeups for all challenges (except OSINT) for Round 2, which was the CTF jeopardy round.
-Also, please contact me discord TheSavageTeddy#7458 if there are any mistakes/issues with these writeups, or if you want more info on them. Enjoy!
-Challenge Categories Welcome - 4 challenges
-Cryptography - 8 challenges
-Web - 6 challenges
-Programming - 8 challenges</description>
+      <guid>http://localhost:1313/posts/writeups-hackabit2023/</guid>
+      <description>&lt;h1 id=&#34;overview&#34;&gt;Overview&lt;/h1&gt;
+&lt;p&gt;Hack A Bit is a CTF targeting highschool students aged 13-18. This post will include writeups for all challenges (except OSINT) for Round 2, which was the CTF jeopardy round.&lt;/p&gt;
+&lt;p&gt;Also, please contact me discord &lt;code&gt;TheSavageTeddy#7458&lt;/code&gt; if there are any mistakes/issues with these writeups, or if you want more info on them. Enjoy!&lt;/p&gt;
+&lt;h1 id=&#34;challenge-categories&#34;&gt;Challenge Categories&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&#34;http://localhost:1313/posts/writeups-hackabit2023/#0-welcome&#34;&gt;&lt;code&gt;Welcome&lt;/code&gt;&lt;/a&gt; - 4 challenges&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://localhost:1313/posts/writeups-hackabit2023/#1-cryptography&#34;&gt;&lt;code&gt;Cryptography&lt;/code&gt;&lt;/a&gt; - 8 challenges&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://localhost:1313/posts/writeups-hackabit2023/#2-web&#34;&gt;&lt;code&gt;Web&lt;/code&gt;&lt;/a&gt; - 6 challenges&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://localhost:1313/posts/writeups-hackabit2023/#3-programming&#34;&gt;&lt;code&gt;Programming&lt;/code&gt;&lt;/a&gt; - 8 challenges&lt;/p&gt;</description>
       <content>&lt;h1 id=&#34;overview&#34;&gt;Overview&lt;/h1&gt;
 &lt;p&gt;Hack A Bit is a CTF targeting highschool students aged 13-18. This post will include writeups for all challenges (except OSINT) for Round 2, which was the CTF jeopardy round.&lt;/p&gt;
 &lt;p&gt;Also, please contact me discord &lt;code&gt;TheSavageTeddy#7458&lt;/code&gt; if there are any mistakes/issues with these writeups, or if you want more info on them. Enjoy!&lt;/p&gt;
 &lt;h1 id=&#34;challenge-categories&#34;&gt;Challenge Categories&lt;/h1&gt;
-&lt;p&gt;&lt;a href=&#34;#0-welcome&#34;&gt;&lt;code&gt;Welcome&lt;/code&gt;&lt;/a&gt; - 4 challenges&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;#1-cryptography&#34;&gt;&lt;code&gt;Cryptography&lt;/code&gt;&lt;/a&gt; - 8 challenges&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;#2-web&#34;&gt;&lt;code&gt;Web&lt;/code&gt;&lt;/a&gt; - 6 challenges&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;#3-programming&#34;&gt;&lt;code&gt;Programming&lt;/code&gt;&lt;/a&gt; - 8 challenges&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;#4-infrastructure&#34;&gt;&lt;code&gt;Infrastructure&lt;/code&gt;&lt;/a&gt; - 8 challenges&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;#5-networking&#34;&gt;&lt;code&gt;Networking&lt;/code&gt;&lt;/a&gt; - 6 challenges&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;#6-osint&#34;&gt;&lt;code&gt;OSINT&lt;/code&gt;&lt;/a&gt; - 8 challenges&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://localhost:1313/posts/writeups-hackabit2023/#0-welcome&#34;&gt;&lt;code&gt;Welcome&lt;/code&gt;&lt;/a&gt; - 4 challenges&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://localhost:1313/posts/writeups-hackabit2023/#1-cryptography&#34;&gt;&lt;code&gt;Cryptography&lt;/code&gt;&lt;/a&gt; - 8 challenges&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://localhost:1313/posts/writeups-hackabit2023/#2-web&#34;&gt;&lt;code&gt;Web&lt;/code&gt;&lt;/a&gt; - 6 challenges&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://localhost:1313/posts/writeups-hackabit2023/#3-programming&#34;&gt;&lt;code&gt;Programming&lt;/code&gt;&lt;/a&gt; - 8 challenges&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://localhost:1313/posts/writeups-hackabit2023/#4-infrastructure&#34;&gt;&lt;code&gt;Infrastructure&lt;/code&gt;&lt;/a&gt; - 8 challenges&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://localhost:1313/posts/writeups-hackabit2023/#5-networking&#34;&gt;&lt;code&gt;Networking&lt;/code&gt;&lt;/a&gt; - 6 challenges&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://localhost:1313/posts/writeups-hackabit2023/#6-osint&#34;&gt;&lt;code&gt;OSINT&lt;/code&gt;&lt;/a&gt; - 8 challenges&lt;/p&gt;
 &lt;h1 id=&#34;0-welcome&#34;&gt;0. Welcome&lt;/h1&gt;
 &lt;h2 id=&#34;wakeup-5&#34;&gt;Wakeup (5)&lt;/h2&gt;
 &lt;blockquote&gt;
-&lt;p&gt;Throughout the course you will prove your completion of tasks and understanding by capturing flags. CTF stands for capture the flag. Flags will generally be formatted as flag{x} where the x is the specific content that will change from challenge to challenge. If this isn&amp;rsquo;t the case, the challenge will specifically state that it uses a non-standard flag format.&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;Throughout the course you will prove your completion of tasks and understanding by capturing flags. CTF stands for capture the flag. Flags will generally be formatted as flag{x} where the x is the specific content that will change from challenge to challenge. If this isn&amp;rsquo;t the case, the challenge will specifically state that it uses a non-standard flag format.&lt;/p&gt;&lt;/blockquote&gt;
 &lt;blockquote&gt;
-&lt;p&gt;Submit the flag &lt;code&gt;flag{hello_world}&lt;/code&gt; to complete this challenge.&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;Submit the flag &lt;code&gt;flag{hello_world}&lt;/code&gt; to complete this challenge.&lt;/p&gt;&lt;/blockquote&gt;
 &lt;p&gt;Sanity check challenge, flag was in the description.
 &lt;code&gt;flag{hello_world}&lt;/code&gt;&lt;/p&gt;
 &lt;h2 id=&#34;weirdo-5&#34;&gt;Weirdo (5)&lt;/h2&gt;
 &lt;blockquote&gt;
-&lt;p&gt;This is what a challenge with a non-standard flag will look like. These types of flags are generally used for things like IP addresses or other data that would be a &amp;ldquo;short answer&amp;rdquo; style. The challenge will always be marked with a &amp;ldquo;NON-STANDARD FLAG FORMAT&amp;rdquo; identifier if it is this way.&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;This is what a challenge with a non-standard flag will look like. These types of flags are generally used for things like IP addresses or other data that would be a &amp;ldquo;short answer&amp;rdquo; style. The challenge will always be marked with a &amp;ldquo;NON-STANDARD FLAG FORMAT&amp;rdquo; identifier if it is this way.&lt;/p&gt;&lt;/blockquote&gt;
 &lt;blockquote&gt;
-&lt;p&gt;Submit the flag 192.168.1.1/24 to get credit for this challenge.&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;Submit the flag 192.168.1.1/24 to get credit for this challenge.&lt;/p&gt;&lt;/blockquote&gt;
 &lt;p&gt;Same thing, flag is &lt;code&gt;192.168.1.1/24&lt;/code&gt;. This just tells us some challenges are not in the normal &lt;code&gt;flag{}&lt;/code&gt; format.&lt;/p&gt;
 &lt;h2 id=&#34;support-5&#34;&gt;Support (5)&lt;/h2&gt;
 &lt;blockquote&gt;
-&lt;p&gt;Throughout the competition you may want to ask for help. Where can you do that? How can staff members ensure that all information is moderated and everyone receives the same level of support? The answer is that Hack a Bit uses a support forum in discord.&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;Throughout the competition you may want to ask for help. Where can you do that? How can staff members ensure that all information is moderated and everyone receives the same level of support? The answer is that Hack a Bit uses a support forum in discord.&lt;/p&gt;&lt;/blockquote&gt;
 &lt;blockquote&gt;
-&lt;p&gt;Navigate to the support form in the competition group and find the thread for this challenge.&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;Navigate to the support form in the competition group and find the thread for this challenge.&lt;/p&gt;&lt;/blockquote&gt;
 &lt;blockquote&gt;
-&lt;p&gt;&lt;a href=&#34;https://www.discord.gg/hack-a-bit&#34;&gt;www.discord.gg/hack-a-bit&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.discord.gg/hack-a-bit&#34;&gt;www.discord.gg/hack-a-bit&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;
 &lt;p&gt;Joining the discord and navigating to the challenge support posts we find this &lt;code&gt;flag{helpHelpHELP_desk}&lt;/code&gt;&lt;/p&gt;
 &lt;h2 id=&#34;billboard-5&#34;&gt;Billboard (5)&lt;/h2&gt;
 &lt;blockquote&gt;
-&lt;p&gt;What do you get for winning the competition? Where do you look for details on this round and future rounds of the 0x01 season? Check out the HaB website&amp;rsquo;s competition page for more information, there&amp;rsquo;s something there for you.&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;What do you get for winning the competition? Where do you look for details on this round and future rounds of the 0x01 season? Check out the HaB website&amp;rsquo;s competition page for more information, there&amp;rsquo;s something there for you.&lt;/p&gt;&lt;/blockquote&gt;
 &lt;p&gt;Going to &lt;a href=&#34;https://www.hackabit.com/competition&#34;&gt;https://www.hackabit.com/competition&lt;/a&gt; we find &lt;code&gt;flag{you_might_need_this_for_later}&lt;/code&gt; below the prizes.&lt;/p&gt;
 &lt;h1 id=&#34;1-cryptography&#34;&gt;1. Cryptography&lt;/h1&gt;
 &lt;h2 id=&#34;homerun-75&#34;&gt;Homerun (75)&lt;/h2&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Check out 0xFF in the ASCII lookup table&amp;hellip;&lt;br&gt;
 Oh dang, it isn&amp;rsquo;t there. Well I still need to send you that data, not the text but the actual value 0xFF in computer memory.
-Here&amp;rsquo;s an example, decode this, all the data you need is right here: &lt;code&gt;MZWGCZ33I5XXI5DBJVQWWZKTOVZGKWLPOVEGKYLSIFRG65LUKRUGC5CMN5XGOQTBNRWH2===&lt;/code&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
+Here&amp;rsquo;s an example, decode this, all the data you need is right here: &lt;code&gt;MZWGCZ33I5XXI5DBJVQWWZKTOVZGKWLPOVEGKYLSIFRG65LUKRUGC5CMN5XGOQTBNRWH2===&lt;/code&gt;&lt;/p&gt;&lt;/blockquote&gt;
 &lt;p&gt;We get a ciphertext &lt;code&gt;MZWGCZ33I5XXI5DBJVQWWZKTOVZGKWLPOVEGKYLSIFRG65LUKRUGC5CMN5XGOQTBNRWH2===&lt;/code&gt;. This is clearly base32 as we see it consists of only uppercase letters and numbers, ending with &lt;code&gt;=&lt;/code&gt; (padding). Decoding in CyberChef or any other tool gives &lt;code&gt;flag{GottaMakeSureYouHearAboutThatLongBall}&lt;/code&gt;&lt;/p&gt;
 &lt;h2 id=&#34;mason-75&#34;&gt;Mason (75)&lt;/h2&gt;
 &lt;blockquote&gt;
 &lt;p&gt;The numbers mason, what do they mean?
-&lt;code&gt;66 6c 61 67 7b 63 6f 6d 70 75 74 65 72 3a 69 5f 6f 6e 6c 79 5f 75 6e 64 65 72 73 74 61 6e 64 5f 62 69 6e 61 72 79 5f 64 75 64 65 7d&lt;/code&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;code&gt;66 6c 61 67 7b 63 6f 6d 70 75 74 65 72 3a 69 5f 6f 6e 6c 79 5f 75 6e 64 65 72 73 74 61 6e 64 5f 62 69 6e 61 72 79 5f 64 75 64 65 7d&lt;/code&gt;&lt;/p&gt;&lt;/blockquote&gt;
 &lt;p&gt;Ciphertext consists of 0-9 and a-f, hinting that it&amp;rsquo;s hex. Decoding from hex gives &lt;code&gt;flag{computer:i_only_understand_binary_dude}&lt;/code&gt;&lt;/p&gt;
 &lt;h2 id=&#34;smiley-100&#34;&gt;Smiley (100)&lt;/h2&gt;
 &lt;blockquote&gt;
-&lt;p&gt;Existing encryption is dumb, so I came up with something better. Maybe its a little emotional or whatever, but I feel like you can get through that part&amp;hellip;&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;Existing encryption is dumb, so I came up with something better. Maybe its a little emotional or whatever, but I feel like you can get through that part&amp;hellip;&lt;/p&gt;&lt;/blockquote&gt;
 &lt;blockquote&gt;
-&lt;p&gt;Breaking this teaches you some of the primative concepts professionals use to attack novel cryptographic algorithms. It also demonstrates in a primative way why we use established and tested ones for real applications. It also loosely relates to a concept called &amp;ldquo;known plaintext.&amp;rdquo;&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;Breaking this teaches you some of the primative concepts professionals use to attack novel cryptographic algorithms. It also demonstrates in a primative way why we use established and tested ones for real applications. It also loosely relates to a concept called &amp;ldquo;known plaintext.&amp;rdquo;&lt;/p&gt;&lt;/blockquote&gt;
 &lt;blockquote&gt;
-&lt;p&gt;&lt;em&gt;In the prompt, there is no punctuation and everything is lowercase alphabetical characters.&lt;/em&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;&lt;em&gt;In the prompt, there is no punctuation and everything is lowercase alphabetical characters.&lt;/em&gt;&lt;/p&gt;&lt;/blockquote&gt;
 &lt;p&gt;Given a file containing this:&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;🤣😅😇😉 😁😅😀🥰🤣 😚🥰😜🤗😇🤑🤫😉 😀 🫡😇😉🤣 😜🤐 🤣😅🤫 😶😮‍💨😇😁😜🤑🤫 🤫🤥😜🤤😇 😁😅😀🥰😀😁🤣🤫🥰😉 😀😮‍💨🤑 😉🤫🤕😶🤫😮‍💨😁🤫😉 🤮😇🤣😅 😇🤥😀🥶🤫😉 🤐🥰😜🤥 🤑😇🤐🤐🤫🥰🤫😮‍💨🤣 🤗🤫😮‍💨🤑😜🥰😉 😁🫡🤑🥰 😮‍💨😀🤥🤫 🤑😀🤣🤫 😉😜😶🥰😁🤫 😀😮‍💨🤑 🤯🤫🥳🤮😜🥰🤑😉 🤐🫡😀🥶🥸😉🤥😇🫡🤫😎🤥😜🥰🤫😎😉🤥😇🫡🤫😎🤠😇🥶🥶🤫🥰🧐
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;This challenge was a bit annoying. It was clearly frequency analysis, which is like using the fact that letters &lt;code&gt;e&lt;/code&gt;, &lt;code&gt;a&lt;/code&gt; etc are more common than &lt;code&gt;q&lt;/code&gt; or &lt;code&gt;z&lt;/code&gt;.&lt;/p&gt;
@@ -2882,11 +2894,9 @@ Here&amp;rsquo;s an example, decode this, all the data you need is right here: &
 &lt;p&gt;This gives us the flag &lt;code&gt;flag{smilemoresmilebigger}&lt;/code&gt;, or something like that.&lt;/p&gt;
 &lt;h2 id=&#34;matchmaker-100&#34;&gt;Matchmaker (100)&lt;/h2&gt;
 &lt;blockquote&gt;
-&lt;p&gt;There are a variety of symmetric cryptosystems out there, but most of them involve a logic block called a XOR. The key is &amp;ldquo;hab&amp;rdquo;(UTF8). We&amp;rsquo;re giving you the key and the algorithm, how hard can it be?&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;There are a variety of symmetric cryptosystems out there, but most of them involve a logic block called a XOR. The key is &amp;ldquo;hab&amp;rdquo;(UTF8). We&amp;rsquo;re giving you the key and the algorithm, how hard can it be?&lt;/p&gt;&lt;/blockquote&gt;
 &lt;blockquote&gt;
-&lt;p&gt;&lt;code&gt;Dg0DDxoRBz4PHQIKNxIbBQwHHBMbFQ==&lt;/code&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;&lt;code&gt;Dg0DDxoRBz4PHQIKNxIbBQwHHBMbFQ==&lt;/code&gt;&lt;/p&gt;&lt;/blockquote&gt;
 &lt;p&gt;We are given base64, and the XOR key &amp;ldquo;hab&amp;rdquo;. Using CyberChef we can decrypt and XOR to get the flag. &lt;code&gt;flag{so_much_symmetry}&lt;/code&gt;&lt;/p&gt;
 
   &lt;img src=&#34;./img/matchmaker1.png&#34;  class=&#34;center&#34;  style=&#34;border-radius: 5px; width: 100%;&#34;  /&gt;
@@ -2894,11 +2904,9 @@ Here&amp;rsquo;s an example, decode this, all the data you need is right here: &
 
 &lt;h1 id=&#34;hancock-125&#34;&gt;Hancock (125)&lt;/h1&gt;
 &lt;blockquote&gt;
-&lt;p&gt;I stole this session token from someone and it looks like all I need to do is change admin to true for all the power&amp;hellip; no idea who signed it though&amp;hellip; can you figure out the secret for me so that we can get some pwnage going?&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;I stole this session token from someone and it looks like all I need to do is change admin to true for all the power&amp;hellip; no idea who signed it though&amp;hellip; can you figure out the secret for me so that we can get some pwnage going?&lt;/p&gt;&lt;/blockquote&gt;
 &lt;blockquote&gt;
-&lt;p&gt;The secret for this token is somewhere in the RockYou wordlist &lt;a href=&#34;https://github.com/brannondorsey/naive-hashcat/releases/download/data/rockyou.txt&#34;&gt;https://github.com/brannondorsey/naive-hashcat/releases/download/data/rockyou.txt&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;The secret for this token is somewhere in the RockYou wordlist &lt;a href=&#34;https://github.com/brannondorsey/naive-hashcat/releases/download/data/rockyou.txt&#34;&gt;https://github.com/brannondorsey/naive-hashcat/releases/download/data/rockyou.txt&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;
 &lt;p&gt;We are given this string&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxMjM0NTY3ODkwLCJhZG1pbiI6ZmFsc2V9.QR_da_OHe58LBwBRt5S_aTcbMkBhEFqJkFn7zUq7Yyc
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;which is clearly a JWT (Json Web Token).&lt;/p&gt;
@@ -2916,11 +2924,9 @@ Here&amp;rsquo;s an example, decode this, all the data you need is right here: &
 
 &lt;h2 id=&#34;trending-125&#34;&gt;Trending (125)&lt;/h2&gt;
 &lt;blockquote&gt;
-&lt;p&gt;All the existing hashing algorithms are dumb, why give me a fixed length? If I give you more input you should give me even more output, its only fair! I wrote a new hashing algorithm that improves on the best of the best (MD5)! Check it out and see if you can break it (you probably can&amp;rsquo;t)!&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;All the existing hashing algorithms are dumb, why give me a fixed length? If I give you more input you should give me even more output, its only fair! I wrote a new hashing algorithm that improves on the best of the best (MD5)! Check it out and see if you can break it (you probably can&amp;rsquo;t)!&lt;/p&gt;&lt;/blockquote&gt;
 &lt;blockquote&gt;
-&lt;p&gt;Here&amp;rsquo;s your hash: &lt;code&gt;b18f21b19e0f86b22d218c86e182214b867b36212576b2617e8c03862d369e&lt;/code&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;Here&amp;rsquo;s your hash: &lt;code&gt;b18f21b19e0f86b22d218c86e182214b867b36212576b2617e8c03862d369e&lt;/code&gt;&lt;/p&gt;&lt;/blockquote&gt;
 &lt;p&gt;We are given a python file with a custom &amp;lsquo;hashing&amp;rsquo; algorithm.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-py&#34; data-lang=&#34;py&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#!/usr/bin/python3&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
@@ -2988,38 +2994,31 @@ Here&amp;rsquo;s an example, decode this, all the data you need is right here: &
 
 &lt;h2 id=&#34;powerhouse-150&#34;&gt;Powerhouse (150)&lt;/h2&gt;
 &lt;blockquote&gt;
-&lt;p&gt;NON-STANDARD FLAG FORMAT&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;NON-STANDARD FLAG FORMAT&lt;/p&gt;&lt;/blockquote&gt;
 &lt;blockquote&gt;
-&lt;p&gt;Here is an RSA key, sort of; provide p and q as &lt;code&gt;p;q&lt;/code&gt;, like if p was 11 an q was 7, the flag would be &lt;code&gt;11;7&lt;/code&gt;.&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;Here is an RSA key, sort of; provide p and q as &lt;code&gt;p;q&lt;/code&gt;, like if p was 11 an q was 7, the flag would be &lt;code&gt;11;7&lt;/code&gt;.&lt;/p&gt;&lt;/blockquote&gt;
 &lt;blockquote&gt;
-&lt;p&gt;N = &lt;code&gt;6176128969&lt;/code&gt; e = &lt;code&gt;1187&lt;/code&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;N = &lt;code&gt;6176128969&lt;/code&gt; e = &lt;code&gt;1187&lt;/code&gt;&lt;/p&gt;&lt;/blockquote&gt;
 &lt;p&gt;We get a (very unsecure) RSA public key consisting of &lt;code&gt;N&lt;/code&gt; (public modulus) and &lt;code&gt;e&lt;/code&gt; (public exponent).&lt;/p&gt;
 &lt;p&gt;But we don&amp;rsquo;t need to worry about any of that. In RSA, &lt;code&gt;N = p * q&lt;/code&gt; where &lt;code&gt;p&lt;/code&gt; and &lt;code&gt;q&lt;/code&gt; are 2 primes. Therefore, we just factor &lt;code&gt;N&lt;/code&gt; to get the flag using &lt;a href=&#34;http://factordb.com/&#34;&gt;factordb&lt;/a&gt;, or any other factoring method (N is very small).&lt;/p&gt;
 &lt;p&gt;Flag &lt;code&gt;11329;545161&lt;/code&gt;&lt;/p&gt;
 &lt;h1 id=&#34;banker-150&#34;&gt;Banker (150)&lt;/h1&gt;
 &lt;blockquote&gt;
-&lt;p&gt;NON-STANDARD FLAG FORMAT&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;NON-STANDARD FLAG FORMAT&lt;/p&gt;&lt;/blockquote&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Crack this pin code. It&amp;rsquo;s between 4-8 characters and all numeric.
-&lt;code&gt;320f5cef77246cdce15f9b66e9e4f3ad22f506f9cd28d85e7ccc8839b301e736&lt;/code&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;code&gt;320f5cef77246cdce15f9b66e9e4f3ad22f506f9cd28d85e7ccc8839b301e736&lt;/code&gt;&lt;/p&gt;&lt;/blockquote&gt;
 &lt;p&gt;This challenge doesn&amp;rsquo;t give a lot of info. The ciphertext looks like hex, but we get garbage when we try to decode it. However, notice the hex string is 64 bytes long, which is the size for some hashes.&lt;/p&gt;
 &lt;p&gt;Putting the hex into &lt;a href=&#34;https://crackstation.net/&#34;&gt;crackstation&lt;/a&gt;, to look up the hash, we find it is the &lt;code&gt;sha256&lt;/code&gt; hash of &lt;code&gt;05593620&lt;/code&gt; and we get the flag.&lt;/p&gt;
 &lt;h1 id=&#34;2-web&#34;&gt;2. Web&lt;/h1&gt;
 &lt;h2 id=&#34;detective-75&#34;&gt;Detective (75)&lt;/h2&gt;
 &lt;blockquote&gt;
-&lt;p&gt;Visit the webapp and take a look around, detective: &lt;a href=&#34;https://erpvlnzxrh.qualifier.hackabit.com/detective&#34;&gt;https://erpvlnzxrh.qualifier.hackabit.com/detective&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;Visit the webapp and take a look around, detective: &lt;a href=&#34;https://erpvlnzxrh.qualifier.hackabit.com/detective&#34;&gt;https://erpvlnzxrh.qualifier.hackabit.com/detective&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;
 &lt;p&gt;Viewing the page source we find &lt;code&gt;flag{animated&lt;/code&gt; in the HTML. Going to sources and looking the javascript file we find &lt;code&gt;_commentary_on_&lt;/code&gt;, and going to css we find &lt;code&gt;css}&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;This gets us the flag &lt;code&gt;flag{animated_commentary_on_css}&lt;/code&gt;&lt;/p&gt;
 &lt;h2 id=&#34;spectator&#34;&gt;Spectator&lt;/h2&gt;
 &lt;blockquote&gt;
-&lt;p&gt;Now how about this one? Maybe just look a little harder&amp;hellip; &lt;a href=&#34;https://erpvlnzxrh.qualifier.hackabit.com/spectator&#34;&gt;https://erpvlnzxrh.qualifier.hackabit.com/spectator&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;Now how about this one? Maybe just look a little harder&amp;hellip; &lt;a href=&#34;https://erpvlnzxrh.qualifier.hackabit.com/spectator&#34;&gt;https://erpvlnzxrh.qualifier.hackabit.com/spectator&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;
 &lt;p&gt;Going to sources we find &lt;code&gt;flag{there_are_soooooo&lt;/code&gt; in the javascript file (this is also in local storage).&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-js&#34; data-lang=&#34;js&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;window.&lt;span style=&#34;color:#a6e22e&#34;&gt;onload&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;function&lt;/span&gt;(){  
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    window.&lt;span style=&#34;color:#a6e22e&#34;&gt;localStorage&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;setItem&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;flag_stuff&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;flag{there_are_soooooo&amp;#34;&lt;/span&gt;)    
@@ -3028,15 +3027,13 @@ Here&amp;rsquo;s an example, decode this, all the data you need is right here: &
 &lt;p&gt;Curling the site with extra info (&lt;code&gt;-v&lt;/code&gt;) using &lt;code&gt;curl -v https://erpvlnzxrh.qualifier.hackabit.com/spectator&lt;/code&gt; we get &lt;code&gt;more_flag_stuff: _manage_data}&lt;/code&gt; in the headers, giving us the flag &lt;code&gt;flag{there_are_soooooo_many_ways_to_manage_data}&lt;/code&gt;&lt;/p&gt;
 &lt;h2 id=&#34;nevermind-100&#34;&gt;Nevermind (100)&lt;/h2&gt;
 &lt;blockquote&gt;
-&lt;p&gt;If you take something, you gotta put it back, or something at least: &lt;a href=&#34;https://erpvlnzxrh.qualifier.hackabit.com/nevermind&#34;&gt;https://erpvlnzxrh.qualifier.hackabit.com/nevermind&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;If you take something, you gotta put it back, or something at least: &lt;a href=&#34;https://erpvlnzxrh.qualifier.hackabit.com/nevermind&#34;&gt;https://erpvlnzxrh.qualifier.hackabit.com/nevermind&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;
 &lt;p&gt;We are presented with a webpage with a image and text saying:&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;Download this beautiful image and get the MD5 hash of it. Then decide its not that beautiful and POST it back to the same page with header &amp;#34;md5_image_hash&amp;#34; set to that value.
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;So we download the image, md5 hash it and get &lt;code&gt;021d99868f8b0943b2cf04e944ddab8f&lt;/code&gt; which we post back to the server with the right header using &lt;code&gt;curl -X POST --header &amp;quot;md5_image_hash: 021d99868f8b0943b2cf04e944ddab8f&amp;quot; https://erpvlnzxrh.qualifier.hackabit.com/nevermind&lt;/code&gt; and get the flag: &lt;code&gt;flag{nevermind_not_that_beautiful}&lt;/code&gt;&lt;/p&gt;
 &lt;h2 id=&#34;delegate-100&#34;&gt;Delegate (100)&lt;/h2&gt;
 &lt;blockquote&gt;
-&lt;p&gt;When we get code execution by compromising a web application, we generally want to exfiltrate some data. The staff did the hard part and gave you code execution, now just exfil that data! &lt;a href=&#34;https://erpvlnzxrh.qualifier.hackabit.com/delegate&#34;&gt;https://erpvlnzxrh.qualifier.hackabit.com/delegate&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;When we get code execution by compromising a web application, we generally want to exfiltrate some data. The staff did the hard part and gave you code execution, now just exfil that data! &lt;a href=&#34;https://erpvlnzxrh.qualifier.hackabit.com/delegate&#34;&gt;https://erpvlnzxrh.qualifier.hackabit.com/delegate&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;
 &lt;p&gt;The site includes 2 fields: Epoch and Destination.&lt;/p&gt;
 &lt;p&gt;In Epoch we need to put a time, and in destination we can put a URL. After putting the correct epoch (unix time) and a URL, we get the message &lt;code&gt;yup, nice... sent the flag to: https://&amp;lt;the url we provided&amp;gt;&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;So let&amp;rsquo;s generate a &lt;a href=&#34;https://webhook.site/&#34;&gt;webhook&lt;/a&gt; to see what it does to the URL we provide it.&lt;/p&gt;
@@ -3047,11 +3044,9 @@ Here&amp;rsquo;s an example, decode this, all the data you need is right here: &
 
 &lt;h2 id=&#34;injector-125&#34;&gt;Injector (125)&lt;/h2&gt;
 &lt;blockquote&gt;
-&lt;p&gt;Someone didn&amp;rsquo;t listen closely in programming class&amp;hellip; yeah it was me I guess, I didn&amp;rsquo;t. Here&amp;rsquo;s a super secure login page, if you can bypass it you might even get a flag&amp;hellip;&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;Someone didn&amp;rsquo;t listen closely in programming class&amp;hellip; yeah it was me I guess, I didn&amp;rsquo;t. Here&amp;rsquo;s a super secure login page, if you can bypass it you might even get a flag&amp;hellip;&lt;/p&gt;&lt;/blockquote&gt;
 &lt;blockquote&gt;
-&lt;p&gt;&lt;a href=&#34;https://fsiybpfkid.qualifier.hackabit.com/injector&#34;&gt;https://fsiybpfkid.qualifier.hackabit.com/injector&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;&lt;a href=&#34;https://fsiybpfkid.qualifier.hackabit.com/injector&#34;&gt;https://fsiybpfkid.qualifier.hackabit.com/injector&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;
 &lt;p&gt;Injector refers to SQL injection, where unsanitized input can lead to all sorts of security vulnerabilities.&lt;/p&gt;
 &lt;p&gt;Searching up a &lt;a href=&#34;https://pentestlab.blog/2012/12/24/sql-injection-authentication-bypass-cheat-sheet/&#34;&gt;cheatsheet&lt;/a&gt; we try payload and find this one works &lt;code&gt;admin&#39; or &#39;1&#39;=&#39;1&#39;#&lt;/code&gt;, giving us the flag &lt;code&gt;flag{maveric_pull_the_lever!}&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;Note that this is basically blind SQL injection as we have minimal info about the server.&lt;/p&gt;
@@ -3061,11 +3056,9 @@ Here&amp;rsquo;s an example, decode this, all the data you need is right here: &
 
 &lt;h2 id=&#34;brain-125&#34;&gt;Brain (125)&lt;/h2&gt;
 &lt;blockquote&gt;
-&lt;p&gt;Only admins can get flags&amp;hellip; follow the rules!&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;Only admins can get flags&amp;hellip; follow the rules!&lt;/p&gt;&lt;/blockquote&gt;
 &lt;blockquote&gt;
-&lt;p&gt;&lt;a href=&#34;https://fsiybpfkid.qualifier.hackabit.com/brain&#34;&gt;https://fsiybpfkid.qualifier.hackabit.com/brain&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;&lt;a href=&#34;https://fsiybpfkid.qualifier.hackabit.com/brain&#34;&gt;https://fsiybpfkid.qualifier.hackabit.com/brain&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;
 &lt;p&gt;This was straightforward, but annoying. The page tells us how to get the flag.&lt;/p&gt;
 
   &lt;img src=&#34;./img/brain.png&#34;  class=&#34;center&#34;  style=&#34;border-radius: 5px; width: 100%;&#34;  /&gt;
@@ -3109,8 +3102,7 @@ Here&amp;rsquo;s an example, decode this, all the data you need is right here: &
 &lt;h1 id=&#34;3-programming&#34;&gt;3. Programming&lt;/h1&gt;
 &lt;h1 id=&#34;blobs-75&#34;&gt;Blobs (75)&lt;/h1&gt;
 &lt;blockquote&gt;
-&lt;p&gt;Hey there navigator, its time to follow some directions. Take your challenge input (file) and start at the initial position, such as the below x=52, y=-31. Just like you are on a 2d graph, move in the direction the arrows tell you to. In the below example you end up in the same x position for a difference of 0 and down one for a y difference of -1. Take your final position, in this case 52, -32 and multiply the values together&amp;ndash;that is your final position. The answer to the sample prompt is -1664.&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;Hey there navigator, its time to follow some directions. Take your challenge input (file) and start at the initial position, such as the below x=52, y=-31. Just like you are on a 2d graph, move in the direction the arrows tell you to. In the below example you end up in the same x position for a difference of 0 and down one for a y difference of -1. Take your final position, in this case 52, -32 and multiply the values together&amp;ndash;that is your final position. The answer to the sample prompt is -1664.&lt;/p&gt;&lt;/blockquote&gt;
 &lt;p&gt;Sample prompt:&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;(52,-31)
 
@@ -3151,8 +3143,7 @@ Here&amp;rsquo;s an example, decode this, all the data you need is right here: &
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;print(answer)
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h1 id=&#34;buckets-75&#34;&gt;Buckets (75)&lt;/h1&gt;
 &lt;blockquote&gt;
-&lt;p&gt;Grab the data file and add up all the times danny and elise appear. Multiple those two numbers together, that is your challenge answer.&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;Grab the data file and add up all the times danny and elise appear. Multiple those two numbers together, that is your challenge answer.&lt;/p&gt;&lt;/blockquote&gt;
 &lt;p&gt;This is yet another programming challenge, even easier than the previous. Use &lt;code&gt;.count()&lt;/code&gt; to count how many times each appears. I couldn&amp;rsquo;t be bothered reading the file, but it would&amp;rsquo;ve been &lt;code&gt;data=open(&#39;filename&#39;,&#39;r&#39;).read()&lt;/code&gt;&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-py&#34; data-lang=&#34;py&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;data &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;omitted because too long&amp;#34;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;a &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; data&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;count(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;danny&amp;#39;&lt;/span&gt;)
@@ -3160,16 +3151,13 @@ Here&amp;rsquo;s an example, decode this, all the data you need is right here: &
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;print(a&lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;b)
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;pancakes-100&#34;&gt;Pancakes (100)&lt;/h2&gt;
 &lt;blockquote&gt;
-&lt;p&gt;Okay we&amp;rsquo;re doing it again, just giving you the flag&amp;hellip; should be easy enough right? Well now lets talk about compiled code. This is the same code compiled for a bunch of different architectures. First, figure out which binary is compatible with your system, then just run it to get the flag!&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;Okay we&amp;rsquo;re doing it again, just giving you the flag&amp;hellip; should be easy enough right? Well now lets talk about compiled code. This is the same code compiled for a bunch of different architectures. First, figure out which binary is compatible with your system, then just run it to get the flag!&lt;/p&gt;&lt;/blockquote&gt;
 &lt;p&gt;We are given a zip file with a bunch of binaries! All of them are the same - they are just for different architectures/OS etc. Running any will give the flag. For me, running &lt;code&gt;./binary_18&lt;/code&gt; on WSL gave the flag &lt;code&gt;flag{bob_the_architect}&lt;/code&gt;&lt;/p&gt;
 &lt;h2 id=&#34;linguist-100&#34;&gt;Linguist (100)&lt;/h2&gt;
 &lt;blockquote&gt;
-&lt;p&gt;Grab this file and check it out. You&amp;rsquo;ll notice that it&amp;rsquo;s Python3! Python is an interpreted language, you can read the code but it&amp;rsquo;ll be easier to just interpret it!&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;Grab this file and check it out. You&amp;rsquo;ll notice that it&amp;rsquo;s Python3! Python is an interpreted language, you can read the code but it&amp;rsquo;ll be easier to just interpret it!&lt;/p&gt;&lt;/blockquote&gt;
 &lt;blockquote&gt;
-&lt;p&gt;This challenge is juxtaposed to Pancake, which is compiled code. Once you interpret this code with the Python3 interpreter, try to read it and see if you understand what it&amp;rsquo;s doing as a bonus!&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;This challenge is juxtaposed to Pancake, which is compiled code. Once you interpret this code with the Python3 interpreter, try to read it and see if you understand what it&amp;rsquo;s doing as a bonus!&lt;/p&gt;&lt;/blockquote&gt;
 &lt;p&gt;Given python code:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-py&#34; data-lang=&#34;py&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; random
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; time
@@ -3198,14 +3186,11 @@ Here&amp;rsquo;s an example, decode this, all the data you need is right here: &
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;No reversing is needed - just running the file gives the flag &lt;code&gt;flag{this_isnt_spanish_but_i_still_need_an_interpreter}&lt;/code&gt;&lt;/p&gt;
 &lt;h2 id=&#34;wrench-125&#34;&gt;Wrench (125)&lt;/h2&gt;
 &lt;blockquote&gt;
-&lt;p&gt;Think of this challenge like a bolt and go build a wrench.&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;Think of this challenge like a bolt and go build a wrench.&lt;/p&gt;&lt;/blockquote&gt;
 &lt;blockquote&gt;
-&lt;p&gt;Here&amp;rsquo;s your blueprint:&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;Here&amp;rsquo;s your blueprint:&lt;/p&gt;&lt;/blockquote&gt;
 &lt;blockquote&gt;
-&lt;p&gt;Connect to the server on strfjebijc.qualifier.hackabit.com:54321 and get your challenge input. Add up all the decimal integers and only the decminal integers, no hex numbers or strings count. Send that result back within 3 seconds to get the flag&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;Connect to the server on strfjebijc.qualifier.hackabit.com:54321 and get your challenge input. Add up all the decimal integers and only the decminal integers, no hex numbers or strings count. Send that result back within 3 seconds to get the flag&lt;/p&gt;&lt;/blockquote&gt;
 &lt;p&gt;We are given a bunch of text seperated by newlines when we connect using netcat. The challenge says to add up all decimal numbers, and send the result within 3 seconds. We will use &lt;a href=&#34;https://docs.pwntools.com/en/stable/&#34;&gt;pwntools&lt;/a&gt; to automate this, and do it within 3 seconds.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-py&#34; data-lang=&#34;py&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;from&lt;/span&gt; pwn &lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; string
@@ -3224,14 +3209,11 @@ Here&amp;rsquo;s an example, decode this, all the data you need is right here: &
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;And we get the flag &lt;code&gt;flag{i_feel_the_need_the_need_for_speed}&lt;/code&gt;&lt;/p&gt;
 &lt;h2 id=&#34;bites-125&#34;&gt;Bites (125)&lt;/h2&gt;
 &lt;blockquote&gt;
-&lt;p&gt;Here&amp;rsquo;s a blob of data. Thats it. Just Data. Not any specific data. Just 1&amp;rsquo;s and 0&amp;rsquo;s&amp;hellip;&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;Here&amp;rsquo;s a blob of data. Thats it. Just Data. Not any specific data. Just 1&amp;rsquo;s and 0&amp;rsquo;s&amp;hellip;&lt;/p&gt;&lt;/blockquote&gt;
 &lt;blockquote&gt;
-&lt;p&gt;Process this file. There are series of bytes from 0x02 to 0xFF. Each of these strings of bytes are surrounded by a null byte (0x00). Finally, there are also byte strings of all 0x01. Your mission is to add up all the bytes in the byte strings that are not 0x01 byte strings. The flag is the integer value of all those bytes added up.&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;Process this file. There are series of bytes from 0x02 to 0xFF. Each of these strings of bytes are surrounded by a null byte (0x00). Finally, there are also byte strings of all 0x01. Your mission is to add up all the bytes in the byte strings that are not 0x01 byte strings. The flag is the integer value of all those bytes added up.&lt;/p&gt;&lt;/blockquote&gt;
 &lt;blockquote&gt;
-&lt;p&gt;The &amp;ldquo;flag&amp;rdquo; is just the total sum, no flag{}.&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;The &amp;ldquo;flag&amp;rdquo; is just the total sum, no flag{}.&lt;/p&gt;&lt;/blockquote&gt;
 &lt;p&gt;We are given a file, and told to add up all the bytes, apart from &lt;code&gt;0x01&lt;/code&gt;. So we will do just that with python. Note that when looping over a bytes object in python, each element is a number 0-255, which is why it is &lt;code&gt; == 1&lt;/code&gt; instead of &lt;code&gt;== b&amp;quot;\x01&amp;quot;&lt;/code&gt;&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-py&#34; data-lang=&#34;py&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;from&lt;/span&gt; Crypto.Util.number &lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; bytes_to_long
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
@@ -3247,11 +3229,9 @@ Here&amp;rsquo;s an example, decode this, all the data you need is right here: &
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;And we get the flag &lt;code&gt;512490&lt;/code&gt;&lt;/p&gt;
 &lt;h2 id=&#34;speed-150&#34;&gt;Speed (150)&lt;/h2&gt;
 &lt;blockquote&gt;
-&lt;p&gt;You probably shouldn&amp;rsquo;t do this one by hand&amp;hellip; Instead write a sorting algorithm that efficiently organizes this file of numbers smallest to biggest. Your flag is the 52133rd number once sorted, starting from 0. Ie: sorted_numbers[52133].&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;You probably shouldn&amp;rsquo;t do this one by hand&amp;hellip; Instead write a sorting algorithm that efficiently organizes this file of numbers smallest to biggest. Your flag is the 52133rd number once sorted, starting from 0. Ie: sorted_numbers[52133].&lt;/p&gt;&lt;/blockquote&gt;
 &lt;blockquote&gt;
-&lt;p&gt;On an average computer, an efficient algorithm should be able to solve this in around 10 seconds.&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;On an average computer, an efficient algorithm should be able to solve this in around 10 seconds.&lt;/p&gt;&lt;/blockquote&gt;
 &lt;p&gt;We are given a large file, and told to sort it, and submit the 51233th item (0-indexed) as the flag. So as always, python is sufficient to solve this, getting the flag &lt;code&gt;1235203980&lt;/code&gt;&lt;/p&gt;
 
   &lt;img src=&#34;./img/sort.png&#34;  class=&#34;center&#34;  style=&#34;border-radius: 5px; width: 100%;&#34;  /&gt;
@@ -3338,11 +3318,9 @@ Here&amp;rsquo;s an example, decode this, all the data you need is right here: &
 &lt;h1 id=&#34;4-infrastructure&#34;&gt;4. Infrastructure&lt;/h1&gt;
 &lt;h2 id=&#34;captain-75&#34;&gt;Captain (75)&lt;/h2&gt;
 &lt;blockquote&gt;
-&lt;p&gt;Cloud infrastructure is migrating to containerized technology in many places, lets get started with containers. Run this docker container with the environment variable &lt;code&gt;FLAG_ENABLER&lt;/code&gt; set to &lt;code&gt;give_me_the_flag&lt;/code&gt;.&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;Cloud infrastructure is migrating to containerized technology in many places, lets get started with containers. Run this docker container with the environment variable &lt;code&gt;FLAG_ENABLER&lt;/code&gt; set to &lt;code&gt;give_me_the_flag&lt;/code&gt;.&lt;/p&gt;&lt;/blockquote&gt;
 &lt;blockquote&gt;
-&lt;p&gt;&lt;a href=&#34;https://hub.docker.com/r/nathanielsinger/hackabit0x01-infrastructure-container1&#34;&gt;https://hub.docker.com/r/nathanielsinger/hackabit0x01-infrastructure-container1&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;&lt;a href=&#34;https://hub.docker.com/r/nathanielsinger/hackabit0x01-infrastructure-container1&#34;&gt;https://hub.docker.com/r/nathanielsinger/hackabit0x01-infrastructure-container1&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;
 &lt;p&gt;Initially I tried to pull the image and analyse it, but gave up quickly and realised doing it properly was easier. Use &lt;code&gt;-e&lt;/code&gt; flag to set enviroment variables.&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;sudo docker run -e FLAG_ENABLER=give_me_the_flag nathanielsinger/hackabit0x01-infrastructure-container1&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;flag{you_aren&#39;t_the_captain_just_yet}&lt;/code&gt;&lt;/p&gt;
@@ -3352,8 +3330,7 @@ Here&amp;rsquo;s an example, decode this, all the data you need is right here: &
 
 &lt;h2 id=&#34;seashell&#34;&gt;Seashell&lt;/h2&gt;
 &lt;blockquote&gt;
-&lt;p&gt;SSH runs the internet. Connect to &lt;code&gt;utkwrgubhj.qualifier.hackabit.com&lt;/code&gt; on port &lt;code&gt;22&lt;/code&gt; with user &lt;code&gt;hackerman&lt;/code&gt; and the provided &lt;code&gt;private key&lt;/code&gt;.&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;SSH runs the internet. Connect to &lt;code&gt;utkwrgubhj.qualifier.hackabit.com&lt;/code&gt; on port &lt;code&gt;22&lt;/code&gt; with user &lt;code&gt;hackerman&lt;/code&gt; and the provided &lt;code&gt;private key&lt;/code&gt;.&lt;/p&gt;&lt;/blockquote&gt;
 &lt;p&gt;I did this on MacOS, by importing the key, but here is it again on linux (WSL). Private key file is called &lt;code&gt;id_rsa&lt;/code&gt;. Note that for the private key file, the permissions cannot be too open, so you have to use &lt;code&gt;chmod 400 id_rsa&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;Connecting with &lt;code&gt;ssh -i id_rsa hackerman@utkwrgubhj.qualifier.hackabit.com&lt;/code&gt; we get the flag &lt;code&gt;flag{shesellsseashellsbytheseaaaaaaashore}&lt;/code&gt;.&lt;/p&gt;
 
@@ -3363,8 +3340,7 @@ Here&amp;rsquo;s an example, decode this, all the data you need is right here: &
 &lt;h2 id=&#34;loading-100&#34;&gt;Loading (100)&lt;/h2&gt;
 &lt;blockquote&gt;
 &lt;p&gt;What&amp;rsquo;s in this ISO thing?
-&lt;a href=&#34;https://hub.docker.com/r/nathanielsinger/hackabit0x01-infrastructure-container1&#34;&gt;https://hub.docker.com/r/nathanielsinger/hackabit0x01-infrastructure-container1&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;a href=&#34;https://hub.docker.com/r/nathanielsinger/hackabit0x01-infrastructure-container1&#34;&gt;https://hub.docker.com/r/nathanielsinger/hackabit0x01-infrastructure-container1&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;
 &lt;p&gt;Ok we are given like no info, let&amp;rsquo;s dump the image with &lt;code&gt;docker save -o dockerimage.tar nathanielsinger/hackabit0x01-infrastructure-container1&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;Then just untar (&lt;code&gt;tar -xvf FILE.tar&lt;/code&gt;) the entire thing, and search through folders. Eventually in &lt;code&gt;adb6d&lt;/code&gt;&amp;hellip;. I found the flag in &lt;code&gt;root/flag_image.iso&lt;/code&gt; after untarring &lt;code&gt;layer.tar&lt;/code&gt; in the folder.&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;flag{consider_it_loaded_hackerman}&lt;/code&gt;&lt;/p&gt;
@@ -3375,14 +3351,12 @@ Here&amp;rsquo;s an example, decode this, all the data you need is right here: &
 &lt;h2 id=&#34;location-100&#34;&gt;Location (100)&lt;/h2&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Now with the same image, dive on in and find the iso image. What is the absolute path to the iso image stored within the container? Include the filename in the path for your submission.
-&lt;a href=&#34;https://hub.docker.com/r/nathanielsinger/hackabit0x01-infrastructure-container1&#34;&gt;https://hub.docker.com/r/nathanielsinger/hackabit0x01-infrastructure-container1&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;a href=&#34;https://hub.docker.com/r/nathanielsinger/hackabit0x01-infrastructure-container1&#34;&gt;https://hub.docker.com/r/nathanielsinger/hackabit0x01-infrastructure-container1&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;
 &lt;p&gt;To be honest I forgot what the flag to this was, but it&amp;rsquo;s linked to the previous challenge, and we just specify the path to the &lt;code&gt;.iso&lt;/code&gt; image. So it would&amp;rsquo;ve been something like &lt;code&gt;root/flag_image.iso&lt;/code&gt; or &lt;code&gt;/root/flag_image.iso&lt;/code&gt;&lt;/p&gt;
 &lt;h2 id=&#34;connector-125&#34;&gt;Connector (125)&lt;/h2&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Connect to the mysql server at dyxvqmjwaj.qualifier.hackabit.com and read out the flag. Here are some user accounts:
-&lt;code&gt;user1:uyqhxgxcxd&lt;/code&gt; &lt;code&gt;user2:ehaigdexhh&lt;/code&gt; &lt;code&gt;user3:xfgyuvtapt&lt;/code&gt; &lt;code&gt;user4:tnvgijqxei&lt;/code&gt; &lt;code&gt;user5:hybplwmndy&lt;/code&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;code&gt;user1:uyqhxgxcxd&lt;/code&gt; &lt;code&gt;user2:ehaigdexhh&lt;/code&gt; &lt;code&gt;user3:xfgyuvtapt&lt;/code&gt; &lt;code&gt;user4:tnvgijqxei&lt;/code&gt; &lt;code&gt;user5:hybplwmndy&lt;/code&gt;&lt;/p&gt;&lt;/blockquote&gt;
 &lt;p&gt;We are given 5 user credentials. On my Mac, using SQL Workbench, I tried each one and checked the tables until I found a flag in one of them (&lt;code&gt;user4&lt;/code&gt;).&lt;/p&gt;
 
   &lt;img src=&#34;./img/connect.png&#34;  class=&#34;center&#34;  style=&#34;border-radius: 5px; width: 100%;&#34;  /&gt;
@@ -3395,11 +3369,9 @@ Here&amp;rsquo;s an example, decode this, all the data you need is right here: &
 &lt;p&gt;And we get the flag &lt;code&gt;flag{oh_sql_my_sql}&lt;/code&gt;&lt;/p&gt;
 &lt;h2 id=&#34;boat-125&#34;&gt;Boat (125)&lt;/h2&gt;
 &lt;blockquote&gt;
-&lt;p&gt;Sometimes we need to run a machine on a specific address or virtualize a network, get this running on: &lt;code&gt;172.22.1.11.&lt;/code&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;Sometimes we need to run a machine on a specific address or virtualize a network, get this running on: &lt;code&gt;172.22.1.11.&lt;/code&gt;&lt;/p&gt;&lt;/blockquote&gt;
 &lt;blockquote&gt;
-&lt;p&gt;&lt;a href=&#34;https://hub.docker.com/r/nathanielsinger/hackabit0x01-infrastructure-container2&#34;&gt;https://hub.docker.com/r/nathanielsinger/hackabit0x01-infrastructure-container2&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;&lt;a href=&#34;https://hub.docker.com/r/nathanielsinger/hackabit0x01-infrastructure-container2&#34;&gt;https://hub.docker.com/r/nathanielsinger/hackabit0x01-infrastructure-container2&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;
 &lt;p&gt;Seems easy enough, just run another docker command. But this time, we get an error when we try to pull the image.&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;Error response from daemon: manifest for nathanielsinger/hackabit0x01-infrastructure-container2:latest not found: manifest unknown: manifest unknown
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Searching for the error brings us to &lt;a href=&#34;https://stackoverflow.com/questions/41810104/docker-manifest-unknown-manifest-unknown&#34;&gt;this&lt;/a&gt; stack overflow question, and we see we have to specify the version of the image. So we do so and &lt;code&gt;docker pull nathanielsinger/hackabit0x01-infrastructure-container2:v1.0.0&lt;/code&gt; works.&lt;/p&gt;
@@ -3411,8 +3383,7 @@ Here&amp;rsquo;s an example, decode this, all the data you need is right here: &
 
 &lt;h2 id=&#34;inspector-150&#34;&gt;Inspector (150)&lt;/h2&gt;
 &lt;blockquote&gt;
-&lt;p&gt;Oh look its Bits, something changed though&amp;hellip; see if you can track it down.&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;Oh look its Bits, something changed though&amp;hellip; see if you can track it down.&lt;/p&gt;&lt;/blockquote&gt;
 &lt;p&gt;We are provided with a zip file containing source code for what seems to be the Bits bot on the CTF&amp;rsquo;s discord server. After looking around, I realise we are given a git folder which contains &lt;code&gt;.git&lt;/code&gt; folder, with things like past commits and versions.&lt;/p&gt;
 &lt;p&gt;So the flag must be somewhere in the past commits.&lt;/p&gt;
 &lt;p&gt;Searching for &lt;code&gt;flag&lt;/code&gt; with &lt;code&gt;grep -r &amp;quot;flag&amp;quot; .&lt;/code&gt; we find past commits with &lt;code&gt;flag_stuff&lt;/code&gt; in their info.&lt;/p&gt;
@@ -3429,8 +3400,7 @@ Here&amp;rsquo;s an example, decode this, all the data you need is right here: &
 &lt;h2 id=&#34;hammer-150&#34;&gt;Hammer (150)&lt;/h2&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Check out oslyxpzcgs.qualifier.hackabit.com and see if you can find the vuln. No help on this one, nothing crazy though&amp;hellip; enumerate harder :)
-The flag is stored in an environment variable.&lt;/p&gt;
-&lt;/blockquote&gt;
+The flag is stored in an environment variable.&lt;/p&gt;&lt;/blockquote&gt;
 &lt;p&gt;Let&amp;rsquo;s nmap the domain to find more info about the service.&lt;/p&gt;
 
   &lt;img src=&#34;./img/nmap.png&#34;  class=&#34;center&#34;  style=&#34;border-radius: 5px; width: 100%;&#34;  /&gt;
@@ -3457,8 +3427,7 @@ The flag is stored in an environment variable.&lt;/p&gt;
 &lt;h1 id=&#34;5-networking&#34;&gt;5. Networking&lt;/h1&gt;
 &lt;h2 id=&#34;phonebook-75&#34;&gt;Phonebook (75)&lt;/h2&gt;
 &lt;blockquote&gt;
-&lt;p&gt;Check out the DNS records for &lt;code&gt;qualifier.hackabit.com&lt;/code&gt;&amp;hellip; there&amp;rsquo;s soemthing interesting there, all kinds of data&amp;hellip;&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;Check out the DNS records for &lt;code&gt;qualifier.hackabit.com&lt;/code&gt;&amp;hellip; there&amp;rsquo;s soemthing interesting there, all kinds of data&amp;hellip;&lt;/p&gt;&lt;/blockquote&gt;
 &lt;p&gt;Okay let&amp;rsquo;s go to &lt;a href=&#34;https://dnschecker.org/all-dns-records-of-domain.php&#34;&gt;dnschecker.org&lt;/a&gt; and check the DNS records.&lt;/p&gt;
 
   &lt;img src=&#34;./img/dns.png&#34;  class=&#34;center&#34;  style=&#34;border-radius: 5px; width: 100%;&#34;  /&gt;
@@ -3467,8 +3436,7 @@ The flag is stored in an environment variable.&lt;/p&gt;
 &lt;p&gt;Wow! A flag! Who would&amp;rsquo;ve guessed&amp;hellip; &lt;code&gt;flag{my_nameserver_is_slimshady}&lt;/code&gt;&lt;/p&gt;
 &lt;h2 id=&#34;avenue-75&#34;&gt;Avenue (75)&lt;/h2&gt;
 &lt;blockquote&gt;
-&lt;p&gt;What is the kernel(OS) was this network capture recorded on?&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;What is the kernel(OS) was this network capture recorded on?&lt;/p&gt;&lt;/blockquote&gt;
 &lt;p&gt;We are given a &lt;code&gt;pcap&lt;/code&gt; capture file. Let&amp;rsquo;s use wireshark to open it.&lt;/p&gt;
 
   &lt;img src=&#34;./img/wireshark.png&#34;  class=&#34;center&#34;  style=&#34;border-radius: 5px; width: 100%;&#34;  /&gt;
@@ -3477,25 +3445,21 @@ The flag is stored in an environment variable.&lt;/p&gt;
 &lt;p&gt;And within one of the tls streams we find &lt;code&gt;X11; Ubuntu; Linux x86_64&lt;/code&gt; to be the OS of the capturing device.&lt;/p&gt;
 &lt;h2 id=&#34;rivers-100&#34;&gt;Rivers (100)&lt;/h2&gt;
 &lt;blockquote&gt;
-&lt;p&gt;Follow the river and see whats in the stream.&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;Follow the river and see whats in the stream.&lt;/p&gt;&lt;/blockquote&gt;
 &lt;p&gt;Okay, so this was also just following the TLS stream, hence the name and description. The flag is in the previous image too, &lt;code&gt;flag{rivers_run_streams_flowwww}&lt;/code&gt;&lt;/p&gt;
 &lt;h2 id=&#34;fish-100&#34;&gt;Fish (100)&lt;/h2&gt;
 &lt;blockquote&gt;
-&lt;p&gt;What protocol is responsible for the most packets in this capture?&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;What protocol is responsible for the most packets in this capture?&lt;/p&gt;&lt;/blockquote&gt;
 &lt;p&gt;Sorting by protocol, we find the &lt;code&gt;QUIC&lt;/code&gt; protocol to be most of the packets.&lt;/p&gt;
 &lt;p&gt;But submitting that doesn&amp;rsquo;t give us the flag. A quick google brings us to its full name, &lt;code&gt;Quick UDP Internet Connections&lt;/code&gt;, which I don&amp;rsquo;t think was the flag either? It was something like &lt;code&gt;QUIC IETF&lt;/code&gt; or so.&lt;/p&gt;
 &lt;h2 id=&#34;school-125&#34;&gt;School (125)&lt;/h2&gt;
 &lt;blockquote&gt;
-&lt;p&gt;This ones gonna take a few steps:&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;This ones gonna take a few steps:&lt;/p&gt;&lt;/blockquote&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Take the input line by line
 Calculate the network and broadcast addresses of the subnet
 For each network address add up all the forth octets
-Your challenge response (flag) is this total.&lt;/p&gt;
-&lt;/blockquote&gt;
+Your challenge response (flag) is this total.&lt;/p&gt;&lt;/blockquote&gt;
 &lt;p&gt;Okay, I literally chucked this challenge into chat GPT to solve it for me, and it actually worked first try!&lt;/p&gt;
 &lt;p&gt;It gave me this code:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-py&#34; data-lang=&#34;py&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;get_network_address&lt;/span&gt;(ip, netmask):
@@ -3531,11 +3495,9 @@ Your challenge response (flag) is this total.&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Which gave us the answer &lt;code&gt;25604&lt;/code&gt;. I am very surprised this worked, and saved me from doing some scripting. So I do apologise for not doing this properly and explaining how to calculate it, hopefully that code is enough :)&lt;/p&gt;
 &lt;h2 id=&#34;picture-125&#34;&gt;Picture (125)&lt;/h2&gt;
 &lt;blockquote&gt;
-&lt;p&gt;There is a service running on woxuazsgxd.qualifier.hackabit.com:54321&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;There is a service running on woxuazsgxd.qualifier.hackabit.com:54321&lt;/p&gt;&lt;/blockquote&gt;
 &lt;blockquote&gt;
-&lt;p&gt;Connect to it and try to follow the mail&amp;hellip;&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;Connect to it and try to follow the mail&amp;hellip;&lt;/p&gt;&lt;/blockquote&gt;
 &lt;p&gt;Connecting to it with netcat gives us a message along the lines of the flag was sent to you to a random UDP port 5000-5500&lt;/p&gt;
 &lt;p&gt;Definetly one of the harder ones by far. My initial thought was to use Wireshark to capture packages, and filter by protocol UDP or port number, but neither of that worked for some reason. Trying another packet capture method with &lt;code&gt;sudo tcpdump -i ens3 udp -vvv -X&lt;/code&gt;, we get the flag &lt;code&gt;flag{the_mailman_is_confused_but_you&#39;re_not}&lt;/code&gt;&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;14:49:48.524413 IP (tos 0x40, ttl 55, id 741, offset 0, flags [DF], proto UDP (17), length 72)

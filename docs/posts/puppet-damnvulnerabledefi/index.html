@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
   
 
   
@@ -15,20 +15,23 @@
 <meta name="description" content="Writeup for Puppet (Level 8) from DamnVulnerableDefi V3, an oracle manipulation challenge in one transaction." />
 <meta name="keywords" content="" />
 <meta name="robots" content="noodp" />
-<link rel="canonical" href="https://TheSavageTeddy.github.io/posts/puppet-damnvulnerabledefi/" />
+<link rel="canonical" href="http://localhost:1313/posts/puppet-damnvulnerabledefi/" />
 
 
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-J6PB683BSR"></script>
-<script>
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.dataLayer = window.dataLayer || [];
-	function gtag(){dataLayer.push(arguments);}
-	gtag('js', new Date());
-	gtag('config', 'G-J6PB683BSR', { 'anonymize_ip': false });
-}
-</script>
-
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-J6PB683BSR"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-J6PB683BSR');
+        }
+      </script>
 
 
 
@@ -40,7 +43,7 @@ if (!doNotTrack) {
   
   
   
-  <link rel="stylesheet" href="https://TheSavageTeddy.github.io/styles.css">
+  <link rel="stylesheet" href="http://localhost:1313/styles.css">
 
 
 
@@ -48,7 +51,7 @@ if (!doNotTrack) {
 
 
 
-  <link rel="shortcut icon" href="https://TheSavageTeddy.github.io/favicon.ico">
+  <link rel="shortcut icon" href="http://localhost:1313/favicon.ico">
 
 
 
@@ -65,11 +68,11 @@ if (!doNotTrack) {
 <meta property="og:type" content="article" />
 <meta property="og:title" content="Puppet Writeup - DamnVulnerableDefi V3">
 <meta property="og:description" content="Writeup for Puppet (Level 8) from DamnVulnerableDefi V3, an oracle manipulation challenge in one transaction." />
-<meta property="og:url" content="https://TheSavageTeddy.github.io/posts/puppet-damnvulnerabledefi/" />
+<meta property="og:url" content="http://localhost:1313/posts/puppet-damnvulnerabledefi/" />
 <meta property="og:site_name" content="teddyctf" />
 
   
-    <meta property="og:image" content="https://TheSavageTeddy.github.io/favicon.ico">
+    <meta property="og:image" content="http://localhost:1313/favicon.ico">
   
 
 <meta property="og:image:width" content="1200">
@@ -80,7 +83,7 @@ if (!doNotTrack) {
   <meta property="article:section" content="web3" />
 
 
-  <meta property="article:published_time" content="2024-02-13 18:10:00 &#43;0800 AWST" />
+  <meta property="article:published_time" content="2024-02-13 21:10:00 &#43;1100 AEDT" />
 
 
 
@@ -183,7 +186,7 @@ if (!doNotTrack) {
       
 <article class="post">
   <h1 class="post-title">
-    <a href="https://TheSavageTeddy.github.io/posts/puppet-damnvulnerabledefi/"> Puppet Writeup - DamnVulnerableDefi V3</a>
+    <a href="http://localhost:1313/posts/puppet-damnvulnerabledefi/"> Puppet Writeup - DamnVulnerableDefi V3</a>
   </h1>
   <div class="post-meta">
     
@@ -199,13 +202,13 @@ if (!doNotTrack) {
   
     <span class="post-tags">
       
-      #<a href="https://TheSavageTeddy.github.io/tags/web3/">web3</a>&nbsp;
+      #<a href="http://localhost:1313/tags/web3/">web3</a>&nbsp;
       
-      #<a href="https://TheSavageTeddy.github.io/tags/solidity/">solidity</a>&nbsp;
+      #<a href="http://localhost:1313/tags/solidity/">solidity</a>&nbsp;
       
-      #<a href="https://TheSavageTeddy.github.io/tags/writeup/">writeup</a>&nbsp;
+      #<a href="http://localhost:1313/tags/writeup/">writeup</a>&nbsp;
       
-      #<a href="https://TheSavageTeddy.github.io/tags/damnvulnerabledefi/">damnvulnerabledefi</a>&nbsp;
+      #<a href="http://localhost:1313/tags/damnvulnerabledefi/">damnvulnerabledefi</a>&nbsp;
       
     </span>
   
@@ -231,8 +234,7 @@ if (!doNotTrack) {
 There’s a DVT market opened in an old <a href="https://docs.uniswap.org/contracts/v1/overview">Uniswap v1 exchange</a>, currently with 10 ETH and 10 DVT in liquidity.
 <br>
 <br>
-Pass the challenge by taking all tokens from the lending pool. You start with 25 ETH and 1000 DVTs in balance.</p>
-</blockquote>
+Pass the challenge by taking all tokens from the lending pool. You start with 25 ETH and 1000 DVTs in balance.</p></blockquote>
 <p>We are given source code of the lending pool, the DVT, and the test file:</p>
 
 
@@ -702,7 +704,7 @@ contract PuppetAttack {
   </div>
 
 </p>
-<p>Relevant Hardhat solve script (full code <a href="puppet.challenge.js">here</a>):</p>
+<p>Relevant Hardhat solve script (full code <a href="/posts/puppet-damnvulnerabledefi/puppet.challenge.js">here</a>):</p>
 
 
 

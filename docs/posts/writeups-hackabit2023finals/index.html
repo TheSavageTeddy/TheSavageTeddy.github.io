@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
   
 
   
@@ -15,20 +15,23 @@
 <meta name="description" content="Full writeups for all challenges for the finals of a beginner CTF." />
 <meta name="keywords" content="" />
 <meta name="robots" content="noodp" />
-<link rel="canonical" href="https://TheSavageTeddy.github.io/posts/writeups-hackabit2023finals/" />
+<link rel="canonical" href="http://localhost:1313/posts/writeups-hackabit2023finals/" />
 
 
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-J6PB683BSR"></script>
-<script>
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.dataLayer = window.dataLayer || [];
-	function gtag(){dataLayer.push(arguments);}
-	gtag('js', new Date());
-	gtag('config', 'G-J6PB683BSR', { 'anonymize_ip': false });
-}
-</script>
-
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-J6PB683BSR"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-J6PB683BSR');
+        }
+      </script>
 
 
 
@@ -40,7 +43,7 @@ if (!doNotTrack) {
   
   
   
-  <link rel="stylesheet" href="https://TheSavageTeddy.github.io/styles.css">
+  <link rel="stylesheet" href="http://localhost:1313/styles.css">
 
 
 
@@ -48,7 +51,7 @@ if (!doNotTrack) {
 
 
 
-  <link rel="shortcut icon" href="https://TheSavageTeddy.github.io/favicon.ico">
+  <link rel="shortcut icon" href="http://localhost:1313/favicon.ico">
 
 
 
@@ -65,14 +68,14 @@ if (!doNotTrack) {
 <meta property="og:type" content="article" />
 <meta property="og:title" content="Full Writeups - Hack A Bit CTF Finals 0x01">
 <meta property="og:description" content="Full writeups for all challenges for the finals of a beginner CTF." />
-<meta property="og:url" content="https://TheSavageTeddy.github.io/posts/writeups-hackabit2023finals/" />
+<meta property="og:url" content="http://localhost:1313/posts/writeups-hackabit2023finals/" />
 <meta property="og:site_name" content="teddyctf" />
 
   
   
     
   
-  <meta property="og:image" content="https://TheSavageTeddy.github.io/posts/writeups-hackabit2023finals/pwn4.png">
+  <meta property="og:image" content="http://localhost:1313/posts/writeups-hackabit2023finals/pwn4.png">
 
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="627">
@@ -80,7 +83,7 @@ if (!doNotTrack) {
   <meta property="article:section" content="CTF Writeups" />
 
 
-  <meta property="article:published_time" content="2023-05-21 00:00:00 &#43;0800 AWST" />
+  <meta property="article:published_time" content="2023-05-21 02:00:00 &#43;1000 AEST" />
 
 
 
@@ -183,7 +186,11 @@ if (!doNotTrack) {
       
 <article class="post">
   <h1 class="post-title">
-    <a href="https://TheSavageTeddy.github.io/posts/writeups-hackabit2023finals/"><img src="https://ctftime.org/media/events/1_1_light_with_text_1.png"  class="left"  style="border-radius: 5px; height: auto; width: 3em; display: inline; vertical-align: middle; "  /> Full Writeups - Hack A Bit CTF Finals 0x01</a>
+    <a href="http://localhost:1313/posts/writeups-hackabit2023finals/">
+  <img src="https://ctftime.org/media/events/1_1_light_with_text_1.png"  class="left"  style="border-radius: 5px; height: auto; width: 3em; display: inline; vertical-align: middle; "  />
+
+
+ Full Writeups - Hack A Bit CTF Finals 0x01</a>
   </h1>
   <div class="post-meta">
     
@@ -199,9 +206,9 @@ if (!doNotTrack) {
   
     <span class="post-tags">
       
-      #<a href="https://TheSavageTeddy.github.io/tags/ctf/">ctf</a>&nbsp;
+      #<a href="http://localhost:1313/tags/ctf/">ctf</a>&nbsp;
       
-      #<a href="https://TheSavageTeddy.github.io/tags/beginner/">beginner</a>&nbsp;
+      #<a href="http://localhost:1313/tags/beginner/">beginner</a>&nbsp;
       
     </span>
   
@@ -224,19 +231,17 @@ if (!doNotTrack) {
 
 <p>Below are writeups for all the challenges in the finals. If I&rsquo;ve missed anything or made a mistake like a typo, please let me know on discord <code>TheSavageTeddy#7458</code>. Enjoy!</p>
 <h1 id="challenge-categories">Challenge Categories<a href="#challenge-categories" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
-<p><a href="#1-dvgpt"><code>dvGPT</code> (Web Exploitation)</a> - 4 challenges</p>
-<p><a href="#2-corruption"><code>Corruption</code> (Rev/Binary Exploitation)</a> - 4 challenges</p>
-<p><a href="#3-triage"><code>Triage</code> (Cryptography/Forensics)</a> - 4 challenges</p>
-<p><a href="#4-range--zz-king-of-the-hill"><code>Range &amp; King of The Hill</code> (Machines/Attack Defense)</a> - 4 challenges + 8 Attack Defense Flags</p>
+<p><a href="/posts/writeups-hackabit2023finals/#1-dvgpt"><code>dvGPT</code> (Web Exploitation)</a> - 4 challenges</p>
+<p><a href="/posts/writeups-hackabit2023finals/#2-corruption"><code>Corruption</code> (Rev/Binary Exploitation)</a> - 4 challenges</p>
+<p><a href="/posts/writeups-hackabit2023finals/#3-triage"><code>Triage</code> (Cryptography/Forensics)</a> - 4 challenges</p>
+<p><a href="/posts/writeups-hackabit2023finals/#4-range--zz-king-of-the-hill"><code>Range &amp; King of The Hill</code> (Machines/Attack Defense)</a> - 4 challenges + 8 Attack Defense Flags</p>
 <h1 id="1-dvgpt">1. dvGPT<a href="#1-dvgpt" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
 <p>This category contained 4 web challenges, all based on the same website, hosting chatbot similar to chatGPT, which was quite interesting and fun!</p>
 <h2 id="leaky-75">Leaky (75)<a href="#leaky-75" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
 <blockquote>
-<p>Author: Nate Singer (Helix)</p>
-</blockquote>
+<p>Author: Nate Singer (Helix)</p></blockquote>
 <blockquote>
-<p>People leave dumb comments about vulnerabilities all over client-side code&hellip; most modern web applications don&rsquo;t display all the possible code at once though, for a variety of reasons.</p>
-</blockquote>
+<p>People leave dumb comments about vulnerabilities all over client-side code&hellip; most modern web applications don&rsquo;t display all the possible code at once though, for a variety of reasons.</p></blockquote>
 <p>We are given a link to a website, which hosts an AI similar to chatGPT. The description hints at &lsquo;client-side code&rsquo; so we inspect element, and find the flag in a javascript file in 2 parts.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span>                <span style="color:#66d9ef">class</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;intro-window&#34;</span>,
 </span></span><span style="display:flex;"><span>                <span style="color:#a6e22e">id</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;flag{the_DOM_is_like_&#34;</span>
@@ -253,11 +258,9 @@ if (!doNotTrack) {
 </span></span></code></pre></div><p>Flag: <code>flag{the_DOM_is_like_crazy_virtual_maaaan}</code></p>
 <h2 id="extractor-100">Extractor (100)<a href="#extractor-100" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
 <blockquote>
-<p>Author: Nate Singer (Helix)</p>
-</blockquote>
+<p>Author: Nate Singer (Helix)</p></blockquote>
 <blockquote>
-<p>We gave dvGPT a flag and for some reason trust it to keep it safe. These AIs are super duper secure my dude.</p>
-</blockquote>
+<p>We gave dvGPT a flag and for some reason trust it to keep it safe. These AIs are super duper secure my dude.</p></blockquote>
 <p>Sounds like prompt engineering. We simply ask for the flag, in words I guess.</p>
 
   <img src="./img/web1.png"  class="center"  style="border-radius: 5px; width: 100%;"  />
@@ -266,14 +269,11 @@ if (!doNotTrack) {
 <p>Flag: `flag{hey_you&rsquo;re_not_robert}</p>
 <h2 id="badml-125">BadML (125)<a href="#badml-125" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
 <blockquote>
-<p>Author: Nate Singer (Helix)</p>
-</blockquote>
+<p>Author: Nate Singer (Helix)</p></blockquote>
 <blockquote>
-<p>Where does all this data come from? Have you found all the app endpoints?</p>
-</blockquote>
+<p>Where does all this data come from? Have you found all the app endpoints?</p></blockquote>
 <blockquote>
-<p>The flag is located at ./flag.txt</p>
-</blockquote>
+<p>The flag is located at ./flag.txt</p></blockquote>
 <p>Lets look around the website. Using burpsuite, we can find what resources the website requests and loads, and upon some digging we find it sends a get request to <code>/footer?message=default</code> to get the footer message.</p>
 
   <img src="./img/web2.png"  class="center"  style="border-radius: 5px; width: 100%;"  />
@@ -287,20 +287,15 @@ if (!doNotTrack) {
 <p>And we get the flag: <code>flag{LFI_LetsgoFindIt}</code>. Note that you don&rsquo;t need to use burpsuite repeater - visiting <code>/footer?message=flag.txt</code> works too.</p>
 <h2 id="badai-150">BadAI (150)<a href="#badai-150" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
 <blockquote>
-<p>Author: Nate Singer (Helix)</p>
-</blockquote>
+<p>Author: Nate Singer (Helix)</p></blockquote>
 <blockquote>
-<p>So we have this guy named Bill that works here&ndash;he handles the support tickets for dvGPT. If you have any problems let us know and Bill will check it out. Bill does nothing but stare at the ticket feed, so you can expect him to check your request within a couple seconds.</p>
-</blockquote>
+<p>So we have this guy named Bill that works here&ndash;he handles the support tickets for dvGPT. If you have any problems let us know and Bill will check it out. Bill does nothing but stare at the ticket feed, so you can expect him to check your request within a couple seconds.</p></blockquote>
 <blockquote>
-<p>Bill can only view pages from dvGPT though, so don&rsquo;t bother sending him anything else.</p>
-</blockquote>
+<p>Bill can only view pages from dvGPT though, so don&rsquo;t bother sending him anything else.</p></blockquote>
 <blockquote>
-<p>The flag is stored in a cookie in Bill&rsquo;s browser.</p>
-</blockquote>
+<p>The flag is stored in a cookie in Bill&rsquo;s browser.</p></blockquote>
 <blockquote>
-<p>&ndash; If you think you&rsquo;re close feel free to DM me (Nate) and I will help you depending on what you&rsquo;re asking and how close you are. There are some browser nuances you might not be aware of and if you are 99% of the way there we&rsquo;ll probably give it to you.</p>
-</blockquote>
+<p>&ndash; If you think you&rsquo;re close feel free to DM me (Nate) and I will help you depending on what you&rsquo;re asking and how close you are. There are some browser nuances you might not be aware of and if you are 99% of the way there we&rsquo;ll probably give it to you.</p></blockquote>
 <p>Every part of the description hints to this being an <a href="https://portswigger.net/web-security/cross-site-scripting">XSS</a> challenge - almost every time when the goal is to steal a bot&rsquo;s cookie, it is done through XSS.</p>
 
   <img src="./img/web4.png"  class="center"  style="border-radius: 5px; width: 100%;"  />
@@ -325,14 +320,11 @@ if (!doNotTrack) {
 <p>This category contained 4 challenges based on binaries - reverse engineering and binary exploitation were needed to solve all 4! Also, all the challenges used the same binary&hellip;</p>
 <h2 id="santa-75">Santa (75)<a href="#santa-75" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
 <blockquote>
-<p>You all asked for it so here it is, an intro to binary exploitation!</p>
-</blockquote>
+<p>You all asked for it so here it is, an intro to binary exploitation!</p></blockquote>
 <blockquote>
-<p>Let&rsquo;s get started nice and simple, baby steps to reverse engineering (RE).</p>
-</blockquote>
+<p>Let&rsquo;s get started nice and simple, baby steps to reverse engineering (RE).</p></blockquote>
 <blockquote>
-<p>All challenges in this section use the same binary. The target is x86 and ASLR is on but it shouldn&rsquo;t be relevant to any of your exploits.</p>
-</blockquote>
+<p>All challenges in this section use the same binary. The target is x86 and ASLR is on but it shouldn&rsquo;t be relevant to any of your exploits.</p></blockquote>
 <p>We get a binary file. We can simply strings grep the file to get the flag - not much reverse engineering involved, I guess. Flag: <code>flag{baby_steps_gift_just_for_you}</code></p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>uwuteddy@DESKTOP-5BVRVO8:~$ strings corruption |grep -i flag
 </span></span><span style="display:flex;"><span>flag<span style="color:#f92672">{</span>baby_steps_gift_just_for_you<span style="color:#f92672">}</span>
@@ -340,8 +332,7 @@ if (!doNotTrack) {
 </span></span><span style="display:flex;"><span>controller_flag
 </span></span></code></pre></div><h1 id="coredump-100">Coredump (100)<a href="#coredump-100" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
 <blockquote>
-<p>Now that we have at least inspected the binary, lets go a bit deeper. You can&rsquo;t just overflow the buffer with a bunch of A&rsquo;s&ndash;reverse engineer the software and figure out your payload format. Smash the stack to get the flag, no control necessary yet. Once you have a working exploit, fire it against the remote target to get the real flag.</p>
-</blockquote>
+<p>Now that we have at least inspected the binary, lets go a bit deeper. You can&rsquo;t just overflow the buffer with a bunch of A&rsquo;s&ndash;reverse engineer the software and figure out your payload format. Smash the stack to get the flag, no control necessary yet. Once you have a working exploit, fire it against the remote target to get the real flag.</p></blockquote>
 <p>From the description: smash the stack, no control necessary <em>yet</em>. Upon running the binary locally, and smashing the stack by sending a bunch of characters, nothing really happens. Decompiling the binary <a href="https://dogbolt.org/?id=a1a87852-0a8c-451d-a408-efcc14a3d4a9">online</a> we see what is going on - it seems like these flags are loaded from environment variables, which are of course, not set locally.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">flag_function</span>()
 </span></span><span style="display:flex;"><span>{
@@ -411,12 +402,10 @@ if (!doNotTrack) {
 <h2 id="bitsandbytes-125--controller-150">bitsANDbytes (125) &amp; Controller (150)<a href="#bitsandbytes-125--controller-150" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
 <p>bitsANDbytes:</p>
 <blockquote>
-<p>Now that you have the ability to smash the stack, it&rsquo;s time to get control of the instruction pointer. Use your reverse engineering to figure out proper addresses, we&rsquo;ve given you the code required to pull the flag.</p>
-</blockquote>
+<p>Now that you have the ability to smash the stack, it&rsquo;s time to get control of the instruction pointer. Use your reverse engineering to figure out proper addresses, we&rsquo;ve given you the code required to pull the flag.</p></blockquote>
 <p>Controller:</p>
 <blockquote>
-<p>Nice, last step, you have a leak but not for the right function, how can we tackle this problem?</p>
-</blockquote>
+<p>Nice, last step, you have a leak but not for the right function, how can we tackle this problem?</p></blockquote>
 <p>Okay, let me address something - remember how these challenges all used the same binary? Well, as discussed previously, the flags were stored in environment variables! That means, if we were to get a shell on the remote, we could simply read the environment variables and get all the flags!!!</p>
 <p>But first of all, let&rsquo;s address the vulnerability. From before, we have a buffer overflow (BOF) vulnerability, but the max bytes we can overwrite is only 10, which usually isn&rsquo;t enough to completely overwrite the return pointer <code>rip</code> to redirect code execution.</p>
 <p>The second vulnerability lies here:</p>
@@ -486,14 +475,11 @@ if (!doNotTrack) {
 <p>We are given a set of 4 cryptography/forensics challenges - there are 2 wireshark challenges that are linked (use same file).</p>
 <h2 id="sluth-75">Sluth (75)<a href="#sluth-75" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
 <blockquote>
-<p>Author: Nate Singer (Helix)</p>
-</blockquote>
+<p>Author: Nate Singer (Helix)</p></blockquote>
 <blockquote>
-<p>Everything in life is iterative&hellip;</p>
-</blockquote>
+<p>Everything in life is iterative&hellip;</p></blockquote>
 <blockquote>
-<p>NON-STANDARD FLAG FORMAT</p>
-</blockquote>
+<p>NON-STANDARD FLAG FORMAT</p></blockquote>
 <p>We are given a (very large) file containing dots, dashes and slashes, hinting to morse code. Using cyberchef, we can decode from morse code, only to be met with more morse code! Decoding 5 times however, gives us the flag.</p>
 <p><em>Note: If you encountered problems doing this challenge, it might be due to the newline at the end of the text file which may cause some decoding issues.</em></p>
 
@@ -503,14 +489,11 @@ if (!doNotTrack) {
 <p>Flag: <code>FIVE_TIMES_0.O</code></p>
 <h2 id="inspector-100">Inspector (100)<a href="#inspector-100" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
 <blockquote>
-<p>Author: Nate Singer (Helix)</p>
-</blockquote>
+<p>Author: Nate Singer (Helix)</p></blockquote>
 <blockquote>
-<p>It&rsquo;s just a simple stream challenge, how hard can it be?</p>
-</blockquote>
+<p>It&rsquo;s just a simple stream challenge, how hard can it be?</p></blockquote>
 <blockquote>
-<p>Both challenges for this section use the same pcapng file.</p>
-</blockquote>
+<p>Both challenges for this section use the same pcapng file.</p></blockquote>
 <p>We are given a packet capture pcapng file. Following the TCP stream, we eventually find the flag at stream 48.</p>
 
   <img src="./img/cry2.png"  class="center"  style="border-radius: 5px; width: 100%;"  />
@@ -519,8 +502,7 @@ if (!doNotTrack) {
 <p>Flag: <code>flag{tcp_streams_reveal_more}</code></p>
 <h2 id="coverup-125">Coverup (125)<a href="#coverup-125" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
 <blockquote>
-<p>There is a challenge hidden in coverup.jpg, extract the flag and profit.</p>
-</blockquote>
+<p>There is a challenge hidden in coverup.jpg, extract the flag and profit.</p></blockquote>
 <p>We are given <code>challenge.jpg</code>. As an image file, we do some basic analysis on it - <code>binwalk</code>, <code>exiftool</code>, <code>strings</code>, and <code>stegsolve</code>. None of these really return any results, so we use <code>steghide</code>, an image stegonography tool that can hide and extract data with passwords, which turns out to be the solution. (<code>stegseek</code>, the program I used in the image is simply <code>steghide</code> but can brute force passwords from a wordlist, very fast. There was no password however.)</p>
 
   <img src="./img/cry3.png"  class="center"  style="border-radius: 5px; width: 100%;"  />
@@ -529,14 +511,11 @@ if (!doNotTrack) {
 <p>Flag: <code>flag{the_truth_is_burried_deep}</code></p>
 <h2 id="extraction-150">Extraction (150)<a href="#extraction-150" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
 <blockquote>
-<p>Author: Nate Singer (Helix)</p>
-</blockquote>
+<p>Author: Nate Singer (Helix)</p></blockquote>
 <blockquote>
-<p>Check out the pcap file, something weird is going on in here&hellip;</p>
-</blockquote>
+<p>Check out the pcap file, something weird is going on in here&hellip;</p></blockquote>
 <blockquote>
-<p>Both challenges for this section use the same pcapng file.</p>
-</blockquote>
+<p>Both challenges for this section use the same pcapng file.</p></blockquote>
 <p>Back to the wireshark pcapng challenge - as we continue to explore the file, we find some interesting data at around TCP stream ~110-140</p>
 
   <img src="./img/cry4.png"  class="center"  style="border-radius: 5px; width: 100%;"  />
@@ -557,14 +536,11 @@ if (!doNotTrack) {
 <p>These challenges involved attacking a machine, similar to <a href="https://www.hackthebox.com/">HackTheBox</a>! There is also attack defense components of it, being linked to King of the Hill.</p>
 <h2 id="connection-75">Connection (75)<a href="#connection-75" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
 <blockquote>
-<p>Author: Nate Singer (Helix)</p>
-</blockquote>
+<p>Author: Nate Singer (Helix)</p></blockquote>
 <blockquote>
-<p>This section is a series of challenges in a semi-isolated cyber range. Your goal is to compromise the boxes and get the flags. Your first challenge is more of a sanity-check/confirmation. We wanted to use private keys for this but logistics of distributing them was challenge so its just password login for now. Check your email, at exactly 5pm PST Friday you received a credential and IP address for this jumpbox. You can also use the connection info listed below.</p>
-</blockquote>
+<p>This section is a series of challenges in a semi-isolated cyber range. Your goal is to compromise the boxes and get the flags. Your first challenge is more of a sanity-check/confirmation. We wanted to use private keys for this but logistics of distributing them was challenge so its just password login for now. Check your email, at exactly 5pm PST Friday you received a credential and IP address for this jumpbox. You can also use the connection info listed below.</p></blockquote>
 <blockquote>
-<p>You will use this jumpbox to attack other machines in the network. We&rsquo;ve installed nmap, metasploit and netcat for your convience. If you want other tooling installed later please reach out to staff and will consider those requests as you ask. Remember that you can use techniques like proxychains over SSH to emulate much of this functionality.</p>
-</blockquote>
+<p>You will use this jumpbox to attack other machines in the network. We&rsquo;ve installed nmap, metasploit and netcat for your convience. If you want other tooling installed later please reach out to staff and will consider those requests as you ask. Remember that you can use techniques like proxychains over SSH to emulate much of this functionality.</p></blockquote>
 <p>From the email we recieved, we <code>ssh</code> to the machine. Looking around, we find the flag at <code>/opt/flag.txt</code>.</p>
 
   <img src="./img/box1.png"  class="center"  style="border-radius: 5px; width: 100%;"  />
@@ -573,14 +549,11 @@ if (!doNotTrack) {
 <p>Flag: <code>flag{welcome_to_the_range}</code></p>
 <h2 id="rightface-100">RightFace (100)<a href="#rightface-100" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
 <blockquote>
-<p>Author: Nate Singer (Helix)</p>
-</blockquote>
+<p>Author: Nate Singer (Helix)</p></blockquote>
 <blockquote>
-<p>If you did the more advanced challenges during the qualifier this should already be familiar. Your goal here is to compromise the 10.128.0.5 machine and get access as the breakme user.</p>
-</blockquote>
+<p>If you did the more advanced challenges during the qualifier this should already be familiar. Your goal here is to compromise the 10.128.0.5 machine and get access as the breakme user.</p></blockquote>
 <blockquote>
-<p>Remember that there may be non-vulnerable services on the machine. Recon is the #1 priority. Keep this shell open once you have it, you&rsquo;ll need it for Left Face.</p>
-</blockquote>
+<p>Remember that there may be non-vulnerable services on the machine. Recon is the #1 priority. Keep this shell open once you have it, you&rsquo;ll need it for Left Face.</p></blockquote>
 <p>We are told to compromise the <code>10.128.0.5</code> machine, and gain access as <code>breakme</code>.</p>
 <pre tabindex="0"><code>Not shown: 998 closed ports
 PORT   STATE SERVICE VERSION
@@ -597,11 +570,9 @@ Service Info: OSs: Unix, Linux; CPE: cpe:/o:linux:linux_kernel
 <p>Flag: <code>flag{remember_this_one?_pays_to_be_a_winner}</code></p>
 <h2 id="leftface-125">LeftFace (125)<a href="#leftface-125" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
 <blockquote>
-<p>Author: Nate Singer (Helix)</p>
-</blockquote>
+<p>Author: Nate Singer (Helix)</p></blockquote>
 <blockquote>
-<p>With access to 10.128.0.5 your goal is to escelate priveleges to the breakme-harder user. Ultimately your goal is simply to read out the flag in /home/breakme-harder/.</p>
-</blockquote>
+<p>With access to 10.128.0.5 your goal is to escelate priveleges to the breakme-harder user. Ultimately your goal is simply to read out the flag in /home/breakme-harder/.</p></blockquote>
 <p>This is a continuation of the previous challenge, <code>RightFace</code>. We are told to escalate privleges as the <code>breakme-harder</code> user to get the flag.</p>
 <p>Upon further exploration of the machine, we find the <code>breakme-harder</code> user and <code>flag.txt</code> inside its directly. However, we do not have sufficient permissions to read it.</p>
 
@@ -621,17 +592,13 @@ Service Info: OSs: Unix, Linux; CPE: cpe:/o:linux:linux_kernel
 <p>Flag: <code>flag{evaluate_this_my_dude}</code></p>
 <h2 id="aboutface-150">AboutFace (150)<a href="#aboutface-150" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
 <blockquote>
-<p>Author: Nate Singer (Helix)</p>
-</blockquote>
+<p>Author: Nate Singer (Helix)</p></blockquote>
 <blockquote>
-<p>Different box this time, your target is now 10.128.0.4&ndash;straight to root. Remember that there may be non-vulnerable services on the machine. Recon is the #1 focus.</p>
-</blockquote>
+<p>Different box this time, your target is now 10.128.0.4&ndash;straight to root. Remember that there may be non-vulnerable services on the machine. Recon is the #1 focus.</p></blockquote>
 <blockquote>
-<p>Once you have access to the box stay at the top of the hill and listen for flags on localhost:5000/tcp. You will get alive notices once every 60 seconds while you are connected so you can be sure that you&rsquo;ll receive flags at the specific release times. To see the release times check out the other section.</p>
-</blockquote>
+<p>Once you have access to the box stay at the top of the hill and listen for flags on localhost:5000/tcp. You will get alive notices once every 60 seconds while you are connected so you can be sure that you&rsquo;ll receive flags at the specific release times. To see the release times check out the other section.</p></blockquote>
 <blockquote>
-<p>Caviets You are root. This means you can do whatever you want, for the most part. You are welcome to lock people out but only in specific ways. If you accidentially take down any of the existing services or remove Nate&rsquo;s ability to SSH in for monitoring the machine will be reverted to the last known-good snapshot and you will probably lose access. This also goes for changing the flag files. If we determine that the flags has been altered the machine will also be reverted. Lastly, if someone has concurrent access for four flags in a row we may block them from future access to give others the opportunity to attack the machine&ndash;we&rsquo;ll decide this in real time during the weekend depending on how things go.</p>
-</blockquote>
+<p>Caviets You are root. This means you can do whatever you want, for the most part. You are welcome to lock people out but only in specific ways. If you accidentially take down any of the existing services or remove Nate&rsquo;s ability to SSH in for monitoring the machine will be reverted to the last known-good snapshot and you will probably lose access. This also goes for changing the flag files. If we determine that the flags has been altered the machine will also be reverted. Lastly, if someone has concurrent access for four flags in a row we may block them from future access to give others the opportunity to attack the machine&ndash;we&rsquo;ll decide this in real time during the weekend depending on how things go.</p></blockquote>
 <p>Okay, now we are given a different machine to attack. Again scanning the machine with <code>nmap</code>, we discover a few services.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>Not shown: <span style="color:#ae81ff">65529</span> closed ports
 </span></span><span style="display:flex;"><span>PORT      STATE SERVICE    VERSION
@@ -657,14 +624,11 @@ Service Info: OSs: Unix, Linux; CPE: cpe:/o:linux:linux_kernel
 <p>Flag: <code>flag{bestow_the_crown}</code></p>
 <h2 id="king-of-the-hill-30">King of The Hill (30)<a href="#king-of-the-hill-30" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
 <blockquote>
-<p>Once you have access to the fourth machine in the range you need to listen on port tcp/5000, you can do this with nc, for example. The flag will be sent at a specific time. Retain control of the box to get all the flags. We will spam the flag a few times around that point in time so that you are sure to receive it if you have things setup properly.</p>
-</blockquote>
+<p>Once you have access to the fourth machine in the range you need to listen on port tcp/5000, you can do this with nc, for example. The flag will be sent at a specific time. Retain control of the box to get all the flags. We will spam the flag a few times around that point in time so that you are sure to receive it if you have things setup properly.</p></blockquote>
 <blockquote>
-<p>We also may reset the machine if we determine that you have locked folks out in a way that gives you an unfair advantage. The vulnerable service on the box must stay present. We also may reset the machine any time two consecutive flags are retrieved by the same competitor.</p>
-</blockquote>
+<p>We also may reset the machine if we determine that you have locked folks out in a way that gives you an unfair advantage. The vulnerable service on the box must stay present. We also may reset the machine any time two consecutive flags are retrieved by the same competitor.</p></blockquote>
 <blockquote>
-<p>Additionally, we will send alive notices once every 60 seconds. If you have a valid listener you will receive these alive notices, BUT if you aren&rsquo;t careful your server may die when the connection closes!!</p>
-</blockquote>
+<p>Additionally, we will send alive notices once every 60 seconds. If you have a valid listener you will receive these alive notices, BUT if you aren&rsquo;t careful your server may die when the connection closes!!</p></blockquote>
 <p>This is a continuation of <code>AboutFace</code>, assuming we already have a shell on that machine. I will document some interesting events of roughly what happened below.</p>
 <p>There were 8 points in time where the flag would be sent on the machine to port <code>5000</code>. Anyone listening to the port would recieve the flag.</p>
 <pre tabindex="0"><code>    ├── 1. 7pm PST, Friday (30)

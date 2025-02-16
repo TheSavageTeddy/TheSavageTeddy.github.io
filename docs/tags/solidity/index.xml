@@ -1,22 +1,23 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>solidity on teddyctf</title>
-    <link>https://TheSavageTeddy.github.io/tags/solidity/</link>
-    <description>Recent content in solidity on teddyctf</description>
+    <title>Solidity on teddyctf</title>
+    <link>http://localhost:1313/tags/solidity/</link>
+    <description>Recent content in Solidity on teddyctf</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
+    <language>en</language>
     <copyright>teddyctf</copyright>
-    <lastBuildDate>Tue, 13 Feb 2024 18:10:00 +0800</lastBuildDate><atom:link href="https://TheSavageTeddy.github.io/tags/solidity/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 13 Feb 2024 21:10:00 +1100</lastBuildDate><atom:link href="http://localhost:1313/tags/solidity/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Puppet Writeup - DamnVulnerableDefi V3</title>
-      <link>https://TheSavageTeddy.github.io/posts/puppet-damnvulnerabledefi/</link>
-      <pubDate>Tue, 13 Feb 2024 18:10:00 +0800</pubDate>
+      <link>http://localhost:1313/posts/puppet-damnvulnerabledefi/</link>
+      <pubDate>Tue, 13 Feb 2024 21:10:00 +1100</pubDate>
       
-      <guid>https://TheSavageTeddy.github.io/posts/puppet-damnvulnerabledefi/</guid>
-      <description>This post contains the walkthrough and solutions for Puppet, a challenge from the DamnVulnerableDefi wargame, featuring a price oracle manipulation vulnerability.
-But wait, why another writeup? You may be wondering why I’m making a writeup for this challenge, when there are already tons of other writeups online. Well, many of the writeups online don&amp;rsquo;t actually solve the challenge properly.
-There was a new solve condition added in V3 of DamnVulnerableDefi, which required you, the attacker (player) to only make 1 transaction total.</description>
+      <guid>http://localhost:1313/posts/puppet-damnvulnerabledefi/</guid>
+      <description>&lt;p&gt;This post contains the walkthrough and solutions for &lt;a href=&#34;https://www.damnvulnerabledefi.xyz/challenges/puppet/&#34;&gt;Puppet&lt;/a&gt;, a challenge from the &lt;a href=&#34;https://www.damnvulnerabledefi.xyz&#34;&gt;DamnVulnerableDefi&lt;/a&gt; wargame, featuring a price oracle manipulation vulnerability.&lt;/p&gt;
+&lt;h4 id=&#34;but-wait-why-another-writeup&#34;&gt;But wait, why another writeup?&lt;/h4&gt;
+&lt;p&gt;You may be wondering why I’m making a writeup for this challenge, when there are already tons of other writeups online. Well, many of the writeups online &lt;strong&gt;don&amp;rsquo;t actually solve the challenge properly&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;There was a new solve condition added in V3 of DamnVulnerableDefi, which required you, the attacker (&lt;code&gt;player&lt;/code&gt;) to only make 1 transaction total.&lt;/p&gt;</description>
       <content>&lt;p&gt;This post contains the walkthrough and solutions for &lt;a href=&#34;https://www.damnvulnerabledefi.xyz/challenges/puppet/&#34;&gt;Puppet&lt;/a&gt;, a challenge from the &lt;a href=&#34;https://www.damnvulnerabledefi.xyz&#34;&gt;DamnVulnerableDefi&lt;/a&gt; wargame, featuring a price oracle manipulation vulnerability.&lt;/p&gt;
 &lt;h4 id=&#34;but-wait-why-another-writeup&#34;&gt;But wait, why another writeup?&lt;/h4&gt;
 &lt;p&gt;You may be wondering why I’m making a writeup for this challenge, when there are already tons of other writeups online. Well, many of the writeups online &lt;strong&gt;don&amp;rsquo;t actually solve the challenge properly&lt;/strong&gt;.&lt;/p&gt;
@@ -33,8 +34,7 @@ There was a new solve condition added in V3 of DamnVulnerableDefi, which require
 There’s a DVT market opened in an old &lt;a href=&#34;https://docs.uniswap.org/contracts/v1/overview&#34;&gt;Uniswap v1 exchange&lt;/a&gt;, currently with 10 ETH and 10 DVT in liquidity.
 &lt;br&gt;
 &lt;br&gt;
-Pass the challenge by taking all tokens from the lending pool. You start with 25 ETH and 1000 DVTs in balance.&lt;/p&gt;
-&lt;/blockquote&gt;
+Pass the challenge by taking all tokens from the lending pool. You start with 25 ETH and 1000 DVTs in balance.&lt;/p&gt;&lt;/blockquote&gt;
 &lt;p&gt;We are given source code of the lending pool, the DVT, and the test file:&lt;/p&gt;
 
 
@@ -504,7 +504,7 @@ contract PuppetAttack {
   &lt;/div&gt;
 
 &lt;/p&gt;
-&lt;p&gt;Relevant Hardhat solve script (full code &lt;a href=&#34;puppet.challenge.js&#34;&gt;here&lt;/a&gt;):&lt;/p&gt;
+&lt;p&gt;Relevant Hardhat solve script (full code &lt;a href=&#34;http://localhost:1313/posts/puppet-damnvulnerabledefi/puppet.challenge.js&#34;&gt;here&lt;/a&gt;):&lt;/p&gt;
 
 
 

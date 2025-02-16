@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
   
 
   
@@ -15,20 +15,23 @@
 <meta name="description" content="Writeups for multiple `crypto` challenges from IrisCTF 2023" />
 <meta name="keywords" content="" />
 <meta name="robots" content="noodp" />
-<link rel="canonical" href="https://TheSavageTeddy.github.io/posts/crypto-iris2023/" />
+<link rel="canonical" href="http://localhost:1313/posts/crypto-iris2023/" />
 
 
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-J6PB683BSR"></script>
-<script>
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.dataLayer = window.dataLayer || [];
-	function gtag(){dataLayer.push(arguments);}
-	gtag('js', new Date());
-	gtag('config', 'G-J6PB683BSR', { 'anonymize_ip': false });
-}
-</script>
-
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-J6PB683BSR"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-J6PB683BSR');
+        }
+      </script>
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"
     integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
@@ -54,7 +57,7 @@ if (!doNotTrack) {
   
   
   
-  <link rel="stylesheet" href="https://TheSavageTeddy.github.io/styles.css">
+  <link rel="stylesheet" href="http://localhost:1313/styles.css">
 
 
 
@@ -62,7 +65,7 @@ if (!doNotTrack) {
 
 
 
-  <link rel="shortcut icon" href="https://TheSavageTeddy.github.io/favicon.ico">
+  <link rel="shortcut icon" href="http://localhost:1313/favicon.ico">
 
 
 
@@ -79,14 +82,14 @@ if (!doNotTrack) {
 <meta property="og:type" content="article" />
 <meta property="og:title" content="Crypto Writeups - IrisCTF 2023">
 <meta property="og:description" content="Writeups for multiple `crypto` challenges from IrisCTF 2023" />
-<meta property="og:url" content="https://TheSavageTeddy.github.io/posts/crypto-iris2023/" />
+<meta property="og:url" content="http://localhost:1313/posts/crypto-iris2023/" />
 <meta property="og:site_name" content="teddyctf" />
 
   
   
     
   
-  <meta property="og:image" content="https://TheSavageTeddy.github.io/posts/crypto-iris2023/3amflag.png">
+  <meta property="og:image" content="http://localhost:1313/posts/crypto-iris2023/3amflag.png">
 
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="627">
@@ -96,7 +99,7 @@ if (!doNotTrack) {
   <meta property="article:section" content="cryptography" />
 
 
-  <meta property="article:published_time" content="2023-01-09 00:00:00 &#43;0800 AWST" />
+  <meta property="article:published_time" content="2023-01-09 03:00:00 &#43;1100 AEDT" />
 
 
 
@@ -199,7 +202,11 @@ if (!doNotTrack) {
       
 <article class="post">
   <h1 class="post-title">
-    <a href="https://TheSavageTeddy.github.io/posts/crypto-iris2023/"><img src="https://irissec.xyz/assets/img/logo_ascii.png"  class="left"  style="border-radius: 5px; height: auto; width: 3em; display: inline; vertical-align: middle; "  /> Crypto Writeups - IrisCTF 2023</a>
+    <a href="http://localhost:1313/posts/crypto-iris2023/">
+  <img src="https://irissec.xyz/assets/img/logo_ascii.png"  class="left"  style="border-radius: 5px; height: auto; width: 3em; display: inline; vertical-align: middle; "  />
+
+
+ Crypto Writeups - IrisCTF 2023</a>
   </h1>
   <div class="post-meta">
     
@@ -215,11 +222,11 @@ if (!doNotTrack) {
   
     <span class="post-tags">
       
-      #<a href="https://TheSavageTeddy.github.io/tags/ctf/">ctf</a>&nbsp;
+      #<a href="http://localhost:1313/tags/ctf/">ctf</a>&nbsp;
       
-      #<a href="https://TheSavageTeddy.github.io/tags/crypto/">crypto</a>&nbsp;
+      #<a href="http://localhost:1313/tags/crypto/">crypto</a>&nbsp;
       
-      #<a href="https://TheSavageTeddy.github.io/tags/writeup/">writeup</a>&nbsp;
+      #<a href="http://localhost:1313/tags/writeup/">writeup</a>&nbsp;
       
     </span>
   
@@ -238,15 +245,14 @@ if (!doNotTrack) {
 <p>I solved 4/6 crypto challenges in IrisCTF 2023, here are the writeups for them.</p>
 <p>Challenges (dynamic scoring):</p>
 <ul>
-<li><a href="#babynotrsa---145-solves"><code>babynotrsa</code></a> by <code>sera</code> - 145 solves</li>
-<li><a href="#babymixup---98-solves"><code>babymixup</code></a> by <code>sera</code> - 98 solves</li>
-<li><a href="#nonces-and-keys---53-solves"><code>Nonces and Keys</code></a> by <code>lambda</code> - 53 solves</li>
-<li><a href="#aes-bad-256---18-solves"><code>AES-BAD-256</code></a> by <code>sera</code> - 18 solves</li>
+<li><a href="/posts/crypto-iris2023/#babynotrsa---145-solves"><code>babynotrsa</code></a> by <code>sera</code> - 145 solves</li>
+<li><a href="/posts/crypto-iris2023/#babymixup---98-solves"><code>babymixup</code></a> by <code>sera</code> - 98 solves</li>
+<li><a href="/posts/crypto-iris2023/#nonces-and-keys---53-solves"><code>Nonces and Keys</code></a> by <code>lambda</code> - 53 solves</li>
+<li><a href="/posts/crypto-iris2023/#aes-bad-256---18-solves"><code>AES-BAD-256</code></a> by <code>sera</code> - 18 solves</li>
 </ul>
 <h1 id="babynotrsa---145-solves">babynotrsa - 145 solves<a href="#babynotrsa---145-solves" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
 <blockquote>
-<p>Everyone knows <a href="https://en.wikipedia.org/wiki/RSA_(cryptosystem)">RSA</a>, but everyone also knows that RSA is slow. Why not just use a faster operation than exponentiation?</p>
-</blockquote>
+<p>Everyone knows <a href="https://en.wikipedia.org/wiki/RSA_%28cryptosystem%29">RSA</a>, but everyone also knows that RSA is slow. Why not just use a faster operation than exponentiation?</p></blockquote>
 <p>We are given a source and output:</p>
 
 
@@ -325,8 +331,7 @@ flag: 39545236548455985927301569372696881408674800611184573074359458755790286957
 </span></span></code></pre></div><p><code>irisctf{discrete_divide_isn't_hard}</code></p>
 <h1 id="babymixup---98-solves">babymixup - 98 solves<a href="#babymixup---98-solves" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
 <blockquote>
-<p>I encrypted a public string and the flag with AES. There&rsquo;s no known key recovery attacks against AES, so you can&rsquo;t decrypt the flag.</p>
-</blockquote>
+<p>I encrypted a public string and the flag with AES. There&rsquo;s no known key recovery attacks against AES, so you can&rsquo;t decrypt the flag.</p></blockquote>
 <p>Given source and output:</p>
 
 
@@ -412,8 +417,7 @@ CT2 = f6816a603cefb0a0fd8a23a804b921bf489116fcc11d650c6ffb3fc0aae9393409c8f4f24c
 </span></span></code></pre></div><p><code>irisctf{the_iv_aint_secret_either_way_using_cbc}</code></p>
 <h1 id="nonces-and-keys---53-solves">Nonces and Keys - 53 solves<a href="#nonces-and-keys---53-solves" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
 <blockquote>
-<p>Because of our revolutionary AES-128-OFB technology we have encrypted your user data so securely that even with the key (k=0x13371337133713371337133713371337) evil hackers can&rsquo;t read out the passwords!!!</p>
-</blockquote>
+<p>Because of our revolutionary AES-128-OFB technology we have encrypted your user data so securely that even with the key (k=0x13371337133713371337133713371337) evil hackers can&rsquo;t read out the passwords!!!</p></blockquote>
 <p>We are provided with an encrypted sqlite3 file <code>challenge_enc.sqlite3</code>. Our goal is to decrypt it.</p>
 <p>Already given in the challenge description, the key is <code>0x13371337133713371337133713371337</code> and the file is encrypted using <code>AES-128-OFB</code>. Again, we can pull up a diagram.</p>
 
@@ -462,8 +466,7 @@ CT2 = f6816a603cefb0a0fd8a23a804b921bf489116fcc11d650c6ffb3fc0aae9393409c8f4f24c
 <p><code>irisctf{g0tt4_l0v3_s7re4mciph3rs}</code></p>
 <h1 id="aes-bad-256---18-solves">AES-BAD-256 - 18 solves<a href="#aes-bad-256---18-solves" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
 <blockquote>
-<p>I heard that some common block cipher modes have lots of footguns - using none (ECB) results in the legendary <a href="https://words.filippo.io/the-ecb-penguin/">ECB Penguin</a>, while others are vulnerable to <a href="https://en.wikipedia.org/wiki/Bit-flipping_attack">bit flipping</a> and <a href="https://en.wikipedia.org/wiki/Padding_oracle_attack">padding</a> attacks, so I made my own that would never fall to such a technique.</p>
-</blockquote>
+<p>I heard that some common block cipher modes have lots of footguns - using none (ECB) results in the legendary <a href="https://words.filippo.io/the-ecb-penguin/">ECB Penguin</a>, while others are vulnerable to <a href="https://en.wikipedia.org/wiki/Bit-flipping_attack">bit flipping</a> and <a href="https://en.wikipedia.org/wiki/Padding_oracle_attack">padding</a> attacks, so I made my own that would never fall to such a technique.</p></blockquote>
 <p>I&rsquo;m going to admit - I cheesed this challenge quite hard with bruteforce, but in my defense it was 3am&hellip;</p>
 
   <img src="./img/3amflag.png"  class="center"  style="border-radius: 5px; width: 50%;"  />
@@ -593,13 +596,13 @@ if __name__ == &#34;__main__&#34;:
 
 <p>and yep, it does indeed look vulnerable to bit-flipping attacks! Notice <code>echo</code> -&gt; <code>zcho</code></p>
 <p>The server generates us a ciphertext of command <code>echo</code> with some data, and our goal is to flip bits to make the command <code>flag</code>, which gives us the flag.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-py" data-lang="py"><span style="display:flex;"><span>match command[<span style="color:#e6db74">&#34;type&#34;</span>]:
-</span></span><span style="display:flex;"><span>    case <span style="color:#e6db74">&#34;echo&#34;</span>:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-py" data-lang="py"><span style="display:flex;"><span><span style="color:#66d9ef">match</span> command[<span style="color:#e6db74">&#34;type&#34;</span>]:
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#34;echo&#34;</span>:
 </span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> command<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#34;msg&#34;</span>, <span style="color:#e6db74">&#34;Hello world!&#34;</span>)
-</span></span><span style="display:flex;"><span>    case <span style="color:#e6db74">&#34;flag&#34;</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#34;flag&#34;</span>:
 </span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">with</span> open(<span style="color:#e6db74">&#34;/flag&#34;</span>, <span style="color:#e6db74">&#34;r&#34;</span>) <span style="color:#66d9ef">as</span> f:
 </span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> f<span style="color:#f92672">.</span>read()
-</span></span><span style="display:flex;"><span>    case other:
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">case</span> other:
 </span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Unknown command type </span><span style="color:#e6db74">{</span>command[<span style="color:#e6db74">&#39;type&#39;</span>]<span style="color:#e6db74">}</span><span style="color:#e6db74">...&#34;</span>
 </span></span></code></pre></div><p>What&rsquo;s super useful is that if the command is not valid, it tells us what our command was! Essentially, we get feedback about what bit we flipped something to.</p>
 <p>Now, remember the modification - block orders are random, therefore we will script to flip bits from every block and observe the feedback to see if we flipped the right bits. Our goal is to figure out which blocks need to be flipped to change the <code>echo</code> text.</p>
