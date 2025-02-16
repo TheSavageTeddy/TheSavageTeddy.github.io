@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Misc on teddyctf</title>
-    <link>http://localhost:1313/tags/misc/</link>
+    <link>https://TheSavageTeddy.github.io/tags/misc/</link>
     <description>Recent content in Misc on teddyctf</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>teddyctf</copyright>
-    <lastBuildDate>Tue, 15 Oct 2024 22:00:00 +1100</lastBuildDate><atom:link href="http://localhost:1313/tags/misc/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 15 Oct 2024 22:00:00 +1100</lastBuildDate><atom:link href="https://TheSavageTeddy.github.io/tags/misc/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>RSAjail Writeups - Blue Water CTF 2024</title>
-      <link>http://localhost:1313/posts/rsajail-bwctf-2024/</link>
+      <link>https://TheSavageTeddy.github.io/posts/rsajail-bwctf-2024/</link>
       <pubDate>Tue, 15 Oct 2024 22:00:00 +1100</pubDate>
       
-      <guid>http://localhost:1313/posts/rsajail-bwctf-2024/</guid>
+      <guid>https://TheSavageTeddy.github.io/posts/rsajail-bwctf-2024/</guid>
       <description>&lt;h1 id=&#34;overview&#34;&gt;Overview&lt;/h1&gt;
 &lt;p&gt;Last weekend I played &lt;a href=&#34;https://ctftime.org/event/2479&#34;&gt;Blue Water CTF&lt;/a&gt; with my team &lt;a href=&#34;https://ctftime.org/team/160273&#34;&gt;Emu Exploit&lt;/a&gt;. We just mananged to get top 10!&lt;/p&gt;
 
@@ -44,8 +44,8 @@
 
 
   &lt;div class=&#34;collapsable-code&#34;&gt;
-    &lt;input id=&#34;178256439&#34; type=&#34;checkbox&#34;  /&gt;
-    &lt;label for=&#34;178256439&#34;&gt;
+    &lt;input id=&#34;573289146&#34; type=&#34;checkbox&#34;  /&gt;
+    &lt;label for=&#34;573289146&#34;&gt;
       &lt;span class=&#34;collapsable-code__language&#34;&gt;python&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__title&#34;&gt;rsajail-3.py&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__toggle&#34; data-label-expand=&#34;Show&#34; data-label-collapse=&#34;Hide&#34;&gt;&lt;/span&gt;
@@ -223,8 +223,8 @@ verify(pr, m, flag)
 
 
   &lt;div class=&#34;collapsable-code&#34;&gt;
-    &lt;input id=&#34;984731625&#34; type=&#34;checkbox&#34; checked /&gt;
-    &lt;label for=&#34;984731625&#34;&gt;
+    &lt;input id=&#34;987214653&#34; type=&#34;checkbox&#34; checked /&gt;
+    &lt;label for=&#34;987214653&#34;&gt;
       &lt;span class=&#34;collapsable-code__language&#34;&gt;text&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__title&#34;&gt;rsajail-3-sol.txt&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__toggle&#34; data-label-expand=&#34;Show&#34; data-label-collapse=&#34;Hide&#34;&gt;&lt;/span&gt;
@@ -412,7 +412,7 @@ SyntaxError: invalid syntax. Perhaps you forgot a comma?
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;[m&lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt;r]
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;final-solve&#34;&gt;Final solve&lt;/h3&gt;
 &lt;p&gt;Now that we have modular inverse and modular exponentiation algorithms implemented, we can simply combine them to get the flag. Keep in mind we need to run this a few times on remote, since we hardcoded loop amount for modular inverse.&lt;/p&gt;
-&lt;p&gt;The &lt;a href=&#34;http://localhost:1313/posts/rsajail-bwctf-2024/rsajail-2-sol.txt&#34;&gt;final code&lt;/a&gt; turned out to be ~70000 lines long, with ~200k characters. Believe it or not, this is nothing compared to RSAjail-1&amp;hellip;&lt;/p&gt;
+&lt;p&gt;The &lt;a href=&#34;https://TheSavageTeddy.github.io/posts/rsajail-bwctf-2024/rsajail-2-sol.txt&#34;&gt;final code&lt;/a&gt; turned out to be ~70000 lines long, with ~200k characters. Believe it or not, this is nothing compared to RSAjail-1&amp;hellip;&lt;/p&gt;
 &lt;p&gt;I decided to manually copy and paste it into the terminal. It lagged for a bit, but eventually processed and pasted the characters.&lt;/p&gt;
 
   &lt;img src=&#34;./img/flag-2.png&#34;  class=&#34;center&#34;  style=&#34;border-radius: 5px; width: 100%&#34;  /&gt;
@@ -579,7 +579,7 @@ SyntaxError: invalid syntax. Perhaps you forgot a comma?
   &lt;img src=&#34;./img/fmt-script-1.png&#34;  class=&#34;center&#34;  style=&#34;border-radius: 5px; width: 100%&#34;  /&gt;
 
 
-&lt;p&gt;And thats how you turn one line of code, &lt;code&gt;q=N//p&lt;/code&gt;, into &lt;a href=&#34;http://localhost:1313/posts/rsajail-bwctf-2024/f1_fmtted_.txt&#34;&gt;almost 800k lines&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;And thats how you turn one line of code, &lt;code&gt;q=N//p&lt;/code&gt;, into &lt;a href=&#34;https://TheSavageTeddy.github.io/posts/rsajail-bwctf-2024/f1_fmtted_.txt&#34;&gt;almost 800k lines&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;That&amp;rsquo;s not the end either - there&amp;rsquo;s still other places that use integer division, such as modular inverse.&lt;/p&gt;
 &lt;h3 id=&#34;integer-division---in-modular-inverse-algorithm&#34;&gt;Integer division - in modular inverse algorithm&lt;/h3&gt;
 &lt;p&gt;Recall our modular inverse algorithm was based off this:&lt;/p&gt;
@@ -667,7 +667,7 @@ SyntaxError: invalid syntax. Perhaps you forgot a comma?
 
 
 &lt;p&gt;&lt;code&gt;bwctf{Did_you_have_fun_with_only_one_variable?_Good_thing_*tuple*_exists_UwU}&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;You can view the final formatted code &lt;a href=&#34;http://localhost:1313/posts/rsajail-bwctf-2024/final_fmtted.txt&#34;&gt;here&lt;/a&gt;, but I suggest reading the &lt;a href=&#34;http://localhost:1313/posts/rsajail-bwctf-2024/f4_final.txt&#34;&gt;unformatted version&lt;/a&gt;. Actually, both of them are practically unreadible, but there you go I guess.&lt;/p&gt;
+&lt;p&gt;You can view the final formatted code &lt;a href=&#34;https://TheSavageTeddy.github.io/posts/rsajail-bwctf-2024/final_fmtted.txt&#34;&gt;here&lt;/a&gt;, but I suggest reading the &lt;a href=&#34;https://TheSavageTeddy.github.io/posts/rsajail-bwctf-2024/f4_final.txt&#34;&gt;unformatted version&lt;/a&gt;. Actually, both of them are practically unreadible, but there you go I guess.&lt;/p&gt;
 &lt;h1 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h1&gt;
 &lt;p&gt;This was a really nice set of challenges, combining both RSA (crypto?) and Pyjail.&lt;/p&gt;
 &lt;p&gt;Thanks again to the challenge author &lt;a href=&#34;https://x.com/ah_p_uh&#34;&gt;soon haari&lt;/a&gt;, CTF organisers at Blue Water for hosting the event, and congrats to my team for getting top 10!&lt;/p&gt;

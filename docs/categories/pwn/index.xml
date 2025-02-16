@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Pwn on teddyctf</title>
-    <link>http://localhost:1313/categories/pwn/</link>
+    <link>https://TheSavageTeddy.github.io/categories/pwn/</link>
     <description>Recent content in Pwn on teddyctf</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>teddyctf</copyright>
-    <lastBuildDate>Mon, 09 Jan 2023 03:00:00 +1100</lastBuildDate><atom:link href="http://localhost:1313/categories/pwn/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 09 Jan 2023 03:00:00 +1100</lastBuildDate><atom:link href="https://TheSavageTeddy.github.io/categories/pwn/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>ret2libm - IrisCTF 2023</title>
-      <link>http://localhost:1313/posts/ret2libm-iris2023/</link>
+      <link>https://TheSavageTeddy.github.io/posts/ret2libm-iris2023/</link>
       <pubDate>Mon, 09 Jan 2023 03:00:00 +1100</pubDate>
       
-      <guid>http://localhost:1313/posts/ret2libm-iris2023/</guid>
+      <guid>https://TheSavageTeddy.github.io/posts/ret2libm-iris2023/</guid>
       <description>&lt;h1 id=&#34;overview&#34;&gt;Overview&lt;/h1&gt;
 &lt;p&gt;&lt;code&gt;ret2libm&lt;/code&gt; was the 2nd most solved &lt;code&gt;pwn&lt;/code&gt; challenge of &lt;a href=&#34;https://ctftime.org/event/1774&#34;&gt;IrisCTF 2023&lt;/a&gt;, written by &lt;code&gt;sera&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;Description:&lt;/p&gt;

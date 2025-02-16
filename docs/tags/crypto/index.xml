@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Crypto on teddyctf</title>
-    <link>http://localhost:1313/tags/crypto/</link>
+    <link>https://TheSavageTeddy.github.io/tags/crypto/</link>
     <description>Recent content in Crypto on teddyctf</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>teddyctf</copyright>
-    <lastBuildDate>Sat, 28 Sep 2024 17:53:20 +1000</lastBuildDate><atom:link href="http://localhost:1313/tags/crypto/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 28 Sep 2024 17:53:20 +1000</lastBuildDate><atom:link href="https://TheSavageTeddy.github.io/tags/crypto/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Crypto Writeups - BSides Canberra CTF 2024</title>
-      <link>http://localhost:1313/featured/bsides-canberra-ctf-2024/</link>
+      <link>https://TheSavageTeddy.github.io/featured/bsides-canberra-ctf-2024/</link>
       <pubDate>Sat, 28 Sep 2024 17:53:20 +1000</pubDate>
       
-      <guid>http://localhost:1313/featured/bsides-canberra-ctf-2024/</guid>
+      <guid>https://TheSavageTeddy.github.io/featured/bsides-canberra-ctf-2024/</guid>
       <description>&lt;h1 id=&#34;overview&#34;&gt;Overview&lt;/h1&gt;
 &lt;p&gt;Last week I went to BSides Canberra 2024 to see the amazing talks, meet people, and of course, play CTF. After 2 days of solving interesting challenges, my team &lt;a href=&#34;https://x.com/EmuExploit&#34;&gt;Emu Exploit&lt;/a&gt; managed to get 2nd place overall!&lt;/p&gt;
 
@@ -32,22 +32,22 @@
   &lt;/thead&gt;
   &lt;tbody&gt;
       &lt;tr&gt;
-          &lt;td&gt;&lt;a href=&#34;http://localhost:1313/featured/bsides-canberra-ctf-2024/#discrete-add-a-rithm---43-solves&#34;&gt;Discrete Add-a-rithm&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;a href=&#34;https://TheSavageTeddy.github.io/featured/bsides-canberra-ctf-2024/#discrete-add-a-rithm---43-solves&#34;&gt;Discrete Add-a-rithm&lt;/a&gt;&lt;/td&gt;
           &lt;td&gt;crypto&lt;/td&gt;
           &lt;td&gt;43&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
-          &lt;td&gt;&lt;a href=&#34;http://localhost:1313/featured/bsides-canberra-ctf-2024/#psionic---10-solves&#34;&gt;Psionic&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;a href=&#34;https://TheSavageTeddy.github.io/featured/bsides-canberra-ctf-2024/#psionic---10-solves&#34;&gt;Psionic&lt;/a&gt;&lt;/td&gt;
           &lt;td&gt;crypto&lt;/td&gt;
           &lt;td&gt;10&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
-          &lt;td&gt;&lt;a href=&#34;http://localhost:1313/featured/bsides-canberra-ctf-2024/#public-service---8-solves&#34;&gt;Public Service&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;a href=&#34;https://TheSavageTeddy.github.io/featured/bsides-canberra-ctf-2024/#public-service---8-solves&#34;&gt;Public Service&lt;/a&gt;&lt;/td&gt;
           &lt;td&gt;crypto&lt;/td&gt;
           &lt;td&gt;8&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
-          &lt;td&gt;&lt;a href=&#34;http://localhost:1313/featured/bsides-canberra-ctf-2024/#arpeeceethree---3-solves&#34;&gt;arpeeceethree&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;a href=&#34;https://TheSavageTeddy.github.io/featured/bsides-canberra-ctf-2024/#arpeeceethree---3-solves&#34;&gt;arpeeceethree&lt;/a&gt;&lt;/td&gt;
           &lt;td&gt;crypto&lt;/td&gt;
           &lt;td&gt;3&lt;/td&gt;
       &lt;/tr&gt;
@@ -74,22 +74,22 @@
   &lt;/thead&gt;
   &lt;tbody&gt;
       &lt;tr&gt;
-          &lt;td&gt;&lt;a href=&#34;http://localhost:1313/featured/bsides-canberra-ctf-2024/#discrete-add-a-rithm---43-solves&#34;&gt;Discrete Add-a-rithm&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;a href=&#34;https://TheSavageTeddy.github.io/featured/bsides-canberra-ctf-2024/#discrete-add-a-rithm---43-solves&#34;&gt;Discrete Add-a-rithm&lt;/a&gt;&lt;/td&gt;
           &lt;td&gt;crypto&lt;/td&gt;
           &lt;td&gt;43&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
-          &lt;td&gt;&lt;a href=&#34;http://localhost:1313/featured/bsides-canberra-ctf-2024/#psionic---10-solves&#34;&gt;Psionic&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;a href=&#34;https://TheSavageTeddy.github.io/featured/bsides-canberra-ctf-2024/#psionic---10-solves&#34;&gt;Psionic&lt;/a&gt;&lt;/td&gt;
           &lt;td&gt;crypto&lt;/td&gt;
           &lt;td&gt;10&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
-          &lt;td&gt;&lt;a href=&#34;http://localhost:1313/featured/bsides-canberra-ctf-2024/#public-service---8-solves&#34;&gt;Public Service&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;a href=&#34;https://TheSavageTeddy.github.io/featured/bsides-canberra-ctf-2024/#public-service---8-solves&#34;&gt;Public Service&lt;/a&gt;&lt;/td&gt;
           &lt;td&gt;crypto&lt;/td&gt;
           &lt;td&gt;8&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
-          &lt;td&gt;&lt;a href=&#34;http://localhost:1313/featured/bsides-canberra-ctf-2024/#arpeeceethree---3-solves&#34;&gt;arpeeceethree&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;a href=&#34;https://TheSavageTeddy.github.io/featured/bsides-canberra-ctf-2024/#arpeeceethree---3-solves&#34;&gt;arpeeceethree&lt;/a&gt;&lt;/td&gt;
           &lt;td&gt;crypto&lt;/td&gt;
           &lt;td&gt;3&lt;/td&gt;
       &lt;/tr&gt;
@@ -185,8 +185,8 @@ else:
 
 
   &lt;div class=&#34;collapsable-code&#34;&gt;
-    &lt;input id=&#34;781695342&#34; type=&#34;checkbox&#34; checked /&gt;
-    &lt;label for=&#34;781695342&#34;&gt;
+    &lt;input id=&#34;485136927&#34; type=&#34;checkbox&#34; checked /&gt;
+    &lt;label for=&#34;485136927&#34;&gt;
       &lt;span class=&#34;collapsable-code__language&#34;&gt;text&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__title&#34;&gt;out.txt&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__toggle&#34; data-label-expand=&#34;Show&#34; data-label-collapse=&#34;Hide&#34;&gt;&lt;/span&gt;
@@ -258,8 +258,8 @@ print(f&amp;#34;{flag = }&amp;#34;)
 
 
   &lt;div class=&#34;collapsable-code&#34;&gt;
-    &lt;input id=&#34;832719645&#34; type=&#34;checkbox&#34; checked /&gt;
-    &lt;label for=&#34;832719645&#34;&gt;
+    &lt;input id=&#34;219574638&#34; type=&#34;checkbox&#34; checked /&gt;
+    &lt;label for=&#34;219574638&#34;&gt;
       &lt;span class=&#34;collapsable-code__language&#34;&gt;python&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__title&#34;&gt;server.py&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__toggle&#34; data-label-expand=&#34;Show&#34; data-label-collapse=&#34;Hide&#34;&gt;&lt;/span&gt;
@@ -426,8 +426,8 @@ if __name__ == &amp;#34;__main__&amp;#34;:
 
 
   &lt;div class=&#34;collapsable-code&#34;&gt;
-    &lt;input id=&#34;598712436&#34; type=&#34;checkbox&#34; checked /&gt;
-    &lt;label for=&#34;598712436&#34;&gt;
+    &lt;input id=&#34;615783429&#34; type=&#34;checkbox&#34; checked /&gt;
+    &lt;label for=&#34;615783429&#34;&gt;
       &lt;span class=&#34;collapsable-code__language&#34;&gt;python&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__title&#34;&gt;get_pw_chars.py&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__toggle&#34; data-label-expand=&#34;Show&#34; data-label-collapse=&#34;Hide&#34;&gt;&lt;/span&gt;
@@ -475,8 +475,8 @@ print(f&amp;#34;{pw_chars = }&amp;#34;)
 
 
   &lt;div class=&#34;collapsable-code&#34;&gt;
-    &lt;input id=&#34;685714923&#34; type=&#34;checkbox&#34; checked /&gt;
-    &lt;label for=&#34;685714923&#34;&gt;
+    &lt;input id=&#34;593621748&#34; type=&#34;checkbox&#34; checked /&gt;
+    &lt;label for=&#34;593621748&#34;&gt;
       &lt;span class=&#34;collapsable-code__language&#34;&gt;python&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__title&#34;&gt;get_flag.py&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__toggle&#34; data-label-expand=&#34;Show&#34; data-label-collapse=&#34;Hide&#34;&gt;&lt;/span&gt;
@@ -525,8 +525,8 @@ r.interactive()
 
 
   &lt;div class=&#34;collapsable-code&#34;&gt;
-    &lt;input id=&#34;963741582&#34; type=&#34;checkbox&#34; checked /&gt;
-    &lt;label for=&#34;963741582&#34;&gt;
+    &lt;input id=&#34;873692415&#34; type=&#34;checkbox&#34; checked /&gt;
+    &lt;label for=&#34;873692415&#34;&gt;
       &lt;span class=&#34;collapsable-code__language&#34;&gt;python&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__title&#34;&gt;generate_signatures.py&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__toggle&#34; data-label-expand=&#34;Show&#34; data-label-collapse=&#34;Hide&#34;&gt;&lt;/span&gt;
@@ -602,8 +602,8 @@ with open(&amp;#34;out.json&amp;#34;, &amp;#34;w&amp;#34;) as g:
 
 
   &lt;div class=&#34;collapsable-code&#34;&gt;
-    &lt;input id=&#34;492685137&#34; type=&#34;checkbox&#34; checked /&gt;
-    &lt;label for=&#34;492685137&#34;&gt;
+    &lt;input id=&#34;827964531&#34; type=&#34;checkbox&#34; checked /&gt;
+    &lt;label for=&#34;827964531&#34;&gt;
       &lt;span class=&#34;collapsable-code__language&#34;&gt;json&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__title&#34;&gt;out.json&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__toggle&#34; data-label-expand=&#34;Show&#34; data-label-collapse=&#34;Hide&#34;&gt;&lt;/span&gt;
@@ -667,8 +667,8 @@ $$&lt;/p&gt;
 
 
   &lt;div class=&#34;collapsable-code&#34;&gt;
-    &lt;input id=&#34;741683529&#34; type=&#34;checkbox&#34; checked /&gt;
-    &lt;label for=&#34;741683529&#34;&gt;
+    &lt;input id=&#34;719365842&#34; type=&#34;checkbox&#34; checked /&gt;
+    &lt;label for=&#34;719365842&#34;&gt;
       &lt;span class=&#34;collapsable-code__language&#34;&gt;python&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__title&#34;&gt;code.py&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__toggle&#34; data-label-expand=&#34;Show&#34; data-label-collapse=&#34;Hide&#34;&gt;&lt;/span&gt;
@@ -775,8 +775,8 @@ print(f&amp;#34;{flag = }&amp;#34;)
 
 
   &lt;div class=&#34;collapsable-code&#34;&gt;
-    &lt;input id=&#34;217654839&#34; type=&#34;checkbox&#34; checked /&gt;
-    &lt;label for=&#34;217654839&#34;&gt;
+    &lt;input id=&#34;349268715&#34; type=&#34;checkbox&#34; checked /&gt;
+    &lt;label for=&#34;349268715&#34;&gt;
       &lt;span class=&#34;collapsable-code__language&#34;&gt;python&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__title&#34;&gt;client.py&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__toggle&#34; data-label-expand=&#34;Show&#34; data-label-collapse=&#34;Hide&#34;&gt;&lt;/span&gt;
@@ -1005,8 +1005,8 @@ if __name__ == &amp;#34;__main__&amp;#34;:
 
 
   &lt;div class=&#34;collapsable-code&#34;&gt;
-    &lt;input id=&#34;492376851&#34; type=&#34;checkbox&#34; checked /&gt;
-    &lt;label for=&#34;492376851&#34;&gt;
+    &lt;input id=&#34;927461358&#34; type=&#34;checkbox&#34; checked /&gt;
+    &lt;label for=&#34;927461358&#34;&gt;
       &lt;span class=&#34;collapsable-code__language&#34;&gt;python&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__title&#34;&gt;server.py&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__toggle&#34; data-label-expand=&#34;Show&#34; data-label-collapse=&#34;Hide&#34;&gt;&lt;/span&gt;
@@ -1358,8 +1358,8 @@ if __name__ == &amp;#34;__main__&amp;#34;:
 
 
   &lt;div class=&#34;collapsable-code&#34;&gt;
-    &lt;input id=&#34;325614798&#34; type=&#34;checkbox&#34; checked /&gt;
-    &lt;label for=&#34;325614798&#34;&gt;
+    &lt;input id=&#34;382547961&#34; type=&#34;checkbox&#34; checked /&gt;
+    &lt;label for=&#34;382547961&#34;&gt;
       &lt;span class=&#34;collapsable-code__language&#34;&gt;proto&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__title&#34;&gt;server.proto&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__toggle&#34; data-label-expand=&#34;Show&#34; data-label-collapse=&#34;Hide&#34;&gt;&lt;/span&gt;
@@ -1528,8 +1528,8 @@ message MessageResponse {
 
 
   &lt;div class=&#34;collapsable-code&#34;&gt;
-    &lt;input id=&#34;914372586&#34; type=&#34;checkbox&#34; checked /&gt;
-    &lt;label for=&#34;914372586&#34;&gt;
+    &lt;input id=&#34;467295183&#34; type=&#34;checkbox&#34; checked /&gt;
+    &lt;label for=&#34;467295183&#34;&gt;
       &lt;span class=&#34;collapsable-code__language&#34;&gt;python&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__title&#34;&gt;remote_brute.py&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__toggle&#34; data-label-expand=&#34;Show&#34; data-label-collapse=&#34;Hide&#34;&gt;&lt;/span&gt;
@@ -1786,8 +1786,8 @@ if __name__ == &amp;#34;__main__&amp;#34;:
 
 
   &lt;div class=&#34;collapsable-code&#34;&gt;
-    &lt;input id=&#34;296753418&#34; type=&#34;checkbox&#34; checked /&gt;
-    &lt;label for=&#34;296753418&#34;&gt;
+    &lt;input id=&#34;532786419&#34; type=&#34;checkbox&#34; checked /&gt;
+    &lt;label for=&#34;532786419&#34;&gt;
       &lt;span class=&#34;collapsable-code__language&#34;&gt;python&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__title&#34;&gt;code.py&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__toggle&#34; data-label-expand=&#34;Show&#34; data-label-collapse=&#34;Hide&#34;&gt;&lt;/span&gt;
@@ -2055,10 +2055,10 @@ if __name__ == &amp;#34;__main__&amp;#34;:
     
     <item>
       <title>CTF Writeups - p4CTF Finals 2023 in Poland</title>
-      <link>http://localhost:1313/featured/p4ctf-finals-2023/</link>
+      <link>https://TheSavageTeddy.github.io/featured/p4ctf-finals-2023/</link>
       <pubDate>Thu, 22 Jun 2023 23:20:00 +1000</pubDate>
       
-      <guid>http://localhost:1313/featured/p4ctf-finals-2023/</guid>
+      <guid>https://TheSavageTeddy.github.io/featured/p4ctf-finals-2023/</guid>
       <description>&lt;h1 id=&#34;overview&#34;&gt;Overview&lt;/h1&gt;
 &lt;p&gt;p4CTF Finals was an onsite event held in June 2023 in Katowice, Poland. Together with Emu Exploit, I qualified for event in the p4CTF qualifiers and had the opportunity to go to Poland to meet and compete with many top teams in the world, including &lt;a href=&#34;https://twitter.com/FlatNetworkOrg&#34;&gt;&lt;code&gt;The Flat Network Society&lt;/code&gt;&lt;/a&gt;, &lt;a href=&#34;https://twitter.com/DragonSectorCTF&#34;&gt;&lt;code&gt;Dragon Sector&lt;/code&gt;&lt;/a&gt;, &lt;a href=&#34;https://twitter.com/justCatTheFish&#34;&gt;&lt;code&gt;justCatTheFish&lt;/code&gt;&lt;/a&gt;, &lt;a href=&#34;https://twitter.com/hxpctf&#34;&gt;&lt;code&gt;hxp&lt;/code&gt;&lt;/a&gt;, &lt;a href=&#34;https://twitter.com/0rganizers&#34;&gt;&lt;code&gt;0rganizers&lt;/code&gt;&lt;/a&gt;, &lt;a href=&#34;https://twitter.com/allesctf&#34;&gt;&lt;code&gt;ALLES&lt;/code&gt;&lt;/a&gt; and &lt;a href=&#34;https://twitter.com/fluxfingers&#34;&gt;&lt;code&gt;FluxFingers&lt;/code&gt;&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Before we could compete in the event, we had to first get to Poland, which proved to be a pain as our travel time was 50 hours - 30 hours across three flights to Paris, and 20 hours on the bus to Katowice. However, it was definetely worth the time, as we got to also see some tourist attractions in Paris!&lt;/p&gt;</description>
@@ -2084,17 +2084,17 @@ if __name__ == &amp;#34;__main__&amp;#34;:
   &lt;/thead&gt;
   &lt;tbody&gt;
       &lt;tr&gt;
-          &lt;td&gt;&lt;a href=&#34;http://localhost:1313/featured/p4ctf-finals-2023/#pallas-crypto---12-solves&#34;&gt;Pallas&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;a href=&#34;https://TheSavageTeddy.github.io/featured/p4ctf-finals-2023/#pallas-crypto---12-solves&#34;&gt;Pallas&lt;/a&gt;&lt;/td&gt;
           &lt;td&gt;crypto&lt;/td&gt;
           &lt;td&gt;12&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
-          &lt;td&gt;&lt;a href=&#34;http://localhost:1313/featured/p4ctf-finals-2023/#aes_observed-crypto---6-solves&#34;&gt;aes_observed&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;a href=&#34;https://TheSavageTeddy.github.io/featured/p4ctf-finals-2023/#aes_observed-crypto---6-solves&#34;&gt;aes_observed&lt;/a&gt;&lt;/td&gt;
           &lt;td&gt;crypto&lt;/td&gt;
           &lt;td&gt;6&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
-          &lt;td&gt;&lt;a href=&#34;http://localhost:1313/featured/p4ctf-finals-2023/#pepega-packets-misc---5-solves&#34;&gt;Pepega Packets&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;a href=&#34;https://TheSavageTeddy.github.io/featured/p4ctf-finals-2023/#pepega-packets-misc---5-solves&#34;&gt;Pepega Packets&lt;/a&gt;&lt;/td&gt;
           &lt;td&gt;misc&lt;/td&gt;
           &lt;td&gt;5&lt;/td&gt;
       &lt;/tr&gt;
@@ -2922,18 +2922,18 @@ Sad 🐸 You are banned 😢
     
     <item>
       <title>Crypto Writeups - IrisCTF 2023</title>
-      <link>http://localhost:1313/posts/crypto-iris2023/</link>
+      <link>https://TheSavageTeddy.github.io/posts/crypto-iris2023/</link>
       <pubDate>Mon, 09 Jan 2023 03:00:00 +1100</pubDate>
       
-      <guid>http://localhost:1313/posts/crypto-iris2023/</guid>
+      <guid>https://TheSavageTeddy.github.io/posts/crypto-iris2023/</guid>
       <description>&lt;h1 id=&#34;overview&#34;&gt;Overview&lt;/h1&gt;
 &lt;p&gt;I solved 4/6 crypto challenges in IrisCTF 2023, here are the writeups for them.&lt;/p&gt;
 &lt;p&gt;Challenges (dynamic scoring):&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://localhost:1313/posts/crypto-iris2023/#babynotrsa---145-solves&#34;&gt;&lt;code&gt;babynotrsa&lt;/code&gt;&lt;/a&gt; by &lt;code&gt;sera&lt;/code&gt; - 145 solves&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://localhost:1313/posts/crypto-iris2023/#babymixup---98-solves&#34;&gt;&lt;code&gt;babymixup&lt;/code&gt;&lt;/a&gt; by &lt;code&gt;sera&lt;/code&gt; - 98 solves&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://localhost:1313/posts/crypto-iris2023/#nonces-and-keys---53-solves&#34;&gt;&lt;code&gt;Nonces and Keys&lt;/code&gt;&lt;/a&gt; by &lt;code&gt;lambda&lt;/code&gt; - 53 solves&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://localhost:1313/posts/crypto-iris2023/#aes-bad-256---18-solves&#34;&gt;&lt;code&gt;AES-BAD-256&lt;/code&gt;&lt;/a&gt; by &lt;code&gt;sera&lt;/code&gt; - 18 solves&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://TheSavageTeddy.github.io/posts/crypto-iris2023/#babynotrsa---145-solves&#34;&gt;&lt;code&gt;babynotrsa&lt;/code&gt;&lt;/a&gt; by &lt;code&gt;sera&lt;/code&gt; - 145 solves&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://TheSavageTeddy.github.io/posts/crypto-iris2023/#babymixup---98-solves&#34;&gt;&lt;code&gt;babymixup&lt;/code&gt;&lt;/a&gt; by &lt;code&gt;sera&lt;/code&gt; - 98 solves&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://TheSavageTeddy.github.io/posts/crypto-iris2023/#nonces-and-keys---53-solves&#34;&gt;&lt;code&gt;Nonces and Keys&lt;/code&gt;&lt;/a&gt; by &lt;code&gt;lambda&lt;/code&gt; - 53 solves&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://TheSavageTeddy.github.io/posts/crypto-iris2023/#aes-bad-256---18-solves&#34;&gt;&lt;code&gt;AES-BAD-256&lt;/code&gt;&lt;/a&gt; by &lt;code&gt;sera&lt;/code&gt; - 18 solves&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h1 id=&#34;babynotrsa---145-solves&#34;&gt;babynotrsa - 145 solves&lt;/h1&gt;
 &lt;blockquote&gt;
@@ -2943,10 +2943,10 @@ Sad 🐸 You are banned 😢
 &lt;p&gt;I solved 4/6 crypto challenges in IrisCTF 2023, here are the writeups for them.&lt;/p&gt;
 &lt;p&gt;Challenges (dynamic scoring):&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://localhost:1313/posts/crypto-iris2023/#babynotrsa---145-solves&#34;&gt;&lt;code&gt;babynotrsa&lt;/code&gt;&lt;/a&gt; by &lt;code&gt;sera&lt;/code&gt; - 145 solves&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://localhost:1313/posts/crypto-iris2023/#babymixup---98-solves&#34;&gt;&lt;code&gt;babymixup&lt;/code&gt;&lt;/a&gt; by &lt;code&gt;sera&lt;/code&gt; - 98 solves&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://localhost:1313/posts/crypto-iris2023/#nonces-and-keys---53-solves&#34;&gt;&lt;code&gt;Nonces and Keys&lt;/code&gt;&lt;/a&gt; by &lt;code&gt;lambda&lt;/code&gt; - 53 solves&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://localhost:1313/posts/crypto-iris2023/#aes-bad-256---18-solves&#34;&gt;&lt;code&gt;AES-BAD-256&lt;/code&gt;&lt;/a&gt; by &lt;code&gt;sera&lt;/code&gt; - 18 solves&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://TheSavageTeddy.github.io/posts/crypto-iris2023/#babynotrsa---145-solves&#34;&gt;&lt;code&gt;babynotrsa&lt;/code&gt;&lt;/a&gt; by &lt;code&gt;sera&lt;/code&gt; - 145 solves&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://TheSavageTeddy.github.io/posts/crypto-iris2023/#babymixup---98-solves&#34;&gt;&lt;code&gt;babymixup&lt;/code&gt;&lt;/a&gt; by &lt;code&gt;sera&lt;/code&gt; - 98 solves&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://TheSavageTeddy.github.io/posts/crypto-iris2023/#nonces-and-keys---53-solves&#34;&gt;&lt;code&gt;Nonces and Keys&lt;/code&gt;&lt;/a&gt; by &lt;code&gt;lambda&lt;/code&gt; - 53 solves&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://TheSavageTeddy.github.io/posts/crypto-iris2023/#aes-bad-256---18-solves&#34;&gt;&lt;code&gt;AES-BAD-256&lt;/code&gt;&lt;/a&gt; by &lt;code&gt;sera&lt;/code&gt; - 18 solves&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h1 id=&#34;babynotrsa---145-solves&#34;&gt;babynotrsa - 145 solves&lt;/h1&gt;
 &lt;blockquote&gt;

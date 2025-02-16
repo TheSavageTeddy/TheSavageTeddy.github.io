@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Web3 on teddyctf</title>
-    <link>http://localhost:1313/categories/web3/</link>
+    <link>https://TheSavageTeddy.github.io/categories/web3/</link>
     <description>Recent content in Web3 on teddyctf</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>teddyctf</copyright>
-    <lastBuildDate>Tue, 13 Feb 2024 21:10:00 +1100</lastBuildDate><atom:link href="http://localhost:1313/categories/web3/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 13 Feb 2024 21:10:00 +1100</lastBuildDate><atom:link href="https://TheSavageTeddy.github.io/categories/web3/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Puppet Writeup - DamnVulnerableDefi V3</title>
-      <link>http://localhost:1313/posts/puppet-damnvulnerabledefi/</link>
+      <link>https://TheSavageTeddy.github.io/posts/puppet-damnvulnerabledefi/</link>
       <pubDate>Tue, 13 Feb 2024 21:10:00 +1100</pubDate>
       
-      <guid>http://localhost:1313/posts/puppet-damnvulnerabledefi/</guid>
+      <guid>https://TheSavageTeddy.github.io/posts/puppet-damnvulnerabledefi/</guid>
       <description>&lt;p&gt;This post contains the walkthrough and solutions for &lt;a href=&#34;https://www.damnvulnerabledefi.xyz/challenges/puppet/&#34;&gt;Puppet&lt;/a&gt;, a challenge from the &lt;a href=&#34;https://www.damnvulnerabledefi.xyz&#34;&gt;DamnVulnerableDefi&lt;/a&gt; wargame, featuring a price oracle manipulation vulnerability.&lt;/p&gt;
 &lt;h4 id=&#34;but-wait-why-another-writeup&#34;&gt;But wait, why another writeup?&lt;/h4&gt;
 &lt;p&gt;You may be wondering why I’m making a writeup for this challenge, when there are already tons of other writeups online. Well, many of the writeups online &lt;strong&gt;don&amp;rsquo;t actually solve the challenge properly&lt;/strong&gt;.&lt;/p&gt;
@@ -504,7 +504,7 @@ contract PuppetAttack {
   &lt;/div&gt;
 
 &lt;/p&gt;
-&lt;p&gt;Relevant Hardhat solve script (full code &lt;a href=&#34;http://localhost:1313/posts/puppet-damnvulnerabledefi/puppet.challenge.js&#34;&gt;here&lt;/a&gt;):&lt;/p&gt;
+&lt;p&gt;Relevant Hardhat solve script (full code &lt;a href=&#34;https://TheSavageTeddy.github.io/posts/puppet-damnvulnerabledefi/puppet.challenge.js&#34;&gt;here&lt;/a&gt;):&lt;/p&gt;
 
 
 

@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>CTF Writeups on teddyctf</title>
-    <link>http://localhost:1313/categories/ctf-writeups/</link>
+    <link>https://TheSavageTeddy.github.io/categories/ctf-writeups/</link>
     <description>Recent content in CTF Writeups on teddyctf</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>teddyctf</copyright>
-    <lastBuildDate>Tue, 15 Oct 2024 22:00:00 +1100</lastBuildDate><atom:link href="http://localhost:1313/categories/ctf-writeups/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 15 Oct 2024 22:00:00 +1100</lastBuildDate><atom:link href="https://TheSavageTeddy.github.io/categories/ctf-writeups/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Crypto Writeups - BSides Canberra CTF 2024</title>
-      <link>http://localhost:1313/featured/bsides-canberra-ctf-2024/</link>
+      <link>https://TheSavageTeddy.github.io/featured/bsides-canberra-ctf-2024/</link>
       <pubDate>Sat, 28 Sep 2024 17:53:20 +1000</pubDate>
       
-      <guid>http://localhost:1313/featured/bsides-canberra-ctf-2024/</guid>
+      <guid>https://TheSavageTeddy.github.io/featured/bsides-canberra-ctf-2024/</guid>
       <description>&lt;h1 id=&#34;overview&#34;&gt;Overview&lt;/h1&gt;
 &lt;p&gt;Last week I went to BSides Canberra 2024 to see the amazing talks, meet people, and of course, play CTF. After 2 days of solving interesting challenges, my team &lt;a href=&#34;https://x.com/EmuExploit&#34;&gt;Emu Exploit&lt;/a&gt; managed to get 2nd place overall!&lt;/p&gt;
 
@@ -32,22 +32,22 @@
   &lt;/thead&gt;
   &lt;tbody&gt;
       &lt;tr&gt;
-          &lt;td&gt;&lt;a href=&#34;http://localhost:1313/featured/bsides-canberra-ctf-2024/#discrete-add-a-rithm---43-solves&#34;&gt;Discrete Add-a-rithm&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;a href=&#34;https://TheSavageTeddy.github.io/featured/bsides-canberra-ctf-2024/#discrete-add-a-rithm---43-solves&#34;&gt;Discrete Add-a-rithm&lt;/a&gt;&lt;/td&gt;
           &lt;td&gt;crypto&lt;/td&gt;
           &lt;td&gt;43&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
-          &lt;td&gt;&lt;a href=&#34;http://localhost:1313/featured/bsides-canberra-ctf-2024/#psionic---10-solves&#34;&gt;Psionic&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;a href=&#34;https://TheSavageTeddy.github.io/featured/bsides-canberra-ctf-2024/#psionic---10-solves&#34;&gt;Psionic&lt;/a&gt;&lt;/td&gt;
           &lt;td&gt;crypto&lt;/td&gt;
           &lt;td&gt;10&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
-          &lt;td&gt;&lt;a href=&#34;http://localhost:1313/featured/bsides-canberra-ctf-2024/#public-service---8-solves&#34;&gt;Public Service&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;a href=&#34;https://TheSavageTeddy.github.io/featured/bsides-canberra-ctf-2024/#public-service---8-solves&#34;&gt;Public Service&lt;/a&gt;&lt;/td&gt;
           &lt;td&gt;crypto&lt;/td&gt;
           &lt;td&gt;8&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
-          &lt;td&gt;&lt;a href=&#34;http://localhost:1313/featured/bsides-canberra-ctf-2024/#arpeeceethree---3-solves&#34;&gt;arpeeceethree&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;a href=&#34;https://TheSavageTeddy.github.io/featured/bsides-canberra-ctf-2024/#arpeeceethree---3-solves&#34;&gt;arpeeceethree&lt;/a&gt;&lt;/td&gt;
           &lt;td&gt;crypto&lt;/td&gt;
           &lt;td&gt;3&lt;/td&gt;
       &lt;/tr&gt;
@@ -74,22 +74,22 @@
   &lt;/thead&gt;
   &lt;tbody&gt;
       &lt;tr&gt;
-          &lt;td&gt;&lt;a href=&#34;http://localhost:1313/featured/bsides-canberra-ctf-2024/#discrete-add-a-rithm---43-solves&#34;&gt;Discrete Add-a-rithm&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;a href=&#34;https://TheSavageTeddy.github.io/featured/bsides-canberra-ctf-2024/#discrete-add-a-rithm---43-solves&#34;&gt;Discrete Add-a-rithm&lt;/a&gt;&lt;/td&gt;
           &lt;td&gt;crypto&lt;/td&gt;
           &lt;td&gt;43&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
-          &lt;td&gt;&lt;a href=&#34;http://localhost:1313/featured/bsides-canberra-ctf-2024/#psionic---10-solves&#34;&gt;Psionic&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;a href=&#34;https://TheSavageTeddy.github.io/featured/bsides-canberra-ctf-2024/#psionic---10-solves&#34;&gt;Psionic&lt;/a&gt;&lt;/td&gt;
           &lt;td&gt;crypto&lt;/td&gt;
           &lt;td&gt;10&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
-          &lt;td&gt;&lt;a href=&#34;http://localhost:1313/featured/bsides-canberra-ctf-2024/#public-service---8-solves&#34;&gt;Public Service&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;a href=&#34;https://TheSavageTeddy.github.io/featured/bsides-canberra-ctf-2024/#public-service---8-solves&#34;&gt;Public Service&lt;/a&gt;&lt;/td&gt;
           &lt;td&gt;crypto&lt;/td&gt;
           &lt;td&gt;8&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
-          &lt;td&gt;&lt;a href=&#34;http://localhost:1313/featured/bsides-canberra-ctf-2024/#arpeeceethree---3-solves&#34;&gt;arpeeceethree&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;a href=&#34;https://TheSavageTeddy.github.io/featured/bsides-canberra-ctf-2024/#arpeeceethree---3-solves&#34;&gt;arpeeceethree&lt;/a&gt;&lt;/td&gt;
           &lt;td&gt;crypto&lt;/td&gt;
           &lt;td&gt;3&lt;/td&gt;
       &lt;/tr&gt;
@@ -185,8 +185,8 @@ else:
 
 
   &lt;div class=&#34;collapsable-code&#34;&gt;
-    &lt;input id=&#34;781695342&#34; type=&#34;checkbox&#34; checked /&gt;
-    &lt;label for=&#34;781695342&#34;&gt;
+    &lt;input id=&#34;485136927&#34; type=&#34;checkbox&#34; checked /&gt;
+    &lt;label for=&#34;485136927&#34;&gt;
       &lt;span class=&#34;collapsable-code__language&#34;&gt;text&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__title&#34;&gt;out.txt&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__toggle&#34; data-label-expand=&#34;Show&#34; data-label-collapse=&#34;Hide&#34;&gt;&lt;/span&gt;
@@ -258,8 +258,8 @@ print(f&amp;#34;{flag = }&amp;#34;)
 
 
   &lt;div class=&#34;collapsable-code&#34;&gt;
-    &lt;input id=&#34;832719645&#34; type=&#34;checkbox&#34; checked /&gt;
-    &lt;label for=&#34;832719645&#34;&gt;
+    &lt;input id=&#34;219574638&#34; type=&#34;checkbox&#34; checked /&gt;
+    &lt;label for=&#34;219574638&#34;&gt;
       &lt;span class=&#34;collapsable-code__language&#34;&gt;python&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__title&#34;&gt;server.py&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__toggle&#34; data-label-expand=&#34;Show&#34; data-label-collapse=&#34;Hide&#34;&gt;&lt;/span&gt;
@@ -426,8 +426,8 @@ if __name__ == &amp;#34;__main__&amp;#34;:
 
 
   &lt;div class=&#34;collapsable-code&#34;&gt;
-    &lt;input id=&#34;598712436&#34; type=&#34;checkbox&#34; checked /&gt;
-    &lt;label for=&#34;598712436&#34;&gt;
+    &lt;input id=&#34;615783429&#34; type=&#34;checkbox&#34; checked /&gt;
+    &lt;label for=&#34;615783429&#34;&gt;
       &lt;span class=&#34;collapsable-code__language&#34;&gt;python&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__title&#34;&gt;get_pw_chars.py&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__toggle&#34; data-label-expand=&#34;Show&#34; data-label-collapse=&#34;Hide&#34;&gt;&lt;/span&gt;
@@ -475,8 +475,8 @@ print(f&amp;#34;{pw_chars = }&amp;#34;)
 
 
   &lt;div class=&#34;collapsable-code&#34;&gt;
-    &lt;input id=&#34;685714923&#34; type=&#34;checkbox&#34; checked /&gt;
-    &lt;label for=&#34;685714923&#34;&gt;
+    &lt;input id=&#34;593621748&#34; type=&#34;checkbox&#34; checked /&gt;
+    &lt;label for=&#34;593621748&#34;&gt;
       &lt;span class=&#34;collapsable-code__language&#34;&gt;python&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__title&#34;&gt;get_flag.py&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__toggle&#34; data-label-expand=&#34;Show&#34; data-label-collapse=&#34;Hide&#34;&gt;&lt;/span&gt;
@@ -525,8 +525,8 @@ r.interactive()
 
 
   &lt;div class=&#34;collapsable-code&#34;&gt;
-    &lt;input id=&#34;963741582&#34; type=&#34;checkbox&#34; checked /&gt;
-    &lt;label for=&#34;963741582&#34;&gt;
+    &lt;input id=&#34;873692415&#34; type=&#34;checkbox&#34; checked /&gt;
+    &lt;label for=&#34;873692415&#34;&gt;
       &lt;span class=&#34;collapsable-code__language&#34;&gt;python&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__title&#34;&gt;generate_signatures.py&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__toggle&#34; data-label-expand=&#34;Show&#34; data-label-collapse=&#34;Hide&#34;&gt;&lt;/span&gt;
@@ -602,8 +602,8 @@ with open(&amp;#34;out.json&amp;#34;, &amp;#34;w&amp;#34;) as g:
 
 
   &lt;div class=&#34;collapsable-code&#34;&gt;
-    &lt;input id=&#34;492685137&#34; type=&#34;checkbox&#34; checked /&gt;
-    &lt;label for=&#34;492685137&#34;&gt;
+    &lt;input id=&#34;827964531&#34; type=&#34;checkbox&#34; checked /&gt;
+    &lt;label for=&#34;827964531&#34;&gt;
       &lt;span class=&#34;collapsable-code__language&#34;&gt;json&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__title&#34;&gt;out.json&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__toggle&#34; data-label-expand=&#34;Show&#34; data-label-collapse=&#34;Hide&#34;&gt;&lt;/span&gt;
@@ -667,8 +667,8 @@ $$&lt;/p&gt;
 
 
   &lt;div class=&#34;collapsable-code&#34;&gt;
-    &lt;input id=&#34;741683529&#34; type=&#34;checkbox&#34; checked /&gt;
-    &lt;label for=&#34;741683529&#34;&gt;
+    &lt;input id=&#34;719365842&#34; type=&#34;checkbox&#34; checked /&gt;
+    &lt;label for=&#34;719365842&#34;&gt;
       &lt;span class=&#34;collapsable-code__language&#34;&gt;python&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__title&#34;&gt;code.py&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__toggle&#34; data-label-expand=&#34;Show&#34; data-label-collapse=&#34;Hide&#34;&gt;&lt;/span&gt;
@@ -775,8 +775,8 @@ print(f&amp;#34;{flag = }&amp;#34;)
 
 
   &lt;div class=&#34;collapsable-code&#34;&gt;
-    &lt;input id=&#34;217654839&#34; type=&#34;checkbox&#34; checked /&gt;
-    &lt;label for=&#34;217654839&#34;&gt;
+    &lt;input id=&#34;349268715&#34; type=&#34;checkbox&#34; checked /&gt;
+    &lt;label for=&#34;349268715&#34;&gt;
       &lt;span class=&#34;collapsable-code__language&#34;&gt;python&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__title&#34;&gt;client.py&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__toggle&#34; data-label-expand=&#34;Show&#34; data-label-collapse=&#34;Hide&#34;&gt;&lt;/span&gt;
@@ -1005,8 +1005,8 @@ if __name__ == &amp;#34;__main__&amp;#34;:
 
 
   &lt;div class=&#34;collapsable-code&#34;&gt;
-    &lt;input id=&#34;492376851&#34; type=&#34;checkbox&#34; checked /&gt;
-    &lt;label for=&#34;492376851&#34;&gt;
+    &lt;input id=&#34;927461358&#34; type=&#34;checkbox&#34; checked /&gt;
+    &lt;label for=&#34;927461358&#34;&gt;
       &lt;span class=&#34;collapsable-code__language&#34;&gt;python&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__title&#34;&gt;server.py&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__toggle&#34; data-label-expand=&#34;Show&#34; data-label-collapse=&#34;Hide&#34;&gt;&lt;/span&gt;
@@ -1358,8 +1358,8 @@ if __name__ == &amp;#34;__main__&amp;#34;:
 
 
   &lt;div class=&#34;collapsable-code&#34;&gt;
-    &lt;input id=&#34;325614798&#34; type=&#34;checkbox&#34; checked /&gt;
-    &lt;label for=&#34;325614798&#34;&gt;
+    &lt;input id=&#34;382547961&#34; type=&#34;checkbox&#34; checked /&gt;
+    &lt;label for=&#34;382547961&#34;&gt;
       &lt;span class=&#34;collapsable-code__language&#34;&gt;proto&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__title&#34;&gt;server.proto&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__toggle&#34; data-label-expand=&#34;Show&#34; data-label-collapse=&#34;Hide&#34;&gt;&lt;/span&gt;
@@ -1528,8 +1528,8 @@ message MessageResponse {
 
 
   &lt;div class=&#34;collapsable-code&#34;&gt;
-    &lt;input id=&#34;914372586&#34; type=&#34;checkbox&#34; checked /&gt;
-    &lt;label for=&#34;914372586&#34;&gt;
+    &lt;input id=&#34;467295183&#34; type=&#34;checkbox&#34; checked /&gt;
+    &lt;label for=&#34;467295183&#34;&gt;
       &lt;span class=&#34;collapsable-code__language&#34;&gt;python&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__title&#34;&gt;remote_brute.py&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__toggle&#34; data-label-expand=&#34;Show&#34; data-label-collapse=&#34;Hide&#34;&gt;&lt;/span&gt;
@@ -1786,8 +1786,8 @@ if __name__ == &amp;#34;__main__&amp;#34;:
 
 
   &lt;div class=&#34;collapsable-code&#34;&gt;
-    &lt;input id=&#34;296753418&#34; type=&#34;checkbox&#34; checked /&gt;
-    &lt;label for=&#34;296753418&#34;&gt;
+    &lt;input id=&#34;532786419&#34; type=&#34;checkbox&#34; checked /&gt;
+    &lt;label for=&#34;532786419&#34;&gt;
       &lt;span class=&#34;collapsable-code__language&#34;&gt;python&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__title&#34;&gt;code.py&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__toggle&#34; data-label-expand=&#34;Show&#34; data-label-collapse=&#34;Hide&#34;&gt;&lt;/span&gt;
@@ -2055,10 +2055,10 @@ if __name__ == &amp;#34;__main__&amp;#34;:
     
     <item>
       <title>Reversing Writeups - BSides Canberra CTF 2023</title>
-      <link>http://localhost:1313/featured/bsides-canberra-ctf-2023/</link>
+      <link>https://TheSavageTeddy.github.io/featured/bsides-canberra-ctf-2023/</link>
       <pubDate>Sun, 01 Oct 2023 03:06:40 +1100</pubDate>
       
-      <guid>http://localhost:1313/featured/bsides-canberra-ctf-2023/</guid>
+      <guid>https://TheSavageTeddy.github.io/featured/bsides-canberra-ctf-2023/</guid>
       <description>&lt;h1 id=&#34;overview&#34;&gt;Overview&lt;/h1&gt;
 &lt;p&gt;During the school holidays, I had the opportunity to attend BSides Canberra 2023, which was a 3 day conference held near the end of September, in the National Convention Center Canberra.&lt;/p&gt;
 &lt;p&gt;Along with many great talks, it featured three &amp;lsquo;villages&amp;rsquo; including hardware, lockpicking and wireless. With 3000 people attending, this was the largest hacking conference that I had gone to, and it was a lot of fun!&lt;/p&gt;
@@ -2093,12 +2093,12 @@ if __name__ == &amp;#34;__main__&amp;#34;:
   &lt;/thead&gt;
   &lt;tbody&gt;
       &lt;tr&gt;
-          &lt;td&gt;&lt;a href=&#34;http://localhost:1313/featured/bsides-canberra-ctf-2023/#prnginko-cryptorev---8-solves&#34;&gt;prnginko&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;a href=&#34;https://TheSavageTeddy.github.io/featured/bsides-canberra-ctf-2023/#prnginko-cryptorev---8-solves&#34;&gt;prnginko&lt;/a&gt;&lt;/td&gt;
           &lt;td&gt;crypto/rev&lt;/td&gt;
           &lt;td&gt;8&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
-          &lt;td&gt;&lt;a href=&#34;http://localhost:1313/featured/bsides-canberra-ctf-2023/#useless-rev---9-solves&#34;&gt;useless&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;a href=&#34;https://TheSavageTeddy.github.io/featured/bsides-canberra-ctf-2023/#useless-rev---9-solves&#34;&gt;useless&lt;/a&gt;&lt;/td&gt;
           &lt;td&gt;rev&lt;/td&gt;
           &lt;td&gt;9&lt;/td&gt;
       &lt;/tr&gt;
@@ -2106,14 +2106,14 @@ if __name__ == &amp;#34;__main__&amp;#34;:
 &lt;/table&gt;
 &lt;p&gt;If you want to follow along or see the binary for yourself, download files here&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://localhost:1313/featured/bsides-canberra-ctf-2023/files/prnginko&#34;&gt;&lt;code&gt;prnginko&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://localhost:1313/featured/bsides-canberra-ctf-2023/files/useless&#34;&gt;&lt;code&gt;useless&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://TheSavageTeddy.github.io/featured/bsides-canberra-ctf-2023/files/prnginko&#34;&gt;&lt;code&gt;prnginko&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://TheSavageTeddy.github.io/featured/bsides-canberra-ctf-2023/files/useless&#34;&gt;&lt;code&gt;useless&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h1 id=&#34;prnginko-cryptorev---8-solves&#34;&gt;prnginko (crypto/rev) - 8 solves&lt;/h1&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Multi-bet with SportsBear!&lt;/p&gt;
 &lt;p&gt;nc prnginko.chal.cybears.io 2323&lt;/p&gt;&lt;/blockquote&gt;
-&lt;p&gt;We are given a binary &lt;a href=&#34;http://localhost:1313/featured/bsides-canberra-ctf-2023/files/prnginko&#34;&gt;&lt;code&gt;prnginko&lt;/code&gt;&lt;/a&gt; and a service to connect to. Upon running the binary, we are presented with the game and a message suggesting the goal to be getting a &amp;ldquo;perfect game&amp;rdquo;. The game includes a board consisting of pins and a ball which randomly bounces either left or right when it hits a pin, similar to the Plinko game.&lt;/p&gt;
+&lt;p&gt;We are given a binary &lt;a href=&#34;https://TheSavageTeddy.github.io/featured/bsides-canberra-ctf-2023/files/prnginko&#34;&gt;&lt;code&gt;prnginko&lt;/code&gt;&lt;/a&gt; and a service to connect to. Upon running the binary, we are presented with the game and a message suggesting the goal to be getting a &amp;ldquo;perfect game&amp;rdquo;. The game includes a board consisting of pins and a ball which randomly bounces either left or right when it hits a pin, similar to the Plinko game.&lt;/p&gt;
 
   &lt;img src=&#34;./img/game_ex.png&#34;  class=&#34;center&#34;  style=&#34;border-radius: 5px; width: 70%&#34;  /&gt;
 
@@ -2700,7 +2700,7 @@ p.interactive()
 &lt;h1 id=&#34;useless-rev---9-solves&#34;&gt;useless (rev) - 9 solves&lt;/h1&gt;
 &lt;blockquote&gt;
 &lt;p&gt;There&amp;rsquo;s a weird file recovered from a forensic analysis of the MAYHEM mainframe&amp;hellip; but it doesn&amp;rsquo;t seem to do anything?&lt;/p&gt;&lt;/blockquote&gt;
-&lt;p&gt;We are provided with a binary file &lt;a href=&#34;http://localhost:1313/featured/bsides-canberra-ctf-2023/files/useless&#34;&gt;&lt;code&gt;useless&lt;/code&gt;&lt;/a&gt; which when ran, as the name suggests, seemingly does nothing.&lt;/p&gt;
+&lt;p&gt;We are provided with a binary file &lt;a href=&#34;https://TheSavageTeddy.github.io/featured/bsides-canberra-ctf-2023/files/useless&#34;&gt;&lt;code&gt;useless&lt;/code&gt;&lt;/a&gt; which when ran, as the name suggests, seemingly does nothing.&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;┌──(teddykali㉿teddykali)-[~/…/on premise/Bsides Canberra 2023/rev/useless]
 └─$ ./useless    
                                                                                                                                                 
@@ -2788,10 +2788,10 @@ p.interactive()
     
     <item>
       <title>CTF Writeups - p4CTF Finals 2023 in Poland</title>
-      <link>http://localhost:1313/featured/p4ctf-finals-2023/</link>
+      <link>https://TheSavageTeddy.github.io/featured/p4ctf-finals-2023/</link>
       <pubDate>Thu, 22 Jun 2023 23:20:00 +1000</pubDate>
       
-      <guid>http://localhost:1313/featured/p4ctf-finals-2023/</guid>
+      <guid>https://TheSavageTeddy.github.io/featured/p4ctf-finals-2023/</guid>
       <description>&lt;h1 id=&#34;overview&#34;&gt;Overview&lt;/h1&gt;
 &lt;p&gt;p4CTF Finals was an onsite event held in June 2023 in Katowice, Poland. Together with Emu Exploit, I qualified for event in the p4CTF qualifiers and had the opportunity to go to Poland to meet and compete with many top teams in the world, including &lt;a href=&#34;https://twitter.com/FlatNetworkOrg&#34;&gt;&lt;code&gt;The Flat Network Society&lt;/code&gt;&lt;/a&gt;, &lt;a href=&#34;https://twitter.com/DragonSectorCTF&#34;&gt;&lt;code&gt;Dragon Sector&lt;/code&gt;&lt;/a&gt;, &lt;a href=&#34;https://twitter.com/justCatTheFish&#34;&gt;&lt;code&gt;justCatTheFish&lt;/code&gt;&lt;/a&gt;, &lt;a href=&#34;https://twitter.com/hxpctf&#34;&gt;&lt;code&gt;hxp&lt;/code&gt;&lt;/a&gt;, &lt;a href=&#34;https://twitter.com/0rganizers&#34;&gt;&lt;code&gt;0rganizers&lt;/code&gt;&lt;/a&gt;, &lt;a href=&#34;https://twitter.com/allesctf&#34;&gt;&lt;code&gt;ALLES&lt;/code&gt;&lt;/a&gt; and &lt;a href=&#34;https://twitter.com/fluxfingers&#34;&gt;&lt;code&gt;FluxFingers&lt;/code&gt;&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Before we could compete in the event, we had to first get to Poland, which proved to be a pain as our travel time was 50 hours - 30 hours across three flights to Paris, and 20 hours on the bus to Katowice. However, it was definetely worth the time, as we got to also see some tourist attractions in Paris!&lt;/p&gt;</description>
@@ -2817,17 +2817,17 @@ p.interactive()
   &lt;/thead&gt;
   &lt;tbody&gt;
       &lt;tr&gt;
-          &lt;td&gt;&lt;a href=&#34;http://localhost:1313/featured/p4ctf-finals-2023/#pallas-crypto---12-solves&#34;&gt;Pallas&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;a href=&#34;https://TheSavageTeddy.github.io/featured/p4ctf-finals-2023/#pallas-crypto---12-solves&#34;&gt;Pallas&lt;/a&gt;&lt;/td&gt;
           &lt;td&gt;crypto&lt;/td&gt;
           &lt;td&gt;12&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
-          &lt;td&gt;&lt;a href=&#34;http://localhost:1313/featured/p4ctf-finals-2023/#aes_observed-crypto---6-solves&#34;&gt;aes_observed&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;a href=&#34;https://TheSavageTeddy.github.io/featured/p4ctf-finals-2023/#aes_observed-crypto---6-solves&#34;&gt;aes_observed&lt;/a&gt;&lt;/td&gt;
           &lt;td&gt;crypto&lt;/td&gt;
           &lt;td&gt;6&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
-          &lt;td&gt;&lt;a href=&#34;http://localhost:1313/featured/p4ctf-finals-2023/#pepega-packets-misc---5-solves&#34;&gt;Pepega Packets&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;a href=&#34;https://TheSavageTeddy.github.io/featured/p4ctf-finals-2023/#pepega-packets-misc---5-solves&#34;&gt;Pepega Packets&lt;/a&gt;&lt;/td&gt;
           &lt;td&gt;misc&lt;/td&gt;
           &lt;td&gt;5&lt;/td&gt;
       &lt;/tr&gt;
@@ -3655,10 +3655,10 @@ Sad 🐸 You are banned 😢
     
     <item>
       <title>Bribery, Botting, and other Shenanigans - Cursed CTF 2024</title>
-      <link>http://localhost:1313/posts/cursedctf-2024/</link>
+      <link>https://TheSavageTeddy.github.io/posts/cursedctf-2024/</link>
       <pubDate>Mon, 01 Apr 2024 09:43:20 +1100</pubDate>
       
-      <guid>http://localhost:1313/posts/cursedctf-2024/</guid>
+      <guid>https://TheSavageTeddy.github.io/posts/cursedctf-2024/</guid>
       <description>&lt;h1 id=&#34;overview&#34;&gt;Overview&lt;/h1&gt;
 &lt;p&gt;&lt;a href=&#34;https://ctftime.org/event/2239&#34;&gt;Cursed CTF Quals 2024&lt;/a&gt; was a CTF designed to contain cursed things like most of the CTF being OSINT, unsolvable challenges, and other funny challenges.&lt;/p&gt;
 &lt;p&gt;I played with the Oceania Merger team &lt;a href=&#34;https://ctftime.org/team/280849&#34;&gt;&lt;code&gt;joseph fan club&lt;/code&gt;&lt;/a&gt; and we managed to secure first place without being disqualified!&lt;/p&gt;
@@ -3725,7 +3725,7 @@ Sad 🐸 You are banned 😢
 
 
 &lt;p&gt;I suspect &lt;a href=&#34;https://twitter.com/0rganizers&#34;&gt;0rganizers&lt;/a&gt; to be the culprit, being the second solve. But I can&amp;rsquo;t really be mad - it&amp;rsquo;s a cursed CTF after all. Props to them for solving it legitimately, too.&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;Edit: it was &lt;a href=&#34;http://localhost:1313/posts/cursedctf-2024/img/nahhh.png&#34;&gt;actually a organiser&lt;/a&gt;, but they also solved it legitimately lol&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Edit: it was &lt;a href=&#34;https://TheSavageTeddy.github.io/posts/cursedctf-2024/img/nahhh.png&#34;&gt;actually a organiser&lt;/a&gt;, but they also solved it legitimately lol&lt;/em&gt;&lt;/p&gt;
 
   &lt;img src=&#34;./img/iceberg3.png&#34;  class=&#34;center&#34;  style=&#34;border-radius: 5px;width: 60%; &#34;  /&gt;
 
@@ -3748,7 +3748,7 @@ Sad 🐸 You are banned 😢
 &lt;li&gt;When the time comes, use script to submit a flag for each account&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Our main trick was that accounts with 0 points didn&amp;rsquo;t show up on the scoreboard, so no one would see our accounts until we started submitting flags for them.&lt;/p&gt;
-&lt;p&gt;Huge thanks to &lt;a href=&#34;https://hexf.me&#34;&gt;HexF&lt;/a&gt; who registered and verified almost 10000 accounts with his &lt;a href=&#34;http://localhost:1313/posts/cursedctf-2024/files/reg-acct.py&#34;&gt;script&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Huge thanks to &lt;a href=&#34;https://hexf.me&#34;&gt;HexF&lt;/a&gt; who registered and verified almost 10000 accounts with his &lt;a href=&#34;https://TheSavageTeddy.github.io/posts/cursedctf-2024/files/reg-acct.py&#34;&gt;script&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;He was working on making a mail server specifically for catching verification emails, verifying them and storing the auth tokens for even faster account creation, until we were shut down&amp;hellip;&lt;/p&gt;
 &lt;h3 id=&#34;registrations-disabled&#34;&gt;Registrations disabled&lt;/h3&gt;
 &lt;p&gt;The admins eventually responded to our mass account creation by disabling registration, as it was costing them too much money.&lt;/p&gt;
@@ -3759,7 +3759,7 @@ Sad 🐸 You are banned 😢
 &lt;p&gt;By creating more than 10000 accounts, we cost the organisers over $20. Around 9500 of these accounts were successfully verified, meaning we owned around 85% of all registered accounts, and could flood the scoreboard at any time.&lt;/p&gt;
 &lt;h3 id=&#34;flooding-the-scoreboard&#34;&gt;Flooding the scoreboard&lt;/h3&gt;
 &lt;p&gt;Originally, we wanted to be stealthy and start submitting flags for the accounts right before the CTF ended, but since registrations are now disabled and we owned most the accounts, it didn&amp;rsquo;t really matter.&lt;/p&gt;
-&lt;p&gt;I ran my &lt;a href=&#34;http://localhost:1313/posts/cursedctf-2024/files/auto-submitter.py&#34;&gt;script&lt;/a&gt; to spam submit a flag for all ~9500 accounts, and watched the scoreboard fill with joseph fan clubs.&lt;/p&gt;
+&lt;p&gt;I ran my &lt;a href=&#34;https://TheSavageTeddy.github.io/posts/cursedctf-2024/files/auto-submitter.py&#34;&gt;script&lt;/a&gt; to spam submit a flag for all ~9500 accounts, and watched the scoreboard fill with joseph fan clubs.&lt;/p&gt;
 &lt;p&gt;The script finished after 30 minutes, and the scoreboard was 111 pages long, consisting of 11000 teams.&lt;/p&gt;
 
   &lt;img src=&#34;./img/joseph_fan_clubs.png&#34;  class=&#34;center&#34;  style=&#34;border-radius: 5px;width: 60%; &#34;  /&gt;
@@ -3828,7 +3828,7 @@ Sad 🐸 You are banned 😢
   &lt;img src=&#34;./img/ethical_.png&#34;  class=&#34;center&#34;  style=&#34;border-radius: 5px;width: 60%; &#34;  /&gt;
 
 
-&lt;p&gt;This wasn&amp;rsquo;t even takarada&amp;rsquo;s challenge, and I had already previously bribed &lt;a href=&#34;https://twitter.com/nootkroot&#34;&gt;kroot&lt;/a&gt;, the challenge author, to give us half the characters in exchange for the same thing. Too bad Emu Exploit&amp;rsquo;s team captain toasterpwn wasn&amp;rsquo;t online when I asked him for permission. He wasn&amp;rsquo;t either when takarada joined, but avery (below: &lt;a href=&#34;http://localhost:1313/posts/cursedctf-2024/img/cts_from_wish_dot_com.png&#34;&gt;cts from wish.com&lt;/a&gt;) ignored that.&lt;/p&gt;
+&lt;p&gt;This wasn&amp;rsquo;t even takarada&amp;rsquo;s challenge, and I had already previously bribed &lt;a href=&#34;https://twitter.com/nootkroot&#34;&gt;kroot&lt;/a&gt;, the challenge author, to give us half the characters in exchange for the same thing. Too bad Emu Exploit&amp;rsquo;s team captain toasterpwn wasn&amp;rsquo;t online when I asked him for permission. He wasn&amp;rsquo;t either when takarada joined, but avery (below: &lt;a href=&#34;https://TheSavageTeddy.github.io/posts/cursedctf-2024/img/cts_from_wish_dot_com.png&#34;&gt;cts from wish.com&lt;/a&gt;) ignored that.&lt;/p&gt;
 
   &lt;img src=&#34;./img/bruh.png&#34;  class=&#34;center&#34;  style=&#34;border-radius: 5px;width: 80%; &#34;  /&gt;
 
@@ -3842,12 +3842,12 @@ Sad 🐸 You are banned 😢
   &lt;img src=&#34;./img/teddy_trade.png&#34;  class=&#34;center&#34;  style=&#34;border-radius: 5px;width: 60%; &#34;  /&gt;
 
 
-&lt;p&gt;The intended non-bribery solution was to &lt;a href=&#34;http://localhost:1313/posts/cursedctf-2024/img/ida1.png&#34;&gt;buy/give the IDA Pro subscription&lt;/a&gt; which costs couple hundreds to thousands of dollars.&lt;/p&gt;
+&lt;p&gt;The intended non-bribery solution was to &lt;a href=&#34;https://TheSavageTeddy.github.io/posts/cursedctf-2024/img/ida1.png&#34;&gt;buy/give the IDA Pro subscription&lt;/a&gt; which costs couple hundreds to thousands of dollars.&lt;/p&gt;
 
   &lt;img src=&#34;./img/ida_pro_chal.png&#34;  class=&#34;center&#34;  style=&#34;border-radius: 5px;width: 60%; &#34;  /&gt;
 
 
-&lt;p&gt;Funny that it was &lt;a href=&#34;http://localhost:1313/posts/cursedctf-2024/img/ida4.png&#34;&gt;announced we actually bought the license&lt;/a&gt;, whereas it was just some &lt;a href=&#34;http://localhost:1313/posts/cursedctf-2024/img/ida3.png&#34;&gt;trolling&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Funny that it was &lt;a href=&#34;https://TheSavageTeddy.github.io/posts/cursedctf-2024/img/ida4.png&#34;&gt;announced we actually bought the license&lt;/a&gt;, whereas it was just some &lt;a href=&#34;https://TheSavageTeddy.github.io/posts/cursedctf-2024/img/ida3.png&#34;&gt;trolling&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;The next day, instead of trading Emu related things, avery decided to &lt;a href=&#34;https://twitter.com/nullableVoidPtr/status/1774656004619456826&#34;&gt;initiate another trade&lt;/a&gt; with sky, providing images of a manga book of a specific genre in exchange for a flag and a hint for another challenge.&lt;/p&gt;
 
   &lt;img src=&#34;./img/avery_trade_2.png&#34;  class=&#34;center&#34;  style=&#34;border-radius: 5px;width: 40%; &#34;  /&gt;
@@ -3920,7 +3920,7 @@ Sad 🐸 You are banned 😢
   &lt;img src=&#34;./img/iceberg9.png&#34;  class=&#34;center&#34;  style=&#34;border-radius: 5px;width: 60%; &#34;  /&gt;
 
 
-&lt;p&gt;There were also assembly golfing challenges for leetcode challenges, where your code had to be shorter than the previous submission, and my team had some pretty cursed solutions for &lt;a href=&#34;http://localhost:1313/posts/cursedctf-2024/files/palindrome.asm&#34;&gt;palindrome_number&lt;/a&gt;, &lt;a href=&#34;http://localhost:1313/posts/cursedctf-2024/files/fizzbuzz.asm&#34;&gt;fizzbuzz&lt;/a&gt; and &lt;a href=&#34;http://localhost:1313/posts/cursedctf-2024/files/fizzbuzz.asm&#34;&gt;two_sum&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;There were also assembly golfing challenges for leetcode challenges, where your code had to be shorter than the previous submission, and my team had some pretty cursed solutions for &lt;a href=&#34;https://TheSavageTeddy.github.io/posts/cursedctf-2024/files/palindrome.asm&#34;&gt;palindrome_number&lt;/a&gt;, &lt;a href=&#34;https://TheSavageTeddy.github.io/posts/cursedctf-2024/files/fizzbuzz.asm&#34;&gt;fizzbuzz&lt;/a&gt; and &lt;a href=&#34;https://TheSavageTeddy.github.io/posts/cursedctf-2024/files/fizzbuzz.asm&#34;&gt;two_sum&lt;/a&gt;.&lt;/p&gt;
 &lt;h1 id=&#34;the-final-iceberg&#34;&gt;The Final Iceberg&lt;/h1&gt;
 
   &lt;img src=&#34;./img/iceberg_final.png&#34;  class=&#34;center&#34;  style=&#34;border-radius: 5px;width: 60%; &#34;  /&gt;
@@ -3937,10 +3937,10 @@ Sad 🐸 You are banned 😢
     
     <item>
       <title>RSAjail Writeups - Blue Water CTF 2024</title>
-      <link>http://localhost:1313/posts/rsajail-bwctf-2024/</link>
+      <link>https://TheSavageTeddy.github.io/posts/rsajail-bwctf-2024/</link>
       <pubDate>Tue, 15 Oct 2024 22:00:00 +1100</pubDate>
       
-      <guid>http://localhost:1313/posts/rsajail-bwctf-2024/</guid>
+      <guid>https://TheSavageTeddy.github.io/posts/rsajail-bwctf-2024/</guid>
       <description>&lt;h1 id=&#34;overview&#34;&gt;Overview&lt;/h1&gt;
 &lt;p&gt;Last weekend I played &lt;a href=&#34;https://ctftime.org/event/2479&#34;&gt;Blue Water CTF&lt;/a&gt; with my team &lt;a href=&#34;https://ctftime.org/team/160273&#34;&gt;Emu Exploit&lt;/a&gt;. We just mananged to get top 10!&lt;/p&gt;
 
@@ -3971,8 +3971,8 @@ Sad 🐸 You are banned 😢
 
 
   &lt;div class=&#34;collapsable-code&#34;&gt;
-    &lt;input id=&#34;178256439&#34; type=&#34;checkbox&#34;  /&gt;
-    &lt;label for=&#34;178256439&#34;&gt;
+    &lt;input id=&#34;573289146&#34; type=&#34;checkbox&#34;  /&gt;
+    &lt;label for=&#34;573289146&#34;&gt;
       &lt;span class=&#34;collapsable-code__language&#34;&gt;python&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__title&#34;&gt;rsajail-3.py&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__toggle&#34; data-label-expand=&#34;Show&#34; data-label-collapse=&#34;Hide&#34;&gt;&lt;/span&gt;
@@ -4150,8 +4150,8 @@ verify(pr, m, flag)
 
 
   &lt;div class=&#34;collapsable-code&#34;&gt;
-    &lt;input id=&#34;984731625&#34; type=&#34;checkbox&#34; checked /&gt;
-    &lt;label for=&#34;984731625&#34;&gt;
+    &lt;input id=&#34;987214653&#34; type=&#34;checkbox&#34; checked /&gt;
+    &lt;label for=&#34;987214653&#34;&gt;
       &lt;span class=&#34;collapsable-code__language&#34;&gt;text&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__title&#34;&gt;rsajail-3-sol.txt&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__toggle&#34; data-label-expand=&#34;Show&#34; data-label-collapse=&#34;Hide&#34;&gt;&lt;/span&gt;
@@ -4339,7 +4339,7 @@ SyntaxError: invalid syntax. Perhaps you forgot a comma?
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;[m&lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt;r]
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;final-solve&#34;&gt;Final solve&lt;/h3&gt;
 &lt;p&gt;Now that we have modular inverse and modular exponentiation algorithms implemented, we can simply combine them to get the flag. Keep in mind we need to run this a few times on remote, since we hardcoded loop amount for modular inverse.&lt;/p&gt;
-&lt;p&gt;The &lt;a href=&#34;http://localhost:1313/posts/rsajail-bwctf-2024/rsajail-2-sol.txt&#34;&gt;final code&lt;/a&gt; turned out to be ~70000 lines long, with ~200k characters. Believe it or not, this is nothing compared to RSAjail-1&amp;hellip;&lt;/p&gt;
+&lt;p&gt;The &lt;a href=&#34;https://TheSavageTeddy.github.io/posts/rsajail-bwctf-2024/rsajail-2-sol.txt&#34;&gt;final code&lt;/a&gt; turned out to be ~70000 lines long, with ~200k characters. Believe it or not, this is nothing compared to RSAjail-1&amp;hellip;&lt;/p&gt;
 &lt;p&gt;I decided to manually copy and paste it into the terminal. It lagged for a bit, but eventually processed and pasted the characters.&lt;/p&gt;
 
   &lt;img src=&#34;./img/flag-2.png&#34;  class=&#34;center&#34;  style=&#34;border-radius: 5px; width: 100%&#34;  /&gt;
@@ -4506,7 +4506,7 @@ SyntaxError: invalid syntax. Perhaps you forgot a comma?
   &lt;img src=&#34;./img/fmt-script-1.png&#34;  class=&#34;center&#34;  style=&#34;border-radius: 5px; width: 100%&#34;  /&gt;
 
 
-&lt;p&gt;And thats how you turn one line of code, &lt;code&gt;q=N//p&lt;/code&gt;, into &lt;a href=&#34;http://localhost:1313/posts/rsajail-bwctf-2024/f1_fmtted_.txt&#34;&gt;almost 800k lines&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;And thats how you turn one line of code, &lt;code&gt;q=N//p&lt;/code&gt;, into &lt;a href=&#34;https://TheSavageTeddy.github.io/posts/rsajail-bwctf-2024/f1_fmtted_.txt&#34;&gt;almost 800k lines&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;That&amp;rsquo;s not the end either - there&amp;rsquo;s still other places that use integer division, such as modular inverse.&lt;/p&gt;
 &lt;h3 id=&#34;integer-division---in-modular-inverse-algorithm&#34;&gt;Integer division - in modular inverse algorithm&lt;/h3&gt;
 &lt;p&gt;Recall our modular inverse algorithm was based off this:&lt;/p&gt;
@@ -4594,7 +4594,7 @@ SyntaxError: invalid syntax. Perhaps you forgot a comma?
 
 
 &lt;p&gt;&lt;code&gt;bwctf{Did_you_have_fun_with_only_one_variable?_Good_thing_*tuple*_exists_UwU}&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;You can view the final formatted code &lt;a href=&#34;http://localhost:1313/posts/rsajail-bwctf-2024/final_fmtted.txt&#34;&gt;here&lt;/a&gt;, but I suggest reading the &lt;a href=&#34;http://localhost:1313/posts/rsajail-bwctf-2024/f4_final.txt&#34;&gt;unformatted version&lt;/a&gt;. Actually, both of them are practically unreadible, but there you go I guess.&lt;/p&gt;
+&lt;p&gt;You can view the final formatted code &lt;a href=&#34;https://TheSavageTeddy.github.io/posts/rsajail-bwctf-2024/final_fmtted.txt&#34;&gt;here&lt;/a&gt;, but I suggest reading the &lt;a href=&#34;https://TheSavageTeddy.github.io/posts/rsajail-bwctf-2024/f4_final.txt&#34;&gt;unformatted version&lt;/a&gt;. Actually, both of them are practically unreadible, but there you go I guess.&lt;/p&gt;
 &lt;h1 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h1&gt;
 &lt;p&gt;This was a really nice set of challenges, combining both RSA (crypto?) and Pyjail.&lt;/p&gt;
 &lt;p&gt;Thanks again to the challenge author &lt;a href=&#34;https://x.com/ah_p_uh&#34;&gt;soon haari&lt;/a&gt;, CTF organisers at Blue Water for hosting the event, and congrats to my team for getting top 10!&lt;/p&gt;
@@ -4613,20 +4613,20 @@ SyntaxError: invalid syntax. Perhaps you forgot a comma?
     
     <item>
       <title>what-a-maze-meant - DEFCON Quals 2023 Writeup</title>
-      <link>http://localhost:1313/featured/what-a-maze-meant-defcon-2023-quals/</link>
+      <link>https://TheSavageTeddy.github.io/featured/what-a-maze-meant-defcon-2023-quals/</link>
       <pubDate>Tue, 30 May 2023 02:00:00 +1000</pubDate>
       
-      <guid>http://localhost:1313/featured/what-a-maze-meant-defcon-2023-quals/</guid>
+      <guid>https://TheSavageTeddy.github.io/featured/what-a-maze-meant-defcon-2023-quals/</guid>
       <description>&lt;h1 id=&#34;table-of-contents&#34;&gt;Table of Contents&lt;/h1&gt;
-&lt;p&gt;&lt;a href=&#34;http://localhost:1313/featured/what-a-maze-meant-defcon-2023-quals/#overview&#34;&gt;&lt;code&gt;Overview&lt;/code&gt;&lt;/a&gt; - a brief summary of the event&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;http://localhost:1313/featured/what-a-maze-meant-defcon-2023-quals/#challenge-overview&#34;&gt;&lt;code&gt;Writeup&lt;/code&gt;&lt;/a&gt; - writeup of the challenge&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;http://localhost:1313/featured/what-a-maze-meant-defcon-2023-quals/#conclusion&#34;&gt;&lt;code&gt;Conclusion&lt;/code&gt;&lt;/a&gt; - final closing thoughts&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://TheSavageTeddy.github.io/featured/what-a-maze-meant-defcon-2023-quals/#overview&#34;&gt;&lt;code&gt;Overview&lt;/code&gt;&lt;/a&gt; - a brief summary of the event&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://TheSavageTeddy.github.io/featured/what-a-maze-meant-defcon-2023-quals/#challenge-overview&#34;&gt;&lt;code&gt;Writeup&lt;/code&gt;&lt;/a&gt; - writeup of the challenge&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://TheSavageTeddy.github.io/featured/what-a-maze-meant-defcon-2023-quals/#conclusion&#34;&gt;&lt;code&gt;Conclusion&lt;/code&gt;&lt;/a&gt; - final closing thoughts&lt;/p&gt;
 &lt;h1 id=&#34;overview&#34;&gt;Overview&lt;/h1&gt;
 &lt;p&gt;I played DEFCON Quals 2023 with &lt;a href=&#34;https://ctftime.org/team/220769&#34;&gt;&lt;code&gt;if this doesn&#39;t work we&#39;ll get more for next year&lt;/code&gt;&lt;/a&gt;, a merger team with around 10 teams combined. Despite our best efforts, we placed &lt;code&gt;15th&lt;/code&gt;, just short of the top 12 that qualified, but given that it was our first year, I think we did pretty well, and I guess we&amp;rsquo;ll need to get more for next year!&lt;/p&gt;</description>
       <content>&lt;h1 id=&#34;table-of-contents&#34;&gt;Table of Contents&lt;/h1&gt;
-&lt;p&gt;&lt;a href=&#34;http://localhost:1313/featured/what-a-maze-meant-defcon-2023-quals/#overview&#34;&gt;&lt;code&gt;Overview&lt;/code&gt;&lt;/a&gt; - a brief summary of the event&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;http://localhost:1313/featured/what-a-maze-meant-defcon-2023-quals/#challenge-overview&#34;&gt;&lt;code&gt;Writeup&lt;/code&gt;&lt;/a&gt; - writeup of the challenge&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;http://localhost:1313/featured/what-a-maze-meant-defcon-2023-quals/#conclusion&#34;&gt;&lt;code&gt;Conclusion&lt;/code&gt;&lt;/a&gt; - final closing thoughts&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://TheSavageTeddy.github.io/featured/what-a-maze-meant-defcon-2023-quals/#overview&#34;&gt;&lt;code&gt;Overview&lt;/code&gt;&lt;/a&gt; - a brief summary of the event&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://TheSavageTeddy.github.io/featured/what-a-maze-meant-defcon-2023-quals/#challenge-overview&#34;&gt;&lt;code&gt;Writeup&lt;/code&gt;&lt;/a&gt; - writeup of the challenge&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://TheSavageTeddy.github.io/featured/what-a-maze-meant-defcon-2023-quals/#conclusion&#34;&gt;&lt;code&gt;Conclusion&lt;/code&gt;&lt;/a&gt; - final closing thoughts&lt;/p&gt;
 &lt;h1 id=&#34;overview&#34;&gt;Overview&lt;/h1&gt;
 &lt;p&gt;I played DEFCON Quals 2023 with &lt;a href=&#34;https://ctftime.org/team/220769&#34;&gt;&lt;code&gt;if this doesn&#39;t work we&#39;ll get more for next year&lt;/code&gt;&lt;/a&gt;, a merger team with around 10 teams combined. Despite our best efforts, we placed &lt;code&gt;15th&lt;/code&gt;, just short of the top 12 that qualified, but given that it was our first year, I think we did pretty well, and I guess we&amp;rsquo;ll need to get more for next year!&lt;/p&gt;
 &lt;p&gt;In this post is a quick writeup of &lt;code&gt;what-a-maze-meant&lt;/code&gt;, the first speedpwn challenge released in the LiveCTF section, where the quickest solves will earn the most points, so speed is key! It was a relatively easy challenge that together with some teamates, I solved pretty quickly. Enjoy!&lt;/p&gt;
@@ -5144,10 +5144,10 @@ p.interactive()
     
     <item>
       <title>ret2libm - IrisCTF 2023</title>
-      <link>http://localhost:1313/posts/ret2libm-iris2023/</link>
+      <link>https://TheSavageTeddy.github.io/posts/ret2libm-iris2023/</link>
       <pubDate>Mon, 09 Jan 2023 03:00:00 +1100</pubDate>
       
-      <guid>http://localhost:1313/posts/ret2libm-iris2023/</guid>
+      <guid>https://TheSavageTeddy.github.io/posts/ret2libm-iris2023/</guid>
       <description>&lt;h1 id=&#34;overview&#34;&gt;Overview&lt;/h1&gt;
 &lt;p&gt;&lt;code&gt;ret2libm&lt;/code&gt; was the 2nd most solved &lt;code&gt;pwn&lt;/code&gt; challenge of &lt;a href=&#34;https://ctftime.org/event/1774&#34;&gt;IrisCTF 2023&lt;/a&gt;, written by &lt;code&gt;sera&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;Description:&lt;/p&gt;
@@ -5379,18 +5379,18 @@ PIE:      PIE enabled
     
     <item>
       <title>Crypto Writeups - IrisCTF 2023</title>
-      <link>http://localhost:1313/posts/crypto-iris2023/</link>
+      <link>https://TheSavageTeddy.github.io/posts/crypto-iris2023/</link>
       <pubDate>Mon, 09 Jan 2023 03:00:00 +1100</pubDate>
       
-      <guid>http://localhost:1313/posts/crypto-iris2023/</guid>
+      <guid>https://TheSavageTeddy.github.io/posts/crypto-iris2023/</guid>
       <description>&lt;h1 id=&#34;overview&#34;&gt;Overview&lt;/h1&gt;
 &lt;p&gt;I solved 4/6 crypto challenges in IrisCTF 2023, here are the writeups for them.&lt;/p&gt;
 &lt;p&gt;Challenges (dynamic scoring):&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://localhost:1313/posts/crypto-iris2023/#babynotrsa---145-solves&#34;&gt;&lt;code&gt;babynotrsa&lt;/code&gt;&lt;/a&gt; by &lt;code&gt;sera&lt;/code&gt; - 145 solves&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://localhost:1313/posts/crypto-iris2023/#babymixup---98-solves&#34;&gt;&lt;code&gt;babymixup&lt;/code&gt;&lt;/a&gt; by &lt;code&gt;sera&lt;/code&gt; - 98 solves&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://localhost:1313/posts/crypto-iris2023/#nonces-and-keys---53-solves&#34;&gt;&lt;code&gt;Nonces and Keys&lt;/code&gt;&lt;/a&gt; by &lt;code&gt;lambda&lt;/code&gt; - 53 solves&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://localhost:1313/posts/crypto-iris2023/#aes-bad-256---18-solves&#34;&gt;&lt;code&gt;AES-BAD-256&lt;/code&gt;&lt;/a&gt; by &lt;code&gt;sera&lt;/code&gt; - 18 solves&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://TheSavageTeddy.github.io/posts/crypto-iris2023/#babynotrsa---145-solves&#34;&gt;&lt;code&gt;babynotrsa&lt;/code&gt;&lt;/a&gt; by &lt;code&gt;sera&lt;/code&gt; - 145 solves&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://TheSavageTeddy.github.io/posts/crypto-iris2023/#babymixup---98-solves&#34;&gt;&lt;code&gt;babymixup&lt;/code&gt;&lt;/a&gt; by &lt;code&gt;sera&lt;/code&gt; - 98 solves&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://TheSavageTeddy.github.io/posts/crypto-iris2023/#nonces-and-keys---53-solves&#34;&gt;&lt;code&gt;Nonces and Keys&lt;/code&gt;&lt;/a&gt; by &lt;code&gt;lambda&lt;/code&gt; - 53 solves&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://TheSavageTeddy.github.io/posts/crypto-iris2023/#aes-bad-256---18-solves&#34;&gt;&lt;code&gt;AES-BAD-256&lt;/code&gt;&lt;/a&gt; by &lt;code&gt;sera&lt;/code&gt; - 18 solves&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h1 id=&#34;babynotrsa---145-solves&#34;&gt;babynotrsa - 145 solves&lt;/h1&gt;
 &lt;blockquote&gt;
@@ -5400,10 +5400,10 @@ PIE:      PIE enabled
 &lt;p&gt;I solved 4/6 crypto challenges in IrisCTF 2023, here are the writeups for them.&lt;/p&gt;
 &lt;p&gt;Challenges (dynamic scoring):&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://localhost:1313/posts/crypto-iris2023/#babynotrsa---145-solves&#34;&gt;&lt;code&gt;babynotrsa&lt;/code&gt;&lt;/a&gt; by &lt;code&gt;sera&lt;/code&gt; - 145 solves&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://localhost:1313/posts/crypto-iris2023/#babymixup---98-solves&#34;&gt;&lt;code&gt;babymixup&lt;/code&gt;&lt;/a&gt; by &lt;code&gt;sera&lt;/code&gt; - 98 solves&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://localhost:1313/posts/crypto-iris2023/#nonces-and-keys---53-solves&#34;&gt;&lt;code&gt;Nonces and Keys&lt;/code&gt;&lt;/a&gt; by &lt;code&gt;lambda&lt;/code&gt; - 53 solves&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://localhost:1313/posts/crypto-iris2023/#aes-bad-256---18-solves&#34;&gt;&lt;code&gt;AES-BAD-256&lt;/code&gt;&lt;/a&gt; by &lt;code&gt;sera&lt;/code&gt; - 18 solves&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://TheSavageTeddy.github.io/posts/crypto-iris2023/#babynotrsa---145-solves&#34;&gt;&lt;code&gt;babynotrsa&lt;/code&gt;&lt;/a&gt; by &lt;code&gt;sera&lt;/code&gt; - 145 solves&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://TheSavageTeddy.github.io/posts/crypto-iris2023/#babymixup---98-solves&#34;&gt;&lt;code&gt;babymixup&lt;/code&gt;&lt;/a&gt; by &lt;code&gt;sera&lt;/code&gt; - 98 solves&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://TheSavageTeddy.github.io/posts/crypto-iris2023/#nonces-and-keys---53-solves&#34;&gt;&lt;code&gt;Nonces and Keys&lt;/code&gt;&lt;/a&gt; by &lt;code&gt;lambda&lt;/code&gt; - 53 solves&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://TheSavageTeddy.github.io/posts/crypto-iris2023/#aes-bad-256---18-solves&#34;&gt;&lt;code&gt;AES-BAD-256&lt;/code&gt;&lt;/a&gt; by &lt;code&gt;sera&lt;/code&gt; - 18 solves&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h1 id=&#34;babynotrsa---145-solves&#34;&gt;babynotrsa - 145 solves&lt;/h1&gt;
 &lt;blockquote&gt;
@@ -5918,10 +5918,10 @@ print(dat)
     
     <item>
       <title>Full Writeups - Hack A Bit CTF Finals 0x01</title>
-      <link>http://localhost:1313/posts/writeups-hackabit2023finals/</link>
+      <link>https://TheSavageTeddy.github.io/posts/writeups-hackabit2023finals/</link>
       <pubDate>Sun, 21 May 2023 02:00:00 +1000</pubDate>
       
-      <guid>http://localhost:1313/posts/writeups-hackabit2023finals/</guid>
+      <guid>https://TheSavageTeddy.github.io/posts/writeups-hackabit2023finals/</guid>
       <description>&lt;h1 id=&#34;overview&#34;&gt;Overview&lt;/h1&gt;
 &lt;p&gt;&lt;a href=&#34;https://www.hackabit.com/&#34;&gt;Hack a Bit&lt;/a&gt; is a competition for highschoolers with the aim to promote cybersecurity. This round was the finals and I managed to place &lt;code&gt;2nd&lt;/code&gt; overall!&lt;/p&gt;
 
@@ -5930,8 +5930,8 @@ print(dat)
 
 &lt;p&gt;Below are writeups for all the challenges in the finals. If I&amp;rsquo;ve missed anything or made a mistake like a typo, please let me know on discord &lt;code&gt;TheSavageTeddy#7458&lt;/code&gt;. Enjoy!&lt;/p&gt;
 &lt;h1 id=&#34;challenge-categories&#34;&gt;Challenge Categories&lt;/h1&gt;
-&lt;p&gt;&lt;a href=&#34;http://localhost:1313/posts/writeups-hackabit2023finals/#1-dvgpt&#34;&gt;&lt;code&gt;dvGPT&lt;/code&gt; (Web Exploitation)&lt;/a&gt; - 4 challenges&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;http://localhost:1313/posts/writeups-hackabit2023finals/#2-corruption&#34;&gt;&lt;code&gt;Corruption&lt;/code&gt; (Rev/Binary Exploitation)&lt;/a&gt; - 4 challenges&lt;/p&gt;</description>
+&lt;p&gt;&lt;a href=&#34;https://TheSavageTeddy.github.io/posts/writeups-hackabit2023finals/#1-dvgpt&#34;&gt;&lt;code&gt;dvGPT&lt;/code&gt; (Web Exploitation)&lt;/a&gt; - 4 challenges&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://TheSavageTeddy.github.io/posts/writeups-hackabit2023finals/#2-corruption&#34;&gt;&lt;code&gt;Corruption&lt;/code&gt; (Rev/Binary Exploitation)&lt;/a&gt; - 4 challenges&lt;/p&gt;</description>
       <content>&lt;h1 id=&#34;overview&#34;&gt;Overview&lt;/h1&gt;
 &lt;p&gt;&lt;a href=&#34;https://www.hackabit.com/&#34;&gt;Hack a Bit&lt;/a&gt; is a competition for highschoolers with the aim to promote cybersecurity. This round was the finals and I managed to place &lt;code&gt;2nd&lt;/code&gt; overall!&lt;/p&gt;
 
@@ -5940,10 +5940,10 @@ print(dat)
 
 &lt;p&gt;Below are writeups for all the challenges in the finals. If I&amp;rsquo;ve missed anything or made a mistake like a typo, please let me know on discord &lt;code&gt;TheSavageTeddy#7458&lt;/code&gt;. Enjoy!&lt;/p&gt;
 &lt;h1 id=&#34;challenge-categories&#34;&gt;Challenge Categories&lt;/h1&gt;
-&lt;p&gt;&lt;a href=&#34;http://localhost:1313/posts/writeups-hackabit2023finals/#1-dvgpt&#34;&gt;&lt;code&gt;dvGPT&lt;/code&gt; (Web Exploitation)&lt;/a&gt; - 4 challenges&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;http://localhost:1313/posts/writeups-hackabit2023finals/#2-corruption&#34;&gt;&lt;code&gt;Corruption&lt;/code&gt; (Rev/Binary Exploitation)&lt;/a&gt; - 4 challenges&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;http://localhost:1313/posts/writeups-hackabit2023finals/#3-triage&#34;&gt;&lt;code&gt;Triage&lt;/code&gt; (Cryptography/Forensics)&lt;/a&gt; - 4 challenges&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;http://localhost:1313/posts/writeups-hackabit2023finals/#4-range--zz-king-of-the-hill&#34;&gt;&lt;code&gt;Range &amp;amp; King of The Hill&lt;/code&gt; (Machines/Attack Defense)&lt;/a&gt; - 4 challenges + 8 Attack Defense Flags&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://TheSavageTeddy.github.io/posts/writeups-hackabit2023finals/#1-dvgpt&#34;&gt;&lt;code&gt;dvGPT&lt;/code&gt; (Web Exploitation)&lt;/a&gt; - 4 challenges&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://TheSavageTeddy.github.io/posts/writeups-hackabit2023finals/#2-corruption&#34;&gt;&lt;code&gt;Corruption&lt;/code&gt; (Rev/Binary Exploitation)&lt;/a&gt; - 4 challenges&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://TheSavageTeddy.github.io/posts/writeups-hackabit2023finals/#3-triage&#34;&gt;&lt;code&gt;Triage&lt;/code&gt; (Cryptography/Forensics)&lt;/a&gt; - 4 challenges&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://TheSavageTeddy.github.io/posts/writeups-hackabit2023finals/#4-range--zz-king-of-the-hill&#34;&gt;&lt;code&gt;Range &amp;amp; King of The Hill&lt;/code&gt; (Machines/Attack Defense)&lt;/a&gt; - 4 challenges + 8 Attack Defense Flags&lt;/p&gt;
 &lt;h1 id=&#34;1-dvgpt&#34;&gt;1. dvGPT&lt;/h1&gt;
 &lt;p&gt;This category contained 4 web challenges, all based on the same website, hosting chatbot similar to chatGPT, which was quite interesting and fun!&lt;/p&gt;
 &lt;h2 id=&#34;leaky-75&#34;&gt;Leaky (75)&lt;/h2&gt;
@@ -6370,29 +6370,29 @@ Service Info: OSs: Unix, Linux; CPE: cpe:/o:linux:linux_kernel
     
     <item>
       <title>Full Writeups - Hack A Bit CTF Qualifiers 0x01</title>
-      <link>http://localhost:1313/posts/writeups-hackabit2023/</link>
+      <link>https://TheSavageTeddy.github.io/posts/writeups-hackabit2023/</link>
       <pubDate>Wed, 01 Mar 2023 03:00:00 +1100</pubDate>
       
-      <guid>http://localhost:1313/posts/writeups-hackabit2023/</guid>
+      <guid>https://TheSavageTeddy.github.io/posts/writeups-hackabit2023/</guid>
       <description>&lt;h1 id=&#34;overview&#34;&gt;Overview&lt;/h1&gt;
 &lt;p&gt;Hack A Bit is a CTF targeting highschool students aged 13-18. This post will include writeups for all challenges (except OSINT) for Round 2, which was the CTF jeopardy round.&lt;/p&gt;
 &lt;p&gt;Also, please contact me discord &lt;code&gt;TheSavageTeddy#7458&lt;/code&gt; if there are any mistakes/issues with these writeups, or if you want more info on them. Enjoy!&lt;/p&gt;
 &lt;h1 id=&#34;challenge-categories&#34;&gt;Challenge Categories&lt;/h1&gt;
-&lt;p&gt;&lt;a href=&#34;http://localhost:1313/posts/writeups-hackabit2023/#0-welcome&#34;&gt;&lt;code&gt;Welcome&lt;/code&gt;&lt;/a&gt; - 4 challenges&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;http://localhost:1313/posts/writeups-hackabit2023/#1-cryptography&#34;&gt;&lt;code&gt;Cryptography&lt;/code&gt;&lt;/a&gt; - 8 challenges&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;http://localhost:1313/posts/writeups-hackabit2023/#2-web&#34;&gt;&lt;code&gt;Web&lt;/code&gt;&lt;/a&gt; - 6 challenges&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;http://localhost:1313/posts/writeups-hackabit2023/#3-programming&#34;&gt;&lt;code&gt;Programming&lt;/code&gt;&lt;/a&gt; - 8 challenges&lt;/p&gt;</description>
+&lt;p&gt;&lt;a href=&#34;https://TheSavageTeddy.github.io/posts/writeups-hackabit2023/#0-welcome&#34;&gt;&lt;code&gt;Welcome&lt;/code&gt;&lt;/a&gt; - 4 challenges&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://TheSavageTeddy.github.io/posts/writeups-hackabit2023/#1-cryptography&#34;&gt;&lt;code&gt;Cryptography&lt;/code&gt;&lt;/a&gt; - 8 challenges&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://TheSavageTeddy.github.io/posts/writeups-hackabit2023/#2-web&#34;&gt;&lt;code&gt;Web&lt;/code&gt;&lt;/a&gt; - 6 challenges&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://TheSavageTeddy.github.io/posts/writeups-hackabit2023/#3-programming&#34;&gt;&lt;code&gt;Programming&lt;/code&gt;&lt;/a&gt; - 8 challenges&lt;/p&gt;</description>
       <content>&lt;h1 id=&#34;overview&#34;&gt;Overview&lt;/h1&gt;
 &lt;p&gt;Hack A Bit is a CTF targeting highschool students aged 13-18. This post will include writeups for all challenges (except OSINT) for Round 2, which was the CTF jeopardy round.&lt;/p&gt;
 &lt;p&gt;Also, please contact me discord &lt;code&gt;TheSavageTeddy#7458&lt;/code&gt; if there are any mistakes/issues with these writeups, or if you want more info on them. Enjoy!&lt;/p&gt;
 &lt;h1 id=&#34;challenge-categories&#34;&gt;Challenge Categories&lt;/h1&gt;
-&lt;p&gt;&lt;a href=&#34;http://localhost:1313/posts/writeups-hackabit2023/#0-welcome&#34;&gt;&lt;code&gt;Welcome&lt;/code&gt;&lt;/a&gt; - 4 challenges&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;http://localhost:1313/posts/writeups-hackabit2023/#1-cryptography&#34;&gt;&lt;code&gt;Cryptography&lt;/code&gt;&lt;/a&gt; - 8 challenges&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;http://localhost:1313/posts/writeups-hackabit2023/#2-web&#34;&gt;&lt;code&gt;Web&lt;/code&gt;&lt;/a&gt; - 6 challenges&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;http://localhost:1313/posts/writeups-hackabit2023/#3-programming&#34;&gt;&lt;code&gt;Programming&lt;/code&gt;&lt;/a&gt; - 8 challenges&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;http://localhost:1313/posts/writeups-hackabit2023/#4-infrastructure&#34;&gt;&lt;code&gt;Infrastructure&lt;/code&gt;&lt;/a&gt; - 8 challenges&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;http://localhost:1313/posts/writeups-hackabit2023/#5-networking&#34;&gt;&lt;code&gt;Networking&lt;/code&gt;&lt;/a&gt; - 6 challenges&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;http://localhost:1313/posts/writeups-hackabit2023/#6-osint&#34;&gt;&lt;code&gt;OSINT&lt;/code&gt;&lt;/a&gt; - 8 challenges&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://TheSavageTeddy.github.io/posts/writeups-hackabit2023/#0-welcome&#34;&gt;&lt;code&gt;Welcome&lt;/code&gt;&lt;/a&gt; - 4 challenges&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://TheSavageTeddy.github.io/posts/writeups-hackabit2023/#1-cryptography&#34;&gt;&lt;code&gt;Cryptography&lt;/code&gt;&lt;/a&gt; - 8 challenges&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://TheSavageTeddy.github.io/posts/writeups-hackabit2023/#2-web&#34;&gt;&lt;code&gt;Web&lt;/code&gt;&lt;/a&gt; - 6 challenges&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://TheSavageTeddy.github.io/posts/writeups-hackabit2023/#3-programming&#34;&gt;&lt;code&gt;Programming&lt;/code&gt;&lt;/a&gt; - 8 challenges&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://TheSavageTeddy.github.io/posts/writeups-hackabit2023/#4-infrastructure&#34;&gt;&lt;code&gt;Infrastructure&lt;/code&gt;&lt;/a&gt; - 8 challenges&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://TheSavageTeddy.github.io/posts/writeups-hackabit2023/#5-networking&#34;&gt;&lt;code&gt;Networking&lt;/code&gt;&lt;/a&gt; - 6 challenges&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://TheSavageTeddy.github.io/posts/writeups-hackabit2023/#6-osint&#34;&gt;&lt;code&gt;OSINT&lt;/code&gt;&lt;/a&gt; - 8 challenges&lt;/p&gt;
 &lt;h1 id=&#34;0-welcome&#34;&gt;0. Welcome&lt;/h1&gt;
 &lt;h2 id=&#34;wakeup-5&#34;&gt;Wakeup (5)&lt;/h2&gt;
 &lt;blockquote&gt;

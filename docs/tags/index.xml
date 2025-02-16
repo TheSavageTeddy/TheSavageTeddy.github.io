@@ -2,178 +2,178 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on teddyctf</title>
-    <link>http://localhost:1313/tags/</link>
+    <link>https://TheSavageTeddy.github.io/tags/</link>
     <description>Recent content in Tags on teddyctf</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>teddyctf</copyright>
-    <lastBuildDate>Tue, 15 Oct 2024 22:00:00 +1100</lastBuildDate><atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 15 Oct 2024 22:00:00 +1100</lastBuildDate><atom:link href="https://TheSavageTeddy.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Ctf</title>
-      <link>http://localhost:1313/tags/ctf/</link>
+      <link>https://TheSavageTeddy.github.io/tags/ctf/</link>
       <pubDate>Tue, 15 Oct 2024 22:00:00 +1100</pubDate>
       
-      <guid>http://localhost:1313/tags/ctf/</guid>
+      <guid>https://TheSavageTeddy.github.io/tags/ctf/</guid>
       <description></description>
       <content></content>
     </item>
     
     <item>
       <title>Misc</title>
-      <link>http://localhost:1313/tags/misc/</link>
+      <link>https://TheSavageTeddy.github.io/tags/misc/</link>
       <pubDate>Tue, 15 Oct 2024 22:00:00 +1100</pubDate>
       
-      <guid>http://localhost:1313/tags/misc/</guid>
+      <guid>https://TheSavageTeddy.github.io/tags/misc/</guid>
       <description></description>
       <content></content>
     </item>
     
     <item>
       <title>Writeup</title>
-      <link>http://localhost:1313/tags/writeup/</link>
+      <link>https://TheSavageTeddy.github.io/tags/writeup/</link>
       <pubDate>Tue, 15 Oct 2024 22:00:00 +1100</pubDate>
       
-      <guid>http://localhost:1313/tags/writeup/</guid>
+      <guid>https://TheSavageTeddy.github.io/tags/writeup/</guid>
       <description></description>
       <content></content>
     </item>
     
     <item>
       <title>Bsides</title>
-      <link>http://localhost:1313/tags/bsides/</link>
+      <link>https://TheSavageTeddy.github.io/tags/bsides/</link>
       <pubDate>Sat, 28 Sep 2024 17:53:20 +1000</pubDate>
       
-      <guid>http://localhost:1313/tags/bsides/</guid>
+      <guid>https://TheSavageTeddy.github.io/tags/bsides/</guid>
       <description></description>
       <content></content>
     </item>
     
     <item>
       <title>Crypto</title>
-      <link>http://localhost:1313/tags/crypto/</link>
+      <link>https://TheSavageTeddy.github.io/tags/crypto/</link>
       <pubDate>Sat, 28 Sep 2024 17:53:20 +1000</pubDate>
       
-      <guid>http://localhost:1313/tags/crypto/</guid>
+      <guid>https://TheSavageTeddy.github.io/tags/crypto/</guid>
       <description></description>
       <content></content>
     </item>
     
     <item>
       <title>Cryptography</title>
-      <link>http://localhost:1313/tags/cryptography/</link>
+      <link>https://TheSavageTeddy.github.io/tags/cryptography/</link>
       <pubDate>Sat, 28 Sep 2024 17:53:20 +1000</pubDate>
       
-      <guid>http://localhost:1313/tags/cryptography/</guid>
+      <guid>https://TheSavageTeddy.github.io/tags/cryptography/</guid>
       <description></description>
       <content></content>
     </item>
     
     <item>
       <title>Onsite</title>
-      <link>http://localhost:1313/tags/onsite/</link>
+      <link>https://TheSavageTeddy.github.io/tags/onsite/</link>
       <pubDate>Sat, 28 Sep 2024 17:53:20 +1000</pubDate>
       
-      <guid>http://localhost:1313/tags/onsite/</guid>
+      <guid>https://TheSavageTeddy.github.io/tags/onsite/</guid>
       <description></description>
       <content></content>
     </item>
     
     <item>
       <title>Cursed</title>
-      <link>http://localhost:1313/tags/cursed/</link>
+      <link>https://TheSavageTeddy.github.io/tags/cursed/</link>
       <pubDate>Mon, 01 Apr 2024 09:43:20 +1100</pubDate>
       
-      <guid>http://localhost:1313/tags/cursed/</guid>
+      <guid>https://TheSavageTeddy.github.io/tags/cursed/</guid>
       <description></description>
       <content></content>
     </item>
     
     <item>
       <title>Damnvulnerabledefi</title>
-      <link>http://localhost:1313/tags/damnvulnerabledefi/</link>
+      <link>https://TheSavageTeddy.github.io/tags/damnvulnerabledefi/</link>
       <pubDate>Tue, 13 Feb 2024 21:10:00 +1100</pubDate>
       
-      <guid>http://localhost:1313/tags/damnvulnerabledefi/</guid>
+      <guid>https://TheSavageTeddy.github.io/tags/damnvulnerabledefi/</guid>
       <description></description>
       <content></content>
     </item>
     
     <item>
       <title>Solidity</title>
-      <link>http://localhost:1313/tags/solidity/</link>
+      <link>https://TheSavageTeddy.github.io/tags/solidity/</link>
       <pubDate>Tue, 13 Feb 2024 21:10:00 +1100</pubDate>
       
-      <guid>http://localhost:1313/tags/solidity/</guid>
+      <guid>https://TheSavageTeddy.github.io/tags/solidity/</guid>
       <description></description>
       <content></content>
     </item>
     
     <item>
       <title>Web3</title>
-      <link>http://localhost:1313/tags/web3/</link>
+      <link>https://TheSavageTeddy.github.io/tags/web3/</link>
       <pubDate>Tue, 13 Feb 2024 21:10:00 +1100</pubDate>
       
-      <guid>http://localhost:1313/tags/web3/</guid>
+      <guid>https://TheSavageTeddy.github.io/tags/web3/</guid>
       <description></description>
       <content></content>
     </item>
     
     <item>
       <title>Rev</title>
-      <link>http://localhost:1313/tags/rev/</link>
+      <link>https://TheSavageTeddy.github.io/tags/rev/</link>
       <pubDate>Sun, 01 Oct 2023 03:06:40 +1100</pubDate>
       
-      <guid>http://localhost:1313/tags/rev/</guid>
+      <guid>https://TheSavageTeddy.github.io/tags/rev/</guid>
       <description></description>
       <content></content>
     </item>
     
     <item>
       <title>Reversing</title>
-      <link>http://localhost:1313/tags/reversing/</link>
+      <link>https://TheSavageTeddy.github.io/tags/reversing/</link>
       <pubDate>Sun, 01 Oct 2023 03:06:40 +1100</pubDate>
       
-      <guid>http://localhost:1313/tags/reversing/</guid>
+      <guid>https://TheSavageTeddy.github.io/tags/reversing/</guid>
       <description></description>
       <content></content>
     </item>
     
     <item>
       <title>Finals</title>
-      <link>http://localhost:1313/tags/finals/</link>
+      <link>https://TheSavageTeddy.github.io/tags/finals/</link>
       <pubDate>Thu, 22 Jun 2023 23:20:00 +1000</pubDate>
       
-      <guid>http://localhost:1313/tags/finals/</guid>
+      <guid>https://TheSavageTeddy.github.io/tags/finals/</guid>
       <description></description>
       <content></content>
     </item>
     
     <item>
       <title>Speedpwn</title>
-      <link>http://localhost:1313/tags/speedpwn/</link>
+      <link>https://TheSavageTeddy.github.io/tags/speedpwn/</link>
       <pubDate>Tue, 30 May 2023 02:00:00 +1000</pubDate>
       
-      <guid>http://localhost:1313/tags/speedpwn/</guid>
+      <guid>https://TheSavageTeddy.github.io/tags/speedpwn/</guid>
       <description></description>
       <content></content>
     </item>
     
     <item>
       <title>Beginner</title>
-      <link>http://localhost:1313/tags/beginner/</link>
+      <link>https://TheSavageTeddy.github.io/tags/beginner/</link>
       <pubDate>Sun, 21 May 2023 02:00:00 +1000</pubDate>
       
-      <guid>http://localhost:1313/tags/beginner/</guid>
+      <guid>https://TheSavageTeddy.github.io/tags/beginner/</guid>
       <description></description>
       <content></content>
     </item>
     
     <item>
       <title>Pwn</title>
-      <link>http://localhost:1313/tags/pwn/</link>
+      <link>https://TheSavageTeddy.github.io/tags/pwn/</link>
       <pubDate>Mon, 09 Jan 2023 03:00:00 +1100</pubDate>
       
-      <guid>http://localhost:1313/tags/pwn/</guid>
+      <guid>https://TheSavageTeddy.github.io/tags/pwn/</guid>
       <description></description>
       <content></content>
     </item>

@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Beginner on teddyctf</title>
-    <link>http://localhost:1313/tags/beginner/</link>
+    <link>https://TheSavageTeddy.github.io/tags/beginner/</link>
     <description>Recent content in Beginner on teddyctf</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>teddyctf</copyright>
-    <lastBuildDate>Sun, 21 May 2023 02:00:00 +1000</lastBuildDate><atom:link href="http://localhost:1313/tags/beginner/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 21 May 2023 02:00:00 +1000</lastBuildDate><atom:link href="https://TheSavageTeddy.github.io/tags/beginner/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Full Writeups - Hack A Bit CTF Finals 0x01</title>
-      <link>http://localhost:1313/posts/writeups-hackabit2023finals/</link>
+      <link>https://TheSavageTeddy.github.io/posts/writeups-hackabit2023finals/</link>
       <pubDate>Sun, 21 May 2023 02:00:00 +1000</pubDate>
       
-      <guid>http://localhost:1313/posts/writeups-hackabit2023finals/</guid>
+      <guid>https://TheSavageTeddy.github.io/posts/writeups-hackabit2023finals/</guid>
       <description>&lt;h1 id=&#34;overview&#34;&gt;Overview&lt;/h1&gt;
 &lt;p&gt;&lt;a href=&#34;https://www.hackabit.com/&#34;&gt;Hack a Bit&lt;/a&gt; is a competition for highschoolers with the aim to promote cybersecurity. This round was the finals and I managed to place &lt;code&gt;2nd&lt;/code&gt; overall!&lt;/p&gt;
 
@@ -22,8 +22,8 @@
 
 &lt;p&gt;Below are writeups for all the challenges in the finals. If I&amp;rsquo;ve missed anything or made a mistake like a typo, please let me know on discord &lt;code&gt;TheSavageTeddy#7458&lt;/code&gt;. Enjoy!&lt;/p&gt;
 &lt;h1 id=&#34;challenge-categories&#34;&gt;Challenge Categories&lt;/h1&gt;
-&lt;p&gt;&lt;a href=&#34;http://localhost:1313/posts/writeups-hackabit2023finals/#1-dvgpt&#34;&gt;&lt;code&gt;dvGPT&lt;/code&gt; (Web Exploitation)&lt;/a&gt; - 4 challenges&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;http://localhost:1313/posts/writeups-hackabit2023finals/#2-corruption&#34;&gt;&lt;code&gt;Corruption&lt;/code&gt; (Rev/Binary Exploitation)&lt;/a&gt; - 4 challenges&lt;/p&gt;</description>
+&lt;p&gt;&lt;a href=&#34;https://TheSavageTeddy.github.io/posts/writeups-hackabit2023finals/#1-dvgpt&#34;&gt;&lt;code&gt;dvGPT&lt;/code&gt; (Web Exploitation)&lt;/a&gt; - 4 challenges&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://TheSavageTeddy.github.io/posts/writeups-hackabit2023finals/#2-corruption&#34;&gt;&lt;code&gt;Corruption&lt;/code&gt; (Rev/Binary Exploitation)&lt;/a&gt; - 4 challenges&lt;/p&gt;</description>
       <content>&lt;h1 id=&#34;overview&#34;&gt;Overview&lt;/h1&gt;
 &lt;p&gt;&lt;a href=&#34;https://www.hackabit.com/&#34;&gt;Hack a Bit&lt;/a&gt; is a competition for highschoolers with the aim to promote cybersecurity. This round was the finals and I managed to place &lt;code&gt;2nd&lt;/code&gt; overall!&lt;/p&gt;
 
@@ -32,10 +32,10 @@
 
 &lt;p&gt;Below are writeups for all the challenges in the finals. If I&amp;rsquo;ve missed anything or made a mistake like a typo, please let me know on discord &lt;code&gt;TheSavageTeddy#7458&lt;/code&gt;. Enjoy!&lt;/p&gt;
 &lt;h1 id=&#34;challenge-categories&#34;&gt;Challenge Categories&lt;/h1&gt;
-&lt;p&gt;&lt;a href=&#34;http://localhost:1313/posts/writeups-hackabit2023finals/#1-dvgpt&#34;&gt;&lt;code&gt;dvGPT&lt;/code&gt; (Web Exploitation)&lt;/a&gt; - 4 challenges&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;http://localhost:1313/posts/writeups-hackabit2023finals/#2-corruption&#34;&gt;&lt;code&gt;Corruption&lt;/code&gt; (Rev/Binary Exploitation)&lt;/a&gt; - 4 challenges&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;http://localhost:1313/posts/writeups-hackabit2023finals/#3-triage&#34;&gt;&lt;code&gt;Triage&lt;/code&gt; (Cryptography/Forensics)&lt;/a&gt; - 4 challenges&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;http://localhost:1313/posts/writeups-hackabit2023finals/#4-range--zz-king-of-the-hill&#34;&gt;&lt;code&gt;Range &amp;amp; King of The Hill&lt;/code&gt; (Machines/Attack Defense)&lt;/a&gt; - 4 challenges + 8 Attack Defense Flags&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://TheSavageTeddy.github.io/posts/writeups-hackabit2023finals/#1-dvgpt&#34;&gt;&lt;code&gt;dvGPT&lt;/code&gt; (Web Exploitation)&lt;/a&gt; - 4 challenges&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://TheSavageTeddy.github.io/posts/writeups-hackabit2023finals/#2-corruption&#34;&gt;&lt;code&gt;Corruption&lt;/code&gt; (Rev/Binary Exploitation)&lt;/a&gt; - 4 challenges&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://TheSavageTeddy.github.io/posts/writeups-hackabit2023finals/#3-triage&#34;&gt;&lt;code&gt;Triage&lt;/code&gt; (Cryptography/Forensics)&lt;/a&gt; - 4 challenges&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://TheSavageTeddy.github.io/posts/writeups-hackabit2023finals/#4-range--zz-king-of-the-hill&#34;&gt;&lt;code&gt;Range &amp;amp; King of The Hill&lt;/code&gt; (Machines/Attack Defense)&lt;/a&gt; - 4 challenges + 8 Attack Defense Flags&lt;/p&gt;
 &lt;h1 id=&#34;1-dvgpt&#34;&gt;1. dvGPT&lt;/h1&gt;
 &lt;p&gt;This category contained 4 web challenges, all based on the same website, hosting chatbot similar to chatGPT, which was quite interesting and fun!&lt;/p&gt;
 &lt;h2 id=&#34;leaky-75&#34;&gt;Leaky (75)&lt;/h2&gt;
@@ -462,29 +462,29 @@ Service Info: OSs: Unix, Linux; CPE: cpe:/o:linux:linux_kernel
     
     <item>
       <title>Full Writeups - Hack A Bit CTF Qualifiers 0x01</title>
-      <link>http://localhost:1313/posts/writeups-hackabit2023/</link>
+      <link>https://TheSavageTeddy.github.io/posts/writeups-hackabit2023/</link>
       <pubDate>Wed, 01 Mar 2023 03:00:00 +1100</pubDate>
       
-      <guid>http://localhost:1313/posts/writeups-hackabit2023/</guid>
+      <guid>https://TheSavageTeddy.github.io/posts/writeups-hackabit2023/</guid>
       <description>&lt;h1 id=&#34;overview&#34;&gt;Overview&lt;/h1&gt;
 &lt;p&gt;Hack A Bit is a CTF targeting highschool students aged 13-18. This post will include writeups for all challenges (except OSINT) for Round 2, which was the CTF jeopardy round.&lt;/p&gt;
 &lt;p&gt;Also, please contact me discord &lt;code&gt;TheSavageTeddy#7458&lt;/code&gt; if there are any mistakes/issues with these writeups, or if you want more info on them. Enjoy!&lt;/p&gt;
 &lt;h1 id=&#34;challenge-categories&#34;&gt;Challenge Categories&lt;/h1&gt;
-&lt;p&gt;&lt;a href=&#34;http://localhost:1313/posts/writeups-hackabit2023/#0-welcome&#34;&gt;&lt;code&gt;Welcome&lt;/code&gt;&lt;/a&gt; - 4 challenges&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;http://localhost:1313/posts/writeups-hackabit2023/#1-cryptography&#34;&gt;&lt;code&gt;Cryptography&lt;/code&gt;&lt;/a&gt; - 8 challenges&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;http://localhost:1313/posts/writeups-hackabit2023/#2-web&#34;&gt;&lt;code&gt;Web&lt;/code&gt;&lt;/a&gt; - 6 challenges&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;http://localhost:1313/posts/writeups-hackabit2023/#3-programming&#34;&gt;&lt;code&gt;Programming&lt;/code&gt;&lt;/a&gt; - 8 challenges&lt;/p&gt;</description>
+&lt;p&gt;&lt;a href=&#34;https://TheSavageTeddy.github.io/posts/writeups-hackabit2023/#0-welcome&#34;&gt;&lt;code&gt;Welcome&lt;/code&gt;&lt;/a&gt; - 4 challenges&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://TheSavageTeddy.github.io/posts/writeups-hackabit2023/#1-cryptography&#34;&gt;&lt;code&gt;Cryptography&lt;/code&gt;&lt;/a&gt; - 8 challenges&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://TheSavageTeddy.github.io/posts/writeups-hackabit2023/#2-web&#34;&gt;&lt;code&gt;Web&lt;/code&gt;&lt;/a&gt; - 6 challenges&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://TheSavageTeddy.github.io/posts/writeups-hackabit2023/#3-programming&#34;&gt;&lt;code&gt;Programming&lt;/code&gt;&lt;/a&gt; - 8 challenges&lt;/p&gt;</description>
       <content>&lt;h1 id=&#34;overview&#34;&gt;Overview&lt;/h1&gt;
 &lt;p&gt;Hack A Bit is a CTF targeting highschool students aged 13-18. This post will include writeups for all challenges (except OSINT) for Round 2, which was the CTF jeopardy round.&lt;/p&gt;
 &lt;p&gt;Also, please contact me discord &lt;code&gt;TheSavageTeddy#7458&lt;/code&gt; if there are any mistakes/issues with these writeups, or if you want more info on them. Enjoy!&lt;/p&gt;
 &lt;h1 id=&#34;challenge-categories&#34;&gt;Challenge Categories&lt;/h1&gt;
-&lt;p&gt;&lt;a href=&#34;http://localhost:1313/posts/writeups-hackabit2023/#0-welcome&#34;&gt;&lt;code&gt;Welcome&lt;/code&gt;&lt;/a&gt; - 4 challenges&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;http://localhost:1313/posts/writeups-hackabit2023/#1-cryptography&#34;&gt;&lt;code&gt;Cryptography&lt;/code&gt;&lt;/a&gt; - 8 challenges&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;http://localhost:1313/posts/writeups-hackabit2023/#2-web&#34;&gt;&lt;code&gt;Web&lt;/code&gt;&lt;/a&gt; - 6 challenges&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;http://localhost:1313/posts/writeups-hackabit2023/#3-programming&#34;&gt;&lt;code&gt;Programming&lt;/code&gt;&lt;/a&gt; - 8 challenges&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;http://localhost:1313/posts/writeups-hackabit2023/#4-infrastructure&#34;&gt;&lt;code&gt;Infrastructure&lt;/code&gt;&lt;/a&gt; - 8 challenges&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;http://localhost:1313/posts/writeups-hackabit2023/#5-networking&#34;&gt;&lt;code&gt;Networking&lt;/code&gt;&lt;/a&gt; - 6 challenges&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;http://localhost:1313/posts/writeups-hackabit2023/#6-osint&#34;&gt;&lt;code&gt;OSINT&lt;/code&gt;&lt;/a&gt; - 8 challenges&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://TheSavageTeddy.github.io/posts/writeups-hackabit2023/#0-welcome&#34;&gt;&lt;code&gt;Welcome&lt;/code&gt;&lt;/a&gt; - 4 challenges&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://TheSavageTeddy.github.io/posts/writeups-hackabit2023/#1-cryptography&#34;&gt;&lt;code&gt;Cryptography&lt;/code&gt;&lt;/a&gt; - 8 challenges&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://TheSavageTeddy.github.io/posts/writeups-hackabit2023/#2-web&#34;&gt;&lt;code&gt;Web&lt;/code&gt;&lt;/a&gt; - 6 challenges&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://TheSavageTeddy.github.io/posts/writeups-hackabit2023/#3-programming&#34;&gt;&lt;code&gt;Programming&lt;/code&gt;&lt;/a&gt; - 8 challenges&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://TheSavageTeddy.github.io/posts/writeups-hackabit2023/#4-infrastructure&#34;&gt;&lt;code&gt;Infrastructure&lt;/code&gt;&lt;/a&gt; - 8 challenges&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://TheSavageTeddy.github.io/posts/writeups-hackabit2023/#5-networking&#34;&gt;&lt;code&gt;Networking&lt;/code&gt;&lt;/a&gt; - 6 challenges&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://TheSavageTeddy.github.io/posts/writeups-hackabit2023/#6-osint&#34;&gt;&lt;code&gt;OSINT&lt;/code&gt;&lt;/a&gt; - 8 challenges&lt;/p&gt;
 &lt;h1 id=&#34;0-welcome&#34;&gt;0. Welcome&lt;/h1&gt;
 &lt;h2 id=&#34;wakeup-5&#34;&gt;Wakeup (5)&lt;/h2&gt;
 &lt;blockquote&gt;

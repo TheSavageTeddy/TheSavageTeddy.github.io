@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Crypto on teddyctf</title>
-    <link>http://localhost:1313/categories/crypto/</link>
+    <link>https://TheSavageTeddy.github.io/categories/crypto/</link>
     <description>Recent content in Crypto on teddyctf</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>teddyctf</copyright>
-    <lastBuildDate>Sat, 28 Sep 2024 17:53:20 +1000</lastBuildDate><atom:link href="http://localhost:1313/categories/crypto/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 28 Sep 2024 17:53:20 +1000</lastBuildDate><atom:link href="https://TheSavageTeddy.github.io/categories/crypto/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Crypto Writeups - BSides Canberra CTF 2024</title>
-      <link>http://localhost:1313/featured/bsides-canberra-ctf-2024/</link>
+      <link>https://TheSavageTeddy.github.io/featured/bsides-canberra-ctf-2024/</link>
       <pubDate>Sat, 28 Sep 2024 17:53:20 +1000</pubDate>
       
-      <guid>http://localhost:1313/featured/bsides-canberra-ctf-2024/</guid>
+      <guid>https://TheSavageTeddy.github.io/featured/bsides-canberra-ctf-2024/</guid>
       <description>&lt;h1 id=&#34;overview&#34;&gt;Overview&lt;/h1&gt;
 &lt;p&gt;Last week I went to BSides Canberra 2024 to see the amazing talks, meet people, and of course, play CTF. After 2 days of solving interesting challenges, my team &lt;a href=&#34;https://x.com/EmuExploit&#34;&gt;Emu Exploit&lt;/a&gt; managed to get 2nd place overall!&lt;/p&gt;
 
@@ -32,22 +32,22 @@
   &lt;/thead&gt;
   &lt;tbody&gt;
       &lt;tr&gt;
-          &lt;td&gt;&lt;a href=&#34;http://localhost:1313/featured/bsides-canberra-ctf-2024/#discrete-add-a-rithm---43-solves&#34;&gt;Discrete Add-a-rithm&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;a href=&#34;https://TheSavageTeddy.github.io/featured/bsides-canberra-ctf-2024/#discrete-add-a-rithm---43-solves&#34;&gt;Discrete Add-a-rithm&lt;/a&gt;&lt;/td&gt;
           &lt;td&gt;crypto&lt;/td&gt;
           &lt;td&gt;43&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
-          &lt;td&gt;&lt;a href=&#34;http://localhost:1313/featured/bsides-canberra-ctf-2024/#psionic---10-solves&#34;&gt;Psionic&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;a href=&#34;https://TheSavageTeddy.github.io/featured/bsides-canberra-ctf-2024/#psionic---10-solves&#34;&gt;Psionic&lt;/a&gt;&lt;/td&gt;
           &lt;td&gt;crypto&lt;/td&gt;
           &lt;td&gt;10&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
-          &lt;td&gt;&lt;a href=&#34;http://localhost:1313/featured/bsides-canberra-ctf-2024/#public-service---8-solves&#34;&gt;Public Service&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;a href=&#34;https://TheSavageTeddy.github.io/featured/bsides-canberra-ctf-2024/#public-service---8-solves&#34;&gt;Public Service&lt;/a&gt;&lt;/td&gt;
           &lt;td&gt;crypto&lt;/td&gt;
           &lt;td&gt;8&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
-          &lt;td&gt;&lt;a href=&#34;http://localhost:1313/featured/bsides-canberra-ctf-2024/#arpeeceethree---3-solves&#34;&gt;arpeeceethree&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;a href=&#34;https://TheSavageTeddy.github.io/featured/bsides-canberra-ctf-2024/#arpeeceethree---3-solves&#34;&gt;arpeeceethree&lt;/a&gt;&lt;/td&gt;
           &lt;td&gt;crypto&lt;/td&gt;
           &lt;td&gt;3&lt;/td&gt;
       &lt;/tr&gt;
@@ -74,22 +74,22 @@
   &lt;/thead&gt;
   &lt;tbody&gt;
       &lt;tr&gt;
-          &lt;td&gt;&lt;a href=&#34;http://localhost:1313/featured/bsides-canberra-ctf-2024/#discrete-add-a-rithm---43-solves&#34;&gt;Discrete Add-a-rithm&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;a href=&#34;https://TheSavageTeddy.github.io/featured/bsides-canberra-ctf-2024/#discrete-add-a-rithm---43-solves&#34;&gt;Discrete Add-a-rithm&lt;/a&gt;&lt;/td&gt;
           &lt;td&gt;crypto&lt;/td&gt;
           &lt;td&gt;43&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
-          &lt;td&gt;&lt;a href=&#34;http://localhost:1313/featured/bsides-canberra-ctf-2024/#psionic---10-solves&#34;&gt;Psionic&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;a href=&#34;https://TheSavageTeddy.github.io/featured/bsides-canberra-ctf-2024/#psionic---10-solves&#34;&gt;Psionic&lt;/a&gt;&lt;/td&gt;
           &lt;td&gt;crypto&lt;/td&gt;
           &lt;td&gt;10&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
-          &lt;td&gt;&lt;a href=&#34;http://localhost:1313/featured/bsides-canberra-ctf-2024/#public-service---8-solves&#34;&gt;Public Service&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;a href=&#34;https://TheSavageTeddy.github.io/featured/bsides-canberra-ctf-2024/#public-service---8-solves&#34;&gt;Public Service&lt;/a&gt;&lt;/td&gt;
           &lt;td&gt;crypto&lt;/td&gt;
           &lt;td&gt;8&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
-          &lt;td&gt;&lt;a href=&#34;http://localhost:1313/featured/bsides-canberra-ctf-2024/#arpeeceethree---3-solves&#34;&gt;arpeeceethree&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;a href=&#34;https://TheSavageTeddy.github.io/featured/bsides-canberra-ctf-2024/#arpeeceethree---3-solves&#34;&gt;arpeeceethree&lt;/a&gt;&lt;/td&gt;
           &lt;td&gt;crypto&lt;/td&gt;
           &lt;td&gt;3&lt;/td&gt;
       &lt;/tr&gt;
@@ -185,8 +185,8 @@ else:
 
 
   &lt;div class=&#34;collapsable-code&#34;&gt;
-    &lt;input id=&#34;781695342&#34; type=&#34;checkbox&#34; checked /&gt;
-    &lt;label for=&#34;781695342&#34;&gt;
+    &lt;input id=&#34;485136927&#34; type=&#34;checkbox&#34; checked /&gt;
+    &lt;label for=&#34;485136927&#34;&gt;
       &lt;span class=&#34;collapsable-code__language&#34;&gt;text&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__title&#34;&gt;out.txt&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__toggle&#34; data-label-expand=&#34;Show&#34; data-label-collapse=&#34;Hide&#34;&gt;&lt;/span&gt;
@@ -258,8 +258,8 @@ print(f&amp;#34;{flag = }&amp;#34;)
 
 
   &lt;div class=&#34;collapsable-code&#34;&gt;
-    &lt;input id=&#34;832719645&#34; type=&#34;checkbox&#34; checked /&gt;
-    &lt;label for=&#34;832719645&#34;&gt;
+    &lt;input id=&#34;219574638&#34; type=&#34;checkbox&#34; checked /&gt;
+    &lt;label for=&#34;219574638&#34;&gt;
       &lt;span class=&#34;collapsable-code__language&#34;&gt;python&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__title&#34;&gt;server.py&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__toggle&#34; data-label-expand=&#34;Show&#34; data-label-collapse=&#34;Hide&#34;&gt;&lt;/span&gt;
@@ -426,8 +426,8 @@ if __name__ == &amp;#34;__main__&amp;#34;:
 
 
   &lt;div class=&#34;collapsable-code&#34;&gt;
-    &lt;input id=&#34;598712436&#34; type=&#34;checkbox&#34; checked /&gt;
-    &lt;label for=&#34;598712436&#34;&gt;
+    &lt;input id=&#34;615783429&#34; type=&#34;checkbox&#34; checked /&gt;
+    &lt;label for=&#34;615783429&#34;&gt;
       &lt;span class=&#34;collapsable-code__language&#34;&gt;python&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__title&#34;&gt;get_pw_chars.py&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__toggle&#34; data-label-expand=&#34;Show&#34; data-label-collapse=&#34;Hide&#34;&gt;&lt;/span&gt;
@@ -475,8 +475,8 @@ print(f&amp;#34;{pw_chars = }&amp;#34;)
 
 
   &lt;div class=&#34;collapsable-code&#34;&gt;
-    &lt;input id=&#34;685714923&#34; type=&#34;checkbox&#34; checked /&gt;
-    &lt;label for=&#34;685714923&#34;&gt;
+    &lt;input id=&#34;593621748&#34; type=&#34;checkbox&#34; checked /&gt;
+    &lt;label for=&#34;593621748&#34;&gt;
       &lt;span class=&#34;collapsable-code__language&#34;&gt;python&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__title&#34;&gt;get_flag.py&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__toggle&#34; data-label-expand=&#34;Show&#34; data-label-collapse=&#34;Hide&#34;&gt;&lt;/span&gt;
@@ -525,8 +525,8 @@ r.interactive()
 
 
   &lt;div class=&#34;collapsable-code&#34;&gt;
-    &lt;input id=&#34;963741582&#34; type=&#34;checkbox&#34; checked /&gt;
-    &lt;label for=&#34;963741582&#34;&gt;
+    &lt;input id=&#34;873692415&#34; type=&#34;checkbox&#34; checked /&gt;
+    &lt;label for=&#34;873692415&#34;&gt;
       &lt;span class=&#34;collapsable-code__language&#34;&gt;python&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__title&#34;&gt;generate_signatures.py&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__toggle&#34; data-label-expand=&#34;Show&#34; data-label-collapse=&#34;Hide&#34;&gt;&lt;/span&gt;
@@ -602,8 +602,8 @@ with open(&amp;#34;out.json&amp;#34;, &amp;#34;w&amp;#34;) as g:
 
 
   &lt;div class=&#34;collapsable-code&#34;&gt;
-    &lt;input id=&#34;492685137&#34; type=&#34;checkbox&#34; checked /&gt;
-    &lt;label for=&#34;492685137&#34;&gt;
+    &lt;input id=&#34;827964531&#34; type=&#34;checkbox&#34; checked /&gt;
+    &lt;label for=&#34;827964531&#34;&gt;
       &lt;span class=&#34;collapsable-code__language&#34;&gt;json&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__title&#34;&gt;out.json&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__toggle&#34; data-label-expand=&#34;Show&#34; data-label-collapse=&#34;Hide&#34;&gt;&lt;/span&gt;
@@ -667,8 +667,8 @@ $$&lt;/p&gt;
 
 
   &lt;div class=&#34;collapsable-code&#34;&gt;
-    &lt;input id=&#34;741683529&#34; type=&#34;checkbox&#34; checked /&gt;
-    &lt;label for=&#34;741683529&#34;&gt;
+    &lt;input id=&#34;719365842&#34; type=&#34;checkbox&#34; checked /&gt;
+    &lt;label for=&#34;719365842&#34;&gt;
       &lt;span class=&#34;collapsable-code__language&#34;&gt;python&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__title&#34;&gt;code.py&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__toggle&#34; data-label-expand=&#34;Show&#34; data-label-collapse=&#34;Hide&#34;&gt;&lt;/span&gt;
@@ -775,8 +775,8 @@ print(f&amp;#34;{flag = }&amp;#34;)
 
 
   &lt;div class=&#34;collapsable-code&#34;&gt;
-    &lt;input id=&#34;217654839&#34; type=&#34;checkbox&#34; checked /&gt;
-    &lt;label for=&#34;217654839&#34;&gt;
+    &lt;input id=&#34;349268715&#34; type=&#34;checkbox&#34; checked /&gt;
+    &lt;label for=&#34;349268715&#34;&gt;
       &lt;span class=&#34;collapsable-code__language&#34;&gt;python&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__title&#34;&gt;client.py&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__toggle&#34; data-label-expand=&#34;Show&#34; data-label-collapse=&#34;Hide&#34;&gt;&lt;/span&gt;
@@ -1005,8 +1005,8 @@ if __name__ == &amp;#34;__main__&amp;#34;:
 
 
   &lt;div class=&#34;collapsable-code&#34;&gt;
-    &lt;input id=&#34;492376851&#34; type=&#34;checkbox&#34; checked /&gt;
-    &lt;label for=&#34;492376851&#34;&gt;
+    &lt;input id=&#34;927461358&#34; type=&#34;checkbox&#34; checked /&gt;
+    &lt;label for=&#34;927461358&#34;&gt;
       &lt;span class=&#34;collapsable-code__language&#34;&gt;python&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__title&#34;&gt;server.py&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__toggle&#34; data-label-expand=&#34;Show&#34; data-label-collapse=&#34;Hide&#34;&gt;&lt;/span&gt;
@@ -1358,8 +1358,8 @@ if __name__ == &amp;#34;__main__&amp;#34;:
 
 
   &lt;div class=&#34;collapsable-code&#34;&gt;
-    &lt;input id=&#34;325614798&#34; type=&#34;checkbox&#34; checked /&gt;
-    &lt;label for=&#34;325614798&#34;&gt;
+    &lt;input id=&#34;382547961&#34; type=&#34;checkbox&#34; checked /&gt;
+    &lt;label for=&#34;382547961&#34;&gt;
       &lt;span class=&#34;collapsable-code__language&#34;&gt;proto&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__title&#34;&gt;server.proto&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__toggle&#34; data-label-expand=&#34;Show&#34; data-label-collapse=&#34;Hide&#34;&gt;&lt;/span&gt;
@@ -1528,8 +1528,8 @@ message MessageResponse {
 
 
   &lt;div class=&#34;collapsable-code&#34;&gt;
-    &lt;input id=&#34;914372586&#34; type=&#34;checkbox&#34; checked /&gt;
-    &lt;label for=&#34;914372586&#34;&gt;
+    &lt;input id=&#34;467295183&#34; type=&#34;checkbox&#34; checked /&gt;
+    &lt;label for=&#34;467295183&#34;&gt;
       &lt;span class=&#34;collapsable-code__language&#34;&gt;python&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__title&#34;&gt;remote_brute.py&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__toggle&#34; data-label-expand=&#34;Show&#34; data-label-collapse=&#34;Hide&#34;&gt;&lt;/span&gt;
@@ -1786,8 +1786,8 @@ if __name__ == &amp;#34;__main__&amp;#34;:
 
 
   &lt;div class=&#34;collapsable-code&#34;&gt;
-    &lt;input id=&#34;296753418&#34; type=&#34;checkbox&#34; checked /&gt;
-    &lt;label for=&#34;296753418&#34;&gt;
+    &lt;input id=&#34;532786419&#34; type=&#34;checkbox&#34; checked /&gt;
+    &lt;label for=&#34;532786419&#34;&gt;
       &lt;span class=&#34;collapsable-code__language&#34;&gt;python&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__title&#34;&gt;code.py&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__toggle&#34; data-label-expand=&#34;Show&#34; data-label-collapse=&#34;Hide&#34;&gt;&lt;/span&gt;
@@ -2055,10 +2055,10 @@ if __name__ == &amp;#34;__main__&amp;#34;:
     
     <item>
       <title>Reversing Writeups - BSides Canberra CTF 2023</title>
-      <link>http://localhost:1313/featured/bsides-canberra-ctf-2023/</link>
+      <link>https://TheSavageTeddy.github.io/featured/bsides-canberra-ctf-2023/</link>
       <pubDate>Sun, 01 Oct 2023 03:06:40 +1100</pubDate>
       
-      <guid>http://localhost:1313/featured/bsides-canberra-ctf-2023/</guid>
+      <guid>https://TheSavageTeddy.github.io/featured/bsides-canberra-ctf-2023/</guid>
       <description>&lt;h1 id=&#34;overview&#34;&gt;Overview&lt;/h1&gt;
 &lt;p&gt;During the school holidays, I had the opportunity to attend BSides Canberra 2023, which was a 3 day conference held near the end of September, in the National Convention Center Canberra.&lt;/p&gt;
 &lt;p&gt;Along with many great talks, it featured three &amp;lsquo;villages&amp;rsquo; including hardware, lockpicking and wireless. With 3000 people attending, this was the largest hacking conference that I had gone to, and it was a lot of fun!&lt;/p&gt;
@@ -2093,12 +2093,12 @@ if __name__ == &amp;#34;__main__&amp;#34;:
   &lt;/thead&gt;
   &lt;tbody&gt;
       &lt;tr&gt;
-          &lt;td&gt;&lt;a href=&#34;http://localhost:1313/featured/bsides-canberra-ctf-2023/#prnginko-cryptorev---8-solves&#34;&gt;prnginko&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;a href=&#34;https://TheSavageTeddy.github.io/featured/bsides-canberra-ctf-2023/#prnginko-cryptorev---8-solves&#34;&gt;prnginko&lt;/a&gt;&lt;/td&gt;
           &lt;td&gt;crypto/rev&lt;/td&gt;
           &lt;td&gt;8&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
-          &lt;td&gt;&lt;a href=&#34;http://localhost:1313/featured/bsides-canberra-ctf-2023/#useless-rev---9-solves&#34;&gt;useless&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;a href=&#34;https://TheSavageTeddy.github.io/featured/bsides-canberra-ctf-2023/#useless-rev---9-solves&#34;&gt;useless&lt;/a&gt;&lt;/td&gt;
           &lt;td&gt;rev&lt;/td&gt;
           &lt;td&gt;9&lt;/td&gt;
       &lt;/tr&gt;
@@ -2106,14 +2106,14 @@ if __name__ == &amp;#34;__main__&amp;#34;:
 &lt;/table&gt;
 &lt;p&gt;If you want to follow along or see the binary for yourself, download files here&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://localhost:1313/featured/bsides-canberra-ctf-2023/files/prnginko&#34;&gt;&lt;code&gt;prnginko&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://localhost:1313/featured/bsides-canberra-ctf-2023/files/useless&#34;&gt;&lt;code&gt;useless&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://TheSavageTeddy.github.io/featured/bsides-canberra-ctf-2023/files/prnginko&#34;&gt;&lt;code&gt;prnginko&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://TheSavageTeddy.github.io/featured/bsides-canberra-ctf-2023/files/useless&#34;&gt;&lt;code&gt;useless&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h1 id=&#34;prnginko-cryptorev---8-solves&#34;&gt;prnginko (crypto/rev) - 8 solves&lt;/h1&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Multi-bet with SportsBear!&lt;/p&gt;
 &lt;p&gt;nc prnginko.chal.cybears.io 2323&lt;/p&gt;&lt;/blockquote&gt;
-&lt;p&gt;We are given a binary &lt;a href=&#34;http://localhost:1313/featured/bsides-canberra-ctf-2023/files/prnginko&#34;&gt;&lt;code&gt;prnginko&lt;/code&gt;&lt;/a&gt; and a service to connect to. Upon running the binary, we are presented with the game and a message suggesting the goal to be getting a &amp;ldquo;perfect game&amp;rdquo;. The game includes a board consisting of pins and a ball which randomly bounces either left or right when it hits a pin, similar to the Plinko game.&lt;/p&gt;
+&lt;p&gt;We are given a binary &lt;a href=&#34;https://TheSavageTeddy.github.io/featured/bsides-canberra-ctf-2023/files/prnginko&#34;&gt;&lt;code&gt;prnginko&lt;/code&gt;&lt;/a&gt; and a service to connect to. Upon running the binary, we are presented with the game and a message suggesting the goal to be getting a &amp;ldquo;perfect game&amp;rdquo;. The game includes a board consisting of pins and a ball which randomly bounces either left or right when it hits a pin, similar to the Plinko game.&lt;/p&gt;
 
   &lt;img src=&#34;./img/game_ex.png&#34;  class=&#34;center&#34;  style=&#34;border-radius: 5px; width: 70%&#34;  /&gt;
 
@@ -2700,7 +2700,7 @@ p.interactive()
 &lt;h1 id=&#34;useless-rev---9-solves&#34;&gt;useless (rev) - 9 solves&lt;/h1&gt;
 &lt;blockquote&gt;
 &lt;p&gt;There&amp;rsquo;s a weird file recovered from a forensic analysis of the MAYHEM mainframe&amp;hellip; but it doesn&amp;rsquo;t seem to do anything?&lt;/p&gt;&lt;/blockquote&gt;
-&lt;p&gt;We are provided with a binary file &lt;a href=&#34;http://localhost:1313/featured/bsides-canberra-ctf-2023/files/useless&#34;&gt;&lt;code&gt;useless&lt;/code&gt;&lt;/a&gt; which when ran, as the name suggests, seemingly does nothing.&lt;/p&gt;
+&lt;p&gt;We are provided with a binary file &lt;a href=&#34;https://TheSavageTeddy.github.io/featured/bsides-canberra-ctf-2023/files/useless&#34;&gt;&lt;code&gt;useless&lt;/code&gt;&lt;/a&gt; which when ran, as the name suggests, seemingly does nothing.&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;┌──(teddykali㉿teddykali)-[~/…/on premise/Bsides Canberra 2023/rev/useless]
 └─$ ./useless    
                                                                                                                                                 

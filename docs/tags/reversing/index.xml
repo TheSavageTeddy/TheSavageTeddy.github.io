@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Reversing on teddyctf</title>
-    <link>http://localhost:1313/tags/reversing/</link>
+    <link>https://TheSavageTeddy.github.io/tags/reversing/</link>
     <description>Recent content in Reversing on teddyctf</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>teddyctf</copyright>
-    <lastBuildDate>Sun, 01 Oct 2023 03:06:40 +1100</lastBuildDate><atom:link href="http://localhost:1313/tags/reversing/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 01 Oct 2023 03:06:40 +1100</lastBuildDate><atom:link href="https://TheSavageTeddy.github.io/tags/reversing/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Reversing Writeups - BSides Canberra CTF 2023</title>
-      <link>http://localhost:1313/featured/bsides-canberra-ctf-2023/</link>
+      <link>https://TheSavageTeddy.github.io/featured/bsides-canberra-ctf-2023/</link>
       <pubDate>Sun, 01 Oct 2023 03:06:40 +1100</pubDate>
       
-      <guid>http://localhost:1313/featured/bsides-canberra-ctf-2023/</guid>
+      <guid>https://TheSavageTeddy.github.io/featured/bsides-canberra-ctf-2023/</guid>
       <description>&lt;h1 id=&#34;overview&#34;&gt;Overview&lt;/h1&gt;
 &lt;p&gt;During the school holidays, I had the opportunity to attend BSides Canberra 2023, which was a 3 day conference held near the end of September, in the National Convention Center Canberra.&lt;/p&gt;
 &lt;p&gt;Along with many great talks, it featured three &amp;lsquo;villages&amp;rsquo; including hardware, lockpicking and wireless. With 3000 people attending, this was the largest hacking conference that I had gone to, and it was a lot of fun!&lt;/p&gt;
@@ -48,12 +48,12 @@
   &lt;/thead&gt;
   &lt;tbody&gt;
       &lt;tr&gt;
-          &lt;td&gt;&lt;a href=&#34;http://localhost:1313/featured/bsides-canberra-ctf-2023/#prnginko-cryptorev---8-solves&#34;&gt;prnginko&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;a href=&#34;https://TheSavageTeddy.github.io/featured/bsides-canberra-ctf-2023/#prnginko-cryptorev---8-solves&#34;&gt;prnginko&lt;/a&gt;&lt;/td&gt;
           &lt;td&gt;crypto/rev&lt;/td&gt;
           &lt;td&gt;8&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
-          &lt;td&gt;&lt;a href=&#34;http://localhost:1313/featured/bsides-canberra-ctf-2023/#useless-rev---9-solves&#34;&gt;useless&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;a href=&#34;https://TheSavageTeddy.github.io/featured/bsides-canberra-ctf-2023/#useless-rev---9-solves&#34;&gt;useless&lt;/a&gt;&lt;/td&gt;
           &lt;td&gt;rev&lt;/td&gt;
           &lt;td&gt;9&lt;/td&gt;
       &lt;/tr&gt;
@@ -61,14 +61,14 @@
 &lt;/table&gt;
 &lt;p&gt;If you want to follow along or see the binary for yourself, download files here&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://localhost:1313/featured/bsides-canberra-ctf-2023/files/prnginko&#34;&gt;&lt;code&gt;prnginko&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://localhost:1313/featured/bsides-canberra-ctf-2023/files/useless&#34;&gt;&lt;code&gt;useless&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://TheSavageTeddy.github.io/featured/bsides-canberra-ctf-2023/files/prnginko&#34;&gt;&lt;code&gt;prnginko&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://TheSavageTeddy.github.io/featured/bsides-canberra-ctf-2023/files/useless&#34;&gt;&lt;code&gt;useless&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h1 id=&#34;prnginko-cryptorev---8-solves&#34;&gt;prnginko (crypto/rev) - 8 solves&lt;/h1&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Multi-bet with SportsBear!&lt;/p&gt;
 &lt;p&gt;nc prnginko.chal.cybears.io 2323&lt;/p&gt;&lt;/blockquote&gt;
-&lt;p&gt;We are given a binary &lt;a href=&#34;http://localhost:1313/featured/bsides-canberra-ctf-2023/files/prnginko&#34;&gt;&lt;code&gt;prnginko&lt;/code&gt;&lt;/a&gt; and a service to connect to. Upon running the binary, we are presented with the game and a message suggesting the goal to be getting a &amp;ldquo;perfect game&amp;rdquo;. The game includes a board consisting of pins and a ball which randomly bounces either left or right when it hits a pin, similar to the Plinko game.&lt;/p&gt;
+&lt;p&gt;We are given a binary &lt;a href=&#34;https://TheSavageTeddy.github.io/featured/bsides-canberra-ctf-2023/files/prnginko&#34;&gt;&lt;code&gt;prnginko&lt;/code&gt;&lt;/a&gt; and a service to connect to. Upon running the binary, we are presented with the game and a message suggesting the goal to be getting a &amp;ldquo;perfect game&amp;rdquo;. The game includes a board consisting of pins and a ball which randomly bounces either left or right when it hits a pin, similar to the Plinko game.&lt;/p&gt;
 
   &lt;img src=&#34;./img/game_ex.png&#34;  class=&#34;center&#34;  style=&#34;border-radius: 5px; width: 70%&#34;  /&gt;
 
@@ -655,7 +655,7 @@ p.interactive()
 &lt;h1 id=&#34;useless-rev---9-solves&#34;&gt;useless (rev) - 9 solves&lt;/h1&gt;
 &lt;blockquote&gt;
 &lt;p&gt;There&amp;rsquo;s a weird file recovered from a forensic analysis of the MAYHEM mainframe&amp;hellip; but it doesn&amp;rsquo;t seem to do anything?&lt;/p&gt;&lt;/blockquote&gt;
-&lt;p&gt;We are provided with a binary file &lt;a href=&#34;http://localhost:1313/featured/bsides-canberra-ctf-2023/files/useless&#34;&gt;&lt;code&gt;useless&lt;/code&gt;&lt;/a&gt; which when ran, as the name suggests, seemingly does nothing.&lt;/p&gt;
+&lt;p&gt;We are provided with a binary file &lt;a href=&#34;https://TheSavageTeddy.github.io/featured/bsides-canberra-ctf-2023/files/useless&#34;&gt;&lt;code&gt;useless&lt;/code&gt;&lt;/a&gt; which when ran, as the name suggests, seemingly does nothing.&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;┌──(teddykali㉿teddykali)-[~/…/on premise/Bsides Canberra 2023/rev/useless]
 └─$ ./useless    
                                                                                                                                                 

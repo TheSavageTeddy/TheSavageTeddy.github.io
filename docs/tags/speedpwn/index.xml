@@ -2,28 +2,28 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Speedpwn on teddyctf</title>
-    <link>http://localhost:1313/tags/speedpwn/</link>
+    <link>https://TheSavageTeddy.github.io/tags/speedpwn/</link>
     <description>Recent content in Speedpwn on teddyctf</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>teddyctf</copyright>
-    <lastBuildDate>Tue, 30 May 2023 02:00:00 +1000</lastBuildDate><atom:link href="http://localhost:1313/tags/speedpwn/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 30 May 2023 02:00:00 +1000</lastBuildDate><atom:link href="https://TheSavageTeddy.github.io/tags/speedpwn/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>what-a-maze-meant - DEFCON Quals 2023 Writeup</title>
-      <link>http://localhost:1313/featured/what-a-maze-meant-defcon-2023-quals/</link>
+      <link>https://TheSavageTeddy.github.io/featured/what-a-maze-meant-defcon-2023-quals/</link>
       <pubDate>Tue, 30 May 2023 02:00:00 +1000</pubDate>
       
-      <guid>http://localhost:1313/featured/what-a-maze-meant-defcon-2023-quals/</guid>
+      <guid>https://TheSavageTeddy.github.io/featured/what-a-maze-meant-defcon-2023-quals/</guid>
       <description>&lt;h1 id=&#34;table-of-contents&#34;&gt;Table of Contents&lt;/h1&gt;
-&lt;p&gt;&lt;a href=&#34;http://localhost:1313/featured/what-a-maze-meant-defcon-2023-quals/#overview&#34;&gt;&lt;code&gt;Overview&lt;/code&gt;&lt;/a&gt; - a brief summary of the event&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;http://localhost:1313/featured/what-a-maze-meant-defcon-2023-quals/#challenge-overview&#34;&gt;&lt;code&gt;Writeup&lt;/code&gt;&lt;/a&gt; - writeup of the challenge&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;http://localhost:1313/featured/what-a-maze-meant-defcon-2023-quals/#conclusion&#34;&gt;&lt;code&gt;Conclusion&lt;/code&gt;&lt;/a&gt; - final closing thoughts&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://TheSavageTeddy.github.io/featured/what-a-maze-meant-defcon-2023-quals/#overview&#34;&gt;&lt;code&gt;Overview&lt;/code&gt;&lt;/a&gt; - a brief summary of the event&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://TheSavageTeddy.github.io/featured/what-a-maze-meant-defcon-2023-quals/#challenge-overview&#34;&gt;&lt;code&gt;Writeup&lt;/code&gt;&lt;/a&gt; - writeup of the challenge&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://TheSavageTeddy.github.io/featured/what-a-maze-meant-defcon-2023-quals/#conclusion&#34;&gt;&lt;code&gt;Conclusion&lt;/code&gt;&lt;/a&gt; - final closing thoughts&lt;/p&gt;
 &lt;h1 id=&#34;overview&#34;&gt;Overview&lt;/h1&gt;
 &lt;p&gt;I played DEFCON Quals 2023 with &lt;a href=&#34;https://ctftime.org/team/220769&#34;&gt;&lt;code&gt;if this doesn&#39;t work we&#39;ll get more for next year&lt;/code&gt;&lt;/a&gt;, a merger team with around 10 teams combined. Despite our best efforts, we placed &lt;code&gt;15th&lt;/code&gt;, just short of the top 12 that qualified, but given that it was our first year, I think we did pretty well, and I guess we&amp;rsquo;ll need to get more for next year!&lt;/p&gt;</description>
       <content>&lt;h1 id=&#34;table-of-contents&#34;&gt;Table of Contents&lt;/h1&gt;
-&lt;p&gt;&lt;a href=&#34;http://localhost:1313/featured/what-a-maze-meant-defcon-2023-quals/#overview&#34;&gt;&lt;code&gt;Overview&lt;/code&gt;&lt;/a&gt; - a brief summary of the event&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;http://localhost:1313/featured/what-a-maze-meant-defcon-2023-quals/#challenge-overview&#34;&gt;&lt;code&gt;Writeup&lt;/code&gt;&lt;/a&gt; - writeup of the challenge&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;http://localhost:1313/featured/what-a-maze-meant-defcon-2023-quals/#conclusion&#34;&gt;&lt;code&gt;Conclusion&lt;/code&gt;&lt;/a&gt; - final closing thoughts&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://TheSavageTeddy.github.io/featured/what-a-maze-meant-defcon-2023-quals/#overview&#34;&gt;&lt;code&gt;Overview&lt;/code&gt;&lt;/a&gt; - a brief summary of the event&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://TheSavageTeddy.github.io/featured/what-a-maze-meant-defcon-2023-quals/#challenge-overview&#34;&gt;&lt;code&gt;Writeup&lt;/code&gt;&lt;/a&gt; - writeup of the challenge&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://TheSavageTeddy.github.io/featured/what-a-maze-meant-defcon-2023-quals/#conclusion&#34;&gt;&lt;code&gt;Conclusion&lt;/code&gt;&lt;/a&gt; - final closing thoughts&lt;/p&gt;
 &lt;h1 id=&#34;overview&#34;&gt;Overview&lt;/h1&gt;
 &lt;p&gt;I played DEFCON Quals 2023 with &lt;a href=&#34;https://ctftime.org/team/220769&#34;&gt;&lt;code&gt;if this doesn&#39;t work we&#39;ll get more for next year&lt;/code&gt;&lt;/a&gt;, a merger team with around 10 teams combined. Despite our best efforts, we placed &lt;code&gt;15th&lt;/code&gt;, just short of the top 12 that qualified, but given that it was our first year, I think we did pretty well, and I guess we&amp;rsquo;ll need to get more for next year!&lt;/p&gt;
 &lt;p&gt;In this post is a quick writeup of &lt;code&gt;what-a-maze-meant&lt;/code&gt;, the first speedpwn challenge released in the LiveCTF section, where the quickest solves will earn the most points, so speed is key! It was a relatively easy challenge that together with some teamates, I solved pretty quickly. Enjoy!&lt;/p&gt;

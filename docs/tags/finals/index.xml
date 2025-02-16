@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Finals on teddyctf</title>
-    <link>http://localhost:1313/tags/finals/</link>
+    <link>https://TheSavageTeddy.github.io/tags/finals/</link>
     <description>Recent content in Finals on teddyctf</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>teddyctf</copyright>
-    <lastBuildDate>Thu, 22 Jun 2023 23:20:00 +1000</lastBuildDate><atom:link href="http://localhost:1313/tags/finals/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 22 Jun 2023 23:20:00 +1000</lastBuildDate><atom:link href="https://TheSavageTeddy.github.io/tags/finals/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>CTF Writeups - p4CTF Finals 2023 in Poland</title>
-      <link>http://localhost:1313/featured/p4ctf-finals-2023/</link>
+      <link>https://TheSavageTeddy.github.io/featured/p4ctf-finals-2023/</link>
       <pubDate>Thu, 22 Jun 2023 23:20:00 +1000</pubDate>
       
-      <guid>http://localhost:1313/featured/p4ctf-finals-2023/</guid>
+      <guid>https://TheSavageTeddy.github.io/featured/p4ctf-finals-2023/</guid>
       <description>&lt;h1 id=&#34;overview&#34;&gt;Overview&lt;/h1&gt;
 &lt;p&gt;p4CTF Finals was an onsite event held in June 2023 in Katowice, Poland. Together with Emu Exploit, I qualified for event in the p4CTF qualifiers and had the opportunity to go to Poland to meet and compete with many top teams in the world, including &lt;a href=&#34;https://twitter.com/FlatNetworkOrg&#34;&gt;&lt;code&gt;The Flat Network Society&lt;/code&gt;&lt;/a&gt;, &lt;a href=&#34;https://twitter.com/DragonSectorCTF&#34;&gt;&lt;code&gt;Dragon Sector&lt;/code&gt;&lt;/a&gt;, &lt;a href=&#34;https://twitter.com/justCatTheFish&#34;&gt;&lt;code&gt;justCatTheFish&lt;/code&gt;&lt;/a&gt;, &lt;a href=&#34;https://twitter.com/hxpctf&#34;&gt;&lt;code&gt;hxp&lt;/code&gt;&lt;/a&gt;, &lt;a href=&#34;https://twitter.com/0rganizers&#34;&gt;&lt;code&gt;0rganizers&lt;/code&gt;&lt;/a&gt;, &lt;a href=&#34;https://twitter.com/allesctf&#34;&gt;&lt;code&gt;ALLES&lt;/code&gt;&lt;/a&gt; and &lt;a href=&#34;https://twitter.com/fluxfingers&#34;&gt;&lt;code&gt;FluxFingers&lt;/code&gt;&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Before we could compete in the event, we had to first get to Poland, which proved to be a pain as our travel time was 50 hours - 30 hours across three flights to Paris, and 20 hours on the bus to Katowice. However, it was definetely worth the time, as we got to also see some tourist attractions in Paris!&lt;/p&gt;</description>
@@ -39,17 +39,17 @@
   &lt;/thead&gt;
   &lt;tbody&gt;
       &lt;tr&gt;
-          &lt;td&gt;&lt;a href=&#34;http://localhost:1313/featured/p4ctf-finals-2023/#pallas-crypto---12-solves&#34;&gt;Pallas&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;a href=&#34;https://TheSavageTeddy.github.io/featured/p4ctf-finals-2023/#pallas-crypto---12-solves&#34;&gt;Pallas&lt;/a&gt;&lt;/td&gt;
           &lt;td&gt;crypto&lt;/td&gt;
           &lt;td&gt;12&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
-          &lt;td&gt;&lt;a href=&#34;http://localhost:1313/featured/p4ctf-finals-2023/#aes_observed-crypto---6-solves&#34;&gt;aes_observed&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;a href=&#34;https://TheSavageTeddy.github.io/featured/p4ctf-finals-2023/#aes_observed-crypto---6-solves&#34;&gt;aes_observed&lt;/a&gt;&lt;/td&gt;
           &lt;td&gt;crypto&lt;/td&gt;
           &lt;td&gt;6&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
-          &lt;td&gt;&lt;a href=&#34;http://localhost:1313/featured/p4ctf-finals-2023/#pepega-packets-misc---5-solves&#34;&gt;Pepega Packets&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;a href=&#34;https://TheSavageTeddy.github.io/featured/p4ctf-finals-2023/#pepega-packets-misc---5-solves&#34;&gt;Pepega Packets&lt;/a&gt;&lt;/td&gt;
           &lt;td&gt;misc&lt;/td&gt;
           &lt;td&gt;5&lt;/td&gt;
       &lt;/tr&gt;

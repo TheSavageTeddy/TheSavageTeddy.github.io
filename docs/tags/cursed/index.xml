@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Cursed on teddyctf</title>
-    <link>http://localhost:1313/tags/cursed/</link>
+    <link>https://TheSavageTeddy.github.io/tags/cursed/</link>
     <description>Recent content in Cursed on teddyctf</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>teddyctf</copyright>
-    <lastBuildDate>Mon, 01 Apr 2024 09:43:20 +1100</lastBuildDate><atom:link href="http://localhost:1313/tags/cursed/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 01 Apr 2024 09:43:20 +1100</lastBuildDate><atom:link href="https://TheSavageTeddy.github.io/tags/cursed/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Bribery, Botting, and other Shenanigans - Cursed CTF 2024</title>
-      <link>http://localhost:1313/posts/cursedctf-2024/</link>
+      <link>https://TheSavageTeddy.github.io/posts/cursedctf-2024/</link>
       <pubDate>Mon, 01 Apr 2024 09:43:20 +1100</pubDate>
       
-      <guid>http://localhost:1313/posts/cursedctf-2024/</guid>
+      <guid>https://TheSavageTeddy.github.io/posts/cursedctf-2024/</guid>
       <description>&lt;h1 id=&#34;overview&#34;&gt;Overview&lt;/h1&gt;
 &lt;p&gt;&lt;a href=&#34;https://ctftime.org/event/2239&#34;&gt;Cursed CTF Quals 2024&lt;/a&gt; was a CTF designed to contain cursed things like most of the CTF being OSINT, unsolvable challenges, and other funny challenges.&lt;/p&gt;
 &lt;p&gt;I played with the Oceania Merger team &lt;a href=&#34;https://ctftime.org/team/280849&#34;&gt;&lt;code&gt;joseph fan club&lt;/code&gt;&lt;/a&gt; and we managed to secure first place without being disqualified!&lt;/p&gt;
@@ -80,7 +80,7 @@
 
 
 &lt;p&gt;I suspect &lt;a href=&#34;https://twitter.com/0rganizers&#34;&gt;0rganizers&lt;/a&gt; to be the culprit, being the second solve. But I can&amp;rsquo;t really be mad - it&amp;rsquo;s a cursed CTF after all. Props to them for solving it legitimately, too.&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;Edit: it was &lt;a href=&#34;http://localhost:1313/posts/cursedctf-2024/img/nahhh.png&#34;&gt;actually a organiser&lt;/a&gt;, but they also solved it legitimately lol&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Edit: it was &lt;a href=&#34;https://TheSavageTeddy.github.io/posts/cursedctf-2024/img/nahhh.png&#34;&gt;actually a organiser&lt;/a&gt;, but they also solved it legitimately lol&lt;/em&gt;&lt;/p&gt;
 
   &lt;img src=&#34;./img/iceberg3.png&#34;  class=&#34;center&#34;  style=&#34;border-radius: 5px;width: 60%; &#34;  /&gt;
 
@@ -103,7 +103,7 @@
 &lt;li&gt;When the time comes, use script to submit a flag for each account&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Our main trick was that accounts with 0 points didn&amp;rsquo;t show up on the scoreboard, so no one would see our accounts until we started submitting flags for them.&lt;/p&gt;
-&lt;p&gt;Huge thanks to &lt;a href=&#34;https://hexf.me&#34;&gt;HexF&lt;/a&gt; who registered and verified almost 10000 accounts with his &lt;a href=&#34;http://localhost:1313/posts/cursedctf-2024/files/reg-acct.py&#34;&gt;script&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Huge thanks to &lt;a href=&#34;https://hexf.me&#34;&gt;HexF&lt;/a&gt; who registered and verified almost 10000 accounts with his &lt;a href=&#34;https://TheSavageTeddy.github.io/posts/cursedctf-2024/files/reg-acct.py&#34;&gt;script&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;He was working on making a mail server specifically for catching verification emails, verifying them and storing the auth tokens for even faster account creation, until we were shut down&amp;hellip;&lt;/p&gt;
 &lt;h3 id=&#34;registrations-disabled&#34;&gt;Registrations disabled&lt;/h3&gt;
 &lt;p&gt;The admins eventually responded to our mass account creation by disabling registration, as it was costing them too much money.&lt;/p&gt;
@@ -114,7 +114,7 @@
 &lt;p&gt;By creating more than 10000 accounts, we cost the organisers over $20. Around 9500 of these accounts were successfully verified, meaning we owned around 85% of all registered accounts, and could flood the scoreboard at any time.&lt;/p&gt;
 &lt;h3 id=&#34;flooding-the-scoreboard&#34;&gt;Flooding the scoreboard&lt;/h3&gt;
 &lt;p&gt;Originally, we wanted to be stealthy and start submitting flags for the accounts right before the CTF ended, but since registrations are now disabled and we owned most the accounts, it didn&amp;rsquo;t really matter.&lt;/p&gt;
-&lt;p&gt;I ran my &lt;a href=&#34;http://localhost:1313/posts/cursedctf-2024/files/auto-submitter.py&#34;&gt;script&lt;/a&gt; to spam submit a flag for all ~9500 accounts, and watched the scoreboard fill with joseph fan clubs.&lt;/p&gt;
+&lt;p&gt;I ran my &lt;a href=&#34;https://TheSavageTeddy.github.io/posts/cursedctf-2024/files/auto-submitter.py&#34;&gt;script&lt;/a&gt; to spam submit a flag for all ~9500 accounts, and watched the scoreboard fill with joseph fan clubs.&lt;/p&gt;
 &lt;p&gt;The script finished after 30 minutes, and the scoreboard was 111 pages long, consisting of 11000 teams.&lt;/p&gt;
 
   &lt;img src=&#34;./img/joseph_fan_clubs.png&#34;  class=&#34;center&#34;  style=&#34;border-radius: 5px;width: 60%; &#34;  /&gt;
@@ -183,7 +183,7 @@
   &lt;img src=&#34;./img/ethical_.png&#34;  class=&#34;center&#34;  style=&#34;border-radius: 5px;width: 60%; &#34;  /&gt;
 
 
-&lt;p&gt;This wasn&amp;rsquo;t even takarada&amp;rsquo;s challenge, and I had already previously bribed &lt;a href=&#34;https://twitter.com/nootkroot&#34;&gt;kroot&lt;/a&gt;, the challenge author, to give us half the characters in exchange for the same thing. Too bad Emu Exploit&amp;rsquo;s team captain toasterpwn wasn&amp;rsquo;t online when I asked him for permission. He wasn&amp;rsquo;t either when takarada joined, but avery (below: &lt;a href=&#34;http://localhost:1313/posts/cursedctf-2024/img/cts_from_wish_dot_com.png&#34;&gt;cts from wish.com&lt;/a&gt;) ignored that.&lt;/p&gt;
+&lt;p&gt;This wasn&amp;rsquo;t even takarada&amp;rsquo;s challenge, and I had already previously bribed &lt;a href=&#34;https://twitter.com/nootkroot&#34;&gt;kroot&lt;/a&gt;, the challenge author, to give us half the characters in exchange for the same thing. Too bad Emu Exploit&amp;rsquo;s team captain toasterpwn wasn&amp;rsquo;t online when I asked him for permission. He wasn&amp;rsquo;t either when takarada joined, but avery (below: &lt;a href=&#34;https://TheSavageTeddy.github.io/posts/cursedctf-2024/img/cts_from_wish_dot_com.png&#34;&gt;cts from wish.com&lt;/a&gt;) ignored that.&lt;/p&gt;
 
   &lt;img src=&#34;./img/bruh.png&#34;  class=&#34;center&#34;  style=&#34;border-radius: 5px;width: 80%; &#34;  /&gt;
 
@@ -197,12 +197,12 @@
   &lt;img src=&#34;./img/teddy_trade.png&#34;  class=&#34;center&#34;  style=&#34;border-radius: 5px;width: 60%; &#34;  /&gt;
 
 
-&lt;p&gt;The intended non-bribery solution was to &lt;a href=&#34;http://localhost:1313/posts/cursedctf-2024/img/ida1.png&#34;&gt;buy/give the IDA Pro subscription&lt;/a&gt; which costs couple hundreds to thousands of dollars.&lt;/p&gt;
+&lt;p&gt;The intended non-bribery solution was to &lt;a href=&#34;https://TheSavageTeddy.github.io/posts/cursedctf-2024/img/ida1.png&#34;&gt;buy/give the IDA Pro subscription&lt;/a&gt; which costs couple hundreds to thousands of dollars.&lt;/p&gt;
 
   &lt;img src=&#34;./img/ida_pro_chal.png&#34;  class=&#34;center&#34;  style=&#34;border-radius: 5px;width: 60%; &#34;  /&gt;
 
 
-&lt;p&gt;Funny that it was &lt;a href=&#34;http://localhost:1313/posts/cursedctf-2024/img/ida4.png&#34;&gt;announced we actually bought the license&lt;/a&gt;, whereas it was just some &lt;a href=&#34;http://localhost:1313/posts/cursedctf-2024/img/ida3.png&#34;&gt;trolling&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Funny that it was &lt;a href=&#34;https://TheSavageTeddy.github.io/posts/cursedctf-2024/img/ida4.png&#34;&gt;announced we actually bought the license&lt;/a&gt;, whereas it was just some &lt;a href=&#34;https://TheSavageTeddy.github.io/posts/cursedctf-2024/img/ida3.png&#34;&gt;trolling&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;The next day, instead of trading Emu related things, avery decided to &lt;a href=&#34;https://twitter.com/nullableVoidPtr/status/1774656004619456826&#34;&gt;initiate another trade&lt;/a&gt; with sky, providing images of a manga book of a specific genre in exchange for a flag and a hint for another challenge.&lt;/p&gt;
 
   &lt;img src=&#34;./img/avery_trade_2.png&#34;  class=&#34;center&#34;  style=&#34;border-radius: 5px;width: 40%; &#34;  /&gt;
@@ -275,7 +275,7 @@
   &lt;img src=&#34;./img/iceberg9.png&#34;  class=&#34;center&#34;  style=&#34;border-radius: 5px;width: 60%; &#34;  /&gt;
 
 
-&lt;p&gt;There were also assembly golfing challenges for leetcode challenges, where your code had to be shorter than the previous submission, and my team had some pretty cursed solutions for &lt;a href=&#34;http://localhost:1313/posts/cursedctf-2024/files/palindrome.asm&#34;&gt;palindrome_number&lt;/a&gt;, &lt;a href=&#34;http://localhost:1313/posts/cursedctf-2024/files/fizzbuzz.asm&#34;&gt;fizzbuzz&lt;/a&gt; and &lt;a href=&#34;http://localhost:1313/posts/cursedctf-2024/files/fizzbuzz.asm&#34;&gt;two_sum&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;There were also assembly golfing challenges for leetcode challenges, where your code had to be shorter than the previous submission, and my team had some pretty cursed solutions for &lt;a href=&#34;https://TheSavageTeddy.github.io/posts/cursedctf-2024/files/palindrome.asm&#34;&gt;palindrome_number&lt;/a&gt;, &lt;a href=&#34;https://TheSavageTeddy.github.io/posts/cursedctf-2024/files/fizzbuzz.asm&#34;&gt;fizzbuzz&lt;/a&gt; and &lt;a href=&#34;https://TheSavageTeddy.github.io/posts/cursedctf-2024/files/fizzbuzz.asm&#34;&gt;two_sum&lt;/a&gt;.&lt;/p&gt;
 &lt;h1 id=&#34;the-final-iceberg&#34;&gt;The Final Iceberg&lt;/h1&gt;
 
   &lt;img src=&#34;./img/iceberg_final.png&#34;  class=&#34;center&#34;  style=&#34;border-radius: 5px;width: 60%; &#34;  /&gt;
