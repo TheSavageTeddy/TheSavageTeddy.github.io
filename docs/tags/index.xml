@@ -7,13 +7,73 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>teddyctf</copyright>
-    <lastBuildDate>Tue, 15 Oct 2024 22:00:00 +1100</lastBuildDate><atom:link href="https://TheSavageTeddy.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 15 Jul 2025 13:26:40 +1000</lastBuildDate><atom:link href="https://TheSavageTeddy.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Blockchain</title>
+      <link>https://TheSavageTeddy.github.io/tags/blockchain/</link>
+      <pubDate>Tue, 15 Jul 2025 13:26:40 +1000</pubDate>
+      
+      <guid>https://TheSavageTeddy.github.io/tags/blockchain/</guid>
+      <description></description>
+      <content></content>
+    </item>
+    
     <item>
       <title>Ctf</title>
       <link>https://TheSavageTeddy.github.io/tags/ctf/</link>
-      <pubDate>Tue, 15 Oct 2024 22:00:00 +1100</pubDate>
+      <pubDate>Tue, 15 Jul 2025 13:26:40 +1000</pubDate>
       
       <guid>https://TheSavageTeddy.github.io/tags/ctf/</guid>
+      <description></description>
+      <content></content>
+    </item>
+    
+    <item>
+      <title>Finals</title>
+      <link>https://TheSavageTeddy.github.io/tags/finals/</link>
+      <pubDate>Tue, 15 Jul 2025 13:26:40 +1000</pubDate>
+      
+      <guid>https://TheSavageTeddy.github.io/tags/finals/</guid>
+      <description></description>
+      <content></content>
+    </item>
+    
+    <item>
+      <title>Onsite</title>
+      <link>https://TheSavageTeddy.github.io/tags/onsite/</link>
+      <pubDate>Tue, 15 Jul 2025 13:26:40 +1000</pubDate>
+      
+      <guid>https://TheSavageTeddy.github.io/tags/onsite/</guid>
+      <description></description>
+      <content></content>
+    </item>
+    
+    <item>
+      <title>Smart-Contract</title>
+      <link>https://TheSavageTeddy.github.io/tags/smart-contract/</link>
+      <pubDate>Tue, 15 Jul 2025 13:26:40 +1000</pubDate>
+      
+      <guid>https://TheSavageTeddy.github.io/tags/smart-contract/</guid>
+      <description></description>
+      <content></content>
+    </item>
+    
+    <item>
+      <title>Web3</title>
+      <link>https://TheSavageTeddy.github.io/tags/web3/</link>
+      <pubDate>Tue, 15 Jul 2025 13:26:40 +1000</pubDate>
+      
+      <guid>https://TheSavageTeddy.github.io/tags/web3/</guid>
+      <description></description>
+      <content></content>
+    </item>
+    
+    <item>
+      <title>Writeup</title>
+      <link>https://TheSavageTeddy.github.io/tags/writeup/</link>
+      <pubDate>Tue, 15 Jul 2025 13:26:40 +1000</pubDate>
+      
+      <guid>https://TheSavageTeddy.github.io/tags/writeup/</guid>
       <description></description>
       <content></content>
     </item>
@@ -24,16 +84,6 @@
       <pubDate>Tue, 15 Oct 2024 22:00:00 +1100</pubDate>
       
       <guid>https://TheSavageTeddy.github.io/tags/misc/</guid>
-      <description></description>
-      <content></content>
-    </item>
-    
-    <item>
-      <title>Writeup</title>
-      <link>https://TheSavageTeddy.github.io/tags/writeup/</link>
-      <pubDate>Tue, 15 Oct 2024 22:00:00 +1100</pubDate>
-      
-      <guid>https://TheSavageTeddy.github.io/tags/writeup/</guid>
       <description></description>
       <content></content>
     </item>
@@ -69,16 +119,6 @@
     </item>
     
     <item>
-      <title>Onsite</title>
-      <link>https://TheSavageTeddy.github.io/tags/onsite/</link>
-      <pubDate>Sat, 28 Sep 2024 17:53:20 +1000</pubDate>
-      
-      <guid>https://TheSavageTeddy.github.io/tags/onsite/</guid>
-      <description></description>
-      <content></content>
-    </item>
-    
-    <item>
       <title>Cursed</title>
       <link>https://TheSavageTeddy.github.io/tags/cursed/</link>
       <pubDate>Mon, 01 Apr 2024 09:43:20 +1100</pubDate>
@@ -109,16 +149,6 @@
     </item>
     
     <item>
-      <title>Web3</title>
-      <link>https://TheSavageTeddy.github.io/tags/web3/</link>
-      <pubDate>Tue, 13 Feb 2024 21:10:00 +1100</pubDate>
-      
-      <guid>https://TheSavageTeddy.github.io/tags/web3/</guid>
-      <description></description>
-      <content></content>
-    </item>
-    
-    <item>
       <title>Rev</title>
       <link>https://TheSavageTeddy.github.io/tags/rev/</link>
       <pubDate>Sun, 01 Oct 2023 03:06:40 +1100</pubDate>
@@ -134,16 +164,6 @@
       <pubDate>Sun, 01 Oct 2023 03:06:40 +1100</pubDate>
       
       <guid>https://TheSavageTeddy.github.io/tags/reversing/</guid>
-      <description></description>
-      <content></content>
-    </item>
-    
-    <item>
-      <title>Finals</title>
-      <link>https://TheSavageTeddy.github.io/tags/finals/</link>
-      <pubDate>Thu, 22 Jun 2023 23:20:00 +1000</pubDate>
-      
-      <guid>https://TheSavageTeddy.github.io/tags/finals/</guid>
       <description></description>
       <content></content>
     </item>

@@ -1,5 +1,5 @@
 +++ 
-weight = 3
+weight = 6
 tags = ["ctf", "crypto", "writeup", "onsite", "finals"] 
 categories = ["CTF Writeups", "cryptography", "onsite"] 
 publishDate = 1687440000 # 22/06/2023

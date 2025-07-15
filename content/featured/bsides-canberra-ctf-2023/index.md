@@ -1,5 +1,5 @@
 +++ 
-weight = 2
+weight = 5
 tags = ["ctf", "rev", "reversing", "cryptography", "writeup", "onsite", "bsides"] 
 categories = ["CTF Writeups", "reversing", "crypto", "onsite"] 
 publishDate = 1696090000
